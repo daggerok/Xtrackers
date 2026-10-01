@@ -1486,3 +1486,5 @@ REQUEST PACING & CONCURRENCY:
 REPORT BACK WHEN DONE:
   Confirm whether parsing the XLSX exports or scraping SSR HTML tables provides the cleanest pipeline.
 
+
+2026-10-01 chore/standardize-config: added CONTROL_NAMES/resolveControls/runtimeControls (file < advanced < inputs < env), regenerated update-data workflow with 23 inputs + advanced and protected SEC_UA, standardized README sections, added scripts/config-docs.test.ts. No data changes.
