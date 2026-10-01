@@ -1,0 +1,46 @@
+name: Deploy Xtrackers Pages
+on:
+  push:
+    branches: [main]
+    paths: [index.html, app.tsx, favicon.ico, 'api/xtrackers/**', .github/workflows/pages.yml]
+  workflow_dispatch:
+  workflow_run:
+    workflows: [Update Xtrackers ETF data]
+    types: [completed]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: xtrackers-pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    # No unmerged feature branch can be deployed by this workflow.
+    if: github.ref == 'refs/heads/main' && (github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main'))
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.2
+      - run: bun install --frozen-lockfile
+      - run: bun test
+      - uses: actions/configure-pages@v5
+      - name: Stage only public application files
+        run: |
+          mkdir -p _site/api
+          cp index.html app.tsx favicon.ico _site/
+          cp -R api/xtrackers _site/api/
+          touch _site/.nojekyll
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - uses: actions/deploy-pages@v4
+        id: deployment

@@ -1,7 +1,7 @@
 CURRENT STATE
 =============
 - Goal/acceptance: Xtrackers holdings-to-watchlist static app; sibling-parity UI; Bun-only, zero runtime dependencies; offline tests; isolated >=3-ticker live runs with repeat byte-stability; scheduled/manual feed; PR to main.
-- Status: Final updater scoped live acceptance PASSED at 15627ab (26 repeat hashes equal, 39 unselected entries/paths unchanged); 63 offline tests and 12 browser cases pass. Only automation/reference README/metadata/final checks/PR pending. No merge.
+- Status: Implementation + workflows + pinned README complete; 69 offline tests and 12 real browser cases pass; final-code live acceptance passed. Only target About/topics, remote CI/final Git audit and PR remain. No merge.
 - Repository: https://github.com/daggerok/Xtrackers
 - Branch: feat/xtrackers-etfs (created from main 13c600703279ebc67b495495c8be5248ca529853).
 - PR: none (GitHub API checked 2026-10-01).
@@ -9,9 +9,9 @@ CURRENT STATE
 - Hard constraints: preserve full embedded plan; no secrets in files/config; Bun-only/no tsc/no tsconfig; dependencies {}; only exact @types/bun and @types/node devDependencies; copied UI with enumerated substitutions + shared header/frequency exceptions; real acceptance isolated from production API.
 - Completed: baseline/recovery; named references; Bun 1.4.2; verified XLSX/PDP endpoints and 42-fund US sitemap; dated source fixtures committed for offline tests.
 - Remaining: updater/parsers/offline tests; scoped live acceptance/retention/idempotency; copied UI/browser parity; workflow/docs/metadata; final checks and PR.
-- Last confirmed pushed SHA: 15627abf182e0feca6f8173c4a4816cdb2c67269 (origin/feat/xtrackers-etfs; verified remote equality).
+- Last confirmed pushed SHA: 4557d7e5cdd43650b1d50604fb6e1689d25e0935 (origin/feat/xtrackers-etfs; verified remote equality).
 - Blockers: none.
-- Exact next action: add Actions CI + weekly/manual data update (all 23 controls) + Pages preparation + Dependabot; copy pinned README with provider-only substitutions, add Xtrackers rows preserving every existing brand/sibling row. Validate config/help/README/Actions parity offline, update worklog and push. Then target-only About/homepage/topics API readback, final Git main/branch check and PR (no merge).
+- Exact next action: push/verify this automation/docs checkpoint, then PATCH only Xtrackers About/homepage and PUT only target topics using the recorded family pattern (18 shared + xtrackers/xtrackers-etfs). GET readback exactly; Pages currently404/pending, do not enable or merge. Inspect feature CI, fetch/verify origin/main, run final gates and create PR to main; record PR URL and finish without sibling edits.
 
 === 1st PROMPT: COPY-PASTE THIS TO THE IMPLEMENTING AGENT (WITH YOUR GITHUB ACCESS TOKEN) ===
 
@@ -454,6 +454,18 @@ ACTIVE UI PARITY MANIFEST SNAPSHOT (authoritative bounded substitutions):
 - Real baseline->run1 changes: PDP NAV/AUM/yields now asof2026-09-30; daily performance still through2026-09-29. Recorded exact field values in headline-upstream-changes.json; no source values restored to manufacture equality. Return periods still anchored to covered daily-performance dates. Published starter snapshot remains the explicit v2 initial seed, not silently refreshed by this smoke.
 - Evidence: research/2026-10-01/scoped-live-smoke-v3 logs, summary, all three hash ledgers, upstream field delta and complete api-after-run-2.tar.gz (SHA-256 in summary, same content for bothruns). Final updater file SHA-256 57ace28cc767fd10820f1cd4ce7a32b2e6d994c4bd645a493dbfbfda43b751c9 recorded to show that later documentation/workflow commits do not change live-accepted updater code.
 - All mandatory live criteria met on final updater; remaining work is automation/docs/metadata/PR only.
+
+### 2026-10-01 — Automation, pinned README and offline contract guards (completed)
+- Confirmed final live checkpoint 4557d7e5cdd43650b1d50604fb6e1689d25e0935 pushed with remote equality.
+- Added Verify Xtrackers CI: feature/main pushes, PR/manual; Bun1.4.2 frozen-lock install, all offline tests, app/updater transpilation, diff check. No tsc or runtime dependencies.
+- Added Update Xtrackers ETF data: Sunday00:00UTC cron plus workflow_dispatch. Exactly all23 controls with real defaults, env mappings and meanings exposed (under25). No advanced/skip knobs. Normal default pacing1.5s/2lanes; data step continues per fund, post-update API validation and api/xtrackers-only commit. Partial failure is surfaced after healthy data can be published; check steps themselves are never bypassed. Workflow push is ordinary non-force; checkout persist-credentials=false; runtime askpass contains only literal environment references, never an embedded secret or git-config auth header. Concurrency queue prevents competing update jobs.
+- Added prepared main-only Pages workflow (push/manual/successful main data-workflow completion), public app+api artifact only, no research/logs/tooling/prompt/worklog/credentials published. Pages is NOT currently enabled/deployed and unmerged feature cannot deploy. Target Pages GET404 recorded; setting homepage later is not a deployment claim.
+- Copied pinned sibling Dependabot monthly Bun + GitHub Actions sections verbatim.
+- README copied from JPMorgan@8ce0ddc: common intro structure/generic feature sentences, headings/order, Using Bun commands and TypeScript paragraph unchanged except allowed brand/repo paths. Actual DWS namespaces/sources, empty-catalog fallback, initial42/3/39 scope, later43discovery, coverage/yield/return caveats, SEC403,23controls/defaults/examples, independent pacing and pending deployment placed in the existing source/update sections. All20 old Brands rows and20 old Sibling rows preserved byte-for-byte, new Xtrackers rows appended alphabetically; no sibling README modified. Target trademark/non-affiliation fields adapted only to issuer.
+- Evidence: readme-reference.json (pin/hash/common text/all original rows) and readme-parity.diff. Browser source/parity manifests unchanged; final updater SHA-256 still equals final live evidence, no source/API changes in this step.
+- Added scripts/automation.test.ts: Bun.YAML parser validates workflow/dependabot shapes, all23 config/help/README/Actions controls/defaults/env agree, no unsupported switches, scoped commits/credentials, main-only Pages staging, exact types-only deps, common README structure (ignoring code fences) and full21-row sorted tables.
+- Strict gates all executed: bun test ->69 pass/0 fail; both Bun builds pass; bun install --frozen-lockfile unchanged; git diff --check clean. YAML syntax checks pass. These are not semantic TypeScript validation or proof of a successful remote Actions run; inspect remote CI next.
+- Read public current JPMorgan/iShares/aberdeen About/homepage/topics before any metadata edits; each uses the mandated shared pattern and18standard+2brand topics. Target before: description=null, homepage=null, topics=[], default_branch=main; Pages404. Full selected public values in metadata-before.json; no secret fields stored. Metadata writes not yet performed at this checkpoint.
 
 =============================================================================
 FULL SELF-CONTAINED IMPLEMENTATION PLAN
