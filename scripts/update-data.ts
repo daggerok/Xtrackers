@@ -75,7 +75,8 @@ export type ParsedChart = {
   firstTradeDate: string | null;
 };
 export const HOLDINGS_HEADERS = ['Name', 'Ticker', 'Identifier', 'Weight', 'Market Value', 'Shares Held', 'Asset Category'];
-export const HISTORY_HEADERS = ['Date', 'NAV', 'Market Price', 'Premium/Discount', 'Adj Close', 'Volume'];
+export const HISTORY_HEADERS = ['Date', 'NAV', 'Market Price', 'Premium/Discount'];
+export const YAHOO_HISTORY_HEADERS = ['Date', 'Close', 'Adj Close', 'Volume'];
 export const CATALOG_URL = 'https://etf.dws.com/en-us/etf-products/downloadxls/?query=' + encodeURIComponent(JSON.stringify({
   selectedTabIndex: 1, totalReturnType: 0, searchTerm: '', filters: [],
 }));
@@ -457,14 +458,16 @@ export function deriveReturns(days: ChartDay[], asOfDate: string, inception: str
   return result;
 }
 export function historySheet(points: NavPoint[], days: ChartDay[]): Sheet {
+  // Keep official NAV and adjusted market-price series distinct, as in the primary sibling.
+  if (!points.length) return { headers: YAHOO_HISTORY_HEADERS, asOfDate: days.at(-1)?.date ?? null,
+    rows: days.map(day => ({ Date: day.date, Close: String(day.close), 'Adj Close': String(day.adjClose), Volume: String(day.volume) })) };
   const nav = new Map(points.map(point => [point.date, point]));
   const prices = new Map(days.map(day => [day.date, day]));
   const dates = [...new Set([...nav.keys(), ...prices.keys()])].sort();
   return { headers: HISTORY_HEADERS, asOfDate: dates.at(-1) ?? null, rows: dates.map(date => {
     const n = nav.get(date), p = prices.get(date);
     return { Date: date, NAV: n ? String(n.nav) : '', 'Market Price': p ? String(p.close) : '',
-      'Premium/Discount': n && p ? String(round((p.close / n.nav - 1) * 100, 4)) : '',
-      'Adj Close': p ? String(p.adjClose) : '', Volume: p ? String(p.volume) : '' };
+      'Premium/Discount': n && p ? String(round((p.close / n.nav - 1) * 100, 4)) : '' };
   }) };
 }
 export type PageManifest = { pages: string[]; pageSize: number; totalRows: number; asOfDate: string | null; source: string };
@@ -1270,7 +1273,8 @@ async function updateFund(fund: CatalogFund, previousRow: JsonRecord, root: stri
 
   // Prefer official NAV total-return reconstruction, but never silently ignore a missing distribution series.
   const navReinvestmentKnown = currentEvents !== null || previousEvents.length > 0;
-  const returnDays = points.length && navReinvestmentKnown ? navTotalReturnDays(points, events) : days;
+  const returnDays = points.length && navReinvestmentKnown ? navTotalReturnDays(points, events)
+    : chart?.days ?? (previousHistory.headers.includes('Adj Close') ? days : []);
   const coverage = points.length && navReinvestmentKnown ? reinvestmentCoverageStart(points, events) : null;
   const coveredDays = coverage ? returnDays.filter(day => day.date >= coverage) : returnDays;
   const latestDate = returnDays.at(-1)?.date;

@@ -511,3 +511,36 @@ describe('offline real-orchestrator scope / retention / repeat runs', () => {
     } finally { await rm(root, { recursive: true, force: true }); }
   });
 });
+
+describe('live finding regression: official NAV vs optional Yahoo adjusted series', () => {
+  test('official history schema preserves NAV/price and is independent of Yahoo half-cent adjusted noise', () => {
+    const points = [{ date: '2022-09-09', nav: 34.71, aum: null, shares: null, dividend: null }];
+    const first = [{ date: '2022-09-09', close: 34.709999, adjClose: 27.07, volume: 1867900 }];
+    const second = [{ ...first[0], adjClose: 27.08 }];
+    expect(historySheet(points, first).headers).toEqual(['Date', 'NAV', 'Market Price', 'Premium/Discount']);
+    expect(historySheet(points, first)).toEqual(historySheet(points, second));
+    expect(historySheet(points, first).rows[0]).toEqual({ Date: '2022-09-09', NAV: '34.71', 'Market Price': '34.709999', 'Premium/Discount': '0' });
+    const realPriceChange = [{ ...first[0], close: 35 }];
+    expect(historySheet(points, first)).not.toEqual(historySheet(points, realPriceChange));
+  });
+  test('Yahoo-only fallback retains rounded adjusted closes; real corrections are not suppressed', () => {
+    const first = [{ date: '2022-09-09', close: 34.709999, adjClose: 27.07, volume: 1867900 }];
+    const second = [{ ...first[0], adjClose: 27.08 }];
+    expect(historySheet([], first).headers).toEqual(['Date', 'Close', 'Adj Close', 'Volume']);
+    expect(historySheet([], first).rows[0]['Adj Close']).toBe('27.07');
+    expect(historySheet([], first)).not.toEqual(historySheet([], second));
+  });
+  test('actual worker switches to Yahoo-only history when official NAV unavailable, without inventing NAV', async () => {
+    const root = await tempRoot();
+    try {
+      await seed(root);
+      const result = await quietRun(root, { TICKERS: 'HYLB' }, fixtureFetch(['/HYLB/Performance']));
+      expect(result.failures).toBe(0);
+      const page = await Bun.file(join(root, 'funds', 'HYLB', 'history', '001.json')).json();
+      expect(page.headers).toEqual(['Date', 'Close', 'Adj Close', 'Volume']);
+      expect(page.rows.every((row: JsonRecord) => row.NAV === undefined)).toBe(true);
+      const meta = await Bun.file(join(root, 'funds', 'HYLB', 'meta.json')).json();
+      expect(meta.source.historySource).toContain('finance.yahoo.com'); expect(meta.source.historySource).not.toContain('Performance');
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+});

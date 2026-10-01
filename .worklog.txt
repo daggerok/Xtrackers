@@ -1,7 +1,7 @@
 CURRENT STATE
 =============
 - Goal/acceptance: Xtrackers holdings-to-watchlist static app; sibling-parity UI; Bun-only, zero runtime dependencies; offline tests; isolated >=3-ticker live runs with repeat byte-stability; scheduled/manual feed; PR to main.
-- Status: First two real scoped CLI runs succeeded (3/3, zero failures; scope/manifests pass), but strict repeat bytes differ in one historical Yahoo adjusted-close cell. This live finding is checkpointed; acceptance not yet complete. UI/workflow/docs/PR pending.
+- Status: Source/schema correction for official NAV history complete; 46 offline tests pass. First live variance preserved as evidence. Fresh isolated repeat acceptance is next; UI/workflow/docs/PR pending.
 - Repository: https://github.com/daggerok/Xtrackers
 - Branch: feat/xtrackers-etfs (created from main 13c600703279ebc67b495495c8be5248ca529853).
 - PR: none (GitHub API checked 2026-10-01).
@@ -9,9 +9,9 @@ CURRENT STATE
 - Hard constraints: preserve full embedded plan; no secrets in files/config; Bun-only/no tsc/no tsconfig; dependencies {}; only exact @types/bun and @types/node devDependencies; copied UI with enumerated substitutions + shared header/frequency exceptions; real acceptance isolated from production API.
 - Completed: baseline/recovery; named references; Bun 1.4.2; verified XLSX/PDP endpoints and 42-fund US sitemap; dated source fixtures committed for offline tests.
 - Remaining: updater/parsers/offline tests; scoped live acceptance/retention/idempotency; copied UI/browser parity; workflow/docs/metadata; final checks and PR.
-- Last confirmed pushed SHA: 0aec10ed050444bc7aca73f39aab3ab383ab9e78 (origin/feat/xtrackers-etfs; verified remote equality).
+- Last confirmed pushed SHA: 307052537c3d8bd175923cedbbca3189dcab6035 (origin/feat/xtrackers-etfs; verified remote equality).
 - Blockers: none.
-- Exact next action: revise official NAV history publication to the pinned sibling four-column Date/NAV/Market Price/Premium-Discount schema (Yahoo adjusted closes retained only for Yahoo-only fallback history/return derivation); add regression tests. Do not force prior upstream values. Push fix, then repeat the SAME two real scoped CLI runs in a fresh isolated clone with the same defaults and seed; record new evidence separately.
+- Exact next action: push/verify this correction, clone the new remote feature revision into a fresh isolated acceptance-v2 copy, and run the SAME TICKERS="ASHR HYLB DBEF" VERBOSE=1 bun scripts/update-data.ts twice at defaults. Save logs/hashes/manifests and exact revision in research/2026-10-01/scoped-live-smoke-v2; verify all 26 files byte-identical and all 39 unrequested catalog rows unchanged. No production refresh in smoke.
 
 === 1st PROMPT: COPY-PASTE THIS TO THE IMPLEMENTING AGENT (WITH YOUR GITHUB ACCESS TOKEN) ===
 
@@ -178,6 +178,14 @@ CHRONOLOGICAL JOURNAL
 - Acceptance harness exit 1 is its strict byte-stability assertion; it is NOT a CLI/provider failure. Do not claim final acceptance passed yet.
 - Evidence: research/2026-10-01/scoped-live-smoke/{run-1.log,run-2.log,summary.json,hashes-before.json,hashes-after-1.json,hashes-after-2.json,second-run-upstream-diff.json}. Complete outputs stored as api-after-run-{1,2}.tar.gz (SHA-256 + member prefix in summary.json), avoiding duplicate multi-MB textual PR diffs. Unpack with tar -xzf into a scratch directory; the archives contain all 26 API files for independent verification.
 - Decision for next bounded fix: official NAV history should use the pinned primary sibling's Date/NAV/Market Price/Premium-Discount schema. Optional Yahoo adjusted-close/volume columns do not supply official NAV returns and were unnecessarily mixed into that primary sheet. Keep rounded adjusted closes in Yahoo-only fallback history and derived fallback metrics, without freezing any previous provider value. This is a source/schema correction, not a UI redesign or suppression of a material NAV/market-price change. Preserve the observed variance evidence above and repeat full live validation after the fix.
+
+### 2026-10-01 — Official NAV history schema correction from real live evidence (completed)
+- Confirmed partial live-evidence checkpoint 307052537c3d8bd175923cedbbca3189dcab6035 pushed with remote equality.
+- Changed only source publication/associated tests: official NAV history now has the pinned primary sibling's exact Date / NAV / Market Price / Premium-Discount header set. Yahoo-only fallback retains Date / Close / Adj Close / Volume, with adjusted closes still parsed at 2 decimals. No provider values frozen/restored; no UI/financial-return formula redesign.
+- Prevented a cached ordinary market close from being used as though it were an adjusted total-return close when official dividend coverage is unavailable. A fresh Yahoo chart or explicitly adjusted cached fallback is required; otherwise retain published returns.
+- Added regressions using the actual observed 2022-09-09 HYLB values: official NAV/price sheet independent of optional adjusted-close variance; a material market-price change still changes output; Yahoo-only mode still publishes adjusted corrections; actual offline worker reaches Yahoo history fallback without inventing NAV cells.
+- Commands: bun test scripts/update-data.test.ts -> 46 pass, 0 fail / 286 assertions; bun build --target=bun scripts/update-data.ts --outfile=/dev/null -> success; git diff --check -> clean. No production API files changed.
+- Next: new isolated real runs. First partial evidence remains tracked, so the final validation cannot conceal the original issue or confuse fixture replay with live success.
 
 =============================================================================
 FULL SELF-CONTAINED IMPLEMENTATION PLAN
