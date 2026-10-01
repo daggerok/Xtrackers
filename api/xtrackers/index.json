@@ -1,0 +1,2035 @@
+{
+  "provider": "Xtrackers (DWS)",
+  "generatedAt": "2026-10-01T00:00:00.000Z",
+  "source": {
+    "catalog": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A1%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
+    "catalogSource": "official US sitemap (catalog XLSX unavailable/empty)",
+    "sitemap": "https://etf.dws.com/en-us/sitemap.xml",
+    "site": "https://etf.dws.com/en-us/",
+    "trust": "DBX ETF TRUST",
+    "trustCik": "0001503123"
+  },
+  "counts": {
+    "funds": 42,
+    "holdings": 0,
+    "history": 0
+  },
+  "funds": [
+    {
+      "ticker": "ASHR",
+      "name": "ASHR",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/ASHR-harvest-csi-300-china-a-shares-etf/",
+      "dataFile": "funds/ASHR/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "ASHS",
+      "name": "ASHS",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/ASHS-harvest-csi-500-china-a-shares-small-cap-etf/",
+      "dataFile": "funds/ASHS/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "BHYB",
+      "name": "BHYB",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/BHYB-usd-high-yield-bb-b-ex-financials-etf/",
+      "dataFile": "funds/BHYB/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "CHPS",
+      "name": "CHPS",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/CHPS-semiconductor-select-equity-etf/",
+      "dataFile": "funds/CHPS/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "CRTC",
+      "name": "CRTC",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/CRTC-us-national-critical-technologies-etf/",
+      "dataFile": "funds/CRTC/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "DBAW",
+      "name": "DBAW",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/DBAW-msci-all-world-ex-us-hedged-equity-etf/",
+      "dataFile": "funds/DBAW/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "DBEF",
+      "name": "DBEF",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/DBEF-msci-eafe-hedged-equity-etf/",
+      "dataFile": "funds/DBEF/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "DBEM",
+      "name": "DBEM",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/DBEM-msci-emerging-markets-hedged-equity-etf/",
+      "dataFile": "funds/DBEM/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "DBEU",
+      "name": "DBEU",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/DBEU-msci-europe-hedged-equity-etf/",
+      "dataFile": "funds/DBEU/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "DBEZ",
+      "name": "DBEZ",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/DBEZ-msci-eurozone-hedged-equity-etf/",
+      "dataFile": "funds/DBEZ/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "DBJP",
+      "name": "DBJP",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/DBJP-msci-japan-hedged-equity-etf/",
+      "dataFile": "funds/DBJP/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "DEEF",
+      "name": "DEEF",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/DEEF-ftse-developed-ex-us-multifactor-etf/",
+      "dataFile": "funds/DEEF/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "DEUS",
+      "name": "DEUS",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/DEUS-russell-us-multifactor-etf/",
+      "dataFile": "funds/DEUS/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "DMXU",
+      "name": "DMXU",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/DMXU-bloomberg-developed-markets-ex-us-equity-etf/",
+      "dataFile": "funds/DMXU/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "EMCR",
+      "name": "EMCR",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/EMCR-emerging-markets-carbon-reduction-and-climate-improvers-etf/",
+      "dataFile": "funds/EMCR/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "EMCS",
+      "name": "EMCS",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/EMCS-msci-emerging-markets-select-etf/",
+      "dataFile": "funds/EMCS/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "HAUZ",
+      "name": "HAUZ",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/HAUZ-international-real-estate-etf/",
+      "dataFile": "funds/HAUZ/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "HDEF",
+      "name": "HDEF",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/HDEF-msci-eafe-high-dividend-yield-equity-etf/",
+      "dataFile": "funds/HDEF/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "HYDW",
+      "name": "HYDW",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/HYDW-low-beta-high-yield-bond-etf/",
+      "dataFile": "funds/HYDW/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "HYLB",
+      "name": "HYLB",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/HYLB-usd-high-yield-corporate-bond-etf/",
+      "dataFile": "funds/HYLB/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "HYUP",
+      "name": "HYUP",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/HYUP-high-beta-high-yield-bond-etf/",
+      "dataFile": "funds/HYUP/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "IND",
+      "name": "IND",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/IND-nifty-500-india-etf/",
+      "dataFile": "funds/IND/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "KOKU",
+      "name": "KOKU",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/KOKU-msci-kokusai-equity-etf/",
+      "dataFile": "funds/KOKU/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "MIDE",
+      "name": "MIDE",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/MIDE-s-p-midcap-400-scored-screened-etf/",
+      "dataFile": "funds/MIDE/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "NRES",
+      "name": "NRES",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/NRES-rreef-global-natural-resources-etf/",
+      "dataFile": "funds/NRES/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "PSWD",
+      "name": "PSWD",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/PSWD-cybersecurity-select-equity-etf/",
+      "dataFile": "funds/PSWD/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "QARP",
+      "name": "QARP",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/QARP-russell-1000-us-quality-at-a-reasonable-price-etf/",
+      "dataFile": "funds/QARP/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "RVNU",
+      "name": "RVNU",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/RVNU-municipal-infrastructure-revenue-bond-active-etf/",
+      "dataFile": "funds/RVNU/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "SHYL",
+      "name": "SHYL",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/SHYL-short-duration-high-yield-bond-etf/",
+      "dataFile": "funds/SHYL/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "SNPD",
+      "name": "SNPD",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/SNPD-s-p-dividend-aristocrats-screened-etf/",
+      "dataFile": "funds/SNPD/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "SNPE",
+      "name": "SNPE",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/SNPE-s-p-500-scored-screened-etf/",
+      "dataFile": "funds/SNPE/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "SNPG",
+      "name": "SNPG",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/SNPG-s-p-500-growth-scored-screened-etf/",
+      "dataFile": "funds/SNPG/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "SPXD",
+      "name": "SPXD",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/SPXD-s-p-500-diversified-sector-weight-etf/",
+      "dataFile": "funds/SPXD/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "TRSY",
+      "name": "TRSY",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/TRSY-us-0-1-year-treasury-etf/",
+      "dataFile": "funds/TRSY/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "UPGR",
+      "name": "UPGR",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/UPGR-us-green-infrastructure-select-equity-etf/",
+      "dataFile": "funds/UPGR/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "USCA",
+      "name": "USCA",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/USCA-msci-usa-climate-action-equity-etf/",
+      "dataFile": "funds/USCA/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "USNZ",
+      "name": "USNZ",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/USNZ-net-zero-pathway-paris-aligned-us-equity-etf/",
+      "dataFile": "funds/USNZ/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "USSG",
+      "name": "USSG",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/USSG-msci-usa-selection-equity-etf/",
+      "dataFile": "funds/USSG/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "XAIX",
+      "name": "XAIX",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/XAIX-artificial-intelligence-and-big-data-etf/",
+      "dataFile": "funds/XAIX/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "XDEF",
+      "name": "XDEF",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/XDEF-europe-defense-technologies-etf/",
+      "dataFile": "funds/XDEF/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "XEML",
+      "name": "XEML",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/XEML-europe-market-leaders-etf/",
+      "dataFile": "funds/XEML/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    },
+    {
+      "ticker": "XOEX",
+      "name": "XOEX",
+      "category": "Unclassified",
+      "fundPage": "https://etf.dws.com/en-us/XOEX-s-p-100-ex-top-20-etf/",
+      "dataFile": "funds/XOEX/meta.json",
+      "ter": "—",
+      "terValue": null,
+      "nav": "—",
+      "navValue": null,
+      "aum": "—",
+      "aumValue": null,
+      "asOfDate": null,
+      "inceptionDate": null,
+      "exchange": null,
+      "closePrice": "—",
+      "premiumDiscount": "—",
+      "cusip": null,
+      "isin": null,
+      "distributions": {
+        "frequency": null,
+        "exDate": null,
+        "dividend": null
+      },
+      "returns": {
+        "monthEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        },
+        "quarterEnd": {
+          "asOfDate": null,
+          "ytd": null,
+          "yr1": null,
+          "yr3": null,
+          "yr5": null,
+          "yr10": null,
+          "sinceInception": null
+        }
+      },
+      "metrics": {},
+      "holdings": 0,
+      "history": 0
+    }
+  ]
+}

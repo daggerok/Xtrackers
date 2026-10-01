@@ -1,7 +1,7 @@
 CURRENT STATE
 =============
 - Goal/acceptance: Xtrackers holdings-to-watchlist static app; sibling-parity UI; Bun-only, zero runtime dependencies; offline tests; isolated >=3-ticker live runs with repeat byte-stability; scheduled/manual feed; PR to main.
-- Status: Toolchain + pure parser/financial helper checkpoint complete (24 offline tests pass). CLI/provider orchestration is the next unfinished step.
+- Status: Updater/config/persistence/fallback layer complete; 43 offline tests pass. Initial 42-fund catalog-only API seed added. Mandatory isolated live acceptance is next; UI/workflow/docs/PR still pending.
 - Repository: https://github.com/daggerok/Xtrackers
 - Branch: feat/xtrackers-etfs (created from main 13c600703279ebc67b495495c8be5248ca529853).
 - PR: none (GitHub API checked 2026-10-01).
@@ -9,9 +9,9 @@ CURRENT STATE
 - Hard constraints: preserve full embedded plan; no secrets in files/config; Bun-only/no tsc/no tsconfig; dependencies {}; only exact @types/bun and @types/node devDependencies; copied UI with enumerated substitutions + shared header/frequency exceptions; real acceptance isolated from production API.
 - Completed: baseline/recovery; named references; Bun 1.4.2; verified XLSX/PDP endpoints and 42-fund US sitemap; dated source fixtures committed for offline tests.
 - Remaining: updater/parsers/offline tests; scoped live acceptance/retention/idempotency; copied UI/browser parity; workflow/docs/metadata; final checks and PR.
-- Last confirmed pushed SHA: a1df8156d6e7764b34c9985ab52840a6ddeb48be (origin/feat/xtrackers-etfs; verified remote equality).
+- Last confirmed pushed SHA: 4aadfc8742841cd2cde9dd5acd350b24aa8625e0 (origin/feat/xtrackers-etfs; verified remote equality).
 - Blockers: none.
-- Exact next action: add CLI/config/filter/pacing/retry/NPORT provider orchestration and stable paginated writing to scripts/update-data.ts; extend offline tests for scopes, failure retention, cursor, repeat writes and queue recovery. Then isolated three-ticker live acceptance; no unbounded run.
+- Exact next action: after this checkpoint is pushed/verified, clone feat/xtrackers-etfs to an isolated .cache working copy including the 42-fund API seed. Run exactly TICKERS="ASHR HYLB DBEF" VERBOSE=1 bun scripts/update-data.ts twice at defaults (REQUEST_SLEEP=1.5, CONCURRENCY=2, MAX_FETCHES=0), capture logs/hashes/scope/manifests/provenance, then commit tracked evidence before UI work. Do not refresh production in this smoke step.
 
 === 1st PROMPT: COPY-PASTE THIS TO THE IMPLEMENTING AGENT (WITH YOUR GITHUB ACCESS TOKEN) ===
 
@@ -154,6 +154,19 @@ CHRONOLOGICAL JOURNAL
 - Final commands: bun test scripts/update-data.test.ts -> 24 pass, 0 fail; bun build --target=bun scripts/update-data.ts --outfile=/dev/null -> success; bun install --frozen-lockfile -> success; git diff --check -> clean.
 - Type-safety review: returnHeaderSlot returns NumericReturnKey = Exclude<keyof OfficialReturnRow,'asOfDate'> | null, numeric assignments cannot select the string metadata slot. Tests cover every tenor/reordered headers/zero/negative/null/missing/unknown headers and string preservation. No any/index-widening/assertion used for that mapping. Bun build is transpilation, NOT semantic type checking; no IDE diagnostics or tsc available/run.
 - CLI is deliberately not wired yet at this bounded checkpoint; no real updater run or production API writes have occurred. Next: request/persistence/filter/fallback layer with offline orchestration tests.
+
+### 2026-10-01 — Real updater orchestration, stable persistence and offline acceptance (completed)
+- Confirmed pure-parser checkpoint 4aadfc8742841cd2cde9dd5acd350b24aa8625e0 pushed with remote equality.
+- Added strict config/help and 23 canonical controls: MAX_FETCHES, REQUEST_SLEEP, CONCURRENCY, TICKERS, AUM, TER, DIVIDEND_YIELD, SEC_YIELD, HOLDINGS_PAGE_SIZE, HISTORY_PAGE_SIZE, MAX_RETRIES, SEC_UA, VERBOSE plus PERFORMANCE/TOTAL_RETURN for YTD/1Y/3Y/5Y/10Y. These fit GitHub's 25-input ceiling, so no advanced/hidden config or skip-provider switches are needed. Defaults: 0 / 1.5s / 2 workers / all tickers / unrestricted filters / 250 holdings / 1000 history / 2 retries.
+- Added shared JPMorgan console helper prelude (effective VERBOSE supplied without duplicate header; all named status brackets use 9-character padding). Null fields omitted; real zero and false retained. Request gate uses independent lanes with synchronous lane reservation and same-lane pacing, avoiding both a global bottleneck and concurrent callers selecting the same unreserved lane. Transient errors/408/425/429/5xx retry with bounded exponential/Retry-After delay; 403 is not retried. Request timeout 45s.
+- Added catalog XLSX -> official US sitemap -> published catalog; exact TICKERS validation before writes; data-dependent AND filters; deterministic scoped MAX_FETCHES cursor (scope fingerprint, no advance on failures, full-success cursor removal); concurrent continue-on-error workers. Unknown/malformed tickers or unusable empty catalog fail without writes. Failed/excluded/unselected entries survive unchanged, including funds absent from discovery.
+- Added real fallback chain: official PDP/holdings/NAV/distributions -> exact-trust/series SEC N-PORT holdings -> Yahoo daily prices/dividends -> prior published facts/pages/events. SEC lazy table/Atom/submissions resolver and N-PORT XML use pinned JPMorgan logic; unknown-schema JSON boundaries made defensive, XML namespaces/date/row types narrowed, exact series/trust acceptance strengthened. Company-ticker enrichment restricted to equity positions: a bond's issuer is not the bond's equity ticker. No third-party holdings scraper or synthetic positions.
+- Actual writes use recursive generatedAt/catalogReadAt/savedAt stripping + sorted-content comparison, atomic per-file rename and publish-manifest-before-stale-page-removal. Stable source URLs omit Yahoo live period parameters. Updated values retain previous nonmissing data; true zero wins. Whole-life events retained separately for reliable return reconstruction, with recent 12-event UI schedule unchanged.
+- Financial safeguards: official total distribution amount is used once (income/gains not double counted); dividend ex-dates require a matching NAV for coverage; >7-day-stale window anchors are rejected; range-limited history cannot claim SI; reporting periods depend on source dates, never fetch time; premium/discount only from same-date NAV/market prices. Empty Morningstar/return tables are not converted to zero. Different return dates are not mixed into one labelled row.
+- Added initial api/xtrackers/index.json from the tracked official US sitemap: 42 catalog-only funds, unknown facts explicitly null/Unclassified, holdings/history=0. This is an initial discovery seed, NOT a full-provider refresh or a claim that all funds have downloaded details. It allows the mandatory live smoke to start with a real published catalog and check all 39 unrequested rows for retention.
+- Tests now 43 pass / 0 fail / 274 expectations, all offline. Injected fetches use dated/literal fixtures, test real worker fallback/scope/cursor paths, exact rerun hashes, total-provider outage retention, per-fund failure continuation and wrong SEC series rejection. No network request occurs in bun test. Generic queue normalizes both promise outcomes with work.then(() => undefined, () => undefined) while returning original Promise<T>; ordering/value/rejection/recovery covered. Two simultaneous request lanes verified separately.
+- Commands: bun test scripts/update-data.test.ts; bun build --target=bun scripts/update-data.ts --outfile=/dev/null; bun install --frozen-lockfile; CLI --help; git diff --check. All pass. Manual numeric-key and Promise<T>/Promise<void> review performed; build/tests still NOT a semantic TypeScript guarantee; no tsc/tsconfig/TypeScript dependency/IDE diagnostics used.
+- No live CLI smoke has run yet. Next action above is mandatory before UI implementation/completion claims.
 
 =============================================================================
 FULL SELF-CONTAINED IMPLEMENTATION PLAN

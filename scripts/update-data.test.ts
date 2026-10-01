@@ -208,3 +208,306 @@ describe('page manifests and source URLs', () => {
   });
 });
 function roundForTest(value: number) { return Math.round(value * 1000000) / 1000000; }
+
+// All orchestration tests use an injected literal/dated-fixture fetcher. No live requests.
+import { mkdir, mkdtemp, readdir, readFile, rm } from 'node:fs/promises';
+import { join } from 'node:path';
+import { createHash } from 'node:crypto';
+import {
+  readConfig, CONTROL_DEFAULTS, parseRange, parseAumRange, inRange, fundFilterReasons, mergeDetails,
+  outputFundLine, outputConfigEntries, createSerialQueue, createRequestGate, fetchWithRetry, HttpError,
+  samePublishedContent, writeJsonIfChanged, selectUpdateBatch, runUpdater, indexRowForCatalog,
+  parseNport, parseFundTickerMap, parseCompanyTickerMap, parseNportAccessions, parseEdgarAtomFilings,
+  matchesNportFund, fillNportTickers, reinvestmentCoverageStart, reportingPeriodEnds,
+  type Fetcher, type FundDetails, type JsonRecord,
+} from './update-data';
+
+async function tempRoot(): Promise<string> {
+  await mkdir('/home/user/.cache/xtrackers-tests', { recursive: true });
+  return mkdtemp('/home/user/.cache/xtrackers-tests/run-');
+}
+async function hashes(root: string): Promise<Record<string, string>> {
+  const files: Record<string, string> = {};
+  const walk = async (dir: string, prefix = ''): Promise<void> => {
+    for (const file of await readdir(dir, { withFileTypes: true })) {
+      const path = prefix + file.name;
+      if (file.isDirectory()) await walk(join(dir, file.name), path + '/');
+      else files[path] = createHash('sha256').update(await readFile(join(dir, file.name))).digest('hex');
+    }
+  };
+  await walk(root); return files;
+}
+async function quietRun(root: string, env: Record<string, string> = {}, fetcher: Fetcher = fixtureFetch()) {
+  const log = console.log, warn = console.warn;
+  console.log = () => {}; console.warn = () => {};
+  try { return await runUpdater(readConfig({ TICKERS: 'ASHR DBEF HYLB', REQUEST_SLEEP: '0', MAX_RETRIES: '0', ...env }), { root, fetcher }); }
+  finally { console.log = log; console.warn = warn; }
+}
+async function seed(root: string): Promise<void> {
+  const funds = parseSitemap(await fixture('us-sitemap.xml').text()).map(indexRowForCatalog);
+  // Delisted/old catalog entries and unselected files are never deleted.
+  funds.push({ ...indexRowForCatalog({ ticker: 'RETD', name: 'Retired fixture fund', category: 'Equities', fundPage: 'https://etf.dws.com/en-us/RETD-test-etf/', inceptionDate: null, terValue: null, netTerValue: null, aumValue: null, officialReturns: emptyReturns() }), customSentinel: 'preserve byte-for-byte' });
+  await writeJsonIfChanged(join(root, 'index.json'), { provider: 'Xtrackers (DWS)', generatedAt: '2026-09-01', source: {}, counts: { funds: 43, holdings: 0, history: 0 }, funds });
+  await mkdir(join(root, 'funds', 'CHPS'), { recursive: true });
+  await Bun.write(join(root, 'funds', 'CHPS', 'untouched.json'), '{"sentinel":true}\n');
+}
+function xmlEscape(value: string): string { return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
+// A literal stored-entry ZIP fixture builder, intentionally not a runtime dependency.
+function literalWorkbook(rows: string[][]): Uint8Array {
+  const xml = '<worksheet><sheetData>' + rows.map((row, i) => `<row r="${i + 1}">` + row.map((cell, j) => `<c r="${String.fromCharCode(65 + j)}${i + 1}" t="inlineStr"><is><t>${xmlEscape(cell)}</t></is></c>`).join('') + '</row>').join('') + '</sheetData></worksheet>';
+  const content = Buffer.from(xml), name = Buffer.from('xl/worksheets/sheet1.xml');
+  const local = Buffer.alloc(30); local.writeUInt32LE(0x04034b50, 0); local.writeUInt16LE(20, 4); local.writeUInt32LE(content.length, 18); local.writeUInt32LE(content.length, 22); local.writeUInt16LE(name.length, 26);
+  const central = Buffer.alloc(46); central.writeUInt32LE(0x02014b50, 0); central.writeUInt16LE(20, 4); central.writeUInt16LE(20, 6); central.writeUInt32LE(content.length, 20); central.writeUInt32LE(content.length, 24); central.writeUInt16LE(name.length, 28);
+  const end = Buffer.alloc(22); end.writeUInt32LE(0x06054b50, 0); end.writeUInt16LE(1, 8); end.writeUInt16LE(1, 10); end.writeUInt32LE(central.length + name.length, 12); end.writeUInt32LE(local.length + name.length + content.length, 16);
+  return new Uint8Array(Buffer.concat([local, name, content, central, name, end]));
+}
+function syntheticWorkbook(ticker: string, kind: string): Uint8Array {
+  const meta = [['Ticker:', ticker], ['As of:', '09/29/2026']];
+  if (kind === 'Securities') return literalWorkbook([...meta, ['Symbol', 'ISIN', 'CUSIP', 'SEDOL', 'Name', 'Weight %', '$ Market Value', '$ Notional Value', 'Quantity', 'Country', 'Sector', 'Asset Class'],
+    ['ACME', 'US0000000001', '000000001', '', `${ticker} fixture position`, '99', '100', '', '10', 'US', '', ticker === 'HYLB' ? 'Fixed Income' : 'Equity'],
+    ['EURUSD', '', '', '', `${ticker} fixture forward`, '-1', '-1', '10', '-10', '', '', 'Forward']]);
+  if (kind === 'Distributions') return literalWorkbook([...meta, ['Ex-Date', 'Record date', 'Pay date', 'US$ / Share'], ['09/01/2026', '09/01/2026', '09/07/2026', '0.2']]);
+  return literalWorkbook([...meta, ['Date', 'NAV', 'AUM', 'Outstanding shares', 'Dividends paid'], ['08/31/2026', '35', '100', '10', ''], ['09/01/2026', '34.9', '100', '10', '0.2'], ['09/29/2026', '35.29', '100', '10', '']]);
+}
+const NPORT = '<edgarSubmission><genInfo><regName>DBX ETF TRUST</regName><regCik>1503123</regCik><seriesName>Xtrackers USD High Yield Corporate Bond ETF</seriesName><seriesId>S000001</seriesId><repPdDate>2026-08-31</repPdDate></genInfo><fundInfo><netAssets>3000000000</netAssets></fundInfo><invstOrSec><name>ACME INC</name><cusip>012345678</cusip><pctVal>0</pctVal><valUSD>123.45</valUSD><balance>10</balance><assetCat>DB</assetCat></invstOrSec><invstOrSec><name>ACME INC</name><cusip>N/A</cusip><identifiers><isin value="US1234567890"/></identifiers><pctVal>-0.5</pctVal><curVal>-2</curVal><balance>-1</balance><assetCat>EC</assetCat></invstOrSec></edgarSubmission>';
+function fixtureFetch(denied: string[] = [], secXml: string | null = null): Fetcher {
+  return async (url: string) => {
+    if (denied.some(pattern => url.includes(pattern))) return new Response('fixture denial', { status: 403 });
+    if (url.includes('downloadxls/')) return new Response(await fixture('catalog-empty.xlsx').arrayBuffer());
+    if (url.endsWith('/en-us/sitemap.xml')) return new Response(await fixture('us-sitemap.xml').text());
+    const ticker = /\/etfus\/([A-Z]+)\/pdpMetaTagsTealium/.exec(url)?.[1];
+    if (ticker) return new Response(await fixture(`${ticker}-meta.json`).text(), { headers: { 'Content-Type': 'application/json' } });
+    const exportMatch = /\/(?:Export|export)\/etf\/([A-Z]+)\/(\w+)/.exec(url);
+    if (exportMatch) {
+      const [, t, kind] = exportMatch;
+      if (t === 'ASHR') return new Response(await fixture(`ASHR-${kind === 'Securities' ? 'securities' : kind === 'Distributions' ? 'distributions' : 'performance'}.xlsx`).arrayBuffer());
+      return new Response(syntheticWorkbook(t, kind));
+    }
+    if (url.includes('finance.yahoo.com')) return Response.json({ chart: { result: [{ meta: { exchangeName: 'NYSE' }, timestamp: [1790553600, 1790640000], indicators: { quote: [{ close: [35, 35.3], volume: [100, 110] }], adjclose: [{ adjclose: [34.123456, 35.234567] }] } }] } });
+    if (secXml && url.endsWith('company_tickers_mf.json')) return Response.json({ fields: ['symbol', 'cik', 'seriesId', 'classId'], data: [['HYLB', 1503123, 'S000001', 'C000001']] });
+    if (secXml && url.includes('browse-edgar')) return new Response('<feed><entry><filing-type>NPORT-P</filing-type><accession-number>0001503123-26-000001</accession-number><filing-date>2026-09-01</filing-date><filing-href>https://www.sec.gov/Archives/edgar/data/1503123/000150312326000001/x.html</filing-href></entry></feed>');
+    if (secXml && url.endsWith('primary_doc.xml')) return new Response(secXml);
+    if (secXml && url.endsWith('company_tickers.json')) return Response.json({ 0: { ticker: 'ACME', title: 'ACME INC' } });
+    if (url.includes('sec.gov')) return new Response('fixture SEC denial', { status: 403 });
+    throw new Error(`Unexpected offline request: ${url}`);
+  };
+}
+
+describe('configuration, filters, console contract', () => {
+  test('23 canonical controls, conservative defaults and strict invalid-value rejection', () => {
+    const config = readConfig({});
+    expect(Object.keys(CONTROL_DEFAULTS)).toHaveLength(23);
+    expect(config.requestSleepSeconds).toBe(1.5); expect(config.concurrency).toBe(2); expect(config.maxFetches).toBe(0);
+    expect(config.holdingsPageSize).toBe(250); expect(config.historyPageSize).toBe(1000); expect(config.maxRetries).toBe(2);
+    expect(readConfig({ TICKERS: 'ashr, HYLB; DBEF' }).tickers).toEqual(new Set(['ASHR', 'HYLB', 'DBEF']));
+    expect(() => readConfig({ CONCURRENCY: '0' })).toThrow('CONCURRENCY');
+    expect(() => readConfig({ MAX_FETCHES: '-1' })).toThrow('MAX_FETCHES');
+    expect(() => readConfig({ REQUEST_SLEEP: 'NaN' })).toThrow('REQUEST_SLEEP');
+    expect(() => readConfig({ TICKERS: '../ASHR' })).toThrow('TICKERS');
+    expect(() => readConfig({ SEC_UA: 'contact\nx-test: bad' })).toThrow('SEC_UA');
+    expect(() => readConfig({ VERBOSE: 'maybe' })).toThrow('VERBOSE');
+    expect(readConfig({ MAX_RETRIES: '0', REQUEST_SLEEP: '0', VERBOSE: 'yes' }).verbose).toBe(true);
+  });
+  test('ranges are ANDed; true zero and missing data differ; AUM presets respect boundaries', async () => {
+    expect(parseRange('-5:0')).toMatchObject({ min: -5, max: 0 });
+    expect(() => parseRange('5')).toThrow('min:max'); expect(() => parseRange('5:4')).toThrow('bounds');
+    expect(inRange(0, parseRange(':0'))).toBe(true); expect(inRange(null, parseRange(':0'))).toBe(false);
+    expect(parseAumRange('1B:2B')).toMatchObject({ min: 1e9, max: 2e9 });
+    expect(inRange(10e6, parseAumRange('nano'))).toBe(false); expect(inRange(10e6, parseAumRange('micro'))).toBe(true);
+    expect(inRange(300e6, parseAumRange('small'))).toBe(true); expect(inRange(2e9, parseAumRange('mid'))).toBe(true);
+    expect(inRange(10e9, parseAumRange('large'))).toBe(true);
+    expect(() => parseAumRange('unknown')).toThrow('AUM');
+    const details = parseFundDetails(await fixture('ASHR-meta.json').json(), 'ASHR', 'https://etf.dws.com/en-us/');
+    const config = readConfig({ TICKERS: 'ASHR', AUM: '2B:', TER: ':0.5', DIVIDEND_YIELD: '3:', SEC_YIELD: '2:', PERFORMANCE_1Y: '1:', TOTAL_RETURN_3Y: '2:' });
+    expect(fundFilterReasons(details, { dividendYield: 2.33, secYield: 1.37, tr1y: 0, tr3y: 0 }, config))
+      .toEqual(['AUM', 'TER', 'DIVIDEND_YIELD', 'SEC_YIELD', 'PERFORMANCE_1Y', 'TOTAL_RETURN_3Y']);
+  });
+  test('missing current facts retain published ones; a current real zero wins', async () => {
+    const old = parseFundDetails(await fixture('ASHR-meta.json').json(), 'ASHR', 'https://etf.dws.com/en-us/');
+    const current: FundDetails = { ...old, aumValue: null, terValue: 0, secYield: null, frequency: null };
+    const merged = mergeDetails(current, old);
+    expect(merged.aumValue).toBe(old.aumValue); expect(merged.terValue).toBe(0); expect(merged.secYield).toBe(1.37);
+  });
+  test('console uses shared padding, omits null fields and preserves zero/false', () => {
+    const line = outputFundLine(1, 3, 'ASHR', 'updated', { history: 0, holdings: 0, netAssets: null, portId: null, secYield: 0, workplaceRaw: false });
+    expect(line).toContain('history=0'); expect(line).toContain('holdings=0'); expect(line).toContain('sec=0'); expect(line).toContain('wp=false');
+    expect(line).not.toContain('null'); expect(line).not.toContain('netAssets='); expect(line).not.toContain('port=');
+    const entries = outputConfigEntries(readConfig({}));
+    expect(entries.slice(0, 3).map(([key]) => key)).toEqual(['MAX_FETCHES', 'REQUEST_SLEEP', 'CONCURRENCY']);
+    expect(new Set(entries.map(([key]) => key)).size).toBe(23);
+    expect(entries.find(([key]) => key === 'VERBOSE')?.[1]).toBe('false');
+  });
+});
+
+describe('queues, pacing, bounded retries and idempotent writers', () => {
+  test('generic serial work preserves its result/rejection, ordering and recovery', async () => {
+    const queue = createSerialQueue(), order: string[] = [];
+    const first = queue(async () => { order.push('first'); return 123; });
+    const second = queue(async () => { order.push('second'); throw new Error('expected'); });
+    const third = queue(async () => { order.push('third'); return 'done'; });
+    expect(await first).toBe(123); await expect(second).rejects.toThrow('expected'); expect(await third).toBe('done');
+    expect(order).toEqual(['first', 'second', 'third']);
+  });
+  test('two independent request lanes start two requests immediately, not one shared bottleneck', async () => {
+    const waits: number[] = [];
+    const gate = createRequestGate(1.5, 2, () => 0, async ms => { waits.push(ms); });
+    await Promise.all([gate(), gate(), gate(), gate()]);
+    expect(waits).toEqual([1500, 1500]);
+  });
+  test('429/5xx/network errors retry; permanent 403 does not; retry-after is respected', async () => {
+    let requests = 0, gates = 0; const waits: number[] = [];
+    const cfg = readConfig({ MAX_RETRIES: '2' });
+    const response = await fetchWithRetry('https://fixture.test', cfg, async () => { gates++; }, async () => {
+      requests++; return requests === 1 ? new Response('throttle', { status: 429, headers: { 'Retry-After': '2' } }) : requests === 2 ? new Response('server', { status: 500 }) : new Response('ok');
+    }, {}, async ms => { waits.push(ms); });
+    expect(response.status).toBe(200); expect(requests).toBe(3); expect(gates).toBe(3); expect(waits).toEqual([2000, 2000]);
+    requests = 0;
+    await expect(fetchWithRetry('https://fixture.test', cfg, async () => {}, async () => { requests++; return new Response('blocked', { status: 403 }); }, {}, async () => {})).rejects.toBeInstanceOf(HttpError);
+    expect(requests).toBe(1);
+    requests = 0;
+    await fetchWithRetry('https://fixture.test', cfg, async () => {}, async () => { if (++requests === 1) throw new Error('network'); return new Response('ok'); }, {}, async () => {});
+    expect(requests).toBe(2);
+  });
+  test('recursive run timestamps never cause byte churn; material changes do', async () => {
+    const root = await tempRoot(), path = join(root, 'nested.json');
+    try {
+      const first = { generatedAt: 'one', source: { catalogReadAt: 'one', rows: [{ generatedAt: 'one', value: 0 }] } };
+      const second = { source: { rows: [{ value: 0, generatedAt: 'two' }], catalogReadAt: 'two' }, generatedAt: 'two' };
+      expect(samePublishedContent(JSON.stringify(first), second)).toBe(true);
+      expect(await writeJsonIfChanged(path, first)).toBe(true);
+      const before = await Bun.file(path).text();
+      expect(await writeJsonIfChanged(path, second)).toBe(false); expect(await Bun.file(path).text()).toBe(before);
+      expect(await writeJsonIfChanged(path, { ...second, value: 1 })).toBe(true);
+      expect(samePublishedContent('invalid', {})).toBe(false);
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+  test('bounded cursor rotates only a deterministic selected universe; full pass ignores cursor', () => {
+    const funds = ['HYLB', 'ASHR', 'DBEF'].map(ticker => ({ ticker }));
+    expect(selectUpdateBatch(funds, 2, 'DBEF').map(f => f.ticker)).toEqual(['HYLB', 'ASHR']);
+    expect(selectUpdateBatch(funds, 0, 'DBEF').map(f => f.ticker)).toEqual(['ASHR', 'DBEF', 'HYLB']);
+    expect(selectUpdateBatch(funds, 1, 'missing').map(f => f.ticker)).toEqual(['ASHR']);
+  });
+});
+
+describe('SEC fallback: exact trust/series, not unrelated registrant holdings', () => {
+  test('N-PORT handles identifiers, negative and zero weights; company mapping never gives bonds an equity ticker', () => {
+    const parsed = parseNport(NPORT), names = parseCompanyTickerMap({ 0: { ticker: 'ACME', title: 'ACME INC' } });
+    expect(parsed.repPdDate).toBe('2026-08-31'); expect(parsed.netAssets).toBe(3e9); expect(parsed.holdings).toHaveLength(2);
+    expect(parsed.holdings[0].Weight).toBe('0'); expect(parsed.holdings[1].Identifier).toBe('US1234567890'); expect(parsed.holdings[1].Weight).toBe('-0.5');
+    const filled = fillNportTickers(parsed.holdings, names);
+    expect(filled[0].Ticker).toBe('-'); expect(filled[1].Ticker).toBe('ACME');
+    const prefixed = NPORT.replace(/(<\/?)([a-zA-Z])/g, '$1n:$2');
+    expect(parseNport(prefixed).holdings).toEqual(parsed.holdings);
+  });
+  test('SEC ticker table, Atom, submissions and wrong-series rejection', () => {
+    const map = parseFundTickerMap({ fields: ['symbol', 'classId', 'cik', 'seriesId'], data: [['HYLB', 'C000001', 1503123, 'S000001']] });
+    expect(map.get('HYLB')).toEqual({ cik: '0001503123', seriesId: 'S000001', classId: 'C000001' });
+    const catalogFund = { ticker: 'HYLB', name: 'Xtrackers USD High Yield Corporate Bond ETF', category: null, fundPage: '', inceptionDate: null, terValue: null, netTerValue: null, aumValue: null, officialReturns: emptyReturns() };
+    expect(matchesNportFund(parseNport(NPORT), catalogFund, map.get('HYLB') || null)).toBe(true);
+    expect(matchesNportFund(parseNport(NPORT.replace('S000001', 'S000002')), catalogFund, map.get('HYLB') || null)).toBe(false);
+    expect(matchesNportFund(parseNport(NPORT.replace('<regCik>1503123', '<regCik>999999')), catalogFund, map.get('HYLB') || null)).toBe(false);
+    expect(matchesNportFund(parseNport(NPORT), catalogFund, null)).toBe(true);
+    expect(matchesNportFund(parseNport(NPORT), { ...catalogFund, name: 'Another fund' }, null)).toBe(false);
+    const accession = '0001503123-26-000001';
+    expect(parseNportAccessions({ cik: 1503123, filings: { recent: { form: ['NPORT-P', '10-K'], accessionNumber: [accession, accession], filingDate: ['2026-09-01'], reportDate: ['2026-08-31'] } } })).toHaveLength(1);
+    expect(parseEdgarAtomFilings(`<feed><entry><filing-type>NPORT-P</filing-type><accession-number>${accession}</accession-number><filing-href>https://www.sec.gov/Archives/edgar/data/1503123/x</filing-href></entry></feed>`)[0].url).toContain('/1503123/000150312326000001/primary_doc.xml');
+  });
+});
+
+describe('covered reporting dates and distribution reinvestment', () => {
+  test('source dates, rather than fetch timestamps, determine completed month/quarter', () => {
+    expect(reportingPeriodEnds('2026-09-29')).toEqual({ monthEnd: '2026-08-31', quarterEnd: '2026-06-30' });
+    expect(reportingPeriodEnds('2026-09-30')).toEqual({ monthEnd: '2026-09-30', quarterEnd: '2026-09-30' });
+  });
+  test('missing NAV at a payout limits usable return coverage; stale anchors are not valid', () => {
+    const points = ['2025-12-31', '2026-01-02', '2026-01-05'].map(date => ({ date, nav: 10, aum: null, shares: null, dividend: null }));
+    expect(reinvestmentCoverageStart(points, [dividend('2026-01-01')])).toBe('2026-01-02');
+    const days = ['2024-12-01', '2026-08-31'].map(date => ({ date, close: 10, adjClose: 10, volume: 0 }));
+    expect(deriveReturns(days, '2026-08-31').yr1).toBeNull(); expect(deriveReturns(days, '2026-08-31').ytd).toBeNull();
+  });
+});
+
+describe('offline real-orchestrator scope / retention / repeat runs', () => {
+  test('three requested funds only; catalog and unrequested entries/files preserved; exact repeat bytes', async () => {
+    const root = await tempRoot();
+    try {
+      await seed(root);
+      const beforeIndex = await Bun.file(join(root, 'index.json')).json();
+      const result = await quietRun(root);
+      expect(result.selected).toEqual(['ASHR', 'DBEF', 'HYLB']); expect(result.failures).toBe(0); expect(result.outcomes.every(r => r.freshSources.length === 5)).toBe(true);
+      const afterIndex = await Bun.file(join(root, 'index.json')).json();
+      expect(afterIndex.funds).toHaveLength(43);
+      const selected = new Set(result.selected);
+      for (const row of beforeIndex.funds) if (!selected.has(row.ticker)) expect(afterIndex.funds.find((fund: JsonRecord) => fund.ticker === row.ticker)).toEqual(row);
+      expect(await Bun.file(join(root, 'funds', 'CHPS', 'untouched.json')).text()).toBe('{"sentinel":true}\n');
+      const before = await hashes(root), second = await quietRun(root);
+      expect(second.failures).toBe(0); expect(second.updated).toBe(0); expect(second.outcomes.every(r => r.status === 'unchanged')).toBe(true);
+      expect(await hashes(root)).toEqual(before);
+      const meta = await Bun.file(join(root, 'funds', 'ASHR', 'meta.json')).json();
+      expect(meta.holdings.totalRows).toBe(287); expect(meta.history.totalRows).toBe(3242);
+      expect(meta.source.yahoo).not.toContain('?'); expect(meta.source.historySource).not.toContain('period2=');
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+  test('unknown requested ticker fails before any writes; TICKERS does not bypass financial filters', async () => {
+    const root = await tempRoot();
+    try {
+      await seed(root); const before = await hashes(root);
+      await expect(quietRun(root, { TICKERS: 'NOTREAL' })).rejects.toThrow('absent from catalog'); expect(await hashes(root)).toEqual(before);
+      const result = await quietRun(root, { TICKERS: 'ASHR', AUM: '2B:' });
+      expect(result.selected).toEqual(['ASHR']); expect(result.outcomes[0].status).toBe('skipped');
+      expect(await Bun.file(join(root, 'funds', 'ASHR', 'meta.json')).exists()).toBe(false);
+      const after = await Bun.file(join(root, 'index.json')).json();
+      expect(after.funds.find((row: JsonRecord) => row.ticker === 'ASHR').holdings).toBe(0);
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+  test('all-provider failures retain every published byte and are reported as cached, not fresh', async () => {
+    const root = await tempRoot();
+    try {
+      await seed(root); await quietRun(root); const before = await hashes(root);
+      const result = await quietRun(root, {}, async () => new Response('offline fixture denial', { status: 403 }));
+      expect(result.failures).toBe(0); expect(result.updated).toBe(0); expect(result.outcomes.every(row => row.freshSources.length === 0)).toBe(true);
+      expect(result.outcomes.every(row => row.reason?.includes('retained published data'))).toBe(true); expect(await hashes(root)).toEqual(before);
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+  test('one failed fund does not abort healthy funds and does not advance a bounded cursor', async () => {
+    const root = await tempRoot();
+    try {
+      await seed(root);
+      const result = await quietRun(root, { MAX_FETCHES: '3' }, fixtureFetch(['/HYLB/Securities']));
+      expect(result.failures).toBe(1); expect(result.outcomes.find(r => r.ticker === 'HYLB')?.status).toBe('failed');
+      expect(result.outcomes.find(r => r.ticker === 'ASHR')?.status).toBe('updated');
+      expect(result.outcomes.find(r => r.ticker === 'DBEF')?.status).toBe('updated');
+      expect(await Bun.file(join(root, 'funds', 'HYLB', 'meta.json')).exists()).toBe(false);
+      expect(await Bun.file(join(root, 'update-state.json')).exists()).toBe(false);
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+  test('exact-series SEC fallback is reachable in the actual worker, not only pure parser tests', async () => {
+    const root = await tempRoot();
+    try {
+      await seed(root);
+      const result = await quietRun(root, { TICKERS: 'HYLB' }, fixtureFetch(['/HYLB/Securities'], NPORT));
+      expect(result.failures).toBe(0); expect(result.outcomes[0].freshSources).toContain('SEC N-PORT');
+      const meta = await Bun.file(join(root, 'funds', 'HYLB', 'meta.json')).json();
+      expect(meta.holdings.totalRows).toBe(2); expect(meta.source.holdingsSource).toContain('primary_doc.xml');
+      const secondRoot = await tempRoot();
+      try {
+        await seed(secondRoot);
+        const wrong = await quietRun(secondRoot, { TICKERS: 'HYLB' }, fixtureFetch(['/HYLB/Securities'], NPORT.replace('S000001', 'S000002')));
+        expect(wrong.failures).toBe(1); expect(await Bun.file(join(secondRoot, 'funds', 'HYLB', 'meta.json')).exists()).toBe(false);
+      } finally { await rm(secondRoot, { recursive: true, force: true }); }
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+  test('bounded cursor resumes, scope changes reset it, successful full runs clear it; stale pages removed', async () => {
+    const root = await tempRoot();
+    try {
+      await seed(root);
+      const first = await quietRun(root, { MAX_FETCHES: '1' }); expect(first.selected).toEqual(['ASHR']);
+      const second = await quietRun(root, { MAX_FETCHES: '1' }); expect(second.selected).toEqual(['DBEF']);
+      const third = await quietRun(root, { MAX_FETCHES: '1', TICKERS: 'HYLB' }); expect(third.selected).toEqual(['HYLB']);
+      await Bun.write(join(root, 'funds', 'ASHR', 'holdings', '003.json'), '{"old":true}\n');
+      const full = await quietRun(root); expect(full.selected).toEqual(['ASHR', 'DBEF', 'HYLB']); expect(full.failures).toBe(0);
+      expect(await Bun.file(join(root, 'update-state.json')).exists()).toBe(false);
+      expect(await Bun.file(join(root, 'funds', 'ASHR', 'holdings', '003.json')).exists()).toBe(false);
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+});
