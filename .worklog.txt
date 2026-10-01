@@ -1,3 +1,18 @@
+CURRENT STATE
+=============
+- Goal/acceptance: Xtrackers holdings-to-watchlist static app; sibling-parity UI; Bun-only, zero runtime dependencies; offline tests; isolated >=3-ticker live runs with repeat byte-stability; scheduled/manual feed; PR to main.
+- Status: Baseline/recovery reconciliation complete. Implementation not yet started.
+- Repository: https://github.com/daggerok/Xtrackers
+- Branch: feat/xtrackers-etfs (created from main 13c600703279ebc67b495495c8be5248ca529853).
+- PR: none (GitHub API checked 2026-10-01).
+- Authorization: edit/commit/push this feature branch, implement initial static API seed, update this repository's About metadata per embedded plan, open PR into main. No merge, force-push, cross-repository edits or doc PRs authorized.
+- Hard constraints: preserve full embedded plan; no secrets in files/config; Bun-only/no tsc/no tsconfig; dependencies {}; only exact @types/bun and @types/node devDependencies; copied UI with enumerated substitutions + shared header/frequency exceptions; real acceptance isolated from production API.
+- Completed: full 828-line baseline worklog read; clean Git/main/origin reconciliation; no existing PR; named references pinned; Bun 1.4.2 installed in workspace tool directory (not project dependency).
+- Remaining: live endpoint verification; updater/parsers/offline tests; scoped live acceptance/retention/idempotency; copied UI/browser parity; workflow/docs/metadata; final checks and PR.
+- Last confirmed pushed SHA: 13c600703279ebc67b495495c8be5248ca529853 (origin/main; initial feature checkpoint not yet pushed).
+- Blockers: none.
+- Exact next action: live-download DWS catalog and ASHR Securities/Distributions/Performance exports; inspect workbook structure, pin fixtures, verify SEC/Yahoo access. Research only; no unbounded updater run.
+
 === 1st PROMPT: COPY-PASTE THIS TO THE IMPLEMENTING AGENT (WITH YOUR GITHUB ACCESS TOKEN) ===
 
 Read .worklog.txt in the repository root. It is the canonical, self-contained handoff file containing the complete mandatory recovery protocol, architecture rules, and brand-specific research.
@@ -61,8 +76,8 @@ GitHub Personal Access Token: <PASTE_YOUR_TOKEN_HERE>
 ==============================================================================================
 
 ================================================================
-CURRENT STATE
-=============
+INITIAL RESEARCH STATE (historical snapshot, 2026-09-28)
+=======================================================
 - Goal: Implement Xtrackers ETFs (DWS) holdings-to-watchlist web application in daggerok/Xtrackers matching sibling parity (Bun-only, zero runtime dependencies, static client app + update-data feed).
 - Status: Researched & Baseline Initialized. Repository cloned, clean baseline verified (LICENSE + placeholder README), official ETF brand site researched, data endpoints discovered and verified live, SEC EDGAR CIK confirmed, and self-contained plan embedded. Ready for implementation.
 - Repository: https://github.com/daggerok/Xtrackers
@@ -95,6 +110,16 @@ AUTHORITY / USER AMENDMENTS
 
 CHRONOLOGICAL JOURNAL
 =====================
+### 2026-10-01 — Recovery reconciliation and implementation authorization (completed)
+- Fully read existing .worklog.txt (828 lines, 52,811 bytes) before changes. main and origin/main both 13c600703279ebc67b495495c8be5248ca529853; clean tree; GitHub branches: main only; all-state PR list empty.
+- Historical CURRENT STATE omitted main's final docs(prompt) commit and .prompt.txt; no implementation exists. Preserved the historical snapshot below and moved active CURRENT STATE to the beginning.
+- Created feat/xtrackers-etfs. No user changes to preserve. Baseline files: .prompt.txt, .worklog.txt, LICENSE, README.md.
+- Pinned primary UI/README/shared updater reference: daggerok/JPMorgan main 8ce0ddca58b5459dd7df98f22463fb31afa82f2b. Brand-specific XLSX reference: daggerok/iShares main 297a2e41e4a7a438ece2b8bde8e3384e960dfaeb. Secondary brand-specific reference: daggerok/Aberdeen main 10a6be3f5cab48aad80b52634e3bdd8123748f7d.
+- GitHub metadata baseline: Xtrackers description/homepage null, topics [], has_pages=false. JPMorgan About matches prescribed shared pattern; its homepage is https://daggerok.github.io/JPMorgan/ and shared topics include jpmorgan/jpmorgan-etfs.
+- Installed Bun 1.4.2 from official bun.sh installer; no Bun executable originally present. git 2.47.3 and Python available. No application baseline tests exist.
+- User authorized target implementation, pushes and PR only; no merge or sibling README PRs. Russian chat requested. Credential supplied by user will be used runtime-only; no token/auth header written to tracked or config files.
+- This checkpoint is docs-only; tests not applicable. Next: verify live DWS workbook endpoints and downstream providers before choosing parser design.
+
 ### 2026-09-28 — Initial research, baseline audit, and planning (completed)
 - Cloned https://github.com/daggerok/Xtrackers at main branch.
 - Verified repository contents: LICENSE (MIT) and minimal README.md.
