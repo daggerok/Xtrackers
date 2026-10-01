@@ -1,17 +1,17 @@
 CURRENT STATE
 =============
 - Goal/acceptance: Xtrackers holdings-to-watchlist static app; sibling-parity UI; Bun-only, zero runtime dependencies; offline tests; isolated >=3-ticker live runs with repeat byte-stability; scheduled/manual feed; PR to main.
-- Status: Baseline/recovery reconciliation complete. Implementation not yet started.
+- Status: Live research complete; DWS catalog-empty condition discovered and official US sitemap fallback verified. Implementation not yet started.
 - Repository: https://github.com/daggerok/Xtrackers
 - Branch: feat/xtrackers-etfs (created from main 13c600703279ebc67b495495c8be5248ca529853).
 - PR: none (GitHub API checked 2026-10-01).
 - Authorization: edit/commit/push this feature branch, implement initial static API seed, update this repository's About metadata per embedded plan, open PR into main. No merge, force-push, cross-repository edits or doc PRs authorized.
 - Hard constraints: preserve full embedded plan; no secrets in files/config; Bun-only/no tsc/no tsconfig; dependencies {}; only exact @types/bun and @types/node devDependencies; copied UI with enumerated substitutions + shared header/frequency exceptions; real acceptance isolated from production API.
-- Completed: full 828-line baseline worklog read; clean Git/main/origin reconciliation; no existing PR; named references pinned; Bun 1.4.2 installed in workspace tool directory (not project dependency).
-- Remaining: live endpoint verification; updater/parsers/offline tests; scoped live acceptance/retention/idempotency; copied UI/browser parity; workflow/docs/metadata; final checks and PR.
-- Last confirmed pushed SHA: 13c600703279ebc67b495495c8be5248ca529853 (origin/main; initial feature checkpoint not yet pushed).
+- Completed: baseline/recovery; named references; Bun 1.4.2; verified XLSX/PDP endpoints and 42-fund US sitemap; dated source fixtures committed for offline tests.
+- Remaining: updater/parsers/offline tests; scoped live acceptance/retention/idempotency; copied UI/browser parity; workflow/docs/metadata; final checks and PR.
+- Last confirmed pushed SHA: 3389d138bccdcb085e3aad92398a43fb29530549 (origin/feat/xtrackers-etfs; verified remote equality).
 - Blockers: none.
-- Exact next action: live-download DWS catalog and ASHR Securities/Distributions/Performance exports; inspect workbook structure, pin fixtures, verify SEC/Yahoo access. Research only; no unbounded updater run.
+- Exact next action: scaffold exact pinned Bun manifest/lock; implement pure XLSX, catalog/sitemap/PDP/holdings/distributions/NAV parsers with fixture tests. Use SPDR ZIP reader (true OpenXML), JPMorgan shared helpers and iShares lane pacing; keep UI unchanged until live acceptance.
 
 === 1st PROMPT: COPY-PASTE THIS TO THE IMPLEMENTING AGENT (WITH YOUR GITHUB ACCESS TOKEN) ===
 
@@ -128,6 +128,22 @@ CHRONOLOGICAL JOURNAL
 - Verified SEC EDGAR filing registrant CIK: CONFIRMED: 'DBX ETF TRUST', CIK 0001503123..
 - Assembled self-contained plan integrating the full generic build requirements (PART 1) and brand-specific research (PART 2).
 - Committed initialized .worklog.txt to main branch. Repository is ready for implementing agent.
+
+### 2026-10-01 — Live endpoint verification and source-fixture checkpoint (completed)
+- Confirmed previous checkpoint 3389d138bccdcb085e3aad92398a43fb29530549 pushed to feat/xtrackers-etfs; git ls-remote matched local HEAD.
+- Important departure from initial research: catalog download returns HTTP 200 / real XLSX but ZERO product rows (only headers/disclaimer); monthly tab also empty. Official fundfinder datatable POST returns values=[] too. Never treat this as an empty universe or erase previous funds.
+- Official products HTML is a Nuxt client shell (2,536 bytes), not SSR and not a WAF challenge. Browser chunks reveal real PDP productType=etfus; the plan's export namespace etf still works.
+- Clean catalog fallback verified: https://etf.dws.com/en-us/sitemap.xml (HTTP 200, 25,750 bytes), 42 uppercase ticker-prefixed /en-us/...-etf/ URLs. Root /sitemap.xml is European, so do NOT use it for US discovery.
+- Verified PDP details URL: https://etf.dws.com/api/pdp/en-us/etfus/{TICKER}/pdpMetaTagsTealium. ASHR/HYLB/DBEF responses include legal name, exact net assets, expenses, frequency, SEC yield, NAV date, category and official URL. Annualised/cumulative return tables currently empty; derive only adequately covered NAV total returns, do not interpret empty cells as zero. Ignore Morningstar 3Y/5Y/10Y ratings as performance.
+- ASHR exports all HTTP 200: Securities (75,756 bytes, sparse OpenXML columns, date 2026-09-29, Symbol/ISIN/CUSIP/SEDOL/Name/Weight %/$ Market Value/$ Notional Value/Quantity/Country/Sector/Asset Class); Distributions (25,103 bytes, Excel serial dates and explicit zero-dollar events); Performance (192,877 bytes, whole-life daily Date/NAV/AUM/Outstanding shares/Dividends paid, not a growth chart).
+- Yahoo ASHR chart: HTTP 200, 2,512 daily observations for research range=10y. Runtime will use explicit periods for daily whole-life history and round adjusted close to 2 decimals; persisted provider URL will be query-free.
+- SEC data.sec.gov/submissions/CIK0001503123.json and www.sec.gov/files/company_tickers_mf.json: HTTP 403 in this environment. Official holdings work; SEC fallback must be offline-tested for exact series and documented as live-unverified.
+- References corrected after inspection: iShares currently reads legacy SpreadsheetML, NOT ZIP/OpenXML; use its request-lane shape only. Pinned OpenXML reference explicitly named in generic plan: daggerok/SPDR main d26fe5547c98f1a259f1198f4e789363b11f2491, scripts/update-data.ts ZIP/shared-string/sparse-sheet helpers. Shared updater/reporting/NPORT/derived metrics and UI/README remain JPMorgan pinned SHA. Aberdeen consulted only for source/Actions limitations.
+- Planned normal pacing unchanged: REQUEST_SLEEP=1.5, CONCURRENCY=2. No issuer denials/WAF observed, so independent lanes appropriate; no rendering proxy needed.
+- Acceptance subset: ASHR (China A equities), HYLB (fixed income / identifier-only holdings), DBEF (currency-hedged equity with forwards). Exactly these three requested; never start an unbounded updater during implementation.
+- Tracked actual source fixtures: scripts/fixtures/2026-10-01/{catalog-empty.xlsx,us-sitemap.xml,ASHR-securities.xlsx,ASHR-distributions.xlsx,ASHR-performance.xlsx,ASHR-meta.json,HYLB-meta.json,DBEF-meta.json}. research/2026-10-01/fixtures.json records URLs/bytes/SHA-256; endpoints.json records first live responses/denials.
+- Commands: Python stdlib urllib + zipfile/XML inspection; no project runtime dependencies. Fixture paths/hashes make evidence recoverable without chat or workspace research copies. No source cookies/headers/secrets persisted.
+- Next: coherent pure-parser/toolchain checkpoint with offline tests before provider orchestration.
 
 =============================================================================
 FULL SELF-CONTAINED IMPLEMENTATION PLAN
