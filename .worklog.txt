@@ -1,17 +1,18 @@
 CURRENT STATE
 =============
-- Goal/acceptance: Xtrackers holdings-to-watchlist static app; sibling-parity UI; Bun-only, zero runtime dependencies; offline tests; isolated >=3-ticker live runs with repeat byte-stability; scheduled/manual feed; PR to main.
-- Status: COMPLETE. Implementation/docs/automation/target metadata committed, all69 offline tests +12 real browser cases +final real scoped acceptance pass; actual GitHub CI green. PR #1 OPEN (not draft), no merge, main/siblings unchanged. Pages pending owner merge/enablement.
+- Goal/acceptance: follow-up requested by user: mirror daggerok/iShares GitHub Actions and scripts/update-data.config.json approach in Xtrackers, including loader/precedence, help, docs and tests. Preserve issuer fetch/parse/financial/UI logic and current published data.
+- Status: Reference/baseline audit complete; implementation pending. Prior app/PR delivery complete, not repeated.
 - Repository: https://github.com/daggerok/Xtrackers
-- Branch: feat/xtrackers-etfs (created from main 13c600703279ebc67b495495c8be5248ca529853).
-- PR: none (GitHub API checked 2026-10-01).
-- Authorization: edit/commit/push this feature branch, implement initial static API seed, update this repository's About metadata per embedded plan, open PR into main. No merge, force-push, cross-repository edits or doc PRs authorized.
-- Hard constraints: preserve full embedded plan; no secrets in files/config; Bun-only/no tsc/no tsconfig; dependencies {}; only exact @types/bun and @types/node devDependencies; copied UI with enumerated substitutions + shared header/frequency exceptions; real acceptance isolated from production API.
-- Completed: baseline/recovery; named references; Bun 1.4.2; verified XLSX/PDP endpoints and 42-fund US sitemap; dated source fixtures committed for offline tests.
-- Remaining: updater/parsers/offline tests; scoped live acceptance/retention/idempotency; copied UI/browser parity; workflow/docs/metadata; final checks and PR.
-- Last confirmed pushed implementation SHA: f2617b52b643070b03cb22ec88faf5f193062d34 (origin/feat/xtrackers-etfs equality and remote CI success verified). The final journal/evidence-only commit containing this entry follows; resolve its own HEAD with git rev-parse HEAD and compare git ls-remote origin refs/heads/feat/xtrackers-etfs. No runtime source changes after final live acceptance.
-- Blockers: none.
-- Exact next action: owner review of https://github.com/daggerok/Xtrackers/pull/1. No implementation work unfinished. Merge/Pages enablement requires owner action/explicit authorization; no sibling work authorized. On resume read this journal, verify clean HEAD/upstream/main and secure auth availability before any edit or push.
+- Branch: feat/xtrackers-etfs; existing PR #1 OPEN, not merged: https://github.com/daggerok/Xtrackers/pull/1.
+- Authorization: target-only edits/commits/ordinary fast-forward pushes to this branch/PR. No merge, force push, sibling edits, About changes or production data refresh.
+- Hard constraints: Bun-only, dependencies={}, exact types-only dev deps, no tsc/tsconfig; full embedded plan preserved; secrets never in files/config/URLs/output; first/second-line reference directive. New iShares config/workflow instruction overrides prior baked/manual-default design, not DWS-specific safe pacing or supported controls.
+- Completed: full1243-line worklog read, Git/PR reconciliation, restore nonsecret origin and executable snapshot metadata, fast-forward external data-only commit; fresh pinned iShares workflow/config/code audit; Bun1.4.2 and frozen dev deps restored; baseline69 offline tests pass.
+- Remaining: checked-in config loader/precedence/help tests; workflow job-level env+blank inputs/actions alignment; related README/CI/Pages/summary guards; scoped real CLI config acceptance; final diff/remote CI/PR readback.
+- Last confirmed pushed baseline SHA: 89ba459a248a4d1eb9bd97314b0d44c49b1c105b (external data update; local fast-forwarded with clean tree). main still13c600703279ebc67b495495c8be5248ca529853.
+- Current published data:43 funds /21171 holdings /77473 history from the user's external update; all files must remain untouched by this follow-up.
+- Reference: daggerok/iShares main297a2e41e4a7a438ece2b8bde8e3384e960dfaeb; config lives in scripts/, NOT repo root. Full relevant snapshots below/reference.json.
+- Blockers: none; fresh short-lived push credential supplied, held only in runtime memory. No API-auth use authorized/needed; public readback is unauthenticated.
+- Exact next action: implement the flat checked-in scripts/update-data.config.json with nonblank ENV precedence/missing-file fallback and focused tests, then scoped commit+push before workflow migration. Keep DWS REQUEST_SLEEP=1.5/CONCURRENCY=2; do not copy iShares speed0/4.
 
 === 1st PROMPT: COPY-PASTE THIS TO THE IMPLEMENTING AGENT (WITH YOUR GITHUB ACCESS TOKEN) ===
 
@@ -519,6 +520,208 @@ TARGET METADATA AFTER (public fields only):
 - Target About/homepage/20topics verified exact (metadata-after.json and inline prior entry). Pages remains404/unconfigured; deployment URL is a target, not a claim of a live GitHub Pages app. Owner must merge and enable Actions Pages. Static local live preview is available independently.
 - Initial feed deliberately42 discovered/3 populated/39catalog-only,2238 positions/9562history; later official discovery43 is documented and scoped new-entry deferral preserves unrequested universe. Source SEC403 is an honest limitation: offline fallback/worker validated, fresh SEC success not claimed. Derived NAV returns are not published standardized returns. First adjusted-close variance and later real DWS headline changes retained in separate evidence.
 - All requested implementation stages complete and pushed after scoped Conventional Commits; only owner review/explicit merge and Pages configuration remain. This final entry is prepared before its own commit, so it records the last independently verified implementation SHA rather than a circular self-hash; recover exact latest journal commit from Git/PR head, require local/remote equality before further work.
+
+### 2026-10-01 — User follow-up: exact iShares workflow/config approach (audit complete)
+- New user instruction verbatim: "check daggerok/iShares implement exactly same approach for github acrion workflows and update-data.config.json use - check everything related and do exactly the same". This explicitly replaces the prior all-baked-defaults workflow design for this concern. UI/provider/financial logic, supported Xtrackers controls and safe issuer pacing remain unchanged.
+- User later authorized a fresh short-lived credential ONLY for fast-forward push via process-scoped header, never file/Git config/URL/output. Actual secret value excluded from all records. Runtime-only transport started; no authenticated API operations used.
+- Fully read journal1243lines/109577bytes. Snapshot dropped .git/config and executable permission (not code): restored plain public origin URL and chmod+ x on updater after confirming exact live-accepted content hash57ace28cc767fd10820f1cd4ce7a32b2e6d994c4bd645a493dbfbfda43b751c9.
+- Remote feature advanced from our a8b3cb6 to external89ba459a248a4d1eb9bd97314b0d44c49b1c105b ("data update: Thu Oct1 17:25:13EDT2026"),251 API-only files. Read diff/log, then git merge --ff-only origin/feat/xtrackers-etfs; no remote changes overwritten, no force/rebase. Journal itself unchanged. Published current43/21171/77473; hash baseline recorded in workflow-config-followup/published-baseline-hashes.json. Earlier42/3 data statements remain historical, not current.
+- Public API PR#1 stillopen/unmerged; main unchanged13c6007. No local code changes before audit. Reinstalled Bun1.4.2 in excluded .local/bun and bun install --frozen-lockfile; baseline bun test69pass/0fail/601988assertions against expanded published data, no network in tests.
+- Fresh sparse clone of actual iShares defaultmain297a2e41e4a7a438ece2b8bde8e3384e960dfaeb; same pin as original reference. Config is scripts/update-data.config.json (root lookup absent was not evidence config missing). Entire .github/workflows/update-data.yml, JSON, loader, readConfig/env parser, help, GitHub summary/main consumers, tests, README, package, Dependabot inspected. No other iShares workflows exist; its optional backfill imports the same updater/config.
+- Required pattern: flat JSON string defaults; load relative to import.meta.url (cwd-independent), fill only missing/blank process ENV, nonblank ENV wins including0/false; ENOENT permits built-in fallbacks, other file/parse errors propagate. Workflow inputs optional strings/default="", env at job scope, schedule+manual only, checkoutv7/setup-bunv2 (no fixed Bun version), frozeninstall -> updatertests -> update -> api-only commit/push. Reference also appends GITHUB_STEP_SUMMARY automatically; include corresponding target diagnostic support without changing financial/source behavior.
+- Justified target-only deltas: DWS23 supported controls (TER/SEC_YIELD/SEC_UA/VERBOSE kept; no unsupported STORE_RAW_DOWNLOADS), safe DWS1.5s/2workers rather than iShares0/4, mandatory correct directive position, no persisted checkout/push credentials. Existing target CI/Pages remain; align their common action versions/setup pattern, do not delete separate required verification/deployment functionality or enable Pages/merge.
+- Reference README has stale1/2 defaults and unsupported switches; target related help/docs must match checked-in effective JSON, not copy inaccuracies. Record all deltas explicitly, not claim byte-identical different-provider files.
+- Evidence: research/2026-10-01/workflow-config-followup/reference.json, per-file SHA-256 plus full relevant config/loader/workflow. Authoritative textual input snapshots embedded here for self-contained recovery:
+REFERENCE CONFIG JSON:
+{
+  "MAX_FETCHES": "0",
+  "REQUEST_SLEEP": "0",
+  "AUM": ":",
+  "CONCURRENCY": "4",
+  "HOLDINGS_PAGE_SIZE": "250",
+  "HISTORY_PAGE_SIZE": "1000",
+  "STORE_RAW_DOWNLOADS": "false",
+  "MAX_RETRIES": "2",
+  "TICKERS": "",
+  "DIVIDEND_YIELD": ":",
+  "PERFORMANCE_YTD": ":",
+  "PERFORMANCE_1Y": ":",
+  "PERFORMANCE_3Y": ":",
+  "PERFORMANCE_5Y": ":",
+  "PERFORMANCE_10Y": ":",
+  "TOTAL_RETURN_YTD": ":",
+  "TOTAL_RETURN_1Y": ":",
+  "TOTAL_RETURN_3Y": ":",
+  "TOTAL_RETURN_5Y": ":",
+  "TOTAL_RETURN_10Y": ":",
+  "VERBOSE": "false"
+}
+
+REFERENCE LOADER (directive must be moved to first/second line in target):
+#!/usr/bin/env bun
+// Checked-in JSON is the runtime default; any nonblank environment value wins.
+import { readFileSync as readUpdaterConfig } from 'node:fs';
+try {
+  const updaterDefaults = JSON.parse(readUpdaterConfig(new URL('./update-data.config.json', import.meta.url), 'utf8')) as Record<string, unknown>;
+  for (const [key, value] of Object.entries(updaterDefaults)) {
+    const current = process.env[key];
+    if ((current === undefined || current.trim() === '') && value !== null && value !== undefined) process.env[key] = String(value);
+  }
+} catch (error) {
+  if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
+}
+
+REFERENCE DATA WORKFLOW:
+name: Update iShares ETF data
+on:
+  # Weekly refresh (every Sunday at 00:00 UTC) plus manual runs.
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+    inputs:
+      max_fetches:
+        description: "Batch size; continue after the saved ticker cursor; empty or 0 means all"
+        required: false
+        default: ""
+        type: string
+      request_sleep:
+        description: "Seconds between outgoing request starts"
+        required: false
+        default: ""
+        type: string
+      aum:
+        description: "AUM min:max; bounds may be amounts or nano/micro/small/mid/large"
+        required: false
+        default: ""
+        type: string
+      concurrency:
+        description: "Parallel fund update workers"
+        required: false
+        default: ""
+        type: string
+      holdings_page_size:
+        description: "Rows in each generated current-holdings JSON page"
+        required: false
+        default: ""
+        type: string
+      history_page_size:
+        description: "Rows in each generated historical NAV JSON page"
+        required: false
+        default: ""
+        type: string
+      store_raw_downloads:
+        description: "Store source XLS files (true/yes/on/1)"
+        required: false
+        default: ""
+        type: string
+      max_retries:
+        description: "Retries after the initial request (default 2)"
+        required: false
+        default: ""
+        type: string
+      tickers:
+        description: "Only update these tickers, separated by spaces or commas"
+        required: false
+        default: ""
+        type: string
+      dividend_yield:
+        description: "12m trailing dividend yield range: min:max, min:, :max, or :"
+        required: false
+        default: ""
+        type: string
+      performance_ytd:
+        description: "YTD NAV performance range: min:max, min:, :max, or :; colon required"
+        required: false
+        default: ""
+        type: string
+      performance_1y:
+        description: "1Y average-annual NAV performance range; colon required"
+        required: false
+        default: ""
+        type: string
+      performance_3y:
+        description: "3Y average-annual NAV performance/CAGR range; colon required"
+        required: false
+        default: ""
+        type: string
+      performance_5y:
+        description: "5Y average-annual NAV performance/CAGR range; colon required"
+        required: false
+        default: ""
+        type: string
+      performance_10y:
+        description: "10Y average-annual NAV performance/CAGR range; colon required"
+        required: false
+        default: ""
+        type: string
+      total_return_ytd:
+        description: "YTD cumulative NAV total-return range; colon required"
+        required: false
+        default: ""
+        type: string
+      total_return_1y:
+        description: "1Y cumulative NAV total-return range; colon required"
+        required: false
+        default: ""
+        type: string
+      total_return_3y:
+        description: "3Y cumulative NAV total-return range; colon required"
+        required: false
+        default: ""
+        type: string
+      total_return_5y:
+        description: "5Y cumulative NAV total-return range; colon required"
+        required: false
+        default: ""
+        type: string
+      total_return_10y:
+        description: "10Y cumulative NAV total-return range; colon required"
+        required: false
+        default: ""
+        type: string
+permissions: { contents: write }
+concurrency: { group: update-data, cancel-in-progress: false }
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      MAX_FETCHES: ${{ inputs.max_fetches || '' }}
+      REQUEST_SLEEP: ${{ inputs.request_sleep || '' }}
+      AUM: ${{ inputs.aum || '' }}
+      CONCURRENCY: ${{ inputs.concurrency || '' }}
+      HOLDINGS_PAGE_SIZE: ${{ inputs.holdings_page_size || '' }}
+      HISTORY_PAGE_SIZE: ${{ inputs.history_page_size || '' }}
+      STORE_RAW_DOWNLOADS: ${{ inputs.store_raw_downloads || '' }}
+      MAX_RETRIES: ${{ inputs.max_retries || '' }}
+      TICKERS: ${{ inputs.tickers || '' }}
+      DIVIDEND_YIELD: ${{ inputs.dividend_yield || '' }}
+      PERFORMANCE_YTD: ${{ inputs.performance_ytd || '' }}
+      PERFORMANCE_1Y: ${{ inputs.performance_1y || '' }}
+      PERFORMANCE_3Y: ${{ inputs.performance_3y || '' }}
+      PERFORMANCE_5Y: ${{ inputs.performance_5y || '' }}
+      PERFORMANCE_10Y: ${{ inputs.performance_10y || '' }}
+      TOTAL_RETURN_YTD: ${{ inputs.total_return_ytd || '' }}
+      TOTAL_RETURN_1Y: ${{ inputs.total_return_1y || '' }}
+      TOTAL_RETURN_3Y: ${{ inputs.total_return_3y || '' }}
+      TOTAL_RETURN_5Y: ${{ inputs.total_return_5y || '' }}
+      TOTAL_RETURN_10Y: ${{ inputs.total_return_10y || '' }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+      - name: Test updater
+        run: bun test scripts/update-data.test.ts
+      - name: Update data
+        run: bun scripts/update-data.ts
+      - name: Commit changed data
+        run: |
+          git add api/ishares
+          git diff --cached --quiet && exit 0
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git commit -m 'Update iShares ETF data'
+          git push
 
 =============================================================================
 FULL SELF-CONTAINED IMPLEMENTATION PLAN
