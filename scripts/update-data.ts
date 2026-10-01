@@ -6,7 +6,7 @@
 // Reporting, N-PORT and financial helpers follow pinned JPMorgan; see .worklog.txt.
 import { inflateRawSync } from 'node:zlib';
 import { readFileSync as readUpdaterConfig } from 'node:fs';
-import { readFile, readdir, mkdir, writeFile, rename, rm } from 'node:fs/promises';
+import { appendFile, readFile, readdir, mkdir, writeFile, rename, rm } from 'node:fs/promises';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readFile as outputReadFile, readdir as outputReadDir } from 'node:fs/promises';
@@ -1245,8 +1245,41 @@ export function deriveCatalogMetrics(returns: OfficialReturnRow, dividendYield: 
 }
 
 export type FundOutcome = { ticker: string; status: 'updated' | 'unchanged' | 'skipped' | 'failed'; freshSources: string[]; retainedSources: string[]; holdings: number; history: number; reason?: string };
-export type UpdateResult = { selected: string[]; outcomes: FundOutcome[]; failures: number; updated: number; counts: { funds: number; holdings: number; history: number } };
+export type UpdateResult = {
+  selected: string[]; outcomes: FundOutcome[]; failures: number; updated: number;
+  counts: { funds: number; holdings: number; history: number };
+  catalogFunds: number; catalogSource: string; manifestChanged: boolean; progressChanged: boolean; processedThrough: string | null;
+};
 export type RuntimeOptions = { root?: string; fetcher?: Fetcher };
+// Same iShares automatic GITHUB_STEP_SUMMARY presentation; no extra runtime knob.
+export function renderUpdateSummary(config: UpdaterConfig, result: UpdateResult): string {
+  const count = (status: FundOutcome['status']) => result.outcomes.filter(row => row.status === status).length;
+  const clean = (value: unknown) => outputClean(value).replace(/[\\`*_[\]<>|]/g, character => `\\${character}`);
+  const markdown = [
+    '## Xtrackers updater', '', '| Result | Count |', '|---|---:|',
+    `| Catalog funds | ${result.catalogFunds} |`, `| Fund update attempts | ${result.outcomes.length} |`,
+    `| Updated | ${count('updated')} |`, `| Unchanged | ${count('unchanged')} |`,
+    `| Filtered | ${count('skipped')} |`, `| Failed | ${count('failed')} |`,
+    `| Published funds | ${result.counts.funds} |`, `| Holdings rows | ${result.counts.holdings} |`, `| History rows | ${result.counts.history} |`,
+    `| Manifest changed | ${result.manifestChanged ? 'yes' : 'no'} |`, `| Progress state changed | ${result.progressChanged ? 'yes' : 'no'} |`,
+    `| Processed through | ${result.processedThrough || '—'} |`, '', `Catalog source: ${clean(result.catalogSource)}`, '',
+    '<details><summary>Configuration</summary>', '', '```text',
+    ...outputConfigEntries(config).map(([key, value]) => `${key}=${outputClean(value).replace(/`/g, "'")}`),
+    '```', '</details>', '',
+  ];
+  for (const [title, outcomes] of [
+    ['Filtered funds', result.outcomes.filter(row => row.status === 'skipped')],
+    ['Failures', result.outcomes.filter(row => row.status === 'failed')],
+    ['Retained published data', result.outcomes.filter(row => row.status !== 'skipped' && row.status !== 'failed' && row.retainedSources.length > 0)],
+  ] as const) {
+    if (outcomes.length) markdown.push(`### ${title}`, '', ...outcomes.map(row => `- **${row.ticker}**: ${clean(row.reason || row.retainedSources.join(', '))}`), '');
+  }
+  return markdown.join('\n') + '\n';
+}
+export async function writeSummary(config: UpdaterConfig, result: UpdateResult, path = process.env.GITHUB_STEP_SUMMARY): Promise<void> {
+  if (path?.trim()) await appendFile(path, renderUpdateSummary(config, result));
+}
+
 const API_ROOT = fileURLToPath(new URL('../api/xtrackers/', import.meta.url));
 function catalogFromPrevious(row: JsonRecord): CatalogFund {
   const ticker = sanitizeTicker(row.ticker);
@@ -1420,7 +1453,7 @@ export async function runUpdater(config: UpdaterConfig, options: RuntimeOptions 
   const filtered = universe.filter(fund => !config.tickers.size || config.tickers.has(fund.ticker));
   const deferred = Boolean(config.aumRange || config.terRange || config.dividendYieldRange || config.secYieldRange || Object.keys(config.performanceRanges).length || Object.keys(config.totalReturnRanges).length);
   outputPrintFilter(filtered.length, universe.length, deferred);
-  const updateState = await readJson(join(root, 'update-state.json'));
+  const statePath = join(root, 'update-state.json'), updateState = await readJson(statePath);
   const scope = outputContentKey({ tickers: [...config.tickers].sort(), aum: config.aumRange, ter: config.terRange, dividend: config.dividendYieldRange, sec: config.secYieldRange, performance: config.performanceRanges, totalReturn: config.totalReturnRanges });
   const cursor = config.maxFetches > 0 && updateState.scope === scope ? cleanText(updateState.cursor) || null : null;
   const batch = selectUpdateBatch(filtered, config.maxFetches, cursor), queue = [...batch];
@@ -1447,20 +1480,23 @@ export async function runUpdater(config: UpdaterConfig, options: RuntimeOptions 
   await Promise.all(Array.from({ length: Math.min(config.concurrency, batch.length) }, worker));
   const funds = [...rows.values()].sort((a, b) => String(a.ticker).localeCompare(String(b.ticker)));
   const counts = { funds: funds.length, holdings: funds.reduce((sum, row) => sum + (numberOrNull(row.holdings) || 0), 0), history: funds.reduce((sum, row) => sum + (numberOrNull(row.history) || 0), 0) };
-  await writeJsonIfChanged(join(root, 'index.json'), {
+  const manifestChanged = await writeJsonIfChanged(join(root, 'index.json'), {
     provider: 'Xtrackers (DWS)', generatedAt: new Date().toISOString(),
     source: catalogFresh ? { catalog: CATALOG_URL, catalogSource, sitemap: SITEMAP_URL, site: 'https://etf.dws.com/en-us/', trust: 'DBX ETF TRUST', trustCik: TRUST_CIK } : previousIndex.source,
     counts, funds,
   });
   const failures = outcomes.filter(result => result.status === 'failed').length;
+  let progressChanged = false;
   if (!failures) {
-    if (config.maxFetches > 0 && batch.length) await writeJsonIfChanged(join(root, 'update-state.json'), { scope, cursor: batch.at(-1)?.ticker, generatedAt: new Date().toISOString() });
-    else if (config.maxFetches === 0) await rm(join(root, 'update-state.json'), { force: true });
+    if (config.maxFetches > 0 && batch.length) progressChanged = await writeJsonIfChanged(statePath, { scope, cursor: batch.at(-1)?.ticker, generatedAt: new Date().toISOString() });
+    else if (config.maxFetches === 0) { progressChanged = await Bun.file(statePath).exists(); await rm(statePath, { force: true }); }
   }
   const updated = outcomes.filter(result => result.status === 'updated').length;
   console.log(`[ done     ] ${updated} funds updated, ${failures} failures`);
   console.log(`[ done     ] counts: funds=${counts.funds} holdings=${counts.holdings} history=${counts.history}; processed=${outcomes.length} skipped=${outcomes.filter(result => result.status === 'skipped').length}`);
-  return { selected: batch.map(fund => fund.ticker), outcomes, failures, updated, counts };
+  return { selected: batch.map(fund => fund.ticker), outcomes, failures, updated, counts,
+    catalogFunds: universe.length, catalogSource, manifestChanged, progressChanged,
+    processedThrough: failures ? cursor : config.maxFetches > 0 && batch.length ? batch.at(-1)?.ticker || null : null };
 }
 export { outputFundLine, outputConfigEntries };
 if (import.meta.main) {
@@ -1469,7 +1505,9 @@ if (import.meta.main) {
     if (args.some(arg => arg === '-h' || arg === '--help')) printHelp();
     else {
       if (args.length) throw new Error(`unknown arguments: ${args.join(' ')}`);
-      const result = await runUpdater(readConfig());
+      const config = readConfig();
+      const result = await runUpdater(config);
+      await writeSummary(config, result);
       if (result.failures) process.exitCode = 1;
     }
   } catch (error) { console.error(`[ failed   ] ${errorMessage(error)}`); process.exitCode = 1; }

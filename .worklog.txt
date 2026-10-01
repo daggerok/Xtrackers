@@ -1,18 +1,18 @@
 CURRENT STATE
 =============
 - Goal/acceptance: follow-up requested by user: mirror daggerok/iShares GitHub Actions and scripts/update-data.config.json approach in Xtrackers, including loader/precedence, help, docs and tests. Preserve issuer fetch/parse/financial/UI logic and current published data.
-- Status: Checked-in JSON/default loading/ENV precedence/help checkpoint complete;74 offline tests pass. Workflow/related diagnostics/docs and live config acceptance remain. UI/data untouched.
+- Status: JSON config and iShares workflow/automatic summary/related docs/tests implemented;77 offline tests pass. Real scoped CLI configuration acceptance and final remote verification remain. UI/published data untouched.
 - Repository: https://github.com/daggerok/Xtrackers
 - Branch: feat/xtrackers-etfs; existing PR #1 OPEN, not merged: https://github.com/daggerok/Xtrackers/pull/1.
 - Authorization: target-only edits/commits/ordinary fast-forward pushes to this branch/PR. No merge, force push, sibling edits, About changes or production data refresh.
 - Hard constraints: Bun-only, dependencies={}, exact types-only dev deps, no tsc/tsconfig; full embedded plan preserved; secrets never in files/config/URLs/output; first/second-line reference directive. New iShares config/workflow instruction overrides prior baked/manual-default design, not DWS-specific safe pacing or supported controls.
-- Completed: reference/baseline audit and external data preservation; checked-in23-control config +module-relative loading +nonblankENV precedence/ENOENT fallback +JSON-aware help;74 offline tests pass.
-- Remaining: workflow job-level env+blank inputs/actions alignment; GitHub summary/README/CI/Pages/contract guards; scoped real CLI config acceptance; final diff/remote CI/PR readback.
-- Last confirmed pushed checkpoint SHA: c41e75e0da1fec293dea8a00c22e8e4ec0136743 (local/remote verified). External data baseline89ba459 preserved; main13c6007 unchanged.
+- Completed: pinned reference audit;23-control JSON/default precedence; blank optional string inputs +jobENV +reference install/test/update/api-commit sequence; checkoutv7/setup-bunv2 without fixed version in all workflows; automatic GitHub summary; README/contracts/bootstrap tests;77 offline tests +both builds/frozen lock/diff checks.
+- Remaining: isolated actual CLI3-ticker acceptance with checked-in defaults and blank ENV; final baseline/diff/remote CI/PR readback and scoped evidence checkpoint.
+- Last confirmed pushed checkpoint SHA: ecd78dc202b3a6751d733b919da97f77e9a40318 (config stage local/remote verified). External data baseline89ba459 preserved; main13c6007 unchanged.
 - Current published data:43 funds /21171 holdings /77473 history from the user's external update; all files must remain untouched by this follow-up.
 - Reference: daggerok/iShares main297a2e41e4a7a438ece2b8bde8e3384e960dfaeb; config lives in scripts/, NOT repo root. Full relevant snapshots below/reference.json.
 - Blockers: none; fresh short-lived push credential supplied, held only in runtime memory. No API-auth use authorized/needed; public readback is unauthenticated.
-- Exact next action: mirror pinned iShares data-workflow job-level env, blank string inputs, checkoutv7/setup-bunv2 and install/test/update/commit sequence; align CI/Pages common setup, add automatic GitHub step summary and focused tests/README. Preserve safe credential handling and all23 supported controls; no financial/UI/API changes.
+- Exact next action: push this coherent workflow/reporting stage, then run TICKERS="ASHR HYLB DBEF" against real sources in an isolated public remote clone with all other manual ENV blank, safe JSON1.5/2 defaults and GITHUB_STEP_SUMMARY; verify unrequested entries/files and target251-file baseline, record evidence, inspect public CI/PR. Never run an unrestricted live update.
 
 === 1st PROMPT: COPY-PASTE THIS TO THE IMPLEMENTING AGENT (WITH YOUR GITHUB ACCESS TOKEN) ===
 
@@ -732,6 +732,19 @@ jobs:
 - Added5 offline regression tests: exact23-key file/runtime equality; missing/blankENV inheritance; explicit zero/false and all financial ranges/contact/tickers precedence; scalar/null cases and valid edits; missing/malformed/unreadable/nonflat config behavior; CLI help from a different cwd.
 - Strict local checks:74pass/0fail (previous69 retained), both Bun builds success, git diff--check clean. Source/API/UI/hash baselines remain unchanged except config plumbing in updater; no live source request in this checkpoint.
 - Next: data workflow mirror and related summary/docs/CI/Pages contract validation, separate coherent checkpoint.
+
+### 2026-10-01 — Exact iShares workflow mechanics +automatic Actions summary (completed)
+- Config stage ecd78dc202b3a6751d733b919da97f77e9a40318 ordinary-pushed; helper readback confirmed local/remote equality. Prior audit c41e75e and external API-only89ba459 preserved.
+- update-data.yml now mirrors pinned iShares Sunday00UTC/manual, all supported optional STRING inputs with EMPTY defaults (including VERBOSE; blank means JSON, explicit false survives), canonical job-level ENV, global serialized update-data group/no cancel, checkout@v7, setup-bun@v2 with NO bun-version, frozen install→updater tests→normal CLI→conditional api-only commit/push.
+- Removed old continue-on-error/commit-healthy-on-failure/final-error pattern and extra step chain to follow reference exactly: an updater failure now prevents commit. Runtime continues per fund and retains published data as before; no failed-provider data invention. No branch merge, deployment or live workflow dispatch performed.
+- Security-specific intentional adaptation: checkout persist-credentials:false; conditional commit uses existing NONSECRET temporary askpass program, with literal GH_TOKEN variable reference and runner token only in process memory, trap cleanup, no credentials in Git config/URL/file. The bot identity and conventional data commit stay; no force push. Target23 supported knobs retained rather than reference unsupported raw downloads.
+- CI and main-only Pages retained (reference repo currently only has data workflow); common checkoutv7/unpinned setup-bunv2 conventions aligned. Pages stages only public app/feed; guards/deploy permissions unchanged. Monthly Bun/Actions Dependabot already matched, unchanged. package.json/lock/runtime deps remain unchanged.
+- Automatic GITHUB_STEP_SUMMARY uses same reference result table +configuration details +filtered/failure reasons. Adapted to native Xtrackers statuses, published counts, catalog source, real manifest/progress change flags and retained-source diagnostics. CLI writes it only when GITHUB_STEP_SUMMARY is supplied; helper tests target separate temporary summary roots, never API. Presentation result fields capture already-performed writes; fetch/parse/filter/financial/stable-write/retention semantics unchanged.
+- README config path, ENV-over-JSON priority, blank manual defaults, zero/false semantics, missing vs invalid-file behavior, truthful safe1.5/2, fail-before-push, summary/actions and nonsecret credential handling documented without changing pinned family headings/intro/brand rows. Initial seed remains explicitly historical; current external43/21171/77473 also stated.
+- Updated automation contracts to blank optional strings/job ENV/reference6-step chain/global serialization/actions/no fixed Bun/conditional api-only commit/default failure gating/security; added real bootstrap subprocess JSON-edit/override/blank/ENOENT/malformed/help checks and actual offline orchestrator summary/cursor/filter/cached diagnostics checks.
+- Initial new summary test failed76pass/1fail because the test put step-summary.md INSIDE the temporary API hash root, correctly detecting one additional file. Fixed TEST path to a separate temp root and cleanup; did not weaken hash helper or change runtime behavior. Strict rerun77pass/0fail/602161expectations; frozen install and both Bun builds success; diff--check clean. No false green/commit after failed check (set-e used).
+- All251 published API hashes exactly match new external baseline; app.tsx/index.html hashes exact; no runtime dependencies, financial/UI/provider edits, credentials, generated build output or production data refresh. Pinned reference/target workflow comparison saved in research/2026-10-01/workflow-config-followup/workflow-comparison.json.
+- Next: isolated actual remote-clone CLI3-ticker checked-in-default/blankENV acceptance and remote CI/PR readback; separate evidence checkpoint.
 
 =============================================================================
 FULL SELF-CONTAINED IMPLEMENTATION PLAN

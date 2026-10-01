@@ -23,7 +23,11 @@ bun test scripts/update-data.test.ts
 
 Run `./scripts/update-data.ts -h` (or `--help`) to print every configuration variable with its default and usage examples.
 
-The **Update Xtrackers ETF data** GitHub Actions workflow exposes the same settings as manual inputs. All supplied filters use **AND** logic. The weekly schedule is Sunday 00:00 UTC, plus manual runs. All 23 controls are exposed; no provider-skip switches. Healthy funds continue when one fails; validated healthy data can be committed, and partial failures remain visible as a failed workflow result.
+The **Update Xtrackers ETF data** GitHub Actions workflow uses the same approach as [iShares](https://github.com/daggerok/iShares/blob/297a2e41e4a7a438ece2b8bde8e3384e960dfaeb/.github/workflows/update-data.yml): Sunday 00:00 UTC and manual runs; all 23 supported controls are optional string inputs with empty defaults, mapped to job-level ENV. Checkout v7 → setup-bun v2 (no fixed Bun version) → frozen install → updater tests → updater → commit/push only changed `api/xtrackers` files. No changes means no commit. A failed updater prevents the commit step; it still continues per fund and preserves previously published data. In GitHub Actions it automatically appends configuration, counts, filtered/failure reasons and retained-source diagnostics to `GITHUB_STEP_SUMMARY`.
+
+[scripts/update-data.config.json](scripts/update-data.config.json) is the checked-in runtime default, loaded relative to the updater, not the current working directory. Edit this flat JSON to change defaults locally and in Actions. Any **nonblank ENV value wins over JSON**, including `0` and `false`; absent, empty or whitespace-only values inherit JSON. Thus blank manual inputs and scheduled runs use the same checked-in defaults. Only a missing JSON file permits built-in fallbacks; malformed or unreadable configuration fails instead of being silently ignored. `--help` prints the JSON defaults. DWS-safe pacing stays at **1.5 seconds / 2 lanes** rather than copying iShares' issuer-specific 0/4. `STORE_RAW_DOWNLOADS` and provider-skip switches are not supported. All supplied filters use **AND** logic.
+
+CI and the main-only Pages workflow retain their checks/deployment guards and use the same checkout/setup-bun conventions. Dependabot remains monthly for Bun and GitHub Actions. Checkout never persists credentials; the push step uses the runner token only in process memory via a temporary nonsecret askpass program, never a token in a file or Git configuration.
 
 ### Data sources
 
@@ -34,7 +38,7 @@ The **Update Xtrackers ETF data** GitHub Actions workflow exposes the same setti
 | Daily history, distributions | `/api/pdp/en-us/Export/etf/{TICKER}/Performance` (daily NAV, capital E) and `/api/pdp/en-us/export/etf/{TICKER}/Distributions` (total cash distributions, XLSX). |
 | Fallback | SEC EDGAR N-PORT-P holdings only (DBX ETF TRUST, CIK `0001503123`, exact series/trust matching) + Yahoo Finance chart prices/dividends/history; previously published data as the last resort. |
 
-The official finder workbook was genuinely empty during research; the official US sitemap provided dynamic discovery, not a hardcoded ticker list. The initial published snapshot contains **42 discovered funds, 3 downloaded (ASHR, HYLB, DBEF), 39 catalog-only**: 2,238 positions and 9,562 daily-history rows. Later live discovery found 43 funds; a scoped run does not insert or modify an unrequested new entry. A full pass populates new discoveries. Unknown facts are unavailable, never invented as zero.
+The official finder workbook was genuinely empty during research; the official US sitemap provided dynamic discovery, not a hardcoded ticker list. The initial published snapshot contains **42 discovered funds, 3 downloaded (ASHR, HYLB, DBEF), 39 catalog-only**: 2,238 positions and 9,562 daily-history rows. Later live discovery found 43 funds; a scoped run does not insert or modify an unrequested new entry. A full pass populates new discoveries. The later external data-only update on this feature branch contains **43 funds, 21,171 positions and 77,473 history rows**; this configuration/workflow follow-up leaves those published files unchanged. Unknown facts are unavailable, never invented as zero.
 
 Official NAV history uses `Date / NAV / Market Price / Premium/Discount`; the market price comes from Yahoo and premium/discount requires a matching NAV date. Yahoo-only fallback uses `Date / Close / Adj Close / Volume`, with adjusted closes rounded to two decimals. Dataset source dates can differ and returns use the covered NAV series, not the fetch timestamp or a newer headline date. NAV total returns reinvest the total cash distribution once on the exact ex-date. Missing payout NAV, stale window anchors, incomplete inception coverage and young funds leave unsupported metrics unavailable; Morningstar ratings are not performance returns. Derived figures are **not published standardized NAV returns**.
 
@@ -50,6 +54,8 @@ Each fund carries a derived `metrics` object that powers the catalog columns sha
 - `secYield` — 30-day SEC yield when published; `—` otherwise
 
 ### Update controls
+
+Defaults below are from `scripts/update-data.config.json`; blank Actions inputs do not override them.
 
 | Environment variable | Default | Meaning |
 | --- | --: | --- |

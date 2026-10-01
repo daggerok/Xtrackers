@@ -13,15 +13,19 @@ function headings(text: string): string[] {
 }
 
 describe('automation/config/help/documentation contract (offline)', () => {
-  test('all 23 defaults and input/env mappings agree, with no undocumented skip switches', async () => {
+  test('JSON controls have blank optional string inputs, job ENV mapping and truthful help/docs', async () => {
     const workflow = await yaml('.github/workflows/update-data.yml');
     const inputs = record(record(record(workflow.on).workflow_dispatch).inputs);
     expect(Object.keys(inputs).length).toBe(23); expect(Object.keys(inputs).length).toBeLessThanOrEqual(25);
     expect(Object.keys(inputs).map(key => key.toUpperCase()).sort()).toEqual(Object.keys(CONTROL_DEFAULTS).sort());
-    for (const [key, value] of Object.entries(CONTROL_DEFAULTS)) expect(String(record(inputs[key.toLowerCase()]).default)).toBe(value);
-    const steps = array(record(record(workflow.jobs).update).steps).map(record);
-    const refresh = steps.find(step => step.id === 'refresh'); expect(refresh).toBeDefined();
-    const env = record(refresh?.env);
+    expect(JSON.parse(await read('scripts/update-data.config.json'))).toEqual(CONTROL_DEFAULTS);
+    for (const key of Object.keys(CONTROL_DEFAULTS)) {
+      const input = record(inputs[key.toLowerCase()]);
+      expect(input.default).toBe(''); expect(input.type).toBe('string'); expect(input.required).toBe(false);
+    }
+    const job = record(record(workflow.jobs).update), steps = array(job.steps).map(record);
+    const refresh = steps.find(step => step.name === 'Update data'); expect(refresh).toBeDefined(); expect(refresh?.env).toBeUndefined();
+    const env = record(job.env);
     expect(Object.keys(env).sort()).toEqual(Object.keys(CONTROL_DEFAULTS).sort());
     for (const key of Object.keys(CONTROL_DEFAULTS)) expect(env[key]).toBe(`\${{ inputs.${key.toLowerCase()} || '' }}`);
     expect(outputConfigEntries(readConfig({})).map(([key]) => key).sort()).toEqual(Object.keys(CONTROL_DEFAULTS).sort());
@@ -35,18 +39,28 @@ describe('automation/config/help/documentation contract (offline)', () => {
       expect(text).not.toContain('SKIP_YAHOO'); expect(text).not.toContain('HISTORY_RANGE'); expect(text).not.toContain('EDGAR_FALLBACK');
     }
   });
-  test('weekly/manual trigger, scoped commit, retained-data handling and credential hygiene are configured', async () => {
+  test('weekly/manual reference step order, fail-before-push, api-only conditional commit and credential hygiene', async () => {
     const workflow = await yaml('.github/workflows/update-data.yml');
     expect(record(array(record(workflow.on).schedule)[0]).cron).toBe('0 0 * * 0');
     expect(record(workflow.on).workflow_dispatch).toBeDefined();
     const steps = array(record(record(workflow.jobs).update).steps).map(record);
-    const checkout = steps.find(step => step.uses === 'actions/checkout@v6'); expect(record(checkout?.with)['persist-credentials']).toBe(false);
-    const refresh = steps.find(step => step.id === 'refresh'); expect(refresh?.['continue-on-error']).toBe(true);
-    expect(steps.some(step => step.if === "steps.refresh.outcome == 'failure'" && String(step.run).includes('exit 1'))).toBe(true);
+    expect(steps.map(step => step.uses || step.name)).toEqual([
+      'actions/checkout@v7', 'oven-sh/setup-bun@v2', 'Install dependencies', 'Test updater', 'Update data', 'Commit changed data',
+    ]);
+    expect(record(steps[0].with)['persist-credentials']).toBe(false); expect(steps[1].with).toBeUndefined();
+    expect(steps[2].run).toBe('bun install --frozen-lockfile'); expect(steps[3].run).toBe('bun test scripts/update-data.test.ts');
+    expect(steps[4].run).toBe('bun scripts/update-data.ts');
+    expect(steps.every(step => step['continue-on-error'] === undefined && step.if === undefined)).toBe(true);
+    expect(record(workflow.permissions).contents).toBe('write');
+    expect(record(workflow.concurrency)).toEqual({ group: 'update-data', 'cancel-in-progress': false });
+    expect(String(steps[5].run)).toContain('git diff --cached --quiet'); expect(String(steps[5].run)).toContain('then exit 0');
     const source = await read('.github/workflows/update-data.yml');
     expect(source).toContain('git add api/xtrackers'); expect(source).not.toContain('git add .'); expect(source).not.toContain('--force');
     expect(source).toContain("<<'ASKPASS'"); expect(source).toContain('persist-credentials: false');
     expect(source).not.toContain('extraheader'); expect(source).not.toContain('git config credential');
+    expect(source).not.toContain('bun-version'); expect(source).not.toContain('pull_request'); expect(source).not.toContain('STORE_RAW_DOWNLOADS');
+    const readme = await read('README.md'); expect(readme).toContain('nonblank ENV value wins over JSON');
+    expect(readme).toContain('failed updater prevents the commit step'); expect(readme).toContain('GITHUB_STEP_SUMMARY');
   });
   test('Pages is main-only and stages public app/feed, not logs, tooling, credentials or research', async () => {
     const pages = await yaml('.github/workflows/pages.yml');
@@ -59,6 +73,15 @@ describe('automation/config/help/documentation contract (offline)', () => {
     const dependabot = await yaml('.github/dependabot.yml');
     expect(array(dependabot.updates).map(item => record(item)['package-ecosystem']).sort()).toEqual(['bun', 'github-actions']);
     expect(array(dependabot.updates).every(item => record(record(item).schedule).interval === 'monthly')).toBe(true);
+    for (const file of ['ci.yml', 'pages.yml', 'update-data.yml']) {
+      const jobs = record((await yaml('.github/workflows/' + file)).jobs);
+      for (const job of Object.values(jobs).map(record)) {
+        const steps = array(job.steps).map(record);
+        const checkout = steps.find(step => step.uses === 'actions/checkout@v7'); expect(checkout).toBeDefined();
+        expect(record(checkout?.with)['persist-credentials']).toBe(false);
+        expect(steps.find(step => step.uses === 'oven-sh/setup-bun@v2')?.with).toBeUndefined();
+      }
+    }
     const ci = await read('.github/workflows/ci.yml');
     for (const check of ['bun install --frozen-lockfile', 'bun test', 'bun build --target=bun scripts/update-data.ts', 'bun build app.tsx', 'git diff --check']) expect(ci).toContain(check);
   });

@@ -1,0 +1,410 @@
+{
+  "reference": {
+    "repository": "daggerok/iShares",
+    "sha": "297a2e41e4a7a438ece2b8bde8e3384e960dfaeb",
+    "schedule": [
+      {
+        "cron": "0 0 * * 0"
+      }
+    ],
+    "inputs": [
+      {
+        "key": "max_fetches",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "request_sleep",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "aum",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "concurrency",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "holdings_page_size",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "history_page_size",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "store_raw_downloads",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "max_retries",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "tickers",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "dividend_yield",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "performance_ytd",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "performance_1y",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "performance_3y",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "performance_5y",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "performance_10y",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "total_return_ytd",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "total_return_1y",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "total_return_3y",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "total_return_5y",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "total_return_10y",
+        "type": "string",
+        "required": false,
+        "default": ""
+      }
+    ],
+    "env": {
+      "MAX_FETCHES": "${{ inputs.max_fetches || '' }}",
+      "REQUEST_SLEEP": "${{ inputs.request_sleep || '' }}",
+      "AUM": "${{ inputs.aum || '' }}",
+      "CONCURRENCY": "${{ inputs.concurrency || '' }}",
+      "HOLDINGS_PAGE_SIZE": "${{ inputs.holdings_page_size || '' }}",
+      "HISTORY_PAGE_SIZE": "${{ inputs.history_page_size || '' }}",
+      "STORE_RAW_DOWNLOADS": "${{ inputs.store_raw_downloads || '' }}",
+      "MAX_RETRIES": "${{ inputs.max_retries || '' }}",
+      "TICKERS": "${{ inputs.tickers || '' }}",
+      "DIVIDEND_YIELD": "${{ inputs.dividend_yield || '' }}",
+      "PERFORMANCE_YTD": "${{ inputs.performance_ytd || '' }}",
+      "PERFORMANCE_1Y": "${{ inputs.performance_1y || '' }}",
+      "PERFORMANCE_3Y": "${{ inputs.performance_3y || '' }}",
+      "PERFORMANCE_5Y": "${{ inputs.performance_5y || '' }}",
+      "PERFORMANCE_10Y": "${{ inputs.performance_10y || '' }}",
+      "TOTAL_RETURN_YTD": "${{ inputs.total_return_ytd || '' }}",
+      "TOTAL_RETURN_1Y": "${{ inputs.total_return_1y || '' }}",
+      "TOTAL_RETURN_3Y": "${{ inputs.total_return_3y || '' }}",
+      "TOTAL_RETURN_5Y": "${{ inputs.total_return_5y || '' }}",
+      "TOTAL_RETURN_10Y": "${{ inputs.total_return_10y || '' }}"
+    },
+    "steps": [
+      {
+        "uses": "actions/checkout@v7"
+      },
+      {
+        "uses": "oven-sh/setup-bun@v2"
+      },
+      {
+        "name": "Install dependencies",
+        "run": "bun install --frozen-lockfile"
+      },
+      {
+        "name": "Test updater",
+        "run": "bun test scripts/update-data.test.ts"
+      },
+      {
+        "name": "Update data",
+        "run": "bun scripts/update-data.ts"
+      },
+      {
+        "name": "Commit changed data",
+        "run": "git add api/ishares\ngit diff --cached --quiet && exit 0\ngit config user.name github-actions[bot]\ngit config user.email 41898282+github-actions[bot]@users.noreply.github.com\ngit commit -m 'Update iShares ETF data'\ngit push\n"
+      }
+    ]
+  },
+  "target": {
+    "schedule": [
+      {
+        "cron": "0 0 * * 0"
+      }
+    ],
+    "inputs": [
+      {
+        "key": "max_fetches",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "request_sleep",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "concurrency",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "tickers",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "aum",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "ter",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "dividend_yield",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "sec_yield",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "holdings_page_size",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "history_page_size",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "max_retries",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "sec_ua",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "verbose",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "performance_ytd",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "total_return_ytd",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "performance_1y",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "total_return_1y",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "performance_3y",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "total_return_3y",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "performance_5y",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "total_return_5y",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "performance_10y",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "total_return_10y",
+        "type": "string",
+        "required": false,
+        "default": ""
+      }
+    ],
+    "env": {
+      "MAX_FETCHES": "${{ inputs.max_fetches || '' }}",
+      "REQUEST_SLEEP": "${{ inputs.request_sleep || '' }}",
+      "CONCURRENCY": "${{ inputs.concurrency || '' }}",
+      "TICKERS": "${{ inputs.tickers || '' }}",
+      "AUM": "${{ inputs.aum || '' }}",
+      "TER": "${{ inputs.ter || '' }}",
+      "DIVIDEND_YIELD": "${{ inputs.dividend_yield || '' }}",
+      "SEC_YIELD": "${{ inputs.sec_yield || '' }}",
+      "HOLDINGS_PAGE_SIZE": "${{ inputs.holdings_page_size || '' }}",
+      "HISTORY_PAGE_SIZE": "${{ inputs.history_page_size || '' }}",
+      "MAX_RETRIES": "${{ inputs.max_retries || '' }}",
+      "SEC_UA": "${{ inputs.sec_ua || '' }}",
+      "VERBOSE": "${{ inputs.verbose || '' }}",
+      "PERFORMANCE_YTD": "${{ inputs.performance_ytd || '' }}",
+      "TOTAL_RETURN_YTD": "${{ inputs.total_return_ytd || '' }}",
+      "PERFORMANCE_1Y": "${{ inputs.performance_1y || '' }}",
+      "TOTAL_RETURN_1Y": "${{ inputs.total_return_1y || '' }}",
+      "PERFORMANCE_3Y": "${{ inputs.performance_3y || '' }}",
+      "TOTAL_RETURN_3Y": "${{ inputs.total_return_3y || '' }}",
+      "PERFORMANCE_5Y": "${{ inputs.performance_5y || '' }}",
+      "TOTAL_RETURN_5Y": "${{ inputs.total_return_5y || '' }}",
+      "PERFORMANCE_10Y": "${{ inputs.performance_10y || '' }}",
+      "TOTAL_RETURN_10Y": "${{ inputs.total_return_10y || '' }}"
+    },
+    "steps": [
+      {
+        "uses": "actions/checkout@v7",
+        "with": {
+          "persist-credentials": false
+        }
+      },
+      {
+        "uses": "oven-sh/setup-bun@v2"
+      },
+      {
+        "name": "Install dependencies",
+        "run": "bun install --frozen-lockfile"
+      },
+      {
+        "name": "Test updater",
+        "run": "bun test scripts/update-data.test.ts"
+      },
+      {
+        "name": "Update data",
+        "run": "bun scripts/update-data.ts"
+      },
+      {
+        "name": "Commit changed data",
+        "run": "set -euo pipefail\ngit add api/xtrackers\nif git diff --cached --quiet; then exit 0; fi\ngit config user.name \"github-actions[bot]\"\ngit config user.email \"41898282+github-actions[bot]@users.noreply.github.com\"\ngit commit -m \"chore(data): update Xtrackers ETF snapshot\"\naskpass=\"$(mktemp \"$RUNNER_TEMP/xtrackers-askpass.XXXXXX\")\"\ntrap 'rm -f \"$askpass\"' EXIT\ncat > \"$askpass\" <<'ASKPASS'\n#!/bin/sh\ncase \"$1\" in\n  *Username*) printf 'x-access-token\\n' ;;\n  *Password*) printf '%s\\n' \"$GH_TOKEN\" ;;\nesac\nASKPASS\nchmod 700 \"$askpass\"\nGIT_ASKPASS=\"$askpass\" GIT_TERMINAL_PROMPT=0 git -c credential.helper= push origin \"HEAD:${GITHUB_REF_NAME}\"\n"
+      }
+    ],
+    "config": {
+      "MAX_FETCHES": "0",
+      "REQUEST_SLEEP": "1.5",
+      "CONCURRENCY": "2",
+      "TICKERS": "",
+      "AUM": ":",
+      "TER": ":",
+      "DIVIDEND_YIELD": ":",
+      "SEC_YIELD": ":",
+      "HOLDINGS_PAGE_SIZE": "250",
+      "HISTORY_PAGE_SIZE": "1000",
+      "MAX_RETRIES": "2",
+      "SEC_UA": "daggerok Xtrackers ETF feed (https://github.com/daggerok/Xtrackers)",
+      "VERBOSE": "false",
+      "PERFORMANCE_YTD": ":",
+      "TOTAL_RETURN_YTD": ":",
+      "PERFORMANCE_1Y": ":",
+      "TOTAL_RETURN_1Y": ":",
+      "PERFORMANCE_3Y": ":",
+      "TOTAL_RETURN_3Y": ":",
+      "PERFORMANCE_5Y": ":",
+      "TOTAL_RETURN_5Y": ":",
+      "PERFORMANCE_10Y": ":",
+      "TOTAL_RETURN_10Y": ":"
+    },
+    "updaterSha256": "3582290819276bbdac75a42503a263f3b717ad1a568a85e693f9a96d321453ac"
+  },
+  "adaptations": [
+    "Xtrackers names/api path and 23 actually supported knobs; no unsupported STORE_RAW_DOWNLOADS",
+    "DWS-safe JSON defaults REQUEST_SLEEP1.5 and CONCURRENCY2; exact original fetch/financial logic retained",
+    "checkout persist-credentials:false and existing temporary NONSECRET askpass code for process-memory-only runner token",
+    "existing main-only Pages and CI preserved; common actions/setup aligned; updater summary uses native Xtrackers outcomes"
+  ]
+}

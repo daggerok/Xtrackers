@@ -622,3 +622,71 @@ describe('iShares-style checked-in default config and nonblank ENV priority', ()
     expect(text).toContain('REQUEST_SLEEP=1.5'); expect(text).toContain('CONCURRENCY=2');
   });
 });
+
+import { renderUpdateSummary, writeSummary } from './update-data';
+describe('iShares-style automatic GitHub reporting (offline actual updater)', () => {
+  test('summary has all effective controls, true zeros, outcomes/counts/failures without changing feed bytes', async () => {
+    const root = await tempRoot(), summaryRoot = await tempRoot();
+    try {
+      await seed(root);
+      const config = readConfig({ TICKERS: 'ASHR HYLB DBEF', REQUEST_SLEEP: '0', MAX_FETCHES: '3' });
+      const result = await quietRun(root, { MAX_FETCHES: '3' }, fixtureFetch(['/HYLB/Securities']));
+      expect(result.manifestChanged).toBe(true); expect(result.progressChanged).toBe(false); expect(result.processedThrough).toBeNull();
+      const before = await hashes(root), path = join(summaryRoot, 'step-summary.md');
+      await writeSummary(config, result, path);
+      const text = await Bun.file(path).text();
+      expect(text).toContain('## Xtrackers updater'); expect(text).toContain('| Catalog funds | 43 |');
+      expect(text).toContain('| Fund update attempts | 3 |'); expect(text).toContain('| Failed | 1 |'); expect(text).toContain('### Failures'); expect(text).toContain('**HYLB**');
+      expect(text).toContain('REQUEST_SLEEP=0'); expect(text).toContain('VERBOSE=false');
+      for (const key of Object.keys(CONTROL_DEFAULTS)) expect(text).toContain(key + '=');
+      await writeSummary(config, result, path); expect(await Bun.file(path).text()).toBe(text + text);
+      await writeSummary(config, result, ''); expect(await hashes(root)).toEqual(before);
+      expect(renderUpdateSummary(config, result)).toBe(text);
+    } finally { await rm(root, { recursive: true, force: true }); await rm(summaryRoot, { recursive: true, force: true }); }
+  });
+  test('filtered and cached source diagnostics, repeat manifest and actual cursor-state flags are truthful', async () => {
+    const root = await tempRoot();
+    try {
+      await seed(root);
+      const filteredConfig = readConfig({ TICKERS: 'ASHR', AUM: '2B:' });
+      const filtered = await quietRun(root, { TICKERS: 'ASHR', AUM: '2B:' });
+      expect(renderUpdateSummary(filteredConfig, filtered)).toContain('### Filtered funds');
+      expect(renderUpdateSummary(filteredConfig, filtered)).toContain('AUM');
+      const batch = await quietRun(root, { MAX_FETCHES: '1' }); expect(batch.progressChanged).toBe(true); expect(batch.processedThrough).toBe('ASHR');
+      const full = await quietRun(root); expect(full.progressChanged).toBe(true); expect(full.processedThrough).toBeNull();
+      const cached = await quietRun(root, {}, async () => new Response('denied', { status: 403 }));
+      expect(cached.manifestChanged).toBe(false); expect(cached.progressChanged).toBe(false);
+      const text = renderUpdateSummary(readConfig({}), cached);
+      expect(text).toContain('| Updated | 0 |'); expect(text).toContain('### Retained published data'); expect(text).toContain('retained published data');
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+});
+
+describe('config/ENV/bootstrap integration in isolated Bun subprocesses (no source requests)', () => {
+  test('edited adjacent JSON is used by real bootstrap/help; explicit ENV wins; ENOENT keeps fallbacks', async () => {
+    const root = await tempRoot();
+    try {
+      const script = join(root, 'scripts', 'update-data.ts'), file = join(root, 'scripts', 'update-data.config.json');
+      await Bun.write(script, await Bun.file(new URL('./update-data.ts', import.meta.url)).text());
+      await Bun.write(file, JSON.stringify({ ...CONTROL_DEFAULTS, REQUEST_SLEEP: '2.5', CONCURRENCY: '3', TICKERS: 'HYLB', VERBOSE: 'true' }));
+      const base = { ...process.env, ...Object.fromEntries(Object.keys(CONTROL_DEFAULTS).map(key => [key, ''])), GITHUB_STEP_SUMMARY: '' };
+      const evaluate = async (env: Record<string, string | undefined>, help = false) => {
+        const code = `const {readConfig}=await import(${JSON.stringify(script)});const c=readConfig();console.log(JSON.stringify({sleep:c.requestSleepSeconds,lanes:c.concurrency,tickers:[...c.tickers],verbose:c.verbose}));`;
+        const child = Bun.spawn(help ? [process.execPath, script, '--help'] : [process.execPath, '-e', code], { cwd: tmpdir(), env: { ...base, ...env }, stdout: 'pipe', stderr: 'pipe' });
+        const text = await new Response(child.stdout).text(), error = await new Response(child.stderr).text();
+        return { text, error, status: await child.exited };
+      };
+      const defaults = await evaluate({}); expect(defaults.status).toBe(0); expect(defaults.error).toBe('');
+      expect(JSON.parse(defaults.text)).toEqual({ sleep: 2.5, lanes: 3, tickers: ['HYLB'], verbose: true });
+      const env = await evaluate({ REQUEST_SLEEP: '0', CONCURRENCY: '1', TICKERS: 'ASHR DBEF', VERBOSE: 'false' });
+      expect(env.status).toBe(0); expect(JSON.parse(env.text)).toEqual({ sleep: 0, lanes: 1, tickers: ['ASHR', 'DBEF'], verbose: false });
+      const blank = await evaluate({ REQUEST_SLEEP: '  ', CONCURRENCY: '\t', TICKERS: '\n', VERBOSE: ' ' });
+      expect(blank.status).toBe(0); expect(JSON.parse(blank.text)).toEqual(JSON.parse(defaults.text));
+      const help = await evaluate({}, true); expect(help.status).toBe(0); expect(help.text).toContain('REQUEST_SLEEP=2.5'); expect(help.text).toContain('CONCURRENCY=3');
+      await rm(file); const missing = await evaluate({}); expect(missing.status).toBe(0);
+      expect(JSON.parse(missing.text)).toEqual({ sleep: 1.5, lanes: 2, tickers: [], verbose: false });
+      await Bun.write(file, '{ invalid'); const malformed = await evaluate({}); expect(malformed.status).toBe(1); expect(malformed.text).toBe('');
+      expect(malformed.error).toContain('JSON');
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+});
