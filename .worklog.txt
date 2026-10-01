@@ -9,7 +9,7 @@ CURRENT STATE
 - Hard constraints: preserve full embedded plan; no secrets in files/config; Bun-only/no tsc/no tsconfig; dependencies {}; only exact @types/bun and @types/node devDependencies; copied UI with enumerated substitutions + shared header/frequency exceptions; real acceptance isolated from production API.
 - Completed: baseline/recovery; named references; Bun 1.4.2; verified XLSX/PDP endpoints and 42-fund US sitemap; dated source fixtures committed for offline tests.
 - Remaining: updater/parsers/offline tests; scoped live acceptance/retention/idempotency; copied UI/browser parity; workflow/docs/metadata; final checks and PR.
-- Last confirmed pushed SHA: b0504170cc075e9d27c964b4f15adc6f3f07b107 (origin/feat/xtrackers-etfs; verified remote equality).
+- Last confirmed pushed SHA: 59aec1d44a8b35cd6d495a07a4873f1e4c08c2ca (origin/feat/xtrackers-etfs; verified remote equality).
 - Blockers: none.
 - Exact next action: push this updater-only safety correction, clone final code revision into isolated acceptance-v3 with the actual 42/3 published API, repeat TICKERS="ASHR HYLB DBEF" VERBOSE=1 normal CLI twice, compare all hashes and 39 unselected rows/files. Then workflows/README/About/topics, full offline/build/parity validation and PR to main without merge.
 
@@ -433,10 +433,17 @@ ACTIVE UI PARITY MANIFEST SNAPSHOT (authoritative bounded substitutions):
 - Confirmed UI/browser checkpoint b0504170cc075e9d27c964b4f15adc6f3f07b107 pushed with remote equality.
 - Tightened return coalescing: a nonempty undated official return row retains asOfDate=null and cannot inherit the derived month date or mix in unrelated dated gaps. Empty official rows still use fully dated derivation; same-date numeric gaps still fill; zero and negatives preserved. Explicit typed numeric key list excludes asOfDate. This closes a future catalog-date-fetch failure edge, not a change to current accepted derived NAV figures.
 - Published since-inception numbers from funds <1 year old are cumulative under the provider's performance disclaimer, not SI Ann. Unknown inception/source dates cannot certify annualized SI either. Added conservative copy-based guard (does not mutate raw source), preserving mature true zero/negative annualized SI. Derived SI already requires full inception coverage and >=1 year.
-- Rejected mathematically impossible annualized returns <-100% during CAGR->TR conversion; exact -100/zero/ordinary negative values remain valid.
+- Intended to reject mathematically impossible annualized returns <-100% during CAGR->TR conversion, but an unmatched text replacement did NOT add that guard initially. The new boundary regression exposed this in the next strict verification; actual guard added in the corrective checkpoint below.
 - Focused regression tests added: undated official zero/negative numbers, same/different-date mixing, empty source, young/unknown/mature SI, source immutability and -100 boundary.
-- bun test -> 63 pass, 0 fail; updater Bun build -> success; git diff --check -> clean. No app/HTML/API/financial UI changes in this separate source step. No semantic type checker or forbidden dependency added.
+- Correction after inspecting redirected test output: initial audit run actually had 61 pass/2 fail, because dated test fixtures passed an ignored argument to zero-argument emptyReturns(). A compound shell continued to the journal/commit section despite that failed check segment, so the initial green claim was WRONG and build was skipped. Explicitly corrected, with full gated revalidation in the immediate checkpoint below. No main/API change or forbidden type checker/dependency.
 - Next: final-code revision live repeat, preserving validated production data and every unselected entry/path. Prior v2 source acceptance remains recorded, but final completion will use the new revision rather than silently treating older CLI evidence as final.
+
+### 2026-10-01 — Correct audit fixtures / impossible CAGR guard and fully gate validation (completed)
+- Inspected redirected output immediately after 59aec1d44a8b35cd6d495a07a4873f1e4c08c2ca and corrected its mistaken green claim above rather than silently hiding the failure. Subsequent commands now use set -e before check/log/commit/push steps.
+- Corrected two typed test fixtures: emptyReturns() has zero arguments, so assign asOfDate explicitly on the object. Manual call-site audit verified no ignored date arguments remain. First strict rerun then gave 62 pass/1 fail, correctly STOPPED before log/commit, exposing that the intended <-100% annualized-return guard had not actually matched the source identifier during the prior edit.
+- Added actual guard using the real annualizedPercent identifier; no behavior change for valid returns. Exact -100/zero/ordinary negatives pass. No application/API changes.
+- Final STRICT commands all executed: bun test -> 63 pass, 0 fail; bun build --target=bun scripts/update-data.ts --outfile=/dev/null -> success; bun install --frozen-lockfile -> unchanged; git diff --check -> clean. No semantic compiler claim.
+- No checks bypassed, no force push/history rewrite or main modification. Next: fresh isolated final-code scoped live repeat and automation/docs/metadata/PR.
 
 =============================================================================
 FULL SELF-CONTAINED IMPLEMENTATION PLAN

@@ -398,7 +398,7 @@ export function parseChart(payload: unknown): ParsedChart {
     firstTradeDate: numberOrNull(meta.firstTradeDate) === null ? null : epochToIsoDate(Number(meta.firstTradeDate)) };
 }
 export function annualizedToTotal(annualizedPercent: number | null | undefined, years: number): number | null {
-  if (typeof annualizedPercent !== 'number' || !Number.isFinite(annualizedPercent) || years <= 0) return null;
+  if (typeof annualizedPercent !== 'number' || !Number.isFinite(annualizedPercent) || annualizedPercent < -100 || years <= 0) return null;
   return round(((1 + annualizedPercent / 100) ** years - 1) * 100, 2);
 }
 export function totalToAnnualized(totalPercent: number | null | undefined, years: number): number | null {
