@@ -1,0 +1,183 @@
+{
+  "ticker": "XAIX",
+  "name": "Xtrackers Artificial Intelligence and Big Data ETF",
+  "category": "Equities",
+  "fundPage": "https://etf.dws.com/en-us/XAIX-artificial-intelligence-and-big-data-etf/",
+  "dataFile": "funds/XAIX/meta.json",
+  "ter": "0.35%",
+  "terValue": 0.35,
+  "nav": "$58.73",
+  "navValue": 58.73,
+  "aum": "$162,680,152",
+  "aumValue": 162680152,
+  "asOfDate": "2026-09-30",
+  "inceptionDate": "2024-08-02",
+  "exchange": "NASDAQ",
+  "closePrice": "$59.17",
+  "closePriceAsOfDate": "2026-10-01",
+  "premiumDiscount": "—",
+  "cusip": "23306X829",
+  "isin": "US23306X8294",
+  "distributions": {
+    "frequency": "Semi-annually",
+    "exDate": "2026-06-18",
+    "dividend": "0.09818",
+    "paymentsPerYear": 2,
+    "headers": [
+      "Ex-Date",
+      "Amount"
+    ],
+    "rows": [
+      [
+        "2024-12-06",
+        "0"
+      ],
+      [
+        "2024-12-20",
+        "0.02802"
+      ],
+      [
+        "2025-06-20",
+        "0.10857"
+      ],
+      [
+        "2025-12-05",
+        "0"
+      ],
+      [
+        "2025-12-19",
+        "0.12246"
+      ],
+      [
+        "2026-06-18",
+        "0.09818"
+      ]
+    ]
+  },
+  "returns": {
+    "monthEnd": {
+      "asOfDate": "2026-09-30",
+      "ytd": 37.1,
+      "yr1": 42.17,
+      "yr3": null,
+      "yr5": null,
+      "yr10": null,
+      "sinceInception": 36.95
+    },
+    "quarterEnd": {
+      "asOfDate": "2026-09-30",
+      "ytd": 37.1,
+      "yr1": 42.17,
+      "yr3": null,
+      "yr5": null,
+      "yr10": null,
+      "sinceInception": 36.95
+    }
+  },
+  "metrics": {
+    "ytd": 37.1,
+    "tr1y": 42.17,
+    "cagr3y": null,
+    "cagr5y": null,
+    "cagr10y": null,
+    "tr3y": null,
+    "tr5y": null,
+    "tr10y": null,
+    "siAnn": 36.95,
+    "dividendYield": 0.33,
+    "dividendYieldText": "0.33%",
+    "secYield": 0.24,
+    "secYieldText": "0.24%",
+    "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns"
+  },
+  "holdings": {
+    "pages": [
+      "holdings/001.json"
+    ],
+    "pageSize": 250,
+    "totalRows": 104,
+    "asOfDate": "2026-09-30",
+    "source": "https://etf.dws.com/api/pdp/en-us/export/etf/XAIX/Securities"
+  },
+  "history": {
+    "pages": [
+      "history/001.json"
+    ],
+    "pageSize": 1000,
+    "totalRows": 544,
+    "asOfDate": "2026-10-01",
+    "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/XAIX/Performance + https://query1.finance.yahoo.com/v8/finance/chart/XAIX"
+  },
+  "generatedAt": "2026-10-01T21:24:55.696Z",
+  "netTerValue": 0.35,
+  "source": {
+    "provider": "Xtrackers (DWS)",
+    "site": "https://etf.dws.com/en-us/",
+    "catalog": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A1%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
+    "details": "https://etf.dws.com/api/pdp/en-us/etfus/XAIX/pdpMetaTagsTealium",
+    "holdingsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/XAIX/Securities",
+    "historySource": "https://etf.dws.com/api/pdp/en-us/Export/etf/XAIX/Performance + https://query1.finance.yahoo.com/v8/finance/chart/XAIX",
+    "distributionsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/XAIX/Distributions",
+    "yahoo": "https://query1.finance.yahoo.com/v8/finance/chart/XAIX",
+    "trust": "DBX ETF TRUST",
+    "trustCik": "0001503123"
+  },
+  "identifiers": {
+    "cusip": "23306X829",
+    "isin": "US23306X8294",
+    "indexTicker": "NYGBIGN"
+  },
+  "yields": {
+    "dividendYield": 0.33,
+    "dividendYieldText": "0.33%",
+    "dividendYieldKind": "official indicated distribution rate / NAV",
+    "distributionRate": 0.33,
+    "secYield": 0.24,
+    "secYieldText": "0.24%",
+    "secYieldKind": "official DWS 30-day SEC yield"
+  },
+  "distributionEvents": [
+    {
+      "exDate": "2024-12-06",
+      "epoch": 1733443200,
+      "amount": 0,
+      "recordDate": "2024-12-06",
+      "payDate": "2024-12-13"
+    },
+    {
+      "exDate": "2024-12-20",
+      "epoch": 1734652800,
+      "amount": 0.02802,
+      "recordDate": "2024-12-20",
+      "payDate": "2024-12-30"
+    },
+    {
+      "exDate": "2025-06-20",
+      "epoch": 1750377600,
+      "amount": 0.10857,
+      "recordDate": "2025-06-20",
+      "payDate": "2025-06-27"
+    },
+    {
+      "exDate": "2025-12-05",
+      "epoch": 1764892800,
+      "amount": 0,
+      "recordDate": "2025-12-05",
+      "payDate": "2025-12-12"
+    },
+    {
+      "exDate": "2025-12-19",
+      "epoch": 1766102400,
+      "amount": 0.12246,
+      "recordDate": "2025-12-19",
+      "payDate": "2025-12-29"
+    },
+    {
+      "exDate": "2026-06-18",
+      "epoch": 1781740800,
+      "amount": 0.09818,
+      "recordDate": "2026-06-18",
+      "payDate": "2026-06-26"
+    }
+  ]
+}

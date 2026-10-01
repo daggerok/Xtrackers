@@ -1,0 +1,350 @@
+{
+  "ticker": "XDEF",
+  "page": 1,
+  "pageSize": 250,
+  "totalRows": 37,
+  "headers": [
+    "Name",
+    "Ticker",
+    "Identifier",
+    "Weight",
+    "Market Value",
+    "Shares Held",
+    "Asset Category"
+  ],
+  "rows": [
+    {
+      "Name": "Safran SA",
+      "Ticker": "SAF FP",
+      "Identifier": "F4035A557",
+      "Weight": "8.20759265",
+      "Market Value": "347922.84",
+      "Shares Held": "916",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Rolls-Royce Holdings PLC",
+      "Ticker": "RR/ LN",
+      "Identifier": "G76225104",
+      "Weight": "8.11744976",
+      "Market Value": "344101.65",
+      "Shares Held": "17722",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "BAE Systems PLC",
+      "Ticker": "BA/ LN",
+      "Identifier": "G06940103",
+      "Weight": "8.0834484",
+      "Market Value": "342660.32",
+      "Shares Held": "13177",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Airbus SE",
+      "Ticker": "AIR FP",
+      "Identifier": "N0280G100",
+      "Weight": "7.69214555",
+      "Market Value": "326072.85",
+      "Shares Held": "1506",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Rheinmetall Ag",
+      "Ticker": "RHM GR",
+      "Identifier": "D65111102",
+      "Weight": "7.43175902",
+      "Market Value": "315034.97",
+      "Shares Held": "290",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "MTU Aero Engines AG",
+      "Ticker": "MTX GR",
+      "Identifier": "D5565H104",
+      "Weight": "4.91833286",
+      "Market Value": "208489.92",
+      "Shares Held": "490",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Saab AB",
+      "Ticker": "SAABB",
+      "Identifier": "W72838118",
+      "Weight": "4.71021645",
+      "Market Value": "199667.79",
+      "Shares Held": "3225",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Melrose Industries PLC",
+      "Ticker": "MRO",
+      "Identifier": "G5973J210",
+      "Weight": "4.71017824",
+      "Market Value": "199666.17",
+      "Shares Held": "31569",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "KONGSBERG GRUPPEN ASA NOK 1.25",
+      "Ticker": "KOG",
+      "Identifier": "R60837151",
+      "Weight": "4.6661286",
+      "Market Value": "197798.89",
+      "Shares Held": "5928",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Thales SA",
+      "Ticker": "HO FP",
+      "Identifier": "F9156M108",
+      "Weight": "4.43340991",
+      "Market Value": "187933.86",
+      "Shares Held": "737",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Leonardo SpA",
+      "Ticker": "FNC IM",
+      "Identifier": "T6S996112",
+      "Weight": "4.35244883",
+      "Market Value": "184501.89",
+      "Shares Held": "3315",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Babcock International Group PLC",
+      "Ticker": "BAB LN",
+      "Identifier": "G0689Q152",
+      "Weight": "3.99289683",
+      "Market Value": "169260.35",
+      "Shares Held": "12909",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Indra Sistemas SA",
+      "Ticker": "IDR SQ",
+      "Identifier": "E6271Z155",
+      "Weight": "3.98181318",
+      "Market Value": "168790.51",
+      "Shares Held": "2563",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Dassault Aviation SA",
+      "Ticker": "AM",
+      "Identifier": "F24539169",
+      "Weight": "3.39396425",
+      "Market Value": "143871.38",
+      "Shares Held": "446",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Helsoldt AG",
+      "Ticker": "HAG",
+      "Identifier": "D3R14P109",
+      "Weight": "3.13577798",
+      "Market Value": "132926.77",
+      "Shares Held": "1535",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "RENK GROUP AG",
+      "Ticker": "R3NK",
+      "Identifier": "D6S2UZ108",
+      "Weight": "2.32159648",
+      "Market Value": "98413.32",
+      "Shares Held": "2297",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Serco Group PLC",
+      "Ticker": "SRP LN",
+      "Identifier": "797379",
+      "Weight": "2.04930182",
+      "Market Value": "86870.65",
+      "Shares Held": "25624",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Qinetiq Group PLC",
+      "Ticker": "QQ/.LN",
+      "Identifier": "G7303P106",
+      "Weight": "1.73381738",
+      "Market Value": "73497.15",
+      "Shares Held": "11314",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CSG N.V.",
+      "Ticker": "CSG",
+      "Identifier": "X1755J107",
+      "Weight": "1.52546154",
+      "Market Value": "64664.87",
+      "Shares Held": "3885",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "TKMS AG& CO KGAA",
+      "Ticker": "TKMS",
+      "Identifier": "D8T5DP107",
+      "Weight": "1.38034814",
+      "Market Value": "58513.46",
+      "Shares Held": "629",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CHEMRING GROUP PLC",
+      "Ticker": "CHG",
+      "Identifier": "G20860139",
+      "Weight": "1.18811341",
+      "Market Value": "50364.56",
+      "Shares Held": "6950",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "SES SA",
+      "Ticker": "SESG FP",
+      "Identifier": "L8300G135",
+      "Weight": "1.02768096",
+      "Market Value": "43563.77",
+      "Shares Held": "8874",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "SENIOR PLC",
+      "Ticker": "SNR LN",
+      "Identifier": "795823",
+      "Weight": "0.99711647",
+      "Market Value": "42268.13",
+      "Shares Held": "10713",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Lisi",
+      "Ticker": "FII FP",
+      "Identifier": "F5754P105",
+      "Weight": "0.96384617",
+      "Market Value": "40857.79",
+      "Shares Held": "583",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "BITTIUM OYJ NPV",
+      "Ticker": "EBC1V.F",
+      "Identifier": "X0743D107",
+      "Weight": "0.83439694",
+      "Market Value": "35370.39",
+      "Shares Held": "865",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "AVIO SPA NPV",
+      "Ticker": "AVIO",
+      "Identifier": "IT0005119810",
+      "Weight": "0.75838037",
+      "Market Value": "32148.02",
+      "Shares Held": "964",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Montana Aerospace AG CHF 1.0 144A",
+      "Ticker": "AERO",
+      "Identifier": "H55555108",
+      "Weight": "0.59375876",
+      "Market Value": "25169.65",
+      "Shares Held": "883",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Norbit ASA",
+      "Ticker": "NORBT",
+      "Identifier": "R5S13N104",
+      "Weight": "0.44902233",
+      "Market Value": "19034.22",
+      "Shares Held": "1147",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Eutelsat Communications SA",
+      "Ticker": "ETL FP",
+      "Identifier": "F3692M128",
+      "Weight": "0.37167315",
+      "Market Value": "15755.36",
+      "Shares Held": "8768",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Creotech Instruments SA PLN 0.1",
+      "Ticker": "CRI",
+      "Identifier": "X1R21Z100",
+      "Weight": "0.35515784",
+      "Market Value": "15055.27",
+      "Shares Held": "72",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Yubico AB",
+      "Ticker": "YUBICO",
+      "Identifier": "W04944109",
+      "Weight": "0.35470939",
+      "Market Value": "15036.26",
+      "Shares Held": "1374",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Vincorion SE EUR 1.0",
+      "Ticker": "V1NC",
+      "Identifier": "D8T4XZ106",
+      "Weight": "0.31740303",
+      "Market Value": "13454.83",
+      "Shares Held": "670",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Select STOXX Europe Aerospace & Defense ETF",
+      "Ticker": "EUAD",
+      "Identifier": "84858T772",
+      "Weight": "0.30139987",
+      "Market Value": "12776.45",
+      "Shares Held": "305",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "NCC GROUP",
+      "Ticker": "NCC",
+      "Identifier": "G64319109",
+      "Weight": "0.29745628",
+      "Market Value": "12609.28",
+      "Shares Held": "6422",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ovzon AB",
+      "Ticker": "OVZON",
+      "Identifier": "W6S046104",
+      "Weight": "0.19378885",
+      "Market Value": "8214.78",
+      "Shares Held": "2300",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cash & Cash Equivalents",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.15800832",
+      "Market Value": "6698.03",
+      "Shares Held": "-",
+      "Asset Category": "Cash"
+    },
+    {
+      "Name": "Micro EURO STOXX Dec26",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "1",
+      "Asset Category": "Future"
+    }
+  ]
+}

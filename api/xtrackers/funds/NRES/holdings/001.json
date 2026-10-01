@@ -1,0 +1,530 @@
+{
+  "ticker": "NRES",
+  "page": 1,
+  "pageSize": 250,
+  "totalRows": 57,
+  "headers": [
+    "Name",
+    "Ticker",
+    "Identifier",
+    "Weight",
+    "Market Value",
+    "Shares Held",
+    "Asset Category"
+  ],
+  "rows": [
+    {
+      "Name": "Shell PLC",
+      "Ticker": "SHEL",
+      "Identifier": "G80827101",
+      "Weight": "7.51382379",
+      "Market Value": "2617958.48",
+      "Shares Held": "55209",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Nutrien Ltd",
+      "Ticker": "NTR",
+      "Identifier": "67077M108",
+      "Weight": "5.58666033",
+      "Market Value": "1946498.24",
+      "Shares Held": "27652",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Newmont Mining Corp",
+      "Ticker": "NEM",
+      "Identifier": "651639106",
+      "Weight": "4.2502003",
+      "Market Value": "1480850.26",
+      "Shares Held": "12839",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Petroleo Brasileiro- ADR",
+      "Ticker": "PBR",
+      "Identifier": "71654V408",
+      "Weight": "3.72908183",
+      "Market Value": "1299282.72",
+      "Shares Held": "62256",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Glencore PLC",
+      "Ticker": "GLEN LN",
+      "Identifier": "G39420107",
+      "Weight": "3.45883065",
+      "Market Value": "1205122.09",
+      "Shares Held": "163394",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Anglogold Ashanti PLC",
+      "Ticker": "AU",
+      "Identifier": "G0378L100",
+      "Weight": "3.1915378",
+      "Market Value": "1111992.2",
+      "Shares Held": "11836",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Suncor Energy Inc",
+      "Ticker": "SU CT",
+      "Identifier": "867224107",
+      "Weight": "3.07622317",
+      "Market Value": "1071814.4",
+      "Shares Held": "15769",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Smurfit Westrock PLC",
+      "Ticker": "SW",
+      "Identifier": "G8267P108",
+      "Weight": "2.67648657",
+      "Market Value": "932538.6",
+      "Shares Held": "21146",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Corteva Inc.",
+      "Ticker": "CTVA",
+      "Identifier": "22052L104",
+      "Weight": "2.61998792",
+      "Market Value": "912853.4",
+      "Shares Held": "11756",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Teck Resources Ltd-CLS B",
+      "Ticker": "TCK/B CT",
+      "Identifier": "878742204",
+      "Weight": "2.60528347",
+      "Market Value": "907730.09",
+      "Shares Held": "13754",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "BP PLC",
+      "Ticker": "BP/ LN",
+      "Identifier": "G12793108",
+      "Weight": "2.55775373",
+      "Market Value": "891169.83",
+      "Shares Held": "122103",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Steel Dynamics Inc",
+      "Ticker": "STLD.O",
+      "Identifier": "858119100",
+      "Weight": "2.53845421",
+      "Market Value": "884445.51",
+      "Shares Held": "3991",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cenovus Energy Inc",
+      "Ticker": "CVE CT",
+      "Identifier": "15135U109",
+      "Weight": "2.41274399",
+      "Market Value": "840645.69",
+      "Shares Held": "26978",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Devon Energy Corp",
+      "Ticker": "DVN",
+      "Identifier": "25179M103",
+      "Weight": "2.3573736",
+      "Market Value": "821353.6",
+      "Shares Held": "17840",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Stora Enso OYJ-R SHS",
+      "Ticker": "STERV FH",
+      "Identifier": "X8T9CM113",
+      "Weight": "2.26889541",
+      "Market Value": "790526.12",
+      "Shares Held": "68468",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "UPM-Kymmene OYJ",
+      "Ticker": "UPM1V FH",
+      "Identifier": "X9518S108",
+      "Weight": "2.1896225",
+      "Market Value": "762905.94",
+      "Shares Held": "26996",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Suzano Sa - Spon ADR",
+      "Ticker": "SUZ",
+      "Identifier": "86959K105",
+      "Weight": "2.09732218",
+      "Market Value": "730746.76",
+      "Shares Held": "85268",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Archer-Daniels-Midland Co",
+      "Ticker": "ADM",
+      "Identifier": "039483102",
+      "Weight": "1.94110461",
+      "Market Value": "676317.6",
+      "Shares Held": "8520",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "GOLD FIELDS LTD-SPONS ADR",
+      "Ticker": "GFI US",
+      "Identifier": "38059T106",
+      "Weight": "1.90687478",
+      "Market Value": "664391.28",
+      "Shares Held": "18394",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Packaging Corp of America",
+      "Ticker": "PKG.N",
+      "Identifier": "695156109",
+      "Weight": "1.90491283",
+      "Market Value": "663707.7",
+      "Shares Held": "2895",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Hudbay Minerals Inc",
+      "Ticker": "HBM",
+      "Identifier": "443628102",
+      "Weight": "1.73471235",
+      "Market Value": "604406.63",
+      "Shares Held": "22558",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Kinross Gold Corp",
+      "Ticker": "K CT",
+      "Identifier": "496902404",
+      "Weight": "1.71531972",
+      "Market Value": "597649.87",
+      "Shares Held": "24738",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Rio Tinto PLC",
+      "Ticker": "RIO LN",
+      "Identifier": "G75754104",
+      "Weight": "1.70387075",
+      "Market Value": "593660.83",
+      "Shares Held": "6295",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "ANGLO AMERICAN PLC NPV",
+      "Ticker": "AAL",
+      "Identifier": "G0376B104",
+      "Weight": "1.60341404",
+      "Market Value": "558659.81",
+      "Shares Held": "10358",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "EXXONMOBIL HLDGS CORP NPV",
+      "Ticker": "XOM",
+      "Identifier": "30233Q108",
+      "Weight": "1.59518096",
+      "Market Value": "555791.25",
+      "Shares Held": "3415",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "JBS A",
+      "Ticker": "JBS",
+      "Identifier": "N4732M103",
+      "Weight": "1.59399397",
+      "Market Value": "555377.68",
+      "Shares Held": "49192",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ovintiv Inc",
+      "Ticker": "OVV",
+      "Identifier": "69047Q102",
+      "Weight": "1.56855608",
+      "Market Value": "546514.64",
+      "Shares Held": "9452",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "APTARGROUP INC",
+      "Ticker": "ATR",
+      "Identifier": "038336103",
+      "Weight": "1.56692678",
+      "Market Value": "545946.96",
+      "Shares Held": "4506",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Eni SpA",
+      "Ticker": "ENI IM",
+      "Identifier": "T3643A145",
+      "Weight": "1.5622737",
+      "Market Value": "544325.74",
+      "Shares Held": "19951",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ball Corp",
+      "Ticker": "BLL",
+      "Identifier": "058498106",
+      "Weight": "1.48252726",
+      "Market Value": "516540.57",
+      "Shares Held": "9219",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Alcoa Corp",
+      "Ticker": "AA",
+      "Identifier": "013872106",
+      "Weight": "1.43303348",
+      "Market Value": "499296",
+      "Shares Held": "11888",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Albemarle Corp",
+      "Ticker": "ALB.N",
+      "Identifier": "012653101",
+      "Weight": "1.35557415",
+      "Market Value": "472307.7",
+      "Shares Held": "4465",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Capstone Copper Corp NPV",
+      "Ticker": "CS",
+      "Identifier": "14071L108",
+      "Weight": "1.3266888",
+      "Market Value": "462243.5",
+      "Shares Held": "46511",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Marathon Petroleum Corp",
+      "Ticker": "MPC.N",
+      "Identifier": "56585A102",
+      "Weight": "1.30626776",
+      "Market Value": "455128.42",
+      "Shares Held": "1151",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Occidental Petroleum Corp",
+      "Ticker": "OXY",
+      "Identifier": "674599105",
+      "Weight": "1.28861286",
+      "Market Value": "448977.12",
+      "Shares Held": "8116",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Valero Energy Corp",
+      "Ticker": "VLO",
+      "Identifier": "91913Y100",
+      "Weight": "1.27490505",
+      "Market Value": "444201.06",
+      "Shares Held": "1146",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Repsol SA",
+      "Ticker": "REP SQ",
+      "Identifier": "E8471S130",
+      "Weight": "1.2305808",
+      "Market Value": "428757.65",
+      "Shares Held": "12612",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CF Industries Holdings",
+      "Ticker": "CF",
+      "Identifier": "125269100",
+      "Weight": "1.14631658",
+      "Market Value": "399398.4",
+      "Shares Held": "3467",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Darling Ingredients Inc",
+      "Ticker": "DAR",
+      "Identifier": "237266101",
+      "Weight": "1.11568601",
+      "Market Value": "388726.13",
+      "Shares Held": "6403",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Bunge Global Ltd",
+      "Ticker": "BG",
+      "Identifier": "H11356104",
+      "Weight": "1.05777747",
+      "Market Value": "368549.7",
+      "Shares Held": "3446",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Franco-Nevada Corp",
+      "Ticker": "FNV CT",
+      "Identifier": "351858105",
+      "Weight": "1.02598638",
+      "Market Value": "357473.08",
+      "Shares Held": "1498",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cameco Corp",
+      "Ticker": "CCO CT",
+      "Identifier": "13321L108",
+      "Weight": "1.01937921",
+      "Market Value": "355171.02",
+      "Shares Held": "4087",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "SILGAN HOLDINGS INC",
+      "Ticker": "SLGN",
+      "Identifier": "827048109",
+      "Weight": "0.97542058",
+      "Market Value": "339855",
+      "Shares Held": "9780",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Baker Hughes a GE company",
+      "Ticker": "BHGE",
+      "Identifier": "05722G100",
+      "Weight": "0.88364658",
+      "Market Value": "307879.2",
+      "Shares Held": "5608",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "International Paper Co",
+      "Ticker": "IP",
+      "Identifier": "460146103",
+      "Weight": "0.87061758",
+      "Market Value": "303339.65",
+      "Shares Held": "9145",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Gold Fields Ltd",
+      "Ticker": "GFI SJ",
+      "Identifier": "S31755101",
+      "Weight": "0.84163227",
+      "Market Value": "293240.62",
+      "Shares Held": "8060",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Avery Dennison Corp",
+      "Ticker": "AVY.N",
+      "Identifier": "053611109",
+      "Weight": "0.81754521",
+      "Market Value": "284848.23",
+      "Shares Held": "1669",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Zijin Mining Group Co Ltd-H",
+      "Ticker": "2899 HK",
+      "Identifier": "Y9892H107",
+      "Weight": "0.8143855",
+      "Market Value": "283747.33",
+      "Shares Held": "69060",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "TOTAL SA",
+      "Ticker": "FP FP",
+      "Identifier": "F92124100",
+      "Weight": "0.81315015",
+      "Market Value": "283316.91",
+      "Shares Held": "3295",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Israel Chemicals Ltd",
+      "Ticker": "ICL",
+      "Identifier": "M53213100",
+      "Weight": "0.81253296",
+      "Market Value": "283101.87",
+      "Shares Held": "56299",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Nexgen Energy Ltd",
+      "Ticker": "NXE",
+      "Identifier": "65340P106",
+      "Weight": "0.50181725",
+      "Market Value": "174842.63",
+      "Shares Held": "19139",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Weyerhaeuser Co",
+      "Ticker": "WY",
+      "Identifier": "962166104",
+      "Weight": "0.48076219",
+      "Market Value": "167506.65",
+      "Shares Held": "8793",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Mosaic Co/The",
+      "Ticker": "MOS.N",
+      "Identifier": "61945C103",
+      "Weight": "0.30801727",
+      "Market Value": "107319.05",
+      "Shares Held": "4957",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cash & Cash Equivalents",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.20355728",
+      "Market Value": "70923.21",
+      "Shares Held": "-",
+      "Asset Category": "Cash"
+    },
+    {
+      "Name": "Graphic Packaging Holding Co",
+      "Ticker": "GPK",
+      "Identifier": "388689101",
+      "Weight": "0.08615734",
+      "Market Value": "30018.85",
+      "Shares Held": "3317",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Canadian Natural Resources Ltd",
+      "Ticker": "CNQ CT",
+      "Identifier": "136385101",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Schlumberger Ltd",
+      "Ticker": "SLB",
+      "Identifier": "806857108",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Equity"
+    }
+  ]
+}

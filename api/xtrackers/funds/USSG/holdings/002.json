@@ -1,0 +1,62 @@
+{
+  "ticker": "USSG",
+  "page": 2,
+  "pageSize": 250,
+  "totalRows": 255,
+  "headers": [
+    "Name",
+    "Ticker",
+    "Identifier",
+    "Weight",
+    "Market Value",
+    "Shares Held",
+    "Asset Category"
+  ],
+  "rows": [
+    {
+      "Name": "Hyatt Hotels Corp",
+      "Ticker": "H.N",
+      "Identifier": "448579102",
+      "Weight": "0.0161194",
+      "Market Value": "93391.84",
+      "Shares Held": "589",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "TPG Inc. - Contingent Value Right",
+      "Ticker": "-",
+      "Identifier": "436CVR021",
+      "Weight": "0.00000648",
+      "Market Value": "37.57",
+      "Shares Held": "3757",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "S&P 500 Emini Index Futures Dec26",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "1",
+      "Asset Category": "Future"
+    },
+    {
+      "Name": "S&P MidCap 400 E-mini Index Futures Dec26",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "1",
+      "Asset Category": "Future"
+    },
+    {
+      "Name": "SP500 MIC EMIN Futures Dec26",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "9",
+      "Asset Category": "Future"
+    }
+  ]
+}

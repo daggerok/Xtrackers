@@ -1,0 +1,377 @@
+{
+  "ticker": "XEML",
+  "page": 1,
+  "pageSize": 250,
+  "totalRows": 40,
+  "headers": [
+    "Name",
+    "Ticker",
+    "Identifier",
+    "Weight",
+    "Market Value",
+    "Shares Held",
+    "Asset Category"
+  ],
+  "rows": [
+    {
+      "Name": "ASML Holding NV",
+      "Ticker": "ASML NA",
+      "Identifier": "N07059202",
+      "Weight": "4.79314489",
+      "Market Value": "233970.68",
+      "Shares Held": "129",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Novartis AG-Reg",
+      "Ticker": "NOVN VX",
+      "Identifier": "H5820Q150",
+      "Weight": "4.72400269",
+      "Market Value": "230595.6",
+      "Shares Held": "1605",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "AstraZeneca PLC",
+      "Ticker": "AZN LN",
+      "Identifier": "G0593M107",
+      "Weight": "4.65871065",
+      "Market Value": "227408.46",
+      "Shares Held": "1394",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Safran SA",
+      "Ticker": "SAF FP",
+      "Identifier": "F4035A557",
+      "Weight": "4.6064705",
+      "Market Value": "224858.43",
+      "Shares Held": "592",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Gsk Plc",
+      "Ticker": "GSK",
+      "Identifier": "G3910J179",
+      "Weight": "4.60333859",
+      "Market Value": "224705.55",
+      "Shares Held": "9233",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Compagnie Financiere Richemont SA",
+      "Ticker": "CFR",
+      "Identifier": "H25662182",
+      "Weight": "4.57451404",
+      "Market Value": "223298.52",
+      "Shares Held": "1041",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Schneider Electric SE",
+      "Ticker": "SU FP",
+      "Identifier": "F86921107",
+      "Weight": "4.51160678",
+      "Market Value": "220227.79",
+      "Shares Held": "664",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "ABB Ltd-Reg",
+      "Ticker": "ABBN VX",
+      "Identifier": "H0010V101",
+      "Weight": "4.50327509",
+      "Market Value": "219821.09",
+      "Shares Held": "2311",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "L'Oreal SA",
+      "Ticker": "OR FP",
+      "Identifier": "F58149133",
+      "Weight": "4.48537332",
+      "Market Value": "218947.24",
+      "Shares Held": "508",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Roche Holding AG Part",
+      "Ticker": "ROP",
+      "Identifier": "CH1499059983",
+      "Weight": "4.46258213",
+      "Market Value": "217834.72",
+      "Shares Held": "521",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Industria de Diseno Textil SA",
+      "Ticker": "ITX",
+      "Identifier": "E6282J125",
+      "Weight": "4.38382396",
+      "Market Value": "213990.25",
+      "Shares Held": "3494",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Nestle SA-Reg",
+      "Ticker": "NESN VX",
+      "Identifier": "H57312649",
+      "Weight": "4.31794909",
+      "Market Value": "210774.66",
+      "Shares Held": "2315",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Sanofi-Aventis",
+      "Ticker": "SAN FP",
+      "Identifier": "F5548N101",
+      "Weight": "4.31018916",
+      "Market Value": "210395.87",
+      "Shares Held": "2550",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Vinci SA",
+      "Ticker": "DG FP",
+      "Identifier": "F5879X108",
+      "Weight": "4.29289439",
+      "Market Value": "209551.65",
+      "Shares Held": "1725",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "LVMH Moet Hennessy Louis Vuitton",
+      "Ticker": "MC FP",
+      "Identifier": "F58485115",
+      "Weight": "4.25615832",
+      "Market Value": "207758.43",
+      "Shares Held": "469",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Essilor International SA",
+      "Ticker": "EI FP",
+      "Identifier": "F31665106",
+      "Weight": "3.97749646",
+      "Market Value": "194155.94",
+      "Shares Held": "1174",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Novo-Nordisk B",
+      "Ticker": "NOVOB",
+      "Identifier": "K72807140",
+      "Weight": "3.92412978",
+      "Market Value": "191550.92",
+      "Shares Held": "4979",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Engie SA",
+      "Ticker": "ENGI",
+      "Identifier": "F7629A107",
+      "Weight": "3.90327576",
+      "Market Value": "190532.96",
+      "Shares Held": "7354",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Haleon Plc",
+      "Ticker": "HLN",
+      "Identifier": "G4232K100",
+      "Weight": "3.02597075",
+      "Market Value": "147708.54",
+      "Shares Held": "32935",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "ASSA ABLOY AB-B",
+      "Ticker": "ASSAB",
+      "Identifier": "W0817X204",
+      "Weight": "2.72672835",
+      "Market Value": "133101.44",
+      "Shares Held": "3735",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Sap Se-Sponsored Adr",
+      "Ticker": "SAP",
+      "Identifier": "803054204",
+      "Weight": "2.40026855",
+      "Market Value": "117165.76",
+      "Shares Held": "562",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "SAP SE",
+      "Ticker": "SAP GY",
+      "Identifier": "D66992104",
+      "Weight": "2.21191593",
+      "Market Value": "107971.59",
+      "Shares Held": "512",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Merck KGaA",
+      "Ticker": "MRK GY",
+      "Identifier": "D5357W103",
+      "Weight": "1.55210521",
+      "Market Value": "75763.85",
+      "Shares Held": "483",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "DASSAULT SYSTEMES EUR 0.1",
+      "Ticker": "DSY",
+      "Identifier": "F24571451",
+      "Weight": "1.29590081",
+      "Market Value": "63257.59",
+      "Shares Held": "2718",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Alfa Laval AB",
+      "Ticker": "ALFA SS",
+      "Identifier": "W04008152",
+      "Weight": "1.25021457",
+      "Market Value": "61027.48",
+      "Shares Held": "1089",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Endesa SA",
+      "Ticker": "ELE",
+      "Identifier": "E41222113",
+      "Weight": "1.08269775",
+      "Market Value": "52850.38",
+      "Shares Held": "1122",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "OMV AG",
+      "Ticker": "OMV AV",
+      "Identifier": "A51460110",
+      "Weight": "0.88719652",
+      "Market Value": "43307.26",
+      "Shares Held": "534",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "GEA Group AG",
+      "Ticker": "G1A GY",
+      "Identifier": "D28304109",
+      "Weight": "0.84079552",
+      "Market Value": "41042.26",
+      "Shares Held": "545",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Centrica PLC",
+      "Ticker": "CNA LN",
+      "Identifier": "G2018Z143",
+      "Weight": "0.6943091",
+      "Market Value": "33891.73",
+      "Shares Held": "17273",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cash & Cash Equivalents",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.69209271",
+      "Market Value": "33783.54",
+      "Shares Held": "-",
+      "Asset Category": "Cash"
+    },
+    {
+      "Name": "ANDRITZ AG",
+      "Ticker": "ANDR AV",
+      "Identifier": "A11123105",
+      "Weight": "0.47465312",
+      "Market Value": "23169.53",
+      "Shares Held": "244",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Davide Campari Milano SpA",
+      "Ticker": "CPR",
+      "Identifier": "N24565108",
+      "Weight": "0.32639589",
+      "Market Value": "15932.56",
+      "Shares Held": "2289",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "TUI1",
+      "Ticker": "TUI1",
+      "Identifier": "D8484K455",
+      "Weight": "0.27189551",
+      "Market Value": "13272.2",
+      "Shares Held": "1691",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Keller Group PLC",
+      "Ticker": "KLR.LN",
+      "Identifier": "486622",
+      "Weight": "0.23451515",
+      "Market Value": "11447.53",
+      "Shares Held": "258",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "JD Sports Fashion PLC",
+      "Ticker": "JD/",
+      "Identifier": "G5144Y112",
+      "Weight": "0.18379651",
+      "Market Value": "8971.77",
+      "Shares Held": "8309",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Maire Tecnimont SpA",
+      "Ticker": "MT IM",
+      "Identifier": "T6388T112",
+      "Weight": "0.17608083",
+      "Market Value": "8595.14",
+      "Shares Held": "602",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Philips Lighting NV",
+      "Ticker": "LIGHT",
+      "Identifier": "N8063K107",
+      "Weight": "0.16540081",
+      "Market Value": "8073.81",
+      "Shares Held": "458",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "SSP Group PLC",
+      "Ticker": "SSPG",
+      "Identifier": "G8402N125",
+      "Weight": "0.14718089",
+      "Market Value": "7184.43",
+      "Shares Held": "2830",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Sanofi EUR 2.0 ADR",
+      "Ticker": "SNY",
+      "Identifier": "80105N105",
+      "Weight": "0.07094989",
+      "Market Value": "3463.32",
+      "Shares Held": "84",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Micro EURO STOXX Dec26",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "5",
+      "Asset Category": "Future"
+    }
+  ]
+}

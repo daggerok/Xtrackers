@@ -1,0 +1,2267 @@
+{
+  "ticker": "HAUZ",
+  "page": 1,
+  "pageSize": 250,
+  "totalRows": 412,
+  "headers": [
+    "Name",
+    "Ticker",
+    "Identifier",
+    "Weight",
+    "Market Value",
+    "Shares Held",
+    "Asset Category"
+  ],
+  "rows": [
+    {
+      "Name": "Goodman Group",
+      "Ticker": "GMG AT",
+      "Identifier": "Q4229W132",
+      "Weight": "4.31270427",
+      "Market Value": "43871957.41",
+      "Shares Held": "2320147",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Mitsubishi Estate Co Ltd",
+      "Ticker": "8802 JT",
+      "Identifier": "J43916113",
+      "Weight": "3.10236882",
+      "Market Value": "31559546.94",
+      "Shares Held": "1374476",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Mitsui Fudosan Co Ltd",
+      "Ticker": "8801 JT",
+      "Identifier": "J4509L101",
+      "Weight": "2.81954723",
+      "Market Value": "28682480.53",
+      "Shares Held": "3056644",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Sumitomo Realty & Development",
+      "Ticker": "8830 JT",
+      "Identifier": "J77841112",
+      "Weight": "2.11473425",
+      "Market Value": "21512611.42",
+      "Shares Held": "1062012",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Sun Hung Kai Properties Ltd",
+      "Ticker": "16 HK",
+      "Identifier": "Y82594121",
+      "Weight": "2.01663916",
+      "Market Value": "20514716.92",
+      "Shares Held": "1483630",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Segro PLC",
+      "Ticker": "SGRO LN",
+      "Identifier": "G80277141",
+      "Weight": "1.70958174",
+      "Market Value": "17391106.11",
+      "Shares Held": "1408572",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Vonovia SE",
+      "Ticker": "ANN GR",
+      "Identifier": "D9581T100",
+      "Weight": "1.57145429",
+      "Market Value": "15985973.38",
+      "Shares Held": "827883",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Scentre Group",
+      "Ticker": "SCG AU",
+      "Identifier": "Q8351E109",
+      "Weight": "1.41827078",
+      "Market Value": "14427679.54",
+      "Shares Held": "5925246",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Link REIT",
+      "Ticker": "823 HK",
+      "Identifier": "Y5281M111",
+      "Weight": "1.38040326",
+      "Market Value": "14042463.7",
+      "Shares Held": "2962035",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cheung Kong Property Holdings Ltd",
+      "Ticker": "1113",
+      "Identifier": "G2177B101",
+      "Weight": "1.35311768",
+      "Market Value": "13764895",
+      "Shares Held": "2310862",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Unibail Rodamco We Stapled Units",
+      "Ticker": "URW",
+      "Identifier": "F95094581",
+      "Weight": "1.3301067",
+      "Market Value": "13530810.57",
+      "Shares Held": "133698",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Swiss Prime Site AG-CVA",
+      "Ticker": "SPSN VX",
+      "Identifier": "H8403W107",
+      "Weight": "1.29338319",
+      "Market Value": "13157232.41",
+      "Shares Held": "91016",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "China Resources Land Ltd",
+      "Ticker": "1109 HK",
+      "Identifier": "G2108Y105",
+      "Weight": "1.25285998",
+      "Market Value": "12745000.92",
+      "Shares Held": "3272475",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CapitaLand Mall Trust",
+      "Ticker": "CT SP",
+      "Identifier": "Y1100L160",
+      "Weight": "1.22802036",
+      "Market Value": "12492314.21",
+      "Shares Held": "7155071",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Klepierre",
+      "Ticker": "LI FP",
+      "Identifier": "F5396X102",
+      "Weight": "1.02502488",
+      "Market Value": "10427296.94",
+      "Shares Held": "258742",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cash & Cash Equivalents",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.92681059",
+      "Market Value": "9428189.87",
+      "Shares Held": "-",
+      "Asset Category": "Cash"
+    },
+    {
+      "Name": "Hulic Co Ltd",
+      "Ticker": "3003 JT",
+      "Identifier": "J23594112",
+      "Weight": "0.8917289",
+      "Market Value": "9071313.49",
+      "Shares Held": "825613",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "PSP Swiss Property AG-Reg",
+      "Ticker": "PSPN.SE",
+      "Identifier": "H64687124",
+      "Weight": "0.87488506",
+      "Market Value": "8899965.75",
+      "Shares Held": "52038",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Hongkong Land Holdings Ltd",
+      "Ticker": "HKL.SP",
+      "Identifier": "G4587L109",
+      "Weight": "0.85747038",
+      "Market Value": "8722810.95",
+      "Shares Held": "1083579",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Stockland",
+      "Ticker": "SGP AT",
+      "Identifier": "Q8773B105",
+      "Weight": "0.81336056",
+      "Market Value": "8274093.81",
+      "Shares Held": "2759441",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ascendas Real Estate Investment",
+      "Ticker": "AREIT SP",
+      "Identifier": "Y0205X103",
+      "Weight": "0.8084276",
+      "Market Value": "8223912.19",
+      "Shares Held": "4647784",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Aedifica SA",
+      "Ticker": "AED",
+      "Identifier": "B0130A108",
+      "Weight": "0.74846393",
+      "Market Value": "7613918.26",
+      "Shares Held": "105067",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Nippon Building Fund Inc",
+      "Ticker": "8951 JT",
+      "Identifier": "J52088101",
+      "Weight": "0.7459835",
+      "Market Value": "7588685.53",
+      "Shares Held": "10029",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "DLF",
+      "Ticker": "DLFU IS",
+      "Identifier": "Y2089H105",
+      "Weight": "0.7449486",
+      "Market Value": "7578157.71",
+      "Shares Held": "1077442",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Wharf Real Estate Investment Co Ltd",
+      "Ticker": "1997",
+      "Identifier": "G9593A104",
+      "Weight": "0.72663008",
+      "Market Value": "7391808.45",
+      "Shares Held": "1900448",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Vicinity Centres",
+      "Ticker": "VCX",
+      "Identifier": "Q9395F102",
+      "Weight": "0.72250627",
+      "Market Value": "7349858.11",
+      "Shares Held": "4476565",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Land Securities Group Plc",
+      "Ticker": "LAND",
+      "Identifier": "G5375M142",
+      "Weight": "0.69558616",
+      "Market Value": "7076007.16",
+      "Shares Held": "852924",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "China Overseas Land & Investment",
+      "Ticker": "688 HK",
+      "Identifier": "Y15004107",
+      "Weight": "0.69390321",
+      "Market Value": "7058886.98",
+      "Shares Held": "4208915",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Charter Hall Group",
+      "Ticker": "CHC AT",
+      "Identifier": "Q2308A138",
+      "Weight": "0.69206282",
+      "Market Value": "7040165.17",
+      "Shares Held": "536561",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Daito Trust Construction Co Ltd",
+      "Ticker": "1878 JT",
+      "Identifier": "J11151107",
+      "Weight": "0.6912977",
+      "Market Value": "7032381.89",
+      "Shares Held": "349252",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "GPT Group",
+      "Ticker": "GPT AT",
+      "Identifier": "Q4252X155",
+      "Weight": "0.67889175",
+      "Market Value": "6906179.58",
+      "Shares Held": "2172199",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Central Pattana PCL",
+      "Ticker": "CPN-R",
+      "Identifier": "Y1242U128",
+      "Weight": "0.67760918",
+      "Market Value": "6893132.26",
+      "Shares Held": "3760680",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Merlin Properties Socimi SA",
+      "Ticker": "MRL SM",
+      "Identifier": "E7390Z100",
+      "Weight": "0.6244315",
+      "Market Value": "6352170.33",
+      "Shares Held": "469164",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "British Land Co PLC",
+      "Ticker": "BLND LN",
+      "Identifier": "G15540118",
+      "Weight": "0.61164215",
+      "Market Value": "6222067.76",
+      "Shares Held": "1175628",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Sino Land Co Ltd",
+      "Ticker": "83 HK",
+      "Identifier": "Y80267126",
+      "Weight": "0.60762654",
+      "Market Value": "6181218.13",
+      "Shares Held": "4708978",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "REA Group Ltd",
+      "Ticker": "REA AT",
+      "Identifier": "Q8051B108",
+      "Weight": "0.60736809",
+      "Market Value": "6178588.99",
+      "Shares Held": "56388",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "FirstService Corp",
+      "Ticker": "FSV",
+      "Identifier": "33767E202",
+      "Weight": "0.58807139",
+      "Market Value": "5982288.95",
+      "Shares Held": "46613",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Londonmetric Property PLC",
+      "Ticker": "LMP LN",
+      "Identifier": "G5689W109",
+      "Weight": "0.57806151",
+      "Market Value": "5880461.2",
+      "Shares Held": "2470176",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Mirvac Group",
+      "Ticker": "MGR AT",
+      "Identifier": "Q62377108",
+      "Weight": "0.56656502",
+      "Market Value": "5763510.5",
+      "Shares Held": "4478095",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CAPITALAND INVESTMENT MANAGEMENT LIMITED",
+      "Ticker": "CLI",
+      "Identifier": "Y1091P105",
+      "Weight": "0.56566694",
+      "Market Value": "5754374.63",
+      "Shares Held": "2848750",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Japan Real Estate Investment Corp",
+      "Ticker": "8952 JT",
+      "Identifier": "J27523109",
+      "Weight": "0.56293126",
+      "Market Value": "5726545.33",
+      "Shares Held": "8263",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Japan Retail Fund Investment Co Ltd",
+      "Ticker": "8953 JT",
+      "Identifier": "J27544105",
+      "Weight": "0.54726155",
+      "Market Value": "5567141.63",
+      "Shares Held": "8168",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Azrieli Group Ltd",
+      "Ticker": "AZRG",
+      "Identifier": "M1571Q105",
+      "Weight": "0.53317934",
+      "Market Value": "5423887.2",
+      "Shares Held": "46710",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Tritax Big Box REIT PLC",
+      "Ticker": "BBOX",
+      "Identifier": "G9101W101",
+      "Weight": "0.53165944",
+      "Market Value": "5408425.59",
+      "Shares Held": "2788512",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Tokyu Fudosan Holdings Corp",
+      "Ticker": "3289 JT",
+      "Identifier": "J88764105",
+      "Weight": "0.52854454",
+      "Market Value": "5376738.6",
+      "Shares Held": "685496",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CHARTWELL RETIREMENT RESIDEN",
+      "Ticker": "CSH-U CT",
+      "Identifier": "16141A103",
+      "Weight": "0.52740708",
+      "Market Value": "5365167.54",
+      "Shares Held": "372297",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Henderson Land Development Co",
+      "Ticker": "12 HK",
+      "Identifier": "Y31476107",
+      "Weight": "0.50689461",
+      "Market Value": "5156499.79",
+      "Shares Held": "1513155",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "NEPI Rockcastle N.V.",
+      "Ticker": "NRP",
+      "Identifier": "N6S06Q108",
+      "Weight": "0.50582366",
+      "Market Value": "5145605.36",
+      "Shares Held": "584795",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Fibra Uno Administracion SA de",
+      "Ticker": "FUNO11 MM",
+      "Identifier": "P3515D163",
+      "Weight": "0.50519899",
+      "Market Value": "5139250.74",
+      "Shares Held": "3165460",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Prologis Property Mexico SA de CV",
+      "Ticker": "FIBRAPL MM",
+      "Identifier": "P4559M101",
+      "Weight": "0.50012924",
+      "Market Value": "5087677.61",
+      "Shares Held": "1237966",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Rightmove PLC",
+      "Ticker": "RMV",
+      "Identifier": "G7565D106",
+      "Weight": "0.49452038",
+      "Market Value": "5030620.15",
+      "Shares Held": "847166",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Tokyo Tatemono Co Ltd",
+      "Ticker": "8804 JT",
+      "Identifier": "J88333133",
+      "Weight": "0.48480439",
+      "Market Value": "4931782.1",
+      "Shares Held": "236339",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Dexus",
+      "Ticker": "DXS AT",
+      "Identifier": "Q3190P134",
+      "Weight": "0.47765153",
+      "Market Value": "4859018.03",
+      "Shares Held": "1216787",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Warehouses De Pauw CVA",
+      "Ticker": "WDP",
+      "Identifier": "B9T59Z100",
+      "Weight": "0.47503413",
+      "Market Value": "4832391.91",
+      "Shares Held": "221124",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "RioCan Real Estate Investment",
+      "Ticker": "REI-U CT",
+      "Identifier": "766910103",
+      "Weight": "0.47359823",
+      "Market Value": "4817784.87",
+      "Shares Held": "329959",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Glp J-Reit",
+      "Ticker": "3281",
+      "Identifier": "J17305103",
+      "Weight": "0.4473342",
+      "Market Value": "4550608.08",
+      "Shares Held": "5446",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "LEG Immobilien AG",
+      "Ticker": "LEG GR",
+      "Identifier": "D4960A103",
+      "Weight": "0.44621621",
+      "Market Value": "4539235.06",
+      "Shares Held": "87180",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Colliers International Group Inc",
+      "Ticker": "CIGI",
+      "Identifier": "194693107",
+      "Weight": "0.4427009",
+      "Market Value": "4503474.84",
+      "Shares Held": "50120",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Castellum AB",
+      "Ticker": "CAST.SS",
+      "Identifier": "W2084X107",
+      "Weight": "0.43397723",
+      "Market Value": "4414731.27",
+      "Shares Held": "354550",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Mega OR Holdings Ltd ILS 0.01",
+      "Ticker": "MGOR",
+      "Identifier": "M6889L102",
+      "Weight": "0.4281259",
+      "Market Value": "4355207.31",
+      "Shares Held": "27343",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "NOMURA REAL EST MF (NEW)",
+      "Ticker": "3462",
+      "Identifier": "J589D3119",
+      "Weight": "0.42714103",
+      "Market Value": "4345188.53",
+      "Shares Held": "4898",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Fibra MTY SAPI de CV",
+      "Ticker": "FMTY14",
+      "Identifier": "P13549129",
+      "Weight": "0.42166889",
+      "Market Value": "4289521.91",
+      "Shares Held": "5446376",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Nippon Prologis REIT Inc",
+      "Ticker": "3283 JT",
+      "Identifier": "J5528H104",
+      "Weight": "0.41723969",
+      "Market Value": "4244464.95",
+      "Shares Held": "8055",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Kenedix Office Investment Corp",
+      "Ticker": "8972.JT",
+      "Identifier": "J32922106",
+      "Weight": "0.41085236",
+      "Market Value": "4179488.34",
+      "Shares Held": "4583",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "GRANITE RE UNITS",
+      "Ticker": "2500198",
+      "Identifier": "387437205",
+      "Weight": "0.40701073",
+      "Market Value": "4140408.54",
+      "Shares Held": "69214",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Big Shopping Centers Ltd",
+      "Ticker": "BIG",
+      "Identifier": "M2014C109",
+      "Weight": "0.40400196",
+      "Market Value": "4109801.1",
+      "Shares Held": "19460",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "SM Prime Holdings Inc",
+      "Ticker": "SMPH PM",
+      "Identifier": "Y8076N112",
+      "Weight": "0.40249995",
+      "Market Value": "4094521.6",
+      "Shares Held": "16172844",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Macrotech Developers Ltd",
+      "Ticker": "LODHA",
+      "Identifier": "Y5311S112",
+      "Weight": "0.39876779",
+      "Market Value": "4056555.32",
+      "Shares Held": "342493",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Sagax AB - B",
+      "Ticker": "SAGAB",
+      "Identifier": "W7519A200",
+      "Weight": "0.39365705",
+      "Market Value": "4004565.17",
+      "Shares Held": "254522",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "ALLREAL HOLDING AG-REG",
+      "Ticker": "ALLN SE",
+      "Identifier": "H0151D100",
+      "Weight": "0.39052715",
+      "Market Value": "3972725.55",
+      "Shares Held": "17569",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Canadian Apartment Properties",
+      "Ticker": "CAR-U CT",
+      "Identifier": "134921105",
+      "Weight": "0.38108477",
+      "Market Value": "3876670.79",
+      "Shares Held": "173899",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "OPEN HOUSE",
+      "Ticker": "3288",
+      "Identifier": "J3072G101",
+      "Weight": "0.37979387",
+      "Market Value": "3863538.89",
+      "Shares Held": "81632",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Gecina SA",
+      "Ticker": "GFC FP",
+      "Identifier": "F4268U171",
+      "Weight": "0.37634799",
+      "Market Value": "3828484.86",
+      "Shares Held": "54146",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "FASTIGHETS AB OLOF BAUE SEK 0.16666",
+      "Ticker": "BALDB",
+      "Identifier": "W2951M127",
+      "Weight": "0.37071188",
+      "Market Value": "3771150.25",
+      "Shares Held": "800485",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "China Resources Mixc Lifestyle Services Ltd",
+      "Ticker": "1209",
+      "Identifier": "G2122G106",
+      "Weight": "0.36924813",
+      "Market Value": "3756259.9",
+      "Shares Held": "771582",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Orix JREIT Inc",
+      "Ticker": "8954.JT",
+      "Identifier": "J8996L102",
+      "Weight": "0.36394519",
+      "Market Value": "3702314.57",
+      "Shares Held": "6269",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "KEPPEL DC REIT",
+      "Ticker": "KDCREIT",
+      "Identifier": "Y47230100",
+      "Weight": "0.35642026",
+      "Market Value": "3625765.52",
+      "Shares Held": "2194791",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Prestige Estates Project Ltd",
+      "Ticker": "PEPL",
+      "Identifier": "Y707AN101",
+      "Weight": "0.35466721",
+      "Market Value": "3607932.22",
+      "Shares Held": "233308",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "PRIMARY HEALTH PROP",
+      "Ticker": "PHP",
+      "Identifier": "G7240B186",
+      "Weight": "0.35232597",
+      "Market Value": "3584115.47",
+      "Shares Held": "2942166",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "FIRST CAP RLTY INC NPV",
+      "Ticker": "FCR-U",
+      "Identifier": "31890B103",
+      "Weight": "0.34753662",
+      "Market Value": "3535394.68",
+      "Shares Held": "220535",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Corp Inmobiliaria Vesta SAB de",
+      "Ticker": "VESTA* MM",
+      "Identifier": "P9781N108",
+      "Weight": "0.34647127",
+      "Market Value": "3524557.19",
+      "Shares Held": "1091245",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "United Urban Investment Corp",
+      "Ticker": "8960 JT",
+      "Identifier": "J9427E105",
+      "Weight": "0.34568804",
+      "Market Value": "3516589.56",
+      "Shares Held": "3633",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "JAPAN HOTEL REIT INVESTMENT",
+      "Ticker": "8985",
+      "Identifier": "J2761Q107",
+      "Weight": "0.33964615",
+      "Market Value": "3455127.12",
+      "Shares Held": "6678",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Daiwa House Reit Investment Corp",
+      "Ticker": "8984",
+      "Identifier": "J1236F118",
+      "Weight": "0.33713353",
+      "Market Value": "3429566.93",
+      "Shares Held": "4855",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Mapletree Industrial Trust",
+      "Ticker": "MINT SP",
+      "Identifier": "Y5759S103",
+      "Weight": "0.33711514",
+      "Market Value": "3429379.82",
+      "Shares Held": "2354933",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Plaza SA",
+      "Ticker": "MALLPLA",
+      "Identifier": "P7898L106",
+      "Weight": "0.33640862",
+      "Market Value": "3422192.65",
+      "Shares Held": "936593",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "UOL Group Ltd",
+      "Ticker": "UOL SP",
+      "Identifier": "Y9299W103",
+      "Weight": "0.33509654",
+      "Market Value": "3408845.19",
+      "Shares Held": "533572",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Nomura Real Estate Holdings Inc",
+      "Ticker": "3231 JT",
+      "Identifier": "J5893B104",
+      "Weight": "0.33296283",
+      "Market Value": "3387139.48",
+      "Shares Held": "604404",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Swire Properties Ltd",
+      "Ticker": "1972",
+      "Identifier": "Y83191109",
+      "Weight": "0.33185613",
+      "Market Value": "3375881.4",
+      "Shares Held": "1087426",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "City Developments Ltd",
+      "Ticker": "CIT SP",
+      "Identifier": "V23130111",
+      "Weight": "0.32959009",
+      "Market Value": "3352829.55",
+      "Shares Held": "579486",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Mobimo Holding AG",
+      "Ticker": "MOBN SE",
+      "Identifier": "H55058103",
+      "Weight": "0.32669318",
+      "Market Value": "3323360.08",
+      "Shares Held": "8447",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Invincible Investment Corp",
+      "Ticker": "8963",
+      "Identifier": "J2442V103",
+      "Weight": "0.32490825",
+      "Market Value": "3305202.53",
+      "Shares Held": "8685",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Melisron Ltd",
+      "Ticker": "MLSR",
+      "Identifier": "M5128G106",
+      "Weight": "0.32225697",
+      "Market Value": "3278231.75",
+      "Shares Held": "26551",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Mapletree Logistics Trust",
+      "Ticker": "MLT.SP",
+      "Identifier": "Y5759Q107",
+      "Weight": "0.32208232",
+      "Market Value": "3276455.09",
+      "Shares Held": "3839314",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Covivio SA",
+      "Ticker": "COV",
+      "Identifier": "F2R22T119",
+      "Weight": "0.31249806",
+      "Market Value": "3178957.05",
+      "Shares Held": "61974",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Unite Group PLC",
+      "Ticker": "UTG",
+      "Identifier": "G9283N101",
+      "Weight": "0.30489836",
+      "Market Value": "3101647.36",
+      "Shares Held": "491948",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "ALLOS SA",
+      "Ticker": "ALOS3",
+      "Identifier": "P0R6A1107",
+      "Weight": "0.30343774",
+      "Market Value": "3086788.93",
+      "Shares Held": "541486",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ayala Corp",
+      "Ticker": "AC PM",
+      "Identifier": "Y0486V115",
+      "Weight": "0.30219354",
+      "Market Value": "3074132.01",
+      "Shares Held": "385158",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Hammerson 5P",
+      "Ticker": "HMSO",
+      "Identifier": "G4273Q206",
+      "Weight": "0.29899354",
+      "Market Value": "3041579.24",
+      "Shares Held": "664028",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Godrej Properties Ltd",
+      "Ticker": "GPL",
+      "Identifier": "Y2735G139",
+      "Weight": "0.29466718",
+      "Market Value": "2997568.41",
+      "Shares Held": "176389",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Growthpoint Properties Ltd",
+      "Ticker": "GRT SJ",
+      "Identifier": "S3373C239",
+      "Weight": "0.29445326",
+      "Market Value": "2995392.24",
+      "Shares Held": "3083054",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Choice Properties REIT",
+      "Ticker": "CHP-U",
+      "Identifier": "17039A106",
+      "Weight": "0.29280947",
+      "Market Value": "2978670.39",
+      "Shares Held": "285163",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Parque Arauco SA",
+      "Ticker": "PARAUCO",
+      "Identifier": "P76328106",
+      "Weight": "0.28940339",
+      "Market Value": "2944021.32",
+      "Shares Held": "817220",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "ADVANCE RESIDENCE INVESTMENT",
+      "Ticker": "3269",
+      "Identifier": "J00184101",
+      "Weight": "0.28185634",
+      "Market Value": "2867247.27",
+      "Shares Held": "3239",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Dream Industrial REIT",
+      "Ticker": "DIR-U",
+      "Identifier": "26153W109",
+      "Weight": "0.28136249",
+      "Market Value": "2862223.45",
+      "Shares Held": "318717",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Capital & Counties Properties",
+      "Ticker": "CAPC.LN",
+      "Identifier": "G19406100",
+      "Weight": "0.28117072",
+      "Market Value": "2860272.61",
+      "Shares Held": "1555700",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Derwent London PLC",
+      "Ticker": "DLN",
+      "Identifier": "G27300105",
+      "Weight": "0.2787175",
+      "Market Value": "2835316.67",
+      "Shares Held": "117205",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "SMART REAL ESTATE INVESTMENT",
+      "Ticker": "SRU-U.C",
+      "Identifier": "83179X108",
+      "Weight": "0.2737295",
+      "Market Value": "2784575.12",
+      "Shares Held": "148012",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Tag Immobilien Ag",
+      "Ticker": "TEG GR",
+      "Identifier": "D8283Q174",
+      "Weight": "0.26717569",
+      "Market Value": "2717905.04",
+      "Shares Held": "215960",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Savills PLC",
+      "Ticker": "SVS.LN",
+      "Identifier": "G78283119",
+      "Weight": "0.26557496",
+      "Market Value": "2701621.17",
+      "Shares Held": "197443",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Japan Prime Realty Investment",
+      "Ticker": "8955 JT",
+      "Identifier": "J2741H102",
+      "Weight": "0.26451943",
+      "Market Value": "2690883.64",
+      "Shares Held": "4596",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Wharf Holdings Ltd",
+      "Ticker": "4 HK",
+      "Identifier": "Y8800U127",
+      "Weight": "0.26362558",
+      "Market Value": "2681790.7",
+      "Shares Held": "1092593",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Sunway Bhd",
+      "Ticker": "SWB",
+      "Identifier": "Y8309C115",
+      "Weight": "0.25935874",
+      "Market Value": "2638385.33",
+      "Shares Held": "2435552",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "VANGUARD GLBL EX-US REAL EST",
+      "Ticker": "VNQI",
+      "Identifier": "922042676",
+      "Weight": "0.25078824",
+      "Market Value": "2551200",
+      "Shares Held": "60000",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Highwealth Construction Corp",
+      "Ticker": "2542 TT",
+      "Identifier": "Y31959102",
+      "Weight": "0.24871257",
+      "Market Value": "2530084.77",
+      "Shares Held": "2083605",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "SUNTEC REIT",
+      "Ticker": "SUN SP",
+      "Identifier": "Y82954101",
+      "Weight": "0.24804933",
+      "Market Value": "2523337.75",
+      "Shares Held": "2423258",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "INDUSTRIAL BUILDINGS",
+      "Ticker": "IBLD",
+      "Identifier": "M5514Q106",
+      "Weight": "0.24512933",
+      "Market Value": "2493633.45",
+      "Shares Held": "624312",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Big Yellow Group PLC",
+      "Ticker": "BYG",
+      "Identifier": "G1093E108",
+      "Weight": "0.24180115",
+      "Market Value": "2459776.77",
+      "Shares Held": "223355",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Mapletree Commercial Trust",
+      "Ticker": "MCT SP",
+      "Identifier": "Y5759T101",
+      "Weight": "0.24094352",
+      "Market Value": "2451052.35",
+      "Shares Held": "2566071",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Redefine Properties Ltd",
+      "Ticker": "RDF",
+      "Identifier": "S6815L196",
+      "Weight": "0.23960397",
+      "Market Value": "2437425.49",
+      "Shares Held": "6583940",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Keppel REIT",
+      "Ticker": "KREIT SP",
+      "Identifier": "Y4740G104",
+      "Weight": "0.23861286",
+      "Market Value": "2427343.12",
+      "Shares Held": "3647440",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Multiplan Empreendimentos Imobiliarios SA",
+      "Ticker": "MULT3 BS",
+      "Identifier": "P69913187",
+      "Weight": "0.23540594",
+      "Market Value": "2394720.04",
+      "Shares Held": "390550",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Frasers Logistics & Industrial Trust",
+      "Ticker": "FLT",
+      "Identifier": "Y26465107",
+      "Weight": "0.22810276",
+      "Market Value": "2320426.85",
+      "Shares Held": "3367915",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Frasers Centrepoint Trust",
+      "Ticker": "FCT",
+      "Identifier": "Y2642S101",
+      "Weight": "0.22707467",
+      "Market Value": "2309968.31",
+      "Shares Held": "1411678",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "MITSUI FUDOSAN LOGISTICS",
+      "Ticker": "3471",
+      "Identifier": "J44788107",
+      "Weight": "0.22410013",
+      "Market Value": "2279709.17",
+      "Shares Held": "3593",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "INDUSTRIAL & INFRA",
+      "Ticker": "3249",
+      "Identifier": "J24393118",
+      "Weight": "0.22329806",
+      "Market Value": "2271549.94",
+      "Shares Held": "2700",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Wihlborgs Fastigheter AB",
+      "Ticker": "WIHL",
+      "Identifier": "W9899F155",
+      "Weight": "0.21540431",
+      "Market Value": "2191248.93",
+      "Shares Held": "309711",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CTP NV",
+      "Ticker": "CTPNV",
+      "Identifier": "N2368S105",
+      "Weight": "0.21334858",
+      "Market Value": "2170336.6",
+      "Shares Held": "148813",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "SEKISUI HOUSE REIT",
+      "Ticker": "3309",
+      "Identifier": "J91258103",
+      "Weight": "0.21322056",
+      "Market Value": "2169034.27",
+      "Shares Held": "4897",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Wallenstam AB",
+      "Ticker": "WALLB",
+      "Identifier": "W9898B114",
+      "Weight": "0.20948992",
+      "Market Value": "2131083.49",
+      "Shares Held": "585819",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Primaris Real Estate Investment Trust",
+      "Ticker": "PMZ-U",
+      "Identifier": "74167K109",
+      "Weight": "0.20515905",
+      "Market Value": "2087026.73",
+      "Shares Held": "133471",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Nippon Accommodations Fund Inc",
+      "Ticker": "3226",
+      "Identifier": "J52066107",
+      "Weight": "0.20378842",
+      "Market Value": "2073083.65",
+      "Shares Held": "2860",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "H&R Real Estate Investment Trust",
+      "Ticker": "HR-U",
+      "Identifier": "403925407",
+      "Weight": "0.19897697",
+      "Market Value": "2024138.11",
+      "Shares Held": "299976",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "REGION GROUP",
+      "Ticker": "RGN",
+      "Identifier": "Q8501V100",
+      "Weight": "0.19830263",
+      "Market Value": "2017278.25",
+      "Shares Held": "1300286",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ruentex Development Co Ltd",
+      "Ticker": "9945 TT",
+      "Identifier": "Y73659107",
+      "Weight": "0.19755998",
+      "Market Value": "2009723.44",
+      "Shares Held": "2172105",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ascott Residence Trust",
+      "Ticker": "ART",
+      "Identifier": "Y0261Y177",
+      "Weight": "0.19484992",
+      "Market Value": "1982154.79",
+      "Shares Held": "3068736",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "C&D International Investment Group Ltd",
+      "Ticker": "1908",
+      "Identifier": "G3165D109",
+      "Weight": "0.19196951",
+      "Market Value": "1952853.16",
+      "Shares Held": "1120962",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "IWG PLC",
+      "Ticker": "IWG",
+      "Identifier": "G4969N103",
+      "Weight": "0.18821606",
+      "Market Value": "1914670.37",
+      "Shares Held": "806988",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Activia Properties Inc",
+      "Ticker": "3279.JT",
+      "Identifier": "J00089102",
+      "Weight": "0.18792095",
+      "Market Value": "1911668.31",
+      "Shares Held": "2356",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Pandox AB",
+      "Ticker": "PNDXB",
+      "Identifier": "W70174102",
+      "Weight": "0.18671481",
+      "Market Value": "1899398.59",
+      "Shares Held": "122914",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Boardwalk Real Estate Investment",
+      "Ticker": "BEI-U CT",
+      "Identifier": "096631106",
+      "Weight": "0.1854285",
+      "Market Value": "1886313.26",
+      "Shares Held": "43525",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Catena AB",
+      "Ticker": "CATE",
+      "Identifier": "W2356E100",
+      "Weight": "0.18408365",
+      "Market Value": "1872632.49",
+      "Shares Held": "53727",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Kojamo Oyj",
+      "Ticker": "KOJAMO",
+      "Identifier": "X4543E117",
+      "Weight": "0.18053147",
+      "Market Value": "1836497.15",
+      "Shares Held": "227725",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Vukile Property Fund Ltd",
+      "Ticker": "VKE",
+      "Identifier": "S9468N170",
+      "Weight": "0.17903353",
+      "Market Value": "1821259.01",
+      "Shares Held": "1218846",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Japan Logistics Fund Inc",
+      "Ticker": "8967",
+      "Identifier": "J2785A104",
+      "Weight": "0.17450806",
+      "Market Value": "1775222.58",
+      "Shares Held": "3096",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "BWP Trust",
+      "Ticker": "BWP.AT",
+      "Identifier": "Q1892D102",
+      "Weight": "0.17382573",
+      "Market Value": "1768281.5",
+      "Shares Held": "706036",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ayala Land Inc",
+      "Ticker": "ALI PM",
+      "Identifier": "Y0488F100",
+      "Weight": "0.17351724",
+      "Market Value": "1765143.28",
+      "Shares Held": "7274829",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Safestore Holdings PLC",
+      "Ticker": "SAFE LN",
+      "Identifier": "G77733106",
+      "Weight": "0.1711234",
+      "Market Value": "1740791.42",
+      "Shares Held": "249361",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Fortress Reit Ltd Class B",
+      "Ticker": "FFB",
+      "Identifier": "S30253108",
+      "Weight": "0.17044264",
+      "Market Value": "1733866.17",
+      "Shares Held": "1125448",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Relo Group Inc",
+      "Ticker": "8876",
+      "Identifier": "J6436W118",
+      "Weight": "0.17007849",
+      "Market Value": "1730161.86",
+      "Shares Held": "119608",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "LASALLE LOGIPORT REIT",
+      "Ticker": "3466",
+      "Identifier": "J38684106",
+      "Weight": "0.16998335",
+      "Market Value": "1729194.01",
+      "Shares Held": "1883",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Leopalace21 Corp",
+      "Ticker": "8848",
+      "Identifier": "J38781100",
+      "Weight": "0.16866385",
+      "Market Value": "1715771.08",
+      "Shares Held": "263804",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Great Portland Estates PLC",
+      "Ticker": "GPOR",
+      "Identifier": "G40712211",
+      "Weight": "0.16841655",
+      "Market Value": "1713255.39",
+      "Shares Held": "414683",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Alony Hetz Properties & Investments Ltd",
+      "Ticker": "ALHE",
+      "Identifier": "M0867F104",
+      "Weight": "0.1682756",
+      "Market Value": "1711821.5",
+      "Shares Held": "180856",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Montea SCA",
+      "Ticker": "MONT",
+      "Identifier": "B6214F103",
+      "Weight": "0.1676332",
+      "Market Value": "1705286.53",
+      "Shares Held": "24215",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Grainger PLC",
+      "Ticker": "GRI.LN",
+      "Identifier": "G40432117",
+      "Weight": "0.16748439",
+      "Market Value": "1703772.72",
+      "Shares Held": "767061",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Killam Apartment REIT",
+      "Ticker": "KMP-U",
+      "Identifier": "49410M102",
+      "Weight": "0.16723289",
+      "Market Value": "1701214.3",
+      "Shares Held": "138175",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Hang Lung Properties Ltd",
+      "Ticker": "101 HK",
+      "Identifier": "Y30166105",
+      "Weight": "0.16651938",
+      "Market Value": "1693956.02",
+      "Shares Held": "1992811",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Amot Investments Ltd",
+      "Ticker": "AMOT",
+      "Identifier": "M1035R103",
+      "Weight": "0.16572103",
+      "Market Value": "1685834.6",
+      "Shares Held": "271362",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CYRELA BRAZIL REALTY SA EMP",
+      "Ticker": "CYRE3 BS",
+      "Identifier": "P34085103",
+      "Weight": "0.16453224",
+      "Market Value": "1673741.37",
+      "Shares Held": "318562",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CHARTER HALL LONG WALE",
+      "Ticker": "CLW",
+      "Identifier": "Q2308E106",
+      "Weight": "0.16385369",
+      "Market Value": "1666838.62",
+      "Shares Held": "726035",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "WHA Corporation PCL",
+      "Ticker": "WHA-R",
+      "Identifier": "Y95310192",
+      "Weight": "0.15756654",
+      "Market Value": "1602881.19",
+      "Shares Held": "11442696",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Inmobiliaria Colonial SA",
+      "Ticker": "COL",
+      "Identifier": "E6451E105",
+      "Weight": "0.15603936",
+      "Market Value": "1587345.64",
+      "Shares Held": "283123",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "China Jinmao Holdings Group Ltd",
+      "Ticker": "817 HK",
+      "Identifier": "Y1500V107",
+      "Weight": "0.15527317",
+      "Market Value": "1579551.36",
+      "Shares Held": "9389655",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "HomeCo Daily Needs REIT",
+      "Ticker": "HDN",
+      "Identifier": "Q46596104",
+      "Weight": "0.15475251",
+      "Market Value": "1574254.81",
+      "Shares Held": "2095218",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Aroundtown SA",
+      "Ticker": "AT1",
+      "Identifier": "L0269F109",
+      "Weight": "0.15368775",
+      "Market Value": "1563423.35",
+      "Shares Held": "836738",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "PARKWAY LIFE REIT",
+      "Ticker": "PREIT",
+      "Identifier": "Y67202104",
+      "Weight": "0.15345052",
+      "Market Value": "1561010.04",
+      "Shares Held": "497207",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Eurocommercial Properties NV",
+      "Ticker": "ECMPA",
+      "Identifier": "N31068195",
+      "Weight": "0.15198521",
+      "Market Value": "1546103.83",
+      "Shares Held": "52053",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "IGB REIT",
+      "Ticker": "IGBREIT",
+      "Identifier": "Y3865M102",
+      "Weight": "0.15092395",
+      "Market Value": "1535307.95",
+      "Shares Held": "2213556",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "COMFORIA RESIDEN REIT",
+      "Ticker": "3282",
+      "Identifier": "J0816Z106",
+      "Weight": "0.14824973",
+      "Market Value": "1508103.86",
+      "Shares Held": "2513",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Hang Lung Group Ltd",
+      "Ticker": "10 HK",
+      "Identifier": "Y30148111",
+      "Weight": "0.14593526",
+      "Market Value": "1484559.41",
+      "Shares Held": "945533",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "REIT 1",
+      "Ticker": "RIT1",
+      "Identifier": "M8209Q100",
+      "Weight": "0.14572595",
+      "Market Value": "1482430.09",
+      "Shares Held": "230534",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "AyalaLand REIT Inc",
+      "Ticker": "AREIT",
+      "Identifier": "Y1001D101",
+      "Weight": "0.14552289",
+      "Market Value": "1480364.42",
+      "Shares Held": "2506417",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Kerry Properties Ltd",
+      "Ticker": "683 HK",
+      "Identifier": "G52440107",
+      "Weight": "0.14546344",
+      "Market Value": "1479759.64",
+      "Shares Held": "650129",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ingenia Communities Group",
+      "Ticker": "INA",
+      "Identifier": "Q4912D185",
+      "Weight": "0.14369342",
+      "Market Value": "1461753.73",
+      "Shares Held": "434117",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "IOI Properties Group Bhd",
+      "Ticker": "IOIPG MK",
+      "Identifier": "Y417A6104",
+      "Weight": "0.14080041",
+      "Market Value": "1432323.99",
+      "Shares Held": "1689066",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Fabege AB",
+      "Ticker": "FABG",
+      "Identifier": "W7888D199",
+      "Weight": "0.13992172",
+      "Market Value": "1423385.24",
+      "Shares Held": "215040",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CROMBIE REAL ESTATE INVESTME",
+      "Ticker": "CRR-U CT",
+      "Identifier": "227107109",
+      "Weight": "0.13848653",
+      "Market Value": "1408785.46",
+      "Shares Held": "125321",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "ESR-REIT",
+      "Ticker": "EREIT",
+      "Identifier": "Y2301D114",
+      "Weight": "0.13848071",
+      "Market Value": "1408726.31",
+      "Shares Held": "865046",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Intea Fastigheter AB NPV",
+      "Ticker": "INTEAB",
+      "Identifier": "W4R62U163",
+      "Weight": "0.13791259",
+      "Market Value": "1402946.95",
+      "Shares Held": "211472",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Charter Hall Retail REIT",
+      "Ticker": "CQR.AT",
+      "Identifier": "Q2308D108",
+      "Weight": "0.13730273",
+      "Market Value": "1396743.01",
+      "Shares Held": "563955",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Frontier Real Estate Investment",
+      "Ticker": "8964.JT",
+      "Identifier": "J1516D106",
+      "Weight": "0.13597197",
+      "Market Value": "1383205.52",
+      "Shares Held": "2898",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Aeon Reit Investment Corp",
+      "Ticker": "3292",
+      "Identifier": "J10006104",
+      "Weight": "0.13552774",
+      "Market Value": "1378686.48",
+      "Shares Held": "1957",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Hyprop Investments Ltd",
+      "Ticker": "HYP.SJ",
+      "Identifier": "S3723H102",
+      "Weight": "0.13460085",
+      "Market Value": "1369257.5",
+      "Shares Held": "361990",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "VGP NV",
+      "Ticker": "VGP",
+      "Identifier": "B9738D109",
+      "Weight": "0.13088035",
+      "Market Value": "1331409.85",
+      "Shares Held": "17469",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Hysan Development Co Ltd",
+      "Ticker": "14 HK",
+      "Identifier": "Y38203124",
+      "Weight": "0.13080862",
+      "Market Value": "1330680.16",
+      "Shares Held": "672778",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Talaat Moustafa Group",
+      "Ticker": "TMGH EC",
+      "Identifier": "M8763H108",
+      "Weight": "0.12994354",
+      "Market Value": "1321879.97",
+      "Shares Held": "789359",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Lendlease Global Commercial REIT",
+      "Ticker": "LREIT",
+      "Identifier": "Y5229U100",
+      "Weight": "0.12891874",
+      "Market Value": "1311454.98",
+      "Shares Held": "3073497",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Daiwa Securities Living Investment Corp",
+      "Ticker": "8986",
+      "Identifier": "J1R49P106",
+      "Weight": "0.12755716",
+      "Market Value": "1297603.97",
+      "Shares Held": "2291",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Hulic Reit Inc",
+      "Ticker": "3295.JT",
+      "Identifier": "J2359T109",
+      "Weight": "0.12656222",
+      "Market Value": "1287482.74",
+      "Shares Held": "1402",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Mori Hills REIT Investment Corp",
+      "Ticker": "3234.JT",
+      "Identifier": "J4665S106",
+      "Weight": "0.12564648",
+      "Market Value": "1278167.18",
+      "Shares Held": "1664",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Mori Trust Sogo Reit Inc",
+      "Ticker": "8961.JT",
+      "Identifier": "J4664Q101",
+      "Weight": "0.12480744",
+      "Market Value": "1269631.85",
+      "Shares Held": "2883",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "GOODMAN PROPERTY TRUST",
+      "Ticker": "GMT.NZ",
+      "Identifier": "Q4232A119",
+      "Weight": "0.12239921",
+      "Market Value": "1245133.56",
+      "Shares Held": "1160704",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Starts Corp Inc",
+      "Ticker": "8850",
+      "Identifier": "J76702109",
+      "Weight": "0.12238505",
+      "Market Value": "1244989.59",
+      "Shares Held": "41936",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CENCOSUD SHOPPING SA",
+      "Ticker": "CENCOMA",
+      "Identifier": "CL0002941178",
+      "Weight": "0.12178104",
+      "Market Value": "1238845.07",
+      "Shares Held": "554171",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Premier Investment Corp",
+      "Ticker": "8956.JT",
+      "Identifier": "J7446X104",
+      "Weight": "0.12161437",
+      "Market Value": "1237149.58",
+      "Shares Held": "1549",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Resilient REIT Ltd",
+      "Ticker": "RES",
+      "Identifier": "S6990F105",
+      "Weight": "0.12103268",
+      "Market Value": "1231232.22",
+      "Shares Held": "261192",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "HUFVUDSTADEN AB-A SHS",
+      "Ticker": "HUFVA.S",
+      "Identifier": "W30061126",
+      "Weight": "0.11873861",
+      "Market Value": "1207895.3",
+      "Shares Held": "107617",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Nyfosa AB",
+      "Ticker": "NYF",
+      "Identifier": "W6S88K102",
+      "Weight": "0.11802596",
+      "Market Value": "1200645.72",
+      "Shares Held": "166863",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Anant Raj Ltd",
+      "Ticker": "ARCP",
+      "Identifier": "Y01272122",
+      "Weight": "0.11777202",
+      "Market Value": "1198062.49",
+      "Shares Held": "191697",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Daiwa Office Investment Corp",
+      "Ticker": "8976.JT",
+      "Identifier": "J1250G109",
+      "Weight": "0.11770787",
+      "Market Value": "1197409.87",
+      "Shares Held": "622",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Xior Student Housing NV",
+      "Ticker": "XIOR",
+      "Identifier": "B9901Y104",
+      "Weight": "0.11754069",
+      "Market Value": "1195709.21",
+      "Shares Held": "44046",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "New World Development Co Ltd",
+      "Ticker": "17",
+      "Identifier": "Y6266R109",
+      "Weight": "0.11714793",
+      "Market Value": "1191713.72",
+      "Shares Held": "1545633",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "MITSUBISHI ESTATE REIT",
+      "Ticker": "3481",
+      "Identifier": "J4S41D104",
+      "Weight": "0.1168657",
+      "Market Value": "1188842.71",
+      "Shares Held": "1686",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Mercialys SA",
+      "Ticker": "MERY FP",
+      "Identifier": "F61573105",
+      "Weight": "0.11659665",
+      "Market Value": "1186105.71",
+      "Shares Held": "107102",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CENTURIA INDUSTRIAL REIT",
+      "Ticker": "TIX",
+      "Identifier": "Q2227X102",
+      "Weight": "0.11433175",
+      "Market Value": "1163065.53",
+      "Shares Held": "588659",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Tidhar Group LTD NPV",
+      "Ticker": "TDHR",
+      "Identifier": "M878B4112",
+      "Weight": "0.11390243",
+      "Market Value": "1158698.17",
+      "Shares Held": "23253",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Carmila SA",
+      "Ticker": "CARM",
+      "Identifier": "F1625D132",
+      "Weight": "0.11345955",
+      "Market Value": "1154192.83",
+      "Shares Held": "69504",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cibus Nordic Real Estate AB",
+      "Ticker": "CIBUS",
+      "Identifier": "W24214103",
+      "Weight": "0.11242036",
+      "Market Value": "1143621.51",
+      "Shares Held": "93424",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Altus Group Ltd",
+      "Ticker": "AIF",
+      "Identifier": "02215R107",
+      "Weight": "0.11129337",
+      "Market Value": "1132156.96",
+      "Shares Held": "36399",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "PRECINCT PROPERTIES NEW ZEAL",
+      "Ticker": "PCT.NZ",
+      "Identifier": "Q7740Q104",
+      "Weight": "0.11104113",
+      "Market Value": "1129590.98",
+      "Shares Held": "2117135",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Waypoint REIT Ltd",
+      "Ticker": "WPR",
+      "Identifier": "Q95666105",
+      "Weight": "0.11053928",
+      "Market Value": "1124485.8",
+      "Shares Held": "741439",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "HEIWA REAL ESTATE REIT",
+      "Ticker": "8966",
+      "Identifier": "J1927C101",
+      "Weight": "0.10839096",
+      "Market Value": "1102631.5",
+      "Shares Held": "1340",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Japan Excellent Inc",
+      "Ticker": "8987.JT",
+      "Identifier": "J2739K109",
+      "Weight": "0.10768329",
+      "Market Value": "1095432.59",
+      "Shares Held": "1318",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Keystone REIT Ltd",
+      "Ticker": "KSTN",
+      "Identifier": "M6S151111",
+      "Weight": "0.10741061",
+      "Market Value": "1092658.65",
+      "Shares Held": "163074",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Kasumigaseki Capital Co Ltd",
+      "Ticker": "3498",
+      "Identifier": "J3087N109",
+      "Weight": "0.10731044",
+      "Market Value": "1091639.67",
+      "Shares Held": "22105",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Argan SA",
+      "Ticker": "ARG",
+      "Identifier": "F0378V109",
+      "Weight": "0.10700307",
+      "Market Value": "1088512.86",
+      "Shares Held": "14093",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Tokyu REIT Inc",
+      "Ticker": "8957.JT",
+      "Identifier": "J88914106",
+      "Weight": "0.10605676",
+      "Market Value": "1078886.31",
+      "Shares Held": "932",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Neinor Homes SA",
+      "Ticker": "HOME",
+      "Identifier": "E7647E108",
+      "Weight": "0.10559843",
+      "Market Value": "1074223.86",
+      "Shares Held": "59109",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Allied Properties REIT",
+      "Ticker": "AP-U",
+      "Identifier": "019456102",
+      "Weight": "0.10255596",
+      "Market Value": "1043273.67",
+      "Shares Held": "208618",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "NIPPON REIT INVESTMENT",
+      "Ticker": "3296",
+      "Identifier": "J5530Q100",
+      "Weight": "0.10170966",
+      "Market Value": "1034664.46",
+      "Shares Held": "2058",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CT Real Estate Investment Trust",
+      "Ticker": "CRT-U",
+      "Identifier": "126462100",
+      "Weight": "0.1010045",
+      "Market Value": "1027491.09",
+      "Shares Held": "86013",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Star Asia Investment Corp",
+      "Ticker": "3468",
+      "Identifier": "J76639103",
+      "Weight": "0.09884039",
+      "Market Value": "1005476.18",
+      "Shares Held": "2899",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Centuria Capital Group",
+      "Ticker": "CNI",
+      "Identifier": "Q2227W112",
+      "Weight": "0.09825636",
+      "Market Value": "999535",
+      "Shares Held": "1135757",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Yeni Gimat Gayrimenkul Yatirim Ortakligi AS",
+      "Ticker": "YGGYO",
+      "Identifier": "M98798115",
+      "Weight": "0.09801214",
+      "Market Value": "997050.66",
+      "Shares Held": "233170",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Centurion Accommodation REIT",
+      "Ticker": "CAREIT",
+      "Identifier": "Y1777V103",
+      "Weight": "0.09702419",
+      "Market Value": "987000.51",
+      "Shares Held": "1212160",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Israel Canada T.R Ltd",
+      "Ticker": "ISCN",
+      "Identifier": "M5897Z129",
+      "Weight": "0.09669986",
+      "Market Value": "983701.17",
+      "Shares Held": "219314",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Hoshino Resorts REIT Inc",
+      "Ticker": "3287.JT",
+      "Identifier": "J2245U104",
+      "Weight": "0.09560465",
+      "Market Value": "972559.9",
+      "Shares Held": "661",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Aura Investments Ltd",
+      "Ticker": "AURA",
+      "Identifier": "M15346105",
+      "Weight": "0.09558025",
+      "Market Value": "972311.63",
+      "Shares Held": "174203",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Kiwi Property Group Ltd",
+      "Ticker": "KPG.NZ",
+      "Identifier": "Q5349C104",
+      "Weight": "0.09513082",
+      "Market Value": "967739.69",
+      "Shares Held": "1863073",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Fortune Real Estate Investment Trust",
+      "Ticker": "778",
+      "Identifier": "Y2616W104",
+      "Weight": "0.09419252",
+      "Market Value": "958194.67",
+      "Shares Held": "1730429",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Huaku Development Co Ltd",
+      "Ticker": "2548",
+      "Identifier": "Y3742X107",
+      "Weight": "0.09402279",
+      "Market Value": "956468.09",
+      "Shares Held": "332357",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Fukuoka REIT Corp",
+      "Ticker": "8968.JT",
+      "Identifier": "J17128109",
+      "Weight": "0.09389854",
+      "Market Value": "955204.12",
+      "Shares Held": "885",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Vital Infrastructure Property Trust",
+      "Ticker": "VILT-U",
+      "Identifier": "92848P107",
+      "Weight": "0.09289924",
+      "Market Value": "945038.49",
+      "Shares Held": "259520",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "RL Commercial REIT Inc",
+      "Ticker": "RCR",
+      "Identifier": "Y7319E103",
+      "Weight": "0.09247664",
+      "Market Value": "940739.52",
+      "Shares Held": "9582541",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Retail Estates NV",
+      "Ticker": "RET",
+      "Identifier": "B7081U108",
+      "Weight": "0.09229635",
+      "Market Value": "938905.44",
+      "Shares Held": "13100",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "BAYSIDE LAND CORP 1",
+      "Ticker": "BYSD",
+      "Identifier": "M1971K112",
+      "Weight": "0.0913838",
+      "Market Value": "929622.36",
+      "Shares Held": "75173",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "AIMS AMP CAPITAL INDUSTRIAL",
+      "Ticker": "AAREIT",
+      "Identifier": "Y0029Z136",
+      "Weight": "0.09113851",
+      "Market Value": "927127.02",
+      "Shares Held": "828093",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "SK REITS Co Ltd",
+      "Ticker": "395400",
+      "Identifier": "KR7395400005",
+      "Weight": "0.09079504",
+      "Market Value": "923633.07",
+      "Shares Held": "239032",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "ASCENDAS INDIA TRUST",
+      "Ticker": "AIT",
+      "Identifier": "Y0259C104",
+      "Weight": "0.08999027",
+      "Market Value": "915446.28",
+      "Shares Held": "1270928",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Argo Properties NV",
+      "Ticker": "ARGO",
+      "Identifier": "N3945B102",
+      "Weight": "0.08856246",
+      "Market Value": "900921.63",
+      "Shares Held": "22685",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Airport City Ltd",
+      "Ticker": "ARPT",
+      "Identifier": "M0367L106",
+      "Weight": "0.08812338",
+      "Market Value": "896454.98",
+      "Shares Held": "52002",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "China Vanke Co Ltd-H",
+      "Ticker": "2202 HK",
+      "Identifier": "Y77421132",
+      "Weight": "0.0879564",
+      "Market Value": "894756.3",
+      "Shares Held": "2516462",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Shurgard Self Storage Limited NPV",
+      "Ticker": "SHUR",
+      "Identifier": "G81317102",
+      "Weight": "0.08760622",
+      "Market Value": "891194.09",
+      "Shares Held": "34949",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "DIGICO INF NPV",
+      "Ticker": "DGT",
+      "Identifier": "Q318A4108",
+      "Weight": "0.08696842",
+      "Market Value": "884705.83",
+      "Shares Held": "490995",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Sime Darby Property Bhd",
+      "Ticker": "SDPR",
+      "Identifier": "Y7962J102",
+      "Weight": "0.08502793",
+      "Market Value": "864965.8",
+      "Shares Held": "2846156",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Land & Houses PCL",
+      "Ticker": "LHR",
+      "Identifier": "Y5172C164",
+      "Weight": "0.0848141",
+      "Market Value": "862790.61",
+      "Shares Held": "8366700",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Equites Property Fund Ltd",
+      "Ticker": "EQU",
+      "Identifier": "S2755Y108",
+      "Weight": "0.0844363",
+      "Market Value": "858947.28",
+      "Shares Held": "785908",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Irish Residential Properties REIT PLC",
+      "Ticker": "IRES",
+      "Identifier": "G49456109",
+      "Weight": "0.0841897",
+      "Market Value": "856438.71",
+      "Shares Held": "580005",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Asset World Corp PCL",
+      "Ticker": "AWC-R",
+      "Identifier": "Y86208538",
+      "Weight": "0.08407485",
+      "Market Value": "855270.4",
+      "Shares Held": "9139000",
+      "Asset Category": "Equity"
+    }
+  ]
+}

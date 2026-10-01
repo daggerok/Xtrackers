@@ -1,0 +1,150 @@
+{
+  "ticker": "XEML",
+  "name": "Xtrackers Europe Market Leaders ETF",
+  "category": "Equities",
+  "fundPage": "https://etf.dws.com/en-us/XEML-europe-market-leaders-etf/",
+  "dataFile": "funds/XEML/meta.json",
+  "ter": "0.35%",
+  "terValue": 0.35,
+  "nav": "$24.41",
+  "navValue": 24.41,
+  "aum": "$4,881,407",
+  "aumValue": 4881407,
+  "asOfDate": "2026-09-30",
+  "inceptionDate": "2025-12-23",
+  "exchange": "Cboe",
+  "closePrice": "$24.30",
+  "closePriceAsOfDate": "2026-09-30",
+  "premiumDiscount": "-0.43%",
+  "cusip": "23306X779",
+  "isin": "US23306X7791",
+  "distributions": {
+    "frequency": "Quarterly",
+    "exDate": "2026-09-18",
+    "dividend": "0.02752",
+    "paymentsPerYear": 4,
+    "headers": [
+      "Ex-Date",
+      "Amount"
+    ],
+    "rows": [
+      [
+        "2026-03-20",
+        "0.02658"
+      ],
+      [
+        "2026-06-18",
+        "0.43419"
+      ],
+      [
+        "2026-09-18",
+        "0.02752"
+      ]
+    ]
+  },
+  "returns": {
+    "monthEnd": {
+      "asOfDate": "2026-09-30",
+      "ytd": -1.16,
+      "yr1": null,
+      "yr3": null,
+      "yr5": null,
+      "yr10": null,
+      "sinceInception": null
+    },
+    "quarterEnd": {
+      "asOfDate": "2026-09-30",
+      "ytd": -1.16,
+      "yr1": null,
+      "yr3": null,
+      "yr5": null,
+      "yr10": null,
+      "sinceInception": null
+    }
+  },
+  "metrics": {
+    "ytd": -1.16,
+    "tr1y": null,
+    "cagr3y": null,
+    "cagr5y": null,
+    "cagr10y": null,
+    "tr3y": null,
+    "tr5y": null,
+    "tr10y": null,
+    "siAnn": null,
+    "dividendYield": 0.45,
+    "dividendYieldText": "0.45%",
+    "secYield": 2.08,
+    "secYieldText": "2.08%",
+    "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns"
+  },
+  "holdings": {
+    "pages": [
+      "holdings/001.json"
+    ],
+    "pageSize": 250,
+    "totalRows": 40,
+    "asOfDate": "2026-09-30",
+    "source": "https://etf.dws.com/api/pdp/en-us/export/etf/XEML/Securities"
+  },
+  "history": {
+    "pages": [
+      "history/001.json"
+    ],
+    "pageSize": 1000,
+    "totalRows": 194,
+    "asOfDate": "2026-09-30",
+    "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/XEML/Performance + https://query1.finance.yahoo.com/v8/finance/chart/XEML"
+  },
+  "generatedAt": "2026-10-01T21:24:54.189Z",
+  "netTerValue": 0.35,
+  "source": {
+    "provider": "Xtrackers (DWS)",
+    "site": "https://etf.dws.com/en-us/",
+    "catalog": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A1%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
+    "details": "https://etf.dws.com/api/pdp/en-us/etfus/XEML/pdpMetaTagsTealium",
+    "holdingsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/XEML/Securities",
+    "historySource": "https://etf.dws.com/api/pdp/en-us/Export/etf/XEML/Performance + https://query1.finance.yahoo.com/v8/finance/chart/XEML",
+    "distributionsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/XEML/Distributions",
+    "yahoo": "https://query1.finance.yahoo.com/v8/finance/chart/XEML",
+    "trust": "DBX ETF TRUST",
+    "trustCik": "0001503123"
+  },
+  "identifiers": {
+    "cusip": "23306X779",
+    "isin": "US23306X7791",
+    "indexTicker": "TWMLV"
+  },
+  "yields": {
+    "dividendYield": 0.45,
+    "dividendYieldText": "0.45%",
+    "dividendYieldKind": "official indicated distribution rate / NAV",
+    "distributionRate": 0.45,
+    "secYield": 2.08,
+    "secYieldText": "2.08%",
+    "secYieldKind": "official DWS 30-day SEC yield"
+  },
+  "distributionEvents": [
+    {
+      "exDate": "2026-03-20",
+      "epoch": 1773964800,
+      "amount": 0.02658,
+      "recordDate": "2026-03-20",
+      "payDate": "2026-03-27"
+    },
+    {
+      "exDate": "2026-06-18",
+      "epoch": 1781740800,
+      "amount": 0.43419,
+      "recordDate": "2026-06-18",
+      "payDate": "2026-06-26"
+    },
+    {
+      "exDate": "2026-09-18",
+      "epoch": 1789689600,
+      "amount": 0.02752,
+      "recordDate": "2026-09-18",
+      "payDate": "2026-09-25"
+    }
+  ]
+}
