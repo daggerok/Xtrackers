@@ -1,7 +1,7 @@
 CURRENT STATE
 =============
 - Goal/acceptance: Xtrackers holdings-to-watchlist static app; sibling-parity UI; Bun-only, zero runtime dependencies; offline tests; isolated >=3-ticker live runs with repeat byte-stability; scheduled/manual feed; PR to main.
-- Status: Updater/config/persistence/fallback layer complete; 43 offline tests pass. Initial 42-fund catalog-only API seed added. Mandatory isolated live acceptance is next; UI/workflow/docs/PR still pending.
+- Status: First two real scoped CLI runs succeeded (3/3, zero failures; scope/manifests pass), but strict repeat bytes differ in one historical Yahoo adjusted-close cell. This live finding is checkpointed; acceptance not yet complete. UI/workflow/docs/PR pending.
 - Repository: https://github.com/daggerok/Xtrackers
 - Branch: feat/xtrackers-etfs (created from main 13c600703279ebc67b495495c8be5248ca529853).
 - PR: none (GitHub API checked 2026-10-01).
@@ -9,9 +9,9 @@ CURRENT STATE
 - Hard constraints: preserve full embedded plan; no secrets in files/config; Bun-only/no tsc/no tsconfig; dependencies {}; only exact @types/bun and @types/node devDependencies; copied UI with enumerated substitutions + shared header/frequency exceptions; real acceptance isolated from production API.
 - Completed: baseline/recovery; named references; Bun 1.4.2; verified XLSX/PDP endpoints and 42-fund US sitemap; dated source fixtures committed for offline tests.
 - Remaining: updater/parsers/offline tests; scoped live acceptance/retention/idempotency; copied UI/browser parity; workflow/docs/metadata; final checks and PR.
-- Last confirmed pushed SHA: 4aadfc8742841cd2cde9dd5acd350b24aa8625e0 (origin/feat/xtrackers-etfs; verified remote equality).
+- Last confirmed pushed SHA: 0aec10ed050444bc7aca73f39aab3ab383ab9e78 (origin/feat/xtrackers-etfs; verified remote equality).
 - Blockers: none.
-- Exact next action: after this checkpoint is pushed/verified, clone feat/xtrackers-etfs to an isolated .cache working copy including the 42-fund API seed. Run exactly TICKERS="ASHR HYLB DBEF" VERBOSE=1 bun scripts/update-data.ts twice at defaults (REQUEST_SLEEP=1.5, CONCURRENCY=2, MAX_FETCHES=0), capture logs/hashes/scope/manifests/provenance, then commit tracked evidence before UI work. Do not refresh production in this smoke step.
+- Exact next action: revise official NAV history publication to the pinned sibling four-column Date/NAV/Market Price/Premium-Discount schema (Yahoo adjusted closes retained only for Yahoo-only fallback history/return derivation); add regression tests. Do not force prior upstream values. Push fix, then repeat the SAME two real scoped CLI runs in a fresh isolated clone with the same defaults and seed; record new evidence separately.
 
 === 1st PROMPT: COPY-PASTE THIS TO THE IMPLEMENTING AGENT (WITH YOUR GITHUB ACCESS TOKEN) ===
 
@@ -167,6 +167,17 @@ CHRONOLOGICAL JOURNAL
 - Tests now 43 pass / 0 fail / 274 expectations, all offline. Injected fetches use dated/literal fixtures, test real worker fallback/scope/cursor paths, exact rerun hashes, total-provider outage retention, per-fund failure continuation and wrong SEC series rejection. No network request occurs in bun test. Generic queue normalizes both promise outcomes with work.then(() => undefined, () => undefined) while returning original Promise<T>; ordering/value/rejection/recovery covered. Two simultaneous request lanes verified separately.
 - Commands: bun test scripts/update-data.test.ts; bun build --target=bun scripts/update-data.ts --outfile=/dev/null; bun install --frozen-lockfile; CLI --help; git diff --check. All pass. Manual numeric-key and Promise<T>/Promise<void> review performed; build/tests still NOT a semantic TypeScript guarantee; no tsc/tsconfig/TypeScript dependency/IDE diagnostics used.
 - No live CLI smoke has run yet. Next action above is mandatory before UI implementation/completion claims.
+
+### 2026-10-01 — Mandatory first scoped live acceptance (partial: upstream variance identified)
+- Confirmed updater checkpoint 0aec10ed050444bc7aca73f39aab3ab383ab9e78 pushed; cloned that remote feature revision into /home/user/.cache/xtrackers-live/acceptance, including the 42-fund catalog-only seed. Production api/ was NOT refreshed.
+- Actual CLI command BOTH TIMES: TICKERS="ASHR HYLB DBEF" VERBOSE=1 bun scripts/update-data.ts. Effective defaults confirmed in logs: MAX_FETCHES=0, REQUEST_SLEEP=1.5, CONCURRENCY=2, MAX_RETRIES=2, unrestricted ranges, pages=250/1000. No mocks, no skip flags, no reduced sleep.
+- Run 1: 2026-10-01T05:39:47.817Z -> 05:40:00.606Z, CLI exit 0; ASHR/DBEF/HYLB processed, 0 failures/0 skipped. Run 2: 05:40:00.650Z -> 05:40:12.867Z, CLI exit 0, all three processed again, 0 failures/0 skipped.
+- Counts both runs: 42 catalog funds, 2238 holdings, 9562 daily-history rows. ASHR=287 holdings/3244 history; DBEF=674/3851; HYLB=1277/2467. All page totals, page tickers, lengths and manifests verified. Exactly 39 unrequested catalog entries retained byte-for-byte; no unrequested paths modified, no funds dropped.
+- Official DWS Securities/NAV/Distributions/PDP supplied selected funds; Yahoo supplied daily market prices. Only warning: catalog workbook zero products -> official US sitemap. No SEC fallback invocation needed; SEC live access remains unverified/403 from research. Source URLs/date provenance retained, no Yahoo live query URL persisted. NAV/price dates differ, so headline premium/discount left unavailable rather than computed across dates.
+- Strict repeat hash check: 25 of 26 API files byte-identical; only funds/HYLB/history/002.json differs. One cell: 2022-09-09 Adj Close 27.07 -> 27.08, while NAV=34.71, Market Price=34.709999, Volume=1867900 remain equal. This is upstream Yahoo adjusted-series variance crossing a cent rounding boundary, NOT timestamp churn. Both real states preserved; no restoration/hidden mutation to manufacture a clean result.
+- Acceptance harness exit 1 is its strict byte-stability assertion; it is NOT a CLI/provider failure. Do not claim final acceptance passed yet.
+- Evidence: research/2026-10-01/scoped-live-smoke/{run-1.log,run-2.log,summary.json,hashes-before.json,hashes-after-1.json,hashes-after-2.json,second-run-upstream-diff.json}. Complete outputs stored as api-after-run-{1,2}.tar.gz (SHA-256 + member prefix in summary.json), avoiding duplicate multi-MB textual PR diffs. Unpack with tar -xzf into a scratch directory; the archives contain all 26 API files for independent verification.
+- Decision for next bounded fix: official NAV history should use the pinned primary sibling's Date/NAV/Market Price/Premium-Discount schema. Optional Yahoo adjusted-close/volume columns do not supply official NAV returns and were unnecessarily mixed into that primary sheet. Keep rounded adjusted closes in Yahoo-only fallback history and derived fallback metrics, without freezing any previous provider value. This is a source/schema correction, not a UI redesign or suppression of a material NAV/market-price change. Preserve the observed variance evidence above and repeat full live validation after the fix.
 
 =============================================================================
 FULL SELF-CONTAINED IMPLEMENTATION PLAN
