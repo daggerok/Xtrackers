@@ -1,7 +1,7 @@
 CURRENT STATE
 =============
 - Goal/acceptance: Xtrackers holdings-to-watchlist static app; sibling-parity UI; Bun-only, zero runtime dependencies; offline tests; isolated >=3-ticker live runs with repeat byte-stability; scheduled/manual feed; PR to main.
-- Status: UI/browser verification complete; final updater date/SI safety audit complete (63 offline tests pass). Need final-revision scoped live rerun, automation, reference README, metadata and PR. No merge.
+- Status: Final updater scoped live acceptance PASSED at 15627ab (26 repeat hashes equal, 39 unselected entries/paths unchanged); 63 offline tests and 12 browser cases pass. Only automation/reference README/metadata/final checks/PR pending. No merge.
 - Repository: https://github.com/daggerok/Xtrackers
 - Branch: feat/xtrackers-etfs (created from main 13c600703279ebc67b495495c8be5248ca529853).
 - PR: none (GitHub API checked 2026-10-01).
@@ -9,9 +9,9 @@ CURRENT STATE
 - Hard constraints: preserve full embedded plan; no secrets in files/config; Bun-only/no tsc/no tsconfig; dependencies {}; only exact @types/bun and @types/node devDependencies; copied UI with enumerated substitutions + shared header/frequency exceptions; real acceptance isolated from production API.
 - Completed: baseline/recovery; named references; Bun 1.4.2; verified XLSX/PDP endpoints and 42-fund US sitemap; dated source fixtures committed for offline tests.
 - Remaining: updater/parsers/offline tests; scoped live acceptance/retention/idempotency; copied UI/browser parity; workflow/docs/metadata; final checks and PR.
-- Last confirmed pushed SHA: 59aec1d44a8b35cd6d495a07a4873f1e4c08c2ca (origin/feat/xtrackers-etfs; verified remote equality).
+- Last confirmed pushed SHA: 15627abf182e0feca6f8173c4a4816cdb2c67269 (origin/feat/xtrackers-etfs; verified remote equality).
 - Blockers: none.
-- Exact next action: push this updater-only safety correction, clone final code revision into isolated acceptance-v3 with the actual 42/3 published API, repeat TICKERS="ASHR HYLB DBEF" VERBOSE=1 normal CLI twice, compare all hashes and 39 unselected rows/files. Then workflows/README/About/topics, full offline/build/parity validation and PR to main without merge.
+- Exact next action: add Actions CI + weekly/manual data update (all 23 controls) + Pages preparation + Dependabot; copy pinned README with provider-only substitutions, add Xtrackers rows preserving every existing brand/sibling row. Validate config/help/README/Actions parity offline, update worklog and push. Then target-only About/homepage/topics API readback, final Git main/branch check and PR (no merge).
 
 === 1st PROMPT: COPY-PASTE THIS TO THE IMPLEMENTING AGENT (WITH YOUR GITHUB ACCESS TOKEN) ===
 
@@ -444,6 +444,16 @@ ACTIVE UI PARITY MANIFEST SNAPSHOT (authoritative bounded substitutions):
 - Added actual guard using the real annualizedPercent identifier; no behavior change for valid returns. Exact -100/zero/ordinary negatives pass. No application/API changes.
 - Final STRICT commands all executed: bun test -> 63 pass, 0 fail; bun build --target=bun scripts/update-data.ts --outfile=/dev/null -> success; bun install --frozen-lockfile -> unchanged; git diff --check -> clean. No semantic compiler claim.
 - No checks bypassed, no force push/history rewrite or main modification. Next: fresh isolated final-code scoped live repeat and automation/docs/metadata/PR.
+
+### 2026-10-01 — Final-code mandatory scoped live acceptance (PASSED)
+- Verified pushed final updater revision 15627abf182e0feca6f8173c4a4816cdb2c67269; fresh remote clone /home/user/.cache/xtrackers-live/acceptance-v3 includes the actual published 42/3 static API and final UI (no mock provider, no unpushed source).
+- Actual command both times unchanged: TICKERS="ASHR HYLB DBEF" VERBOSE=1 bun scripts/update-data.ts. Effective defaults 1.5s / 2 independent lanes / 2 retries / MAX_FETCHES=0; no extra filters or skip-provider flags.
+- Run1 2026-10-01T06:26:28.510Z -> 2026-10-01T06:26:41.147Z, exit0, all3 updated because real DWS headlines advanced. Run2 2026-10-01T06:26:41.184Z -> 2026-10-01T06:26:53.374Z, exit0, all3 unchanged; no failures/skips.
+- Aggregate published counts still 42 funds / 2238 positions / 9562 history; ASHR287/3244, DBEF674/3851, HYLB1277/2467. All manifests/page totals/tickers valid. All39 unrequested index entries preserved; no unrequested paths modified or old funds dropped. New discovery count43 does NOT change published unrequested scope: new ticker is deferred until a full/explicitly selected run.
+- Repeat hashes: all26 API files EXACTLY equal after run1 vsrun2. Normal source chain satisfied with official DWS holdings/NAV/distributions/PDP plus Yahoo prices. Expected empty-XLSX -> sitemap warning only. SEC still not exercised live (research403, offline worker fallback tests separate).
+- Real baseline->run1 changes: PDP NAV/AUM/yields now asof2026-09-30; daily performance still through2026-09-29. Recorded exact field values in headline-upstream-changes.json; no source values restored to manufacture equality. Return periods still anchored to covered daily-performance dates. Published starter snapshot remains the explicit v2 initial seed, not silently refreshed by this smoke.
+- Evidence: research/2026-10-01/scoped-live-smoke-v3 logs, summary, all three hash ledgers, upstream field delta and complete api-after-run-2.tar.gz (SHA-256 in summary, same content for bothruns). Final updater file SHA-256 57ace28cc767fd10820f1cd4ce7a32b2e6d994c4bd645a493dbfbfda43b751c9 recorded to show that later documentation/workflow commits do not change live-accepted updater code.
+- All mandatory live criteria met on final updater; remaining work is automation/docs/metadata/PR only.
 
 =============================================================================
 FULL SELF-CONTAINED IMPLEMENTATION PLAN

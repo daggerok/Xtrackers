@@ -1,0 +1,928 @@
+{
+  "revision": "15627abf182e0feca6f8173c4a4816cdb2c67269",
+  "requested": [
+    "ASHR",
+    "DBEF",
+    "HYLB"
+  ],
+  "isolatedWorkingCopy": true,
+  "productionApiRefreshed": false,
+  "runs": [
+    {
+      "run": 1,
+      "revision": "15627abf182e0feca6f8173c4a4816cdb2c67269",
+      "command": "TICKERS=\"ASHR HYLB DBEF\" VERBOSE=1 bun scripts/update-data.ts",
+      "startedAt": "2026-10-01T06:26:28.510Z",
+      "endedAt": "2026-10-01T06:26:41.147Z",
+      "exitCode": 0,
+      "effectiveConfig": {
+        "MAX_FETCHES": "0",
+        "REQUEST_SLEEP": "1.5",
+        "CONCURRENCY": "2",
+        "AUM": ":",
+        "DIVIDEND_YIELD": ":",
+        "HISTORY_PAGE_SIZE": "1000",
+        "HOLDINGS_PAGE_SIZE": "250",
+        "MAX_RETRIES": "2",
+        "PERFORMANCE_10Y": ":",
+        "PERFORMANCE_1Y": ":",
+        "PERFORMANCE_3Y": ":",
+        "PERFORMANCE_5Y": ":",
+        "PERFORMANCE_YTD": ":",
+        "SEC_UA": "daggerok Xtrackers ETF feed (https://github.com/daggerok/Xtrackers)",
+        "SEC_YIELD": ":",
+        "TER": ":",
+        "TICKERS": "ASHR,HYLB,DBEF",
+        "TOTAL_RETURN_10Y": ":",
+        "TOTAL_RETURN_1Y": ":",
+        "TOTAL_RETURN_3Y": ":",
+        "TOTAL_RETURN_5Y": ":",
+        "TOTAL_RETURN_YTD": ":",
+        "VERBOSE": "true"
+      },
+      "processed": [
+        {
+          "ticker": "DBEF",
+          "status": "updated"
+        },
+        {
+          "ticker": "ASHR",
+          "status": "updated"
+        },
+        {
+          "ticker": "HYLB",
+          "status": "updated"
+        }
+      ],
+      "counts": {
+        "funds": 42,
+        "holdings": 2238,
+        "history": 9562
+      },
+      "unselectedIndexEntriesChanged": [],
+      "unauthorizedModifiedPaths": [],
+      "retainedUnrequestedEntries": 39,
+      "selected": [
+        {
+          "ticker": "ASHR",
+          "name": "Xtrackers Harvest CSI 300 China A-Shares ETF",
+          "category": "Equities",
+          "nav": "$32.67",
+          "navAsOf": "2026-09-30",
+          "closePrice": "$32.67",
+          "closePriceAsOf": "2026-09-30",
+          "metrics": {
+            "ytd": -0.82,
+            "tr1y": 1.67,
+            "cagr3y": 10.4,
+            "cagr5y": -1.55,
+            "cagr10y": 4.19,
+            "tr3y": 34.56,
+            "tr5y": -7.51,
+            "tr10y": 50.75,
+            "siAnn": 5.25,
+            "dividendYield": 2.32,
+            "dividendYieldText": "2.32%",
+            "secYield": 1.36,
+            "secYieldText": "1.36%",
+            "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns"
+          },
+          "source": {
+            "provider": "Xtrackers (DWS)",
+            "site": "https://etf.dws.com/en-us/",
+            "catalog": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A1%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
+            "details": "https://etf.dws.com/api/pdp/en-us/etfus/ASHR/pdpMetaTagsTealium",
+            "holdingsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/ASHR/Securities",
+            "historySource": "https://etf.dws.com/api/pdp/en-us/Export/etf/ASHR/Performance + https://query1.finance.yahoo.com/v8/finance/chart/ASHR",
+            "distributionsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/ASHR/Distributions",
+            "yahoo": "https://query1.finance.yahoo.com/v8/finance/chart/ASHR",
+            "trust": "DBX ETF TRUST",
+            "trustCik": "0001503123"
+          },
+          "distributionEvents": 23,
+          "manifests": {
+            "holdings": {
+              "pages": [
+                "holdings/001.json",
+                "holdings/002.json"
+              ],
+              "pageSize": 250,
+              "totalRows": 287,
+              "asOfDate": "2026-09-30",
+              "source": "https://etf.dws.com/api/pdp/en-us/export/etf/ASHR/Securities",
+              "actualRows": 287,
+              "valid": true,
+              "perPage": [
+                {
+                  "path": "holdings/001.json",
+                  "rows": 250,
+                  "page": 1,
+                  "pageSize": 250,
+                  "totalRows": 287,
+                  "ticker": "ASHR"
+                },
+                {
+                  "path": "holdings/002.json",
+                  "rows": 37,
+                  "page": 2,
+                  "pageSize": 250,
+                  "totalRows": 287,
+                  "ticker": "ASHR"
+                }
+              ]
+            },
+            "history": {
+              "pages": [
+                "history/001.json",
+                "history/002.json",
+                "history/003.json",
+                "history/004.json"
+              ],
+              "pageSize": 1000,
+              "totalRows": 3244,
+              "asOfDate": "2026-09-30",
+              "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/ASHR/Performance + https://query1.finance.yahoo.com/v8/finance/chart/ASHR",
+              "actualRows": 3244,
+              "valid": true,
+              "perPage": [
+                {
+                  "path": "history/001.json",
+                  "rows": 1000,
+                  "page": 1,
+                  "pageSize": 1000,
+                  "totalRows": 3244,
+                  "ticker": "ASHR"
+                },
+                {
+                  "path": "history/002.json",
+                  "rows": 1000,
+                  "page": 2,
+                  "pageSize": 1000,
+                  "totalRows": 3244,
+                  "ticker": "ASHR"
+                },
+                {
+                  "path": "history/003.json",
+                  "rows": 1000,
+                  "page": 3,
+                  "pageSize": 1000,
+                  "totalRows": 3244,
+                  "ticker": "ASHR"
+                },
+                {
+                  "path": "history/004.json",
+                  "rows": 244,
+                  "page": 4,
+                  "pageSize": 1000,
+                  "totalRows": 3244,
+                  "ticker": "ASHR"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ticker": "DBEF",
+          "name": "Xtrackers MSCI EAFE Hedged Equity ETF",
+          "category": "Currency-hedged / Equities / International",
+          "nav": "$55.03",
+          "navAsOf": "2026-09-30",
+          "closePrice": "$54.95",
+          "closePriceAsOf": "2026-09-30",
+          "metrics": {
+            "ytd": 15.89,
+            "tr1y": 25.94,
+            "cagr3y": 19.41,
+            "cagr5y": 13.74,
+            "cagr10y": 12.31,
+            "tr3y": 70.26,
+            "tr5y": 90.36,
+            "tr10y": 219.29,
+            "siAnn": 10.49,
+            "dividendYield": 0,
+            "dividendYieldText": "0.00%",
+            "secYield": 1.93,
+            "secYieldText": "1.93%",
+            "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns"
+          },
+          "source": {
+            "provider": "Xtrackers (DWS)",
+            "site": "https://etf.dws.com/en-us/",
+            "catalog": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A1%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
+            "details": "https://etf.dws.com/api/pdp/en-us/etfus/DBEF/pdpMetaTagsTealium",
+            "holdingsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/DBEF/Securities",
+            "historySource": "https://etf.dws.com/api/pdp/en-us/Export/etf/DBEF/Performance + https://query1.finance.yahoo.com/v8/finance/chart/DBEF",
+            "distributionsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/DBEF/Distributions",
+            "yahoo": "https://query1.finance.yahoo.com/v8/finance/chart/DBEF",
+            "trust": "DBX ETF TRUST",
+            "trustCik": "0001503123"
+          },
+          "distributionEvents": 40,
+          "manifests": {
+            "holdings": {
+              "pages": [
+                "holdings/001.json",
+                "holdings/002.json",
+                "holdings/003.json"
+              ],
+              "pageSize": 250,
+              "totalRows": 674,
+              "asOfDate": "2026-09-29",
+              "source": "https://etf.dws.com/api/pdp/en-us/export/etf/DBEF/Securities",
+              "actualRows": 674,
+              "valid": true,
+              "perPage": [
+                {
+                  "path": "holdings/001.json",
+                  "rows": 250,
+                  "page": 1,
+                  "pageSize": 250,
+                  "totalRows": 674,
+                  "ticker": "DBEF"
+                },
+                {
+                  "path": "holdings/002.json",
+                  "rows": 250,
+                  "page": 2,
+                  "pageSize": 250,
+                  "totalRows": 674,
+                  "ticker": "DBEF"
+                },
+                {
+                  "path": "holdings/003.json",
+                  "rows": 174,
+                  "page": 3,
+                  "pageSize": 250,
+                  "totalRows": 674,
+                  "ticker": "DBEF"
+                }
+              ]
+            },
+            "history": {
+              "pages": [
+                "history/001.json",
+                "history/002.json",
+                "history/003.json",
+                "history/004.json"
+              ],
+              "pageSize": 1000,
+              "totalRows": 3851,
+              "asOfDate": "2026-09-30",
+              "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/DBEF/Performance + https://query1.finance.yahoo.com/v8/finance/chart/DBEF",
+              "actualRows": 3851,
+              "valid": true,
+              "perPage": [
+                {
+                  "path": "history/001.json",
+                  "rows": 1000,
+                  "page": 1,
+                  "pageSize": 1000,
+                  "totalRows": 3851,
+                  "ticker": "DBEF"
+                },
+                {
+                  "path": "history/002.json",
+                  "rows": 1000,
+                  "page": 2,
+                  "pageSize": 1000,
+                  "totalRows": 3851,
+                  "ticker": "DBEF"
+                },
+                {
+                  "path": "history/003.json",
+                  "rows": 1000,
+                  "page": 3,
+                  "pageSize": 1000,
+                  "totalRows": 3851,
+                  "ticker": "DBEF"
+                },
+                {
+                  "path": "history/004.json",
+                  "rows": 851,
+                  "page": 4,
+                  "pageSize": 1000,
+                  "totalRows": 3851,
+                  "ticker": "DBEF"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ticker": "HYLB",
+          "name": "Xtrackers USD High Yield Corporate Bond ETF",
+          "category": "Fixed Income",
+          "nav": "$35.27",
+          "navAsOf": "2026-09-30",
+          "closePrice": "$35.22",
+          "closePriceAsOf": "2026-09-30",
+          "metrics": {
+            "ytd": 2.58,
+            "tr1y": 4.86,
+            "cagr3y": 8.39,
+            "cagr5y": 3.94,
+            "cagr10y": null,
+            "tr3y": 27.34,
+            "tr5y": 21.31,
+            "tr10y": null,
+            "siAnn": 2.44,
+            "dividendYield": 6.56,
+            "dividendYieldText": "6.56%",
+            "secYield": 8.04,
+            "secYieldText": "8.04%",
+            "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns"
+          },
+          "source": {
+            "provider": "Xtrackers (DWS)",
+            "site": "https://etf.dws.com/en-us/",
+            "catalog": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A1%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
+            "details": "https://etf.dws.com/api/pdp/en-us/etfus/HYLB/pdpMetaTagsTealium",
+            "holdingsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/HYLB/Securities",
+            "historySource": "https://etf.dws.com/api/pdp/en-us/Export/etf/HYLB/Performance + https://query1.finance.yahoo.com/v8/finance/chart/HYLB",
+            "distributionsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/HYLB/Distributions",
+            "yahoo": "https://query1.finance.yahoo.com/v8/finance/chart/HYLB",
+            "trust": "DBX ETF TRUST",
+            "trustCik": "0001503123"
+          },
+          "distributionEvents": 123,
+          "manifests": {
+            "holdings": {
+              "pages": [
+                "holdings/001.json",
+                "holdings/002.json",
+                "holdings/003.json",
+                "holdings/004.json",
+                "holdings/005.json",
+                "holdings/006.json"
+              ],
+              "pageSize": 250,
+              "totalRows": 1277,
+              "asOfDate": "2026-09-29",
+              "source": "https://etf.dws.com/api/pdp/en-us/export/etf/HYLB/Securities",
+              "actualRows": 1277,
+              "valid": true,
+              "perPage": [
+                {
+                  "path": "holdings/001.json",
+                  "rows": 250,
+                  "page": 1,
+                  "pageSize": 250,
+                  "totalRows": 1277,
+                  "ticker": "HYLB"
+                },
+                {
+                  "path": "holdings/002.json",
+                  "rows": 250,
+                  "page": 2,
+                  "pageSize": 250,
+                  "totalRows": 1277,
+                  "ticker": "HYLB"
+                },
+                {
+                  "path": "holdings/003.json",
+                  "rows": 250,
+                  "page": 3,
+                  "pageSize": 250,
+                  "totalRows": 1277,
+                  "ticker": "HYLB"
+                },
+                {
+                  "path": "holdings/004.json",
+                  "rows": 250,
+                  "page": 4,
+                  "pageSize": 250,
+                  "totalRows": 1277,
+                  "ticker": "HYLB"
+                },
+                {
+                  "path": "holdings/005.json",
+                  "rows": 250,
+                  "page": 5,
+                  "pageSize": 250,
+                  "totalRows": 1277,
+                  "ticker": "HYLB"
+                },
+                {
+                  "path": "holdings/006.json",
+                  "rows": 27,
+                  "page": 6,
+                  "pageSize": 250,
+                  "totalRows": 1277,
+                  "ticker": "HYLB"
+                }
+              ]
+            },
+            "history": {
+              "pages": [
+                "history/001.json",
+                "history/002.json",
+                "history/003.json"
+              ],
+              "pageSize": 1000,
+              "totalRows": 2467,
+              "asOfDate": "2026-09-30",
+              "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/HYLB/Performance + https://query1.finance.yahoo.com/v8/finance/chart/HYLB",
+              "actualRows": 2467,
+              "valid": true,
+              "perPage": [
+                {
+                  "path": "history/001.json",
+                  "rows": 1000,
+                  "page": 1,
+                  "pageSize": 1000,
+                  "totalRows": 2467,
+                  "ticker": "HYLB"
+                },
+                {
+                  "path": "history/002.json",
+                  "rows": 1000,
+                  "page": 2,
+                  "pageSize": 1000,
+                  "totalRows": 2467,
+                  "ticker": "HYLB"
+                },
+                {
+                  "path": "history/003.json",
+                  "rows": 467,
+                  "page": 3,
+                  "pageSize": 1000,
+                  "totalRows": 2467,
+                  "ticker": "HYLB"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "run": 2,
+      "revision": "15627abf182e0feca6f8173c4a4816cdb2c67269",
+      "command": "TICKERS=\"ASHR HYLB DBEF\" VERBOSE=1 bun scripts/update-data.ts",
+      "startedAt": "2026-10-01T06:26:41.184Z",
+      "endedAt": "2026-10-01T06:26:53.374Z",
+      "exitCode": 0,
+      "effectiveConfig": {
+        "MAX_FETCHES": "0",
+        "REQUEST_SLEEP": "1.5",
+        "CONCURRENCY": "2",
+        "AUM": ":",
+        "DIVIDEND_YIELD": ":",
+        "HISTORY_PAGE_SIZE": "1000",
+        "HOLDINGS_PAGE_SIZE": "250",
+        "MAX_RETRIES": "2",
+        "PERFORMANCE_10Y": ":",
+        "PERFORMANCE_1Y": ":",
+        "PERFORMANCE_3Y": ":",
+        "PERFORMANCE_5Y": ":",
+        "PERFORMANCE_YTD": ":",
+        "SEC_UA": "daggerok Xtrackers ETF feed (https://github.com/daggerok/Xtrackers)",
+        "SEC_YIELD": ":",
+        "TER": ":",
+        "TICKERS": "ASHR,HYLB,DBEF",
+        "TOTAL_RETURN_10Y": ":",
+        "TOTAL_RETURN_1Y": ":",
+        "TOTAL_RETURN_3Y": ":",
+        "TOTAL_RETURN_5Y": ":",
+        "TOTAL_RETURN_YTD": ":",
+        "VERBOSE": "true"
+      },
+      "processed": [
+        {
+          "ticker": "ASHR",
+          "status": "unchanged"
+        },
+        {
+          "ticker": "DBEF",
+          "status": "unchanged"
+        },
+        {
+          "ticker": "HYLB",
+          "status": "unchanged"
+        }
+      ],
+      "counts": {
+        "funds": 42,
+        "holdings": 2238,
+        "history": 9562
+      },
+      "unselectedIndexEntriesChanged": [],
+      "unauthorizedModifiedPaths": [],
+      "retainedUnrequestedEntries": 39,
+      "selected": [
+        {
+          "ticker": "ASHR",
+          "name": "Xtrackers Harvest CSI 300 China A-Shares ETF",
+          "category": "Equities",
+          "nav": "$32.67",
+          "navAsOf": "2026-09-30",
+          "closePrice": "$32.67",
+          "closePriceAsOf": "2026-09-30",
+          "metrics": {
+            "ytd": -0.82,
+            "tr1y": 1.67,
+            "cagr3y": 10.4,
+            "cagr5y": -1.55,
+            "cagr10y": 4.19,
+            "tr3y": 34.56,
+            "tr5y": -7.51,
+            "tr10y": 50.75,
+            "siAnn": 5.25,
+            "dividendYield": 2.32,
+            "dividendYieldText": "2.32%",
+            "secYield": 1.36,
+            "secYieldText": "1.36%",
+            "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns"
+          },
+          "source": {
+            "provider": "Xtrackers (DWS)",
+            "site": "https://etf.dws.com/en-us/",
+            "catalog": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A1%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
+            "details": "https://etf.dws.com/api/pdp/en-us/etfus/ASHR/pdpMetaTagsTealium",
+            "holdingsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/ASHR/Securities",
+            "historySource": "https://etf.dws.com/api/pdp/en-us/Export/etf/ASHR/Performance + https://query1.finance.yahoo.com/v8/finance/chart/ASHR",
+            "distributionsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/ASHR/Distributions",
+            "yahoo": "https://query1.finance.yahoo.com/v8/finance/chart/ASHR",
+            "trust": "DBX ETF TRUST",
+            "trustCik": "0001503123"
+          },
+          "distributionEvents": 23,
+          "manifests": {
+            "holdings": {
+              "pages": [
+                "holdings/001.json",
+                "holdings/002.json"
+              ],
+              "pageSize": 250,
+              "totalRows": 287,
+              "asOfDate": "2026-09-30",
+              "source": "https://etf.dws.com/api/pdp/en-us/export/etf/ASHR/Securities",
+              "actualRows": 287,
+              "valid": true,
+              "perPage": [
+                {
+                  "path": "holdings/001.json",
+                  "rows": 250,
+                  "page": 1,
+                  "pageSize": 250,
+                  "totalRows": 287,
+                  "ticker": "ASHR"
+                },
+                {
+                  "path": "holdings/002.json",
+                  "rows": 37,
+                  "page": 2,
+                  "pageSize": 250,
+                  "totalRows": 287,
+                  "ticker": "ASHR"
+                }
+              ]
+            },
+            "history": {
+              "pages": [
+                "history/001.json",
+                "history/002.json",
+                "history/003.json",
+                "history/004.json"
+              ],
+              "pageSize": 1000,
+              "totalRows": 3244,
+              "asOfDate": "2026-09-30",
+              "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/ASHR/Performance + https://query1.finance.yahoo.com/v8/finance/chart/ASHR",
+              "actualRows": 3244,
+              "valid": true,
+              "perPage": [
+                {
+                  "path": "history/001.json",
+                  "rows": 1000,
+                  "page": 1,
+                  "pageSize": 1000,
+                  "totalRows": 3244,
+                  "ticker": "ASHR"
+                },
+                {
+                  "path": "history/002.json",
+                  "rows": 1000,
+                  "page": 2,
+                  "pageSize": 1000,
+                  "totalRows": 3244,
+                  "ticker": "ASHR"
+                },
+                {
+                  "path": "history/003.json",
+                  "rows": 1000,
+                  "page": 3,
+                  "pageSize": 1000,
+                  "totalRows": 3244,
+                  "ticker": "ASHR"
+                },
+                {
+                  "path": "history/004.json",
+                  "rows": 244,
+                  "page": 4,
+                  "pageSize": 1000,
+                  "totalRows": 3244,
+                  "ticker": "ASHR"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ticker": "DBEF",
+          "name": "Xtrackers MSCI EAFE Hedged Equity ETF",
+          "category": "Currency-hedged / Equities / International",
+          "nav": "$55.03",
+          "navAsOf": "2026-09-30",
+          "closePrice": "$54.95",
+          "closePriceAsOf": "2026-09-30",
+          "metrics": {
+            "ytd": 15.89,
+            "tr1y": 25.94,
+            "cagr3y": 19.41,
+            "cagr5y": 13.74,
+            "cagr10y": 12.31,
+            "tr3y": 70.26,
+            "tr5y": 90.36,
+            "tr10y": 219.29,
+            "siAnn": 10.49,
+            "dividendYield": 0,
+            "dividendYieldText": "0.00%",
+            "secYield": 1.93,
+            "secYieldText": "1.93%",
+            "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns"
+          },
+          "source": {
+            "provider": "Xtrackers (DWS)",
+            "site": "https://etf.dws.com/en-us/",
+            "catalog": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A1%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
+            "details": "https://etf.dws.com/api/pdp/en-us/etfus/DBEF/pdpMetaTagsTealium",
+            "holdingsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/DBEF/Securities",
+            "historySource": "https://etf.dws.com/api/pdp/en-us/Export/etf/DBEF/Performance + https://query1.finance.yahoo.com/v8/finance/chart/DBEF",
+            "distributionsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/DBEF/Distributions",
+            "yahoo": "https://query1.finance.yahoo.com/v8/finance/chart/DBEF",
+            "trust": "DBX ETF TRUST",
+            "trustCik": "0001503123"
+          },
+          "distributionEvents": 40,
+          "manifests": {
+            "holdings": {
+              "pages": [
+                "holdings/001.json",
+                "holdings/002.json",
+                "holdings/003.json"
+              ],
+              "pageSize": 250,
+              "totalRows": 674,
+              "asOfDate": "2026-09-29",
+              "source": "https://etf.dws.com/api/pdp/en-us/export/etf/DBEF/Securities",
+              "actualRows": 674,
+              "valid": true,
+              "perPage": [
+                {
+                  "path": "holdings/001.json",
+                  "rows": 250,
+                  "page": 1,
+                  "pageSize": 250,
+                  "totalRows": 674,
+                  "ticker": "DBEF"
+                },
+                {
+                  "path": "holdings/002.json",
+                  "rows": 250,
+                  "page": 2,
+                  "pageSize": 250,
+                  "totalRows": 674,
+                  "ticker": "DBEF"
+                },
+                {
+                  "path": "holdings/003.json",
+                  "rows": 174,
+                  "page": 3,
+                  "pageSize": 250,
+                  "totalRows": 674,
+                  "ticker": "DBEF"
+                }
+              ]
+            },
+            "history": {
+              "pages": [
+                "history/001.json",
+                "history/002.json",
+                "history/003.json",
+                "history/004.json"
+              ],
+              "pageSize": 1000,
+              "totalRows": 3851,
+              "asOfDate": "2026-09-30",
+              "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/DBEF/Performance + https://query1.finance.yahoo.com/v8/finance/chart/DBEF",
+              "actualRows": 3851,
+              "valid": true,
+              "perPage": [
+                {
+                  "path": "history/001.json",
+                  "rows": 1000,
+                  "page": 1,
+                  "pageSize": 1000,
+                  "totalRows": 3851,
+                  "ticker": "DBEF"
+                },
+                {
+                  "path": "history/002.json",
+                  "rows": 1000,
+                  "page": 2,
+                  "pageSize": 1000,
+                  "totalRows": 3851,
+                  "ticker": "DBEF"
+                },
+                {
+                  "path": "history/003.json",
+                  "rows": 1000,
+                  "page": 3,
+                  "pageSize": 1000,
+                  "totalRows": 3851,
+                  "ticker": "DBEF"
+                },
+                {
+                  "path": "history/004.json",
+                  "rows": 851,
+                  "page": 4,
+                  "pageSize": 1000,
+                  "totalRows": 3851,
+                  "ticker": "DBEF"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ticker": "HYLB",
+          "name": "Xtrackers USD High Yield Corporate Bond ETF",
+          "category": "Fixed Income",
+          "nav": "$35.27",
+          "navAsOf": "2026-09-30",
+          "closePrice": "$35.22",
+          "closePriceAsOf": "2026-09-30",
+          "metrics": {
+            "ytd": 2.58,
+            "tr1y": 4.86,
+            "cagr3y": 8.39,
+            "cagr5y": 3.94,
+            "cagr10y": null,
+            "tr3y": 27.34,
+            "tr5y": 21.31,
+            "tr10y": null,
+            "siAnn": 2.44,
+            "dividendYield": 6.56,
+            "dividendYieldText": "6.56%",
+            "secYield": 8.04,
+            "secYieldText": "8.04%",
+            "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns"
+          },
+          "source": {
+            "provider": "Xtrackers (DWS)",
+            "site": "https://etf.dws.com/en-us/",
+            "catalog": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A1%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
+            "details": "https://etf.dws.com/api/pdp/en-us/etfus/HYLB/pdpMetaTagsTealium",
+            "holdingsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/HYLB/Securities",
+            "historySource": "https://etf.dws.com/api/pdp/en-us/Export/etf/HYLB/Performance + https://query1.finance.yahoo.com/v8/finance/chart/HYLB",
+            "distributionsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/HYLB/Distributions",
+            "yahoo": "https://query1.finance.yahoo.com/v8/finance/chart/HYLB",
+            "trust": "DBX ETF TRUST",
+            "trustCik": "0001503123"
+          },
+          "distributionEvents": 123,
+          "manifests": {
+            "holdings": {
+              "pages": [
+                "holdings/001.json",
+                "holdings/002.json",
+                "holdings/003.json",
+                "holdings/004.json",
+                "holdings/005.json",
+                "holdings/006.json"
+              ],
+              "pageSize": 250,
+              "totalRows": 1277,
+              "asOfDate": "2026-09-29",
+              "source": "https://etf.dws.com/api/pdp/en-us/export/etf/HYLB/Securities",
+              "actualRows": 1277,
+              "valid": true,
+              "perPage": [
+                {
+                  "path": "holdings/001.json",
+                  "rows": 250,
+                  "page": 1,
+                  "pageSize": 250,
+                  "totalRows": 1277,
+                  "ticker": "HYLB"
+                },
+                {
+                  "path": "holdings/002.json",
+                  "rows": 250,
+                  "page": 2,
+                  "pageSize": 250,
+                  "totalRows": 1277,
+                  "ticker": "HYLB"
+                },
+                {
+                  "path": "holdings/003.json",
+                  "rows": 250,
+                  "page": 3,
+                  "pageSize": 250,
+                  "totalRows": 1277,
+                  "ticker": "HYLB"
+                },
+                {
+                  "path": "holdings/004.json",
+                  "rows": 250,
+                  "page": 4,
+                  "pageSize": 250,
+                  "totalRows": 1277,
+                  "ticker": "HYLB"
+                },
+                {
+                  "path": "holdings/005.json",
+                  "rows": 250,
+                  "page": 5,
+                  "pageSize": 250,
+                  "totalRows": 1277,
+                  "ticker": "HYLB"
+                },
+                {
+                  "path": "holdings/006.json",
+                  "rows": 27,
+                  "page": 6,
+                  "pageSize": 250,
+                  "totalRows": 1277,
+                  "ticker": "HYLB"
+                }
+              ]
+            },
+            "history": {
+              "pages": [
+                "history/001.json",
+                "history/002.json",
+                "history/003.json"
+              ],
+              "pageSize": 1000,
+              "totalRows": 2467,
+              "asOfDate": "2026-09-30",
+              "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/HYLB/Performance + https://query1.finance.yahoo.com/v8/finance/chart/HYLB",
+              "actualRows": 2467,
+              "valid": true,
+              "perPage": [
+                {
+                  "path": "history/001.json",
+                  "rows": 1000,
+                  "page": 1,
+                  "pageSize": 1000,
+                  "totalRows": 2467,
+                  "ticker": "HYLB"
+                },
+                {
+                  "path": "history/002.json",
+                  "rows": 1000,
+                  "page": 2,
+                  "pageSize": 1000,
+                  "totalRows": 2467,
+                  "ticker": "HYLB"
+                },
+                {
+                  "path": "history/003.json",
+                  "rows": 467,
+                  "page": 3,
+                  "pageSize": 1000,
+                  "totalRows": 2467,
+                  "ticker": "HYLB"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "snapshots": [
+    {
+      "path": "api-after-run-2.tar.gz",
+      "sha256": "50731605369ed3b4bab3536841e5526253c22b8c5e38f901de1d14914c43197c",
+      "unpackedPrefix": "api-after-run-2",
+      "appliesToRuns": [
+        1,
+        2
+      ]
+    }
+  ],
+  "secondRunByteStable": true,
+  "changedPathsOnSecondRun": [],
+  "limitations": [
+    "SEC endpoints returned HTTP 403 in research; official holdings satisfied acceptance, so SEC fallback was not freshly exercised live.",
+    "DWS catalog workbook empty; official US sitemap supplied all 42 funds.",
+    "This smoke writes an isolated working copy, not production api/."
+  ],
+  "updaterSha256": "57ace28cc767fd10820f1cd4ce7a32b2e6d994c4bd645a493dbfbfda43b751c9",
+  "acceptanceStatus": "Passed on final updater: both real CLI runs exit 0, 3/3 selected, valid manifests/counts, no unselected changes, all 26 files byte-identical after run1/run2.",
+  "catalogScopeNote": "Discovery now has 43 funds. Scoped run preserves the published 42-fund catalog; the new unrequested discovery is not inserted until a full pass or explicit selection. No existing fund dropped.",
+  "observedChangeFromPublishedBaseline": "DWS PDP advanced its NAV/AUM/yield date to 2026-09-30 while official daily-performance workbook is still 2026-09-29. Real headline changes recorded separately; smoke not promoted to production. Return as-of date remains derived from covered performance series, not headline/fetch time."
+}
