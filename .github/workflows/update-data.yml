@@ -136,9 +136,12 @@ concurrency:
 jobs:
   update-data:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          persist-credentials: false
       - name: Setup bun
         uses: oven-sh/setup-bun@v2
         with:
@@ -172,6 +175,8 @@ jobs:
       - name: Generate api/xtrackers static data
         run: bun ./scripts/update-data.ts
       - name: Commit updated data
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         if: ${{ !cancelled() }}
         run: |
           git add api/xtrackers
@@ -182,4 +187,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "chore(data): update Xtrackers ETF snapshot"
-          git push
+          # Runtime-only auth; no token/header stored in URL, file or Git config.
+          git -c credential.helper= -c credential.helper='!f() { if test "$1" = get; then printf "username=x-access-token\npassword=%s\n" "$GITHUB_TOKEN"; fi; }; f' push
