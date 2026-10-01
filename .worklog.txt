@@ -1,7 +1,7 @@
 CURRENT STATE
 =============
 - Goal/acceptance: Xtrackers holdings-to-watchlist static app; sibling-parity UI; Bun-only, zero runtime dependencies; offline tests; isolated >=3-ticker live runs with repeat byte-stability; scheduled/manual feed; PR to main.
-- Status: Mandatory scoped live acceptance passed; initial validated static API snapshot published (42 discovered, 3 populated, 39 catalog-only). 49 offline tests pass including API guards. UI/workflow/docs/metadata/PR pending.
+- Status: Literal sibling UI + allowed substitutions/shared header/frequency exceptions complete. 61 offline tests and 12 real browser scenarios pass; validated initial API retained. Final source-safety audit, workflows/README/metadata/PR pending.
 - Repository: https://github.com/daggerok/Xtrackers
 - Branch: feat/xtrackers-etfs (created from main 13c600703279ebc67b495495c8be5248ca529853).
 - PR: none (GitHub API checked 2026-10-01).
@@ -9,9 +9,9 @@ CURRENT STATE
 - Hard constraints: preserve full embedded plan; no secrets in files/config; Bun-only/no tsc/no tsconfig; dependencies {}; only exact @types/bun and @types/node devDependencies; copied UI with enumerated substitutions + shared header/frequency exceptions; real acceptance isolated from production API.
 - Completed: baseline/recovery; named references; Bun 1.4.2; verified XLSX/PDP endpoints and 42-fund US sitemap; dated source fixtures committed for offline tests.
 - Remaining: updater/parsers/offline tests; scoped live acceptance/retention/idempotency; copied UI/browser parity; workflow/docs/metadata; final checks and PR.
-- Last confirmed pushed SHA: 4a5df0e6c163ae9e1f1a079c3b4b86fc05c82128 (origin/feat/xtrackers-etfs; verified remote equality).
+- Last confirmed pushed SHA: fbeac91cd8903a4889aebd1689ac4171bf7d88b5 (origin/feat/xtrackers-etfs; verified remote equality).
 - Blockers: none.
-- Exact next action: copy app.tsx/index.html/favicon from pinned JPMorgan 8ce0ddc; apply only enumerated brand/source/path substitutions and mandatory None-frequency exception (shared rich header already present in pinned reference). Add exact reverse-substitution parity and offline header/frequency tests, then browser-check against the validated 42/3 feed. Browser tooling is installed only in .cache, not project dependencies.
+- Exact next action: finish updater safety audit for undated official-return rows / young-fund published SI (never invent a date or call cumulative SI annualized), with focused offline tests and separate updater commit. Then repeat real scoped acceptance on final updater revision. Add generated 23-input workflow, CI/Pages/Dependabot, literal reference README substitutions/tables and target-only GitHub About/topics; full checks, open PR to main without merge.
 
 === 1st PROMPT: COPY-PASTE THIS TO THE IMPLEMENTING AGENT (WITH YOUR GITHUB ACCESS TOKEN) ===
 
@@ -205,6 +205,229 @@ CHRONOLOGICAL JOURNAL
 - Added scripts/api.test.ts, offline structural/manifest/count/provenance guards. It validates linked pages, integer counts, numeric positions, dates, source URLs and same-date premium rules but does not freeze exact future counts or block legitimate scheduled refreshes.
 - bun test -> 49 pass, 0 fail; git diff --check -> clean. No external runtime dependency. Browser tooling (Playwright 1.63.0 / Chromium 153) installed with Bun in workspace .cache only; not in target package.json/bun.lock or tracked files.
 - Next: literal UI copy/substitutions/parity, then real browser checks.
+
+### 2026-10-01 — Literal sibling UI / shared exceptions / real browser verification (completed)
+- Confirmed initial API checkpoint fbeac91cd8903a4889aebd1689ac4171bf7d88b5 pushed with remote equality.
+- Copied pinned JPMorgan 8ce0ddca58b5459dd7df98f22463fb31afa82f2b app.tsx, index.html and favicon.ico, then applied ONLY enumerated brand/storage/API/export/source-status/provenance strings, shared frequency/header exceptions and explicit first-line Bun directive hygiene. Favicon unchanged. No columns/metrics/helpers/sorting/aggregation/selection/paging/layout/CSS/event-handler redesign. All colHelp keys/order unchanged; only actual source names/field provenance changed. Extra adjective removed from legal-name help to keep source-only wording discipline.
+- Exact per-file substitution manifest + source/current SHA-256: research/2026-10-01/ui-parity.json; every hunk in ui-parity-{app.tsx,index.html}.diff reviewed and category-labelled. Reverse substitutions reproduce all three pinned reference file hashes offline. The active manifest is embedded verbatim below for self-contained recovery.
+- Frequency: missing/whitespace/single/multiple dash glyphs and legacy 00-dash placeholders -> 00 - None; explicit Unknown -> 00 - Unknown; Monthly/Quarterly/Semi-annually/Annually/Irregular and unknown values unchanged. Existing sorting/export/selection consumers untouched.
+- Count-badge panel: copied markup/layout/CSS/hover/focus/touch/outside/Escape/resize/scroll handlers verbatim. Rich details preserve original nodes, API/provider links, dataset timestamp, total counts, active selection, source/fallback attribution (including DBX ETF TRUST CIK 0001503123). Hidden details also explicitly include current catalog/Watchlist view count and session-local N-PORT provenance; visible subtitle stays ONLY sorted bold clickable selected tickers (empty at zero, full list even all-selected). All checkboxes remain selection controls; row/link/title/Tab/upload actions never become alternate selection toggles.
+- Truthful catalog-only status: initial 39 not-downloaded entries are not falsely labelled as funds whose provider publishes no holdings; existing status text only substituted, no loader/coverage/business-flow change.
+- Early test attempt: 57 pass/1 failed expectation for CSS max-height. Read actual reference CSS (min(70vh,32rem)) and corrected expectation only; CSS never changed. Browser attempt 1 found our new local-upload caption reading late uploadedFunds before initialization on restored selections. Fixed caption to read already-initialized fundMetaCache uploaded flags, without moving bootstrap/cache/selection logic. Browser attempt 2 identified missing per-category view counts in copied default rich details; added required readonly view/count text inside hidden panel. Browser attempt 3 used an incorrect test assumption that upload selects a fund; corrected TEST to click Use after upload, preserving the required original selection semantics. Failed summaries retained as browser/attempt-{1,2,3}-summary.json.
+- Final browser run: Playwright 1.63.0 / Chromium 153.0.8010.12, actual CDN Babel 7.24.0/Tailwind, real static feed. 12 scenarios pass: zero; hover/focus/link/Escape; 1/2/3 selections; activation without mutation; restored selection; filtered bulk selection; category/overview/holdings/history/distributions/Watchlist contexts; CSV prefix/clipboard; dark theme; blacklist/deselect/Clear/reload with sort retained; all42 listed; 390px/320px touch/outside/resize bounds; local N-PORT upload context and Use-only selection. No JS errors, failed requests or HTTP errors. Expected CDN architecture warnings preserved, not suppressed.
+- Browser tooling only: /home/user/.cache/xtrackers-browser (Bun-installed playwright), .cache/ms-playwright browser; first launch lacked OS shared libraries. Installed Debian browser libraries with sudo -n apt-get: libnspr4 libnss3 libatk1.0-0t64 libatk-bridge2.0-0t64 libatspi2.0-0t64 libxdamage1 libxkbcommon0 libasound2t64. No target dependencies/lock/runtime tooling changes. Recreate tooling in .cache with bun add -E playwright@1.63.0; bun x --bun playwright install chromium.
+- Reproducible browser command: PLAYWRIGHT_MODULE=/home/user/.cache/xtrackers-browser/node_modules/playwright/index.mjs bun research/2026-10-01/browser-check.ts, using static server bun x --bun serve . --listen tcp://0.0.0.0:3000. Current preview process xtrackers-etf-watchlist-d8304422 (port3000); no host/origin/embed warnings. Only serve/Bun tools, no localhost API URLs in the client.
+- Evidence: research/2026-10-01/browser/summary.json (passed=true, 12 cases, exact app/HTML hashes), four PNG screenshots; browser-check.ts (verification-only, optional Playwright import; NOT application dependency).
+- Final checks: bun test -> 61 pass/0 fail; Bun builds app+updater -> success; bun install --frozen-lockfile -> unchanged; git diff --check -> clean. Tests/build are not semantic TS validation; no tsc/tsconfig/TypeScript package introduced. Numeric-key and generic Promise<void> rules reviewed and offline-tested.
+- No updater, API seed, sibling repo, remote metadata, PR or main changes in this UI step. Next separate source-safety audit and automation/docs step above.
+
+ACTIVE UI PARITY MANIFEST SNAPSHOT (authoritative bounded substitutions):
+{
+  "reference": {
+    "repository": "daggerok/JPMorgan",
+    "revision": "8ce0ddca58b5459dd7df98f22463fb31afa82f2b"
+  },
+  "headerException": "Rich count-badge markup/layout and hover/focus/touch/Escape/viewport handlers copied verbatim. Hidden rich details add current view/count plus explicit local-upload/static-catalog source context, using initialized metadata flags. Visible sorted selected tickers, selection/financial/loading logic unchanged.",
+  "files": {
+    "app.tsx": {
+      "referenceSha256": "6b58d96ccafdbbc762bfb10bd4707ede5b1e41cd841e35e0695353073dae9fb4",
+      "substitutions": [
+        {
+          "from": "am.jpmorgan.com",
+          "to": "etf.dws.com",
+          "occurrences": 17,
+          "category": "6: source host/name"
+        },
+        {
+          "from": "JPMorgan",
+          "to": "Xtrackers",
+          "occurrences": 19,
+          "category": "1/5/6/8: brand strings"
+        },
+        {
+          "from": "jpmorgan",
+          "to": "xtrackers",
+          "occurrences": 18,
+          "category": "2/3/4: storage/API/export prefixes"
+        },
+        {
+          "from": "https://etf.dws.com/us/en/asset-management/adv/products/fund-explorer/etf",
+          "to": "https://etf.dws.com/en-us/etf-products/",
+          "occurrences": 1,
+          "category": "5: official source link"
+        },
+        {
+          "from": "etf.dws.com ETF fund data</a> + SEC EDGAR N-PORT-P + Yahoo Finance (fallbacks)",
+          "to": "etf.dws.com PDP and XLSX fund data</a> + SEC EDGAR N-PORT-P (DBX ETF TRUST, CIK 0001503123 — holdings fallback only) + Yahoo Finance daily prices (dividend/history fallbacks)",
+          "occurrences": 1,
+          "category": "5/8: truthful provider/fallback attribution"
+        },
+        {
+          "from": "as published in the etf.dws.com ETF fund explorer.",
+          "to": "as published on the etf.dws.com PDP fund page.",
+          "occurrences": 1,
+          "category": "6: legal-name provenance"
+        },
+        {
+          "from": "(\"U.S. Equity\", \"Fixed Income Taxable\", \"International Equity\")",
+          "to": "(\"Equities\", \"Fixed Income\", \"Currency-hedged\")",
+          "occurrences": 1,
+          "category": "6: provider asset-class names"
+        },
+        {
+          "from": "in the etf.dws.com daily holdings (CUSIP for US securities, SEDOL for foreign ones;",
+          "to": "in the etf.dws.com Securities workbook (CUSIP, ISIN or SEDOL;",
+          "occurrences": 1,
+          "category": "6: security identifier provenance"
+        },
+        {
+          "from": "the 12-month rolling dividend yield published by etf.dws.com (product-data)",
+          "to": "the indicated distribution rate published by etf.dws.com (PDP fund facts)",
+          "occurrences": 1,
+          "category": "6: distribution-yield provenance"
+        },
+        {
+          "from": "otherwise indicated (latest distribution per share x payments per year / market price)",
+          "to": "otherwise indicated (latest distribution per share x payments per year / NAV)",
+          "occurrences": 1,
+          "category": "6: indicated yield basis"
+        },
+        {
+          "from": "etf.dws.com (daily product-data figure, month-end fund-explorer figure otherwise; the 7-day SEC yield for the money market ETF)",
+          "to": "etf.dws.com (PDP fund facts figure)",
+          "occurrences": 1,
+          "category": "6: actual SEC-yield source"
+        },
+        {
+          "from": "(cumulative returns block)",
+          "to": "(performance tables)",
+          "occurrences": 3,
+          "category": "6: provider return-table name"
+        },
+        {
+          "from": "from the etf.dws.com dividend-frequency code (MDEC = monthly, QDEC = quarterly, YDEC = annual), inferred from the published dividend schedule when no code exists:",
+          "to": "from the etf.dws.com distribution frequency, inferred from the published dividend schedule when no frequency exists:",
+          "occurrences": 1,
+          "category": "6: published frequency rather than JPMorgan code"
+        },
+        {
+          "from": "Closing market price on that date, as published by etf.dws.com.",
+          "to": "Closing market price on that date, as published by Yahoo Finance.",
+          "occurrences": 1,
+          "category": "6: daily market-price provenance"
+        },
+        {
+          "from": "closing market price versus NAV on that date (%), as published by etf.dws.com.",
+          "to": "closing market price versus NAV on that date (%), derived from etf.dws.com NAV and Yahoo Finance closing price.",
+          "occurrences": 1,
+          "category": "6: matched-date premium provenance"
+        },
+        {
+          "from": "frequency from the published dividend-frequency code, inferred from the cadence otherwise.",
+          "to": "frequency from the published distribution frequency, inferred from the cadence otherwise.",
+          "occurrences": 1,
+          "category": "5: distributions status source"
+        },
+        {
+          "from": "Returns are derived from adjusted market-price closes, not official NAV returns.",
+          "to": "Returns are derived from official daily NAV with distributions reinvested (Yahoo adjusted market-price fallback), not published standardized NAV returns.",
+          "occurrences": 1,
+          "category": "5: overview return source status"
+        },
+        {
+          "from": "if (!normalized || normalized === '-') return '00 - None';",
+          "to": "if (!normalized || /^[\\s-]+$/.test(normalized) || /^00\\s*-\\s*-+$/.test(normalized)) return '00 - None';",
+          "occurrences": 1,
+          "category": "shared frequency exception: blank/dash/legacy coded placeholder -> None; all other mappings unchanged"
+        },
+        {
+          "from": "${escapeHtml(fund.ticker)} publishes no ${sheet === 'holdings' ? 'holdings workbook' : 'NAV history workbook'} (catalog-only fund, e.g. a commodity trust).",
+          "to": "${escapeHtml(fund.ticker)} has no downloaded static ${sheet === 'holdings' ? 'holdings workbook' : 'NAV history workbook'} yet (catalog-only until the next feed refresh).",
+          "occurrences": 1,
+          "category": "5: truthful starter catalog-only status, no false claim of provider absence"
+        },
+        {
+          "from": "the feed records the provider coverage limitation in meta.json.",
+          "to": "run the updater to populate this catalog-only entry.",
+          "occurrences": 1,
+          "category": "5: truthful catalog-only status; metadata not fetched yet"
+        },
+        {
+          "from": "const base = text ? String(text) : 'Search Xtrackers ETFs, select ETFs via the “Use” checkbox, then use the Watchlist tab.';",
+          "to": "const baseText = text ? String(text) : 'Search Xtrackers ETFs, select ETFs via the “Use” checkbox, then use the Watchlist tab.';\n  const viewLabel = state.activeTab === 'All' ? 'All ETFs' : state.activeTab === 'watchlist' ? 'Watchlist' : state.activeTab.startsWith('detail:') ? state.activeTab.slice(7) : categoryLabel(state.activeTab);\n  const contextText = text ? baseText : `${baseText} ${viewLabel}: ${el.tickerCount.textContent || ''}.`;\n  const hasLocalHoldings = [...state.selected].some(ticker => Boolean(fundMetaCache.get(ticker)?.uploaded));\n  const base = hasLocalHoldings ? `${contextText} Local N-PORT XML holdings are included for this session.` : contextText;\n  const dataLabel = hasLocalHoldings ? 'Static catalog data:' : 'Data:';",
+          "occurrences": 1,
+          "category": "shared rich header exception: appropriate file-aware provenance without changing visible subtitle/selection/data logic"
+        },
+        {
+          "from": "${countsText ? ` · ${escapeHtml(countsText)}.` : '.'} Data: <a",
+          "to": "${countsText ? ` · ${escapeHtml(countsText)}.` : '.'} ${dataLabel} <a",
+          "occurrences": 1,
+          "category": "shared rich header exception: distinguish static-catalog links/counts from session-local uploaded holdings"
+        },
+        {
+          "from": "/**\n * @file Xtrackers Watchlist Application\n * Client-side static feed viewer for api/xtrackers/** with multi-ETF Watchlist\n * aggregation. Same single-file approach as daggerok/Amplify: the paginated\n * static API and lazy sheet loading follow daggerok/iShares.\n *\n * Babel standalone note: the inline pipeline strips type annotations, but it\n * does not accept every TypeScript-only expression. Follow the Amplify dev\n * style — plain `byId()` instead of DOM casts, no `as` casts, no non-null\n * `!`, no interfaces or enums.\n */\n\n/// <reference types=\"bun\" />\n\n",
+          "to": "/// <reference types=\"bun\" />\n\n/**\n * @file Xtrackers Watchlist Application\n * Client-side static feed viewer for api/xtrackers/** with multi-ETF Watchlist\n * aggregation. Same single-file approach as daggerok/Amplify: the paginated\n * static API and lazy sheet loading follow daggerok/iShares.\n *\n * Babel standalone note: the inline pipeline strips type annotations, but it\n * does not accept every TypeScript-only expression. Follow the Amplify dev\n * style — plain `byId()` instead of DOM casts, no `as` casts, no non-null\n * `!`, no interfaces or enums.\n */\n\n",
+          "occurrences": 1,
+          "category": "explicit toolchain requirement: Bun directive first line, before documentation/imports; runtime/UI unchanged"
+        }
+      ],
+      "currentSha256": "0b7aaf80de4b60ac35250c026e0050efad49c92e79c8e17a99187b1fcad24a6c"
+    },
+    "index.html": {
+      "referenceSha256": "c85aaa1210e6e75e5fc4c2358be18b4be36cdd0280a07ed6ca7ba871d07a8e3d",
+      "substitutions": [
+        {
+          "from": "am.jpmorgan.com",
+          "to": "etf.dws.com",
+          "occurrences": 4,
+          "category": "6: source host/name"
+        },
+        {
+          "from": "JPMorgan",
+          "to": "Xtrackers",
+          "occurrences": 7,
+          "category": "1/5/6/8: brand strings"
+        },
+        {
+          "from": "jpmorgan",
+          "to": "xtrackers",
+          "occurrences": 4,
+          "category": "2/3/4: storage/API/export prefixes"
+        },
+        {
+          "from": "https://etf.dws.com/us/en/asset-management/adv/products/fund-explorer/etf",
+          "to": "https://etf.dws.com/en-us/etf-products/",
+          "occurrences": 1,
+          "category": "5: official source link"
+        },
+        {
+          "from": "etf.dws.com ETF fund data</a> + SEC EDGAR N-PORT-P + Yahoo Finance (fallbacks)",
+          "to": "etf.dws.com PDP and XLSX fund data</a> + SEC EDGAR N-PORT-P (DBX ETF TRUST, CIK 0001503123 — holdings fallback only) + Yahoo Finance daily prices (dividend/history fallbacks)",
+          "occurrences": 1,
+          "category": "5/8: truthful provider/fallback attribution"
+        },
+        {
+          "from": "generated from the etf.dws.com ETF fund explorer, product-data and historical-data JSON (daily holdings, NAV history, dividends), with SEC EDGAR N-PORT-P and Yahoo Finance as fallbacks.",
+          "to": "generated from the etf.dws.com official catalog/sitemap, PDP and XLSX exports (daily holdings, NAV history, distributions), with SEC EDGAR N-PORT-P as a holdings fallback and Yahoo Finance for daily prices/history/dividend fallbacks.",
+          "occurrences": 1,
+          "category": "5/8: actual DWS source/fallback description"
+        },
+        {
+          "from": "Xtrackers ETF holdings from EDGAR, used by the feed only when etf.dws.com publishes no daily holdings for a fund",
+          "to": "Xtrackers ETF holdings from EDGAR (DBX ETF TRUST, CIK 0001503123), used by the feed only when etf.dws.com publishes no daily holdings for a fund",
+          "occurrences": 1,
+          "category": "8: verified trust in upload provenance"
+        }
+      ],
+      "currentSha256": "c0a8c1e6563ca0fb505d04d1ba74ce2d3f2e9168e7187de7a01ea3e3211084a2"
+    },
+    "favicon.ico": {
+      "referenceSha256": "16bf670a1a4b86945a57a4d5bffa1713c82c54a9abc19870e217626c36cc2fc2",
+      "substitutions": [],
+      "currentSha256": "16bf670a1a4b86945a57a4d5bffa1713c82c54a9abc19870e217626c36cc2fc2"
+    }
+  }
+}
 
 =============================================================================
 FULL SELF-CONTAINED IMPLEMENTATION PLAN
