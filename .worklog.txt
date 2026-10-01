@@ -1,7 +1,7 @@
 CURRENT STATE
 =============
 - Goal/acceptance: Xtrackers holdings-to-watchlist static app; sibling-parity UI; Bun-only, zero runtime dependencies; offline tests; isolated >=3-ticker live runs with repeat byte-stability; scheduled/manual feed; PR to main.
-- Status: Mandatory scoped live acceptance PASSED at 94e231b (both real CLI runs 3/3, zero failures, all 26 files byte-identical; 39 unrequested rows preserved). 46 offline tests pass. UI/initial usable data/workflow/docs/metadata/PR still pending.
+- Status: Mandatory scoped live acceptance passed; initial validated static API snapshot published (42 discovered, 3 populated, 39 catalog-only). 49 offline tests pass including API guards. UI/workflow/docs/metadata/PR pending.
 - Repository: https://github.com/daggerok/Xtrackers
 - Branch: feat/xtrackers-etfs (created from main 13c600703279ebc67b495495c8be5248ca529853).
 - PR: none (GitHub API checked 2026-10-01).
@@ -9,9 +9,9 @@ CURRENT STATE
 - Hard constraints: preserve full embedded plan; no secrets in files/config; Bun-only/no tsc/no tsconfig; dependencies {}; only exact @types/bun and @types/node devDependencies; copied UI with enumerated substitutions + shared header/frequency exceptions; real acceptance isolated from production API.
 - Completed: baseline/recovery; named references; Bun 1.4.2; verified XLSX/PDP endpoints and 42-fund US sitemap; dated source fixtures committed for offline tests.
 - Remaining: updater/parsers/offline tests; scoped live acceptance/retention/idempotency; copied UI/browser parity; workflow/docs/metadata; final checks and PR.
-- Last confirmed pushed SHA: 94e231baa9a6119b163e1af8880344493a0d2f39 (origin/feat/xtrackers-etfs; verified remote equality).
+- Last confirmed pushed SHA: 4a5df0e6c163ae9e1f1a079c3b4b86fc05c82128 (origin/feat/xtrackers-etfs; verified remote equality).
 - Blockers: none.
-- Exact next action: after live-evidence push, publish the explicitly authorized initial three-fund API snapshot from validated v2 output (not another network refresh). Copy app.tsx/index.html/favicon from pinned JPMorgan, apply only enumerated brand/source/path strings + required None-frequency exception; add exact parity/offline header guards and browser checks, then checkpoint. No merge/sibling edits.
+- Exact next action: copy app.tsx/index.html/favicon from pinned JPMorgan 8ce0ddc; apply only enumerated brand/source/path substitutions and mandatory None-frequency exception (shared rich header already present in pinned reference). Add exact reverse-substitution parity and offline header/frequency tests, then browser-check against the validated 42/3 feed. Browser tooling is installed only in .cache, not project dependencies.
 
 === 1st PROMPT: COPY-PASTE THIS TO THE IMPLEMENTING AGENT (WITH YOUR GITHUB ACCESS TOKEN) ===
 
@@ -196,6 +196,15 @@ CHRONOLOGICAL JOURNAL
 - Live sources: official US sitemap discovery after empty XLSX; selected official PDP/Securities/NAV/Distributions; Yahoo matched daily market prices. Only warning is the expected empty-catalog fallback. SEC live fallback NOT exercised here and remains research-403/unverified; pure and real-worker offline SEC tests are separate and not called live validation.
 - Evidence: research/2026-10-01/scoped-live-smoke-v2/{run-1.log,run-2.log,summary.json,hashes-before.json,hashes-after-1.json,hashes-after-2.json,api-after-run-2.tar.gz}. Archive SHA-256 recorded in summary, all 26 complete files included; both hash ledgers equal, so no duplicate archive needed. Prior failed strict-repeat evidence remains in scoped-live-smoke/.
 - Production api/ still contains only the original discovery seed; this smoke did not refresh production. Next separate in-scope initial-publication stage may promote this validated 3-fund snapshot, explicitly documented as 3 downloaded / 39 catalog-only, then copy the sibling UI.
+
+### 2026-10-01 — Initial usable static API publication (completed, separate from smoke)
+- Confirmed successful live-evidence checkpoint 4a5df0e6c163ae9e1f1a079c3b4b86fc05c82128 pushed with remote equality.
+- Within explicitly recorded initial-feed implementation scope, promoted the validated v2 snapshot from isolated acceptance into production api/xtrackers. This is initial publication, NOT another live refresh. All 26 files SHA-256 matched research/2026-10-01/scoped-live-smoke-v2/hashes-after-2.json exactly after copying.
+- Current initial feed: 42 official discovered tickers; ASHR/DBEF/HYLB populated; 39 catalog-only with no invented facts/holdings. Aggregated counts=2238 holdings, 9562 history. Source values/date provenance are the live-accepted ones.
+- Checked actual holding weights: ASHR=100.00000006 across 287 positions, DBEF=100.00000005 across 674, HYLB=99.9999999 across 1277. ASHR has 1 untickered cash position, DBEF 15 untickered cash/derivative positions, HYLB all 1277 identifier-based bonds/cash (no invented issuer equity tickers). Whole-life events=23/40/123 respectively; recent UI schedule remains max 12.
+- Added scripts/api.test.ts, offline structural/manifest/count/provenance guards. It validates linked pages, integer counts, numeric positions, dates, source URLs and same-date premium rules but does not freeze exact future counts or block legitimate scheduled refreshes.
+- bun test -> 49 pass, 0 fail; git diff --check -> clean. No external runtime dependency. Browser tooling (Playwright 1.63.0 / Chromium 153) installed with Bun in workspace .cache only; not in target package.json/bun.lock or tracked files.
+- Next: literal UI copy/substitutions/parity, then real browser checks.
 
 =============================================================================
 FULL SELF-CONTAINED IMPLEMENTATION PLAN
