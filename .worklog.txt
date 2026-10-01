@@ -1,7 +1,7 @@
 CURRENT STATE
 =============
 - Goal/acceptance: Xtrackers holdings-to-watchlist static app; sibling-parity UI; Bun-only, zero runtime dependencies; offline tests; isolated >=3-ticker live runs with repeat byte-stability; scheduled/manual feed; PR to main.
-- Status: Implementation + workflows + pinned README complete; 69 offline tests and 12 real browser cases pass; final-code live acceptance passed. Only target About/topics, remote CI/final Git audit and PR remain. No merge.
+- Status: Implementation/docs/metadata complete; local69 tests pass. First remote CI found sandbox-specific test temp path; fixed using OS tmpdir, awaiting new remote run. Final updater/live/browser code unchanged. PR/final audit pending; no merge.
 - Repository: https://github.com/daggerok/Xtrackers
 - Branch: feat/xtrackers-etfs (created from main 13c600703279ebc67b495495c8be5248ca529853).
 - PR: none (GitHub API checked 2026-10-01).
@@ -9,9 +9,9 @@ CURRENT STATE
 - Hard constraints: preserve full embedded plan; no secrets in files/config; Bun-only/no tsc/no tsconfig; dependencies {}; only exact @types/bun and @types/node devDependencies; copied UI with enumerated substitutions + shared header/frequency exceptions; real acceptance isolated from production API.
 - Completed: baseline/recovery; named references; Bun 1.4.2; verified XLSX/PDP endpoints and 42-fund US sitemap; dated source fixtures committed for offline tests.
 - Remaining: updater/parsers/offline tests; scoped live acceptance/retention/idempotency; copied UI/browser parity; workflow/docs/metadata; final checks and PR.
-- Last confirmed pushed SHA: 4557d7e5cdd43650b1d50604fb6e1689d25e0935 (origin/feat/xtrackers-etfs; verified remote equality).
+- Last confirmed pushed SHA: a962c705ce85149462bfcf29b8b8fe601fe5d180 (origin/feat/xtrackers-etfs; verified remote equality).
 - Blockers: none.
-- Exact next action: push/verify this automation/docs checkpoint, then PATCH only Xtrackers About/homepage and PUT only target topics using the recorded family pattern (18 shared + xtrackers/xtrackers-etfs). GET readback exactly; Pages currently404/pending, do not enable or merge. Inspect feature CI, fetch/verify origin/main, run final gates and create PR to main; record PR URL and finish without sibling edits.
+- Exact next action: inspect the remote Verify Xtrackers run for this portable-test correction (all steps must actually pass), preserve final updater/browser parity hashes and run final local gates/credential/Git audit. origin/main verified 13c6007 unchanged. Create/update one PR feat/xtrackers-etfs -> main, record URL in journal; do not merge or enable Pages or change siblings.
 
 === 1st PROMPT: COPY-PASTE THIS TO THE IMPLEMENTING AGENT (WITH YOUR GITHUB ACCESS TOKEN) ===
 
@@ -466,6 +466,47 @@ ACTIVE UI PARITY MANIFEST SNAPSHOT (authoritative bounded substitutions):
 - Added scripts/automation.test.ts: Bun.YAML parser validates workflow/dependabot shapes, all23 config/help/README/Actions controls/defaults/env agree, no unsupported switches, scoped commits/credentials, main-only Pages staging, exact types-only deps, common README structure (ignoring code fences) and full21-row sorted tables.
 - Strict gates all executed: bun test ->69 pass/0 fail; both Bun builds pass; bun install --frozen-lockfile unchanged; git diff --check clean. YAML syntax checks pass. These are not semantic TypeScript validation or proof of a successful remote Actions run; inspect remote CI next.
 - Read public current JPMorgan/iShares/aberdeen About/homepage/topics before any metadata edits; each uses the mandated shared pattern and18standard+2brand topics. Target before: description=null, homepage=null, topics=[], default_branch=main; Pages404. Full selected public values in metadata-before.json; no secret fields stored. Metadata writes not yet performed at this checkpoint.
+
+### 2026-10-01 — Target metadata readback / real remote CI portability fix (completed locally)
+- Confirmed automation/docs a962c705ce85149462bfcf29b8b8fe601fe5d180 pushed with remote equality.
+- Applied ONLY target Xtrackers About/homepage/topics through REST PATCH + topics PUT, then GET-verified exact fields. Before description/homepage=null, topics=[]; after mandated family pattern below, exact-case homepage,18shared+2brand topics. Default branch remains main, language remains null because main has not received TypeScript yet; no Linguist override/branch change/merge. Pages remains GET404, NOT enabled/deployed. No sibling metadata or files edited.
+TARGET METADATA AFTER (public fields only):
+{
+  "description": "Xtrackers ETF. A single-file client-side tool reading ./api/xtrackers (etf.dws.com catalog/PDP/XLSX, SEC EDGAR N-PORT-P holdings fallback and Yahoo Finance) into a searchable ETF/asset-class catalog with per-fund tabs, watchlist, CSV/TXT export. TailwindCSS, dark mode, Bun updater.",
+  "homepage": "https://daggerok.github.io/Xtrackers/",
+  "topics": [
+    "css",
+    "csv",
+    "dark-mode",
+    "edgar",
+    "etf",
+    "finance",
+    "github-pages",
+    "holdings",
+    "html",
+    "json",
+    "nport",
+    "single-file",
+    "static-api",
+    "tailwindcss",
+    "txt",
+    "typescript",
+    "watchlist",
+    "xtrackers",
+    "xtrackers-etfs",
+    "yahoo-finance"
+  ],
+  "default_branch": "main",
+  "language": null,
+  "pages": {
+    "status": 404,
+    "data": null
+  }
+}
+- Fetched origin/main and ls-remote: main still 13c600703279ebc67b495495c8be5248ca529853, feature a962c705ce85149462bfcf29b8b8fe601fe5d180; no user changes overwritten.
+- Actual remote CI run36827598737: https://github.com/daggerok/Xtrackers/actions/runs/36827598737 failed in bun test after checkout/setup/frozen-install SUCCESS. Check annotations pinpointed test helper trying mkdir('/home/user') on GitHub's /home/runner runner (EACCES); later build/diff steps correctly skipped, not treated as green. This is a test portability bug, not provider/production updater failure.
+- Fixed only test tempRoot: node:os tmpdir() + mkdtemp(join(tmpdir(),'xtrackers-tests-')). No sudo/permission workaround, no tests disabled, no CI continue-on-error for checks. Runtime updater/API/app/workflows unchanged; final live/code hashes remain valid.
+- Strict local gates re-executed: all69 tests pass, both Bun builds pass, frozen-lock install unchanged, diff check clean. Need actual new remote CI success before final completion/PR claim.
 
 =============================================================================
 FULL SELF-CONTAINED IMPLEMENTATION PLAN

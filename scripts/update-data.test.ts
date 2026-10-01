@@ -213,6 +213,7 @@ function roundForTest(value: number) { return Math.round(value * 1000000) / 1000
 import { mkdir, mkdtemp, readdir, readFile, rm } from 'node:fs/promises';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
+import { tmpdir } from 'node:os';
 import {
   readConfig, CONTROL_DEFAULTS, parseRange, parseAumRange, inRange, fundFilterReasons, mergeDetails,
   outputFundLine, outputConfigEntries, createSerialQueue, createRequestGate, fetchWithRetry, HttpError,
@@ -223,8 +224,7 @@ import {
 } from './update-data';
 
 async function tempRoot(): Promise<string> {
-  await mkdir('/home/user/.cache/xtrackers-tests', { recursive: true });
-  return mkdtemp('/home/user/.cache/xtrackers-tests/run-');
+  return mkdtemp(join(tmpdir(), 'xtrackers-tests-'));
 }
 async function hashes(root: string): Promise<Record<string, string>> {
   const files: Record<string, string> = {};
