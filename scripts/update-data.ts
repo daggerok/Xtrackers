@@ -617,8 +617,7 @@ const BUILTIN_CONTROL_DEFAULTS: Record<string, string> = {
   SEC_UA: 'daggerok Xtrackers ETF feed (https://github.com/daggerok/Xtrackers)', VERBOSE: 'false',
   ...Object.fromEntries(RETURN_PERIODS.flatMap(period => [[`PERFORMANCE_${period}`, ':'], [`TOTAL_RETURN_${period}`, ':']])),
 };
-// Same iShares approach: checked-in flat JSON defaults, nonblank ENV overrides.
-// Resolve relative to the updater, not cwd; only ENOENT permits built-in fallbacks.
+// Checked-in flat JSON defaults, resolved relative to the updater (not cwd); only ENOENT permits built-in fallbacks.
 export function loadUpdaterDefaults(path: string | URL = new URL('./update-data.config.json', import.meta.url)): Record<string, string> {
   try {
     const parsed: unknown = JSON.parse(readUpdaterConfig(path, 'utf8'));
@@ -636,13 +635,6 @@ export function loadUpdaterDefaults(path: string | URL = new URL('./update-data.
   }
 }
 export const CONTROL_DEFAULTS: Record<string, string> = { ...BUILTIN_CONTROL_DEFAULTS, ...loadUpdaterDefaults() };
-export function applyUpdaterDefaults(env: Record<string, string | undefined> = process.env, defaults: Record<string, string> = CONTROL_DEFAULTS): void {
-  for (const [key, value] of Object.entries(defaults)) {
-    const current = env[key];
-    if (current === undefined || current.trim() === '') env[key] = String(value);
-  }
-}
-applyUpdaterDefaults();
 export function envValue(env: Record<string, string | undefined>, name: string): string {
   return env[name]?.trim() || CONTROL_DEFAULTS[name] || '';
 }
@@ -714,6 +706,45 @@ export function readConfig(env: Record<string, string | undefined> = process.env
     historyPageSize: parsePositiveInt(envValue(env, 'HISTORY_PAGE_SIZE'), 'HISTORY_PAGE_SIZE'),
     maxRetries: parsePositiveInt(envValue(env, 'MAX_RETRIES'), 'MAX_RETRIES', 0), secUa, verbose: parseBoolean(envValue(env, 'VERBOSE'), 'VERBOSE'),
   };
+}
+// Allowlisted scalar controls, shared by the CLI and the Actions resolver step so user input is never interpolated into bash.
+// Precedence: config file < advanced JSON < nonblank individual inputs < environment (nonblank).
+export const CONTROL_NAMES = [
+  'MAX_FETCHES', 'REQUEST_SLEEP', 'CONCURRENCY', 'TICKERS', 'AUM', 'TER', 'DIVIDEND_YIELD', 'SEC_YIELD',
+  'HOLDINGS_PAGE_SIZE', 'HISTORY_PAGE_SIZE', 'MAX_RETRIES', 'SEC_UA', 'VERBOSE',
+  ...(['PERFORMANCE', 'TOTAL_RETURN'] as const).flatMap(prefix => RETURN_PERIODS.map(period => `${prefix}_${period}` as const)),
+] as const;
+export type ControlName = (typeof CONTROL_NAMES)[number];
+export const CONFIG_FILE_URL = new URL('./update-data.config.json', import.meta.url);
+export function resolveControls(
+  file: unknown = {}, advanced: unknown = {}, inputs: unknown = {}, env: Record<string, string | undefined> = {},
+): Record<string, string> {
+  const result: Record<string, string> = {};
+  const known = new Set<string>(CONTROL_NAMES);
+  const apply = (value: unknown, skipEmpty = false): void => {
+    if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('Configuration must be a JSON object');
+    for (const [key, raw] of Object.entries(value)) {
+      if (!known.has(key)) throw new Error(`Unknown updater control: ${key}`);
+      if (skipEmpty && (raw === '' || raw === undefined || raw === null)) continue;
+      if (!['string', 'number', 'boolean'].includes(typeof raw)) throw new Error(`${key}: expected string, number or boolean`);
+      const text = String(raw);
+      if (/[\r\n\0]/.test(text)) throw new Error(`${key}: multiline/control characters are not allowed`);
+      result[key] = text;
+    }
+  };
+  apply(file);
+  apply(advanced);
+  apply(inputs, true);
+  // Blank environment values inherit (documented behavior since the JSON defaults were introduced); `0` and `false` override.
+  apply(Object.fromEntries(CONTROL_NAMES.flatMap(key => env[key]?.trim() ? [[key, env[key]!.trim()]] : [])));
+  readConfig(result); // validates every control before any request or write; blank values fall back to built-in defaults
+  return result;
+}
+export async function runtimeControls(env: Record<string, string | undefined> = process.env): Promise<Record<string, string>> {
+  let file: unknown = {};
+  try { file = JSON.parse(readUpdaterConfig(CONFIG_FILE_URL, 'utf8')); }
+  catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error; }
+  return resolveControls(file, {}, {}, env);
 }
 export function inRange(value: number | null | undefined, range?: Range): boolean {
   if (!range) return true;
@@ -1505,7 +1536,7 @@ if (import.meta.main) {
     if (args.some(arg => arg === '-h' || arg === '--help')) printHelp();
     else {
       if (args.length) throw new Error(`unknown arguments: ${args.join(' ')}`);
-      const config = readConfig();
+      const config = readConfig(await runtimeControls());
       const result = await runUpdater(config);
       await writeSummary(config, result);
       if (result.failures) process.exitCode = 1;

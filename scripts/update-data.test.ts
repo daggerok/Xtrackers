@@ -569,8 +569,8 @@ describe('final source-safety audit: dated returns and annualized SI', () => {
   });
 });
 
-import { loadUpdaterDefaults, applyUpdaterDefaults } from './update-data';
-describe('iShares-style checked-in default config and nonblank ENV priority', () => {
+import { loadUpdaterDefaults, resolveControls } from './update-data';
+describe('checked-in default config and nonblank ENV priority', () => {
   test('checked-in flat JSON defines every supported default and matches runtime config/help', () => {
     const defaults = loadUpdaterDefaults();
     expect(defaults).toEqual(CONTROL_DEFAULTS); expect(Object.keys(defaults)).toHaveLength(23);
@@ -583,10 +583,10 @@ describe('iShares-style checked-in default config and nonblank ENV priority', ()
       AUM: '2B:', TER: ':0.35', SEC_YIELD: '0:', DIVIDEND_YIELD: ':0', TICKERS: 'ASHR HYLB', SEC_UA: 'project contact',
       HOLDINGS_PAGE_SIZE: '', HISTORY_PAGE_SIZE: '   ', PERFORMANCE_1Y: '-5:0', TOTAL_RETURN_3Y: '0:',
     };
-    applyUpdaterDefaults(env, { ...CONTROL_DEFAULTS, MAX_FETCHES: '9', REQUEST_SLEEP: '7', VERBOSE: 'true' });
-    expect(env.MAX_FETCHES).toBe('0'); expect(env.REQUEST_SLEEP).toBe(' 0 '); expect(env.VERBOSE).toBe('false');
-    expect(env.HOLDINGS_PAGE_SIZE).toBe('250'); expect(env.HISTORY_PAGE_SIZE).toBe('1000');
-    const config = readConfig(env);
+    const resolved = resolveControls({ ...CONTROL_DEFAULTS, MAX_FETCHES: '9', REQUEST_SLEEP: '7', VERBOSE: 'true' }, {}, {}, env);
+    expect(resolved.MAX_FETCHES).toBe('0'); expect(resolved.REQUEST_SLEEP).toBe('0'); expect(resolved.VERBOSE).toBe('false');
+    expect(resolved.HOLDINGS_PAGE_SIZE).toBe('250'); expect(resolved.HISTORY_PAGE_SIZE).toBe('1000');
+    const config = readConfig(resolved);
     expect(config.maxFetches).toBe(0); expect(config.requestSleepSeconds).toBe(0); expect(config.maxRetries).toBe(0);
     expect(config.tickers).toEqual(new Set(['ASHR', 'HYLB'])); expect(config.secUa).toBe('project contact');
     expect(config.secYieldRange).toMatchObject({ min: 0 }); expect(config.dividendYieldRange).toMatchObject({ max: 0 });
@@ -598,7 +598,7 @@ describe('iShares-style checked-in default config and nonblank ENV priority', ()
       const path = join(root, 'update-data.config.json');
       await Bun.write(path, JSON.stringify({ CONCURRENCY: 3, REQUEST_SLEEP: 2.5, MAX_FETCHES: 0, VERBOSE: false, TICKERS: null, AUM: '1B:', PERFORMANCE_1Y: '15:' }));
       const file = loadUpdaterDefaults(path); expect(file.VERBOSE).toBe('false'); expect(file.MAX_FETCHES).toBe('0'); expect(file.TICKERS).toBeUndefined();
-      const env: Record<string, string | undefined> = {}; applyUpdaterDefaults(env, file);
+      const env = resolveControls(file);
       const config = readConfig(env); expect(config.concurrency).toBe(3); expect(config.requestSleepSeconds).toBe(2.5);
       expect(config.aumRange).toMatchObject({ min: 1e9 }); expect(config.performanceRanges['1Y']).toMatchObject({ min: 15 });
       expect(file.CONCURRENCY).toBe('3'); expect(env.CONCURRENCY).toBe('3');
