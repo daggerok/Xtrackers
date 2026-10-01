@@ -5,6 +5,7 @@
 // ZIP/OpenXML helpers adapted from daggerok/SPDR @ d26fe5547c98f1a259f1198f4e789363b11f2491.
 // Reporting, N-PORT and financial helpers follow pinned JPMorgan; see .worklog.txt.
 import { inflateRawSync } from 'node:zlib';
+import { readFileSync as readUpdaterConfig } from 'node:fs';
 import { readFile, readdir, mkdir, writeFile, rename, rm } from 'node:fs/promises';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -610,12 +611,38 @@ export type UpdaterConfig = {
   performanceRanges: RangeMap; totalReturnRanges: RangeMap;
   holdingsPageSize: number; historyPageSize: number; maxRetries: number; secUa: string; verbose: boolean;
 };
-export const CONTROL_DEFAULTS: Record<string, string> = {
+const BUILTIN_CONTROL_DEFAULTS: Record<string, string> = {
   MAX_FETCHES: '0', REQUEST_SLEEP: '1.5', CONCURRENCY: '2', TICKERS: '', AUM: ':', TER: ':',
   DIVIDEND_YIELD: ':', SEC_YIELD: ':', HOLDINGS_PAGE_SIZE: '250', HISTORY_PAGE_SIZE: '1000', MAX_RETRIES: '2',
   SEC_UA: 'daggerok Xtrackers ETF feed (https://github.com/daggerok/Xtrackers)', VERBOSE: 'false',
   ...Object.fromEntries(RETURN_PERIODS.flatMap(period => [[`PERFORMANCE_${period}`, ':'], [`TOTAL_RETURN_${period}`, ':']])),
 };
+// Same iShares approach: checked-in flat JSON defaults, nonblank ENV overrides.
+// Resolve relative to the updater, not cwd; only ENOENT permits built-in fallbacks.
+export function loadUpdaterDefaults(path: string | URL = new URL('./update-data.config.json', import.meta.url)): Record<string, string> {
+  try {
+    const parsed: unknown = JSON.parse(readUpdaterConfig(path, 'utf8'));
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) throw new Error('update-data.config.json: expected a flat object');
+    const defaults: Record<string, string> = {};
+    for (const [key, value] of Object.entries(parsed)) {
+      if (value === null || value === undefined) continue;
+      if (!['string', 'number', 'boolean'].includes(typeof value)) throw new Error(`update-data.config.json: ${key} must be a scalar`);
+      defaults[key] = String(value);
+    }
+    return defaults;
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
+    return {};
+  }
+}
+export const CONTROL_DEFAULTS: Record<string, string> = { ...BUILTIN_CONTROL_DEFAULTS, ...loadUpdaterDefaults() };
+export function applyUpdaterDefaults(env: Record<string, string | undefined> = process.env, defaults: Record<string, string> = CONTROL_DEFAULTS): void {
+  for (const [key, value] of Object.entries(defaults)) {
+    const current = env[key];
+    if (current === undefined || current.trim() === '') env[key] = String(value);
+  }
+}
+applyUpdaterDefaults();
 export function envValue(env: Record<string, string | undefined>, name: string): string {
   return env[name]?.trim() || CONTROL_DEFAULTS[name] || '';
 }
@@ -714,7 +741,7 @@ export function selectUpdateBatch<T extends { ticker: string }>(funds: T[], maxi
   return (at < 0 ? sorted : sorted.slice(at + 1).concat(sorted.slice(0, at + 1))).slice(0, maximum);
 }
 export function printHelp(): void {
-  console.log('Xtrackers ETF updater (Bun-only, zero runtime dependencies)\nUsage: bun scripts/update-data.ts [-h|--help]\n\nControls (nonblank environment values override defaults; filters use AND):');
+  console.log('Xtrackers ETF updater (Bun-only, zero runtime dependencies)\nUsage: bun scripts/update-data.ts [-h|--help]\n\nDefaults: scripts/update-data.config.json (nonblank environment values override JSON; filters use AND):');
   for (const [key, value] of Object.entries(CONTROL_DEFAULTS)) console.log(`  ${key}=${value || 'all'}`);
   console.log('\nMAX_FETCHES: 0 = full selected pass; positive = resumable evaluation batch.\nREQUEST_SLEEP: seconds per independent request lane, including retries.\nTICKERS: spaces, commas or semicolons; an unknown requested ticker fails before writes.\nAUM: min:max, K/M/B/T or nano/micro/small/mid/large. Other ranges: min:max in %.\nPERFORMANCE: annualized 3Y/5Y/10Y; TOTAL_RETURN: cumulative.\nSEC_UA: identify yourself with a real contact per SEC policy. VERBOSE: per-request warnings.\nAll source failures keep existing published data; no skip-provider or dry-run mode.\n\nExamples:\n  TICKERS="ASHR HYLB DBEF" VERBOSE=1 bun scripts/update-data.ts\n  MAX_FETCHES=3 bun scripts/update-data.ts\n  AUM="1B:" TER=":0.5" bun scripts/update-data.ts\n  PERFORMANCE_1Y="15:" bun scripts/update-data.ts');
 }

@@ -1,18 +1,18 @@
 CURRENT STATE
 =============
 - Goal/acceptance: follow-up requested by user: mirror daggerok/iShares GitHub Actions and scripts/update-data.config.json approach in Xtrackers, including loader/precedence, help, docs and tests. Preserve issuer fetch/parse/financial/UI logic and current published data.
-- Status: Reference/baseline audit complete; implementation pending. Prior app/PR delivery complete, not repeated.
+- Status: Checked-in JSON/default loading/ENV precedence/help checkpoint complete;74 offline tests pass. Workflow/related diagnostics/docs and live config acceptance remain. UI/data untouched.
 - Repository: https://github.com/daggerok/Xtrackers
 - Branch: feat/xtrackers-etfs; existing PR #1 OPEN, not merged: https://github.com/daggerok/Xtrackers/pull/1.
 - Authorization: target-only edits/commits/ordinary fast-forward pushes to this branch/PR. No merge, force push, sibling edits, About changes or production data refresh.
 - Hard constraints: Bun-only, dependencies={}, exact types-only dev deps, no tsc/tsconfig; full embedded plan preserved; secrets never in files/config/URLs/output; first/second-line reference directive. New iShares config/workflow instruction overrides prior baked/manual-default design, not DWS-specific safe pacing or supported controls.
-- Completed: full1243-line worklog read, Git/PR reconciliation, restore nonsecret origin and executable snapshot metadata, fast-forward external data-only commit; fresh pinned iShares workflow/config/code audit; Bun1.4.2 and frozen dev deps restored; baseline69 offline tests pass.
-- Remaining: checked-in config loader/precedence/help tests; workflow job-level env+blank inputs/actions alignment; related README/CI/Pages/summary guards; scoped real CLI config acceptance; final diff/remote CI/PR readback.
-- Last confirmed pushed baseline SHA: 89ba459a248a4d1eb9bd97314b0d44c49b1c105b (external data update; local fast-forwarded with clean tree). main still13c600703279ebc67b495495c8be5248ca529853.
+- Completed: reference/baseline audit and external data preservation; checked-in23-control config +module-relative loading +nonblankENV precedence/ENOENT fallback +JSON-aware help;74 offline tests pass.
+- Remaining: workflow job-level env+blank inputs/actions alignment; GitHub summary/README/CI/Pages/contract guards; scoped real CLI config acceptance; final diff/remote CI/PR readback.
+- Last confirmed pushed checkpoint SHA: c41e75e0da1fec293dea8a00c22e8e4ec0136743 (local/remote verified). External data baseline89ba459 preserved; main13c6007 unchanged.
 - Current published data:43 funds /21171 holdings /77473 history from the user's external update; all files must remain untouched by this follow-up.
 - Reference: daggerok/iShares main297a2e41e4a7a438ece2b8bde8e3384e960dfaeb; config lives in scripts/, NOT repo root. Full relevant snapshots below/reference.json.
 - Blockers: none; fresh short-lived push credential supplied, held only in runtime memory. No API-auth use authorized/needed; public readback is unauthenticated.
-- Exact next action: implement the flat checked-in scripts/update-data.config.json with nonblank ENV precedence/missing-file fallback and focused tests, then scoped commit+push before workflow migration. Keep DWS REQUEST_SLEEP=1.5/CONCURRENCY=2; do not copy iShares speed0/4.
+- Exact next action: mirror pinned iShares data-workflow job-level env, blank string inputs, checkoutv7/setup-bunv2 and install/test/update/commit sequence; align CI/Pages common setup, add automatic GitHub step summary and focused tests/README. Preserve safe credential handling and all23 supported controls; no financial/UI/API changes.
 
 === 1st PROMPT: COPY-PASTE THIS TO THE IMPLEMENTING AGENT (WITH YOUR GITHUB ACCESS TOKEN) ===
 
@@ -722,6 +722,16 @@ jobs:
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git commit -m 'Update iShares ETF data'
           git push
+
+### 2026-10-01 — iShares-style checked-in config/default precedence (completed)
+- Audit checkpoint c41e75e0da1fec293dea8a00c22e8e4ec0136743 pushed and remote equality verified. First push failed because snapshot excluded plain .git/config/origin; restored only nonsecret public origin in the same command and retried successfully. No token/header ever stored there.
+- Tool snapshots also discard installed .local/.cache binaries between calls. Installed Bun1.4.2 from official release; retained only a nonsecret compressed tool archive + wrapper outside target to re-extract into excluded .cache as needed. No project dependency/lock/runtime changes. Commands are equivalent to bun1.4.2 CLI, invoked through /home/user/run-bun.sh in this environment.
+- Added scripts/update-data.config.json, same flat string-valued canonical-control schema and module-relative filename as pinned iShares. All23 existing controls, same conservative DWS1.5/2 defaults, unrestricted filters, no new skip/provider flags.
+- Added loadUpdaterDefaults +applyUpdaterDefaults in the single updater: checked-in JSON wins over built-in emergency fallbacks; nonblank ENV wins over JSON; only undefined/whitespaceENV filled;0/false preserved; null defaults skipped and scalar strings/numbers/booleans converted to strings. ENOENT alone permits fallback; malformed/unreadable/nonscalar structure throws, not silently ignored. No broad any or numeric-return-key casts introduced; directive stays line2 before imports.
+- Unlike stale reference docs, exported effective defaults/readConfig({})/help use actual loaded JSON, so JSON edits are reflected consistently, not hidden behind hardcoded help values. Help now names config path/precedence. No cwd-dependent reads or extra CONFIG knob.
+- Added5 offline regression tests: exact23-key file/runtime equality; missing/blankENV inheritance; explicit zero/false and all financial ranges/contact/tickers precedence; scalar/null cases and valid edits; missing/malformed/unreadable/nonflat config behavior; CLI help from a different cwd.
+- Strict local checks:74pass/0fail (previous69 retained), both Bun builds success, git diff--check clean. Source/API/UI/hash baselines remain unchanged except config plumbing in updater; no live source request in this checkpoint.
+- Next: data workflow mirror and related summary/docs/CI/Pages contract validation, separate coherent checkpoint.
 
 =============================================================================
 FULL SELF-CONTAINED IMPLEMENTATION PLAN

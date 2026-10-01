@@ -568,3 +568,57 @@ describe('final source-safety audit: dated returns and annualized SI', () => {
     expect(annualizedToTotal(-101, 3)).toBeNull(); expect(annualizedToTotal(-100, 3)).toBe(-100);
   });
 });
+
+import { loadUpdaterDefaults, applyUpdaterDefaults } from './update-data';
+describe('iShares-style checked-in default config and nonblank ENV priority', () => {
+  test('checked-in flat JSON defines every supported default and matches runtime config/help', () => {
+    const defaults = loadUpdaterDefaults();
+    expect(defaults).toEqual(CONTROL_DEFAULTS); expect(Object.keys(defaults)).toHaveLength(23);
+    expect(defaults.REQUEST_SLEEP).toBe('1.5'); expect(defaults.CONCURRENCY).toBe('2');
+    expect(readConfig({}).requestSleepSeconds).toBe(1.5); expect(readConfig({}).concurrency).toBe(2);
+  });
+  test('only absent/blank ENV inherits JSON; zero/false/ranges/tickers/contact override', () => {
+    const env: Record<string, string | undefined> = {
+      MAX_FETCHES: '0', REQUEST_SLEEP: ' 0 ', CONCURRENCY: '1', MAX_RETRIES: '0', VERBOSE: 'false',
+      AUM: '2B:', TER: ':0.35', SEC_YIELD: '0:', DIVIDEND_YIELD: ':0', TICKERS: 'ASHR HYLB', SEC_UA: 'project contact',
+      HOLDINGS_PAGE_SIZE: '', HISTORY_PAGE_SIZE: '   ', PERFORMANCE_1Y: '-5:0', TOTAL_RETURN_3Y: '0:',
+    };
+    applyUpdaterDefaults(env, { ...CONTROL_DEFAULTS, MAX_FETCHES: '9', REQUEST_SLEEP: '7', VERBOSE: 'true' });
+    expect(env.MAX_FETCHES).toBe('0'); expect(env.REQUEST_SLEEP).toBe(' 0 '); expect(env.VERBOSE).toBe('false');
+    expect(env.HOLDINGS_PAGE_SIZE).toBe('250'); expect(env.HISTORY_PAGE_SIZE).toBe('1000');
+    const config = readConfig(env);
+    expect(config.maxFetches).toBe(0); expect(config.requestSleepSeconds).toBe(0); expect(config.maxRetries).toBe(0);
+    expect(config.tickers).toEqual(new Set(['ASHR', 'HYLB'])); expect(config.secUa).toBe('project contact');
+    expect(config.secYieldRange).toMatchObject({ min: 0 }); expect(config.dividendYieldRange).toMatchObject({ max: 0 });
+    expect(config.performanceRanges['1Y']).toMatchObject({ min: -5, max: 0 }); expect(config.totalReturnRanges['3Y']).toMatchObject({ min: 0 });
+  });
+  test('scalar values convert as iShares does; null is skipped; valid JSON edits reach parser', async () => {
+    const root = await tempRoot();
+    try {
+      const path = join(root, 'update-data.config.json');
+      await Bun.write(path, JSON.stringify({ CONCURRENCY: 3, REQUEST_SLEEP: 2.5, MAX_FETCHES: 0, VERBOSE: false, TICKERS: null, AUM: '1B:', PERFORMANCE_1Y: '15:' }));
+      const file = loadUpdaterDefaults(path); expect(file.VERBOSE).toBe('false'); expect(file.MAX_FETCHES).toBe('0'); expect(file.TICKERS).toBeUndefined();
+      const env: Record<string, string | undefined> = {}; applyUpdaterDefaults(env, file);
+      const config = readConfig(env); expect(config.concurrency).toBe(3); expect(config.requestSleepSeconds).toBe(2.5);
+      expect(config.aumRange).toMatchObject({ min: 1e9 }); expect(config.performanceRanges['1Y']).toMatchObject({ min: 15 });
+      expect(file.CONCURRENCY).toBe('3'); expect(env.CONCURRENCY).toBe('3');
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+  test('ENOENT falls back; malformed/unreadable/nonflat JSON is not silently swallowed', async () => {
+    const root = await tempRoot();
+    try {
+      expect(loadUpdaterDefaults(join(root, 'absent.json'))).toEqual({});
+      const path = join(root, 'update-data.config.json');
+      await Bun.write(path, '{ invalid'); expect(() => loadUpdaterDefaults(path)).toThrow();
+      await Bun.write(path, '[]'); expect(() => loadUpdaterDefaults(path)).toThrow('flat object');
+      await Bun.write(path, '{"CONCURRENCY": {"value": 2}}'); expect(() => loadUpdaterDefaults(path)).toThrow('scalar');
+      expect(() => loadUpdaterDefaults(root)).toThrow();
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+  test('default file resolution is module-relative when CLI cwd is elsewhere', async () => {
+    const command = Bun.spawn([process.execPath, new URL('./update-data.ts', import.meta.url).pathname, '--help'], { cwd: tmpdir(), stdout: 'pipe', stderr: 'pipe' });
+    const text = await new Response(command.stdout).text(); const error = await new Response(command.stderr).text();
+    expect(await command.exited).toBe(0); expect(error).toBe(''); expect(text).toContain('scripts/update-data.config.json');
+    expect(text).toContain('REQUEST_SLEEP=1.5'); expect(text).toContain('CONCURRENCY=2');
+  });
+});
