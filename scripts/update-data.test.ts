@@ -544,3 +544,27 @@ describe('live finding regression: official NAV vs optional Yahoo adjusted serie
     } finally { await rm(root, { recursive: true, force: true }); }
   });
 });
+
+import { coalesceReturns, annualizedOfficialReturns } from './update-data';
+describe('final source-safety audit: dated returns and annualized SI', () => {
+  test('undated official zero/negative values stay undated and never absorb unrelated derived values', () => {
+    const primary = { ...emptyReturns(), ytd: 0, yr1: -2 };
+    const derived = { ...emptyReturns('2026-08-31'), ytd: 99, yr1: 99, yr3: 5, sinceInception: 7 };
+    const combined = coalesceReturns(primary, derived);
+    expect(combined.asOfDate).toBeNull(); expect(combined.ytd).toBe(0); expect(combined.yr1).toBe(-2);
+    expect(combined.yr3).toBeNull(); expect(combined.sinceInception).toBeNull();
+    expect(coalesceReturns(emptyReturns(), derived)).toEqual(derived);
+    expect(coalesceReturns({ ...primary, asOfDate: '2026-08-31' }, derived).yr3).toBe(5);
+    expect(coalesceReturns({ ...primary, asOfDate: '2026-07-31' }, derived).yr3).toBeNull();
+  });
+  test('published cumulative SI of young/undated funds is not labelled annualized; mature zero/negative SI preserved', () => {
+    const source = { ...emptyReturns('2026-08-31'), sinceInception: 0, yr1: -1 };
+    expect(annualizedOfficialReturns(source, '2026-01-01').sinceInception).toBeNull();
+    expect(annualizedOfficialReturns(source, '2024-01-01').sinceInception).toBe(0);
+    expect(annualizedOfficialReturns({ ...source, sinceInception: -5 }, '2024-01-01').sinceInception).toBe(-5);
+    expect(annualizedOfficialReturns({ ...source, asOfDate: null }, '2024-01-01').sinceInception).toBeNull();
+    expect(annualizedOfficialReturns(source, null).sinceInception).toBeNull();
+    expect(source.sinceInception).toBe(0); expect(annualizedOfficialReturns(source, '2026-01-01').yr1).toBe(-1);
+    expect(annualizedToTotal(-101, 3)).toBeNull(); expect(annualizedToTotal(-100, 3)).toBe(-100);
+  });
+});

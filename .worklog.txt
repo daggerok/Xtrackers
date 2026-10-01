@@ -1,7 +1,7 @@
 CURRENT STATE
 =============
 - Goal/acceptance: Xtrackers holdings-to-watchlist static app; sibling-parity UI; Bun-only, zero runtime dependencies; offline tests; isolated >=3-ticker live runs with repeat byte-stability; scheduled/manual feed; PR to main.
-- Status: Literal sibling UI + allowed substitutions/shared header/frequency exceptions complete. 61 offline tests and 12 real browser scenarios pass; validated initial API retained. Final source-safety audit, workflows/README/metadata/PR pending.
+- Status: UI/browser verification complete; final updater date/SI safety audit complete (63 offline tests pass). Need final-revision scoped live rerun, automation, reference README, metadata and PR. No merge.
 - Repository: https://github.com/daggerok/Xtrackers
 - Branch: feat/xtrackers-etfs (created from main 13c600703279ebc67b495495c8be5248ca529853).
 - PR: none (GitHub API checked 2026-10-01).
@@ -9,9 +9,9 @@ CURRENT STATE
 - Hard constraints: preserve full embedded plan; no secrets in files/config; Bun-only/no tsc/no tsconfig; dependencies {}; only exact @types/bun and @types/node devDependencies; copied UI with enumerated substitutions + shared header/frequency exceptions; real acceptance isolated from production API.
 - Completed: baseline/recovery; named references; Bun 1.4.2; verified XLSX/PDP endpoints and 42-fund US sitemap; dated source fixtures committed for offline tests.
 - Remaining: updater/parsers/offline tests; scoped live acceptance/retention/idempotency; copied UI/browser parity; workflow/docs/metadata; final checks and PR.
-- Last confirmed pushed SHA: fbeac91cd8903a4889aebd1689ac4171bf7d88b5 (origin/feat/xtrackers-etfs; verified remote equality).
+- Last confirmed pushed SHA: b0504170cc075e9d27c964b4f15adc6f3f07b107 (origin/feat/xtrackers-etfs; verified remote equality).
 - Blockers: none.
-- Exact next action: finish updater safety audit for undated official-return rows / young-fund published SI (never invent a date or call cumulative SI annualized), with focused offline tests and separate updater commit. Then repeat real scoped acceptance on final updater revision. Add generated 23-input workflow, CI/Pages/Dependabot, literal reference README substitutions/tables and target-only GitHub About/topics; full checks, open PR to main without merge.
+- Exact next action: push this updater-only safety correction, clone final code revision into isolated acceptance-v3 with the actual 42/3 published API, repeat TICKERS="ASHR HYLB DBEF" VERBOSE=1 normal CLI twice, compare all hashes and 39 unselected rows/files. Then workflows/README/About/topics, full offline/build/parity validation and PR to main without merge.
 
 === 1st PROMPT: COPY-PASTE THIS TO THE IMPLEMENTING AGENT (WITH YOUR GITHUB ACCESS TOKEN) ===
 
@@ -428,6 +428,15 @@ ACTIVE UI PARITY MANIFEST SNAPSHOT (authoritative bounded substitutions):
     }
   }
 }
+
+### 2026-10-01 — Final updater source-safety audit (completed, separate from UI)
+- Confirmed UI/browser checkpoint b0504170cc075e9d27c964b4f15adc6f3f07b107 pushed with remote equality.
+- Tightened return coalescing: a nonempty undated official return row retains asOfDate=null and cannot inherit the derived month date or mix in unrelated dated gaps. Empty official rows still use fully dated derivation; same-date numeric gaps still fill; zero and negatives preserved. Explicit typed numeric key list excludes asOfDate. This closes a future catalog-date-fetch failure edge, not a change to current accepted derived NAV figures.
+- Published since-inception numbers from funds <1 year old are cumulative under the provider's performance disclaimer, not SI Ann. Unknown inception/source dates cannot certify annualized SI either. Added conservative copy-based guard (does not mutate raw source), preserving mature true zero/negative annualized SI. Derived SI already requires full inception coverage and >=1 year.
+- Rejected mathematically impossible annualized returns <-100% during CAGR->TR conversion; exact -100/zero/ordinary negative values remain valid.
+- Focused regression tests added: undated official zero/negative numbers, same/different-date mixing, empty source, young/unknown/mature SI, source immutability and -100 boundary.
+- bun test -> 63 pass, 0 fail; updater Bun build -> success; git diff --check -> clean. No app/HTML/API/financial UI changes in this separate source step. No semantic type checker or forbidden dependency added.
+- Next: final-code revision live repeat, preserving validated production data and every unselected entry/path. Prior v2 source acceptance remains recorded, but final completion will use the new revision rather than silently treating older CLI evidence as final.
 
 =============================================================================
 FULL SELF-CONTAINED IMPLEMENTATION PLAN

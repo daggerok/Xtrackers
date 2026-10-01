@@ -1192,12 +1192,23 @@ export function reportingPeriodEnds(lastDate: string): { monthEnd: string; quart
   const quarterEnd = quarterLast === lastDate ? lastDate : new Date(Date.UTC(year, Math.floor(month / 3) * 3, 0)).toISOString().slice(0, 10);
   return { monthEnd, quarterEnd };
 }
-function coalesceReturns(primary: OfficialReturnRow, secondary: OfficialReturnRow): OfficialReturnRow {
+export function coalesceReturns(primary: OfficialReturnRow, secondary: OfficialReturnRow): OfficialReturnRow {
   const result = emptyReturns();
-  result.asOfDate = primary.asOfDate || secondary.asOfDate;
-  // Combining differently dated financial returns into one labelled row is not truthful.
-  const allowDerived = !primary.asOfDate || primary.asOfDate === secondary.asOfDate;
-  for (const key of ['ytd', 'yr1', 'yr3', 'yr5', 'yr10', 'sinceInception'] as const) result[key] = primary[key] ?? (allowDerived ? secondary[key] : null);
+  const keys = ['ytd', 'yr1', 'yr3', 'yr5', 'yr10', 'sinceInception'] as const;
+  const hasOfficialValues = keys.some(key => primary[key] !== null);
+  // An undated published figure must stay undated, not inherit the derived series date.
+  result.asOfDate = hasOfficialValues ? primary.asOfDate : secondary.asOfDate;
+  const allowDerived = !hasOfficialValues || (primary.asOfDate !== null && primary.asOfDate === secondary.asOfDate);
+  for (const key of keys) result[key] = primary[key] ?? (allowDerived ? secondary[key] : null);
+  return result;
+}
+export function annualizedOfficialReturns(source: OfficialReturnRow, inception: string | null): OfficialReturnRow {
+  const result = { ...source };
+  if (result.sinceInception !== null) {
+    const age = inception && source.asOfDate ? (Date.parse(source.asOfDate) - Date.parse(inception)) / (365.25 * 86400000) : null;
+    // DWS's <1-year SI figures are cumulative; age/date uncertainty cannot certify annualized SI.
+    if (age === null || age < 1) result.sinceInception = null;
+  }
   return result;
 }
 export function deriveCatalogMetrics(returns: OfficialReturnRow, dividendYield: number | null, secYield: number | null, basis: string): JsonRecord {
@@ -1281,7 +1292,7 @@ async function updateFund(fund: CatalogFund, previousRow: JsonRecord, root: stri
   const ends = latestDate ? reportingPeriodEnds(latestDate) : null;
   const derivedMonth = ends ? deriveReturns(coveredDays, ends.monthEnd, details.inceptionDate) : emptyReturns();
   const derivedQuarter = ends ? deriveReturns(coveredDays, ends.quarterEnd, details.inceptionDate) : emptyReturns();
-  const official = Object.values(fund.officialReturns).some(value => typeof value === 'number') ? fund.officialReturns : details.officialReturns;
+  const official = annualizedOfficialReturns(Object.values(fund.officialReturns).some(value => typeof value === 'number') ? fund.officialReturns : details.officialReturns, details.inceptionDate);
   const monthEnd = returnDays.length ? coalesceReturns(official, derivedMonth) : returnsFromPublished(record(previousRow.returns).monthEnd);
   const quarterEnd = returnDays.length ? derivedQuarter : returnsFromPublished(record(previousRow.returns).quarterEnd);
   const frequency = distributionFrequency(details.frequency, events);
@@ -1292,7 +1303,7 @@ async function updateFund(fund: CatalogFund, previousRow: JsonRecord, root: stri
   const price = latestPrice?.close ?? null;
   const premiumDiscount = latestPrice && navAsOfDate === latestPrice.date && navValue !== null && navValue > 0 ? round((latestPrice.close / navValue - 1) * 100, 4) : null;
   const dividendYield = details.distributionRate ?? indicatedYield(latestDividend?.amount ?? null, frequency.paymentsPerYear, navValue);
-  const basis = Object.values(official).some(value => typeof value === 'number') ? 'official DWS NAV total returns; covered daily-series derivation fills same-date gaps'
+  const basis = Object.values(official).some(value => typeof value === 'number') ? (official.asOfDate ? 'official DWS NAV total returns; covered daily-series derivation fills same-date gaps' : 'official DWS NAV total returns (source as-of date unavailable; no dated-series mixing)')
     : points.length && navReinvestmentKnown ? 'derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns'
     : 'derived from Yahoo adjusted market-price closes; not official NAV returns';
   const metrics = deriveCatalogMetrics(monthEnd, dividendYield, details.secYield, basis);
