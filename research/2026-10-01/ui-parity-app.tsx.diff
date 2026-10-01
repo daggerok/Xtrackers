@@ -1,0 +1,265 @@
+--- JPMorgan@8ce0ddc/app.tsx
++++ Xtrackers/app.tsx
+@@ -1,6 +1,8 @@
++/// <reference types="bun" />
++
+ /**
+- * @file JPMorgan Watchlist Application
+- * Client-side static feed viewer for api/jpmorgan/** with multi-ETF Watchlist
++ * @file Xtrackers Watchlist Application
++ * Client-side static feed viewer for api/xtrackers/** with multi-ETF Watchlist
+  * aggregation. Same single-file approach as daggerok/Amplify: the paginated
+  * static API and lazy sheet loading follow daggerok/iShares.
+  *
+@@ -9,8 +11,6 @@
+  * style — plain `byId()` instead of DOM casts, no `as` casts, no non-null
+  * `!`, no interfaces or enums.
+  */
+-
+-/// <reference types="bun" />
+ 
+ // =========================================================================
+ // 1. Types, constants & column tooltips
+@@ -110,15 +110,15 @@
+   identifier: string;
+ };
+ 
+-const INDEX_URL = './api/jpmorgan/index.json';
+-const THEME_KEY = 'jpmorgan-theme';
+-const SELECTED_KEY = 'jpmorgan-selected-etfs';
+-const BLACKLIST_KEY = 'jpmorgan-blacklisted-etfs';
+-const ACTIVE_FUND_KEY = 'jpmorgan-active-fund';
+-const FILTERS_KEY = 'jpmorgan-tab-filters';
+-const LEGACY_FILTERS_KEY = 'jpmorgan-searches'; // pre-rename key, migrated at boot
+-const SORTS_KEY = 'jpmorgan-tab-sorts';
+-const SITE_STATE_KEY = 'jpmorgan-site-state';
++const INDEX_URL = './api/xtrackers/index.json';
++const THEME_KEY = 'xtrackers-theme';
++const SELECTED_KEY = 'xtrackers-selected-etfs';
++const BLACKLIST_KEY = 'xtrackers-blacklisted-etfs';
++const ACTIVE_FUND_KEY = 'xtrackers-active-fund';
++const FILTERS_KEY = 'xtrackers-tab-filters';
++const LEGACY_FILTERS_KEY = 'xtrackers-searches'; // pre-rename key, migrated at boot
++const SORTS_KEY = 'xtrackers-tab-sorts';
++const SITE_STATE_KEY = 'xtrackers-site-state';
+ const HOLDINGS_CONCURRENCY = 6; // bounded whole-catalog aggregation workers
+ const WATCHLIST_CHUNK = 250; // rows per rendered Watchlist DOM chunk
+ const DEFAULT_SELECTED_TICKERS: string[] = []; // start clean: no pre-selected funds
+@@ -137,10 +137,10 @@
+   '#': 'Row index in current table view.',
+   Use: 'Use / Multi-ETF Selection — Check this box to include this ETF\'s underlying holdings in the combined Watchlist tab.',
+   Ticker: 'Ticker Symbol — Unique stock market identifier. For holdings: the exchange ticker resolved from public SEC / exchange data at data-build time. "—" when the position has no exchange ticker (bond, private debt) — then the Identifier is the key.',
+-  'Fund Name': 'Fund Name — Official legal name of the JPMorgan exchange-traded fund (ETF), as published in the am.jpmorgan.com ETF fund explorer.',
+-  Category: 'Category — am.jpmorgan.com groups its ETFs by asset class ("U.S. Equity", "Fixed Income Taxable", "International Equity"); the tab shows the asset class, the asset class plus benchmark is kept in meta.json.',
++  'Fund Name': 'Fund Name — Official legal name of the Xtrackers exchange-traded fund (ETF), as published on the etf.dws.com PDP fund page.',
++  Category: 'Category — etf.dws.com groups its ETFs by asset class ("Equities", "Fixed Income", "Currency-hedged"); the tab shows the asset class, the asset class plus benchmark is kept in meta.json.',
+   Name: 'Security Name — Full registered legal name of the company or underlying financial asset.',
+-  Identifier: 'CUSIP / SEDOL — Security identifier as published in the am.jpmorgan.com daily holdings (CUSIP for US securities, SEDOL for foreign ones; or taken from the N-PORT filing when that fallback supplied the sheet). Positions without an exchange ticker (bonds, cash, futures) are identified in the Watchlist by this.',
++  Identifier: 'CUSIP / SEDOL — Security identifier as published in the etf.dws.com Securities workbook (CUSIP, ISIN or SEDOL; or taken from the N-PORT filing when that fallback supplied the sheet). Positions without an exchange ticker (bonds, cash, futures) are identified in the Watchlist by this.',
+   SEDOL: 'SEDOL — Stock Exchange Daily Official List identifier.',
+   TER: 'Gross Expense Ratio — Total annual fund operating expenses as a % of assets.',
+   NAV: 'NAV (Net Asset Value) — Per-share dollar value of the fund.',
+@@ -150,24 +150,24 @@
+   'Max Weight': 'Max Weight — Highest single-fund weight for this holding across selected ETFs (%).',
+   '# ETFs': 'Number of selected ETFs that currently hold this security.',
+   ETFs: 'Selected ETFs holding this security.',
+-  Type: 'Category — the am.jpmorgan.com asset class (see the Category column). Same source as the category tabs.',
++  Type: 'Category — the etf.dws.com asset class (see the Category column). Same source as the category tabs.',
+   Expense: 'Gross Expense Ratio — Total annual fund operating expenses as a % of assets.',
+-  'Dividend Yield': 'Dividend Yield — the 12-month rolling dividend yield published by am.jpmorgan.com (product-data) when present; otherwise indicated (latest distribution per share x payments per year / market price) from the published dividend schedule.',
+-  'SEC Yield': 'SEC Yield (30-Day) — The 30-day SEC yield as published by am.jpmorgan.com (daily product-data figure, month-end fund-explorer figure otherwise; the 7-day SEC yield for the money market ETF); "—" when JPMorgan publishes none for the fund.',
+-  'YTD Return': 'YTD Return — Official JPMorgan NAV total return since the start of the year (month-end series); for funds without a published figure, derived from the official daily NAV history with distributions reinvested.',
+-  'TR 1Y': 'TR 1Y (1-Year Total Return) — Official JPMorgan NAV total return over the past year, including reinvested distributions (month-end series); derived from the daily NAV history only when JPMorgan publishes none.',
+-  'TR 3Y': 'TR 3Y (3-Year Total Return) — Cumulative NAV total return over 3 years as published by am.jpmorgan.com (cumulative returns block); otherwise derived exactly from the 3Y CAGR: (1 + CAGR 3Y)^3 - 1.',
+-  'TR 5Y': 'TR 5Y (5-Year Total Return) — Cumulative NAV total return over 5 years as published by am.jpmorgan.com (cumulative returns block); otherwise derived exactly from the 5Y CAGR: (1 + CAGR 5Y)^5 - 1.',
+-  'TR 10Y': 'TR 10Y (10-Year Total Return) — Cumulative NAV total return over 10 years as published by am.jpmorgan.com (cumulative returns block); otherwise derived exactly from the 10Y CAGR: (1 + CAGR 10Y)^10 - 1.',
+-  'CAGR 3Y': 'CAGR 3Y (3-Year Compound Annual Growth Rate) — Official JPMorgan annualized NAV total return over 3 years (month-end series).',
+-  'CAGR 5Y': 'CAGR 5Y (5-Year Compound Annual Growth Rate) — Official JPMorgan annualized NAV total return over 5 years (month-end series).',
+-  'CAGR 10Y': 'CAGR 10Y (10-Year Compound Annual Growth Rate) — Official JPMorgan annualized NAV total return over 10 years (month-end series).',
+-  YTD: 'YTD NAV total return, official JPMorgan month-end series (derived from the daily NAV history when unpublished).',
+-  '1Y': '1-year official JPMorgan NAV total return, month-end series.',
+-  '3Y': '3-year average annual NAV total return (CAGR), official JPMorgan month-end series.',
+-  '5Y': '5-year average annual NAV total return (CAGR), official JPMorgan month-end series.',
+-  '10Y': '10-year average annual NAV total return (CAGR), official JPMorgan month-end series.',
+-  'SI Ann.': 'Since-inception annualized NAV total return, official JPMorgan month-end series (blank for funds younger than one year: JPMorgan publishes their since-inception return cumulatively, not annualized).',
++  'Dividend Yield': 'Dividend Yield — the indicated distribution rate published by etf.dws.com (PDP fund facts) when present; otherwise indicated (latest distribution per share x payments per year / NAV) from the published dividend schedule.',
++  'SEC Yield': 'SEC Yield (30-Day) — The 30-day SEC yield as published by etf.dws.com (PDP fund facts figure); "—" when Xtrackers publishes none for the fund.',
++  'YTD Return': 'YTD Return — Official Xtrackers NAV total return since the start of the year (month-end series); for funds without a published figure, derived from the official daily NAV history with distributions reinvested.',
++  'TR 1Y': 'TR 1Y (1-Year Total Return) — Official Xtrackers NAV total return over the past year, including reinvested distributions (month-end series); derived from the daily NAV history only when Xtrackers publishes none.',
++  'TR 3Y': 'TR 3Y (3-Year Total Return) — Cumulative NAV total return over 3 years as published by etf.dws.com (performance tables); otherwise derived exactly from the 3Y CAGR: (1 + CAGR 3Y)^3 - 1.',
++  'TR 5Y': 'TR 5Y (5-Year Total Return) — Cumulative NAV total return over 5 years as published by etf.dws.com (performance tables); otherwise derived exactly from the 5Y CAGR: (1 + CAGR 5Y)^5 - 1.',
++  'TR 10Y': 'TR 10Y (10-Year Total Return) — Cumulative NAV total return over 10 years as published by etf.dws.com (performance tables); otherwise derived exactly from the 10Y CAGR: (1 + CAGR 10Y)^10 - 1.',
++  'CAGR 3Y': 'CAGR 3Y (3-Year Compound Annual Growth Rate) — Official Xtrackers annualized NAV total return over 3 years (month-end series).',
++  'CAGR 5Y': 'CAGR 5Y (5-Year Compound Annual Growth Rate) — Official Xtrackers annualized NAV total return over 5 years (month-end series).',
++  'CAGR 10Y': 'CAGR 10Y (10-Year Compound Annual Growth Rate) — Official Xtrackers annualized NAV total return over 10 years (month-end series).',
++  YTD: 'YTD NAV total return, official Xtrackers month-end series (derived from the daily NAV history when unpublished).',
++  '1Y': '1-year official Xtrackers NAV total return, month-end series.',
++  '3Y': '3-year average annual NAV total return (CAGR), official Xtrackers month-end series.',
++  '5Y': '5-year average annual NAV total return (CAGR), official Xtrackers month-end series.',
++  '10Y': '10-year average annual NAV total return (CAGR), official Xtrackers month-end series.',
++  'SI Ann.': 'Since-inception annualized NAV total return, official Xtrackers month-end series (blank for funds younger than one year: Xtrackers publishes their since-inception return cumulatively, not annualized).',
+   'Return As Of': 'As-of date of the month-end return series.',
+   Inception: 'Fund inception date.',
+   Exchange: 'Primary listing exchange.',
+@@ -176,7 +176,7 @@
+   Holdings: 'Rows in the fund\'s latest daily holdings file.',
+   History: 'Rows in the fund\'s NAV history file.',
+   'As Of': 'NAV / AUM as-of date.',
+-  Frequency: 'Frequency — sortable payment cadence from the am.jpmorgan.com dividend-frequency code (MDEC = monthly, QDEC = quarterly, YDEC = annual), inferred from the published dividend schedule when no code exists: 01 - Monthly, 04 - Quarterly, 06 - Semi-annually, 12 - Annually; 00 denotes unavailable/unknown and 99 denotes irregular.',
++  Frequency: 'Frequency — sortable payment cadence from the etf.dws.com distribution frequency, inferred from the published dividend schedule when no frequency exists: 01 - Monthly, 04 - Quarterly, 06 - Semi-annually, 12 - Annually; 00 denotes unavailable/unknown and 99 denotes irregular.',
+   'Ex-Date': 'Ex-dividend date of the latest distribution.',
+   Dividend: 'Latest dividend per share.',
+   Coupon: 'Bond annual coupon rate (%).',
+@@ -186,8 +186,8 @@
+   Metric: 'Metric — Overview metric name.',
+   Value: 'Overview metric value.',
+   Date: 'NAV history date.',
+-  'Market Price': 'Closing market price on that date, as published by am.jpmorgan.com.',
+-  'Premium/Discount': 'Premium / Discount — closing market price versus NAV on that date (%), as published by am.jpmorgan.com.',
++  'Market Price': 'Closing market price on that date, as published by Yahoo Finance.',
++  'Premium/Discount': 'Premium / Discount — closing market price versus NAV on that date (%), derived from etf.dws.com NAV and Yahoo Finance closing price.',
+   'Shares Outstanding': 'Fund shares outstanding on that date.',
+   'Total Net Assets': 'Fund total net assets on that date (USD).',
+ };
+@@ -327,7 +327,7 @@
+ function formatDividendFrequency(value: unknown): string {
+   const raw = String(value ?? '').trim();
+   const normalized = raw.toLowerCase().replace(/[‐‑‒–—]/g, '-').replace(/\s+/g, ' ');
+-  if (!normalized || normalized === '-') return '00 - None';
++  if (!normalized || /^[\s-]+$/.test(normalized) || /^00\s*-\s*-+$/.test(normalized)) return '00 - None';
+   if (normalized === 'monthly') return '01 - Monthly';
+   if (normalized === 'quarterly') return '04 - Quarterly';
+   if (normalized === 'semi-annual' || normalized === 'semi-annually' || normalized === 'semiannual') return '06 - Semi-annually';
+@@ -414,7 +414,7 @@
+ 
+ function exportFileName(scope: string, extension: string): string {
+   const stamp = new Date().toISOString().slice(0, 10);
+-  return `jpmorgan-${scope.toLowerCase().replace(/\s+/g, '-')}-${stamp}.${extension}`;
++  return `xtrackers-${scope.toLowerCase().replace(/\s+/g, '-')}-${stamp}.${extension}`;
+ }
+ 
+ function setStatus(message: string, tone: 'info' | 'success' | 'error'): void {
+@@ -422,7 +422,7 @@
+ }
+ 
+ // =========================================================================
+-// 4. Static API loading & paginated sheets (api/jpmorgan/**, iShares-style)
++// 4. Static API loading & paginated sheets (api/xtrackers/**, iShares-style)
+ // =========================================================================
+ 
+ async function fetchJson(url: string): Promise<any> {
+@@ -451,7 +451,7 @@
+     cagr10y: metrics.cagr10y ?? monthEnd.yr10 ?? null,
+     dividendYield: metrics.dividendYield ?? null,
+     dividendFrequency: formatDividendFrequency(fund.distributions && fund.distributions.frequency ? fund.distributions.frequency : '—'),
+-    secYield: metrics.secYield ?? null, // am.jpmorgan.com publishes it for nearly every fund.
++    secYield: metrics.secYield ?? null, // etf.dws.com publishes it for nearly every fund.
+     returnAsOf: monthEnd.asOfDate ?? null,
+     searchIndex: '',
+   };
+@@ -465,7 +465,7 @@
+ }
+ 
+ async function loadCatalog(): Promise<void> {
+-  setStatus('Loading JPMorgan ETF data from api/jpmorgan/index.json…', 'info');
++  setStatus('Loading Xtrackers ETF data from api/xtrackers/index.json…', 'info');
+   const data = await fetchJson(INDEX_URL);
+   state.funds = (data.funds || [])
+     .map((fund: IndexFund) => normalizeFundRow(fund))
+@@ -513,7 +513,7 @@
+   }
+   const request = (async () => {
+     try {
+-      const meta = await fetchJson(`./api/jpmorgan/funds/${encodeURIComponent(ticker)}/meta.json`);
++      const meta = await fetchJson(`./api/xtrackers/funds/${encodeURIComponent(ticker)}/meta.json`);
+       fundMetaCache.set(ticker, meta);
+       return meta;
+     } catch (error) {
+@@ -535,7 +535,7 @@
+ 
+ async function fetchPage(ticker: string, pagePath: string): Promise<{ headers: string[]; rows: string[][] }> {
+   const path = String(pagePath).replace(/^\.?\//, '');
+-  const page = await fetchJson(`./api/jpmorgan/funds/${encodeURIComponent(ticker)}/${path}`);
++  const page = await fetchJson(`./api/xtrackers/funds/${encodeURIComponent(ticker)}/${path}`);
+   const headers: string[] = Array.isArray(page.headers) ? page.headers : [];
+   const rows: any[] = Array.isArray(page.rows) ? page.rows : [];
+   return { headers, rows: rows.map(row => headers.map(header => String(row[header] ?? ''))) };
+@@ -1352,7 +1352,7 @@
+     el.tableBody.innerHTML = `<tr><td colspan="8" class="py-12 text-center text-slate-400 dark:text-slate-500">${
+       loading
+         ? `Loading holdings of ${state.selected.size} selected ETF${state.selected.size === 1 ? '' : 's'}…`
+-        : 'Holdings data is not available yet. Run bun ./scripts/update-data.ts to refresh the JPMorgan feed.'
++        : 'Holdings data is not available yet. Run bun ./scripts/update-data.ts to refresh the Xtrackers feed.'
+     }${currentQuery() ? ' No rows match your search.' : ''}</td></tr>`;
+   } else {
+     let html = visibleRows.map((row, index) => `
+@@ -1425,9 +1425,9 @@
+ 
+   if (!catalogCount) {
+     el.tableHead.innerHTML = `<tr>${indexHeader()}<th class="py-3.5 px-4">${escapeHtml(fund.ticker)}</th></tr>`;
+-    el.tableBody.innerHTML = `<tr><td colspan="2" class="py-12 text-center text-slate-400 dark:text-slate-500">${escapeHtml(fund.ticker)} publishes no ${sheet === 'holdings' ? 'holdings workbook' : 'NAV history workbook'} (catalog-only fund, e.g. a commodity trust).</td></tr>`;
++    el.tableBody.innerHTML = `<tr><td colspan="2" class="py-12 text-center text-slate-400 dark:text-slate-500">${escapeHtml(fund.ticker)} has no downloaded static ${sheet === 'holdings' ? 'holdings workbook' : 'NAV history workbook'} yet (catalog-only until the next feed refresh).</td></tr>`;
+     el.tickerCount.textContent = fund.ticker;
+-    renderSubtitle(`${fund.ticker} has no current static ${sheet} sheet; the feed records the provider coverage limitation in meta.json.`);
++    renderSubtitle(`${fund.ticker} has no current static ${sheet} sheet; run the updater to populate this catalog-only entry.`);
+     return;
+   }
+ 
+@@ -1525,7 +1525,7 @@
+     { section: 'Distributions', metric: 'Ex-Date', value: fund.distributions ? fund.distributions.exDate : null },
+     { section: 'Distributions', metric: 'Latest Dividend', value: fund.distributions ? fund.distributions.dividend : null },
+     { section: 'Distributions', metric: 'Dividend Yield (indicated)', value: fund.dividendYield === null || fund.dividendYield === undefined ? null : `${fund.dividendYield.toFixed(2)}% (latest distribution x frequency / NAV)` },
+-    { section: 'Distributions', metric: 'SEC Yield (30-day)', value: meta && meta.yields ? (meta.yields.secYieldText || '—') : (fund.secYield === null || fund.secYield === undefined ? 'not published by am.jpmorgan.com for this fund' : `${fund.secYield.toFixed(2)}%`) },
++    { section: 'Distributions', metric: 'SEC Yield (30-day)', value: meta && meta.yields ? (meta.yields.secYieldText || '—') : (fund.secYield === null || fund.secYield === undefined ? 'not published by etf.dws.com for this fund' : `${fund.secYield.toFixed(2)}%`) },
+     { section: 'Distributions', metric: 'Dividend Yield Basis', value: meta && meta.yields ? meta.yields.dividendYieldKind : null },
+     { section: 'Distributions', metric: 'SEC Yield Basis', value: meta && meta.yields ? meta.yields.secYieldKind : null },
+     { section: 'Holdings', metric: 'Holdings Rows', value: fund.holdings },
+@@ -1567,7 +1567,7 @@
+   }
+ 
+   el.tickerCount.textContent = fund.ticker;
+-  renderSubtitle(`${fund.ticker} overview · ${rows.length} metrics. Returns are derived from adjusted market-price closes, not official NAV returns.`);
++  renderSubtitle(`${fund.ticker} overview · ${rows.length} metrics. Returns are derived from official daily NAV with distributions reinvested (Yahoo adjusted market-price fallback), not published standardized NAV returns.`);
+ }
+ 
+ function renderDistributionsTable(fund: FundRow): void {
+@@ -1603,7 +1603,7 @@
+   }
+ 
+   el.tickerCount.textContent = fund.ticker;
+-  renderSubtitle(`${fund.ticker} distributions · dividend schedule published by am.jpmorgan.com (ex-date, amount; the last twelve payments); frequency from the published dividend-frequency code, inferred from the cadence otherwise.`);
++  renderSubtitle(`${fund.ticker} distributions · dividend schedule published by etf.dws.com (ex-date, amount; the last twelve payments); frequency from the published distribution frequency, inferred from the cadence otherwise.`);
+ }
+ 
+ // =========================================================================
+@@ -1637,7 +1637,12 @@
+   const countsText = state.counts
+     ? `${state.counts.funds} ETFs · ${(state.counts.holdings || 0).toLocaleString('en-US')} holdings rows · ${(state.counts.history || 0).toLocaleString('en-US')} history rows`
+     : '';
+-  const base = text ? String(text) : 'Search JPMorgan ETFs, select ETFs via the “Use” checkbox, then use the Watchlist tab.';
++  const baseText = text ? String(text) : 'Search Xtrackers ETFs, select ETFs via the “Use” checkbox, then use the Watchlist tab.';
++  const viewLabel = state.activeTab === 'All' ? 'All ETFs' : state.activeTab === 'watchlist' ? 'Watchlist' : state.activeTab.startsWith('detail:') ? state.activeTab.slice(7) : categoryLabel(state.activeTab);
++  const contextText = text ? baseText : `${baseText} ${viewLabel}: ${el.tickerCount.textContent || ''}.`;
++  const hasLocalHoldings = [...state.selected].some(ticker => Boolean(fundMetaCache.get(ticker)?.uploaded));
++  const base = hasLocalHoldings ? `${contextText} Local N-PORT XML holdings are included for this session.` : contextText;
++  const dataLabel = hasLocalHoldings ? 'Static catalog data:' : 'Data:';
+   // Selected ETF count and clickable ticker badges (active fund highlighted);
+   // re-rendered by every selection writer so the count never lags.
+   const selectedCount = state.selected.size;
+@@ -1656,7 +1661,7 @@
+   }
+   el.subtitle.innerHTML = `
+     <span class="block sm:inline">${escapeHtml(base)}${selectionItem}</span>
+-    <span class="block sm:inline">·${generated ? ` updated ${escapeHtml(generated)}` : ''}${countsText ? ` · ${escapeHtml(countsText)}.` : '.'} Data: <a href="./api/jpmorgan/index.json" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 dark:text-blue-400 hover:underline">api/jpmorgan/index.json</a> generated from <a href="https://am.jpmorgan.com/us/en/asset-management/adv/products/fund-explorer/etf" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 dark:text-blue-400 hover:underline">am.jpmorgan.com ETF fund data</a> + SEC EDGAR N-PORT-P + Yahoo Finance (fallbacks)</span>
++    <span class="block sm:inline">·${generated ? ` updated ${escapeHtml(generated)}` : ''}${countsText ? ` · ${escapeHtml(countsText)}.` : '.'} ${dataLabel} <a href="./api/xtrackers/index.json" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 dark:text-blue-400 hover:underline">api/xtrackers/index.json</a> generated from <a href="https://etf.dws.com/en-us/etf-products/" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 dark:text-blue-400 hover:underline">etf.dws.com PDP and XLSX fund data</a> + SEC EDGAR N-PORT-P (DBX ETF TRUST, CIK 0001503123 — holdings fallback only) + Yahoo Finance daily prices (dividend/history fallbacks)</span>
+   `;
+   el.subtitle.querySelectorAll('a[data-activate-fund]').forEach((link: any) => {
+     link.addEventListener('click', () => activateFund(link.dataset.activateFund || ''));
+@@ -2405,6 +2410,6 @@
+   void loadCatalog().catch(error => {
+     const message = error instanceof Error ? error.message : String(error);
+     el.tickerCount.textContent = 'Error';
+-    setStatusRow(`Unable to load api/jpmorgan/index.json: ${message}. Run bun ./scripts/update-data.ts and serve the folder (for example bunx serve . -p 1234).`, 'error');
++    setStatusRow(`Unable to load api/xtrackers/index.json: ${message}. Run bun ./scripts/update-data.ts and serve the folder (for example bunx serve . -p 1234).`, 'error');
+   });
+ }

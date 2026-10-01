@@ -1,0 +1,512 @@
+{
+  "ticker": "CHPS",
+  "page": 1,
+  "pageSize": 250,
+  "totalRows": 55,
+  "headers": [
+    "Name",
+    "Ticker",
+    "Identifier",
+    "Weight",
+    "Market Value",
+    "Shares Held",
+    "Asset Category"
+  ],
+  "rows": [
+    {
+      "Name": "Advanced Micro Dev",
+      "Ticker": "AMD",
+      "Identifier": "007903107",
+      "Weight": "5.29928247",
+      "Market Value": "6919617.36",
+      "Shares Held": "11311",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Micron Technology",
+      "Ticker": "MU",
+      "Identifier": "595112103",
+      "Weight": "5.0279631",
+      "Market Value": "6565338.04",
+      "Shares Held": "6164",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "NVIDIA Corp",
+      "Ticker": "NVDA.O",
+      "Identifier": "67066G104",
+      "Weight": "5.01634443",
+      "Market Value": "6550166.78",
+      "Shares Held": "28681",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Intel Corp",
+      "Ticker": "INTC",
+      "Identifier": "458140100",
+      "Weight": "4.89017204",
+      "Market Value": "6385415.3",
+      "Shares Held": "53110",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "ASML Holding NV",
+      "Ticker": "ASML NA",
+      "Identifier": "N07059202",
+      "Weight": "4.66014293",
+      "Market Value": "6085051.35",
+      "Shares Held": "3355",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Taiwan Semiconductor Manufacturing",
+      "Ticker": "2330 TT",
+      "Identifier": "Y84629107",
+      "Weight": "4.4716782",
+      "Market Value": "5838960.71",
+      "Shares Held": "74940",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "LAM RESEARCH CORP",
+      "Ticker": "LRCX",
+      "Identifier": "512807306",
+      "Weight": "4.41605971",
+      "Market Value": "5766336.03",
+      "Shares Held": "17553",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Marvell Technology Group Ltd",
+      "Ticker": "MRVL",
+      "Identifier": "573874104",
+      "Weight": "4.25685338",
+      "Market Value": "5558449.98",
+      "Shares Held": "21038",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "SK Hynix Inc",
+      "Ticker": "000660 KP",
+      "Identifier": "Y8085F100",
+      "Weight": "4.24868633",
+      "Market Value": "5547785.74",
+      "Shares Held": "4228",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "MediaTek Inc",
+      "Ticker": "2454 TT",
+      "Identifier": "Y5945U103",
+      "Weight": "4.1902191",
+      "Market Value": "5471441.27",
+      "Shares Held": "35397",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Texas Instruments Inc",
+      "Ticker": "TXN.O",
+      "Identifier": "882508104",
+      "Weight": "4.15942023",
+      "Market Value": "5431225.19",
+      "Shares Held": "19391",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Broadcom",
+      "Ticker": "AVGO",
+      "Identifier": "11135F101",
+      "Weight": "4.04344627",
+      "Market Value": "5279790.46",
+      "Shares Held": "15034",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Applied Materials Inc",
+      "Ticker": "AMAT",
+      "Identifier": "038222105",
+      "Weight": "4.01384153",
+      "Market Value": "5241133.62",
+      "Shares Held": "10249",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Kla-Tencor Corp",
+      "Ticker": "KLAC.O",
+      "Identifier": "482480100",
+      "Weight": "3.95304405",
+      "Market Value": "5161746.4",
+      "Shares Held": "26480",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "QUALCOMM Inc",
+      "Ticker": "QCOM",
+      "Identifier": "747525103",
+      "Weight": "3.57533157",
+      "Market Value": "4668542.68",
+      "Shares Held": "25367",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Analog Devices Inc",
+      "Ticker": "ADI.O",
+      "Identifier": "032654105",
+      "Weight": "3.55432289",
+      "Market Value": "4641110.29",
+      "Shares Held": "11699",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Tokyo Electron Ltd",
+      "Ticker": "8035 JT",
+      "Identifier": "J86957115",
+      "Weight": "3.12388853",
+      "Market Value": "4079064.18",
+      "Shares Held": "54250",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Advantest Corp",
+      "Ticker": "6857 JT",
+      "Identifier": "J00210104",
+      "Weight": "2.90267981",
+      "Market Value": "3790217.58",
+      "Shares Held": "17384",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Kioxia Holdings Corp",
+      "Ticker": "285A",
+      "Identifier": "J3343A107",
+      "Weight": "2.42523229",
+      "Market Value": "3166783.34",
+      "Shares Held": "27500",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Infineon Technologies AG",
+      "Ticker": "IFX GY",
+      "Identifier": "D35415104",
+      "Weight": "1.62502972",
+      "Market Value": "2121906.87",
+      "Shares Held": "31397",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "ASE Industrial Holding Co Ltd",
+      "Ticker": "3711",
+      "Identifier": "Y0249T100",
+      "Weight": "1.53323648",
+      "Market Value": "2002046.47",
+      "Shares Held": "90646",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Monolithic Power Systems Inc",
+      "Ticker": "MPWR",
+      "Identifier": "609839105",
+      "Weight": "1.17206539",
+      "Market Value": "1530441.92",
+      "Shares Held": "1136",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Teradyne Inc",
+      "Ticker": "TER.N",
+      "Identifier": "880770102",
+      "Weight": "1.16395359",
+      "Market Value": "1519849.81",
+      "Shares Held": "3791",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Te Connectivity Ltd",
+      "Ticker": "TEL",
+      "Identifier": "G87052109",
+      "Weight": "1.14094243",
+      "Market Value": "1489802.64",
+      "Shares Held": "7058",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Samsung Electro-Mechanics Co Ltd",
+      "Ticker": "009150 KP",
+      "Identifier": "Y7470U102",
+      "Weight": "1.12831684",
+      "Market Value": "1473316.59",
+      "Shares Held": "1318",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "NXP Semiconductors NV",
+      "Ticker": "NXPI.O",
+      "Identifier": "N6596X109",
+      "Weight": "1.10946113",
+      "Market Value": "1448695.47",
+      "Shares Held": "6099",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "United Microelectronics Corp",
+      "Ticker": "2303 TT",
+      "Identifier": "Y92370108",
+      "Weight": "1.04064288",
+      "Market Value": "1358835.01",
+      "Shares Held": "279942",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Coherent Corp",
+      "Ticker": "COHR",
+      "Identifier": "19247G107",
+      "Weight": "1.03220279",
+      "Market Value": "1347814.23",
+      "Shares Held": "4683",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Astera Labs Inc",
+      "Ticker": "ALAB",
+      "Identifier": "04626A103",
+      "Weight": "0.87999846",
+      "Market Value": "1149071.16",
+      "Shares Held": "3228",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "ASM International NV",
+      "Ticker": "ASM NA",
+      "Identifier": "N07045201",
+      "Weight": "0.85587219",
+      "Market Value": "1117567.92",
+      "Shares Held": "1108",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Microchip Technology Inc",
+      "Ticker": "MCHP.O",
+      "Identifier": "595017104",
+      "Weight": "0.76336716",
+      "Market Value": "996778.09",
+      "Shares Held": "12817",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Renesas Electronics Corp",
+      "Ticker": "6723",
+      "Identifier": "J4881V107",
+      "Weight": "0.65750412",
+      "Market Value": "858545.84",
+      "Shares Held": "38800",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "STMicroelectronics NV",
+      "Ticker": "STM FP",
+      "Identifier": "N83574108",
+      "Weight": "0.63901755",
+      "Market Value": "834406.73",
+      "Shares Held": "15670",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Credo Technology Group Holding Ltd",
+      "Ticker": "CRDO",
+      "Identifier": "G25457105",
+      "Weight": "0.59805029",
+      "Market Value": "780913.11",
+      "Shares Held": "4009",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "DISCO CORP",
+      "Ticker": "6146",
+      "Identifier": "J12327102",
+      "Weight": "0.57903208",
+      "Market Value": "756079.8",
+      "Shares Held": "2068",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "ON Semiconductor Corp",
+      "Ticker": "ONNN",
+      "Identifier": "682189105",
+      "Weight": "0.55025515",
+      "Market Value": "718503.89",
+      "Shares Held": "9347",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "ARM HOLDINGS PLC ADS",
+      "Ticker": "ARM",
+      "Identifier": "042068205",
+      "Weight": "0.53017765",
+      "Market Value": "692287.4",
+      "Shares Held": "2390",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Tower Semiconductor Ltd",
+      "Ticker": "TSEM",
+      "Identifier": "M87915274",
+      "Weight": "0.48099801",
+      "Market Value": "628070.35",
+      "Shares Held": "2689",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Nanya Technology Corp",
+      "Ticker": "2408 TT",
+      "Identifier": "Y62066108",
+      "Weight": "0.43705951",
+      "Market Value": "570696.99",
+      "Shares Held": "35000",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Entegris Inc",
+      "Ticker": "ENTG",
+      "Identifier": "29362U104",
+      "Weight": "0.43347498",
+      "Market Value": "566016.44",
+      "Shares Held": "3674",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "VAT Group AG",
+      "Ticker": "VACN",
+      "Identifier": "H90508104",
+      "Weight": "0.40276691",
+      "Market Value": "525918.92",
+      "Shares Held": "645",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "LASERTEC CORP",
+      "Ticker": "6920",
+      "Identifier": "J38702106",
+      "Weight": "0.35961948",
+      "Market Value": "469578.52",
+      "Shares Held": "1794",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "MACOM Technology Solutions Holdings",
+      "Ticker": "MTSI",
+      "Identifier": "55405Y100",
+      "Weight": "0.3374394",
+      "Market Value": "440616.54",
+      "Shares Held": "1547",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "First Solar Inc",
+      "Ticker": "FSLR",
+      "Identifier": "336433107",
+      "Weight": "0.33348097",
+      "Market Value": "435447.76",
+      "Shares Held": "2486",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Lattice Semiconductor Corp",
+      "Ticker": "LSCC",
+      "Identifier": "518415104",
+      "Weight": "0.31381792",
+      "Market Value": "409772.44",
+      "Shares Held": "3262",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "MKS Instruments Inc",
+      "Ticker": "MKSI",
+      "Identifier": "55306N104",
+      "Weight": "0.30889725",
+      "Market Value": "403347.2",
+      "Shares Held": "1520",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "BE Semiconductor Indstries NV",
+      "Ticker": "BESIT",
+      "Identifier": "N13107144",
+      "Weight": "0.286801",
+      "Market Value": "374494.7",
+      "Shares Held": "1719",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Fabrinet",
+      "Ticker": "FN",
+      "Identifier": "G3323L100",
+      "Weight": "0.28495541",
+      "Market Value": "372084.79",
+      "Shares Held": "877",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "SCREEN HOLDINGS CO",
+      "Ticker": "7735",
+      "Identifier": "J6988U114",
+      "Weight": "0.26219729",
+      "Market Value": "342368.03",
+      "Shares Held": "3700",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "MPI Corporation",
+      "Ticker": "6223",
+      "Identifier": "Y6131E101",
+      "Weight": "0.22750734",
+      "Market Value": "297071.11",
+      "Shares Held": "1845",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cash & Cash Equivalents",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.17491031",
+      "Market Value": "228391.75",
+      "Shares Held": "-",
+      "Asset Category": "Cash"
+    },
+    {
+      "Name": "TAIWAN SEMICONDUCTOR-SP ADR",
+      "Ticker": "TSM US",
+      "Identifier": "874039100",
+      "Weight": "0.07616181",
+      "Market Value": "99449.42",
+      "Shares Held": "218",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Invesco PHLX Semiconductor ETF",
+      "Ticker": "SOXQ",
+      "Identifier": "46138G615",
+      "Weight": "0.04948057",
+      "Market Value": "64610",
+      "Shares Held": "650",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "STMicroelectronics NV EUR 1.04 ADR",
+      "Ticker": "STM",
+      "Identifier": "861012102",
+      "Weight": "0.00269709",
+      "Market Value": "3521.76",
+      "Shares Held": "66",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "NASD100 MICRO EMINDec26",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "2",
+      "Asset Category": "Future"
+    }
+  ]
+}

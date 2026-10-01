@@ -1,0 +1,239 @@
+{
+  "checkedAt": "2026-10-01T22:24:35.576633+00:00",
+  "authentication": "none/public GET only",
+  "pr": {
+    "number": 1,
+    "state": "open",
+    "merged": false,
+    "html_url": "https://github.com/daggerok/Xtrackers/pull/1"
+  },
+  "headSha": "ff9a5136d89dd4b42300718e731767a8f853f49d",
+  "baseSha": "13c600703279ebc67b495495c8be5248ca529853",
+  "ciRuns": [
+    {
+      "id": 36934653865,
+      "name": "Verify Xtrackers",
+      "head_sha": "ff9a5136d89dd4b42300718e731767a8f853f49d",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/daggerok/Xtrackers/actions/runs/36934653865",
+      "created_at": "2026-10-01T22:22:26Z",
+      "updated_at": "2026-10-01T22:22:42Z",
+      "jobs": [
+        {
+          "id": 110611959964,
+          "name": "verify",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/daggerok/Xtrackers/actions/runs/36934653865/job/110611959964",
+          "started_at": "2026-10-01T22:22:29Z",
+          "completed_at": "2026-10-01T22:22:41Z",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1,
+              "started_at": "2026-10-01T22:22:30Z",
+              "completed_at": "2026-10-01T22:22:31Z"
+            },
+            {
+              "name": "Run actions/checkout@v7",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2,
+              "started_at": "2026-10-01T22:22:31Z",
+              "completed_at": "2026-10-01T22:22:33Z"
+            },
+            {
+              "name": "Run oven-sh/setup-bun@v2",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3,
+              "started_at": "2026-10-01T22:22:33Z",
+              "completed_at": "2026-10-01T22:22:34Z"
+            },
+            {
+              "name": "Run bun install --frozen-lockfile",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4,
+              "started_at": "2026-10-01T22:22:34Z",
+              "completed_at": "2026-10-01T22:22:34Z"
+            },
+            {
+              "name": "Run bun test",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5,
+              "started_at": "2026-10-01T22:22:34Z",
+              "completed_at": "2026-10-01T22:22:36Z"
+            },
+            {
+              "name": "Run bun build --target=bun scripts/update-data.ts --outfile=/dev/null",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6,
+              "started_at": "2026-10-01T22:22:36Z",
+              "completed_at": "2026-10-01T22:22:36Z"
+            },
+            {
+              "name": "Run bun build app.tsx --outfile=/dev/null",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7,
+              "started_at": "2026-10-01T22:22:36Z",
+              "completed_at": "2026-10-01T22:22:36Z"
+            },
+            {
+              "name": "Run git diff --check",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8,
+              "started_at": "2026-10-01T22:22:36Z",
+              "completed_at": "2026-10-01T22:22:36Z"
+            },
+            {
+              "name": "Post Run oven-sh/setup-bun@v2",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 15,
+              "started_at": "2026-10-01T22:22:36Z",
+              "completed_at": "2026-10-01T22:22:36Z"
+            },
+            {
+              "name": "Post Run actions/checkout@v7",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 16,
+              "started_at": "2026-10-01T22:22:36Z",
+              "completed_at": "2026-10-01T22:22:36Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 17,
+              "started_at": "2026-10-01T22:22:36Z",
+              "completed_at": "2026-10-01T22:22:37Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 36934647223,
+      "name": "Verify Xtrackers",
+      "head_sha": "ff9a5136d89dd4b42300718e731767a8f853f49d",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/daggerok/Xtrackers/actions/runs/36934647223",
+      "created_at": "2026-10-01T22:22:21Z",
+      "updated_at": "2026-10-01T22:22:33Z",
+      "jobs": [
+        {
+          "id": 110611936708,
+          "name": "verify",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/daggerok/Xtrackers/actions/runs/36934647223/job/110611936708",
+          "started_at": "2026-10-01T22:22:24Z",
+          "completed_at": "2026-10-01T22:22:32Z",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1,
+              "started_at": "2026-10-01T22:22:24Z",
+              "completed_at": "2026-10-01T22:22:25Z"
+            },
+            {
+              "name": "Run actions/checkout@v7",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2,
+              "started_at": "2026-10-01T22:22:25Z",
+              "completed_at": "2026-10-01T22:22:26Z"
+            },
+            {
+              "name": "Run oven-sh/setup-bun@v2",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3,
+              "started_at": "2026-10-01T22:22:26Z",
+              "completed_at": "2026-10-01T22:22:28Z"
+            },
+            {
+              "name": "Run bun install --frozen-lockfile",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4,
+              "started_at": "2026-10-01T22:22:28Z",
+              "completed_at": "2026-10-01T22:22:28Z"
+            },
+            {
+              "name": "Run bun test",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5,
+              "started_at": "2026-10-01T22:22:28Z",
+              "completed_at": "2026-10-01T22:22:30Z"
+            },
+            {
+              "name": "Run bun build --target=bun scripts/update-data.ts --outfile=/dev/null",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6,
+              "started_at": "2026-10-01T22:22:30Z",
+              "completed_at": "2026-10-01T22:22:30Z"
+            },
+            {
+              "name": "Run bun build app.tsx --outfile=/dev/null",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7,
+              "started_at": "2026-10-01T22:22:30Z",
+              "completed_at": "2026-10-01T22:22:30Z"
+            },
+            {
+              "name": "Run git diff --check",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8,
+              "started_at": "2026-10-01T22:22:30Z",
+              "completed_at": "2026-10-01T22:22:30Z"
+            },
+            {
+              "name": "Post Run oven-sh/setup-bun@v2",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 15,
+              "started_at": "2026-10-01T22:22:30Z",
+              "completed_at": "2026-10-01T22:22:30Z"
+            },
+            {
+              "name": "Post Run actions/checkout@v7",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 16,
+              "started_at": "2026-10-01T22:22:30Z",
+              "completed_at": "2026-10-01T22:22:30Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 17,
+              "started_at": "2026-10-01T22:22:30Z",
+              "completed_at": "2026-10-01T22:22:30Z"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "jobsCheckedAt": "2026-10-01T22:26:42.241214+00:00"
+}

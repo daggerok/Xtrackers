@@ -1,0 +1,148 @@
+{
+  "reference": "daggerok/iShares@297a2e41e4a7a438ece2b8bde8e3384e960dfaeb",
+  "implementationSha": "ff9a5136d89dd4b42300718e731767a8f853f49d",
+  "startedAt": "2026-10-01T22:24:34.421258+00:00",
+  "mode": "real normal CLI, separate public remote clone, only 3 tickers",
+  "mocks": false,
+  "targetPublishedFilesWritten": false,
+  "runs": [
+    {
+      "number": 1,
+      "exitCode": 0,
+      "startedAt": "2026-10-01T22:24:35.299772+00:00",
+      "finishedAt": "2026-10-01T22:24:48.788023+00:00",
+      "seconds": 13.488251,
+      "command": "TICKERS=\"ASHR HYLB DBEF\" [all other manual control ENV blank] bun scripts/update-data.ts",
+      "log": "run-1.log",
+      "stepSummary": "run-1-step-summary.md",
+      "publishedCounts": {
+        "funds": 43,
+        "holdings": 21171,
+        "history": 77473
+      },
+      "selectedFunds": [
+        {
+          "ticker": "ASHR",
+          "holdings": 287,
+          "history": 3245,
+          "asOfDate": "2026-09-30",
+          "holdingsAsOfDate": "2026-09-30",
+          "historyAsOfDate": "2026-10-01"
+        },
+        {
+          "ticker": "DBEF",
+          "holdings": 674,
+          "history": 3852,
+          "asOfDate": "2026-09-30",
+          "holdingsAsOfDate": "2026-09-30",
+          "historyAsOfDate": "2026-10-01"
+        },
+        {
+          "ticker": "HYLB",
+          "holdings": 1293,
+          "history": 2468,
+          "asOfDate": "2026-09-30",
+          "holdingsAsOfDate": "2026-09-30",
+          "historyAsOfDate": "2026-10-01"
+        }
+      ],
+      "unrequestedEntriesAndFilesExact": true
+    },
+    {
+      "number": 2,
+      "exitCode": 0,
+      "startedAt": "2026-10-01T22:24:48.832223+00:00",
+      "finishedAt": "2026-10-01T22:25:01.040679+00:00",
+      "seconds": 12.208456,
+      "command": "TICKERS=\"ASHR HYLB DBEF\" [all other manual control ENV blank] bun scripts/update-data.ts",
+      "log": "run-2.log",
+      "stepSummary": "run-2-step-summary.md",
+      "publishedCounts": {
+        "funds": 43,
+        "holdings": 21171,
+        "history": 77473
+      },
+      "selectedFunds": [
+        {
+          "ticker": "ASHR",
+          "holdings": 287,
+          "history": 3245,
+          "asOfDate": "2026-09-30",
+          "holdingsAsOfDate": "2026-09-30",
+          "historyAsOfDate": "2026-10-01"
+        },
+        {
+          "ticker": "DBEF",
+          "holdings": 674,
+          "history": 3852,
+          "asOfDate": "2026-09-30",
+          "holdingsAsOfDate": "2026-09-30",
+          "historyAsOfDate": "2026-10-01"
+        },
+        {
+          "ticker": "HYLB",
+          "holdings": 1293,
+          "history": 2468,
+          "asOfDate": "2026-09-30",
+          "holdingsAsOfDate": "2026-09-30",
+          "historyAsOfDate": "2026-10-01"
+        }
+      ],
+      "unrequestedEntriesAndFilesExact": true
+    }
+  ],
+  "status": "pass",
+  "remoteCloneSha": "ff9a5136d89dd4b42300718e731767a8f853f49d",
+  "updaterSha256": "3582290819276bbdac75a42503a263f3b717ad1a568a85e693f9a96d321453ac",
+  "configSha256": "3d9618af235dd47f3aca912003d139104c916429c670021af26136aad565ed8a",
+  "baselineCounts": {
+    "funds": 43,
+    "holdings": 21171,
+    "history": 77473
+  },
+  "baselineFiles": 251,
+  "unrequestedCatalogEntries": 40,
+  "checkedInDefaults": {
+    "MAX_FETCHES": "0",
+    "REQUEST_SLEEP": "1.5",
+    "CONCURRENCY": "2",
+    "TICKERS": "",
+    "AUM": ":",
+    "TER": ":",
+    "DIVIDEND_YIELD": ":",
+    "SEC_YIELD": ":",
+    "HOLDINGS_PAGE_SIZE": "250",
+    "HISTORY_PAGE_SIZE": "1000",
+    "MAX_RETRIES": "2",
+    "SEC_UA": "daggerok Xtrackers ETF feed (https://github.com/daggerok/Xtrackers)",
+    "VERBOSE": "false",
+    "PERFORMANCE_YTD": ":",
+    "TOTAL_RETURN_YTD": ":",
+    "PERFORMANCE_1Y": ":",
+    "TOTAL_RETURN_1Y": ":",
+    "PERFORMANCE_3Y": ":",
+    "TOTAL_RETURN_3Y": ":",
+    "PERFORMANCE_5Y": ":",
+    "TOTAL_RETURN_5Y": ":",
+    "PERFORMANCE_10Y": ":",
+    "TOTAL_RETURN_10Y": ":"
+  },
+  "explicitControlOverrides": {
+    "TICKERS": "ASHR HYLB DBEF"
+  },
+  "otherManualControls": "all blank, inherit the checked-in JSON (normal 1.5 seconds / 2 lanes / retries2 / MAX_FETCHES0)",
+  "repeatByteIdentical": true,
+  "repeatChangedPaths": [],
+  "selectedDataFiles": 25,
+  "targetBaseline251FilesExact": true,
+  "selectedSnapshot": {
+    "file": "selected-api-snapshot.json.gz",
+    "sha256": "d5802e9295e4f6ec02e756e5a953426b4f39a99d516f8882fbc7c766d4b53871",
+    "files": 26
+  },
+  "finishedAt": "2026-10-01T22:25:01.256667+00:00",
+  "unrestrictedFundUpdate": false,
+  "evidenceClarification": "Normal CLI performs bounded official catalog/sitemap discovery as usual; only the 3 explicitly allowed fund updates are attempted. No unrestricted fund update or target API write.",
+  "selectedHoldingsRows": 2254,
+  "selectedHistoryRows": 9565
+}

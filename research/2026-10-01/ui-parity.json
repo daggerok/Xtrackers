@@ -1,0 +1,206 @@
+{
+  "reference": {
+    "repository": "daggerok/JPMorgan",
+    "revision": "8ce0ddca58b5459dd7df98f22463fb31afa82f2b"
+  },
+  "headerException": "Rich count-badge markup/layout and hover/focus/touch/Escape/viewport handlers copied verbatim. Hidden rich details add current view/count plus explicit local-upload/static-catalog source context, using initialized metadata flags. Visible sorted selected tickers, selection/financial/loading logic unchanged.",
+  "files": {
+    "app.tsx": {
+      "referenceSha256": "6b58d96ccafdbbc762bfb10bd4707ede5b1e41cd841e35e0695353073dae9fb4",
+      "substitutions": [
+        {
+          "from": "am.jpmorgan.com",
+          "to": "etf.dws.com",
+          "occurrences": 17,
+          "category": "6: source host/name"
+        },
+        {
+          "from": "JPMorgan",
+          "to": "Xtrackers",
+          "occurrences": 19,
+          "category": "1/5/6/8: brand strings"
+        },
+        {
+          "from": "jpmorgan",
+          "to": "xtrackers",
+          "occurrences": 18,
+          "category": "2/3/4: storage/API/export prefixes"
+        },
+        {
+          "from": "https://etf.dws.com/us/en/asset-management/adv/products/fund-explorer/etf",
+          "to": "https://etf.dws.com/en-us/etf-products/",
+          "occurrences": 1,
+          "category": "5: official source link"
+        },
+        {
+          "from": "etf.dws.com ETF fund data</a> + SEC EDGAR N-PORT-P + Yahoo Finance (fallbacks)",
+          "to": "etf.dws.com PDP and XLSX fund data</a> + SEC EDGAR N-PORT-P (DBX ETF TRUST, CIK 0001503123 — holdings fallback only) + Yahoo Finance daily prices (dividend/history fallbacks)",
+          "occurrences": 1,
+          "category": "5/8: truthful provider/fallback attribution"
+        },
+        {
+          "from": "as published in the etf.dws.com ETF fund explorer.",
+          "to": "as published on the etf.dws.com PDP fund page.",
+          "occurrences": 1,
+          "category": "6: legal-name provenance"
+        },
+        {
+          "from": "(\"U.S. Equity\", \"Fixed Income Taxable\", \"International Equity\")",
+          "to": "(\"Equities\", \"Fixed Income\", \"Currency-hedged\")",
+          "occurrences": 1,
+          "category": "6: provider asset-class names"
+        },
+        {
+          "from": "in the etf.dws.com daily holdings (CUSIP for US securities, SEDOL for foreign ones;",
+          "to": "in the etf.dws.com Securities workbook (CUSIP, ISIN or SEDOL;",
+          "occurrences": 1,
+          "category": "6: security identifier provenance"
+        },
+        {
+          "from": "the 12-month rolling dividend yield published by etf.dws.com (product-data)",
+          "to": "the indicated distribution rate published by etf.dws.com (PDP fund facts)",
+          "occurrences": 1,
+          "category": "6: distribution-yield provenance"
+        },
+        {
+          "from": "otherwise indicated (latest distribution per share x payments per year / market price)",
+          "to": "otherwise indicated (latest distribution per share x payments per year / NAV)",
+          "occurrences": 1,
+          "category": "6: indicated yield basis"
+        },
+        {
+          "from": "etf.dws.com (daily product-data figure, month-end fund-explorer figure otherwise; the 7-day SEC yield for the money market ETF)",
+          "to": "etf.dws.com (PDP fund facts figure)",
+          "occurrences": 1,
+          "category": "6: actual SEC-yield source"
+        },
+        {
+          "from": "(cumulative returns block)",
+          "to": "(performance tables)",
+          "occurrences": 3,
+          "category": "6: provider return-table name"
+        },
+        {
+          "from": "from the etf.dws.com dividend-frequency code (MDEC = monthly, QDEC = quarterly, YDEC = annual), inferred from the published dividend schedule when no code exists:",
+          "to": "from the etf.dws.com distribution frequency, inferred from the published dividend schedule when no frequency exists:",
+          "occurrences": 1,
+          "category": "6: published frequency rather than JPMorgan code"
+        },
+        {
+          "from": "Closing market price on that date, as published by etf.dws.com.",
+          "to": "Closing market price on that date, as published by Yahoo Finance.",
+          "occurrences": 1,
+          "category": "6: daily market-price provenance"
+        },
+        {
+          "from": "closing market price versus NAV on that date (%), as published by etf.dws.com.",
+          "to": "closing market price versus NAV on that date (%), derived from etf.dws.com NAV and Yahoo Finance closing price.",
+          "occurrences": 1,
+          "category": "6: matched-date premium provenance"
+        },
+        {
+          "from": "frequency from the published dividend-frequency code, inferred from the cadence otherwise.",
+          "to": "frequency from the published distribution frequency, inferred from the cadence otherwise.",
+          "occurrences": 1,
+          "category": "5: distributions status source"
+        },
+        {
+          "from": "Returns are derived from adjusted market-price closes, not official NAV returns.",
+          "to": "Returns are derived from official daily NAV with distributions reinvested (Yahoo adjusted market-price fallback), not published standardized NAV returns.",
+          "occurrences": 1,
+          "category": "5: overview return source status"
+        },
+        {
+          "from": "if (!normalized || normalized === '-') return '00 - None';",
+          "to": "if (!normalized || /^[\\s-]+$/.test(normalized) || /^00\\s*-\\s*-+$/.test(normalized)) return '00 - None';",
+          "occurrences": 1,
+          "category": "shared frequency exception: blank/dash/legacy coded placeholder -> None; all other mappings unchanged"
+        },
+        {
+          "from": "${escapeHtml(fund.ticker)} publishes no ${sheet === 'holdings' ? 'holdings workbook' : 'NAV history workbook'} (catalog-only fund, e.g. a commodity trust).",
+          "to": "${escapeHtml(fund.ticker)} has no downloaded static ${sheet === 'holdings' ? 'holdings workbook' : 'NAV history workbook'} yet (catalog-only until the next feed refresh).",
+          "occurrences": 1,
+          "category": "5: truthful starter catalog-only status, no false claim of provider absence"
+        },
+        {
+          "from": "the feed records the provider coverage limitation in meta.json.",
+          "to": "run the updater to populate this catalog-only entry.",
+          "occurrences": 1,
+          "category": "5: truthful catalog-only status; metadata not fetched yet"
+        },
+        {
+          "from": "const base = text ? String(text) : 'Search Xtrackers ETFs, select ETFs via the “Use” checkbox, then use the Watchlist tab.';",
+          "to": "const baseText = text ? String(text) : 'Search Xtrackers ETFs, select ETFs via the “Use” checkbox, then use the Watchlist tab.';\n  const viewLabel = state.activeTab === 'All' ? 'All ETFs' : state.activeTab === 'watchlist' ? 'Watchlist' : state.activeTab.startsWith('detail:') ? state.activeTab.slice(7) : categoryLabel(state.activeTab);\n  const contextText = text ? baseText : `${baseText} ${viewLabel}: ${el.tickerCount.textContent || ''}.`;\n  const hasLocalHoldings = [...state.selected].some(ticker => Boolean(fundMetaCache.get(ticker)?.uploaded));\n  const base = hasLocalHoldings ? `${contextText} Local N-PORT XML holdings are included for this session.` : contextText;\n  const dataLabel = hasLocalHoldings ? 'Static catalog data:' : 'Data:';",
+          "occurrences": 1,
+          "category": "shared rich header exception: appropriate file-aware provenance without changing visible subtitle/selection/data logic"
+        },
+        {
+          "from": "${countsText ? ` · ${escapeHtml(countsText)}.` : '.'} Data: <a",
+          "to": "${countsText ? ` · ${escapeHtml(countsText)}.` : '.'} ${dataLabel} <a",
+          "occurrences": 1,
+          "category": "shared rich header exception: distinguish static-catalog links/counts from session-local uploaded holdings"
+        },
+        {
+          "from": "/**\n * @file Xtrackers Watchlist Application\n * Client-side static feed viewer for api/xtrackers/** with multi-ETF Watchlist\n * aggregation. Same single-file approach as daggerok/Amplify: the paginated\n * static API and lazy sheet loading follow daggerok/iShares.\n *\n * Babel standalone note: the inline pipeline strips type annotations, but it\n * does not accept every TypeScript-only expression. Follow the Amplify dev\n * style — plain `byId()` instead of DOM casts, no `as` casts, no non-null\n * `!`, no interfaces or enums.\n */\n\n/// <reference types=\"bun\" />\n\n",
+          "to": "/// <reference types=\"bun\" />\n\n/**\n * @file Xtrackers Watchlist Application\n * Client-side static feed viewer for api/xtrackers/** with multi-ETF Watchlist\n * aggregation. Same single-file approach as daggerok/Amplify: the paginated\n * static API and lazy sheet loading follow daggerok/iShares.\n *\n * Babel standalone note: the inline pipeline strips type annotations, but it\n * does not accept every TypeScript-only expression. Follow the Amplify dev\n * style — plain `byId()` instead of DOM casts, no `as` casts, no non-null\n * `!`, no interfaces or enums.\n */\n\n",
+          "occurrences": 1,
+          "category": "explicit toolchain requirement: Bun directive first line, before documentation/imports; runtime/UI unchanged"
+        }
+      ],
+      "currentSha256": "0b7aaf80de4b60ac35250c026e0050efad49c92e79c8e17a99187b1fcad24a6c"
+    },
+    "index.html": {
+      "referenceSha256": "c85aaa1210e6e75e5fc4c2358be18b4be36cdd0280a07ed6ca7ba871d07a8e3d",
+      "substitutions": [
+        {
+          "from": "am.jpmorgan.com",
+          "to": "etf.dws.com",
+          "occurrences": 4,
+          "category": "6: source host/name"
+        },
+        {
+          "from": "JPMorgan",
+          "to": "Xtrackers",
+          "occurrences": 7,
+          "category": "1/5/6/8: brand strings"
+        },
+        {
+          "from": "jpmorgan",
+          "to": "xtrackers",
+          "occurrences": 4,
+          "category": "2/3/4: storage/API/export prefixes"
+        },
+        {
+          "from": "https://etf.dws.com/us/en/asset-management/adv/products/fund-explorer/etf",
+          "to": "https://etf.dws.com/en-us/etf-products/",
+          "occurrences": 1,
+          "category": "5: official source link"
+        },
+        {
+          "from": "etf.dws.com ETF fund data</a> + SEC EDGAR N-PORT-P + Yahoo Finance (fallbacks)",
+          "to": "etf.dws.com PDP and XLSX fund data</a> + SEC EDGAR N-PORT-P (DBX ETF TRUST, CIK 0001503123 — holdings fallback only) + Yahoo Finance daily prices (dividend/history fallbacks)",
+          "occurrences": 1,
+          "category": "5/8: truthful provider/fallback attribution"
+        },
+        {
+          "from": "generated from the etf.dws.com ETF fund explorer, product-data and historical-data JSON (daily holdings, NAV history, dividends), with SEC EDGAR N-PORT-P and Yahoo Finance as fallbacks.",
+          "to": "generated from the etf.dws.com official catalog/sitemap, PDP and XLSX exports (daily holdings, NAV history, distributions), with SEC EDGAR N-PORT-P as a holdings fallback and Yahoo Finance for daily prices/history/dividend fallbacks.",
+          "occurrences": 1,
+          "category": "5/8: actual DWS source/fallback description"
+        },
+        {
+          "from": "Xtrackers ETF holdings from EDGAR, used by the feed only when etf.dws.com publishes no daily holdings for a fund",
+          "to": "Xtrackers ETF holdings from EDGAR (DBX ETF TRUST, CIK 0001503123), used by the feed only when etf.dws.com publishes no daily holdings for a fund",
+          "occurrences": 1,
+          "category": "8: verified trust in upload provenance"
+        }
+      ],
+      "currentSha256": "c0a8c1e6563ca0fb505d04d1ba74ce2d3f2e9168e7187de7a01ea3e3211084a2"
+    },
+    "favicon.ico": {
+      "referenceSha256": "16bf670a1a4b86945a57a4d5bffa1713c82c54a9abc19870e217626c36cc2fc2",
+      "substitutions": [],
+      "currentSha256": "16bf670a1a4b86945a57a4d5bffa1713c82c54a9abc19870e217626c36cc2fc2"
+    }
+  }
+}

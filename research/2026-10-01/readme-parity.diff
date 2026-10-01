@@ -1,0 +1,137 @@
+--- JPMorgan@8ce0ddc/README.md
++++ Xtrackers/README.md
+@@ -1,18 +1,18 @@
+-# JPMorgan
++# Xtrackers
+ 
+-One of the app's features lets you select JPMorgan ETFs in the Watchlist and aggregate their holdings to see how often each ticker appears across the selected funds. Repeated holdings make overlapping exposure visible: the more selected funds include a ticker, the greater its potential influence on the portfolio; gains in that holding may help, while declines may hurt, and actual impact also depends on each fund's position size.  Another feature makes it faster and easier to find funds with stronger growth over different periods, higher dividend yields or distributions, greater Total Return (price performance plus dividends), and other key performance metrics. A single-file client-side tool that reads the generated `./api/jpmorgan` static feed (am.jpmorgan.com ETF fund explorer, per-fund product-data and historical-data JSON — official NAV returns, expenses, yields, complete daily holdings and whole-life NAV history — with SEC EDGAR N-PORT-P and Yahoo Finance as fallbacks) into a searchable ETF/asset-class catalog with per-fund tabs, watchlist aggregation, ticker copy and CSV/TXT export — the same look, feel, columns and business logic as the sibling applications.
++One of the app's features lets you select Xtrackers ETFs in the Watchlist and aggregate their holdings to see how often each ticker appears across the selected funds. Repeated holdings make overlapping exposure visible: the more selected funds include a ticker, the greater its potential influence on the portfolio; gains in that holding may help, while declines may hurt, and actual impact also depends on each fund's position size.  Another feature makes it faster and easier to find funds with stronger growth over different periods, higher dividend yields or distributions, greater Total Return (price performance plus dividends), and other key performance metrics. A single-file client-side tool that reads the generated `./api/xtrackers` static feed (official etf.dws.com catalog/US sitemap, PDP facts and XLSX exports — expenses, yields, daily holdings, NAV history and distributions, with derived NAV returns — with SEC EDGAR N-PORT-P as a holdings fallback and Yahoo Finance daily prices/history/dividend fallbacks) into a searchable ETF/asset-class catalog with per-fund tabs, watchlist aggregation, ticker copy and CSV/TXT export — the same look, feel, columns and business logic as the sibling applications.
+ 
+ ## Using Bun
+ 
+ ```bash
+-bunx degit daggerok/JPMorgan#main ./12345 && cd $_
++bunx degit daggerok/Xtrackers#main ./12345 && cd $_
+ bunx serve . -p 1234
+ open http://0:1234
+ ```
+ 
+-The published application is available at <https://daggerok.github.io/JPMorgan/>.
++The deployment target is <https://daggerok.github.io/Xtrackers/>. Deployment is pending: this feature must first be merged to `main` by the owner and GitHub Pages enabled with GitHub Actions. The prepared Pages workflow never deploys an unmerged feature branch.
+ 
+-## Updating the static JPMorgan data
++## Updating the static Xtrackers data
+ 
+ Run the updater with Bun:
+ 
+@@ -23,50 +23,67 @@
+ 
+ Run `./scripts/update-data.ts -h` (or `--help`) to print every configuration variable with its default and usage examples.
+ 
+-The **Update JPMorgan ETF data** GitHub Actions workflow exposes the same settings as manual inputs. All supplied filters use **AND** logic.
++The **Update Xtrackers ETF data** GitHub Actions workflow exposes the same settings as manual inputs. All supplied filters use **AND** logic. The weekly schedule is Sunday 00:00 UTC, plus manual runs. All 23 controls are exposed; no provider-skip switches. Healthy funds continue when one fails; validated healthy data can be committed, and partial failures remain visible as a failed workflow result.
+ 
+ ### Data sources
+ 
+ | Block | Source |
+ | --- | --- |
+-| Catalog (all US JPMorgan ETFs) | `https://am.jpmorgan.com/FundsMarketingHandler/fund-explorer?country=us&role=adv&fundType=etf` (the JSON behind the [ETF fund explorer](https://am.jpmorgan.com/us/en/asset-management/adv/products/fund-explorer/etf)) |
+-| Holdings per fund | `https://am.jpmorgan.com/FundsMarketingHandler/product-data?cusip={CUSIP}&country=us&role=adv` (the JSON behind each fund page, e.g. [JEPI](https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-equity-premium-income-etf-etf-shares-46641q332)) |
+-| Daily history, distributions | `https://am.jpmorgan.com/FundsMarketingHandler/historicalData?cusip={CUSIP}&country=us&role=adv` (official NAV history) |
+-| Fallback | SEC EDGAR N-PORT-P + Yahoo Finance chart API as fallbacks |
++| Catalog (all US Xtrackers ETFs) | Official DWS monthly/quarterly fund-finder XLSX: `/api/fundfinder/en-us/downloadxls/?tab=1&filters=...`; [US sitemap](https://etf.dws.com/en-us/sitemap.xml) when the workbook is empty/unavailable; previously published catalog retained if both fail. |
++| Holdings per fund | `https://etf.dws.com/api/pdp/en-us/export/etf/{TICKER}/Securities` (official daily XLSX; e.g. [ASHR](https://etf.dws.com/api/pdp/en-us/export/etf/ASHR/Securities)); legal name, expenses, assets and yields from `/api/pdp/en-us/etfus/{TICKER}/pdpMetaTagsTealium`. |
++| Daily history, distributions | `/api/pdp/en-us/Export/etf/{TICKER}/Performance` (daily NAV, capital E) and `/api/pdp/en-us/export/etf/{TICKER}/Distributions` (total cash distributions, XLSX). |
++| Fallback | SEC EDGAR N-PORT-P holdings only (DBX ETF TRUST, CIK `0001503123`, exact series/trust matching) + Yahoo Finance chart prices/dividends/history; previously published data as the last resort. |
++
++The official finder workbook was genuinely empty during research; the official US sitemap provided dynamic discovery, not a hardcoded ticker list. The initial published snapshot contains **42 discovered funds, 3 downloaded (ASHR, HYLB, DBEF), 39 catalog-only**: 2,238 positions and 9,562 daily-history rows. Later live discovery found 43 funds; a scoped run does not insert or modify an unrequested new entry. A full pass populates new discoveries. Unknown facts are unavailable, never invented as zero.
++
++Official NAV history uses `Date / NAV / Market Price / Premium/Discount`; the market price comes from Yahoo and premium/discount requires a matching NAV date. Yahoo-only fallback uses `Date / Close / Adj Close / Volume`, with adjusted closes rounded to two decimals. Dataset source dates can differ and returns use the covered NAV series, not the fetch timestamp or a newer headline date. NAV total returns reinvest the total cash distribution once on the exact ex-date. Missing payout NAV, stale window anchors, incomplete inception coverage and young funds leave unsupported metrics unavailable; Morningstar ratings are not performance returns. Derived figures are **not published standardized NAV returns**.
++
++SEC endpoints returned HTTP 403 in this environment; SEC fallback is implemented and exercised offline, but fresh SEC success is not claimed. Official DWS holdings satisfied the real three-fund acceptance. Logs, provenance, scope checks and repeat hashes are in [final live evidence](research/2026-10-01/scoped-live-smoke-v3/summary.json). The first observed Yahoo half-cent adjustment variance is retained separately, not hidden.
+ 
+ Each fund carries a derived `metrics` object that powers the catalog columns shared with the sibling sites:
+ 
+-- `ytd` / `tr1y` — official YTD and 1-year returns → *YTD Return*, *TR 1Y*
+-- `cagr3y` / `cagr5y` / `cagr10y` — published annualized 3Y/5Y/10Y figures → *CAGR 3Y/5Y/10Y*
++- `ytd` / `tr1y` — official or coverage-checked derived NAV YTD and 1-year returns → *YTD Return*, *TR 1Y*
++- `cagr3y` / `cagr5y` / `cagr10y` — published or coverage-checked derived annualized 3Y/5Y/10Y figures → *CAGR 3Y/5Y/10Y*
+ - `tr3y` / `tr5y` / `tr10y` — cumulative 3Y/5Y/10Y figures `(1 + CAGR)^n - 1` → *TR 3Y/5Y/10Y*
+-- `siAnn` — since-inception annualized → *SI Ann.*
+-- `dividendYield` — 12-month trailing yield or indicated yield (latest distribution × frequency ÷ price)
++- `siAnn` — since-inception annualized when date/age/coverage support it (not young cumulative SI) → *SI Ann.*
++- `dividendYield` — official indicated distribution rate, or latest positive distribution × frequency ÷ NAV
+ - `secYield` — 30-day SEC yield when published; `—` otherwise
+ 
+ ### Update controls
+ 
+ | Environment variable | Default | Meaning |
+ | --- | --: | --- |
+-| `MAX_FETCHES` | all | Batch size: with a positive value the updater continues after the committed cursor in `api/jpmorgan/update-state.json`; empty or `0` is a full pass — every fund is refreshed in one run. |
+-| `REQUEST_SLEEP` | `1` | Minimum delay in seconds between outgoing request starts, including retries. |
+-| `CONCURRENCY` | `2` | Number of parallel fund update workers. Request starts are still globally spaced by `REQUEST_SLEEP`. |
+-| `AUM` | `:` | Net Assets range. Each bound may be a USD amount or `K`/`M`/`B`/`T`, or one of `nano`, `micro`, `small`, `mid`, `large`. |
+-| `TER` | `:` | Expense ratio range in % (strict `min:max`). |
+-| `DIVIDEND_YIELD` | `:` | Dividend-yield percentage range. |
+-| `TICKERS` | all | Space-, comma- or semicolon-separated ticker allowlist, e.g. `JEPI JEPQ JPST BBJP`. |
+-| `HOLDINGS_PAGE_SIZE` | `250` | Rows in each generated current-holdings JSON page. |
+-| `HISTORY_PAGE_SIZE` | `1000` | Rows in each generated daily-history JSON page. |
+-| `MAX_RETRIES` | `2` | Retries after the initial request. Only network errors and HTTP 408/425/429/5xx are retried with exponential backoff. |
+-| `SEC_UA` | declared UA | Override the SEC User-Agent. SEC policy requires automated tools to declare a contact. |
+-| `SKIP_YAHOO` | off | Skip Yahoo Finance history updates. |
++| `MAX_FETCHES` | `0` | Batch evaluation size: positive resumes the scoped cursor in `api/xtrackers/update-state.json`; `0` is a full selected pass. A failed fund prevents cursor advancement. |
++| `REQUEST_SLEEP` | `1.5` | Minimum seconds between outgoing request starts **in each independent lane**, including retries; normal DWS pacing is 1.5 seconds. |
++| `CONCURRENCY` | `2` | Parallel fund workers / independent paced lanes; two lanes, not one global bottleneck. |
++| `TICKERS` | all | Space/comma/semicolon allowlist, e.g. ASHR HYLB DBEF. Unknown requested tickers fail before writes. |
++| `AUM` | `:` | Net Assets range: USD amounts or K/M/B/T suffixes; nano/micro/small/mid/large presets; inclusive min:max. |
++| `TER` | `:` | Gross expense ratio range in % (strict min:max). |
++| `DIVIDEND_YIELD` | `:` | Distribution-yield range in %, min:max; missing values do not pass an active range. |
++| `SEC_YIELD` | `:` | Official 30-day SEC-yield range in %, min:max; missing values do not pass. |
++| `HOLDINGS_PAGE_SIZE` | `250` | Current holdings rows per JSON page |
++| `HISTORY_PAGE_SIZE` | `1000` | Daily history rows per JSON page |
++| `MAX_RETRIES` | `2` | Retries after the initial request (transient HTTP/network failures only) |
++| `SEC_UA` | declared UA | SEC contact User-Agent; override with your real contact. Do not put credentials here. |
++| `VERBOSE` | `false` | Provider/fallback/retry detail; the normal compact fund reporter always retains real zero/false and omits missing fields. |
++| `PERFORMANCE_YTD` | `:` | YTD performance percent min:max (3Y/5Y/10Y annualized) |
++| `TOTAL_RETURN_YTD` | `:` | YTD cumulative total return percent min:max |
++| `PERFORMANCE_1Y` | `:` | 1Y performance percent min:max (3Y/5Y/10Y annualized) |
++| `TOTAL_RETURN_1Y` | `:` | 1Y cumulative total return percent min:max |
++| `PERFORMANCE_3Y` | `:` | 3Y performance percent min:max (3Y/5Y/10Y annualized) |
++| `TOTAL_RETURN_3Y` | `:` | 3Y cumulative total return percent min:max |
++| `PERFORMANCE_5Y` | `:` | 5Y performance percent min:max (3Y/5Y/10Y annualized) |
++| `TOTAL_RETURN_5Y` | `:` | 5Y cumulative total return percent min:max |
++| `PERFORMANCE_10Y` | `:` | 10Y performance percent min:max (3Y/5Y/10Y annualized) |
++| `TOTAL_RETURN_10Y` | `:` | 10Y cumulative total return percent min:max |
+ 
+-`TICKERS` combines with AUM, TER, yield filters using AND logic; it does not override them. Funds not selected for a successful update keep their prior published metadata and data files.
++`TICKERS` combines with AUM, TER, yield and return filters using AND logic; it does not override them. Funds not selected for a successful update keep their prior published metadata and data files.
+ 
+ ### Examples
+ 
+ ```bash
+ MAX_FETCHES=10 ./scripts/update-data.ts
+-TICKERS="JEPI JEPQ JPST BBJP" ./scripts/update-data.ts
++TICKERS="ASHR HYLB DBEF" ./scripts/update-data.ts
+ AUM="1B:" TER=":0.5" ./scripts/update-data.ts
+ PERFORMANCE_1Y="15:" ./scripts/update-data.ts
+ ```
+@@ -101,6 +118,7 @@
+ | **Vanguard** | [investor.vanguard.com](https://investor.vanguard.com/etf/list) \| [Vanguard](https://daggerok.github.io/Vanguard/) |
+ | **VictoryShares** | [vcm.com VictoryShares ETFs](https://www.vcm.com/products/victoryshares-etfs/victoryshares-etfs-list) \| [VictoryShares](https://daggerok.github.io/VictoryShares/) |
+ | **WisdomTree** | [wisdomtree.com](https://www.wisdomtree.com/investments) \| [WisdomTree](https://daggerok.github.io/WisdomTree/) |
++| **Xtrackers** | [etf.dws.com](https://etf.dws.com/en-us/etf-products/) \| [Xtrackers](https://daggerok.github.io/Xtrackers/) |
+ 
+ ## Sibling applications
+ 
+@@ -126,9 +144,10 @@
+ | Vanguard | Vanguard product pages + SEC EDGAR N-PORT-P | [Vanguard](https://github.com/daggerok/Vanguard) |
+ | VictoryShares | VCM VictoryShares catalog and product JSON + SEC EDGAR N-PORT-P holdings fallback + Yahoo Finance adjusted-market-price history | [VictoryShares](https://github.com/daggerok/VictoryShares) |
+ | WisdomTree | WisdomTree product table + SEC EDGAR N-PORT-P + Yahoo Finance | [WisdomTree](https://github.com/daggerok/WisdomTree) |
++| Xtrackers | Official DWS catalog/US sitemap + PDP/XLSX + SEC N-PORT-P holdings fallback + Yahoo Finance daily prices/history/dividends | [Xtrackers](https://github.com/daggerok/Xtrackers) |
+ 
+ ## License
+ 
+ [MIT — same as all sibling ETF repositories.](./LICENSE)
+ 
+-J.P. Morgan® and JPMorgan® and the fund names/tickers referenced here are trademarks of JPMorgan Chase & Co. This is an independent, unofficial tool; it is not affiliated with, endorsed by, or sponsored by J.P. Morgan Asset Management or JPMorgan Chase & Co. All data is reproduced from J.P. Morgan Asset Management's own public fund pages and downloads, public SEC EDGAR filings and Yahoo Finance for research purposes. All other trademarks, including index names, are the property of their respective owners.
++Xtrackers® and DWS® and the fund names/tickers referenced here are trademarks of DWS Group This is an independent, unofficial tool; it is not affiliated with, endorsed by, or sponsored by DWS or Xtrackers All data is reproduced from DWS's own public fund pages and downloads, public SEC EDGAR filings and Yahoo Finance for research purposes. All other trademarks, including index names, are the property of their respective owners.

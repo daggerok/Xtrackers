@@ -1,0 +1,400 @@
+{
+  "ticker": "DBEZ",
+  "name": "Xtrackers MSCI Eurozone Hedged Equity ETF",
+  "category": "Currency-hedged / Equities / International",
+  "fundPage": "https://etf.dws.com/en-us/DBEZ-msci-eurozone-hedged-equity-etf/",
+  "dataFile": "funds/DBEZ/meta.json",
+  "ter": "0.45%",
+  "terValue": 0.45,
+  "nav": "$62.03",
+  "navValue": 62.03,
+  "aum": "$74,436,656",
+  "aumValue": 74436656,
+  "asOfDate": "2026-09-30",
+  "inceptionDate": "2014-12-10",
+  "exchange": "NYSE",
+  "closePrice": "$61.85",
+  "closePriceAsOfDate": "2026-09-30",
+  "premiumDiscount": "-0.29%",
+  "cusip": "233051697",
+  "isin": "US2330516970",
+  "distributions": {
+    "frequency": "Semi-annually",
+    "exDate": "2026-06-18",
+    "dividend": "0.04032",
+    "paymentsPerYear": 2,
+    "headers": [
+      "Ex-Date",
+      "Amount"
+    ],
+    "rows": [
+      [
+        "2022-12-07",
+        "0"
+      ],
+      [
+        "2022-12-16",
+        "0"
+      ],
+      [
+        "2023-06-23",
+        "0.77082"
+      ],
+      [
+        "2023-12-07",
+        "0"
+      ],
+      [
+        "2023-12-15",
+        "0"
+      ],
+      [
+        "2024-06-21",
+        "0.03174"
+      ],
+      [
+        "2024-12-06",
+        "0"
+      ],
+      [
+        "2024-12-20",
+        "0.25253"
+      ],
+      [
+        "2025-06-20",
+        "1.5663"
+      ],
+      [
+        "2025-12-05",
+        "0"
+      ],
+      [
+        "2025-12-19",
+        "0.75"
+      ],
+      [
+        "2026-06-18",
+        "0.04032"
+      ]
+    ]
+  },
+  "returns": {
+    "monthEnd": {
+      "asOfDate": "2026-09-30",
+      "ytd": 12.12,
+      "yr1": 18.22,
+      "yr3": 19.12,
+      "yr5": 12.33,
+      "yr10": 11.79,
+      "sinceInception": 10.61
+    },
+    "quarterEnd": {
+      "asOfDate": "2026-09-30",
+      "ytd": 12.12,
+      "yr1": 18.22,
+      "yr3": 19.12,
+      "yr5": 12.33,
+      "yr10": 11.79,
+      "sinceInception": 10.61
+    }
+  },
+  "metrics": {
+    "ytd": 12.12,
+    "tr1y": 18.22,
+    "cagr3y": 19.12,
+    "cagr5y": 12.33,
+    "cagr10y": 11.79,
+    "tr3y": 69.03,
+    "tr5y": 78.85,
+    "tr10y": 204.81,
+    "siAnn": 10.61,
+    "dividendYield": 0.13,
+    "dividendYieldText": "0.13%",
+    "secYield": 2.06,
+    "secYieldText": "2.06%",
+    "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns"
+  },
+  "holdings": {
+    "pages": [
+      "holdings/001.json",
+      "holdings/002.json",
+      "holdings/003.json"
+    ],
+    "pageSize": 250,
+    "totalRows": 594,
+    "asOfDate": "2026-09-30",
+    "source": "https://etf.dws.com/api/pdp/en-us/export/etf/DBEZ/Securities"
+  },
+  "history": {
+    "pages": [
+      "history/001.json",
+      "history/002.json",
+      "history/003.json"
+    ],
+    "pageSize": 1000,
+    "totalRows": 2969,
+    "asOfDate": "2026-09-30",
+    "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/DBEZ/Performance + https://query1.finance.yahoo.com/v8/finance/chart/DBEZ"
+  },
+  "generatedAt": "2026-10-01T21:24:40.790Z",
+  "netTerValue": 0.45,
+  "source": {
+    "provider": "Xtrackers (DWS)",
+    "site": "https://etf.dws.com/en-us/",
+    "catalog": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A1%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
+    "details": "https://etf.dws.com/api/pdp/en-us/etfus/DBEZ/pdpMetaTagsTealium",
+    "holdingsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/DBEZ/Securities",
+    "historySource": "https://etf.dws.com/api/pdp/en-us/Export/etf/DBEZ/Performance + https://query1.finance.yahoo.com/v8/finance/chart/DBEZ",
+    "distributionsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/DBEZ/Distributions",
+    "yahoo": "https://query1.finance.yahoo.com/v8/finance/chart/DBEZ",
+    "trust": "DBX ETF TRUST",
+    "trustCik": "0001503123"
+  },
+  "identifiers": {
+    "cusip": "233051697",
+    "isin": "US2330516970",
+    "indexTicker": "MIMUEHR"
+  },
+  "yields": {
+    "dividendYield": 0.13,
+    "dividendYieldText": "0.13%",
+    "dividendYieldKind": "official indicated distribution rate / NAV",
+    "distributionRate": 0.13,
+    "secYield": 2.06,
+    "secYieldText": "2.06%",
+    "secYieldKind": "official DWS 30-day SEC yield"
+  },
+  "distributionEvents": [
+    {
+      "exDate": "2015-06-24",
+      "epoch": 1435104000,
+      "amount": 1.12659,
+      "recordDate": "2015-06-26",
+      "payDate": "2015-06-30"
+    },
+    {
+      "exDate": "2015-12-16",
+      "epoch": 1450224000,
+      "amount": 0.16066,
+      "recordDate": "2015-12-18",
+      "payDate": "2015-12-28"
+    },
+    {
+      "exDate": "2016-06-21",
+      "epoch": 1466467200,
+      "amount": 0.73646,
+      "recordDate": "2016-06-23",
+      "payDate": "2016-06-27"
+    },
+    {
+      "exDate": "2016-12-09",
+      "epoch": 1481241600,
+      "amount": 0,
+      "recordDate": "2016-12-13",
+      "payDate": "2016-12-15"
+    },
+    {
+      "exDate": "2016-12-21",
+      "epoch": 1482278400,
+      "amount": 0.1813,
+      "recordDate": "2016-12-23",
+      "payDate": "2016-12-28"
+    },
+    {
+      "exDate": "2017-06-21",
+      "epoch": 1498003200,
+      "amount": 0.51083,
+      "recordDate": "2017-06-23",
+      "payDate": "2017-06-27"
+    },
+    {
+      "exDate": "2017-12-08",
+      "epoch": 1512691200,
+      "amount": 0,
+      "recordDate": "2017-12-11",
+      "payDate": "2017-12-14"
+    },
+    {
+      "exDate": "2017-12-19",
+      "epoch": 1513641600,
+      "amount": 0.13088,
+      "recordDate": "2017-12-20",
+      "payDate": "2017-12-26"
+    },
+    {
+      "exDate": "2018-06-20",
+      "epoch": 1529452800,
+      "amount": 0.50026,
+      "recordDate": "2018-06-21",
+      "payDate": "2018-06-27"
+    },
+    {
+      "exDate": "2018-12-07",
+      "epoch": 1544140800,
+      "amount": 0,
+      "recordDate": "2018-12-10",
+      "payDate": "2018-12-14"
+    },
+    {
+      "exDate": "2018-12-19",
+      "epoch": 1545177600,
+      "amount": 0.1776,
+      "recordDate": "2018-12-20",
+      "payDate": "2018-12-27"
+    },
+    {
+      "exDate": "2019-06-28",
+      "epoch": 1561680000,
+      "amount": 0.78604,
+      "recordDate": "2019-07-01",
+      "payDate": "2019-07-08"
+    },
+    {
+      "exDate": "2019-12-06",
+      "epoch": 1575590400,
+      "amount": 0,
+      "recordDate": "2019-12-09",
+      "payDate": "2019-12-13"
+    },
+    {
+      "exDate": "2019-12-18",
+      "epoch": 1576627200,
+      "amount": 0.16618,
+      "recordDate": "2019-12-19",
+      "payDate": "2019-12-24"
+    },
+    {
+      "exDate": "2020-06-26",
+      "epoch": 1593129600,
+      "amount": 0.27948,
+      "recordDate": "2020-06-29",
+      "payDate": "2020-07-06"
+    },
+    {
+      "exDate": "2020-12-03",
+      "epoch": 1606953600,
+      "amount": 0,
+      "recordDate": "2020-12-04",
+      "payDate": "2020-12-10"
+    },
+    {
+      "exDate": "2020-12-18",
+      "epoch": 1608249600,
+      "amount": 0.372,
+      "recordDate": "2020-12-21",
+      "payDate": "2020-12-28"
+    },
+    {
+      "exDate": "2021-06-25",
+      "epoch": 1624579200,
+      "amount": 0.57506,
+      "recordDate": "2021-06-28",
+      "payDate": "2021-07-02"
+    },
+    {
+      "exDate": "2021-12-07",
+      "epoch": 1638835200,
+      "amount": 0,
+      "recordDate": "2021-12-08",
+      "payDate": "2021-12-14"
+    },
+    {
+      "exDate": "2021-12-17",
+      "epoch": 1639699200,
+      "amount": 0.07771,
+      "recordDate": "2021-12-20",
+      "payDate": "2021-12-27"
+    },
+    {
+      "exDate": "2022-06-24",
+      "epoch": 1656028800,
+      "amount": 0.58974,
+      "recordDate": "2022-06-27",
+      "payDate": "2022-07-01"
+    },
+    {
+      "exDate": "2022-12-07",
+      "epoch": 1670371200,
+      "amount": 0,
+      "recordDate": "2022-12-08",
+      "payDate": "2022-12-14"
+    },
+    {
+      "exDate": "2022-12-16",
+      "epoch": 1671148800,
+      "amount": 0,
+      "recordDate": "2022-12-19",
+      "payDate": "2022-12-23"
+    },
+    {
+      "exDate": "2023-06-23",
+      "epoch": 1687478400,
+      "amount": 0.77082,
+      "recordDate": "2023-06-26",
+      "payDate": "2023-06-30"
+    },
+    {
+      "exDate": "2023-12-07",
+      "epoch": 1701907200,
+      "amount": 0,
+      "recordDate": "2023-12-08",
+      "payDate": "2023-12-14"
+    },
+    {
+      "exDate": "2023-12-15",
+      "epoch": 1702598400,
+      "amount": 0,
+      "recordDate": "2023-12-18",
+      "payDate": "2023-12-22"
+    },
+    {
+      "exDate": "2024-06-21",
+      "epoch": 1718928000,
+      "amount": 0.03174,
+      "recordDate": "2024-06-21",
+      "payDate": "2024-06-28"
+    },
+    {
+      "exDate": "2024-12-06",
+      "epoch": 1733443200,
+      "amount": 0,
+      "recordDate": "2024-12-06",
+      "payDate": "2024-12-13"
+    },
+    {
+      "exDate": "2024-12-20",
+      "epoch": 1734652800,
+      "amount": 0.25253,
+      "recordDate": "2024-12-20",
+      "payDate": "2024-12-30"
+    },
+    {
+      "exDate": "2025-06-20",
+      "epoch": 1750377600,
+      "amount": 1.5663,
+      "recordDate": "2025-06-20",
+      "payDate": "2025-06-27"
+    },
+    {
+      "exDate": "2025-12-05",
+      "epoch": 1764892800,
+      "amount": 0,
+      "recordDate": "2025-12-05",
+      "payDate": "2025-12-12"
+    },
+    {
+      "exDate": "2025-12-19",
+      "epoch": 1766102400,
+      "amount": 0.75,
+      "recordDate": "2025-12-19",
+      "payDate": "2025-12-29"
+    },
+    {
+      "exDate": "2026-06-18",
+      "epoch": 1781740800,
+      "amount": 0.04032,
+      "recordDate": "2026-06-18",
+      "payDate": "2026-06-26"
+    }
+  ]
+}

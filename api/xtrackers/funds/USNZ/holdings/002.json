@@ -1,0 +1,458 @@
+{
+  "ticker": "USNZ",
+  "page": 2,
+  "pageSize": 250,
+  "totalRows": 299,
+  "headers": [
+    "Name",
+    "Ticker",
+    "Identifier",
+    "Weight",
+    "Market Value",
+    "Shares Held",
+    "Asset Category"
+  ],
+  "rows": [
+    {
+      "Name": "Live Nation Entertainment Inc",
+      "Ticker": "LYV",
+      "Identifier": "538034109",
+      "Weight": "0.05031364",
+      "Market Value": "150677",
+      "Shares Held": "890",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ameriprise Financial Inc",
+      "Ticker": "AMP.N",
+      "Identifier": "03076C106",
+      "Weight": "0.04997885",
+      "Market Value": "149674.4",
+      "Shares Held": "304",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Verisk Analytics",
+      "Ticker": "VRSK.O",
+      "Identifier": "92345Y106",
+      "Weight": "0.04797708",
+      "Market Value": "143679.6",
+      "Shares Held": "856",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Global Payments Inc",
+      "Ticker": "GPN.N",
+      "Identifier": "37940X102",
+      "Weight": "0.04783336",
+      "Market Value": "143249.18",
+      "Shares Held": "1754",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Willis Towers Watson PLC",
+      "Ticker": "WLTW.UW",
+      "Identifier": "G96629103",
+      "Weight": "0.04716002",
+      "Market Value": "141232.7",
+      "Shares Held": "490",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "HP Inc",
+      "Ticker": "HPQ UN",
+      "Identifier": "40434L105",
+      "Weight": "0.04570701",
+      "Market Value": "136881.28",
+      "Shares Held": "4376",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "MetLife Inc",
+      "Ticker": "MET",
+      "Identifier": "59156R108",
+      "Weight": "0.04310649",
+      "Market Value": "129093.36",
+      "Shares Held": "1371",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Synchrony Financial",
+      "Ticker": "SYF.N",
+      "Identifier": "87165B103",
+      "Weight": "0.04275137",
+      "Market Value": "128029.88",
+      "Shares Held": "1804",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Arch Capital Gp",
+      "Ticker": "ACGL.O",
+      "Identifier": "G0450A105",
+      "Weight": "0.04259085",
+      "Market Value": "127549.16",
+      "Shares Held": "1381",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Reddit INC",
+      "Ticker": "RDDT",
+      "Identifier": "75734B100",
+      "Weight": "0.04176046",
+      "Market Value": "125062.32",
+      "Shares Held": "878",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Fidelity National Information",
+      "Ticker": "FIS",
+      "Identifier": "31620M106",
+      "Weight": "0.04008746",
+      "Market Value": "120052.1",
+      "Shares Held": "3649",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Hartford Financial Services Group",
+      "Ticker": "HIG.N",
+      "Identifier": "416515104",
+      "Weight": "0.03869262",
+      "Market Value": "115874.92",
+      "Shares Held": "947",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Fifth Third Bancorp",
+      "Ticker": "FITB",
+      "Identifier": "316773100",
+      "Weight": "0.03737653",
+      "Market Value": "111933.54",
+      "Shares Held": "2213",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Globalfoundries Inc",
+      "Ticker": "GFS",
+      "Identifier": "G39387108",
+      "Weight": "0.03598695",
+      "Market Value": "107772.08",
+      "Shares Held": "2249",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Equifax",
+      "Ticker": "EFX.N",
+      "Identifier": "294429105",
+      "Weight": "0.03597403",
+      "Market Value": "107733.4",
+      "Shares Held": "785",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Nucor Corp",
+      "Ticker": "NUE.N",
+      "Identifier": "670346105",
+      "Weight": "0.03387506",
+      "Market Value": "101447.5",
+      "Shares Held": "434",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cincinnati Fin Cp",
+      "Ticker": "CINF.O",
+      "Identifier": "172062101",
+      "Weight": "0.03272807",
+      "Market Value": "98012.55",
+      "Shares Held": "615",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Wabtec Corp",
+      "Ticker": "WAB",
+      "Identifier": "929740108",
+      "Weight": "0.03011082",
+      "Market Value": "90174.52",
+      "Shares Held": "314",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Rocket Companies Inc",
+      "Ticker": "RKT",
+      "Identifier": "77311W101",
+      "Weight": "0.02982852",
+      "Market Value": "89329.11",
+      "Shares Held": "7761",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Fair Isaac Corp",
+      "Ticker": "FICO",
+      "Identifier": "303250104",
+      "Weight": "0.02927971",
+      "Market Value": "87685.56",
+      "Shares Held": "148",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "PACCAR Inc",
+      "Ticker": "PCAR",
+      "Identifier": "693718108",
+      "Weight": "0.0283806",
+      "Market Value": "84992.94",
+      "Shares Held": "774",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Prudential Financial Inc",
+      "Ticker": "PRU.N",
+      "Identifier": "744320102",
+      "Weight": "0.02829303",
+      "Market Value": "84730.68",
+      "Shares Held": "746",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Southwest Airlines Co",
+      "Ticker": "LUV",
+      "Identifier": "844741108",
+      "Weight": "0.0277391",
+      "Market Value": "83071.8",
+      "Shares Held": "1995",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Berkley W R",
+      "Ticker": "WRB.N",
+      "Identifier": "084423102",
+      "Weight": "0.02489825",
+      "Market Value": "74564.16",
+      "Shares Held": "1104",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Rollins Inc",
+      "Ticker": "ROL",
+      "Identifier": "775711104",
+      "Weight": "0.02443993",
+      "Market Value": "73191.6",
+      "Shares Held": "2430",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "MARKEL CORP",
+      "Ticker": "MKL",
+      "Identifier": "570535104",
+      "Weight": "0.02401629",
+      "Market Value": "71922.9",
+      "Shares Held": "42",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "M&T Bank Corp",
+      "Ticker": "MTB",
+      "Identifier": "55261F104",
+      "Weight": "0.02092619",
+      "Market Value": "62668.8",
+      "Shares Held": "288",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Fox Corp Class A",
+      "Ticker": "FOXA",
+      "Identifier": "35137L105",
+      "Weight": "0.02031323",
+      "Market Value": "60833.15",
+      "Shares Held": "971",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "YUM! BRANDS INC",
+      "Ticker": "YUM",
+      "Identifier": "988498101",
+      "Weight": "0.02003156",
+      "Market Value": "59989.6",
+      "Shares Held": "440",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Principal Financial Group Inc",
+      "Ticker": "PFG N",
+      "Identifier": "74251V102",
+      "Weight": "0.01970209",
+      "Market Value": "59002.92",
+      "Shares Held": "527",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "International Paper Co",
+      "Ticker": "IP",
+      "Identifier": "460146103",
+      "Weight": "0.01628177",
+      "Market Value": "48759.9",
+      "Shares Held": "1470",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Lennar Corporation Class B",
+      "Ticker": "LEN/B",
+      "Identifier": "526057302",
+      "Weight": "0.01519801",
+      "Market Value": "45514.31",
+      "Shares Held": "569",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "XTRACK MSCI USA CLIM ACT EQ",
+      "Ticker": "USCA",
+      "Identifier": "23306X605",
+      "Weight": "0.01517871",
+      "Market Value": "45456.5",
+      "Shares Held": "1000",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Regions Financial Corp",
+      "Ticker": "RF.N",
+      "Identifier": "7591EP100",
+      "Weight": "0.01427135",
+      "Market Value": "42739.2",
+      "Shares Held": "1590",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "KeyCorp",
+      "Ticker": "KEY.N",
+      "Identifier": "493267108",
+      "Weight": "0.01382564",
+      "Market Value": "41404.41",
+      "Shares Held": "2063",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Fox Corp Class B",
+      "Ticker": "FOX",
+      "Identifier": "35137L204",
+      "Weight": "0.0123513",
+      "Market Value": "36989.1",
+      "Shares Held": "657",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Charter Communications Inc. Cl A",
+      "Ticker": "CHTR US",
+      "Identifier": "16119P108",
+      "Weight": "0.01177599",
+      "Market Value": "35266.2",
+      "Shares Held": "318",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Vanguard Mid-Cap ETF",
+      "Ticker": "VO",
+      "Identifier": "922908629",
+      "Weight": "0.01047431",
+      "Market Value": "31368",
+      "Shares Held": "400",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "General Motors Co",
+      "Ticker": "GM",
+      "Identifier": "37045V100",
+      "Weight": "0.00820201",
+      "Market Value": "24563",
+      "Shares Held": "319",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "ISHARES PARIS - ALIG CLI MUE",
+      "Ticker": "PABU",
+      "Identifier": "46436E411",
+      "Weight": "0.00786525",
+      "Market Value": "23554.5",
+      "Shares Held": "300",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ford Motor Co",
+      "Ticker": "F",
+      "Identifier": "345370860",
+      "Weight": "0.00227931",
+      "Market Value": "6825.96",
+      "Shares Held": "566",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Northern Trust Corp",
+      "Ticker": "NTRS",
+      "Identifier": "665859104",
+      "Weight": "0.00214898",
+      "Market Value": "6435.68",
+      "Shares Held": "38",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Humana Inc",
+      "Ticker": "HUM",
+      "Identifier": "444859102",
+      "Weight": "0.00165637",
+      "Market Value": "4960.41",
+      "Shares Held": "13",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Citizens Financial Group Inc",
+      "Ticker": "CFG.N",
+      "Identifier": "174610105",
+      "Weight": "0.00119227",
+      "Market Value": "3570.56",
+      "Shares Held": "56",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ares Management Corp",
+      "Ticker": "ARES",
+      "Identifier": "03990B101",
+      "Weight": "0.00112494",
+      "Market Value": "3368.93",
+      "Shares Held": "29",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Tyson Foods Inc-CL A",
+      "Ticker": "TSN US",
+      "Identifier": "902494103",
+      "Weight": "0.00079302",
+      "Market Value": "2374.91",
+      "Shares Held": "47",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Everest Re Group",
+      "Ticker": "RE.N",
+      "Identifier": "G3223R108",
+      "Weight": "0.00048775",
+      "Market Value": "1460.68",
+      "Shares Held": "4",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Archer-Daniels-Midland Co",
+      "Ticker": "ADM",
+      "Identifier": "039483102",
+      "Weight": "0.00031808",
+      "Market Value": "952.56",
+      "Shares Held": "12",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "SP500 MIC EMIN Futures Dec26",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "6",
+      "Asset Category": "Future"
+    }
+  ]
+}

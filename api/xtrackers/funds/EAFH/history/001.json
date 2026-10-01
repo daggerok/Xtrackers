@@ -1,0 +1,20 @@
+{
+  "ticker": "EAFH",
+  "page": 1,
+  "pageSize": 1000,
+  "totalRows": 1,
+  "headers": [
+    "Date",
+    "NAV",
+    "Market Price",
+    "Premium/Discount"
+  ],
+  "rows": [
+    {
+      "Date": "2026-09-30",
+      "NAV": "25",
+      "Market Price": "",
+      "Premium/Discount": ""
+    }
+  ]
+}

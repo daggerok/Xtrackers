@@ -1,0 +1,270 @@
+{
+  "ticker": "CRTC",
+  "name": "Xtrackers US National Critical Technologies ETF",
+  "category": "Equities",
+  "fundPage": "https://etf.dws.com/en-us/CRTC-us-national-critical-technologies-etf/",
+  "dataFile": "funds/CRTC/meta.json",
+  "ter": "0.35%",
+  "terValue": 0.35,
+  "nav": "$41.16",
+  "navValue": 41.16,
+  "aum": "$143,639,090",
+  "aumValue": 143639090,
+  "asOfDate": "2026-09-30",
+  "inceptionDate": "2023-11-16",
+  "exchange": "NYSE",
+  "closePrice": "$41.50",
+  "closePriceAsOfDate": "2026-10-01",
+  "premiumDiscount": "—",
+  "cusip": "23306X860",
+  "isin": "US23306X8609",
+  "distributions": {
+    "frequency": "Quarterly",
+    "exDate": "2026-09-18",
+    "dividend": "0.14172",
+    "paymentsPerYear": 4,
+    "headers": [
+      "Ex-Date",
+      "Amount"
+    ],
+    "rows": [
+      [
+        "2024-06-21",
+        "0.07895"
+      ],
+      [
+        "2024-09-20",
+        "0.10011"
+      ],
+      [
+        "2024-12-06",
+        "0.00841"
+      ],
+      [
+        "2024-12-20",
+        "0.10661"
+      ],
+      [
+        "2025-03-21",
+        "0.06327"
+      ],
+      [
+        "2025-06-20",
+        "0.09591"
+      ],
+      [
+        "2025-09-19",
+        "0.10394"
+      ],
+      [
+        "2025-12-05",
+        "0"
+      ],
+      [
+        "2025-12-19",
+        "0.11337"
+      ],
+      [
+        "2026-03-20",
+        "0.08222"
+      ],
+      [
+        "2026-06-18",
+        "0.04669"
+      ],
+      [
+        "2026-09-18",
+        "0.14172"
+      ]
+    ]
+  },
+  "returns": {
+    "monthEnd": {
+      "asOfDate": "2026-09-30",
+      "ytd": 13.06,
+      "yr1": 14.6,
+      "yr3": null,
+      "yr5": null,
+      "yr10": null,
+      "sinceInception": 20.23
+    },
+    "quarterEnd": {
+      "asOfDate": "2026-09-30",
+      "ytd": 13.06,
+      "yr1": 14.6,
+      "yr3": null,
+      "yr5": null,
+      "yr10": null,
+      "sinceInception": 20.23
+    }
+  },
+  "metrics": {
+    "ytd": 13.06,
+    "tr1y": 14.6,
+    "cagr3y": null,
+    "cagr5y": null,
+    "cagr10y": null,
+    "tr3y": null,
+    "tr5y": null,
+    "tr10y": null,
+    "siAnn": 20.23,
+    "dividendYield": 1.38,
+    "dividendYieldText": "1.38%",
+    "secYield": 0.83,
+    "secYieldText": "0.83%",
+    "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns"
+  },
+  "holdings": {
+    "pages": [
+      "holdings/001.json"
+    ],
+    "pageSize": 250,
+    "totalRows": 210,
+    "asOfDate": "2026-09-30",
+    "source": "https://etf.dws.com/api/pdp/en-us/export/etf/CRTC/Securities"
+  },
+  "history": {
+    "pages": [
+      "history/001.json"
+    ],
+    "pageSize": 1000,
+    "totalRows": 721,
+    "asOfDate": "2026-10-01",
+    "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/CRTC/Performance + https://query1.finance.yahoo.com/v8/finance/chart/CRTC"
+  },
+  "generatedAt": "2026-10-01T21:24:40.648Z",
+  "netTerValue": 0.35,
+  "source": {
+    "provider": "Xtrackers (DWS)",
+    "site": "https://etf.dws.com/en-us/",
+    "catalog": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A1%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
+    "details": "https://etf.dws.com/api/pdp/en-us/etfus/CRTC/pdpMetaTagsTealium",
+    "holdingsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/CRTC/Securities",
+    "historySource": "https://etf.dws.com/api/pdp/en-us/Export/etf/CRTC/Performance + https://query1.finance.yahoo.com/v8/finance/chart/CRTC",
+    "distributionsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/CRTC/Distributions",
+    "yahoo": "https://query1.finance.yahoo.com/v8/finance/chart/CRTC",
+    "trust": "DBX ETF TRUST",
+    "trustCik": "0001503123"
+  },
+  "identifiers": {
+    "cusip": "23306X860",
+    "isin": "US23306X8609",
+    "indexTicker": "SOLUCTIN"
+  },
+  "yields": {
+    "dividendYield": 1.38,
+    "dividendYieldText": "1.38%",
+    "dividendYieldKind": "official indicated distribution rate / NAV",
+    "distributionRate": 1.38,
+    "secYield": 0.83,
+    "secYieldText": "0.83%",
+    "secYieldKind": "official DWS 30-day SEC yield"
+  },
+  "distributionEvents": [
+    {
+      "exDate": "2023-12-07",
+      "epoch": 1701907200,
+      "amount": 0,
+      "recordDate": "2023-12-08",
+      "payDate": "2023-12-14"
+    },
+    {
+      "exDate": "2023-12-15",
+      "epoch": 1702598400,
+      "amount": 0.04408,
+      "recordDate": "2023-12-18",
+      "payDate": "2023-12-22"
+    },
+    {
+      "exDate": "2024-03-15",
+      "epoch": 1710460800,
+      "amount": 0.05723,
+      "recordDate": "2024-03-18",
+      "payDate": "2024-03-22"
+    },
+    {
+      "exDate": "2024-06-21",
+      "epoch": 1718928000,
+      "amount": 0.07895,
+      "recordDate": "2024-06-21",
+      "payDate": "2024-06-28"
+    },
+    {
+      "exDate": "2024-09-20",
+      "epoch": 1726790400,
+      "amount": 0.10011,
+      "recordDate": "2024-09-20",
+      "payDate": "2024-09-27"
+    },
+    {
+      "exDate": "2024-12-06",
+      "epoch": 1733443200,
+      "amount": 0.00841,
+      "recordDate": "2024-12-06",
+      "payDate": "2024-12-13"
+    },
+    {
+      "exDate": "2024-12-20",
+      "epoch": 1734652800,
+      "amount": 0.10661,
+      "recordDate": "2024-12-20",
+      "payDate": "2024-12-30"
+    },
+    {
+      "exDate": "2025-03-21",
+      "epoch": 1742515200,
+      "amount": 0.06327,
+      "recordDate": "2025-03-21",
+      "payDate": "2025-03-28"
+    },
+    {
+      "exDate": "2025-06-20",
+      "epoch": 1750377600,
+      "amount": 0.09591,
+      "recordDate": "2025-06-20",
+      "payDate": "2025-06-27"
+    },
+    {
+      "exDate": "2025-09-19",
+      "epoch": 1758240000,
+      "amount": 0.10394,
+      "recordDate": "2025-09-19",
+      "payDate": "2025-09-26"
+    },
+    {
+      "exDate": "2025-12-05",
+      "epoch": 1764892800,
+      "amount": 0,
+      "recordDate": "2025-12-05",
+      "payDate": "2025-12-12"
+    },
+    {
+      "exDate": "2025-12-19",
+      "epoch": 1766102400,
+      "amount": 0.11337,
+      "recordDate": "2025-12-19",
+      "payDate": "2025-12-29"
+    },
+    {
+      "exDate": "2026-03-20",
+      "epoch": 1773964800,
+      "amount": 0.08222,
+      "recordDate": "2026-03-20",
+      "payDate": "2026-03-27"
+    },
+    {
+      "exDate": "2026-06-18",
+      "epoch": 1781740800,
+      "amount": 0.04669,
+      "recordDate": "2026-06-18",
+      "payDate": "2026-06-26"
+    },
+    {
+      "exDate": "2026-09-18",
+      "epoch": 1789689600,
+      "amount": 0.14172,
+      "recordDate": "2026-09-18",
+      "payDate": "2026-09-25"
+    }
+  ]
+}

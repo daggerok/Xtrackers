@@ -1,0 +1,926 @@
+{
+  "ticker": "TRSY",
+  "page": 1,
+  "pageSize": 250,
+  "totalRows": 101,
+  "headers": [
+    "Name",
+    "Ticker",
+    "Identifier",
+    "Weight",
+    "Market Value",
+    "Shares Held",
+    "Asset Category"
+  ],
+  "rows": [
+    {
+      "Name": "United States Treasury Bills 0.00 10/01/2026",
+      "Ticker": "-",
+      "Identifier": "912797SA6",
+      "Weight": "4.498058",
+      "Market Value": "4522600",
+      "Shares Held": "4522600",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 11/05/2026",
+      "Ticker": "-",
+      "Identifier": "912797UM7",
+      "Weight": "3.7414853",
+      "Market Value": "3761899.34",
+      "Shares Held": "3776200",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 12/24/2026",
+      "Ticker": "-",
+      "Identifier": "912797TC1",
+      "Weight": "3.23197074",
+      "Market Value": "3249604.8",
+      "Shares Held": "3280000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 0.0 11/27/2026",
+      "Ticker": "-",
+      "Identifier": "912797SU2",
+      "Weight": "3.20320912",
+      "Market Value": "3220686.25",
+      "Shares Held": "3241200",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 11/12/2026",
+      "Ticker": "-",
+      "Identifier": "912797UY1",
+      "Weight": "2.59132099",
+      "Market Value": "2605459.58",
+      "Shares Held": "2617500",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 12/03/2026",
+      "Ticker": "-",
+      "Identifier": "912797VA2",
+      "Weight": "2.58506123",
+      "Market Value": "2599165.67",
+      "Shares Held": "2617400",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 12/10/2026",
+      "Ticker": "-",
+      "Identifier": "912797VG9",
+      "Weight": "2.58388536",
+      "Market Value": "2597983.38",
+      "Shares Held": "2618100",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 12/17/2026",
+      "Ticker": "-",
+      "Identifier": "912797VH7",
+      "Weight": "2.58140162",
+      "Market Value": "2595486.09",
+      "Shares Held": "2617700",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 11/19/2026",
+      "Ticker": "-",
+      "Identifier": "912797UZ8",
+      "Weight": "2.57087668",
+      "Market Value": "2584903.73",
+      "Shares Held": "2598900",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0 11/10/2026",
+      "Ticker": "-",
+      "Identifier": "912797VW4",
+      "Weight": "2.39105017",
+      "Market Value": "2404096.06",
+      "Shares Held": "2414600",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0 11/17/2026",
+      "Ticker": "-",
+      "Identifier": "912797VX2",
+      "Weight": "2.38875653",
+      "Market Value": "2401789.9",
+      "Shares Held": "2414200",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0 11/03/2026",
+      "Ticker": "-",
+      "Identifier": "912797VP9",
+      "Weight": "2.37411496",
+      "Market Value": "2387068.45",
+      "Shares Held": "2395600",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0 11/24/2026",
+      "Ticker": "-",
+      "Identifier": "912797VY0",
+      "Weight": "2.35514614",
+      "Market Value": "2367996.13",
+      "Shares Held": "2382200",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 03/18/2027",
+      "Ticker": "-",
+      "Identifier": "912797UD7",
+      "Weight": "1.91547885",
+      "Market Value": "1925929.96",
+      "Shares Held": "1963900",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 0.0 01/21/2027",
+      "Ticker": "-",
+      "Identifier": "912797TM9",
+      "Weight": "1.90818967",
+      "Market Value": "1918601.01",
+      "Shares Held": "1943000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 0.0 02/18/2027",
+      "Ticker": "-",
+      "Identifier": "912797TV9",
+      "Weight": "1.86332652",
+      "Market Value": "1873493.08",
+      "Shares Held": "1903800",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0 01/07/2027",
+      "Ticker": "-",
+      "Identifier": "912797VS3",
+      "Weight": "1.20694253",
+      "Market Value": "1213527.77",
+      "Shares Held": "1227000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0 01/14/2027",
+      "Ticker": "-",
+      "Identifier": "912797VT1",
+      "Weight": "1.20599222",
+      "Market Value": "1212572.27",
+      "Shares Held": "1227000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0 01/28/2027",
+      "Ticker": "-",
+      "Identifier": "912797VU8",
+      "Weight": "1.20395799",
+      "Market Value": "1210526.94",
+      "Shares Held": "1227000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 02/11/2027",
+      "Ticker": "-",
+      "Identifier": "912797WB9",
+      "Weight": "1.20185461",
+      "Market Value": "1208412.09",
+      "Shares Held": "1227000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 2/25/2027",
+      "Ticker": "-",
+      "Identifier": "912797WC7",
+      "Weight": "1.1998528",
+      "Market Value": "1206399.36",
+      "Shares Held": "1227000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills",
+      "Ticker": "-",
+      "Identifier": "912797WD5",
+      "Weight": "1.19880249",
+      "Market Value": "1205343.32",
+      "Shares Held": "1227000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills",
+      "Ticker": "-",
+      "Identifier": "912797WL7",
+      "Weight": "1.19566364",
+      "Market Value": "1202187.34",
+      "Shares Held": "1227000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills",
+      "Ticker": "-",
+      "Identifier": "912797WK9",
+      "Weight": "1.17536815",
+      "Market Value": "1181781.11",
+      "Shares Held": "1204000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0 12/31/2026",
+      "Ticker": "-",
+      "Identifier": "912797VJ3",
+      "Weight": "1.15783897",
+      "Market Value": "1164156.29",
+      "Shares Held": "1176100",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 02/04/2027",
+      "Ticker": "-",
+      "Identifier": "912797VV6",
+      "Weight": "1.15288154",
+      "Market Value": "1159171.82",
+      "Shares Held": "1176000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Note 1.50 01/31/2027",
+      "Ticker": "-",
+      "Identifier": "912828Z78",
+      "Weight": "1.12437482",
+      "Market Value": "1130509.56",
+      "Shares Held": "1140800",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 12/29/2026",
+      "Ticker": "-",
+      "Identifier": "912797WH6",
+      "Weight": "1.10205884",
+      "Market Value": "1108071.82",
+      "Shares Held": "1119000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills",
+      "Ticker": "-",
+      "Identifier": "912797WN3",
+      "Weight": "1.10094045",
+      "Market Value": "1106947.33",
+      "Shares Held": "1119000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills",
+      "Ticker": "-",
+      "Identifier": "912797WQ6",
+      "Weight": "1.09908289",
+      "Market Value": "1105079.63",
+      "Shares Held": "1119000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills",
+      "Ticker": "-",
+      "Identifier": "912797WR4",
+      "Weight": "1.09816072",
+      "Market Value": "1104152.43",
+      "Shares Held": "1119000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 12/22/2026",
+      "Ticker": "-",
+      "Identifier": "912797WG8",
+      "Weight": "1.06053356",
+      "Market Value": "1066319.97",
+      "Shares Held": "1076000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 3.875 03/31/2027",
+      "Ticker": "-",
+      "Identifier": "91282CMV0",
+      "Weight": "1.05980869",
+      "Market Value": "1065591.15",
+      "Shares Held": "1067800",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 4.25 12/31/2026",
+      "Ticker": "-",
+      "Identifier": "91282CME8",
+      "Weight": "1.05450873",
+      "Market Value": "1060262.27",
+      "Shares Held": "1060000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 3.75 04/30/2027",
+      "Ticker": "-",
+      "Identifier": "91282CMY4",
+      "Weight": "1.05434694",
+      "Market Value": "1060099.6",
+      "Shares Held": "1063800",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "US 3.5000% T Sep 2027",
+      "Ticker": "-",
+      "Identifier": "91282CPB1",
+      "Weight": "1.05388088",
+      "Market Value": "1059630.99",
+      "Shares Held": "1071000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 4.125 01/02/1900",
+      "Ticker": "-",
+      "Identifier": "91282CMP3",
+      "Weight": "1.05092805",
+      "Market Value": "1056662.05",
+      "Shares Held": "1057200",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 3.75 06/30/2027",
+      "Ticker": "-",
+      "Identifier": "91282CNL1",
+      "Weight": "1.04567428",
+      "Market Value": "1051379.62",
+      "Shares Held": "1056800",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills",
+      "Ticker": "-",
+      "Identifier": "912797WP8",
+      "Weight": "1.04110991",
+      "Market Value": "1046790.34",
+      "Shares Held": "1059000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Us 3.8750% T Jul 2027",
+      "Ticker": "-",
+      "Identifier": "91282CNP2",
+      "Weight": "1.0207538",
+      "Market Value": "1026323.17",
+      "Shares Held": "1032000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bond 3.625 08/31/2027",
+      "Ticker": "-",
+      "Identifier": "91282CNV9",
+      "Weight": "1.01109533",
+      "Market Value": "1016612",
+      "Shares Held": "1025000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 12/15/2026",
+      "Ticker": "-",
+      "Identifier": "912797WF0",
+      "Weight": "0.99035428",
+      "Market Value": "995757.78",
+      "Shares Held": "1004000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 12/01/2026",
+      "Ticker": "-",
+      "Identifier": "912797VZ7",
+      "Weight": "0.97796532",
+      "Market Value": "983301.23",
+      "Shares Held": "990000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 12/08/2026",
+      "Ticker": "-",
+      "Identifier": "912797WE3",
+      "Weight": "0.97725325",
+      "Market Value": "982585.27",
+      "Shares Held": "990000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Note 3.875 5/31/2027",
+      "Ticker": "-",
+      "Identifier": "91282CNE7",
+      "Weight": "0.96856673",
+      "Market Value": "973851.36",
+      "Shares Held": "977400",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 4.125 01/31/2027",
+      "Ticker": "-",
+      "Identifier": "91282CMH1",
+      "Weight": "0.940827",
+      "Market Value": "945960.28",
+      "Shares Held": "946400",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Treasury Note 4.25 11/30/2026",
+      "Ticker": "-",
+      "Identifier": "91282CLY5",
+      "Weight": "0.92687596",
+      "Market Value": "931933.12",
+      "Shares Held": "931800",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 3.375 09/15/2027",
+      "Ticker": "-",
+      "Identifier": "91282CLL3",
+      "Weight": "0.88706708",
+      "Market Value": "891907.04",
+      "Shares Held": "902000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 4.5 04/15/2027",
+      "Ticker": "-",
+      "Identifier": "91282CKJ9",
+      "Weight": "0.88642784",
+      "Market Value": "891264.31",
+      "Shares Held": "890400",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 4.625 06/15/2027",
+      "Ticker": "-",
+      "Identifier": "91282CKV2",
+      "Weight": "0.86555084",
+      "Market Value": "870273.4",
+      "Shares Held": "869100",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 1.25 11/30/2026",
+      "Ticker": "-",
+      "Identifier": "91282CDK4",
+      "Weight": "0.86309839",
+      "Market Value": "867807.57",
+      "Shares Held": "871900",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 4.25 03/15/2027",
+      "Ticker": "-",
+      "Identifier": "91282CKE0",
+      "Weight": "0.85504448",
+      "Market Value": "859709.72",
+      "Shares Held": "859600",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 1.25 12/31/2026",
+      "Ticker": "-",
+      "Identifier": "91282CDQ1",
+      "Weight": "0.84474406",
+      "Market Value": "849353.1",
+      "Shares Held": "855500",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bond 3.75 08/15/2027",
+      "Ticker": "-",
+      "Identifier": "91282CLG4",
+      "Weight": "0.80009606",
+      "Market Value": "804461.49",
+      "Shares Held": "810000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Notes 4.375 07/15/2027",
+      "Ticker": "-",
+      "Identifier": "91282CKZ3",
+      "Weight": "0.79730889",
+      "Market Value": "801659.11",
+      "Shares Held": "802400",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 4 01/15/2027",
+      "Ticker": "-",
+      "Identifier": "91282CJT9",
+      "Weight": "0.79116316",
+      "Market Value": "795479.85",
+      "Shares Held": "795900",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0 07/08/2027",
+      "Ticker": "-",
+      "Identifier": "912797VQ7",
+      "Weight": "0.77138351",
+      "Market Value": "775592.28",
+      "Shares Held": "801800",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills",
+      "Ticker": "-",
+      "Identifier": "912797WA1",
+      "Weight": "0.77095131",
+      "Market Value": "775157.72",
+      "Shares Held": "807000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Note/ Bond",
+      "Ticker": "-",
+      "Identifier": "912828X88",
+      "Weight": "0.76915405",
+      "Market Value": "773350.66",
+      "Shares Held": "783100",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 08/05/2027",
+      "Ticker": "-",
+      "Identifier": "912797VR5",
+      "Weight": "0.76383895",
+      "Market Value": "768006.56",
+      "Shares Held": "797000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 2.50 03/31/2027",
+      "Ticker": "-",
+      "Identifier": "91282CEF4",
+      "Weight": "0.76373135",
+      "Market Value": "767898.37",
+      "Shares Held": "774600",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 4.5 05/15/2027",
+      "Ticker": "-",
+      "Identifier": "91282CKR1",
+      "Weight": "0.76350909",
+      "Market Value": "767674.9",
+      "Shares Held": "767300",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Notes 4.375 12/15/2026",
+      "Ticker": "-",
+      "Identifier": "91282CJP7",
+      "Weight": "0.76246597",
+      "Market Value": "766626.09",
+      "Shares Held": "766200",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 05/13/2027",
+      "Ticker": "-",
+      "Identifier": "912797UX3",
+      "Weight": "0.72997291",
+      "Market Value": "733955.74",
+      "Shares Held": "753200",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 06/10/2027",
+      "Ticker": "-",
+      "Identifier": "912797VF1",
+      "Weight": "0.72321162",
+      "Market Value": "727157.56",
+      "Shares Held": "748900",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 4.625 11/15/2026",
+      "Ticker": "-",
+      "Identifier": "91282CJK8",
+      "Weight": "0.7186395",
+      "Market Value": "722560.49",
+      "Shares Held": "722300",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 2.75 04/30/2027",
+      "Ticker": "-",
+      "Identifier": "91282CEN7",
+      "Weight": "0.71039069",
+      "Market Value": "714266.68",
+      "Shares Held": "720900",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 0.375 09/30/2027",
+      "Ticker": "-",
+      "Identifier": "91282CAL5",
+      "Weight": "0.70888377",
+      "Market Value": "712751.53",
+      "Shares Held": "743000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 4.125 02/15/2027",
+      "Ticker": "-",
+      "Identifier": "91282CKA8",
+      "Weight": "0.70826172",
+      "Market Value": "712126.09",
+      "Shares Held": "712400",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 3.25 06/30/2027",
+      "Ticker": "-",
+      "Identifier": "91282CEW7",
+      "Weight": "0.69399982",
+      "Market Value": "697786.38",
+      "Shares Held": "704000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "US Treasury N/B 11/15/2026 2%",
+      "Ticker": "-",
+      "Identifier": "912828U24",
+      "Weight": "0.6937557",
+      "Market Value": "697540.92",
+      "Shares Held": "699500",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Note 1.875 02/28/2027",
+      "Ticker": "-",
+      "Identifier": "91282CEC1",
+      "Weight": "0.69162616",
+      "Market Value": "695399.76",
+      "Shares Held": "702200",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "US Treasury Note 4.125 09/30/2027",
+      "Ticker": "-",
+      "Identifier": "91282CFM8",
+      "Weight": "0.6792194",
+      "Market Value": "682925.31",
+      "Shares Held": "686000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Note 2.625 5/31/2027",
+      "Ticker": "-",
+      "Identifier": "91282CET4",
+      "Weight": "0.67785508",
+      "Market Value": "681553.55",
+      "Shares Held": "689600",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 04/15/2027",
+      "Ticker": "-",
+      "Identifier": "912797UE5",
+      "Weight": "0.65421347",
+      "Market Value": "657782.95",
+      "Shares Held": "673000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Note 2.75 7/31/2027",
+      "Ticker": "-",
+      "Identifier": "91282CFB2",
+      "Weight": "0.65054359",
+      "Market Value": "654093.04",
+      "Shares Held": "663700",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Note/Bond 3.125 08/31/2027",
+      "Ticker": "-",
+      "Identifier": "91282CFH9",
+      "Weight": "0.63030639",
+      "Market Value": "633745.43",
+      "Shares Held": "642000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "US 2.2500% NOTE Aug 2027",
+      "Ticker": "-",
+      "Identifier": "9128282R0",
+      "Weight": "0.63000933",
+      "Market Value": "633446.74",
+      "Shares Held": "646000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "US Treasury N/B 02/15/2027 2.25%",
+      "Ticker": "-",
+      "Identifier": "912828V98",
+      "Weight": "0.62045112",
+      "Market Value": "623836.38",
+      "Shares Held": "628400",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 0.375 07/31/2027",
+      "Ticker": "-",
+      "Identifier": "91282CAD3",
+      "Weight": "0.61553671",
+      "Market Value": "618895.16",
+      "Shares Held": "640400",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Note 0.50 06/30/2027",
+      "Ticker": "-",
+      "Identifier": "912828ZV5",
+      "Weight": "0.53806392",
+      "Market Value": "540999.67",
+      "Shares Held": "557000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Note 0.50 08/31/2027",
+      "Ticker": "-",
+      "Identifier": "91282CAH4",
+      "Weight": "0.53400835",
+      "Market Value": "536921.97",
+      "Shares Held": "557000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 0.5 04/30/2027",
+      "Ticker": "-",
+      "Identifier": "912828ZN3",
+      "Weight": "0.46061835",
+      "Market Value": "463131.55",
+      "Shares Held": "473500",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Note 0.5 5/31/2027",
+      "Ticker": "-",
+      "Identifier": "912828ZS2",
+      "Weight": "0.41843928",
+      "Market Value": "420722.34",
+      "Shares Held": "431700",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Note 1.75 12/31/2026",
+      "Ticker": "-",
+      "Identifier": "912828YX2",
+      "Weight": "0.34724889",
+      "Market Value": "349143.53",
+      "Shares Held": "351200",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 0.625 03/31/2027",
+      "Ticker": "-",
+      "Identifier": "912828ZE3",
+      "Weight": "0.31749483",
+      "Market Value": "319227.12",
+      "Shares Held": "325000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Note 1.625 11/30/2026",
+      "Ticker": "-",
+      "Identifier": "912828YU8",
+      "Weight": "0.28647107",
+      "Market Value": "288034.09",
+      "Shares Held": "289200",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Note 1.125 02/28/2027",
+      "Ticker": "-",
+      "Identifier": "912828ZB9",
+      "Weight": "0.21425555",
+      "Market Value": "215424.56",
+      "Shares Held": "218200",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 10/29/2026",
+      "Ticker": "-",
+      "Identifier": "912797SK4",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 10/08/2026",
+      "Ticker": "-",
+      "Identifier": "912797UJ4",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 10/15/2026",
+      "Ticker": "-",
+      "Identifier": "912797UK1",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 10/22/2026",
+      "Ticker": "-",
+      "Identifier": "912797UL9",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 10/06/2026",
+      "Ticker": "-",
+      "Identifier": "912797VK0",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 10/13/2026",
+      "Ticker": "-",
+      "Identifier": "912797VL8",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 10/20/2026",
+      "Ticker": "-",
+      "Identifier": "912797VM6",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Bills 0.00 10/27/2026",
+      "Ticker": "-",
+      "Identifier": "912797VN4",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Notes 1.625 10/31/2026",
+      "Ticker": "-",
+      "Identifier": "912828YQ7",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury Notes 1.125 10/31/2026",
+      "Ticker": "-",
+      "Identifier": "91282CDG3",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "US 4.6250% T Oct 2026",
+      "Ticker": "-",
+      "Identifier": "91282CJC6",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "United States Treasury 4.125 10/31/2026",
+      "Ticker": "-",
+      "Identifier": "91282CLS8",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Cash & Cash Equivalents",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "-4.05059951",
+      "Market Value": "-4072700.12",
+      "Shares Held": "-",
+      "Asset Category": "Cash"
+    }
+  ]
+}

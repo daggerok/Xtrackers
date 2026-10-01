@@ -1,0 +1,719 @@
+{
+  "ticker": "SNPE",
+  "page": 2,
+  "pageSize": 250,
+  "totalRows": 328,
+  "headers": [
+    "Name",
+    "Ticker",
+    "Identifier",
+    "Weight",
+    "Market Value",
+    "Shares Held",
+    "Asset Category"
+  ],
+  "rows": [
+    {
+      "Name": "Dow Inc",
+      "Ticker": "DOW",
+      "Identifier": "260557103",
+      "Weight": "0.04979354",
+      "Market Value": "1393964.64",
+      "Shares Held": "50616",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Southwest Airlines Co",
+      "Ticker": "LUV",
+      "Identifier": "844741108",
+      "Weight": "0.04973616",
+      "Market Value": "1392358.32",
+      "Shares Held": "33438",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Kraft Heinz Co",
+      "Ticker": "KHC.O",
+      "Identifier": "500754106",
+      "Weight": "0.04935442",
+      "Market Value": "1381671.36",
+      "Shares Held": "60813",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Chesapeake Energy Corp",
+      "Ticker": "CHK",
+      "Identifier": "165167735",
+      "Weight": "0.04846271",
+      "Market Value": "1356708.06",
+      "Shares Held": "16134",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "AMCOR PLC USD 0.01",
+      "Ticker": "AMCR",
+      "Identifier": "G0250X149",
+      "Weight": "0.04746744",
+      "Market Value": "1328845.7",
+      "Shares Held": "31745",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Global Payments Inc",
+      "Ticker": "GPN.N",
+      "Identifier": "37940X102",
+      "Weight": "0.04700383",
+      "Market Value": "1315867.04",
+      "Shares Held": "16112",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "First Solar Inc",
+      "Ticker": "FSLR",
+      "Identifier": "336433107",
+      "Weight": "0.04603795",
+      "Market Value": "1288827.28",
+      "Shares Held": "7358",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "KeyCorp",
+      "Ticker": "KEY.N",
+      "Identifier": "493267108",
+      "Weight": "0.0458418",
+      "Market Value": "1283336.01",
+      "Shares Held": "63943",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Broadridge Financial Solutions",
+      "Ticker": "BR.N",
+      "Identifier": "11133T103",
+      "Weight": "0.04554783",
+      "Market Value": "1275106.5",
+      "Shares Held": "7915",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Best Buy Co Inc",
+      "Ticker": "BBY.N",
+      "Identifier": "086516101",
+      "Weight": "0.04522811",
+      "Market Value": "1266155.76",
+      "Shares Held": "14349",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CF Industries Holdings",
+      "Ticker": "CF",
+      "Identifier": "125269100",
+      "Weight": "0.04386218",
+      "Market Value": "1227916.8",
+      "Shares Held": "10659",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "PerkinElmer Inc",
+      "Ticker": "PKI",
+      "Identifier": "714046109",
+      "Weight": "0.04363076",
+      "Market Value": "1221438.21",
+      "Shares Held": "7989",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Nordson Corp",
+      "Ticker": "NDSN",
+      "Identifier": "655663102",
+      "Weight": "0.04356517",
+      "Market Value": "1219602",
+      "Shares Held": "3720",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "C.H. ROBINSON WORLDWIDE INC",
+      "Ticker": "CHRW",
+      "Identifier": "12541W209",
+      "Weight": "0.0428581",
+      "Market Value": "1199807.64",
+      "Shares Held": "8109",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Zimmer Biomet Holdings Inc",
+      "Ticker": "ZMH",
+      "Identifier": "98956P102",
+      "Weight": "0.04264619",
+      "Market Value": "1193875.2",
+      "Shares Held": "13440",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Fortive Corp",
+      "Ticker": "FTV",
+      "Identifier": "34959J108",
+      "Weight": "0.04247376",
+      "Market Value": "1189048.14",
+      "Shares Held": "21694",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "SBA Communications Corp",
+      "Ticker": "SBAC",
+      "Identifier": "78410G104",
+      "Weight": "0.04219932",
+      "Market Value": "1181365.36",
+      "Shares Held": "7378",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "General Mills",
+      "Ticker": "GIS.N",
+      "Identifier": "370334104",
+      "Weight": "0.04177887",
+      "Market Value": "1169594.88",
+      "Shares Held": "36368",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Bunge Global Ltd",
+      "Ticker": "BG",
+      "Identifier": "H11356104",
+      "Weight": "0.04145833",
+      "Market Value": "1160621.4",
+      "Shares Held": "10852",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "IDEX Corp",
+      "Ticker": "IEX.N",
+      "Identifier": "45167R104",
+      "Weight": "0.04129635",
+      "Market Value": "1156086.58",
+      "Shares Held": "5071",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Fidelity National Information",
+      "Ticker": "FIS",
+      "Identifier": "31620M106",
+      "Weight": "0.04084341",
+      "Market Value": "1143406.6",
+      "Shares Held": "34754",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "JB Hunt Transport Services Inc",
+      "Ticker": "JBHT.O",
+      "Identifier": "445658107",
+      "Weight": "0.04062448",
+      "Market Value": "1137277.8",
+      "Shares Held": "5076",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "PTC Inc",
+      "Ticker": "PMTC",
+      "Identifier": "69370C100",
+      "Weight": "0.04051902",
+      "Market Value": "1134325.5",
+      "Shares Held": "8085",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Tractor Supply Co",
+      "Ticker": "TSCO",
+      "Identifier": "892356106",
+      "Weight": "0.04036141",
+      "Market Value": "1129913.19",
+      "Shares Held": "36111",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Jacobs Solutions Inc",
+      "Ticker": "J",
+      "Identifier": "46982L108",
+      "Weight": "0.04015837",
+      "Market Value": "1124228.97",
+      "Shares Held": "8311",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ball Corp",
+      "Ticker": "BLL",
+      "Identifier": "058498106",
+      "Weight": "0.03846962",
+      "Market Value": "1076952.63",
+      "Shares Held": "19221",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Akamai Technologies Inc",
+      "Ticker": "AKAM.O",
+      "Identifier": "00971T101",
+      "Weight": "0.03808405",
+      "Market Value": "1066158.75",
+      "Shares Held": "10025",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Host Hotels & Resorts Inc",
+      "Ticker": "HST",
+      "Identifier": "44107P104",
+      "Weight": "0.0379004",
+      "Market Value": "1061017.32",
+      "Shares Held": "47388",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "LyondellBasell Industries NV A",
+      "Ticker": "LYB.N",
+      "Identifier": "N53745100",
+      "Weight": "0.0375245",
+      "Market Value": "1050494.13",
+      "Shares Held": "18279",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Kimco Realty Corp",
+      "Ticker": "KIM",
+      "Identifier": "49446R109",
+      "Weight": "0.03663018",
+      "Market Value": "1025457.91",
+      "Shares Held": "46171",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "APA CORP",
+      "Ticker": "APA",
+      "Identifier": "03743Q108",
+      "Weight": "0.03654555",
+      "Market Value": "1023088.66",
+      "Shares Held": "24629",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Weyerhaeuser Co",
+      "Ticker": "WY",
+      "Identifier": "962166104",
+      "Weight": "0.03524553",
+      "Market Value": "986694.75",
+      "Shares Held": "51795",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Stanley Black & Decker Inc",
+      "Ticker": "SWK",
+      "Identifier": "854502101",
+      "Weight": "0.03485071",
+      "Market Value": "975641.67",
+      "Shares Held": "11013",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Charles River Laboratories International Inc",
+      "Ticker": "CRL",
+      "Identifier": "159864107",
+      "Weight": "0.03469108",
+      "Market Value": "971172.92",
+      "Shares Held": "3292",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ralph Lauren Corp",
+      "Ticker": "RL.N",
+      "Identifier": "751212101",
+      "Weight": "0.03433393",
+      "Market Value": "961174.49",
+      "Shares Held": "2707",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Everest Re Group",
+      "Ticker": "RE.N",
+      "Identifier": "G3223R108",
+      "Weight": "0.03416267",
+      "Market Value": "956380.23",
+      "Shares Held": "2619",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Healthpeak Properties Inc",
+      "Ticker": "PEAK",
+      "Identifier": "42250P103",
+      "Weight": "0.03378328",
+      "Market Value": "945759.23",
+      "Shares Held": "47359",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Invesco Ltd",
+      "Ticker": "IVZ.N",
+      "Identifier": "G491BT108",
+      "Weight": "0.03265308",
+      "Market Value": "914119.44",
+      "Shares Held": "30309",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Allegion PLC",
+      "Ticker": "ALLE",
+      "Identifier": "G0176J109",
+      "Weight": "0.03239647",
+      "Market Value": "906935.46",
+      "Shares Held": "5898",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Assurant Inc",
+      "Ticker": "AIZ.N",
+      "Identifier": "04621X108",
+      "Weight": "0.0318705",
+      "Market Value": "892211",
+      "Shares Held": "3386",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "GARTNER INC",
+      "Ticker": "IT",
+      "Identifier": "366651107",
+      "Weight": "0.03136443",
+      "Market Value": "878043.78",
+      "Shares Held": "4707",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Generac Holdings Inc",
+      "Ticker": "GNRC",
+      "Identifier": "368736104",
+      "Weight": "0.0313143",
+      "Market Value": "876640.2",
+      "Shares Held": "4236",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Fox Corp Class A",
+      "Ticker": "FOXA",
+      "Identifier": "35137L105",
+      "Weight": "0.03129939",
+      "Market Value": "876222.9",
+      "Shares Held": "13986",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "NortonLifeLock Inc",
+      "Ticker": "NLOK",
+      "Identifier": "668771108",
+      "Weight": "0.03122298",
+      "Market Value": "874083.9",
+      "Shares Held": "39695",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Avery Dennison Corp",
+      "Ticker": "AVY.N",
+      "Identifier": "053611109",
+      "Weight": "0.03118345",
+      "Market Value": "872977.05",
+      "Shares Held": "5115",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "JM SMUCKER CO/THE",
+      "Ticker": "SJM",
+      "Identifier": "832696405",
+      "Weight": "0.03103268",
+      "Market Value": "868756.46",
+      "Shares Held": "7306",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Godaddy Inc - Class A",
+      "Ticker": "GDDY",
+      "Identifier": "380237107",
+      "Weight": "0.03044255",
+      "Market Value": "852235.73",
+      "Shares Held": "8923",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "McCormick & Co",
+      "Ticker": "MKC",
+      "Identifier": "579780206",
+      "Weight": "0.0304307",
+      "Market Value": "851904",
+      "Shares Held": "18360",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Albemarle Corp",
+      "Ticker": "ALB.N",
+      "Identifier": "012653101",
+      "Weight": "0.03040597",
+      "Market Value": "851211.66",
+      "Shares Held": "8047",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Baxter Intl",
+      "Ticker": "BAX.N",
+      "Identifier": "071813109",
+      "Weight": "0.03032525",
+      "Market Value": "848952",
+      "Shares Held": "35373",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Bio-Techne Corp",
+      "Ticker": "TECH O",
+      "Identifier": "09073M104",
+      "Weight": "0.02934018",
+      "Market Value": "821374.98",
+      "Shares Held": "11334",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Hasbro Inc",
+      "Ticker": "HAS.O",
+      "Identifier": "418056107",
+      "Weight": "0.02911508",
+      "Market Value": "815073.28",
+      "Shares Held": "9296",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Regency Centers Corp",
+      "Ticker": "REG",
+      "Identifier": "758849103",
+      "Weight": "0.02885996",
+      "Market Value": "807931.2",
+      "Shares Held": "11240",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "News Corp-CL A",
+      "Ticker": "NWSA",
+      "Identifier": "65249B109",
+      "Weight": "0.02785391",
+      "Market Value": "779767.05",
+      "Shares Held": "27217",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Lennox International Inc",
+      "Ticker": "LII.N",
+      "Identifier": "526107107",
+      "Weight": "0.0274303",
+      "Market Value": "767908.26",
+      "Shares Held": "2163",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Deckers Outdoor Corp",
+      "Ticker": "DECK",
+      "Identifier": "243537107",
+      "Weight": "0.02697997",
+      "Market Value": "755301.24",
+      "Shares Held": "9666",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "JACK HENRY & ASSOCIATES INC",
+      "Ticker": "JKHY",
+      "Identifier": "426281101",
+      "Weight": "0.02453433",
+      "Market Value": "686835.8",
+      "Shares Held": "4795",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Clorox",
+      "Ticker": "CLX.N",
+      "Identifier": "189054109",
+      "Weight": "0.024047",
+      "Market Value": "673193.1",
+      "Shares Held": "8310",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Factset Research Systems",
+      "Ticker": "FDS.N",
+      "Identifier": "303075105",
+      "Weight": "0.02390458",
+      "Market Value": "669206.05",
+      "Shares Held": "2479",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Boston Properties Inc",
+      "Ticker": "BXP",
+      "Identifier": "101121101",
+      "Weight": "0.02339631",
+      "Market Value": "654976.98",
+      "Shares Held": "10718",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Las Vegas Sands Corp",
+      "Ticker": "LVS",
+      "Identifier": "517834107",
+      "Weight": "0.02289273",
+      "Market Value": "640879.5",
+      "Shares Held": "16950",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Franklin Resources Inc",
+      "Ticker": "BEN",
+      "Identifier": "354613101",
+      "Weight": "0.02287247",
+      "Market Value": "640312.2",
+      "Shares Held": "19935",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "APTIV HOLDINGS LTD NPV",
+      "Ticker": "APTV",
+      "Identifier": "G3265R107",
+      "Weight": "0.02238217",
+      "Market Value": "626586.3",
+      "Shares Held": "14565",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Pentair PLC",
+      "Ticker": "PNR.N",
+      "Identifier": "G7S00T104",
+      "Weight": "0.02149894",
+      "Market Value": "601860.42",
+      "Shares Held": "11358",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Federal Realty Investment Trust",
+      "Ticker": "FRT",
+      "Identifier": "313745101",
+      "Weight": "0.02072585",
+      "Market Value": "580217.82",
+      "Shares Held": "5358",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Henry Schein Inc",
+      "Ticker": "HSIC",
+      "Identifier": "806407102",
+      "Weight": "0.01995552",
+      "Market Value": "558652.41",
+      "Shares Held": "6653",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Fox Corp Class B",
+      "Ticker": "FOX",
+      "Identifier": "35137L204",
+      "Weight": "0.0186025",
+      "Market Value": "520775",
+      "Shares Held": "9250",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Alexandria Real Estate Equities",
+      "Ticker": "ARE",
+      "Identifier": "015271109",
+      "Weight": "0.01813134",
+      "Market Value": "507584.7",
+      "Shares Held": "10695",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Mosaic Co/The",
+      "Ticker": "MOS.N",
+      "Identifier": "61945C103",
+      "Weight": "0.01680192",
+      "Market Value": "470367.9",
+      "Shares Held": "21726",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Norwegian Cruise Line Holdings",
+      "Ticker": "NCLH.O",
+      "Identifier": "G66721104",
+      "Weight": "0.01614937",
+      "Market Value": "452099.74",
+      "Shares Held": "30839",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "AO Smith Corp",
+      "Ticker": "AOS",
+      "Identifier": "831865209",
+      "Weight": "0.01567171",
+      "Market Value": "438727.71",
+      "Shares Held": "7783",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Hormel Foods",
+      "Ticker": "HRL.N",
+      "Identifier": "440452100",
+      "Weight": "0.01508879",
+      "Market Value": "422408.96",
+      "Shares Held": "21184",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "DaVita Inc",
+      "Ticker": "DVA",
+      "Identifier": "23918K108",
+      "Weight": "0.01372123",
+      "Market Value": "384124.32",
+      "Shares Held": "2196",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "MGM Resorts International",
+      "Ticker": "MGM.N",
+      "Identifier": "552953101",
+      "Weight": "0.01363011",
+      "Market Value": "381573.45",
+      "Shares Held": "12289",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "PARAMOUNT SKYDANCE CORP NPV",
+      "Ticker": "PSKY",
+      "Identifier": "69932A204",
+      "Weight": "0.01331153",
+      "Market Value": "372654.75",
+      "Shares Held": "36075",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "News Corp Cl B",
+      "Ticker": "NWS.O",
+      "Identifier": "65249B208",
+      "Weight": "0.00676099",
+      "Market Value": "189273.24",
+      "Shares Held": "5967",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Emini S&P500 ESG Index Futures Dec26",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "1",
+      "Asset Category": "Future"
+    },
+    {
+      "Name": "S&P 500 Emini Index Futures Dec26",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "6",
+      "Asset Category": "Future"
+    }
+  ]
+}

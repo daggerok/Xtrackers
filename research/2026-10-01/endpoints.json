@@ -1,0 +1,61 @@
+[
+  {
+    "name": "catalog",
+    "url": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A0%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
+    "finalUrl": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A0%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
+    "status": 200,
+    "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "bytes": 19982,
+    "sha256": "c3c9f38fcbc1d186a5062959a7942e49e83b58b1c0056d2f5a90e41143d1f616"
+  },
+  {
+    "name": "products",
+    "url": "https://etf.dws.com/en-us/etf-products/",
+    "finalUrl": "https://etf.dws.com/en-us/etf-products/",
+    "status": 200,
+    "contentType": "text/html;charset=utf-8",
+    "bytes": 2536,
+    "sha256": "e55777bff133888154fad4b05cd143cbd0b764fb944ab1657741371eba5b72d6"
+  },
+  {
+    "name": "ASHR-securities",
+    "url": "https://etf.dws.com/api/pdp/en-us/export/etf/ASHR/Securities",
+    "finalUrl": "https://etf.dws.com/api/pdp/en-us/export/etf/ASHR/Securities",
+    "status": 200,
+    "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "bytes": 75756,
+    "sha256": "cfebf9aed93ff7ae4a71b119cdaf39906fab16115177e9b5783fd51d3e6beb04"
+  },
+  {
+    "name": "ASHR-distributions",
+    "url": "https://etf.dws.com/api/pdp/en-us/export/etf/ASHR/Distributions",
+    "finalUrl": "https://etf.dws.com/api/pdp/en-us/export/etf/ASHR/Distributions",
+    "status": 200,
+    "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "bytes": 25103,
+    "sha256": "06388c41786cf7cd16067b2671411fbb3264cd2d0797b71991b7c1d5f8875718"
+  },
+  {
+    "name": "ASHR-performance",
+    "url": "https://etf.dws.com/api/pdp/en-us/Export/etf/ASHR/Performance",
+    "finalUrl": "https://etf.dws.com/api/pdp/en-us/Export/etf/ASHR/Performance",
+    "status": 200,
+    "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "bytes": 192877,
+    "sha256": "85e0ea0e10d1c7fd6cfc8ff0d486a6227da07944f992e6d3d1ff06eb0ee0222a"
+  },
+  {
+    "name": "sec-submissions",
+    "url": "https://data.sec.gov/submissions/CIK0001503123.json",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "name": "yahoo-ASHR",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/ASHR?range=10y&interval=1d&events=div%2Csplits",
+    "finalUrl": "https://query1.finance.yahoo.com/v8/finance/chart/ASHR?range=10y&interval=1d&events=div%2Csplits",
+    "status": 200,
+    "contentType": "application/json;charset=utf-8",
+    "bytes": 276665,
+    "sha256": "9a645580cb544cae60737b41ca8b3a161c1fd7679d838b62c423297ccd5ba0de"
+  }
+]

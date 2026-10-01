@@ -1,0 +1,49 @@
+{
+  "repository": "daggerok/iShares",
+  "branch": "main",
+  "revision": "297a2e41e4a7a438ece2b8bde8e3384e960dfaeb",
+  "files": {
+    ".github/workflows/update-data.yml": "ac13a628cbb838d7d862798e3d30af832f5d709dfb59964e673651a83073c4c0",
+    ".github/dependabot.yml": "994da9b43278a5c33353b3c600f25e619a55af1ab98a86efdf9765e452d2ec88",
+    "scripts/update-data.config.json": "88fab94506c7ac840dadc5ba2dfcc442c98fd9ae39370470ed58b5c26fc0ce60",
+    "scripts/update-data.ts": "fa0941f341b25bb4fd0d53235c2f7b3356f58bd2a1daa49b0ba8681cfcc02fbf",
+    "scripts/update-data.test.ts": "31e685bd5d96e0dff14da9e20e15ebbc501e9612189d714516a68b658bf71b44",
+    "README.md": "9b4986813d1fa7bfcd881655103fc36565e46f67c054c53738dee45c2ff689b1",
+    "package.json": "2fde06c813000e125f3356c90b5aee986bb8801c992254928e706a138916e1f8"
+  },
+  "config": {
+    "MAX_FETCHES": "0",
+    "REQUEST_SLEEP": "0",
+    "AUM": ":",
+    "CONCURRENCY": "4",
+    "HOLDINGS_PAGE_SIZE": "250",
+    "HISTORY_PAGE_SIZE": "1000",
+    "STORE_RAW_DOWNLOADS": "false",
+    "MAX_RETRIES": "2",
+    "TICKERS": "",
+    "DIVIDEND_YIELD": ":",
+    "PERFORMANCE_YTD": ":",
+    "PERFORMANCE_1Y": ":",
+    "PERFORMANCE_3Y": ":",
+    "PERFORMANCE_5Y": ":",
+    "PERFORMANCE_10Y": ":",
+    "TOTAL_RETURN_YTD": ":",
+    "TOTAL_RETURN_1Y": ":",
+    "TOTAL_RETURN_3Y": ":",
+    "TOTAL_RETURN_5Y": ":",
+    "TOTAL_RETURN_10Y": ":",
+    "VERBOSE": "false"
+  },
+  "configLoader": "#!/usr/bin/env bun\n// Checked-in JSON is the runtime default; any nonblank environment value wins.\nimport { readFileSync as readUpdaterConfig } from 'node:fs';\ntry {\n  const updaterDefaults = JSON.parse(readUpdaterConfig(new URL('./update-data.config.json', import.meta.url), 'utf8')) as Record<string, unknown>;\n  for (const [key, value] of Object.entries(updaterDefaults)) {\n    const current = process.env[key];\n    if ((current === undefined || current.trim() === '') && value !== null && value !== undefined) process.env[key] = String(value);\n  }\n} catch (error) {\n  if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;\n}\n",
+  "workflow": "name: Update iShares ETF data\non:\n  # Weekly refresh (every Sunday at 00:00 UTC) plus manual runs.\n  schedule:\n    - cron: '0 0 * * 0'\n  workflow_dispatch:\n    inputs:\n      max_fetches:\n        description: \"Batch size; continue after the saved ticker cursor; empty or 0 means all\"\n        required: false\n        default: \"\"\n        type: string\n      request_sleep:\n        description: \"Seconds between outgoing request starts\"\n        required: false\n        default: \"\"\n        type: string\n      aum:\n        description: \"AUM min:max; bounds may be amounts or nano/micro/small/mid/large\"\n        required: false\n        default: \"\"\n        type: string\n      concurrency:\n        description: \"Parallel fund update workers\"\n        required: false\n        default: \"\"\n        type: string\n      holdings_page_size:\n        description: \"Rows in each generated current-holdings JSON page\"\n        required: false\n        default: \"\"\n        type: string\n      history_page_size:\n        description: \"Rows in each generated historical NAV JSON page\"\n        required: false\n        default: \"\"\n        type: string\n      store_raw_downloads:\n        description: \"Store source XLS files (true/yes/on/1)\"\n        required: false\n        default: \"\"\n        type: string\n      max_retries:\n        description: \"Retries after the initial request (default 2)\"\n        required: false\n        default: \"\"\n        type: string\n      tickers:\n        description: \"Only update these tickers, separated by spaces or commas\"\n        required: false\n        default: \"\"\n        type: string\n      dividend_yield:\n        description: \"12m trailing dividend yield range: min:max, min:, :max, or :\"\n        required: false\n        default: \"\"\n        type: string\n      performance_ytd:\n        description: \"YTD NAV performance range: min:max, min:, :max, or :; colon required\"\n        required: false\n        default: \"\"\n        type: string\n      performance_1y:\n        description: \"1Y average-annual NAV performance range; colon required\"\n        required: false\n        default: \"\"\n        type: string\n      performance_3y:\n        description: \"3Y average-annual NAV performance/CAGR range; colon required\"\n        required: false\n        default: \"\"\n        type: string\n      performance_5y:\n        description: \"5Y average-annual NAV performance/CAGR range; colon required\"\n        required: false\n        default: \"\"\n        type: string\n      performance_10y:\n        description: \"10Y average-annual NAV performance/CAGR range; colon required\"\n        required: false\n        default: \"\"\n        type: string\n      total_return_ytd:\n        description: \"YTD cumulative NAV total-return range; colon required\"\n        required: false\n        default: \"\"\n        type: string\n      total_return_1y:\n        description: \"1Y cumulative NAV total-return range; colon required\"\n        required: false\n        default: \"\"\n        type: string\n      total_return_3y:\n        description: \"3Y cumulative NAV total-return range; colon required\"\n        required: false\n        default: \"\"\n        type: string\n      total_return_5y:\n        description: \"5Y cumulative NAV total-return range; colon required\"\n        required: false\n        default: \"\"\n        type: string\n      total_return_10y:\n        description: \"10Y cumulative NAV total-return range; colon required\"\n        required: false\n        default: \"\"\n        type: string\npermissions: { contents: write }\nconcurrency: { group: update-data, cancel-in-progress: false }\njobs:\n  update:\n    runs-on: ubuntu-latest\n    env:\n      MAX_FETCHES: ${{ inputs.max_fetches || '' }}\n      REQUEST_SLEEP: ${{ inputs.request_sleep || '' }}\n      AUM: ${{ inputs.aum || '' }}\n      CONCURRENCY: ${{ inputs.concurrency || '' }}\n      HOLDINGS_PAGE_SIZE: ${{ inputs.holdings_page_size || '' }}\n      HISTORY_PAGE_SIZE: ${{ inputs.history_page_size || '' }}\n      STORE_RAW_DOWNLOADS: ${{ inputs.store_raw_downloads || '' }}\n      MAX_RETRIES: ${{ inputs.max_retries || '' }}\n      TICKERS: ${{ inputs.tickers || '' }}\n      DIVIDEND_YIELD: ${{ inputs.dividend_yield || '' }}\n      PERFORMANCE_YTD: ${{ inputs.performance_ytd || '' }}\n      PERFORMANCE_1Y: ${{ inputs.performance_1y || '' }}\n      PERFORMANCE_3Y: ${{ inputs.performance_3y || '' }}\n      PERFORMANCE_5Y: ${{ inputs.performance_5y || '' }}\n      PERFORMANCE_10Y: ${{ inputs.performance_10y || '' }}\n      TOTAL_RETURN_YTD: ${{ inputs.total_return_ytd || '' }}\n      TOTAL_RETURN_1Y: ${{ inputs.total_return_1y || '' }}\n      TOTAL_RETURN_3Y: ${{ inputs.total_return_3y || '' }}\n      TOTAL_RETURN_5Y: ${{ inputs.total_return_5y || '' }}\n      TOTAL_RETURN_10Y: ${{ inputs.total_return_10y || '' }}\n    steps:\n      - uses: actions/checkout@v7\n      - uses: oven-sh/setup-bun@v2\n      - name: Install dependencies\n        run: bun install --frozen-lockfile\n      - name: Test updater\n        run: bun test scripts/update-data.test.ts\n      - name: Update data\n        run: bun scripts/update-data.ts\n      - name: Commit changed data\n        run: |\n          git add api/ishares\n          git diff --cached --quiet && exit 0\n          git config user.name github-actions[bot]\n          git config user.email 41898282+github-actions[bot]@users.noreply.github.com\n          git commit -m 'Update iShares ETF data'\n          git push\n",
+  "observations": [
+    "Flat string-valued scripts/update-data.config.json; module-relative read before runtime config parsing.",
+    "Only undefined or whitespace-only environment values are filled; nonblank 0/false overrides remain intact.",
+    "Missing JSON ENOENT uses built-in fallbacks; malformed/unreadable JSON throws.",
+    "Manual inputs are optional strings with empty defaults; job-level env maps inputs to canonical controls.",
+    "Schedule+manual only; checkout@v7, setup-bun@v2 with no fixed version; install -> updater tests -> update -> api-only commit/push.",
+    "Reference has STORE_RAW_DOWNLOADS (unsupported by Xtrackers), no TER/SEC_YIELD/SEC_UA workflow inputs and VERBOSE file-only. Xtrackers must preserve its supported 23 controls and DWS 1.5s/2-lane defaults.",
+    "Reference directive is after imports; target must keep explicit first/second-line directive requirement.",
+    "Reference README defaults/unsupported controls are stale; target docs/help will reflect actual JSON, not copy false settings."
+  ]
+}

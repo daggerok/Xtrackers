@@ -1,0 +1,6014 @@
+{
+  "ticker": "DBJP",
+  "page": 1,
+  "pageSize": 1000,
+  "totalRows": 3852,
+  "headers": [
+    "Date",
+    "NAV",
+    "Market Price",
+    "Premium/Discount"
+  ],
+  "rows": [
+    {
+      "Date": "2011-06-08",
+      "NAV": "25",
+      "Market Price": "",
+      "Premium/Discount": ""
+    },
+    {
+      "Date": "2011-06-09",
+      "NAV": "25.0706",
+      "Market Price": "25.200001",
+      "Premium/Discount": "0.5161"
+    },
+    {
+      "Date": "2011-06-10",
+      "NAV": "24.8379",
+      "Market Price": "25.200001",
+      "Premium/Discount": "1.4579"
+    },
+    {
+      "Date": "2011-06-13",
+      "NAV": "24.853",
+      "Market Price": "25.200001",
+      "Premium/Discount": "1.3962"
+    },
+    {
+      "Date": "2011-06-14",
+      "NAV": "25.2747",
+      "Market Price": "25.200001",
+      "Premium/Discount": "-0.2955"
+    },
+    {
+      "Date": "2011-06-15",
+      "NAV": "25.0989",
+      "Market Price": "25.200001",
+      "Premium/Discount": "0.4028"
+    },
+    {
+      "Date": "2011-06-16",
+      "NAV": "24.8798",
+      "Market Price": "25.200001",
+      "Premium/Discount": "1.287"
+    },
+    {
+      "Date": "2011-06-17",
+      "NAV": "24.6962",
+      "Market Price": "25",
+      "Premium/Discount": "1.2301"
+    },
+    {
+      "Date": "2011-06-20",
+      "NAV": "24.8702",
+      "Market Price": "25",
+      "Premium/Discount": "0.5219"
+    },
+    {
+      "Date": "2011-06-21",
+      "NAV": "25.1892",
+      "Market Price": "25.25",
+      "Premium/Discount": "0.2414"
+    },
+    {
+      "Date": "2011-06-22",
+      "NAV": "25.2844",
+      "Market Price": "25.25",
+      "Premium/Discount": "-0.1361"
+    },
+    {
+      "Date": "2011-06-23",
+      "NAV": "25.2789",
+      "Market Price": "25.25",
+      "Premium/Discount": "-0.1143"
+    },
+    {
+      "Date": "2011-06-24",
+      "NAV": "25.4062",
+      "Market Price": "25.5",
+      "Premium/Discount": "0.3692"
+    },
+    {
+      "Date": "2011-06-27",
+      "NAV": "25.4",
+      "Market Price": "25.5",
+      "Premium/Discount": "0.3937"
+    },
+    {
+      "Date": "2011-06-28",
+      "NAV": "25.6492",
+      "Market Price": "25.9",
+      "Premium/Discount": "0.9778"
+    },
+    {
+      "Date": "2011-06-29",
+      "NAV": "25.9969",
+      "Market Price": "25.9",
+      "Premium/Discount": "-0.3727"
+    },
+    {
+      "Date": "2011-06-30",
+      "NAV": "26.1232",
+      "Market Price": "25.9",
+      "Premium/Discount": "-0.8544"
+    },
+    {
+      "Date": "2011-07-01",
+      "NAV": "26.412",
+      "Market Price": "26.49",
+      "Premium/Discount": "0.2953"
+    },
+    {
+      "Date": "2011-07-05",
+      "NAV": "26.4857",
+      "Market Price": "26.49",
+      "Premium/Discount": "0.0162"
+    },
+    {
+      "Date": "2011-07-06",
+      "NAV": "26.7544",
+      "Market Price": "26.49",
+      "Premium/Discount": "-0.9882"
+    },
+    {
+      "Date": "2011-07-07",
+      "NAV": "26.903",
+      "Market Price": "27.08",
+      "Premium/Discount": "0.6579"
+    },
+    {
+      "Date": "2011-07-08",
+      "NAV": "26.5154",
+      "Market Price": "26.75",
+      "Premium/Discount": "0.8848"
+    },
+    {
+      "Date": "2011-07-11",
+      "NAV": "26.1679",
+      "Market Price": "25.99",
+      "Premium/Discount": "-0.6798"
+    },
+    {
+      "Date": "2011-07-12",
+      "NAV": "25.8428",
+      "Market Price": "25.99",
+      "Premium/Discount": "0.5696"
+    },
+    {
+      "Date": "2011-07-13",
+      "NAV": "26.1773",
+      "Market Price": "26.43",
+      "Premium/Discount": "0.9653"
+    },
+    {
+      "Date": "2011-07-14",
+      "NAV": "26.0902",
+      "Market Price": "26.43",
+      "Premium/Discount": "1.3024"
+    },
+    {
+      "Date": "2011-07-15",
+      "NAV": "26.1997",
+      "Market Price": "26.33",
+      "Premium/Discount": "0.4973"
+    },
+    {
+      "Date": "2011-07-18",
+      "NAV": "25.9256",
+      "Market Price": "26.33",
+      "Premium/Discount": "1.5598"
+    },
+    {
+      "Date": "2011-07-19",
+      "NAV": "26.2296",
+      "Market Price": "26.33",
+      "Premium/Discount": "0.3828"
+    },
+    {
+      "Date": "2011-07-20",
+      "NAV": "26.238",
+      "Market Price": "26.33",
+      "Premium/Discount": "0.3506"
+    },
+    {
+      "Date": "2011-07-21",
+      "NAV": "26.4416",
+      "Market Price": "26.33",
+      "Premium/Discount": "-0.4221"
+    },
+    {
+      "Date": "2011-07-22",
+      "NAV": "26.4917",
+      "Market Price": "26.33",
+      "Premium/Discount": "-0.6104"
+    },
+    {
+      "Date": "2011-07-25",
+      "NAV": "26.3099",
+      "Market Price": "26.5",
+      "Premium/Discount": "0.7225"
+    },
+    {
+      "Date": "2011-07-26",
+      "NAV": "26.2872",
+      "Market Price": "26.360001",
+      "Premium/Discount": "0.2769"
+    },
+    {
+      "Date": "2011-07-27",
+      "NAV": "25.9259",
+      "Market Price": "26.08",
+      "Premium/Discount": "0.5944"
+    },
+    {
+      "Date": "2011-07-28",
+      "NAV": "25.7675",
+      "Market Price": "26.08",
+      "Premium/Discount": "1.2128"
+    },
+    {
+      "Date": "2011-07-29",
+      "NAV": "25.5453",
+      "Market Price": "25.75",
+      "Premium/Discount": "0.8013"
+    },
+    {
+      "Date": "2011-08-01",
+      "NAV": "25.5632",
+      "Market Price": "25.75",
+      "Premium/Discount": "0.7307"
+    },
+    {
+      "Date": "2011-08-02",
+      "NAV": "25.3385",
+      "Market Price": "25.75",
+      "Premium/Discount": "1.624"
+    },
+    {
+      "Date": "2011-08-03",
+      "NAV": "25.2308",
+      "Market Price": "25.75",
+      "Premium/Discount": "2.0578"
+    },
+    {
+      "Date": "2011-08-04",
+      "NAV": "24.5125",
+      "Market Price": "24.459999",
+      "Premium/Discount": "-0.2142"
+    },
+    {
+      "Date": "2011-08-05",
+      "NAV": "24.4156",
+      "Market Price": "24.139999",
+      "Premium/Discount": "-1.1288"
+    },
+    {
+      "Date": "2011-08-08",
+      "NAV": "23.1488",
+      "Market Price": "23.17",
+      "Premium/Discount": "0.0916"
+    },
+    {
+      "Date": "2011-08-09",
+      "NAV": "23.7608",
+      "Market Price": "23.17",
+      "Premium/Discount": "-2.4864"
+    },
+    {
+      "Date": "2011-08-10",
+      "NAV": "23.0148",
+      "Market Price": "23",
+      "Premium/Discount": "-0.0643"
+    },
+    {
+      "Date": "2011-08-11",
+      "NAV": "23.5676",
+      "Market Price": "23.85",
+      "Premium/Discount": "1.1983"
+    },
+    {
+      "Date": "2011-08-12",
+      "NAV": "23.4137",
+      "Market Price": "23.85",
+      "Premium/Discount": "1.8634"
+    },
+    {
+      "Date": "2011-08-15",
+      "NAV": "23.7076",
+      "Market Price": "23.549999",
+      "Premium/Discount": "-0.6648"
+    },
+    {
+      "Date": "2011-08-16",
+      "NAV": "23.5127",
+      "Market Price": "23.549999",
+      "Premium/Discount": "0.1586"
+    },
+    {
+      "Date": "2011-08-17",
+      "NAV": "23.5063",
+      "Market Price": "23.549999",
+      "Premium/Discount": "0.1859"
+    },
+    {
+      "Date": "2011-08-18",
+      "NAV": "22.7638",
+      "Market Price": "23.549999",
+      "Premium/Discount": "3.4537"
+    },
+    {
+      "Date": "2011-08-19",
+      "NAV": "22.4266",
+      "Market Price": "23.549999",
+      "Premium/Discount": "5.0092"
+    },
+    {
+      "Date": "2011-08-22",
+      "NAV": "22.4733",
+      "Market Price": "23.549999",
+      "Premium/Discount": "4.791"
+    },
+    {
+      "Date": "2011-08-23",
+      "NAV": "22.9054",
+      "Market Price": "23.549999",
+      "Premium/Discount": "2.8142"
+    },
+    {
+      "Date": "2011-08-24",
+      "NAV": "22.7042",
+      "Market Price": "23.549999",
+      "Premium/Discount": "3.7253"
+    },
+    {
+      "Date": "2011-08-25",
+      "NAV": "22.6856",
+      "Market Price": "23.549999",
+      "Premium/Discount": "3.8103"
+    },
+    {
+      "Date": "2011-08-26",
+      "NAV": "22.826",
+      "Market Price": "23.549999",
+      "Premium/Discount": "3.1718"
+    },
+    {
+      "Date": "2011-08-29",
+      "NAV": "23.1689",
+      "Market Price": "23.549999",
+      "Premium/Discount": "1.6449"
+    },
+    {
+      "Date": "2011-08-30",
+      "NAV": "23.173",
+      "Market Price": "23.049999",
+      "Premium/Discount": "-0.5308"
+    },
+    {
+      "Date": "2011-08-31",
+      "NAV": "23.4491",
+      "Market Price": "23.48",
+      "Premium/Discount": "0.1318"
+    },
+    {
+      "Date": "2011-09-01",
+      "NAV": "23.4089",
+      "Market Price": "23.48",
+      "Premium/Discount": "0.3037"
+    },
+    {
+      "Date": "2011-09-02",
+      "NAV": "22.9558",
+      "Market Price": "23",
+      "Premium/Discount": "0.1925"
+    },
+    {
+      "Date": "2011-09-06",
+      "NAV": "22.6141",
+      "Market Price": "22.6",
+      "Premium/Discount": "-0.0624"
+    },
+    {
+      "Date": "2011-09-07",
+      "NAV": "22.9369",
+      "Market Price": "22.6",
+      "Premium/Discount": "-1.4688"
+    },
+    {
+      "Date": "2011-09-08",
+      "NAV": "22.8173",
+      "Market Price": "22.6",
+      "Premium/Discount": "-0.9523"
+    },
+    {
+      "Date": "2011-09-09",
+      "NAV": "22.4197",
+      "Market Price": "22.5",
+      "Premium/Discount": "0.3582"
+    },
+    {
+      "Date": "2011-09-12",
+      "NAV": "22.4117",
+      "Market Price": "22.5",
+      "Premium/Discount": "0.394"
+    },
+    {
+      "Date": "2011-09-13",
+      "NAV": "22.7151",
+      "Market Price": "22.5",
+      "Premium/Discount": "-0.9469"
+    },
+    {
+      "Date": "2011-09-14",
+      "NAV": "22.6501",
+      "Market Price": "22.5",
+      "Premium/Discount": "-0.6627"
+    },
+    {
+      "Date": "2011-09-15",
+      "NAV": "22.9775",
+      "Market Price": "22.5",
+      "Premium/Discount": "-2.0781"
+    },
+    {
+      "Date": "2011-09-16",
+      "NAV": "23.2249",
+      "Market Price": "22.5",
+      "Premium/Discount": "-3.1212"
+    },
+    {
+      "Date": "2011-09-19",
+      "NAV": "22.9272",
+      "Market Price": "22.780001",
+      "Premium/Discount": "-0.642"
+    },
+    {
+      "Date": "2011-09-20",
+      "NAV": "22.8189",
+      "Market Price": "22.780001",
+      "Premium/Discount": "-0.1705"
+    },
+    {
+      "Date": "2011-09-21",
+      "NAV": "22.6023",
+      "Market Price": "22.780001",
+      "Premium/Discount": "0.7862"
+    },
+    {
+      "Date": "2011-09-22",
+      "NAV": "22.1996",
+      "Market Price": "22.780001",
+      "Premium/Discount": "2.6145"
+    },
+    {
+      "Date": "2011-09-23",
+      "NAV": "22.3898",
+      "Market Price": "22.780001",
+      "Premium/Discount": "1.7428"
+    },
+    {
+      "Date": "2011-09-26",
+      "NAV": "22.3536",
+      "Market Price": "22.780001",
+      "Premium/Discount": "1.9075"
+    },
+    {
+      "Date": "2011-09-27",
+      "NAV": "22.8547",
+      "Market Price": "22.809999",
+      "Premium/Discount": "-0.1956"
+    },
+    {
+      "Date": "2011-09-28",
+      "NAV": "22.8244",
+      "Market Price": "22.809999",
+      "Premium/Discount": "-0.0631"
+    },
+    {
+      "Date": "2011-09-29",
+      "NAV": "23.2201",
+      "Market Price": "22.809999",
+      "Premium/Discount": "-1.7661"
+    },
+    {
+      "Date": "2011-09-30",
+      "NAV": "22.8964",
+      "Market Price": "22.809999",
+      "Premium/Discount": "-0.3774"
+    },
+    {
+      "Date": "2011-10-03",
+      "NAV": "22.4057",
+      "Market Price": "22.809999",
+      "Premium/Discount": "1.8044"
+    },
+    {
+      "Date": "2011-10-04",
+      "NAV": "22.5708",
+      "Market Price": "22.809999",
+      "Premium/Discount": "1.0598"
+    },
+    {
+      "Date": "2011-10-05",
+      "NAV": "22.4379",
+      "Market Price": "22.809999",
+      "Premium/Discount": "1.6584"
+    },
+    {
+      "Date": "2011-10-06",
+      "NAV": "22.6445",
+      "Market Price": "22.809999",
+      "Premium/Discount": "0.7309"
+    },
+    {
+      "Date": "2011-10-07",
+      "NAV": "22.5577",
+      "Market Price": "22.809999",
+      "Premium/Discount": "1.1185"
+    },
+    {
+      "Date": "2011-10-10",
+      "NAV": "22.9836",
+      "Market Price": "22.809999",
+      "Premium/Discount": "-0.7553"
+    },
+    {
+      "Date": "2011-10-11",
+      "NAV": "23.0059",
+      "Market Price": "22.809999",
+      "Premium/Discount": "-0.8515"
+    },
+    {
+      "Date": "2011-10-12",
+      "NAV": "23.173",
+      "Market Price": "22.809999",
+      "Premium/Discount": "-1.5665"
+    },
+    {
+      "Date": "2011-10-13",
+      "NAV": "23.0944",
+      "Market Price": "23",
+      "Premium/Discount": "-0.4088"
+    },
+    {
+      "Date": "2011-10-14",
+      "NAV": "23.1262",
+      "Market Price": "23",
+      "Premium/Discount": "-0.5457"
+    },
+    {
+      "Date": "2011-10-17",
+      "NAV": "23.0792",
+      "Market Price": "23",
+      "Premium/Discount": "-0.3432"
+    },
+    {
+      "Date": "2011-10-18",
+      "NAV": "23.1517",
+      "Market Price": "23",
+      "Premium/Discount": "-0.6552"
+    },
+    {
+      "Date": "2011-10-19",
+      "NAV": "22.8862",
+      "Market Price": "23",
+      "Premium/Discount": "0.4972"
+    },
+    {
+      "Date": "2011-10-20",
+      "NAV": "22.7461",
+      "Market Price": "23",
+      "Premium/Discount": "1.1162"
+    },
+    {
+      "Date": "2011-10-21",
+      "NAV": "22.8039",
+      "Market Price": "23",
+      "Premium/Discount": "0.8599"
+    },
+    {
+      "Date": "2011-10-24",
+      "NAV": "23.035",
+      "Market Price": "23",
+      "Premium/Discount": "-0.1519"
+    },
+    {
+      "Date": "2011-10-25",
+      "NAV": "22.6191",
+      "Market Price": "23",
+      "Premium/Discount": "1.684"
+    },
+    {
+      "Date": "2011-10-26",
+      "NAV": "22.8555",
+      "Market Price": "22.68",
+      "Premium/Discount": "-0.7679"
+    },
+    {
+      "Date": "2011-10-27",
+      "NAV": "23.609",
+      "Market Price": "22.68",
+      "Premium/Discount": "-3.9349"
+    },
+    {
+      "Date": "2011-10-28",
+      "NAV": "23.5829",
+      "Market Price": "22.68",
+      "Premium/Discount": "-3.8286"
+    },
+    {
+      "Date": "2011-10-31",
+      "NAV": "22.9789",
+      "Market Price": "22.68",
+      "Premium/Discount": "-1.3008"
+    },
+    {
+      "Date": "2011-11-01",
+      "NAV": "22.7432",
+      "Market Price": "22.68",
+      "Premium/Discount": "-0.2779"
+    },
+    {
+      "Date": "2011-11-02",
+      "NAV": "22.6143",
+      "Market Price": "22.77",
+      "Premium/Discount": "0.6885"
+    },
+    {
+      "Date": "2011-11-03",
+      "NAV": "22.7864",
+      "Market Price": "22.77",
+      "Premium/Discount": "-0.072"
+    },
+    {
+      "Date": "2011-11-04",
+      "NAV": "22.8163",
+      "Market Price": "22.77",
+      "Premium/Discount": "-0.2029"
+    },
+    {
+      "Date": "2011-11-07",
+      "NAV": "22.9474",
+      "Market Price": "22.77",
+      "Premium/Discount": "-0.7731"
+    },
+    {
+      "Date": "2011-11-08",
+      "NAV": "22.7259",
+      "Market Price": "23.32",
+      "Premium/Discount": "2.6142"
+    },
+    {
+      "Date": "2011-11-09",
+      "NAV": "22.4769",
+      "Market Price": "23.32",
+      "Premium/Discount": "3.751"
+    },
+    {
+      "Date": "2011-11-10",
+      "NAV": "22.2589",
+      "Market Price": "23.32",
+      "Premium/Discount": "4.7671"
+    },
+    {
+      "Date": "2011-11-11",
+      "NAV": "22.3831",
+      "Market Price": "23.32",
+      "Premium/Discount": "4.1857"
+    },
+    {
+      "Date": "2011-11-14",
+      "NAV": "22.3214",
+      "Market Price": "22.4",
+      "Premium/Discount": "0.3521"
+    },
+    {
+      "Date": "2011-11-15",
+      "NAV": "22.2747",
+      "Market Price": "22.4",
+      "Premium/Discount": "0.5625"
+    },
+    {
+      "Date": "2011-11-16",
+      "NAV": "21.9258",
+      "Market Price": "22.4",
+      "Premium/Discount": "2.1627"
+    },
+    {
+      "Date": "2011-11-17",
+      "NAV": "21.9702",
+      "Market Price": "22.4",
+      "Premium/Discount": "1.9563"
+    },
+    {
+      "Date": "2011-11-18",
+      "NAV": "21.9172",
+      "Market Price": "22.059999",
+      "Premium/Discount": "0.6515"
+    },
+    {
+      "Date": "2011-11-21",
+      "NAV": "21.5816",
+      "Market Price": "22.059999",
+      "Premium/Discount": "2.2167"
+    },
+    {
+      "Date": "2011-11-22",
+      "NAV": "21.7259",
+      "Market Price": "22.059999",
+      "Premium/Discount": "1.5378"
+    },
+    {
+      "Date": "2011-11-23",
+      "NAV": "21.4102",
+      "Market Price": "22.059999",
+      "Premium/Discount": "3.035"
+    },
+    {
+      "Date": "2011-11-25",
+      "NAV": "21.5235",
+      "Market Price": "22.059999",
+      "Premium/Discount": "2.4926"
+    },
+    {
+      "Date": "2011-11-28",
+      "NAV": "22.0471",
+      "Market Price": "22.059999",
+      "Premium/Discount": "0.0585"
+    },
+    {
+      "Date": "2011-11-29",
+      "NAV": "22.2484",
+      "Market Price": "22.059999",
+      "Premium/Discount": "-0.8468"
+    },
+    {
+      "Date": "2011-11-30",
+      "NAV": "22.7828",
+      "Market Price": "22.059999",
+      "Premium/Discount": "-3.1726"
+    },
+    {
+      "Date": "2011-12-01",
+      "NAV": "22.5952",
+      "Market Price": "22.059999",
+      "Premium/Discount": "-2.3686"
+    },
+    {
+      "Date": "2011-12-02",
+      "NAV": "22.7151",
+      "Market Price": "22.059999",
+      "Premium/Discount": "-2.884"
+    },
+    {
+      "Date": "2011-12-05",
+      "NAV": "22.7805",
+      "Market Price": "22.059999",
+      "Premium/Discount": "-3.1628"
+    },
+    {
+      "Date": "2011-12-06",
+      "NAV": "22.5214",
+      "Market Price": "22.59",
+      "Premium/Discount": "0.3046"
+    },
+    {
+      "Date": "2011-12-07",
+      "NAV": "22.8697",
+      "Market Price": "22.67",
+      "Premium/Discount": "-0.8732"
+    },
+    {
+      "Date": "2011-12-08",
+      "NAV": "22.3739",
+      "Market Price": "22.67",
+      "Premium/Discount": "1.3234"
+    },
+    {
+      "Date": "2011-12-09",
+      "NAV": "22.6863",
+      "Market Price": "22.67",
+      "Premium/Discount": "-0.0718"
+    },
+    {
+      "Date": "2011-12-12",
+      "NAV": "22.5065",
+      "Market Price": "22.67",
+      "Premium/Discount": "0.7265"
+    },
+    {
+      "Date": "2011-12-13",
+      "NAV": "22.4071",
+      "Market Price": "22.67",
+      "Premium/Discount": "1.1733"
+    },
+    {
+      "Date": "2011-12-14",
+      "NAV": "22.2091",
+      "Market Price": "22.33",
+      "Premium/Discount": "0.5444"
+    },
+    {
+      "Date": "2011-12-15",
+      "NAV": "22.0945",
+      "Market Price": "22.33",
+      "Premium/Discount": "1.0659"
+    },
+    {
+      "Date": "2011-12-16",
+      "NAV": "21.9658",
+      "Market Price": "22.33",
+      "Premium/Discount": "1.658"
+    },
+    {
+      "Date": "2011-12-19",
+      "NAV": "21.73",
+      "Market Price": "22.02",
+      "Premium/Discount": "1.3346"
+    },
+    {
+      "Date": "2011-12-20",
+      "NAV": "21.9749",
+      "Market Price": "22.02",
+      "Premium/Discount": "0.2052"
+    },
+    {
+      "Date": "2011-12-21",
+      "NAV": "21.8887",
+      "Market Price": "22.02",
+      "Premium/Discount": "0.5999"
+    },
+    {
+      "Date": "2011-12-22",
+      "NAV": "22.0036",
+      "Market Price": "22.02",
+      "Premium/Discount": "0.0745"
+    },
+    {
+      "Date": "2011-12-23",
+      "NAV": "22.1566",
+      "Market Price": "22.02",
+      "Premium/Discount": "-0.6165"
+    },
+    {
+      "Date": "2011-12-27",
+      "NAV": "21.8705",
+      "Market Price": "22.02",
+      "Premium/Discount": "0.6836"
+    },
+    {
+      "Date": "2011-12-28",
+      "NAV": "21.6663",
+      "Market Price": "22.02",
+      "Premium/Discount": "1.6325"
+    },
+    {
+      "Date": "2011-12-29",
+      "NAV": "21.9288",
+      "Market Price": "21.879999",
+      "Premium/Discount": "-0.2225"
+    },
+    {
+      "Date": "2011-12-30",
+      "NAV": "21.9539",
+      "Market Price": "21.860001",
+      "Premium/Discount": "-0.4277"
+    },
+    {
+      "Date": "2012-01-03",
+      "NAV": "22.2485",
+      "Market Price": "22.200001",
+      "Premium/Discount": "-0.218"
+    },
+    {
+      "Date": "2012-01-04",
+      "NAV": "22.4419",
+      "Market Price": "22.049999",
+      "Premium/Discount": "-1.7463"
+    },
+    {
+      "Date": "2012-01-05",
+      "NAV": "22.2237",
+      "Market Price": "22.08",
+      "Premium/Discount": "-0.6466"
+    },
+    {
+      "Date": "2012-01-06",
+      "NAV": "22.0208",
+      "Market Price": "22.08",
+      "Premium/Discount": "0.2688"
+    },
+    {
+      "Date": "2012-01-09",
+      "NAV": "22.0208",
+      "Market Price": "22.08",
+      "Premium/Discount": "0.2688"
+    },
+    {
+      "Date": "2012-01-10",
+      "NAV": "22.1838",
+      "Market Price": "22.08",
+      "Premium/Discount": "-0.4679"
+    },
+    {
+      "Date": "2012-01-11",
+      "NAV": "22.1251",
+      "Market Price": "22.08",
+      "Premium/Discount": "-0.2038"
+    },
+    {
+      "Date": "2012-01-12",
+      "NAV": "21.9375",
+      "Market Price": "22.08",
+      "Premium/Discount": "0.6496"
+    },
+    {
+      "Date": "2012-01-13",
+      "NAV": "22.0675",
+      "Market Price": "22.08",
+      "Premium/Discount": "0.0566"
+    },
+    {
+      "Date": "2012-01-17",
+      "NAV": "22.0778",
+      "Market Price": "22.08",
+      "Premium/Discount": "0.01"
+    },
+    {
+      "Date": "2012-01-18",
+      "NAV": "22.2718",
+      "Market Price": "22.08",
+      "Premium/Discount": "-0.8612"
+    },
+    {
+      "Date": "2012-01-19",
+      "NAV": "22.5218",
+      "Market Price": "22.08",
+      "Premium/Discount": "-1.9617"
+    },
+    {
+      "Date": "2012-01-20",
+      "NAV": "22.8162",
+      "Market Price": "22.08",
+      "Premium/Discount": "-3.2267"
+    },
+    {
+      "Date": "2012-01-23",
+      "NAV": "22.8319",
+      "Market Price": "22.08",
+      "Premium/Discount": "-3.2932"
+    },
+    {
+      "Date": "2012-01-24",
+      "NAV": "22.863",
+      "Market Price": "22.08",
+      "Premium/Discount": "-3.4247"
+    },
+    {
+      "Date": "2012-01-25",
+      "NAV": "23.1602",
+      "Market Price": "22.08",
+      "Premium/Discount": "-4.664"
+    },
+    {
+      "Date": "2012-01-26",
+      "NAV": "23.0987",
+      "Market Price": "22.08",
+      "Premium/Discount": "-4.4102"
+    },
+    {
+      "Date": "2012-01-27",
+      "NAV": "22.978",
+      "Market Price": "22.08",
+      "Premium/Discount": "-3.9081"
+    },
+    {
+      "Date": "2012-01-30",
+      "NAV": "22.8392",
+      "Market Price": "22.65",
+      "Premium/Discount": "-0.8284"
+    },
+    {
+      "Date": "2012-01-31",
+      "NAV": "22.7833",
+      "Market Price": "22.65",
+      "Premium/Discount": "-0.5851"
+    },
+    {
+      "Date": "2012-02-01",
+      "NAV": "22.9448",
+      "Market Price": "22.65",
+      "Premium/Discount": "-1.2848"
+    },
+    {
+      "Date": "2012-02-02",
+      "NAV": "22.9864",
+      "Market Price": "22.65",
+      "Premium/Discount": "-1.4635"
+    },
+    {
+      "Date": "2012-02-03",
+      "NAV": "23.1665",
+      "Market Price": "22.65",
+      "Premium/Discount": "-2.2295"
+    },
+    {
+      "Date": "2012-02-06",
+      "NAV": "23.2064",
+      "Market Price": "23.389999",
+      "Premium/Discount": "0.7912"
+    },
+    {
+      "Date": "2012-02-07",
+      "NAV": "23.3071",
+      "Market Price": "23.83",
+      "Premium/Discount": "2.2435"
+    },
+    {
+      "Date": "2012-02-08",
+      "NAV": "23.5976",
+      "Market Price": "24.02",
+      "Premium/Discount": "1.79"
+    },
+    {
+      "Date": "2012-02-09",
+      "NAV": "23.6708",
+      "Market Price": "24.02",
+      "Premium/Discount": "1.4752"
+    },
+    {
+      "Date": "2012-02-10",
+      "NAV": "23.416",
+      "Market Price": "23.59",
+      "Premium/Discount": "0.7431"
+    },
+    {
+      "Date": "2012-02-13",
+      "NAV": "23.6023",
+      "Market Price": "23.85",
+      "Premium/Discount": "1.0495"
+    },
+    {
+      "Date": "2012-02-14",
+      "NAV": "23.7275",
+      "Market Price": "23.85",
+      "Premium/Discount": "0.5163"
+    },
+    {
+      "Date": "2012-02-15",
+      "NAV": "24.25",
+      "Market Price": "23.85",
+      "Premium/Discount": "-1.6495"
+    },
+    {
+      "Date": "2012-02-16",
+      "NAV": "24.1763",
+      "Market Price": "24.459999",
+      "Premium/Discount": "1.1735"
+    },
+    {
+      "Date": "2012-02-17",
+      "NAV": "24.4942",
+      "Market Price": "24.709999",
+      "Premium/Discount": "0.881"
+    },
+    {
+      "Date": "2012-02-21",
+      "NAV": "24.688",
+      "Market Price": "24.83",
+      "Premium/Discount": "0.5752"
+    },
+    {
+      "Date": "2012-02-22",
+      "NAV": "24.9114",
+      "Market Price": "24.83",
+      "Premium/Discount": "-0.3268"
+    },
+    {
+      "Date": "2012-02-23",
+      "NAV": "25.0101",
+      "Market Price": "24.83",
+      "Premium/Discount": "-0.7201"
+    },
+    {
+      "Date": "2012-02-24",
+      "NAV": "25.1353",
+      "Market Price": "26.370001",
+      "Premium/Discount": "4.9122"
+    },
+    {
+      "Date": "2012-02-27",
+      "NAV": "25.1762",
+      "Market Price": "25.59",
+      "Premium/Discount": "1.6436"
+    },
+    {
+      "Date": "2012-02-28",
+      "NAV": "25.2781",
+      "Market Price": "26.17",
+      "Premium/Discount": "3.5284"
+    },
+    {
+      "Date": "2012-02-29",
+      "NAV": "25.2144",
+      "Market Price": "26.17",
+      "Premium/Discount": "3.7899"
+    },
+    {
+      "Date": "2012-03-01",
+      "NAV": "25.0922",
+      "Market Price": "25.82",
+      "Premium/Discount": "2.9005"
+    },
+    {
+      "Date": "2012-03-02",
+      "NAV": "25.2569",
+      "Market Price": "25.82",
+      "Premium/Discount": "2.2295"
+    },
+    {
+      "Date": "2012-03-05",
+      "NAV": "25.0987",
+      "Market Price": "25.809999",
+      "Premium/Discount": "2.834"
+    },
+    {
+      "Date": "2012-03-06",
+      "NAV": "24.8983",
+      "Market Price": "25.379999",
+      "Premium/Discount": "1.9347"
+    },
+    {
+      "Date": "2012-03-07",
+      "NAV": "24.7303",
+      "Market Price": "25.6",
+      "Premium/Discount": "3.5167"
+    },
+    {
+      "Date": "2012-03-08",
+      "NAV": "25.176",
+      "Market Price": "25.82",
+      "Premium/Discount": "2.558"
+    },
+    {
+      "Date": "2012-03-09",
+      "NAV": "25.5612",
+      "Market Price": "26.09",
+      "Premium/Discount": "2.0688"
+    },
+    {
+      "Date": "2012-03-12",
+      "NAV": "25.4603",
+      "Market Price": "26.07",
+      "Premium/Discount": "2.3947"
+    },
+    {
+      "Date": "2012-03-13",
+      "NAV": "25.4783",
+      "Market Price": "26.18",
+      "Premium/Discount": "2.7541"
+    },
+    {
+      "Date": "2012-03-14",
+      "NAV": "25.859",
+      "Market Price": "26.27",
+      "Premium/Discount": "1.5894"
+    },
+    {
+      "Date": "2012-03-15",
+      "NAV": "26.0723",
+      "Market Price": "26.67",
+      "Premium/Discount": "2.2925"
+    },
+    {
+      "Date": "2012-03-16",
+      "NAV": "26.1597",
+      "Market Price": "26.75",
+      "Premium/Discount": "2.2565"
+    },
+    {
+      "Date": "2012-03-19",
+      "NAV": "26.1999",
+      "Market Price": "26.75",
+      "Premium/Discount": "2.0996"
+    },
+    {
+      "Date": "2012-03-20",
+      "NAV": "26.194",
+      "Market Price": "26.48",
+      "Premium/Discount": "1.0919"
+    },
+    {
+      "Date": "2012-03-21",
+      "NAV": "25.9046",
+      "Market Price": "26.219999",
+      "Premium/Discount": "1.2175"
+    },
+    {
+      "Date": "2012-03-22",
+      "NAV": "26.0021",
+      "Market Price": "26.23",
+      "Premium/Discount": "0.8765"
+    },
+    {
+      "Date": "2012-03-23",
+      "NAV": "25.7009",
+      "Market Price": "25.959999",
+      "Premium/Discount": "1.0081"
+    },
+    {
+      "Date": "2012-03-26",
+      "NAV": "25.7006",
+      "Market Price": "26.16",
+      "Premium/Discount": "1.7875"
+    },
+    {
+      "Date": "2012-03-27",
+      "NAV": "26.309",
+      "Market Price": "26.4",
+      "Premium/Discount": "0.3459"
+    },
+    {
+      "Date": "2012-03-28",
+      "NAV": "26.3291",
+      "Market Price": "26.5",
+      "Premium/Discount": "0.6491"
+    },
+    {
+      "Date": "2012-03-29",
+      "NAV": "26.0966",
+      "Market Price": "26.120001",
+      "Premium/Discount": "0.0897"
+    },
+    {
+      "Date": "2012-03-30",
+      "NAV": "25.967",
+      "Market Price": "26.59",
+      "Premium/Discount": "2.3992"
+    },
+    {
+      "Date": "2012-04-02",
+      "NAV": "26.058",
+      "Market Price": "26.75",
+      "Premium/Discount": "2.6556"
+    },
+    {
+      "Date": "2012-04-03",
+      "NAV": "25.9153",
+      "Market Price": "26.5",
+      "Premium/Discount": "2.2562"
+    },
+    {
+      "Date": "2012-04-04",
+      "NAV": "25.4228",
+      "Market Price": "25.74",
+      "Premium/Discount": "1.2477"
+    },
+    {
+      "Date": "2012-04-05",
+      "NAV": "25.3442",
+      "Market Price": "25.530001",
+      "Premium/Discount": "0.7331"
+    },
+    {
+      "Date": "2012-04-09",
+      "NAV": "24.706",
+      "Market Price": "25.25",
+      "Premium/Discount": "2.2019"
+    },
+    {
+      "Date": "2012-04-10",
+      "NAV": "24.6951",
+      "Market Price": "24.82",
+      "Premium/Discount": "0.5058"
+    },
+    {
+      "Date": "2012-04-11",
+      "NAV": "24.4476",
+      "Market Price": "24.82",
+      "Premium/Discount": "1.5233"
+    },
+    {
+      "Date": "2012-04-12",
+      "NAV": "24.5688",
+      "Market Price": "25.02",
+      "Premium/Discount": "1.8365"
+    },
+    {
+      "Date": "2012-04-13",
+      "NAV": "24.7458",
+      "Market Price": "24.82",
+      "Premium/Discount": "0.2998"
+    },
+    {
+      "Date": "2012-04-16",
+      "NAV": "24.3471",
+      "Market Price": "24.98",
+      "Premium/Discount": "2.5995"
+    },
+    {
+      "Date": "2012-04-17",
+      "NAV": "24.3232",
+      "Market Price": "24.98",
+      "Premium/Discount": "2.7003"
+    },
+    {
+      "Date": "2012-04-18",
+      "NAV": "24.8464",
+      "Market Price": "24.940001",
+      "Premium/Discount": "0.3767"
+    },
+    {
+      "Date": "2012-04-19",
+      "NAV": "24.7199",
+      "Market Price": "24.950001",
+      "Premium/Discount": "0.9308"
+    },
+    {
+      "Date": "2012-04-20",
+      "NAV": "24.6186",
+      "Market Price": "25.15",
+      "Premium/Discount": "2.1585"
+    },
+    {
+      "Date": "2012-04-23",
+      "NAV": "24.5414",
+      "Market Price": "24.91",
+      "Premium/Discount": "1.502"
+    },
+    {
+      "Date": "2012-04-24",
+      "NAV": "24.3665",
+      "Market Price": "24.92",
+      "Premium/Discount": "2.2716"
+    },
+    {
+      "Date": "2012-04-25",
+      "NAV": "24.5221",
+      "Market Price": "25.049999",
+      "Premium/Discount": "2.1527"
+    },
+    {
+      "Date": "2012-04-26",
+      "NAV": "24.5229",
+      "Market Price": "25.219999",
+      "Premium/Discount": "2.8426"
+    },
+    {
+      "Date": "2012-04-27",
+      "NAV": "24.3427",
+      "Market Price": "24.92",
+      "Premium/Discount": "2.3716"
+    },
+    {
+      "Date": "2012-04-30",
+      "NAV": "24.3313",
+      "Market Price": "24.360001",
+      "Premium/Discount": "0.118"
+    },
+    {
+      "Date": "2012-05-01",
+      "NAV": "23.8416",
+      "Market Price": "24.200001",
+      "Premium/Discount": "1.5033"
+    },
+    {
+      "Date": "2012-05-02",
+      "NAV": "23.9302",
+      "Market Price": "24.110001",
+      "Premium/Discount": "0.7514"
+    },
+    {
+      "Date": "2012-05-03",
+      "NAV": "23.9306",
+      "Market Price": "23.9",
+      "Premium/Discount": "-0.1279"
+    },
+    {
+      "Date": "2012-05-04",
+      "NAV": "23.927",
+      "Market Price": "23.68",
+      "Premium/Discount": "-1.0323"
+    },
+    {
+      "Date": "2012-05-07",
+      "NAV": "23.2989",
+      "Market Price": "23.799999",
+      "Premium/Discount": "2.1507"
+    },
+    {
+      "Date": "2012-05-08",
+      "NAV": "23.4315",
+      "Market Price": "23.5",
+      "Premium/Discount": "0.2923"
+    },
+    {
+      "Date": "2012-05-09",
+      "NAV": "23.1224",
+      "Market Price": "22.950001",
+      "Premium/Discount": "-0.7456"
+    },
+    {
+      "Date": "2012-05-10",
+      "NAV": "23.0985",
+      "Market Price": "23.280001",
+      "Premium/Discount": "0.7858"
+    },
+    {
+      "Date": "2012-05-11",
+      "NAV": "22.9391",
+      "Market Price": "23.200001",
+      "Premium/Discount": "1.1374"
+    },
+    {
+      "Date": "2012-05-14",
+      "NAV": "22.941",
+      "Market Price": "22.889999",
+      "Premium/Discount": "-0.2223"
+    },
+    {
+      "Date": "2012-05-15",
+      "NAV": "22.662",
+      "Market Price": "22.690001",
+      "Premium/Discount": "0.1236"
+    },
+    {
+      "Date": "2012-05-16",
+      "NAV": "22.4192",
+      "Market Price": "22.51",
+      "Premium/Discount": "0.405"
+    },
+    {
+      "Date": "2012-05-17",
+      "NAV": "22.641",
+      "Market Price": "22.540001",
+      "Premium/Discount": "-0.4461"
+    },
+    {
+      "Date": "2012-05-18",
+      "NAV": "21.9662",
+      "Market Price": "22.030001",
+      "Premium/Discount": "0.2905"
+    },
+    {
+      "Date": "2012-05-21",
+      "NAV": "21.9393",
+      "Market Price": "22.030001",
+      "Premium/Discount": "0.4134"
+    },
+    {
+      "Date": "2012-05-22",
+      "NAV": "22.2289",
+      "Market Price": "22.15",
+      "Premium/Discount": "-0.3549"
+    },
+    {
+      "Date": "2012-05-23",
+      "NAV": "21.8587",
+      "Market Price": "21.85",
+      "Premium/Discount": "-0.0398"
+    },
+    {
+      "Date": "2012-05-24",
+      "NAV": "21.8837",
+      "Market Price": "21.92",
+      "Premium/Discount": "0.1659"
+    },
+    {
+      "Date": "2012-05-25",
+      "NAV": "21.9075",
+      "Market Price": "21.780001",
+      "Premium/Discount": "-0.582"
+    },
+    {
+      "Date": "2012-05-29",
+      "NAV": "22.081",
+      "Market Price": "22.059999",
+      "Premium/Discount": "-0.0951"
+    },
+    {
+      "Date": "2012-05-30",
+      "NAV": "21.9653",
+      "Market Price": "21.83",
+      "Premium/Discount": "-0.616"
+    },
+    {
+      "Date": "2012-05-31",
+      "NAV": "21.7915",
+      "Market Price": "21.9",
+      "Premium/Discount": "0.4979"
+    },
+    {
+      "Date": "2012-06-01",
+      "NAV": "21.4734",
+      "Market Price": "21.129999",
+      "Premium/Discount": "-1.5992"
+    },
+    {
+      "Date": "2012-06-04",
+      "NAV": "21.0622",
+      "Market Price": "21.129999",
+      "Premium/Discount": "0.3219"
+    },
+    {
+      "Date": "2012-06-05",
+      "NAV": "21.443",
+      "Market Price": "21.129999",
+      "Premium/Discount": "-1.4597"
+    },
+    {
+      "Date": "2012-06-06",
+      "NAV": "21.7506",
+      "Market Price": "21.809999",
+      "Premium/Discount": "0.2731"
+    },
+    {
+      "Date": "2012-06-07",
+      "NAV": "22.1175",
+      "Market Price": "22.190001",
+      "Premium/Discount": "0.3278"
+    },
+    {
+      "Date": "2012-06-08",
+      "NAV": "21.7212",
+      "Market Price": "21.780001",
+      "Premium/Discount": "0.2707"
+    },
+    {
+      "Date": "2012-06-11",
+      "NAV": "22.1115",
+      "Market Price": "21.870001",
+      "Premium/Discount": "-1.0922"
+    },
+    {
+      "Date": "2012-06-12",
+      "NAV": "21.918",
+      "Market Price": "22.01",
+      "Premium/Discount": "0.4197"
+    },
+    {
+      "Date": "2012-06-13",
+      "NAV": "21.9876",
+      "Market Price": "21.870001",
+      "Premium/Discount": "-0.5348"
+    },
+    {
+      "Date": "2012-06-14",
+      "NAV": "21.9698",
+      "Market Price": "22.08",
+      "Premium/Discount": "0.5016"
+    },
+    {
+      "Date": "2012-06-15",
+      "NAV": "21.9875",
+      "Market Price": "22.389999",
+      "Premium/Discount": "1.8306"
+    },
+    {
+      "Date": "2012-06-18",
+      "NAV": "22.3605",
+      "Market Price": "22.24",
+      "Premium/Discount": "-0.5389"
+    },
+    {
+      "Date": "2012-06-19",
+      "NAV": "22.2339",
+      "Market Price": "22.440001",
+      "Premium/Discount": "0.927"
+    },
+    {
+      "Date": "2012-06-20",
+      "NAV": "22.6127",
+      "Market Price": "22.530001",
+      "Premium/Discount": "-0.3657"
+    },
+    {
+      "Date": "2012-06-21",
+      "NAV": "22.6614",
+      "Market Price": "22.299999",
+      "Premium/Discount": "-1.5948"
+    },
+    {
+      "Date": "2012-06-22",
+      "NAV": "22.5485",
+      "Market Price": "22.709999",
+      "Premium/Discount": "0.7162"
+    },
+    {
+      "Date": "2012-06-25",
+      "NAV": "22.3763",
+      "Market Price": "22.299999",
+      "Premium/Discount": "-0.341"
+    },
+    {
+      "Date": "2012-06-26",
+      "NAV": "22.1725",
+      "Market Price": "22.35",
+      "Premium/Discount": "0.8005"
+    },
+    {
+      "Date": "2012-06-27",
+      "NAV": "22.3721",
+      "Market Price": "22.5",
+      "Premium/Discount": "0.5717"
+    },
+    {
+      "Date": "2012-06-28",
+      "NAV": "22.7976",
+      "Market Price": "22.799999",
+      "Premium/Discount": "0.0105"
+    },
+    {
+      "Date": "2012-06-29",
+      "NAV": "23.1307",
+      "Market Price": "23.190001",
+      "Premium/Discount": "0.2564"
+    },
+    {
+      "Date": "2012-07-02",
+      "NAV": "23.1181",
+      "Market Price": "23.309999",
+      "Premium/Discount": "0.8301"
+    },
+    {
+      "Date": "2012-07-03",
+      "NAV": "23.3578",
+      "Market Price": "23.42",
+      "Premium/Discount": "0.2663"
+    },
+    {
+      "Date": "2012-07-05",
+      "NAV": "23.3338",
+      "Market Price": "23.33",
+      "Premium/Discount": "-0.0163"
+    },
+    {
+      "Date": "2012-07-06",
+      "NAV": "23.1884",
+      "Market Price": "23.09",
+      "Premium/Discount": "-0.4244"
+    },
+    {
+      "Date": "2012-07-09",
+      "NAV": "22.9274",
+      "Market Price": "22.92",
+      "Premium/Discount": "-0.0323"
+    },
+    {
+      "Date": "2012-07-10",
+      "NAV": "22.7671",
+      "Market Price": "22.799999",
+      "Premium/Discount": "0.1445"
+    },
+    {
+      "Date": "2012-07-11",
+      "NAV": "22.7431",
+      "Market Price": "22.700001",
+      "Premium/Discount": "-0.1895"
+    },
+    {
+      "Date": "2012-07-12",
+      "NAV": "22.4351",
+      "Market Price": "22.559999",
+      "Premium/Discount": "0.5567"
+    },
+    {
+      "Date": "2012-07-13",
+      "NAV": "22.3766",
+      "Market Price": "22.559999",
+      "Premium/Discount": "0.8196"
+    },
+    {
+      "Date": "2012-07-16",
+      "NAV": "22.3754",
+      "Market Price": "22.559999",
+      "Premium/Discount": "0.825"
+    },
+    {
+      "Date": "2012-07-17",
+      "NAV": "22.2974",
+      "Market Price": "22.290001",
+      "Premium/Discount": "-0.0332"
+    },
+    {
+      "Date": "2012-07-18",
+      "NAV": "22.251",
+      "Market Price": "22.4",
+      "Premium/Discount": "0.6696"
+    },
+    {
+      "Date": "2012-07-19",
+      "NAV": "22.449",
+      "Market Price": "22.459999",
+      "Premium/Discount": "0.049"
+    },
+    {
+      "Date": "2012-07-20",
+      "NAV": "22.0463",
+      "Market Price": "21.99",
+      "Premium/Discount": "-0.2554"
+    },
+    {
+      "Date": "2012-07-23",
+      "NAV": "21.6583",
+      "Market Price": "21.450001",
+      "Premium/Discount": "-0.9618"
+    },
+    {
+      "Date": "2012-07-24",
+      "NAV": "21.5398",
+      "Market Price": "21.450001",
+      "Premium/Discount": "-0.4169"
+    },
+    {
+      "Date": "2012-07-25",
+      "NAV": "21.1881",
+      "Market Price": "21.450001",
+      "Premium/Discount": "1.2361"
+    },
+    {
+      "Date": "2012-07-26",
+      "NAV": "21.4096",
+      "Market Price": "21.450001",
+      "Premium/Discount": "0.1887"
+    },
+    {
+      "Date": "2012-07-27",
+      "NAV": "21.7981",
+      "Market Price": "21.84",
+      "Premium/Discount": "0.1922"
+    },
+    {
+      "Date": "2012-07-30",
+      "NAV": "21.9316",
+      "Market Price": "21.969999",
+      "Premium/Discount": "0.1751"
+    },
+    {
+      "Date": "2012-07-31",
+      "NAV": "22.1024",
+      "Market Price": "21.969999",
+      "Premium/Discount": "-0.599"
+    },
+    {
+      "Date": "2012-08-01",
+      "NAV": "21.9009",
+      "Market Price": "21.969999",
+      "Premium/Discount": "0.3155"
+    },
+    {
+      "Date": "2012-08-02",
+      "NAV": "22.0157",
+      "Market Price": "21.969999",
+      "Premium/Discount": "-0.2076"
+    },
+    {
+      "Date": "2012-08-03",
+      "NAV": "21.7716",
+      "Market Price": "21.700001",
+      "Premium/Discount": "-0.3289"
+    },
+    {
+      "Date": "2012-08-06",
+      "NAV": "22.1519",
+      "Market Price": "22.190001",
+      "Premium/Discount": "0.172"
+    },
+    {
+      "Date": "2012-08-07",
+      "NAV": "22.4126",
+      "Market Price": "22.190001",
+      "Premium/Discount": "-0.9932"
+    },
+    {
+      "Date": "2012-08-08",
+      "NAV": "22.4476",
+      "Market Price": "22.190001",
+      "Premium/Discount": "-1.1476"
+    },
+    {
+      "Date": "2012-08-09",
+      "NAV": "22.6441",
+      "Market Price": "22.23",
+      "Premium/Discount": "-1.8287"
+    },
+    {
+      "Date": "2012-08-10",
+      "NAV": "22.4737",
+      "Market Price": "22.23",
+      "Premium/Discount": "-1.0844"
+    },
+    {
+      "Date": "2012-08-13",
+      "NAV": "22.4783",
+      "Market Price": "22.469999",
+      "Premium/Discount": "-0.0369"
+    },
+    {
+      "Date": "2012-08-14",
+      "NAV": "22.513",
+      "Market Price": "22.469999",
+      "Premium/Discount": "-0.191"
+    },
+    {
+      "Date": "2012-08-15",
+      "NAV": "22.4472",
+      "Market Price": "22.469999",
+      "Premium/Discount": "0.1016"
+    },
+    {
+      "Date": "2012-08-16",
+      "NAV": "22.8257",
+      "Market Price": "22.74",
+      "Premium/Discount": "-0.3755"
+    },
+    {
+      "Date": "2012-08-17",
+      "NAV": "23.0289",
+      "Market Price": "22.74",
+      "Premium/Discount": "-1.2545"
+    },
+    {
+      "Date": "2012-08-20",
+      "NAV": "22.9943",
+      "Market Price": "22.91",
+      "Premium/Discount": "-0.3666"
+    },
+    {
+      "Date": "2012-08-21",
+      "NAV": "22.9981",
+      "Market Price": "22.91",
+      "Premium/Discount": "-0.3831"
+    },
+    {
+      "Date": "2012-08-22",
+      "NAV": "22.9439",
+      "Market Price": "22.700001",
+      "Premium/Discount": "-1.063"
+    },
+    {
+      "Date": "2012-08-23",
+      "NAV": "23.0076",
+      "Market Price": "22.700001",
+      "Premium/Discount": "-1.3369"
+    },
+    {
+      "Date": "2012-08-24",
+      "NAV": "22.7756",
+      "Market Price": "22.719999",
+      "Premium/Discount": "-0.2441"
+    },
+    {
+      "Date": "2012-08-27",
+      "NAV": "22.7269",
+      "Market Price": "22.559999",
+      "Premium/Discount": "-0.7344"
+    },
+    {
+      "Date": "2012-08-28",
+      "NAV": "22.4651",
+      "Market Price": "22.48",
+      "Premium/Discount": "0.0663"
+    },
+    {
+      "Date": "2012-08-29",
+      "NAV": "22.5798",
+      "Market Price": "22.48",
+      "Premium/Discount": "-0.442"
+    },
+    {
+      "Date": "2012-08-30",
+      "NAV": "22.3931",
+      "Market Price": "22.15",
+      "Premium/Discount": "-1.0856"
+    },
+    {
+      "Date": "2012-08-31",
+      "NAV": "22.0005",
+      "Market Price": "22.01",
+      "Premium/Discount": "0.0432"
+    },
+    {
+      "Date": "2012-09-04",
+      "NAV": "21.8624",
+      "Market Price": "21.4",
+      "Premium/Discount": "-2.115"
+    },
+    {
+      "Date": "2012-09-05",
+      "NAV": "21.6052",
+      "Market Price": "21.370001",
+      "Premium/Discount": "-1.0886"
+    },
+    {
+      "Date": "2012-09-06",
+      "NAV": "21.6599",
+      "Market Price": "21.950001",
+      "Premium/Discount": "1.3393"
+    },
+    {
+      "Date": "2012-09-07",
+      "NAV": "22.1995",
+      "Market Price": "22.139999",
+      "Premium/Discount": "-0.268"
+    },
+    {
+      "Date": "2012-09-10",
+      "NAV": "22.2496",
+      "Market Price": "22.139999",
+      "Premium/Discount": "-0.4926"
+    },
+    {
+      "Date": "2012-09-11",
+      "NAV": "22.0799",
+      "Market Price": "22.049999",
+      "Premium/Discount": "-0.1354"
+    },
+    {
+      "Date": "2012-09-12",
+      "NAV": "22.377",
+      "Market Price": "22.049999",
+      "Premium/Discount": "-1.4613"
+    },
+    {
+      "Date": "2012-09-13",
+      "NAV": "22.4431",
+      "Market Price": "22.559999",
+      "Premium/Discount": "0.5209"
+    },
+    {
+      "Date": "2012-09-14",
+      "NAV": "22.8572",
+      "Market Price": "22.68",
+      "Premium/Discount": "-0.7752"
+    },
+    {
+      "Date": "2012-09-17",
+      "NAV": "22.8554",
+      "Market Price": "22.799999",
+      "Premium/Discount": "-0.2424"
+    },
+    {
+      "Date": "2012-09-18",
+      "NAV": "22.8863",
+      "Market Price": "22.799999",
+      "Premium/Discount": "-0.3771"
+    },
+    {
+      "Date": "2012-09-19",
+      "NAV": "23.1002",
+      "Market Price": "22.75",
+      "Premium/Discount": "-1.516"
+    },
+    {
+      "Date": "2012-09-20",
+      "NAV": "22.7457",
+      "Market Price": "22.42",
+      "Premium/Discount": "-1.4319"
+    },
+    {
+      "Date": "2012-09-21",
+      "NAV": "22.8173",
+      "Market Price": "22.42",
+      "Premium/Discount": "-1.7412"
+    },
+    {
+      "Date": "2012-09-24",
+      "NAV": "22.7164",
+      "Market Price": "22.389999",
+      "Premium/Discount": "-1.4369"
+    },
+    {
+      "Date": "2012-09-25",
+      "NAV": "22.8232",
+      "Market Price": "22.389999",
+      "Premium/Discount": "-1.8981"
+    },
+    {
+      "Date": "2012-09-26",
+      "NAV": "22.5358",
+      "Market Price": "22.389999",
+      "Premium/Discount": "-0.647"
+    },
+    {
+      "Date": "2012-09-27",
+      "NAV": "22.6472",
+      "Market Price": "22.26",
+      "Premium/Discount": "-1.7097"
+    },
+    {
+      "Date": "2012-09-28",
+      "NAV": "22.3854",
+      "Market Price": "21.82",
+      "Premium/Discount": "-2.5258"
+    },
+    {
+      "Date": "2012-10-01",
+      "NAV": "22.2244",
+      "Market Price": "21.82",
+      "Premium/Discount": "-1.8196"
+    },
+    {
+      "Date": "2012-10-02",
+      "NAV": "22.2162",
+      "Market Price": "21.82",
+      "Premium/Discount": "-1.7834"
+    },
+    {
+      "Date": "2012-10-03",
+      "NAV": "22.1236",
+      "Market Price": "21.870001",
+      "Premium/Discount": "-1.1463"
+    },
+    {
+      "Date": "2012-10-04",
+      "NAV": "22.3672",
+      "Market Price": "21.870001",
+      "Premium/Discount": "-2.2229"
+    },
+    {
+      "Date": "2012-10-05",
+      "NAV": "22.4044",
+      "Market Price": "22.26",
+      "Premium/Discount": "-0.6445"
+    },
+    {
+      "Date": "2012-10-08",
+      "NAV": "22.4033",
+      "Market Price": "22.26",
+      "Premium/Discount": "-0.6396"
+    },
+    {
+      "Date": "2012-10-09",
+      "NAV": "22.1165",
+      "Market Price": "22.26",
+      "Premium/Discount": "0.6488"
+    },
+    {
+      "Date": "2012-10-10",
+      "NAV": "21.7923",
+      "Market Price": "22.26",
+      "Premium/Discount": "2.1462"
+    },
+    {
+      "Date": "2012-10-11",
+      "NAV": "21.7238",
+      "Market Price": "22.26",
+      "Premium/Discount": "2.4683"
+    },
+    {
+      "Date": "2012-10-12",
+      "NAV": "21.8575",
+      "Market Price": "22.26",
+      "Premium/Discount": "1.8415"
+    },
+    {
+      "Date": "2012-10-15",
+      "NAV": "22.0044",
+      "Market Price": "22.26",
+      "Premium/Discount": "1.1616"
+    },
+    {
+      "Date": "2012-10-16",
+      "NAV": "22.2991",
+      "Market Price": "22.34",
+      "Premium/Discount": "0.1834"
+    },
+    {
+      "Date": "2012-10-17",
+      "NAV": "22.5065",
+      "Market Price": "22.51",
+      "Premium/Discount": "0.0156"
+    },
+    {
+      "Date": "2012-10-18",
+      "NAV": "22.8939",
+      "Market Price": "22.75",
+      "Premium/Discount": "-0.6286"
+    },
+    {
+      "Date": "2012-10-19",
+      "NAV": "22.9486",
+      "Market Price": "22.620001",
+      "Premium/Discount": "-1.4319"
+    },
+    {
+      "Date": "2012-10-22",
+      "NAV": "22.9356",
+      "Market Price": "22.719999",
+      "Premium/Discount": "-0.94"
+    },
+    {
+      "Date": "2012-10-23",
+      "NAV": "22.8104",
+      "Market Price": "22.389999",
+      "Premium/Discount": "-1.843"
+    },
+    {
+      "Date": "2012-10-24",
+      "NAV": "22.6131",
+      "Market Price": "22.540001",
+      "Premium/Discount": "-0.3233"
+    },
+    {
+      "Date": "2012-10-25",
+      "NAV": "22.8454",
+      "Market Price": "22.67",
+      "Premium/Discount": "-0.7678"
+    },
+    {
+      "Date": "2012-10-26",
+      "NAV": "22.5234",
+      "Market Price": "22.370001",
+      "Premium/Discount": "-0.6811"
+    },
+    {
+      "Date": "2012-10-31",
+      "NAV": "22.5596",
+      "Market Price": "23.9",
+      "Premium/Discount": "5.9416"
+    },
+    {
+      "Date": "2012-11-01",
+      "NAV": "22.5678",
+      "Market Price": "22.9",
+      "Premium/Discount": "1.472"
+    },
+    {
+      "Date": "2012-11-02",
+      "NAV": "22.8311",
+      "Market Price": "22.950001",
+      "Premium/Discount": "0.5208"
+    },
+    {
+      "Date": "2012-11-05",
+      "NAV": "22.7087",
+      "Market Price": "22.610001",
+      "Premium/Discount": "-0.4346"
+    },
+    {
+      "Date": "2012-11-06",
+      "NAV": "22.6365",
+      "Market Price": "22.6",
+      "Premium/Discount": "-0.1612"
+    },
+    {
+      "Date": "2012-11-07",
+      "NAV": "22.6835",
+      "Market Price": "22.4",
+      "Premium/Discount": "-1.2498"
+    },
+    {
+      "Date": "2012-11-08",
+      "NAV": "22.3687",
+      "Market Price": "22.4",
+      "Premium/Discount": "0.1399"
+    },
+    {
+      "Date": "2012-11-09",
+      "NAV": "22.2231",
+      "Market Price": "22.4",
+      "Premium/Discount": "0.796"
+    },
+    {
+      "Date": "2012-11-12",
+      "NAV": "21.9726",
+      "Market Price": "21.75",
+      "Premium/Discount": "-1.0131"
+    },
+    {
+      "Date": "2012-11-13",
+      "NAV": "21.9693",
+      "Market Price": "21.799999",
+      "Premium/Discount": "-0.7706"
+    },
+    {
+      "Date": "2012-11-14",
+      "NAV": "21.9479",
+      "Market Price": "21.66",
+      "Premium/Discount": "-1.3117"
+    },
+    {
+      "Date": "2012-11-15",
+      "NAV": "22.4225",
+      "Market Price": "22.07",
+      "Premium/Discount": "-1.5721"
+    },
+    {
+      "Date": "2012-11-16",
+      "NAV": "22.8716",
+      "Market Price": "22.75",
+      "Premium/Discount": "-0.5317"
+    },
+    {
+      "Date": "2012-11-19",
+      "NAV": "23.1933",
+      "Market Price": "23.23",
+      "Premium/Discount": "0.1582"
+    },
+    {
+      "Date": "2012-11-20",
+      "NAV": "23.1698",
+      "Market Price": "23.23",
+      "Premium/Discount": "0.2598"
+    },
+    {
+      "Date": "2012-11-21",
+      "NAV": "23.3193",
+      "Market Price": "23.200001",
+      "Premium/Discount": "-0.5116"
+    },
+    {
+      "Date": "2012-11-23",
+      "NAV": "23.6118",
+      "Market Price": "23.74",
+      "Premium/Discount": "0.5429"
+    },
+    {
+      "Date": "2012-11-26",
+      "NAV": "23.7114",
+      "Market Price": "23.370001",
+      "Premium/Discount": "-1.4398"
+    },
+    {
+      "Date": "2012-11-27",
+      "NAV": "23.7421",
+      "Market Price": "23.559999",
+      "Premium/Discount": "-0.767"
+    },
+    {
+      "Date": "2012-11-28",
+      "NAV": "23.4454",
+      "Market Price": "23.27",
+      "Premium/Discount": "-0.7481"
+    },
+    {
+      "Date": "2012-11-29",
+      "NAV": "23.6832",
+      "Market Price": "23.639999",
+      "Premium/Discount": "-0.1824"
+    },
+    {
+      "Date": "2012-11-30",
+      "NAV": "23.771",
+      "Market Price": "23.67",
+      "Premium/Discount": "-0.4249"
+    },
+    {
+      "Date": "2012-12-03",
+      "NAV": "23.7694",
+      "Market Price": "23.67",
+      "Premium/Discount": "-0.4182"
+    },
+    {
+      "Date": "2012-12-04",
+      "NAV": "23.7524",
+      "Market Price": "23.67",
+      "Premium/Discount": "-0.3469"
+    },
+    {
+      "Date": "2012-12-05",
+      "NAV": "23.7555",
+      "Market Price": "23.67",
+      "Premium/Discount": "-0.3599"
+    },
+    {
+      "Date": "2012-12-06",
+      "NAV": "23.9446",
+      "Market Price": "23.709999",
+      "Premium/Discount": "-0.9798"
+    },
+    {
+      "Date": "2012-12-07",
+      "NAV": "24.0003",
+      "Market Price": "23.959999",
+      "Premium/Discount": "-0.1679"
+    },
+    {
+      "Date": "2012-12-10",
+      "NAV": "23.9441",
+      "Market Price": "23.959999",
+      "Premium/Discount": "0.0664"
+    },
+    {
+      "Date": "2012-12-11",
+      "NAV": "23.8664",
+      "Market Price": "24.030001",
+      "Premium/Discount": "0.6855"
+    },
+    {
+      "Date": "2012-12-12",
+      "NAV": "24.0259",
+      "Market Price": "24.200001",
+      "Premium/Discount": "0.7246"
+    },
+    {
+      "Date": "2012-12-13",
+      "NAV": "24.2745",
+      "Market Price": "24.18",
+      "Premium/Discount": "-0.3893"
+    },
+    {
+      "Date": "2012-12-14",
+      "NAV": "24.3419",
+      "Market Price": "24.290001",
+      "Premium/Discount": "-0.2132"
+    },
+    {
+      "Date": "2012-12-17",
+      "NAV": "24.5555",
+      "Market Price": "24.41",
+      "Premium/Discount": "-0.5925"
+    },
+    {
+      "Date": "2012-12-18",
+      "NAV": "24.82",
+      "Market Price": "24.99",
+      "Premium/Discount": "0.6849"
+    },
+    {
+      "Date": "2012-12-19",
+      "NAV": "25.2505",
+      "Market Price": "25.469999",
+      "Premium/Discount": "0.8693"
+    },
+    {
+      "Date": "2012-12-20",
+      "NAV": "25.22",
+      "Market Price": "25.83",
+      "Premium/Discount": "2.4187"
+    },
+    {
+      "Date": "2012-12-21",
+      "NAV": "25.0315",
+      "Market Price": "25.690001",
+      "Premium/Discount": "2.6307"
+    },
+    {
+      "Date": "2012-12-24",
+      "NAV": "25.0207",
+      "Market Price": "25.610001",
+      "Premium/Discount": "2.3553"
+    },
+    {
+      "Date": "2012-12-26",
+      "NAV": "25.4539",
+      "Market Price": "26.1",
+      "Premium/Discount": "2.5383"
+    },
+    {
+      "Date": "2012-12-27",
+      "NAV": "25.6366",
+      "Market Price": "26.23",
+      "Premium/Discount": "2.3147"
+    },
+    {
+      "Date": "2012-12-28",
+      "NAV": "25.8257",
+      "Market Price": "26.1",
+      "Premium/Discount": "1.0621"
+    },
+    {
+      "Date": "2012-12-31",
+      "NAV": "25.8091",
+      "Market Price": "26.35",
+      "Premium/Discount": "2.0958"
+    },
+    {
+      "Date": "2013-01-02",
+      "NAV": "25.8126",
+      "Market Price": "27.280001",
+      "Premium/Discount": "5.6848"
+    },
+    {
+      "Date": "2013-01-03",
+      "NAV": "25.8122",
+      "Market Price": "27.200001",
+      "Premium/Discount": "5.3765"
+    },
+    {
+      "Date": "2013-01-04",
+      "NAV": "26.6808",
+      "Market Price": "27",
+      "Premium/Discount": "1.1964"
+    },
+    {
+      "Date": "2013-01-07",
+      "NAV": "26.4444",
+      "Market Price": "26.860001",
+      "Premium/Discount": "1.5716"
+    },
+    {
+      "Date": "2013-01-08",
+      "NAV": "26.1572",
+      "Market Price": "26.27",
+      "Premium/Discount": "0.4312"
+    },
+    {
+      "Date": "2013-01-09",
+      "NAV": "26.3577",
+      "Market Price": "26.43",
+      "Premium/Discount": "0.2743"
+    },
+    {
+      "Date": "2013-01-10",
+      "NAV": "26.6639",
+      "Market Price": "26.950001",
+      "Premium/Discount": "1.073"
+    },
+    {
+      "Date": "2013-01-11",
+      "NAV": "26.9599",
+      "Market Price": "26.969999",
+      "Premium/Discount": "0.0375"
+    },
+    {
+      "Date": "2013-01-14",
+      "NAV": "26.9563",
+      "Market Price": "27.51",
+      "Premium/Discount": "2.0541"
+    },
+    {
+      "Date": "2013-01-15",
+      "NAV": "27.195",
+      "Market Price": "27.379999",
+      "Premium/Discount": "0.6803"
+    },
+    {
+      "Date": "2013-01-16",
+      "NAV": "26.6344",
+      "Market Price": "26.92",
+      "Premium/Discount": "1.0723"
+    },
+    {
+      "Date": "2013-01-17",
+      "NAV": "26.7141",
+      "Market Price": "27.1",
+      "Premium/Discount": "1.4446"
+    },
+    {
+      "Date": "2013-01-18",
+      "NAV": "27.3232",
+      "Market Price": "27.469999",
+      "Premium/Discount": "0.5373"
+    },
+    {
+      "Date": "2013-01-22",
+      "NAV": "27.0023",
+      "Market Price": "27.16",
+      "Premium/Discount": "0.584"
+    },
+    {
+      "Date": "2013-01-23",
+      "NAV": "26.5917",
+      "Market Price": "26.860001",
+      "Premium/Discount": "1.009"
+    },
+    {
+      "Date": "2013-01-24",
+      "NAV": "26.8636",
+      "Market Price": "27.33",
+      "Premium/Discount": "1.7362"
+    },
+    {
+      "Date": "2013-01-25",
+      "NAV": "27.4324",
+      "Market Price": "27.82",
+      "Premium/Discount": "1.4129"
+    },
+    {
+      "Date": "2013-01-28",
+      "NAV": "27.315",
+      "Market Price": "27.41",
+      "Premium/Discount": "0.3478"
+    },
+    {
+      "Date": "2013-01-29",
+      "NAV": "27.5493",
+      "Market Price": "27.59",
+      "Premium/Discount": "0.1477"
+    },
+    {
+      "Date": "2013-01-30",
+      "NAV": "27.9294",
+      "Market Price": "27.98",
+      "Premium/Discount": "0.1812"
+    },
+    {
+      "Date": "2013-01-31",
+      "NAV": "28.076",
+      "Market Price": "28.15",
+      "Premium/Discount": "0.2636"
+    },
+    {
+      "Date": "2013-02-01",
+      "NAV": "28.1353",
+      "Market Price": "28.030001",
+      "Premium/Discount": "-0.3743"
+    },
+    {
+      "Date": "2013-02-04",
+      "NAV": "28.53",
+      "Market Price": "28.6",
+      "Premium/Discount": "0.2454"
+    },
+    {
+      "Date": "2013-02-05",
+      "NAV": "28.0374",
+      "Market Price": "28.940001",
+      "Premium/Discount": "3.2193"
+    },
+    {
+      "Date": "2013-02-06",
+      "NAV": "28.9597",
+      "Market Price": "29.27",
+      "Premium/Discount": "1.0715"
+    },
+    {
+      "Date": "2013-02-07",
+      "NAV": "28.9529",
+      "Market Price": "29.370001",
+      "Premium/Discount": "1.4406"
+    },
+    {
+      "Date": "2013-02-08",
+      "NAV": "28.6088",
+      "Market Price": "29.030001",
+      "Premium/Discount": "1.4723"
+    },
+    {
+      "Date": "2013-02-11",
+      "NAV": "28.5996",
+      "Market Price": "29.77",
+      "Premium/Discount": "4.0924"
+    },
+    {
+      "Date": "2013-02-12",
+      "NAV": "28.9631",
+      "Market Price": "29.23",
+      "Premium/Discount": "0.9215"
+    },
+    {
+      "Date": "2013-02-13",
+      "NAV": "28.6467",
+      "Market Price": "29.15",
+      "Premium/Discount": "1.7569"
+    },
+    {
+      "Date": "2013-02-14",
+      "NAV": "28.5915",
+      "Market Price": "28.790001",
+      "Premium/Discount": "0.6943"
+    },
+    {
+      "Date": "2013-02-15",
+      "NAV": "28.2371",
+      "Market Price": "28.5",
+      "Premium/Discount": "0.931"
+    },
+    {
+      "Date": "2013-02-19",
+      "NAV": "28.7971",
+      "Market Price": "28.93",
+      "Premium/Discount": "0.4615"
+    },
+    {
+      "Date": "2013-02-20",
+      "NAV": "29.1059",
+      "Market Price": "29.280001",
+      "Premium/Discount": "0.5982"
+    },
+    {
+      "Date": "2013-02-21",
+      "NAV": "28.7644",
+      "Market Price": "28.530001",
+      "Premium/Discount": "-0.8149"
+    },
+    {
+      "Date": "2013-02-22",
+      "NAV": "28.7854",
+      "Market Price": "29.200001",
+      "Premium/Discount": "1.4403"
+    },
+    {
+      "Date": "2013-02-25",
+      "NAV": "29.3353",
+      "Market Price": "28.299999",
+      "Premium/Discount": "-3.5292"
+    },
+    {
+      "Date": "2013-02-26",
+      "NAV": "28.8879",
+      "Market Price": "28.610001",
+      "Premium/Discount": "-0.962"
+    },
+    {
+      "Date": "2013-02-27",
+      "NAV": "28.4723",
+      "Market Price": "28.68",
+      "Premium/Discount": "0.7295"
+    },
+    {
+      "Date": "2013-02-28",
+      "NAV": "29.1353",
+      "Market Price": "29.190001",
+      "Premium/Discount": "0.1877"
+    },
+    {
+      "Date": "2013-03-01",
+      "NAV": "29.3832",
+      "Market Price": "29.639999",
+      "Premium/Discount": "0.874"
+    },
+    {
+      "Date": "2013-03-04",
+      "NAV": "29.6048",
+      "Market Price": "29.75",
+      "Premium/Discount": "0.4905"
+    },
+    {
+      "Date": "2013-03-05",
+      "NAV": "29.4859",
+      "Market Price": "29.860001",
+      "Premium/Discount": "1.2687"
+    },
+    {
+      "Date": "2013-03-06",
+      "NAV": "29.9227",
+      "Market Price": "30.48",
+      "Premium/Discount": "1.8625"
+    },
+    {
+      "Date": "2013-03-07",
+      "NAV": "29.9591",
+      "Market Price": "30.4",
+      "Premium/Discount": "1.4717"
+    },
+    {
+      "Date": "2013-03-08",
+      "NAV": "30.4258",
+      "Market Price": "30.82",
+      "Premium/Discount": "1.2956"
+    },
+    {
+      "Date": "2013-03-11",
+      "NAV": "30.9852",
+      "Market Price": "31.32",
+      "Premium/Discount": "1.0805"
+    },
+    {
+      "Date": "2013-03-12",
+      "NAV": "30.9042",
+      "Market Price": "30.83",
+      "Premium/Discount": "-0.2401"
+    },
+    {
+      "Date": "2013-03-13",
+      "NAV": "30.7514",
+      "Market Price": "30.959999",
+      "Premium/Discount": "0.6783"
+    },
+    {
+      "Date": "2013-03-14",
+      "NAV": "30.9475",
+      "Market Price": "31.299999",
+      "Premium/Discount": "1.139"
+    },
+    {
+      "Date": "2013-03-15",
+      "NAV": "31.3684",
+      "Market Price": "31.299999",
+      "Premium/Discount": "-0.2181"
+    },
+    {
+      "Date": "2013-03-18",
+      "NAV": "30.6424",
+      "Market Price": "31.1",
+      "Premium/Discount": "1.4934"
+    },
+    {
+      "Date": "2013-03-19",
+      "NAV": "31.1732",
+      "Market Price": "31.219999",
+      "Premium/Discount": "0.1501"
+    },
+    {
+      "Date": "2013-03-20",
+      "NAV": "31.1432",
+      "Market Price": "31.76",
+      "Premium/Discount": "1.9805"
+    },
+    {
+      "Date": "2013-03-21",
+      "NAV": "31.5237",
+      "Market Price": "31.299999",
+      "Premium/Discount": "-0.7096"
+    },
+    {
+      "Date": "2013-03-22",
+      "NAV": "30.9787",
+      "Market Price": "31.450001",
+      "Premium/Discount": "1.5214"
+    },
+    {
+      "Date": "2013-03-25",
+      "NAV": "31.2733",
+      "Market Price": "30.99",
+      "Premium/Discount": "-0.9059"
+    },
+    {
+      "Date": "2013-03-26",
+      "NAV": "31.153",
+      "Market Price": "31.540001",
+      "Premium/Discount": "1.2423"
+    },
+    {
+      "Date": "2013-03-27",
+      "NAV": "31.4484",
+      "Market Price": "31.66",
+      "Premium/Discount": "0.6728"
+    },
+    {
+      "Date": "2013-03-28",
+      "NAV": "31.1364",
+      "Market Price": "31.32",
+      "Premium/Discount": "0.5897"
+    },
+    {
+      "Date": "2013-04-01",
+      "NAV": "30.1185",
+      "Market Price": "29.969999",
+      "Premium/Discount": "-0.4931"
+    },
+    {
+      "Date": "2013-04-02",
+      "NAV": "29.8297",
+      "Market Price": "30.34",
+      "Premium/Discount": "1.7107"
+    },
+    {
+      "Date": "2013-04-03",
+      "NAV": "30.3938",
+      "Market Price": "30.190001",
+      "Premium/Discount": "-0.6705"
+    },
+    {
+      "Date": "2013-04-04",
+      "NAV": "31.2327",
+      "Market Price": "32.290001",
+      "Premium/Discount": "3.3852"
+    },
+    {
+      "Date": "2013-04-05",
+      "NAV": "32.086",
+      "Market Price": "33",
+      "Premium/Discount": "2.8486"
+    },
+    {
+      "Date": "2013-04-08",
+      "NAV": "33.0637",
+      "Market Price": "33.900002",
+      "Premium/Discount": "2.5294"
+    },
+    {
+      "Date": "2013-04-09",
+      "NAV": "33.0752",
+      "Market Price": "33.580002",
+      "Premium/Discount": "1.5262"
+    },
+    {
+      "Date": "2013-04-10",
+      "NAV": "33.6412",
+      "Market Price": "34.369999",
+      "Premium/Discount": "2.1664"
+    },
+    {
+      "Date": "2013-04-11",
+      "NAV": "34.4748",
+      "Market Price": "34.720001",
+      "Premium/Discount": "0.7112"
+    },
+    {
+      "Date": "2013-04-12",
+      "NAV": "34.5677",
+      "Market Price": "34.48",
+      "Premium/Discount": "-0.2537"
+    },
+    {
+      "Date": "2013-04-15",
+      "NAV": "34.1739",
+      "Market Price": "33.48",
+      "Premium/Discount": "-2.0305"
+    },
+    {
+      "Date": "2013-04-16",
+      "NAV": "33.704",
+      "Market Price": "34.240002",
+      "Premium/Discount": "1.5903"
+    },
+    {
+      "Date": "2013-04-17",
+      "NAV": "34.1677",
+      "Market Price": "33.970001",
+      "Premium/Discount": "-0.5786"
+    },
+    {
+      "Date": "2013-04-18",
+      "NAV": "33.7522",
+      "Market Price": "33.82",
+      "Premium/Discount": "0.2009"
+    },
+    {
+      "Date": "2013-04-19",
+      "NAV": "33.821",
+      "Market Price": "34.639999",
+      "Premium/Discount": "2.4216"
+    },
+    {
+      "Date": "2013-04-22",
+      "NAV": "34.3235",
+      "Market Price": "34.540001",
+      "Premium/Discount": "0.6308"
+    },
+    {
+      "Date": "2013-04-23",
+      "NAV": "34.2233",
+      "Market Price": "34.860001",
+      "Premium/Discount": "1.8604"
+    },
+    {
+      "Date": "2013-04-24",
+      "NAV": "34.7989",
+      "Market Price": "35.189999",
+      "Premium/Discount": "1.1239"
+    },
+    {
+      "Date": "2013-04-25",
+      "NAV": "35.0358",
+      "Market Price": "35.290001",
+      "Premium/Discount": "0.7255"
+    },
+    {
+      "Date": "2013-04-26",
+      "NAV": "34.7895",
+      "Market Price": "34.700001",
+      "Premium/Discount": "-0.2573"
+    },
+    {
+      "Date": "2013-04-29",
+      "NAV": "34.8019",
+      "Market Price": "35.080002",
+      "Premium/Discount": "0.7991"
+    },
+    {
+      "Date": "2013-04-30",
+      "NAV": "34.8945",
+      "Market Price": "35.16",
+      "Premium/Discount": "0.7609"
+    },
+    {
+      "Date": "2013-05-01",
+      "NAV": "34.6377",
+      "Market Price": "34.689999",
+      "Premium/Discount": "0.151"
+    },
+    {
+      "Date": "2013-05-02",
+      "NAV": "34.4699",
+      "Market Price": "34.970001",
+      "Premium/Discount": "1.4508"
+    },
+    {
+      "Date": "2013-05-03",
+      "NAV": "34.475",
+      "Market Price": "35.790001",
+      "Premium/Discount": "3.8144"
+    },
+    {
+      "Date": "2013-05-06",
+      "NAV": "34.4765",
+      "Market Price": "35.869999",
+      "Premium/Discount": "4.0419"
+    },
+    {
+      "Date": "2013-05-07",
+      "NAV": "35.4778",
+      "Market Price": "35.669998",
+      "Premium/Discount": "0.5417"
+    },
+    {
+      "Date": "2013-05-08",
+      "NAV": "35.696",
+      "Market Price": "35.93",
+      "Premium/Discount": "0.6555"
+    },
+    {
+      "Date": "2013-05-09",
+      "NAV": "35.3056",
+      "Market Price": "36.360001",
+      "Premium/Discount": "2.9865"
+    },
+    {
+      "Date": "2013-05-10",
+      "NAV": "36.1599",
+      "Market Price": "36.720001",
+      "Premium/Discount": "1.549"
+    },
+    {
+      "Date": "2013-05-13",
+      "NAV": "36.8062",
+      "Market Price": "37.220001",
+      "Premium/Discount": "1.1243"
+    },
+    {
+      "Date": "2013-05-14",
+      "NAV": "36.7157",
+      "Market Price": "37.540001",
+      "Premium/Discount": "2.2451"
+    },
+    {
+      "Date": "2013-05-15",
+      "NAV": "37.5223",
+      "Market Price": "37.84",
+      "Premium/Discount": "0.8467"
+    },
+    {
+      "Date": "2013-05-16",
+      "NAV": "37.3302",
+      "Market Price": "37.330002",
+      "Premium/Discount": "-0.0005"
+    },
+    {
+      "Date": "2013-05-17",
+      "NAV": "37.4844",
+      "Market Price": "38.23",
+      "Premium/Discount": "1.9891"
+    },
+    {
+      "Date": "2013-05-20",
+      "NAV": "38.0077",
+      "Market Price": "38.099998",
+      "Premium/Discount": "0.2428"
+    },
+    {
+      "Date": "2013-05-21",
+      "NAV": "38.0343",
+      "Market Price": "38.360001",
+      "Premium/Discount": "0.8563"
+    },
+    {
+      "Date": "2013-05-22",
+      "NAV": "38.188",
+      "Market Price": "38.130001",
+      "Premium/Discount": "-0.1519"
+    },
+    {
+      "Date": "2013-05-23",
+      "NAV": "35.7401",
+      "Market Price": "36.25",
+      "Premium/Discount": "1.4267"
+    },
+    {
+      "Date": "2013-05-24",
+      "NAV": "35.8306",
+      "Market Price": "35.130001",
+      "Premium/Discount": "-1.9553"
+    },
+    {
+      "Date": "2013-05-28",
+      "NAV": "35.1235",
+      "Market Price": "35.52",
+      "Premium/Discount": "1.1289"
+    },
+    {
+      "Date": "2013-05-29",
+      "NAV": "35.37",
+      "Market Price": "34.48",
+      "Premium/Discount": "-2.5163"
+    },
+    {
+      "Date": "2013-05-30",
+      "NAV": "34.1072",
+      "Market Price": "34.299999",
+      "Premium/Discount": "0.5653"
+    },
+    {
+      "Date": "2013-05-31",
+      "NAV": "34.0758",
+      "Market Price": "33.349998",
+      "Premium/Discount": "-2.13"
+    },
+    {
+      "Date": "2013-06-03",
+      "NAV": "32.8807",
+      "Market Price": "32.700001",
+      "Premium/Discount": "-0.5496"
+    },
+    {
+      "Date": "2013-06-04",
+      "NAV": "33.8128",
+      "Market Price": "33.860001",
+      "Premium/Discount": "0.1396"
+    },
+    {
+      "Date": "2013-06-05",
+      "NAV": "32.6448",
+      "Market Price": "32.32",
+      "Premium/Discount": "-0.995"
+    },
+    {
+      "Date": "2013-06-06",
+      "NAV": "32.0944",
+      "Market Price": "31.49",
+      "Premium/Discount": "-1.8832"
+    },
+    {
+      "Date": "2013-06-07",
+      "NAV": "31.7052",
+      "Market Price": "32.75",
+      "Premium/Discount": "3.2954"
+    },
+    {
+      "Date": "2013-06-10",
+      "NAV": "33.4111",
+      "Market Price": "33.669998",
+      "Premium/Discount": "0.7749"
+    },
+    {
+      "Date": "2013-06-11",
+      "NAV": "33.076",
+      "Market Price": "32.290001",
+      "Premium/Discount": "-2.3763"
+    },
+    {
+      "Date": "2013-06-12",
+      "NAV": "32.9026",
+      "Market Price": "32.220001",
+      "Premium/Discount": "-2.0746"
+    },
+    {
+      "Date": "2013-06-13",
+      "NAV": "31.1756",
+      "Market Price": "32.470001",
+      "Premium/Discount": "4.152"
+    },
+    {
+      "Date": "2013-06-14",
+      "NAV": "31.5873",
+      "Market Price": "31.360001",
+      "Premium/Discount": "-0.7196"
+    },
+    {
+      "Date": "2013-06-17",
+      "NAV": "32.4476",
+      "Market Price": "32.259998",
+      "Premium/Discount": "-0.5782"
+    },
+    {
+      "Date": "2013-06-18",
+      "NAV": "32.5512",
+      "Market Price": "32.98",
+      "Premium/Discount": "1.3173"
+    },
+    {
+      "Date": "2013-06-19",
+      "NAV": "33.2034",
+      "Market Price": "33.18",
+      "Premium/Discount": "-0.0705"
+    },
+    {
+      "Date": "2013-06-20",
+      "NAV": "32.7121",
+      "Market Price": "32.189999",
+      "Premium/Discount": "-1.596"
+    },
+    {
+      "Date": "2013-06-21",
+      "NAV": "32.9823",
+      "Market Price": "33.439999",
+      "Premium/Discount": "1.3877"
+    },
+    {
+      "Date": "2013-06-24",
+      "NAV": "32.617",
+      "Market Price": "32.509998",
+      "Premium/Discount": "-0.3281"
+    },
+    {
+      "Date": "2013-06-25",
+      "NAV": "32.282",
+      "Market Price": "32.950001",
+      "Premium/Discount": "2.0693"
+    },
+    {
+      "Date": "2013-06-26",
+      "NAV": "32.0841",
+      "Market Price": "32.720001",
+      "Premium/Discount": "1.982"
+    },
+    {
+      "Date": "2013-06-27",
+      "NAV": "32.398",
+      "Market Price": "33.07",
+      "Premium/Discount": "2.0742"
+    },
+    {
+      "Date": "2013-06-28",
+      "NAV": "33.4479",
+      "Market Price": "33.720001",
+      "Premium/Discount": "0.8135"
+    },
+    {
+      "Date": "2013-07-01",
+      "NAV": "33.9271",
+      "Market Price": "34.16",
+      "Premium/Discount": "0.6865"
+    },
+    {
+      "Date": "2013-07-02",
+      "NAV": "34.5326",
+      "Market Price": "34.73",
+      "Premium/Discount": "0.5716"
+    },
+    {
+      "Date": "2013-07-03",
+      "NAV": "34.5942",
+      "Market Price": "34.5",
+      "Premium/Discount": "-0.2723"
+    },
+    {
+      "Date": "2013-07-05",
+      "NAV": "34.9728",
+      "Market Price": "35.610001",
+      "Premium/Discount": "1.822"
+    },
+    {
+      "Date": "2013-07-08",
+      "NAV": "34.5032",
+      "Market Price": "35.25",
+      "Premium/Discount": "2.1644"
+    },
+    {
+      "Date": "2013-07-09",
+      "NAV": "35.2162",
+      "Market Price": "35.34",
+      "Premium/Discount": "0.3515"
+    },
+    {
+      "Date": "2013-07-10",
+      "NAV": "35.1882",
+      "Market Price": "34.799999",
+      "Premium/Discount": "-1.1032"
+    },
+    {
+      "Date": "2013-07-11",
+      "NAV": "35.2139",
+      "Market Price": "35.509998",
+      "Premium/Discount": "0.8409"
+    },
+    {
+      "Date": "2013-07-12",
+      "NAV": "35.4139",
+      "Market Price": "35.709999",
+      "Premium/Discount": "0.8361"
+    },
+    {
+      "Date": "2013-07-15",
+      "NAV": "35.4013",
+      "Market Price": "36.07",
+      "Premium/Discount": "1.8889"
+    },
+    {
+      "Date": "2013-07-16",
+      "NAV": "35.698",
+      "Market Price": "35.419998",
+      "Premium/Discount": "-0.7788"
+    },
+    {
+      "Date": "2013-07-17",
+      "NAV": "35.7481",
+      "Market Price": "36.049999",
+      "Premium/Discount": "0.8445"
+    },
+    {
+      "Date": "2013-07-18",
+      "NAV": "35.9828",
+      "Market Price": "36.529999",
+      "Premium/Discount": "1.5207"
+    },
+    {
+      "Date": "2013-07-19",
+      "NAV": "35.7184",
+      "Market Price": "36.279999",
+      "Premium/Discount": "1.5723"
+    },
+    {
+      "Date": "2013-07-22",
+      "NAV": "35.8602",
+      "Market Price": "35.990002",
+      "Premium/Discount": "0.362"
+    },
+    {
+      "Date": "2013-07-23",
+      "NAV": "36.0501",
+      "Market Price": "35.950001",
+      "Premium/Discount": "-0.2777"
+    },
+    {
+      "Date": "2013-07-24",
+      "NAV": "35.922",
+      "Market Price": "35.860001",
+      "Premium/Discount": "-0.1726"
+    },
+    {
+      "Date": "2013-07-25",
+      "NAV": "35.4343",
+      "Market Price": "34.959999",
+      "Premium/Discount": "-1.3385"
+    },
+    {
+      "Date": "2013-07-26",
+      "NAV": "34.3913",
+      "Market Price": "33.830002",
+      "Premium/Discount": "-1.6321"
+    },
+    {
+      "Date": "2013-07-29",
+      "NAV": "33.2548",
+      "Market Price": "32.860001",
+      "Premium/Discount": "-1.1872"
+    },
+    {
+      "Date": "2013-07-30",
+      "NAV": "33.8133",
+      "Market Price": "33.32",
+      "Premium/Discount": "-1.4589"
+    },
+    {
+      "Date": "2013-07-31",
+      "NAV": "33.3141",
+      "Market Price": "33.220001",
+      "Premium/Discount": "-0.2825"
+    },
+    {
+      "Date": "2013-08-01",
+      "NAV": "34.2781",
+      "Market Price": "34.66",
+      "Premium/Discount": "1.1141"
+    },
+    {
+      "Date": "2013-08-02",
+      "NAV": "35.2427",
+      "Market Price": "34.919998",
+      "Premium/Discount": "-0.9157"
+    },
+    {
+      "Date": "2013-08-05",
+      "NAV": "34.8813",
+      "Market Price": "34.830002",
+      "Premium/Discount": "-0.1471"
+    },
+    {
+      "Date": "2013-08-06",
+      "NAV": "35.142",
+      "Market Price": "34.73",
+      "Premium/Discount": "-1.1724"
+    },
+    {
+      "Date": "2013-08-07",
+      "NAV": "33.9762",
+      "Market Price": "33.59",
+      "Premium/Discount": "-1.1367"
+    },
+    {
+      "Date": "2013-08-08",
+      "NAV": "33.5042",
+      "Market Price": "33.549999",
+      "Premium/Discount": "0.1367"
+    },
+    {
+      "Date": "2013-08-09",
+      "NAV": "33.5535",
+      "Market Price": "33.32",
+      "Premium/Discount": "-0.6959"
+    },
+    {
+      "Date": "2013-08-12",
+      "NAV": "33.3701",
+      "Market Price": "33.57",
+      "Premium/Discount": "0.599"
+    },
+    {
+      "Date": "2013-08-13",
+      "NAV": "34.0324",
+      "Market Price": "34.27",
+      "Premium/Discount": "0.6982"
+    },
+    {
+      "Date": "2013-08-14",
+      "NAV": "34.4575",
+      "Market Price": "34.07",
+      "Premium/Discount": "-1.1246"
+    },
+    {
+      "Date": "2013-08-15",
+      "NAV": "33.8868",
+      "Market Price": "33.419998",
+      "Premium/Discount": "-1.3775"
+    },
+    {
+      "Date": "2013-08-16",
+      "NAV": "33.5974",
+      "Market Price": "33.419998",
+      "Premium/Discount": "-0.528"
+    },
+    {
+      "Date": "2013-08-19",
+      "NAV": "33.7886",
+      "Market Price": "33.310001",
+      "Premium/Discount": "-1.4165"
+    },
+    {
+      "Date": "2013-08-20",
+      "NAV": "33.0395",
+      "Market Price": "33.110001",
+      "Premium/Discount": "0.2134"
+    },
+    {
+      "Date": "2013-08-21",
+      "NAV": "32.9185",
+      "Market Price": "32.669998",
+      "Premium/Discount": "-0.7549"
+    },
+    {
+      "Date": "2013-08-22",
+      "NAV": "32.829",
+      "Market Price": "33.290001",
+      "Premium/Discount": "1.4042"
+    },
+    {
+      "Date": "2013-08-23",
+      "NAV": "33.5116",
+      "Market Price": "33.740002",
+      "Premium/Discount": "0.6816"
+    },
+    {
+      "Date": "2013-08-26",
+      "NAV": "33.4549",
+      "Market Price": "33.290001",
+      "Premium/Discount": "-0.4929"
+    },
+    {
+      "Date": "2013-08-27",
+      "NAV": "33.2767",
+      "Market Price": "32.43",
+      "Premium/Discount": "-2.5444"
+    },
+    {
+      "Date": "2013-08-28",
+      "NAV": "32.7009",
+      "Market Price": "32.790001",
+      "Premium/Discount": "0.2725"
+    },
+    {
+      "Date": "2013-08-29",
+      "NAV": "32.7849",
+      "Market Price": "32.970001",
+      "Premium/Discount": "0.5646"
+    },
+    {
+      "Date": "2013-08-30",
+      "NAV": "32.4945",
+      "Market Price": "32.240002",
+      "Premium/Discount": "-0.7832"
+    },
+    {
+      "Date": "2013-09-03",
+      "NAV": "33.7678",
+      "Market Price": "33.459999",
+      "Premium/Discount": "-0.9115"
+    },
+    {
+      "Date": "2013-09-04",
+      "NAV": "33.966",
+      "Market Price": "34.040001",
+      "Premium/Discount": "0.2179"
+    },
+    {
+      "Date": "2013-09-05",
+      "NAV": "34.0284",
+      "Market Price": "34.130001",
+      "Premium/Discount": "0.2986"
+    },
+    {
+      "Date": "2013-09-06",
+      "NAV": "33.7436",
+      "Market Price": "33.82",
+      "Premium/Discount": "0.2264"
+    },
+    {
+      "Date": "2013-09-09",
+      "NAV": "34.4351",
+      "Market Price": "34.790001",
+      "Premium/Discount": "1.0306"
+    },
+    {
+      "Date": "2013-09-10",
+      "NAV": "34.9035",
+      "Market Price": "35.360001",
+      "Premium/Discount": "1.3079"
+    },
+    {
+      "Date": "2013-09-11",
+      "NAV": "34.9069",
+      "Market Price": "35.040001",
+      "Premium/Discount": "0.3813"
+    },
+    {
+      "Date": "2013-09-12",
+      "NAV": "34.7496",
+      "Market Price": "34.639999",
+      "Premium/Discount": "-0.3154"
+    },
+    {
+      "Date": "2013-09-13",
+      "NAV": "34.7493",
+      "Market Price": "34.790001",
+      "Premium/Discount": "0.1171"
+    },
+    {
+      "Date": "2013-09-16",
+      "NAV": "34.7511",
+      "Market Price": "35.169998",
+      "Premium/Discount": "1.2054"
+    },
+    {
+      "Date": "2013-09-17",
+      "NAV": "34.6152",
+      "Market Price": "35.060001",
+      "Premium/Discount": "1.285"
+    },
+    {
+      "Date": "2013-09-18",
+      "NAV": "35.0077",
+      "Market Price": "35.73",
+      "Premium/Discount": "2.0633"
+    },
+    {
+      "Date": "2013-09-19",
+      "NAV": "35.6136",
+      "Market Price": "35.959999",
+      "Premium/Discount": "0.9727"
+    },
+    {
+      "Date": "2013-09-20",
+      "NAV": "35.7111",
+      "Market Price": "35.720001",
+      "Premium/Discount": "0.0249"
+    },
+    {
+      "Date": "2013-09-23",
+      "NAV": "35.727",
+      "Market Price": "35.560001",
+      "Premium/Discount": "-0.4674"
+    },
+    {
+      "Date": "2013-09-24",
+      "NAV": "35.5849",
+      "Market Price": "35.599998",
+      "Premium/Discount": "0.0424"
+    },
+    {
+      "Date": "2013-09-25",
+      "NAV": "35.5308",
+      "Market Price": "35.439999",
+      "Premium/Discount": "-0.2556"
+    },
+    {
+      "Date": "2013-09-26",
+      "NAV": "36.0184",
+      "Market Price": "36.310001",
+      "Premium/Discount": "0.8096"
+    },
+    {
+      "Date": "2013-09-27",
+      "NAV": "35.9427",
+      "Market Price": "35.689999",
+      "Premium/Discount": "-0.7031"
+    },
+    {
+      "Date": "2013-09-30",
+      "NAV": "35.2166",
+      "Market Price": "35.419998",
+      "Premium/Discount": "0.5776"
+    },
+    {
+      "Date": "2013-10-01",
+      "NAV": "35.1989",
+      "Market Price": "35.119999",
+      "Premium/Discount": "-0.2242"
+    },
+    {
+      "Date": "2013-10-02",
+      "NAV": "34.6505",
+      "Market Price": "34.84",
+      "Premium/Discount": "0.5469"
+    },
+    {
+      "Date": "2013-10-03",
+      "NAV": "34.6535",
+      "Market Price": "34.459999",
+      "Premium/Discount": "-0.5584"
+    },
+    {
+      "Date": "2013-10-04",
+      "NAV": "34.3505",
+      "Market Price": "34.669998",
+      "Premium/Discount": "0.9301"
+    },
+    {
+      "Date": "2013-10-07",
+      "NAV": "33.8646",
+      "Market Price": "33.75",
+      "Premium/Discount": "-0.3384"
+    },
+    {
+      "Date": "2013-10-08",
+      "NAV": "33.9109",
+      "Market Price": "33.59",
+      "Premium/Discount": "-0.9463"
+    },
+    {
+      "Date": "2013-10-09",
+      "NAV": "34.4109",
+      "Market Price": "34.580002",
+      "Premium/Discount": "0.4914"
+    },
+    {
+      "Date": "2013-10-10",
+      "NAV": "34.7657",
+      "Market Price": "35.459999",
+      "Premium/Discount": "1.9971"
+    },
+    {
+      "Date": "2013-10-11",
+      "NAV": "35.3035",
+      "Market Price": "35.580002",
+      "Premium/Discount": "0.7832"
+    },
+    {
+      "Date": "2013-10-14",
+      "NAV": "35.3034",
+      "Market Price": "35.630001",
+      "Premium/Discount": "0.9251"
+    },
+    {
+      "Date": "2013-10-15",
+      "NAV": "35.3222",
+      "Market Price": "35.290001",
+      "Premium/Discount": "-0.0912"
+    },
+    {
+      "Date": "2013-10-16",
+      "NAV": "35.3172",
+      "Market Price": "35.799999",
+      "Premium/Discount": "1.367"
+    },
+    {
+      "Date": "2013-10-17",
+      "NAV": "35.5842",
+      "Market Price": "35.759998",
+      "Premium/Discount": "0.494"
+    },
+    {
+      "Date": "2013-10-18",
+      "NAV": "35.5549",
+      "Market Price": "35.82",
+      "Premium/Discount": "0.7456"
+    },
+    {
+      "Date": "2013-10-21",
+      "NAV": "35.7507",
+      "Market Price": "35.77",
+      "Premium/Discount": "0.054"
+    },
+    {
+      "Date": "2013-10-22",
+      "NAV": "35.8084",
+      "Market Price": "36.049999",
+      "Premium/Discount": "0.6747"
+    },
+    {
+      "Date": "2013-10-23",
+      "NAV": "35.2683",
+      "Market Price": "35.080002",
+      "Premium/Discount": "-0.5339"
+    },
+    {
+      "Date": "2013-10-24",
+      "NAV": "35.4571",
+      "Market Price": "35.360001",
+      "Premium/Discount": "-0.2738"
+    },
+    {
+      "Date": "2013-10-25",
+      "NAV": "34.691",
+      "Market Price": "34.84",
+      "Premium/Discount": "0.4295"
+    },
+    {
+      "Date": "2013-10-28",
+      "NAV": "35.3039",
+      "Market Price": "35.07",
+      "Premium/Discount": "-0.6625"
+    },
+    {
+      "Date": "2013-10-29",
+      "NAV": "35.1647",
+      "Market Price": "35.59",
+      "Premium/Discount": "1.2095"
+    },
+    {
+      "Date": "2013-10-30",
+      "NAV": "35.5126",
+      "Market Price": "35.75",
+      "Premium/Discount": "0.6685"
+    },
+    {
+      "Date": "2013-10-31",
+      "NAV": "35.2057",
+      "Market Price": "35.360001",
+      "Premium/Discount": "0.4383"
+    },
+    {
+      "Date": "2013-11-01",
+      "NAV": "34.9037",
+      "Market Price": "35.25",
+      "Premium/Discount": "0.9922"
+    },
+    {
+      "Date": "2013-11-04",
+      "NAV": "34.9038",
+      "Market Price": "35.25",
+      "Premium/Discount": "0.9919"
+    },
+    {
+      "Date": "2013-11-05",
+      "NAV": "34.8856",
+      "Market Price": "34.939999",
+      "Premium/Discount": "0.1559"
+    },
+    {
+      "Date": "2013-11-06",
+      "NAV": "35.1538",
+      "Market Price": "35.389999",
+      "Premium/Discount": "0.6719"
+    },
+    {
+      "Date": "2013-11-07",
+      "NAV": "34.9334",
+      "Market Price": "34.52",
+      "Premium/Discount": "-1.1834"
+    },
+    {
+      "Date": "2013-11-08",
+      "NAV": "34.6787",
+      "Market Price": "35.189999",
+      "Premium/Discount": "1.4744"
+    },
+    {
+      "Date": "2013-11-11",
+      "NAV": "34.978",
+      "Market Price": "35.09",
+      "Premium/Discount": "0.3202"
+    },
+    {
+      "Date": "2013-11-12",
+      "NAV": "35.5558",
+      "Market Price": "35.790001",
+      "Premium/Discount": "0.6587"
+    },
+    {
+      "Date": "2013-11-13",
+      "NAV": "35.5129",
+      "Market Price": "35.939999",
+      "Premium/Discount": "1.2027"
+    },
+    {
+      "Date": "2013-11-14",
+      "NAV": "35.9353",
+      "Market Price": "36.439999",
+      "Premium/Discount": "1.4045"
+    },
+    {
+      "Date": "2013-11-15",
+      "NAV": "36.5529",
+      "Market Price": "37.009998",
+      "Premium/Discount": "1.2505"
+    },
+    {
+      "Date": "2013-11-18",
+      "NAV": "36.6375",
+      "Market Price": "36.849998",
+      "Premium/Discount": "0.58"
+    },
+    {
+      "Date": "2013-11-19",
+      "NAV": "36.4864",
+      "Market Price": "36.700001",
+      "Premium/Discount": "0.5854"
+    },
+    {
+      "Date": "2013-11-20",
+      "NAV": "36.3792",
+      "Market Price": "36.630001",
+      "Premium/Discount": "0.6894"
+    },
+    {
+      "Date": "2013-11-21",
+      "NAV": "36.7459",
+      "Market Price": "37.130001",
+      "Premium/Discount": "1.0453"
+    },
+    {
+      "Date": "2013-11-22",
+      "NAV": "36.8452",
+      "Market Price": "37.240002",
+      "Premium/Discount": "1.0715"
+    },
+    {
+      "Date": "2013-11-25",
+      "NAV": "37.1675",
+      "Market Price": "36.959999",
+      "Premium/Discount": "-0.5583"
+    },
+    {
+      "Date": "2013-11-26",
+      "NAV": "36.9593",
+      "Market Price": "36.790001",
+      "Premium/Discount": "-0.4581"
+    },
+    {
+      "Date": "2013-11-27",
+      "NAV": "36.8075",
+      "Market Price": "37.209999",
+      "Premium/Discount": "1.0935"
+    },
+    {
+      "Date": "2013-11-29",
+      "NAV": "37.1653",
+      "Market Price": "37.380001",
+      "Premium/Discount": "0.5777"
+    },
+    {
+      "Date": "2013-12-02",
+      "NAV": "37.1423",
+      "Market Price": "37.389999",
+      "Premium/Discount": "0.6669"
+    },
+    {
+      "Date": "2013-12-03",
+      "NAV": "37.2612",
+      "Market Price": "36.959999",
+      "Premium/Discount": "-0.8084"
+    },
+    {
+      "Date": "2013-12-04",
+      "NAV": "36.6036",
+      "Market Price": "36.619999",
+      "Premium/Discount": "0.0448"
+    },
+    {
+      "Date": "2013-12-05",
+      "NAV": "36.2585",
+      "Market Price": "36.25",
+      "Premium/Discount": "-0.0234"
+    },
+    {
+      "Date": "2013-12-06",
+      "NAV": "36.4529",
+      "Market Price": "37.07",
+      "Premium/Discount": "1.6929"
+    },
+    {
+      "Date": "2013-12-09",
+      "NAV": "37.0435",
+      "Market Price": "37.150002",
+      "Premium/Discount": "0.2875"
+    },
+    {
+      "Date": "2013-12-10",
+      "NAV": "37.0685",
+      "Market Price": "36.98",
+      "Premium/Discount": "-0.2387"
+    },
+    {
+      "Date": "2013-12-11",
+      "NAV": "36.8895",
+      "Market Price": "36.639999",
+      "Premium/Discount": "-0.6763"
+    },
+    {
+      "Date": "2013-12-12",
+      "NAV": "36.6306",
+      "Market Price": "37.049999",
+      "Premium/Discount": "1.1449"
+    },
+    {
+      "Date": "2013-12-13",
+      "NAV": "36.5437",
+      "Market Price": "36.75",
+      "Premium/Discount": "0.5645"
+    },
+    {
+      "Date": "2013-12-16",
+      "NAV": "36.0659",
+      "Market Price": "36.400002",
+      "Premium/Discount": "0.9264"
+    },
+    {
+      "Date": "2013-12-17",
+      "NAV": "36.3256",
+      "Market Price": "36.330002",
+      "Premium/Discount": "0.0121"
+    },
+    {
+      "Date": "2013-12-18",
+      "NAV": "36.9062",
+      "Market Price": "37.470001",
+      "Premium/Discount": "1.5277"
+    },
+    {
+      "Date": "2013-12-19",
+      "NAV": "37.3137",
+      "Market Price": "37.259998",
+      "Premium/Discount": "-0.1439"
+    },
+    {
+      "Date": "2013-12-20",
+      "NAV": "37.1883",
+      "Market Price": "37.310001",
+      "Premium/Discount": "0.3273"
+    },
+    {
+      "Date": "2013-12-23",
+      "NAV": "37.1887",
+      "Market Price": "37.619999",
+      "Premium/Discount": "1.1598"
+    },
+    {
+      "Date": "2013-12-24",
+      "NAV": "37.095",
+      "Market Price": "37.150002",
+      "Premium/Discount": "0.1483"
+    },
+    {
+      "Date": "2013-12-26",
+      "NAV": "37.7201",
+      "Market Price": "37.93",
+      "Premium/Discount": "0.5565"
+    },
+    {
+      "Date": "2013-12-27",
+      "NAV": "37.9839",
+      "Market Price": "38.32",
+      "Premium/Discount": "0.8848"
+    },
+    {
+      "Date": "2013-12-30",
+      "NAV": "38.3242",
+      "Market Price": "39",
+      "Premium/Discount": "1.7634"
+    },
+    {
+      "Date": "2013-12-31",
+      "NAV": "38.3197",
+      "Market Price": "38.740002",
+      "Premium/Discount": "1.0968"
+    },
+    {
+      "Date": "2014-01-02",
+      "NAV": "38.3214",
+      "Market Price": "37.98",
+      "Premium/Discount": "-0.8909"
+    },
+    {
+      "Date": "2014-01-03",
+      "NAV": "38.3202",
+      "Market Price": "38.09",
+      "Premium/Discount": "-0.6007"
+    },
+    {
+      "Date": "2014-01-06",
+      "NAV": "37.9632",
+      "Market Price": "37.740002",
+      "Premium/Discount": "-0.5879"
+    },
+    {
+      "Date": "2014-01-07",
+      "NAV": "37.6944",
+      "Market Price": "38.09",
+      "Premium/Discount": "1.0495"
+    },
+    {
+      "Date": "2014-01-08",
+      "NAV": "38.3562",
+      "Market Price": "38.220001",
+      "Premium/Discount": "-0.3551"
+    },
+    {
+      "Date": "2014-01-09",
+      "NAV": "38.0751",
+      "Market Price": "38.09",
+      "Premium/Discount": "0.0391"
+    },
+    {
+      "Date": "2014-01-10",
+      "NAV": "38.1036",
+      "Market Price": "38.02",
+      "Premium/Discount": "-0.2194"
+    },
+    {
+      "Date": "2014-01-13",
+      "NAV": "38.101",
+      "Market Price": "37.34",
+      "Premium/Discount": "-1.9973"
+    },
+    {
+      "Date": "2014-01-14",
+      "NAV": "37.2177",
+      "Market Price": "37.790001",
+      "Premium/Discount": "1.5377"
+    },
+    {
+      "Date": "2014-01-15",
+      "NAV": "37.9787",
+      "Market Price": "38.189999",
+      "Premium/Discount": "0.5564"
+    },
+    {
+      "Date": "2014-01-16",
+      "NAV": "37.982",
+      "Market Price": "37.84",
+      "Premium/Discount": "-0.3739"
+    },
+    {
+      "Date": "2014-01-17",
+      "NAV": "38.0182",
+      "Market Price": "38.09",
+      "Premium/Discount": "0.1889"
+    },
+    {
+      "Date": "2014-01-21",
+      "NAV": "37.9675",
+      "Market Price": "38.18",
+      "Premium/Discount": "0.5597"
+    },
+    {
+      "Date": "2014-01-22",
+      "NAV": "38.0857",
+      "Market Price": "38.27",
+      "Premium/Discount": "0.4839"
+    },
+    {
+      "Date": "2014-01-23",
+      "NAV": "37.7426",
+      "Market Price": "37.110001",
+      "Premium/Discount": "-1.6761"
+    },
+    {
+      "Date": "2014-01-24",
+      "NAV": "37.0301",
+      "Market Price": "36.130001",
+      "Premium/Discount": "-2.4307"
+    },
+    {
+      "Date": "2014-01-27",
+      "NAV": "35.9987",
+      "Market Price": "35.900002",
+      "Premium/Discount": "-0.2742"
+    },
+    {
+      "Date": "2014-01-28",
+      "NAV": "35.8481",
+      "Market Price": "36.189999",
+      "Premium/Discount": "0.9537"
+    },
+    {
+      "Date": "2014-01-29",
+      "NAV": "36.759",
+      "Market Price": "35.84",
+      "Premium/Discount": "-2.5001"
+    },
+    {
+      "Date": "2014-01-30",
+      "NAV": "35.806",
+      "Market Price": "36.099998",
+      "Premium/Discount": "0.8211"
+    },
+    {
+      "Date": "2014-01-31",
+      "NAV": "35.6749",
+      "Market Price": "35.07",
+      "Premium/Discount": "-1.6956"
+    },
+    {
+      "Date": "2014-02-03",
+      "NAV": "34.971",
+      "Market Price": "33.77",
+      "Premium/Discount": "-3.4343"
+    },
+    {
+      "Date": "2014-02-04",
+      "NAV": "33.3723",
+      "Market Price": "34.130001",
+      "Premium/Discount": "2.2704"
+    },
+    {
+      "Date": "2014-02-05",
+      "NAV": "34.0744",
+      "Market Price": "34.16",
+      "Premium/Discount": "0.2512"
+    },
+    {
+      "Date": "2014-02-06",
+      "NAV": "34.0291",
+      "Market Price": "34.779999",
+      "Premium/Discount": "2.2066"
+    },
+    {
+      "Date": "2014-02-07",
+      "NAV": "34.8234",
+      "Market Price": "35.400002",
+      "Premium/Discount": "1.6558"
+    },
+    {
+      "Date": "2014-02-10",
+      "NAV": "35.2647",
+      "Market Price": "35.169998",
+      "Premium/Discount": "-0.2685"
+    },
+    {
+      "Date": "2014-02-11",
+      "NAV": "35.2678",
+      "Market Price": "35.84",
+      "Premium/Discount": "1.6224"
+    },
+    {
+      "Date": "2014-02-12",
+      "NAV": "35.7044",
+      "Market Price": "35.77",
+      "Premium/Discount": "0.1837"
+    },
+    {
+      "Date": "2014-02-13",
+      "NAV": "35.1107",
+      "Market Price": "35.400002",
+      "Premium/Discount": "0.824"
+    },
+    {
+      "Date": "2014-02-14",
+      "NAV": "34.6512",
+      "Market Price": "35",
+      "Premium/Discount": "1.0066"
+    },
+    {
+      "Date": "2014-02-18",
+      "NAV": "35.8458",
+      "Market Price": "35.93",
+      "Premium/Discount": "0.2349"
+    },
+    {
+      "Date": "2014-02-19",
+      "NAV": "35.695",
+      "Market Price": "35.490002",
+      "Premium/Discount": "-0.5743"
+    },
+    {
+      "Date": "2014-02-20",
+      "NAV": "35.0055",
+      "Market Price": "35.349998",
+      "Premium/Discount": "0.9841"
+    },
+    {
+      "Date": "2014-02-21",
+      "NAV": "35.8107",
+      "Market Price": "35.709999",
+      "Premium/Discount": "-0.2812"
+    },
+    {
+      "Date": "2014-02-24",
+      "NAV": "35.7022",
+      "Market Price": "36.060001",
+      "Premium/Discount": "1.0022"
+    },
+    {
+      "Date": "2014-02-25",
+      "NAV": "36.1277",
+      "Market Price": "35.799999",
+      "Premium/Discount": "-0.9071"
+    },
+    {
+      "Date": "2014-02-26",
+      "NAV": "35.9206",
+      "Market Price": "35.799999",
+      "Premium/Discount": "-0.3357"
+    },
+    {
+      "Date": "2014-02-27",
+      "NAV": "35.6913",
+      "Market Price": "35.66",
+      "Premium/Discount": "-0.0877"
+    },
+    {
+      "Date": "2014-02-28",
+      "NAV": "35.5228",
+      "Market Price": "35.700001",
+      "Premium/Discount": "0.4988"
+    },
+    {
+      "Date": "2014-03-03",
+      "NAV": "35.079",
+      "Market Price": "34.73",
+      "Premium/Discount": "-0.9949"
+    },
+    {
+      "Date": "2014-03-04",
+      "NAV": "35.2795",
+      "Market Price": "35.91",
+      "Premium/Discount": "1.7872"
+    },
+    {
+      "Date": "2014-03-05",
+      "NAV": "35.53",
+      "Market Price": "35.540001",
+      "Premium/Discount": "0.0281"
+    },
+    {
+      "Date": "2014-03-06",
+      "NAV": "35.9937",
+      "Market Price": "36.41",
+      "Premium/Discount": "1.1566"
+    },
+    {
+      "Date": "2014-03-07",
+      "NAV": "36.2324",
+      "Market Price": "36.259998",
+      "Premium/Discount": "0.0762"
+    },
+    {
+      "Date": "2014-03-10",
+      "NAV": "35.9379",
+      "Market Price": "36.200001",
+      "Premium/Discount": "0.7293"
+    },
+    {
+      "Date": "2014-03-11",
+      "NAV": "36.0939",
+      "Market Price": "35.669998",
+      "Premium/Discount": "-1.1744"
+    },
+    {
+      "Date": "2014-03-12",
+      "NAV": "35.3208",
+      "Market Price": "35.299999",
+      "Premium/Discount": "-0.0589"
+    },
+    {
+      "Date": "2014-03-13",
+      "NAV": "35.2014",
+      "Market Price": "34.360001",
+      "Premium/Discount": "-2.3902"
+    },
+    {
+      "Date": "2014-03-14",
+      "NAV": "34.0441",
+      "Market Price": "33.84",
+      "Premium/Discount": "-0.5995"
+    },
+    {
+      "Date": "2014-03-17",
+      "NAV": "33.8113",
+      "Market Price": "34.330002",
+      "Premium/Discount": "1.5341"
+    },
+    {
+      "Date": "2014-03-18",
+      "NAV": "34.0686",
+      "Market Price": "34.240002",
+      "Premium/Discount": "0.5031"
+    },
+    {
+      "Date": "2014-03-19",
+      "NAV": "34.0548",
+      "Market Price": "34.41",
+      "Premium/Discount": "1.043"
+    },
+    {
+      "Date": "2014-03-20",
+      "NAV": "33.5239",
+      "Market Price": "33.790001",
+      "Premium/Discount": "0.7938"
+    },
+    {
+      "Date": "2014-03-21",
+      "NAV": "33.5168",
+      "Market Price": "33.610001",
+      "Premium/Discount": "0.2781"
+    },
+    {
+      "Date": "2014-03-24",
+      "NAV": "33.9534",
+      "Market Price": "33.849998",
+      "Premium/Discount": "-0.3045"
+    },
+    {
+      "Date": "2014-03-25",
+      "NAV": "33.9695",
+      "Market Price": "33.970001",
+      "Premium/Discount": "0.0015"
+    },
+    {
+      "Date": "2014-03-26",
+      "NAV": "34.2256",
+      "Market Price": "34",
+      "Premium/Discount": "-0.6592"
+    },
+    {
+      "Date": "2014-03-27",
+      "NAV": "34.6583",
+      "Market Price": "34.57",
+      "Premium/Discount": "-0.2548"
+    },
+    {
+      "Date": "2014-03-28",
+      "NAV": "34.914",
+      "Market Price": "35.169998",
+      "Premium/Discount": "0.7332"
+    },
+    {
+      "Date": "2014-03-31",
+      "NAV": "35.3966",
+      "Market Price": "35.360001",
+      "Premium/Discount": "-0.1034"
+    },
+    {
+      "Date": "2014-04-01",
+      "NAV": "35.4223",
+      "Market Price": "35.57",
+      "Premium/Discount": "0.417"
+    },
+    {
+      "Date": "2014-04-02",
+      "NAV": "35.6551",
+      "Market Price": "35.93",
+      "Premium/Discount": "0.771"
+    },
+    {
+      "Date": "2014-04-03",
+      "NAV": "35.8289",
+      "Market Price": "35.860001",
+      "Premium/Discount": "0.0868"
+    },
+    {
+      "Date": "2014-04-04",
+      "NAV": "35.8075",
+      "Market Price": "35.400002",
+      "Premium/Discount": "-1.138"
+    },
+    {
+      "Date": "2014-04-07",
+      "NAV": "35.2575",
+      "Market Price": "35.029999",
+      "Premium/Discount": "-0.6453"
+    },
+    {
+      "Date": "2014-04-08",
+      "NAV": "34.6057",
+      "Market Price": "33.84",
+      "Premium/Discount": "-2.2126"
+    },
+    {
+      "Date": "2014-04-09",
+      "NAV": "33.9063",
+      "Market Price": "34.360001",
+      "Premium/Discount": "1.3381"
+    },
+    {
+      "Date": "2014-04-10",
+      "NAV": "33.8616",
+      "Market Price": "33.23",
+      "Premium/Discount": "-1.8652"
+    },
+    {
+      "Date": "2014-04-11",
+      "NAV": "33.3962",
+      "Market Price": "33.209999",
+      "Premium/Discount": "-0.5576"
+    },
+    {
+      "Date": "2014-04-14",
+      "NAV": "33.3741",
+      "Market Price": "33.689999",
+      "Premium/Discount": "0.9465"
+    },
+    {
+      "Date": "2014-04-15",
+      "NAV": "33.4547",
+      "Market Price": "33.700001",
+      "Premium/Discount": "0.7332"
+    },
+    {
+      "Date": "2014-04-16",
+      "NAV": "34.3656",
+      "Market Price": "34.509998",
+      "Premium/Discount": "0.4202"
+    },
+    {
+      "Date": "2014-04-17",
+      "NAV": "34.3545",
+      "Market Price": "34.580002",
+      "Premium/Discount": "0.6564"
+    },
+    {
+      "Date": "2014-04-21",
+      "NAV": "34.5016",
+      "Market Price": "34.610001",
+      "Premium/Discount": "0.3142"
+    },
+    {
+      "Date": "2014-04-22",
+      "NAV": "34.2664",
+      "Market Price": "34.5",
+      "Premium/Discount": "0.6817"
+    },
+    {
+      "Date": "2014-04-23",
+      "NAV": "34.5961",
+      "Market Price": "34.490002",
+      "Premium/Discount": "-0.3067"
+    },
+    {
+      "Date": "2014-04-24",
+      "NAV": "34.2853",
+      "Market Price": "34.290001",
+      "Premium/Discount": "0.0137"
+    },
+    {
+      "Date": "2014-04-25",
+      "NAV": "34.4176",
+      "Market Price": "34.080002",
+      "Premium/Discount": "-0.9809"
+    },
+    {
+      "Date": "2014-04-28",
+      "NAV": "34.1389",
+      "Market Price": "34.330002",
+      "Premium/Discount": "0.5598"
+    },
+    {
+      "Date": "2014-04-29",
+      "NAV": "34.1394",
+      "Market Price": "34.5",
+      "Premium/Discount": "1.0563"
+    },
+    {
+      "Date": "2014-04-30",
+      "NAV": "34.211",
+      "Market Price": "34.18",
+      "Premium/Discount": "-0.0906"
+    },
+    {
+      "Date": "2014-05-01",
+      "NAV": "34.7749",
+      "Market Price": "34.66",
+      "Premium/Discount": "-0.3304"
+    },
+    {
+      "Date": "2014-05-02",
+      "NAV": "34.7915",
+      "Market Price": "34.599998",
+      "Premium/Discount": "-0.5504"
+    },
+    {
+      "Date": "2014-05-05",
+      "NAV": "34.7915",
+      "Market Price": "34.509998",
+      "Premium/Discount": "-0.8091"
+    },
+    {
+      "Date": "2014-05-06",
+      "NAV": "34.7938",
+      "Market Price": "34.200001",
+      "Premium/Discount": "-1.7066"
+    },
+    {
+      "Date": "2014-05-07",
+      "NAV": "33.9264",
+      "Market Price": "34.169998",
+      "Premium/Discount": "0.718"
+    },
+    {
+      "Date": "2014-05-08",
+      "NAV": "34.1741",
+      "Market Price": "33.93",
+      "Premium/Discount": "-0.7143"
+    },
+    {
+      "Date": "2014-05-09",
+      "NAV": "34.329",
+      "Market Price": "34.259998",
+      "Premium/Discount": "-0.201"
+    },
+    {
+      "Date": "2014-05-12",
+      "NAV": "34.1282",
+      "Market Price": "34.419998",
+      "Premium/Discount": "0.855"
+    },
+    {
+      "Date": "2014-05-13",
+      "NAV": "34.7581",
+      "Market Price": "34.91",
+      "Premium/Discount": "0.437"
+    },
+    {
+      "Date": "2014-05-14",
+      "NAV": "34.8861",
+      "Market Price": "34.580002",
+      "Premium/Discount": "-0.8774"
+    },
+    {
+      "Date": "2014-05-15",
+      "NAV": "34.7403",
+      "Market Price": "34.220001",
+      "Premium/Discount": "-1.4977"
+    },
+    {
+      "Date": "2014-05-16",
+      "NAV": "34.1904",
+      "Market Price": "34.209999",
+      "Premium/Discount": "0.0573"
+    },
+    {
+      "Date": "2014-05-19",
+      "NAV": "33.9306",
+      "Market Price": "34.200001",
+      "Premium/Discount": "0.794"
+    },
+    {
+      "Date": "2014-05-20",
+      "NAV": "34.0257",
+      "Market Price": "33.82",
+      "Premium/Discount": "-0.6045"
+    },
+    {
+      "Date": "2014-05-21",
+      "NAV": "33.9144",
+      "Market Price": "34.18",
+      "Premium/Discount": "0.7831"
+    },
+    {
+      "Date": "2014-05-22",
+      "NAV": "34.4873",
+      "Market Price": "34.68",
+      "Premium/Discount": "0.5588"
+    },
+    {
+      "Date": "2014-05-23",
+      "NAV": "34.8184",
+      "Market Price": "35.060001",
+      "Premium/Discount": "0.6939"
+    },
+    {
+      "Date": "2014-05-27",
+      "NAV": "35.2372",
+      "Market Price": "35.400002",
+      "Premium/Discount": "0.462"
+    },
+    {
+      "Date": "2014-05-28",
+      "NAV": "35.3235",
+      "Market Price": "35.200001",
+      "Premium/Discount": "-0.3496"
+    },
+    {
+      "Date": "2014-05-29",
+      "NAV": "35.3996",
+      "Market Price": "35.580002",
+      "Premium/Discount": "0.5096"
+    },
+    {
+      "Date": "2014-05-30",
+      "NAV": "35.4316",
+      "Market Price": "35.59",
+      "Premium/Discount": "0.4471"
+    },
+    {
+      "Date": "2014-06-02",
+      "NAV": "35.9672",
+      "Market Price": "36.299999",
+      "Premium/Discount": "0.9253"
+    },
+    {
+      "Date": "2014-06-03",
+      "NAV": "36.2082",
+      "Market Price": "36.330002",
+      "Premium/Discount": "0.3364"
+    },
+    {
+      "Date": "2014-06-04",
+      "NAV": "36.3749",
+      "Market Price": "36.610001",
+      "Premium/Discount": "0.6463"
+    },
+    {
+      "Date": "2014-06-05",
+      "NAV": "36.3302",
+      "Market Price": "36.560001",
+      "Premium/Discount": "0.6325"
+    },
+    {
+      "Date": "2014-06-06",
+      "NAV": "36.3711",
+      "Market Price": "36.580002",
+      "Premium/Discount": "0.5744"
+    },
+    {
+      "Date": "2014-06-09",
+      "NAV": "36.3752",
+      "Market Price": "36.57",
+      "Premium/Discount": "0.5355"
+    },
+    {
+      "Date": "2014-06-10",
+      "NAV": "36.1971",
+      "Market Price": "36.220001",
+      "Premium/Discount": "0.0633"
+    },
+    {
+      "Date": "2014-06-11",
+      "NAV": "36.4915",
+      "Market Price": "36.110001",
+      "Premium/Discount": "-1.0454"
+    },
+    {
+      "Date": "2014-06-12",
+      "NAV": "36.4565",
+      "Market Price": "36.09",
+      "Premium/Discount": "-1.0053"
+    },
+    {
+      "Date": "2014-06-13",
+      "NAV": "36.6251",
+      "Market Price": "36.470001",
+      "Premium/Discount": "-0.4235"
+    },
+    {
+      "Date": "2014-06-16",
+      "NAV": "36.3439",
+      "Market Price": "36.41",
+      "Premium/Discount": "0.1819"
+    },
+    {
+      "Date": "2014-06-17",
+      "NAV": "36.4177",
+      "Market Price": "36.48",
+      "Premium/Discount": "0.1711"
+    },
+    {
+      "Date": "2014-06-18",
+      "NAV": "36.7403",
+      "Market Price": "36.970001",
+      "Premium/Discount": "0.6252"
+    },
+    {
+      "Date": "2014-06-19",
+      "NAV": "37.3516",
+      "Market Price": "37.48",
+      "Premium/Discount": "0.3438"
+    },
+    {
+      "Date": "2014-06-20",
+      "NAV": "37.3689",
+      "Market Price": "37.66",
+      "Premium/Discount": "0.779"
+    },
+    {
+      "Date": "2014-06-23",
+      "NAV": "37.2942",
+      "Market Price": "37.290001",
+      "Premium/Discount": "-0.0113"
+    },
+    {
+      "Date": "2014-06-24",
+      "NAV": "37.2974",
+      "Market Price": "37.279999",
+      "Premium/Discount": "-0.0467"
+    },
+    {
+      "Date": "2014-06-25",
+      "NAV": "37.0819",
+      "Market Price": "37.400002",
+      "Premium/Discount": "0.8578"
+    },
+    {
+      "Date": "2014-06-26",
+      "NAV": "37.1865",
+      "Market Price": "37.220001",
+      "Premium/Discount": "0.0901"
+    },
+    {
+      "Date": "2014-06-27",
+      "NAV": "36.4196",
+      "Market Price": "36.59",
+      "Premium/Discount": "0.4679"
+    },
+    {
+      "Date": "2014-06-30",
+      "NAV": "36.6413",
+      "Market Price": "36.73",
+      "Premium/Discount": "0.2421"
+    },
+    {
+      "Date": "2014-07-01",
+      "NAV": "37.0449",
+      "Market Price": "37.360001",
+      "Premium/Discount": "0.8506"
+    },
+    {
+      "Date": "2014-07-02",
+      "NAV": "37.1897",
+      "Market Price": "37.41",
+      "Premium/Discount": "0.5924"
+    },
+    {
+      "Date": "2014-07-03",
+      "NAV": "37.1151",
+      "Market Price": "37.400002",
+      "Premium/Discount": "0.7676"
+    },
+    {
+      "Date": "2014-07-07",
+      "NAV": "37.1421",
+      "Market Price": "37.060001",
+      "Premium/Discount": "-0.221"
+    },
+    {
+      "Date": "2014-07-08",
+      "NAV": "36.9898",
+      "Market Price": "36.779999",
+      "Premium/Discount": "-0.5672"
+    },
+    {
+      "Date": "2014-07-09",
+      "NAV": "36.8687",
+      "Market Price": "36.98",
+      "Premium/Discount": "0.3019"
+    },
+    {
+      "Date": "2014-07-10",
+      "NAV": "36.5422",
+      "Market Price": "36.32",
+      "Premium/Discount": "-0.6081"
+    },
+    {
+      "Date": "2014-07-11",
+      "NAV": "36.4071",
+      "Market Price": "36.369999",
+      "Premium/Discount": "-0.1019"
+    },
+    {
+      "Date": "2014-07-14",
+      "NAV": "36.7012",
+      "Market Price": "36.869999",
+      "Premium/Discount": "0.4599"
+    },
+    {
+      "Date": "2014-07-15",
+      "NAV": "36.9494",
+      "Market Price": "36.98",
+      "Premium/Discount": "0.0828"
+    },
+    {
+      "Date": "2014-07-16",
+      "NAV": "36.9604",
+      "Market Price": "37.150002",
+      "Premium/Discount": "0.513"
+    },
+    {
+      "Date": "2014-07-17",
+      "NAV": "36.9489",
+      "Market Price": "36.689999",
+      "Premium/Discount": "-0.7007"
+    },
+    {
+      "Date": "2014-07-18",
+      "NAV": "36.6585",
+      "Market Price": "36.91",
+      "Premium/Discount": "0.6861"
+    },
+    {
+      "Date": "2014-07-21",
+      "NAV": "36.6583",
+      "Market Price": "36.889999",
+      "Premium/Discount": "0.6321"
+    },
+    {
+      "Date": "2014-07-22",
+      "NAV": "36.9101",
+      "Market Price": "37.029999",
+      "Premium/Discount": "0.3248"
+    },
+    {
+      "Date": "2014-07-23",
+      "NAV": "36.8812",
+      "Market Price": "37.029999",
+      "Premium/Discount": "0.4035"
+    },
+    {
+      "Date": "2014-07-24",
+      "NAV": "36.7999",
+      "Market Price": "36.93",
+      "Premium/Discount": "0.3535"
+    },
+    {
+      "Date": "2014-07-25",
+      "NAV": "37.1275",
+      "Market Price": "37.110001",
+      "Premium/Discount": "-0.0471"
+    },
+    {
+      "Date": "2014-07-28",
+      "NAV": "37.2652",
+      "Market Price": "37.380001",
+      "Premium/Discount": "0.3081"
+    },
+    {
+      "Date": "2014-07-29",
+      "NAV": "37.3756",
+      "Market Price": "37.389999",
+      "Premium/Discount": "0.0385"
+    },
+    {
+      "Date": "2014-07-30",
+      "NAV": "37.4472",
+      "Market Price": "37.700001",
+      "Premium/Discount": "0.6751"
+    },
+    {
+      "Date": "2014-07-31",
+      "NAV": "37.3779",
+      "Market Price": "37.119999",
+      "Premium/Discount": "-0.69"
+    },
+    {
+      "Date": "2014-08-01",
+      "NAV": "37.1607",
+      "Market Price": "36.98",
+      "Premium/Discount": "-0.4863"
+    },
+    {
+      "Date": "2014-08-04",
+      "NAV": "36.9949",
+      "Market Price": "37.049999",
+      "Premium/Discount": "0.1489"
+    },
+    {
+      "Date": "2014-08-05",
+      "NAV": "36.6341",
+      "Market Price": "36.470001",
+      "Premium/Discount": "-0.4479"
+    },
+    {
+      "Date": "2014-08-06",
+      "NAV": "36.2757",
+      "Market Price": "36.080002",
+      "Premium/Discount": "-0.5395"
+    },
+    {
+      "Date": "2014-08-07",
+      "NAV": "36.4402",
+      "Market Price": "35.919998",
+      "Premium/Discount": "-1.4275"
+    },
+    {
+      "Date": "2014-08-08",
+      "NAV": "35.5491",
+      "Market Price": "36.09",
+      "Premium/Discount": "1.5216"
+    },
+    {
+      "Date": "2014-08-11",
+      "NAV": "36.2442",
+      "Market Price": "36.380001",
+      "Premium/Discount": "0.3747"
+    },
+    {
+      "Date": "2014-08-12",
+      "NAV": "36.404",
+      "Market Price": "36.349998",
+      "Premium/Discount": "-0.1483"
+    },
+    {
+      "Date": "2014-08-13",
+      "NAV": "36.5337",
+      "Market Price": "36.709999",
+      "Premium/Discount": "0.4826"
+    },
+    {
+      "Date": "2014-08-14",
+      "NAV": "36.7804",
+      "Market Price": "36.860001",
+      "Premium/Discount": "0.2164"
+    },
+    {
+      "Date": "2014-08-15",
+      "NAV": "36.7708",
+      "Market Price": "36.77",
+      "Premium/Discount": "-0.0022"
+    },
+    {
+      "Date": "2014-08-18",
+      "NAV": "36.7779",
+      "Market Price": "37",
+      "Premium/Discount": "0.6039"
+    },
+    {
+      "Date": "2014-08-19",
+      "NAV": "37.0489",
+      "Market Price": "37.220001",
+      "Premium/Discount": "0.4618"
+    },
+    {
+      "Date": "2014-08-20",
+      "NAV": "37.0185",
+      "Market Price": "37.299999",
+      "Premium/Discount": "0.7604"
+    },
+    {
+      "Date": "2014-08-21",
+      "NAV": "37.3581",
+      "Market Price": "37.529999",
+      "Premium/Discount": "0.4601"
+    },
+    {
+      "Date": "2014-08-22",
+      "NAV": "37.2191",
+      "Market Price": "37.240002",
+      "Premium/Discount": "0.0562"
+    },
+    {
+      "Date": "2014-08-25",
+      "NAV": "37.3529",
+      "Market Price": "37.400002",
+      "Premium/Discount": "0.1261"
+    },
+    {
+      "Date": "2014-08-26",
+      "NAV": "37.1671",
+      "Market Price": "37.23",
+      "Premium/Discount": "0.1692"
+    },
+    {
+      "Date": "2014-08-27",
+      "NAV": "37.1943",
+      "Market Price": "37.099998",
+      "Premium/Discount": "-0.2535"
+    },
+    {
+      "Date": "2014-08-28",
+      "NAV": "37.0276",
+      "Market Price": "36.91",
+      "Premium/Discount": "-0.3176"
+    },
+    {
+      "Date": "2014-08-29",
+      "NAV": "36.9537",
+      "Market Price": "36.900002",
+      "Premium/Discount": "-0.1453"
+    },
+    {
+      "Date": "2014-09-02",
+      "NAV": "37.5097",
+      "Market Price": "37.619999",
+      "Premium/Discount": "0.2941"
+    },
+    {
+      "Date": "2014-09-03",
+      "NAV": "37.6436",
+      "Market Price": "37.59",
+      "Premium/Discount": "-0.1424"
+    },
+    {
+      "Date": "2014-09-04",
+      "NAV": "37.5196",
+      "Market Price": "37.610001",
+      "Premium/Discount": "0.2409"
+    },
+    {
+      "Date": "2014-09-05",
+      "NAV": "37.4323",
+      "Market Price": "37.349998",
+      "Premium/Discount": "-0.2199"
+    },
+    {
+      "Date": "2014-09-08",
+      "NAV": "37.5658",
+      "Market Price": "37.73",
+      "Premium/Discount": "0.4371"
+    },
+    {
+      "Date": "2014-09-09",
+      "NAV": "37.606",
+      "Market Price": "37.360001",
+      "Premium/Discount": "-0.6541"
+    },
+    {
+      "Date": "2014-09-10",
+      "NAV": "37.8101",
+      "Market Price": "38.07",
+      "Premium/Discount": "0.6874"
+    },
+    {
+      "Date": "2014-09-11",
+      "NAV": "37.9647",
+      "Market Price": "38.049999",
+      "Premium/Discount": "0.2247"
+    },
+    {
+      "Date": "2014-09-12",
+      "NAV": "38.0637",
+      "Market Price": "37.970001",
+      "Premium/Discount": "-0.2462"
+    },
+    {
+      "Date": "2014-09-15",
+      "NAV": "38.0651",
+      "Market Price": "37.959999",
+      "Premium/Discount": "-0.2761"
+    },
+    {
+      "Date": "2014-09-16",
+      "NAV": "37.9661",
+      "Market Price": "38.139999",
+      "Premium/Discount": "0.458"
+    },
+    {
+      "Date": "2014-09-17",
+      "NAV": "37.8029",
+      "Market Price": "38.09",
+      "Premium/Discount": "0.7595"
+    },
+    {
+      "Date": "2014-09-18",
+      "NAV": "38.1866",
+      "Market Price": "38.509998",
+      "Premium/Discount": "0.8469"
+    },
+    {
+      "Date": "2014-09-19",
+      "NAV": "38.607",
+      "Market Price": "38.610001",
+      "Premium/Discount": "0.0078"
+    },
+    {
+      "Date": "2014-09-22",
+      "NAV": "38.5667",
+      "Market Price": "38.540001",
+      "Premium/Discount": "-0.0692"
+    },
+    {
+      "Date": "2014-09-23",
+      "NAV": "38.5648",
+      "Market Price": "38.529999",
+      "Premium/Discount": "-0.0902"
+    },
+    {
+      "Date": "2014-09-24",
+      "NAV": "38.4187",
+      "Market Price": "38.810001",
+      "Premium/Discount": "1.0185"
+    },
+    {
+      "Date": "2014-09-25",
+      "NAV": "38.9962",
+      "Market Price": "38.560001",
+      "Premium/Discount": "-1.1186"
+    },
+    {
+      "Date": "2014-09-26",
+      "NAV": "38.8118",
+      "Market Price": "39.060001",
+      "Premium/Discount": "0.6395"
+    },
+    {
+      "Date": "2014-09-29",
+      "NAV": "38.965",
+      "Market Price": "38.849998",
+      "Premium/Discount": "-0.2951"
+    },
+    {
+      "Date": "2014-09-30",
+      "NAV": "38.6572",
+      "Market Price": "38.68",
+      "Premium/Discount": "0.059"
+    },
+    {
+      "Date": "2014-10-01",
+      "NAV": "38.4102",
+      "Market Price": "37.900002",
+      "Premium/Discount": "-1.3283"
+    },
+    {
+      "Date": "2014-10-02",
+      "NAV": "37.3032",
+      "Market Price": "37",
+      "Premium/Discount": "-0.8128"
+    },
+    {
+      "Date": "2014-10-03",
+      "NAV": "37.3691",
+      "Market Price": "37.849998",
+      "Premium/Discount": "1.2869"
+    },
+    {
+      "Date": "2014-10-06",
+      "NAV": "37.7508",
+      "Market Price": "37.43",
+      "Premium/Discount": "-0.8498"
+    },
+    {
+      "Date": "2014-10-07",
+      "NAV": "37.6107",
+      "Market Price": "36.869999",
+      "Premium/Discount": "-1.9694"
+    },
+    {
+      "Date": "2014-10-08",
+      "NAV": "37.1338",
+      "Market Price": "37.220001",
+      "Premium/Discount": "0.2321"
+    },
+    {
+      "Date": "2014-10-09",
+      "NAV": "36.7542",
+      "Market Price": "36.209999",
+      "Premium/Discount": "-1.4806"
+    },
+    {
+      "Date": "2014-10-10",
+      "NAV": "36.2597",
+      "Market Price": "35.669998",
+      "Premium/Discount": "-1.6263"
+    },
+    {
+      "Date": "2014-10-13",
+      "NAV": "36.2438",
+      "Market Price": "35.049999",
+      "Premium/Discount": "-3.2938"
+    },
+    {
+      "Date": "2014-10-14",
+      "NAV": "35.3746",
+      "Market Price": "35.279999",
+      "Premium/Discount": "-0.2674"
+    },
+    {
+      "Date": "2014-10-15",
+      "NAV": "35.6038",
+      "Market Price": "34.810001",
+      "Premium/Discount": "-2.2295"
+    },
+    {
+      "Date": "2014-10-16",
+      "NAV": "34.7881",
+      "Market Price": "34.619999",
+      "Premium/Discount": "-0.4832"
+    },
+    {
+      "Date": "2014-10-17",
+      "NAV": "34.2492",
+      "Market Price": "35.009998",
+      "Premium/Discount": "2.2214"
+    },
+    {
+      "Date": "2014-10-20",
+      "NAV": "35.6568",
+      "Market Price": "35.720001",
+      "Premium/Discount": "0.1772"
+    },
+    {
+      "Date": "2014-10-21",
+      "NAV": "35.0983",
+      "Market Price": "35.740002",
+      "Premium/Discount": "1.8283"
+    },
+    {
+      "Date": "2014-10-22",
+      "NAV": "35.9884",
+      "Market Price": "35.799999",
+      "Premium/Discount": "-0.5235"
+    },
+    {
+      "Date": "2014-10-23",
+      "NAV": "35.908",
+      "Market Price": "36.419998",
+      "Premium/Discount": "1.4259"
+    },
+    {
+      "Date": "2014-10-24",
+      "NAV": "36.2161",
+      "Market Price": "36.560001",
+      "Premium/Discount": "0.9496"
+    },
+    {
+      "Date": "2014-10-27",
+      "NAV": "36.5659",
+      "Market Price": "36.490002",
+      "Premium/Discount": "-0.2076"
+    },
+    {
+      "Date": "2014-10-28",
+      "NAV": "36.5162",
+      "Market Price": "36.799999",
+      "Premium/Discount": "0.7772"
+    },
+    {
+      "Date": "2014-10-29",
+      "NAV": "37.0733",
+      "Market Price": "37.23",
+      "Premium/Discount": "0.4227"
+    },
+    {
+      "Date": "2014-10-30",
+      "NAV": "37.3499",
+      "Market Price": "37.720001",
+      "Premium/Discount": "0.9909"
+    },
+    {
+      "Date": "2014-10-31",
+      "NAV": "38.985",
+      "Market Price": "40.68",
+      "Premium/Discount": "4.3478"
+    },
+    {
+      "Date": "2014-11-03",
+      "NAV": "38.9438",
+      "Market Price": "41.560001",
+      "Premium/Discount": "6.7179"
+    },
+    {
+      "Date": "2014-11-04",
+      "NAV": "40.0168",
+      "Market Price": "40.27",
+      "Premium/Discount": "0.6327"
+    },
+    {
+      "Date": "2014-11-05",
+      "NAV": "40.0402",
+      "Market Price": "40.419998",
+      "Premium/Discount": "0.9485"
+    },
+    {
+      "Date": "2014-11-06",
+      "NAV": "39.6028",
+      "Market Price": "40.029999",
+      "Premium/Discount": "1.0787"
+    },
+    {
+      "Date": "2014-11-07",
+      "NAV": "39.8266",
+      "Market Price": "39.630001",
+      "Premium/Discount": "-0.4936"
+    },
+    {
+      "Date": "2014-11-10",
+      "NAV": "39.6936",
+      "Market Price": "39.970001",
+      "Premium/Discount": "0.6963"
+    },
+    {
+      "Date": "2014-11-11",
+      "NAV": "40.1478",
+      "Market Price": "40.48",
+      "Premium/Discount": "0.8274"
+    },
+    {
+      "Date": "2014-11-12",
+      "NAV": "40.2327",
+      "Market Price": "40.330002",
+      "Premium/Discount": "0.2418"
+    },
+    {
+      "Date": "2014-11-13",
+      "NAV": "40.5849",
+      "Market Price": "40.77",
+      "Premium/Discount": "0.4561"
+    },
+    {
+      "Date": "2014-11-14",
+      "NAV": "40.8663",
+      "Market Price": "40.950001",
+      "Premium/Discount": "0.2048"
+    },
+    {
+      "Date": "2014-11-17",
+      "NAV": "39.9013",
+      "Market Price": "40.34",
+      "Premium/Discount": "1.0995"
+    },
+    {
+      "Date": "2014-11-18",
+      "NAV": "40.6903",
+      "Market Price": "41.029999",
+      "Premium/Discount": "0.8348"
+    },
+    {
+      "Date": "2014-11-19",
+      "NAV": "40.7053",
+      "Market Price": "41.09",
+      "Premium/Discount": "0.9451"
+    },
+    {
+      "Date": "2014-11-20",
+      "NAV": "40.7495",
+      "Market Price": "40.720001",
+      "Premium/Discount": "-0.0724"
+    },
+    {
+      "Date": "2014-11-21",
+      "NAV": "40.8175",
+      "Market Price": "40.860001",
+      "Premium/Discount": "0.1041"
+    },
+    {
+      "Date": "2014-11-24",
+      "NAV": "40.7964",
+      "Market Price": "41.130001",
+      "Premium/Discount": "0.8177"
+    },
+    {
+      "Date": "2014-11-25",
+      "NAV": "41.0724",
+      "Market Price": "41.099998",
+      "Premium/Discount": "0.0672"
+    },
+    {
+      "Date": "2014-11-26",
+      "NAV": "40.9755",
+      "Market Price": "40.959999",
+      "Premium/Discount": "-0.0378"
+    },
+    {
+      "Date": "2014-11-28",
+      "NAV": "41.1246",
+      "Market Price": "41.040001",
+      "Premium/Discount": "-0.2057"
+    },
+    {
+      "Date": "2014-12-01",
+      "NAV": "41.3806",
+      "Market Price": "41.220001",
+      "Premium/Discount": "-0.3881"
+    },
+    {
+      "Date": "2014-12-02",
+      "NAV": "41.5392",
+      "Market Price": "41.799999",
+      "Premium/Discount": "0.6278"
+    },
+    {
+      "Date": "2014-12-03",
+      "NAV": "41.5907",
+      "Market Price": "42.029999",
+      "Premium/Discount": "1.0562"
+    },
+    {
+      "Date": "2014-12-04",
+      "NAV": "41.8957",
+      "Market Price": "41.98",
+      "Premium/Discount": "0.2012"
+    },
+    {
+      "Date": "2014-12-05",
+      "NAV": "42.0327",
+      "Market Price": "42.43",
+      "Premium/Discount": "0.9452"
+    },
+    {
+      "Date": "2014-12-08",
+      "NAV": "42.0924",
+      "Market Price": "41.66",
+      "Premium/Discount": "-1.0273"
+    },
+    {
+      "Date": "2014-12-09",
+      "NAV": "41.7884",
+      "Market Price": "41.509998",
+      "Premium/Discount": "-0.6662"
+    },
+    {
+      "Date": "2014-12-10",
+      "NAV": "40.8959",
+      "Market Price": "40.169998",
+      "Premium/Discount": "-1.775"
+    },
+    {
+      "Date": "2014-12-11",
+      "NAV": "40.5827",
+      "Market Price": "40.669998",
+      "Premium/Discount": "0.2151"
+    },
+    {
+      "Date": "2014-12-12",
+      "NAV": "40.6835",
+      "Market Price": "40.220001",
+      "Premium/Discount": "-1.1393"
+    },
+    {
+      "Date": "2014-12-15",
+      "NAV": "40.0535",
+      "Market Price": "39.110001",
+      "Premium/Discount": "-2.3556"
+    },
+    {
+      "Date": "2014-12-16",
+      "NAV": "39.2752",
+      "Market Price": "38.759998",
+      "Premium/Discount": "-1.3118"
+    },
+    {
+      "Date": "2014-12-17",
+      "NAV": "39.2443",
+      "Market Price": "40.029999",
+      "Premium/Discount": "2.0021"
+    },
+    {
+      "Date": "2014-12-18",
+      "NAV": "39.943",
+      "Market Price": "40.709999",
+      "Premium/Discount": "1.9202"
+    },
+    {
+      "Date": "2014-12-19",
+      "NAV": "37.4406",
+      "Market Price": "37.82",
+      "Premium/Discount": "1.0133"
+    },
+    {
+      "Date": "2014-12-22",
+      "NAV": "37.5363",
+      "Market Price": "37.830002",
+      "Premium/Discount": "0.7824"
+    },
+    {
+      "Date": "2014-12-23",
+      "NAV": "37.5326",
+      "Market Price": "38.099998",
+      "Premium/Discount": "1.5117"
+    },
+    {
+      "Date": "2014-12-24",
+      "NAV": "37.8804",
+      "Market Price": "37.970001",
+      "Premium/Discount": "0.2365"
+    },
+    {
+      "Date": "2014-12-26",
+      "NAV": "37.9369",
+      "Market Price": "38.290001",
+      "Premium/Discount": "0.9308"
+    },
+    {
+      "Date": "2014-12-29",
+      "NAV": "37.8335",
+      "Market Price": "37.91",
+      "Premium/Discount": "0.2022"
+    },
+    {
+      "Date": "2014-12-30",
+      "NAV": "37.3582",
+      "Market Price": "37.009998",
+      "Premium/Discount": "-0.9321"
+    },
+    {
+      "Date": "2014-12-31",
+      "NAV": "37.3566",
+      "Market Price": "37.029999",
+      "Premium/Discount": "-0.8743"
+    },
+    {
+      "Date": "2015-01-02",
+      "NAV": "37.3533",
+      "Market Price": "37.240002",
+      "Premium/Discount": "-0.3033"
+    },
+    {
+      "Date": "2015-01-05",
+      "NAV": "37.1495",
+      "Market Price": "36.439999",
+      "Premium/Discount": "-1.9099"
+    },
+    {
+      "Date": "2015-01-06",
+      "NAV": "36.0572",
+      "Market Price": "35.639999",
+      "Premium/Discount": "-1.1571"
+    },
+    {
+      "Date": "2015-01-07",
+      "NAV": "36.043",
+      "Market Price": "36.299999",
+      "Premium/Discount": "0.713"
+    },
+    {
+      "Date": "2015-01-08",
+      "NAV": "36.5348",
+      "Market Price": "36.91",
+      "Premium/Discount": "1.027"
+    },
+    {
+      "Date": "2015-01-09",
+      "NAV": "36.6374",
+      "Market Price": "36.169998",
+      "Premium/Discount": "-1.2758"
+    },
+    {
+      "Date": "2015-01-12",
+      "NAV": "36.6364",
+      "Market Price": "36.060001",
+      "Premium/Discount": "-1.5733"
+    },
+    {
+      "Date": "2015-01-13",
+      "NAV": "36.4809",
+      "Market Price": "36.209999",
+      "Premium/Discount": "-0.7426"
+    },
+    {
+      "Date": "2015-01-14",
+      "NAV": "36.0011",
+      "Market Price": "35.810001",
+      "Premium/Discount": "-0.5308"
+    },
+    {
+      "Date": "2015-01-15",
+      "NAV": "36.4915",
+      "Market Price": "35.830002",
+      "Premium/Discount": "-1.8127"
+    },
+    {
+      "Date": "2015-01-16",
+      "NAV": "36.1852",
+      "Market Price": "36.66",
+      "Premium/Discount": "1.3121"
+    },
+    {
+      "Date": "2015-01-20",
+      "NAV": "37.114",
+      "Market Price": "37.200001",
+      "Premium/Discount": "0.2317"
+    },
+    {
+      "Date": "2015-01-21",
+      "NAV": "36.9161",
+      "Market Price": "37.009998",
+      "Premium/Discount": "0.2544"
+    },
+    {
+      "Date": "2015-01-22",
+      "NAV": "36.8802",
+      "Market Price": "37.41",
+      "Premium/Discount": "1.4365"
+    },
+    {
+      "Date": "2015-01-23",
+      "NAV": "37.269",
+      "Market Price": "36.990002",
+      "Premium/Discount": "-0.7486"
+    },
+    {
+      "Date": "2015-01-26",
+      "NAV": "37.209",
+      "Market Price": "37.720001",
+      "Premium/Discount": "1.3733"
+    },
+    {
+      "Date": "2015-01-27",
+      "NAV": "37.8792",
+      "Market Price": "37.52",
+      "Premium/Discount": "-0.9483"
+    },
+    {
+      "Date": "2015-01-28",
+      "NAV": "37.9272",
+      "Market Price": "37.32",
+      "Premium/Discount": "-1.601"
+    },
+    {
+      "Date": "2015-01-29",
+      "NAV": "37.4576",
+      "Market Price": "37.950001",
+      "Premium/Discount": "1.3146"
+    },
+    {
+      "Date": "2015-01-30",
+      "NAV": "37.4562",
+      "Market Price": "37.080002",
+      "Premium/Discount": "-1.0044"
+    },
+    {
+      "Date": "2015-02-02",
+      "NAV": "37.2992",
+      "Market Price": "37.48",
+      "Premium/Discount": "0.4847"
+    },
+    {
+      "Date": "2015-02-03",
+      "NAV": "36.8701",
+      "Market Price": "37.34",
+      "Premium/Discount": "1.2745"
+    },
+    {
+      "Date": "2015-02-04",
+      "NAV": "37.5511",
+      "Market Price": "37.48",
+      "Premium/Discount": "-0.1893"
+    },
+    {
+      "Date": "2015-02-05",
+      "NAV": "37.363",
+      "Market Price": "37.919998",
+      "Premium/Discount": "1.4908"
+    },
+    {
+      "Date": "2015-02-06",
+      "NAV": "37.5827",
+      "Market Price": "37.990002",
+      "Premium/Discount": "1.0837"
+    },
+    {
+      "Date": "2015-02-09",
+      "NAV": "37.769",
+      "Market Price": "37.560001",
+      "Premium/Discount": "-0.5534"
+    },
+    {
+      "Date": "2015-02-10",
+      "NAV": "37.8368",
+      "Market Price": "38.34",
+      "Premium/Discount": "1.3299"
+    },
+    {
+      "Date": "2015-02-11",
+      "NAV": "37.8357",
+      "Market Price": "38.619999",
+      "Premium/Discount": "2.0729"
+    },
+    {
+      "Date": "2015-02-12",
+      "NAV": "38.4445",
+      "Market Price": "38.360001",
+      "Premium/Discount": "-0.2198"
+    },
+    {
+      "Date": "2015-02-13",
+      "NAV": "38.4373",
+      "Market Price": "38.860001",
+      "Premium/Discount": "1.0997"
+    },
+    {
+      "Date": "2015-02-17",
+      "NAV": "38.734",
+      "Market Price": "39.080002",
+      "Premium/Discount": "0.8933"
+    },
+    {
+      "Date": "2015-02-18",
+      "NAV": "39.3144",
+      "Market Price": "39.48",
+      "Premium/Discount": "0.4212"
+    },
+    {
+      "Date": "2015-02-19",
+      "NAV": "39.6011",
+      "Market Price": "39.869999",
+      "Premium/Discount": "0.679"
+    },
+    {
+      "Date": "2015-02-20",
+      "NAV": "39.7427",
+      "Market Price": "40.25",
+      "Premium/Discount": "1.2765"
+    },
+    {
+      "Date": "2015-02-23",
+      "NAV": "39.8362",
+      "Market Price": "40",
+      "Premium/Discount": "0.4112"
+    },
+    {
+      "Date": "2015-02-24",
+      "NAV": "39.9838",
+      "Market Price": "40.139999",
+      "Premium/Discount": "0.3907"
+    },
+    {
+      "Date": "2015-02-25",
+      "NAV": "39.954",
+      "Market Price": "40.09",
+      "Premium/Discount": "0.3404"
+    },
+    {
+      "Date": "2015-02-26",
+      "NAV": "40.3114",
+      "Market Price": "40.610001",
+      "Premium/Discount": "0.7407"
+    },
+    {
+      "Date": "2015-02-27",
+      "NAV": "40.37",
+      "Market Price": "40.439999",
+      "Premium/Discount": "0.1734"
+    },
+    {
+      "Date": "2015-03-02",
+      "NAV": "40.4",
+      "Market Price": "40.709999",
+      "Premium/Discount": "0.7673"
+    },
+    {
+      "Date": "2015-03-03",
+      "NAV": "40.46",
+      "Market Price": "40.439999",
+      "Premium/Discount": "-0.0494"
+    },
+    {
+      "Date": "2015-03-04",
+      "NAV": "40.17",
+      "Market Price": "40.23",
+      "Premium/Discount": "0.1494"
+    },
+    {
+      "Date": "2015-03-05",
+      "NAV": "40.37",
+      "Market Price": "40.580002",
+      "Premium/Discount": "0.5202"
+    },
+    {
+      "Date": "2015-03-06",
+      "NAV": "40.85",
+      "Market Price": "40.709999",
+      "Premium/Discount": "-0.3427"
+    },
+    {
+      "Date": "2015-03-09",
+      "NAV": "40.58",
+      "Market Price": "40.740002",
+      "Premium/Discount": "0.3943"
+    },
+    {
+      "Date": "2015-03-10",
+      "NAV": "40.38",
+      "Market Price": "40.220001",
+      "Premium/Discount": "-0.3962"
+    },
+    {
+      "Date": "2015-03-11",
+      "NAV": "40.39",
+      "Market Price": "40.580002",
+      "Premium/Discount": "0.4704"
+    },
+    {
+      "Date": "2015-03-12",
+      "NAV": "40.94",
+      "Market Price": "41.369999",
+      "Premium/Discount": "1.0503"
+    },
+    {
+      "Date": "2015-03-13",
+      "NAV": "41.3",
+      "Market Price": "41.43",
+      "Premium/Discount": "0.3148"
+    },
+    {
+      "Date": "2015-03-16",
+      "NAV": "41.24",
+      "Market Price": "41.669998",
+      "Premium/Discount": "1.0427"
+    },
+    {
+      "Date": "2015-03-17",
+      "NAV": "41.59",
+      "Market Price": "41.73",
+      "Premium/Discount": "0.3366"
+    },
+    {
+      "Date": "2015-03-18",
+      "NAV": "41.94",
+      "Market Price": "41.939999",
+      "Premium/Discount": "0"
+    },
+    {
+      "Date": "2015-03-19",
+      "NAV": "41.77",
+      "Market Price": "41.810001",
+      "Premium/Discount": "0.0958"
+    },
+    {
+      "Date": "2015-03-20",
+      "NAV": "41.9",
+      "Market Price": "42.169998",
+      "Premium/Discount": "0.6444"
+    },
+    {
+      "Date": "2015-03-23",
+      "NAV": "42.22",
+      "Market Price": "42.220001",
+      "Premium/Discount": "0"
+    },
+    {
+      "Date": "2015-03-24",
+      "NAV": "42.1",
+      "Market Price": "42.150002",
+      "Premium/Discount": "0.1188"
+    },
+    {
+      "Date": "2015-03-25",
+      "NAV": "42.24",
+      "Market Price": "41.950001",
+      "Premium/Discount": "-0.6866"
+    },
+    {
+      "Date": "2015-03-26",
+      "NAV": "41.62",
+      "Market Price": "41.48",
+      "Premium/Discount": "-0.3364"
+    },
+    {
+      "Date": "2015-03-27",
+      "NAV": "41.51",
+      "Market Price": "41.639999",
+      "Premium/Discount": "0.3132"
+    },
+    {
+      "Date": "2015-03-30",
+      "NAV": "41.6",
+      "Market Price": "42.080002",
+      "Premium/Discount": "1.1539"
+    },
+    {
+      "Date": "2015-03-31",
+      "NAV": "41.15",
+      "Market Price": "41.110001",
+      "Premium/Discount": "-0.0972"
+    },
+    {
+      "Date": "2015-04-01",
+      "NAV": "40.77",
+      "Market Price": "41.200001",
+      "Premium/Discount": "1.0547"
+    },
+    {
+      "Date": "2015-04-02",
+      "NAV": "41.44",
+      "Market Price": "41.619999",
+      "Premium/Discount": "0.4344"
+    },
+    {
+      "Date": "2015-04-06",
+      "NAV": "41.58",
+      "Market Price": "42.060001",
+      "Premium/Discount": "1.1544"
+    },
+    {
+      "Date": "2015-04-07",
+      "NAV": "42.09",
+      "Market Price": "42.450001",
+      "Premium/Discount": "0.8553"
+    },
+    {
+      "Date": "2015-04-08",
+      "NAV": "42.34",
+      "Market Price": "42.540001",
+      "Premium/Discount": "0.4724"
+    },
+    {
+      "Date": "2015-04-09",
+      "NAV": "42.51",
+      "Market Price": "42.73",
+      "Premium/Discount": "0.5175"
+    },
+    {
+      "Date": "2015-04-10",
+      "NAV": "42.35",
+      "Market Price": "42.619999",
+      "Premium/Discount": "0.6375"
+    },
+    {
+      "Date": "2015-04-13",
+      "NAV": "42.26",
+      "Market Price": "42.290001",
+      "Premium/Discount": "0.071"
+    },
+    {
+      "Date": "2015-04-14",
+      "NAV": "42.36",
+      "Market Price": "42.330002",
+      "Premium/Discount": "-0.0708"
+    },
+    {
+      "Date": "2015-04-15",
+      "NAV": "42.33",
+      "Market Price": "42.41",
+      "Premium/Discount": "0.189"
+    },
+    {
+      "Date": "2015-04-16",
+      "NAV": "42.62",
+      "Market Price": "42.540001",
+      "Premium/Discount": "-0.1877"
+    },
+    {
+      "Date": "2015-04-17",
+      "NAV": "42.35",
+      "Market Price": "41.98",
+      "Premium/Discount": "-0.8737"
+    },
+    {
+      "Date": "2015-04-20",
+      "NAV": "42.2",
+      "Market Price": "42.360001",
+      "Premium/Discount": "0.3791"
+    },
+    {
+      "Date": "2015-04-21",
+      "NAV": "42.94",
+      "Market Price": "43.189999",
+      "Premium/Discount": "0.5822"
+    },
+    {
+      "Date": "2015-04-22",
+      "NAV": "43.29",
+      "Market Price": "43.580002",
+      "Premium/Discount": "0.6699"
+    },
+    {
+      "Date": "2015-04-23",
+      "NAV": "43.42",
+      "Market Price": "43.380001",
+      "Premium/Discount": "-0.0921"
+    },
+    {
+      "Date": "2015-04-24",
+      "NAV": "43.24",
+      "Market Price": "43.34",
+      "Premium/Discount": "0.2313"
+    },
+    {
+      "Date": "2015-04-27",
+      "NAV": "43.24",
+      "Market Price": "43.380001",
+      "Premium/Discount": "0.3238"
+    },
+    {
+      "Date": "2015-04-28",
+      "NAV": "43.5",
+      "Market Price": "43.330002",
+      "Premium/Discount": "-0.3908"
+    },
+    {
+      "Date": "2015-04-29",
+      "NAV": "43.5",
+      "Market Price": "43.09",
+      "Premium/Discount": "-0.9425"
+    },
+    {
+      "Date": "2015-04-30",
+      "NAV": "42.5",
+      "Market Price": "42.16",
+      "Premium/Discount": "-0.8"
+    },
+    {
+      "Date": "2015-05-01",
+      "NAV": "42.35",
+      "Market Price": "42.889999",
+      "Premium/Discount": "1.2751"
+    },
+    {
+      "Date": "2015-05-04",
+      "NAV": "42.35",
+      "Market Price": "43.009998",
+      "Premium/Discount": "1.5584"
+    },
+    {
+      "Date": "2015-05-05",
+      "NAV": "42.35",
+      "Market Price": "42.09",
+      "Premium/Discount": "-0.6139"
+    },
+    {
+      "Date": "2015-05-06",
+      "NAV": "42.34",
+      "Market Price": "41.91",
+      "Premium/Discount": "-1.0156"
+    },
+    {
+      "Date": "2015-05-07",
+      "NAV": "42.01",
+      "Market Price": "42.110001",
+      "Premium/Discount": "0.238"
+    },
+    {
+      "Date": "2015-05-08",
+      "NAV": "42.35",
+      "Market Price": "43.110001",
+      "Premium/Discount": "1.7946"
+    },
+    {
+      "Date": "2015-05-11",
+      "NAV": "42.59",
+      "Market Price": "42.580002",
+      "Premium/Discount": "-0.0235"
+    },
+    {
+      "Date": "2015-05-12",
+      "NAV": "42.68",
+      "Market Price": "42.419998",
+      "Premium/Discount": "-0.6092"
+    },
+    {
+      "Date": "2015-05-13",
+      "NAV": "42.74",
+      "Market Price": "42.52",
+      "Premium/Discount": "-0.5147"
+    },
+    {
+      "Date": "2015-05-14",
+      "NAV": "42.39",
+      "Market Price": "42.610001",
+      "Premium/Discount": "0.519"
+    },
+    {
+      "Date": "2015-05-15",
+      "NAV": "42.81",
+      "Market Price": "43.009998",
+      "Premium/Discount": "0.4672"
+    },
+    {
+      "Date": "2015-05-18",
+      "NAV": "43.35",
+      "Market Price": "43.599998",
+      "Premium/Discount": "0.5767"
+    },
+    {
+      "Date": "2015-05-19",
+      "NAV": "43.49",
+      "Market Price": "43.860001",
+      "Premium/Discount": "0.8508"
+    },
+    {
+      "Date": "2015-05-20",
+      "NAV": "43.76",
+      "Market Price": "44.029999",
+      "Premium/Discount": "0.617"
+    },
+    {
+      "Date": "2015-05-21",
+      "NAV": "43.87",
+      "Market Price": "44.040001",
+      "Premium/Discount": "0.3875"
+    },
+    {
+      "Date": "2015-05-22",
+      "NAV": "43.85",
+      "Market Price": "44.18",
+      "Premium/Discount": "0.7526"
+    },
+    {
+      "Date": "2015-05-26",
+      "NAV": "44.19",
+      "Market Price": "44.169998",
+      "Premium/Discount": "-0.0453"
+    },
+    {
+      "Date": "2015-05-27",
+      "NAV": "44.22",
+      "Market Price": "44.669998",
+      "Premium/Discount": "1.0176"
+    },
+    {
+      "Date": "2015-05-28",
+      "NAV": "44.55",
+      "Market Price": "44.650002",
+      "Premium/Discount": "0.2245"
+    },
+    {
+      "Date": "2015-05-29",
+      "NAV": "44.54",
+      "Market Price": "44.450001",
+      "Premium/Discount": "-0.2021"
+    }
+  ]
+}

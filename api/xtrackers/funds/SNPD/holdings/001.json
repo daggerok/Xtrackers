@@ -1,0 +1,971 @@
+{
+  "ticker": "SNPD",
+  "page": 1,
+  "pageSize": 250,
+  "totalRows": 106,
+  "headers": [
+    "Name",
+    "Ticker",
+    "Identifier",
+    "Weight",
+    "Market Value",
+    "Shares Held",
+    "Asset Category"
+  ],
+  "rows": [
+    {
+      "Name": "Robert Half International Inc",
+      "Ticker": "RHI.N",
+      "Identifier": "770323103",
+      "Weight": "3.33872738",
+      "Market Value": "104884.5",
+      "Shares Held": "2854",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Verizon Communications Inc",
+      "Ticker": "VZ",
+      "Identifier": "92343V104",
+      "Weight": "3.33498962",
+      "Market Value": "104767.08",
+      "Shares Held": "2284",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Best Buy Co Inc",
+      "Ticker": "BBY.N",
+      "Identifier": "086516101",
+      "Weight": "2.82012825",
+      "Market Value": "88592.96",
+      "Shares Held": "1004",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Target Corp",
+      "Ticker": "TGT",
+      "Identifier": "87612E106",
+      "Weight": "2.45899614",
+      "Market Value": "77248.17",
+      "Shares Held": "493",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Franklin Resources Inc",
+      "Ticker": "BEN",
+      "Identifier": "354613101",
+      "Weight": "2.34756198",
+      "Market Value": "73747.52",
+      "Shares Held": "2296",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "AMCOR PLC USD 0.01",
+      "Ticker": "AMCR",
+      "Identifier": "G0250X149",
+      "Weight": "2.32522135",
+      "Market Value": "73045.7",
+      "Shares Held": "1745",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Edison International",
+      "Ticker": "EIX",
+      "Identifier": "281020107",
+      "Weight": "2.12426201",
+      "Market Value": "66732.66",
+      "Shares Held": "1242",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "JM SMUCKER CO/THE",
+      "Ticker": "SJM",
+      "Identifier": "832696405",
+      "Weight": "2.0477894",
+      "Market Value": "64330.31",
+      "Shares Held": "541",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Kimberly-Clark",
+      "Ticker": "KMB.N",
+      "Identifier": "494368103",
+      "Weight": "1.89187389",
+      "Market Value": "59432.3",
+      "Shares Held": "610",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Realty Income Corp",
+      "Ticker": "O",
+      "Identifier": "756109104",
+      "Weight": "1.8719659",
+      "Market Value": "58806.9",
+      "Shares Held": "1083",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "EXXONMOBIL HLDGS CORP NPV",
+      "Ticker": "XOM",
+      "Identifier": "30233Q108",
+      "Weight": "1.85469999",
+      "Market Value": "58264.5",
+      "Shares Held": "358",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Sonoco Products Co",
+      "Ticker": "SON.N",
+      "Identifier": "835495102",
+      "Weight": "1.81514057",
+      "Market Value": "57021.76",
+      "Shares Held": "1168",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Federal Realty Investment Trust",
+      "Ticker": "FRT",
+      "Identifier": "313745101",
+      "Weight": "1.76493193",
+      "Market Value": "55444.48",
+      "Shares Held": "512",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "T Rowe Price Group Inc",
+      "Ticker": "TROW",
+      "Identifier": "74144T108",
+      "Weight": "1.71570055",
+      "Market Value": "53897.9",
+      "Shares Held": "518",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Stanley Black & Decker Inc",
+      "Ticker": "SWK",
+      "Identifier": "854502101",
+      "Weight": "1.70612058",
+      "Market Value": "53596.95",
+      "Shares Held": "605",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Archer-Daniels-Midland Co",
+      "Ticker": "ADM",
+      "Identifier": "039483102",
+      "Weight": "1.67783334",
+      "Market Value": "52708.32",
+      "Shares Held": "664",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Hormel Foods",
+      "Ticker": "HRL.N",
+      "Identifier": "440452100",
+      "Weight": "1.66237998",
+      "Market Value": "52222.86",
+      "Shares Held": "2619",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Eversource Energy",
+      "Ticker": "ES US",
+      "Identifier": "30040W108",
+      "Weight": "1.62164021",
+      "Market Value": "50943.04",
+      "Shares Held": "794",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Texas Instruments Inc",
+      "Ticker": "TXN.O",
+      "Identifier": "882508104",
+      "Weight": "1.53354208",
+      "Market Value": "48175.48",
+      "Shares Held": "172",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Essex Property Trust Inc",
+      "Ticker": "ESS",
+      "Identifier": "297178105",
+      "Weight": "1.52640971",
+      "Market Value": "47951.42",
+      "Shares Held": "178",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "AbbVie Inc",
+      "Ticker": "ABBV",
+      "Identifier": "00287Y109",
+      "Weight": "1.51552175",
+      "Market Value": "47609.38",
+      "Shares Held": "182",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Clorox",
+      "Ticker": "CLX.N",
+      "Identifier": "189054109",
+      "Weight": "1.45956927",
+      "Market Value": "45851.66",
+      "Shares Held": "566",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Spire Inc",
+      "Ticker": "SR",
+      "Identifier": "84857L101",
+      "Weight": "1.42663385",
+      "Market Value": "44817.01",
+      "Shares Held": "589",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Essential Utilities Inc",
+      "Ticker": "WTRG",
+      "Identifier": "29670G102",
+      "Weight": "1.41966924",
+      "Market Value": "44598.22",
+      "Shares Held": "1138",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Coca-Cola Co",
+      "Ticker": "KO",
+      "Identifier": "191216100",
+      "Weight": "1.37828773",
+      "Market Value": "43298.24",
+      "Shares Held": "503",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Consolidated Edison Inc",
+      "Ticker": "ED",
+      "Identifier": "209115104",
+      "Weight": "1.36325487",
+      "Market Value": "42825.99",
+      "Shares Held": "419",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Pepsico",
+      "Ticker": "PEP.N",
+      "Identifier": "713448108",
+      "Weight": "1.32712157",
+      "Market Value": "41690.88",
+      "Shares Held": "329",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "ONE Gas Inc",
+      "Ticker": "OGS US",
+      "Identifier": "68235P108",
+      "Weight": "1.21253187",
+      "Market Value": "38091.1",
+      "Shares Held": "530",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Avista Corp",
+      "Ticker": "AVA UN",
+      "Identifier": "05379B107",
+      "Weight": "1.17173257",
+      "Market Value": "36809.41",
+      "Shares Held": "1049",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Equity LifeStyle Properties Inc",
+      "Ticker": "ELS",
+      "Identifier": "29472R108",
+      "Weight": "1.17163135",
+      "Market Value": "36806.23",
+      "Shares Held": "631",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Air Products & Chemicals Inc",
+      "Ticker": "APD",
+      "Identifier": "009158106",
+      "Weight": "1.16908889",
+      "Market Value": "36726.36",
+      "Shares Held": "132",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Procter & Gamble Co",
+      "Ticker": "PG",
+      "Identifier": "742718109",
+      "Weight": "1.16077808",
+      "Market Value": "36465.28",
+      "Shares Held": "251",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Sysco Corp",
+      "Ticker": "SYY.N",
+      "Identifier": "871829107",
+      "Weight": "1.09441003",
+      "Market Value": "34380.36",
+      "Shares Held": "441",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Polaris Industries Inc",
+      "Ticker": "PII",
+      "Identifier": "731068102",
+      "Weight": "1.08567967",
+      "Market Value": "34106.1",
+      "Shares Held": "654",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Colgate-Palmolive",
+      "Ticker": "CL.N",
+      "Identifier": "194162103",
+      "Weight": "1.07008115",
+      "Market Value": "33616.08",
+      "Shares Held": "394",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "ABM Industries Inc",
+      "Ticker": "ABM",
+      "Identifier": "000957100",
+      "Weight": "1.065673",
+      "Market Value": "33477.6",
+      "Shares Held": "696",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Medtronic plc",
+      "Ticker": "MDT",
+      "Identifier": "G5960L103",
+      "Weight": "1.04379139",
+      "Market Value": "32790.2",
+      "Shares Held": "380",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Automatic Data Process",
+      "Ticker": "ADP.O",
+      "Identifier": "053015103",
+      "Weight": "1.04326361",
+      "Market Value": "32773.62",
+      "Shares Held": "127",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "National Fuel Gas Co",
+      "Ticker": "NFG",
+      "Identifier": "636180101",
+      "Weight": "1.03595234",
+      "Market Value": "32543.94",
+      "Shares Held": "429",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "American States Water Co",
+      "Ticker": "AWR",
+      "Identifier": "029899101",
+      "Weight": "1.02995989",
+      "Market Value": "32355.69",
+      "Shares Held": "393",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "NextEra Energy Inc",
+      "Ticker": "NEE",
+      "Identifier": "65339F101",
+      "Weight": "1.01020374",
+      "Market Value": "31735.06",
+      "Shares Held": "419",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Hanover Insurance Group Inc",
+      "Ticker": "THG.N",
+      "Identifier": "410867105",
+      "Weight": "0.96786598",
+      "Market Value": "30405.04",
+      "Shares Held": "142",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Illinois Tool Works Inc",
+      "Ticker": "ITW",
+      "Identifier": "452308109",
+      "Weight": "0.96640169",
+      "Market Value": "30359.04",
+      "Shares Held": "118",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "PPG Industries Inc",
+      "Ticker": "PPG",
+      "Identifier": "693506107",
+      "Weight": "0.95646998",
+      "Market Value": "30047.04",
+      "Shares Held": "288",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Fastenal Co",
+      "Ticker": "FAST.O",
+      "Identifier": "311900104",
+      "Weight": "0.95387913",
+      "Market Value": "29965.65",
+      "Shares Held": "605",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "QUALCOMM Inc",
+      "Ticker": "QCOM",
+      "Identifier": "747525103",
+      "Weight": "0.90805796",
+      "Market Value": "28526.2",
+      "Shares Held": "155",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "California Water Service Group",
+      "Ticker": "CWT UN",
+      "Identifier": "130788102",
+      "Weight": "0.90140626",
+      "Market Value": "28317.24",
+      "Shares Held": "612",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Microchip Technology Inc",
+      "Ticker": "MCHP.O",
+      "Identifier": "595017104",
+      "Weight": "0.89864543",
+      "Market Value": "28230.51",
+      "Shares Held": "363",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Aflac Inc",
+      "Ticker": "AFL",
+      "Identifier": "001055102",
+      "Weight": "0.84329999",
+      "Market Value": "26491.86",
+      "Shares Held": "237",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Toro Co",
+      "Ticker": "TTC.N",
+      "Identifier": "891092108",
+      "Weight": "0.81642898",
+      "Market Value": "25647.72",
+      "Shares Held": "266",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Westlake Chemical Corp",
+      "Ticker": "WLK",
+      "Identifier": "960413102",
+      "Weight": "0.80529209",
+      "Market Value": "25297.86",
+      "Shares Held": "406",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ryder System Inc",
+      "Ticker": "R.N",
+      "Identifier": "783549108",
+      "Weight": "0.77610685",
+      "Market Value": "24381.02",
+      "Shares Held": "107",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "McCormick & Co",
+      "Ticker": "MKC",
+      "Identifier": "579780206",
+      "Weight": "0.74589725",
+      "Market Value": "23432",
+      "Shares Held": "505",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "BECTON DICKINSON & CO",
+      "Ticker": "BDX",
+      "Identifier": "075887109",
+      "Weight": "0.73504239",
+      "Market Value": "23091",
+      "Shares Held": "129",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Abbott Laboratories",
+      "Ticker": "ABT",
+      "Identifier": "002824100",
+      "Weight": "0.71099555",
+      "Market Value": "22335.58",
+      "Shares Held": "226",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CSX Corp",
+      "Ticker": "CSX",
+      "Identifier": "126408103",
+      "Weight": "0.66623662",
+      "Market Value": "20929.5",
+      "Shares Held": "450",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "RPM International Inc",
+      "Ticker": "RPM.N",
+      "Identifier": "749685103",
+      "Weight": "0.65644911",
+      "Market Value": "20622.03",
+      "Shares Held": "209",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "ACCENTURE LTD-CL A",
+      "Ticker": "ACN",
+      "Identifier": "G1151C101",
+      "Weight": "0.63040796",
+      "Market Value": "19803.96",
+      "Shares Held": "108",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Analog Devices Inc",
+      "Ticker": "ADI.O",
+      "Identifier": "032654105",
+      "Weight": "0.61878371",
+      "Market Value": "19438.79",
+      "Shares Held": "49",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "NIKE Inc-CL B",
+      "Ticker": "NKE",
+      "Identifier": "654106103",
+      "Weight": "0.61414287",
+      "Market Value": "19293",
+      "Shares Held": "545",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "2226792D",
+      "Ticker": "LIN",
+      "Identifier": "G54950103",
+      "Weight": "0.60437031",
+      "Market Value": "18986",
+      "Shares Held": "40",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Emerson Electric Co",
+      "Ticker": "EMR",
+      "Identifier": "291011104",
+      "Weight": "0.6023394",
+      "Market Value": "18922.2",
+      "Shares Held": "122",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Nordson Corp",
+      "Ticker": "NDSN",
+      "Identifier": "655663102",
+      "Weight": "0.59486674",
+      "Market Value": "18687.45",
+      "Shares Held": "57",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "APTARGROUP INC",
+      "Ticker": "ATR",
+      "Identifier": "038336103",
+      "Weight": "0.59009284",
+      "Market Value": "18537.48",
+      "Shares Held": "153",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Assurant Inc",
+      "Ticker": "AIZ.N",
+      "Identifier": "04621X108",
+      "Weight": "0.58714897",
+      "Market Value": "18445",
+      "Shares Held": "70",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Nucor Corp",
+      "Ticker": "NUE.N",
+      "Identifier": "670346105",
+      "Weight": "0.56550293",
+      "Market Value": "17765",
+      "Shares Held": "76",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Church & Dwight",
+      "Ticker": "CHD.N",
+      "Identifier": "171340102",
+      "Weight": "0.56085985",
+      "Market Value": "17619.14",
+      "Shares Held": "187",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "WASTE MANAGEMENT INC",
+      "Ticker": "WM",
+      "Identifier": "94106L109",
+      "Weight": "0.54526642",
+      "Market Value": "17129.28",
+      "Shares Held": "84",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CHUBB LTD NPV",
+      "Ticker": "CB",
+      "Identifier": "H1467J104",
+      "Weight": "0.51767472",
+      "Market Value": "16262.5",
+      "Shares Held": "50",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Factset Research Systems",
+      "Ticker": "FDS.N",
+      "Identifier": "303075105",
+      "Weight": "0.50699653",
+      "Market Value": "15927.05",
+      "Shares Held": "59",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "HB Fuller Co",
+      "Ticker": "FUL",
+      "Identifier": "359694106",
+      "Weight": "0.49762093",
+      "Market Value": "15632.52",
+      "Shares Held": "316",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Lincoln Electric Holdings Inc",
+      "Ticker": "LECO.O",
+      "Identifier": "533900106",
+      "Weight": "0.49691107",
+      "Market Value": "15610.22",
+      "Shares Held": "59",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Lowe's Cos Inc",
+      "Ticker": "LOW",
+      "Identifier": "548661107",
+      "Weight": "0.49277731",
+      "Market Value": "15480.36",
+      "Shares Held": "84",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "REPUBLIC SERVICES INC",
+      "Ticker": "RSG",
+      "Identifier": "760759100",
+      "Weight": "0.4876889",
+      "Market Value": "15320.51",
+      "Shares Held": "73",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ameriprise Financial Inc",
+      "Ticker": "AMP.N",
+      "Identifier": "03076C106",
+      "Weight": "0.48585344",
+      "Market Value": "15262.85",
+      "Shares Held": "31",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "MSA Safety Inc",
+      "Ticker": "MSA",
+      "Identifier": "553498106",
+      "Weight": "0.47563746",
+      "Market Value": "14941.92",
+      "Shares Held": "84",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Caterpillar Inc",
+      "Ticker": "CAT",
+      "Identifier": "149123101",
+      "Weight": "0.46456933",
+      "Market Value": "14594.22",
+      "Shares Held": "18",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cummins Inc",
+      "Ticker": "CMI",
+      "Identifier": "231021106",
+      "Weight": "0.46042284",
+      "Market Value": "14463.96",
+      "Shares Held": "28",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "C.H. ROBINSON WORLDWIDE INC",
+      "Ticker": "CHRW",
+      "Identifier": "12541W209",
+      "Weight": "0.4568627",
+      "Market Value": "14352.12",
+      "Shares Held": "97",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Carlisle Cos Inc",
+      "Ticker": "CSL.N",
+      "Identifier": "142339100",
+      "Weight": "0.44098437",
+      "Market Value": "13853.31",
+      "Shares Held": "43",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Donaldson Co Inc",
+      "Ticker": "DCI.N",
+      "Identifier": "257651109",
+      "Weight": "0.43499892",
+      "Market Value": "13665.28",
+      "Shares Held": "157",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cardinal Health Inc",
+      "Ticker": "CAH",
+      "Identifier": "14149Y108",
+      "Weight": "0.43204551",
+      "Market Value": "13572.5",
+      "Shares Held": "61",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ecolab",
+      "Ticker": "ECL.N",
+      "Identifier": "278865100",
+      "Weight": "0.41954619",
+      "Market Value": "13179.84",
+      "Shares Held": "48",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "WW Grainger Inc",
+      "Ticker": "GWW",
+      "Identifier": "384802104",
+      "Weight": "0.39655555",
+      "Market Value": "12457.6",
+      "Shares Held": "10",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Franklin Electric Co Inc",
+      "Ticker": "FELE",
+      "Identifier": "353514102",
+      "Weight": "0.38765616",
+      "Market Value": "12178.03",
+      "Shares Held": "127",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "JACK HENRY & ASSOCIATES INC",
+      "Ticker": "JKHY",
+      "Identifier": "426281101",
+      "Weight": "0.38301276",
+      "Market Value": "12032.16",
+      "Shares Held": "84",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cintas Corp",
+      "Ticker": "CTAS.O",
+      "Identifier": "172908105",
+      "Weight": "0.35392621",
+      "Market Value": "11118.42",
+      "Shares Held": "57",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Dover Corp",
+      "Ticker": "DOV.N",
+      "Identifier": "260003108",
+      "Weight": "0.34534673",
+      "Market Value": "10848.9",
+      "Shares Held": "58",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cash & Cash Equivalents",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.33480575",
+      "Market Value": "10517.76",
+      "Shares Held": "-",
+      "Asset Category": "Cash"
+    },
+    {
+      "Name": "Badger Meter Inc",
+      "Ticker": "BMI",
+      "Identifier": "056525108",
+      "Weight": "0.33033647",
+      "Market Value": "10377.36",
+      "Shares Held": "84",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Sherwin-Williams Co",
+      "Ticker": "SHW",
+      "Identifier": "824348106",
+      "Weight": "0.32929492",
+      "Market Value": "10344.64",
+      "Shares Held": "32",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "STERIS Plc",
+      "Ticker": "STE US",
+      "Identifier": "G8473T100",
+      "Weight": "0.31420094",
+      "Market Value": "9870.47",
+      "Shares Held": "47",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "JB Hunt Transport Services Inc",
+      "Ticker": "JBHT.O",
+      "Identifier": "445658107",
+      "Weight": "0.31381036",
+      "Market Value": "9858.2",
+      "Shares Held": "44",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Texas Pacific Land Corp",
+      "Ticker": "TPL",
+      "Identifier": "88262P102",
+      "Weight": "0.30078676",
+      "Market Value": "9449.07",
+      "Shares Held": "29",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Microsoft Corp",
+      "Ticker": "MSFT",
+      "Identifier": "594918104",
+      "Weight": "0.29388326",
+      "Market Value": "9232.2",
+      "Shares Held": "18",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Wal-Mart Stores Inc",
+      "Ticker": "WMT",
+      "Identifier": "931142103",
+      "Weight": "0.28118213",
+      "Market Value": "8833.2",
+      "Shares Held": "85",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Royal Gold Inc",
+      "Ticker": "RGLD",
+      "Identifier": "780287108",
+      "Weight": "0.27796069",
+      "Market Value": "8732",
+      "Shares Held": "37",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Roper Technologies",
+      "Ticker": "ROP.N",
+      "Identifier": "776696106",
+      "Weight": "0.26694157",
+      "Market Value": "8385.84",
+      "Shares Held": "24",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "RenaissanceRe",
+      "Ticker": "RNR.N",
+      "Identifier": "G7496G103",
+      "Weight": "0.24312074",
+      "Market Value": "7637.52",
+      "Shares Held": "24",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Albemarle Corp",
+      "Ticker": "ALB.N",
+      "Identifier": "012653101",
+      "Weight": "0.2323391",
+      "Market Value": "7298.82",
+      "Shares Held": "69",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Costco Wholesale Corp",
+      "Ticker": "COST.O",
+      "Identifier": "22160K105",
+      "Weight": "0.2318266",
+      "Market Value": "7282.72",
+      "Shares Held": "8",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "AmerisourceBergen Corp",
+      "Ticker": "ABC",
+      "Identifier": "03073E105",
+      "Weight": "0.22938441",
+      "Market Value": "7206",
+      "Shares Held": "24",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "S&P Global",
+      "Ticker": "SPGI",
+      "Identifier": "78409V104",
+      "Weight": "0.20091095",
+      "Market Value": "6311.52",
+      "Shares Held": "16",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Pentair PLC",
+      "Ticker": "PNR.N",
+      "Identifier": "G7S00T104",
+      "Weight": "0.19060839",
+      "Market Value": "5987.87",
+      "Shares Held": "113",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "West Pharmaceutical Services Inc",
+      "Ticker": "WST",
+      "Identifier": "955306105",
+      "Weight": "0.16523063",
+      "Market Value": "5190.64",
+      "Shares Held": "14",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "MOBILITY GLOBAL",
+      "Ticker": "MBGL",
+      "Identifier": "60744M106",
+      "Weight": "0.00928074",
+      "Market Value": "291.55",
+      "Shares Held": "17",
+      "Asset Category": "Equity"
+    }
+  ]
+}

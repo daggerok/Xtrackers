@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-10-01T06:10:06.648Z",
+  "browser": "153.0.8010.12",
+  "playwright": "1.63.0",
+  "command": "PLAYWRIGHT_MODULE=/home/user/.cache/xtrackers-browser/node_modules/playwright/index.mjs bun research/2026-10-01/browser-check.ts",
+  "cases": [
+    {
+      "name": "zero selection: title/count only; rich details hidden",
+      "passed": true
+    },
+    {
+      "name": "hover/focus/interactive link/Escape preserve timestamps, counts and provenance",
+      "passed": true
+    },
+    {
+      "name": "Use checkboxes alone select; sorted clickable tickers activate without membership changes",
+      "passed": true
+    }
+  ],
+  "files": {
+    "app.tsx": "cb786e97dae28f78adf6ea7b2c9d168d1468072d8a20a3469253a810cf99bcb3",
+    "index.html": "c0a8c1e6563ca0fb505d04d1ba74ce2d3f2e9168e7187de7a01ea3e3211084a2"
+  },
+  "pageErrors": [
+    "Cannot access 'uploadedFunds' before initialization"
+  ],
+  "failedRequests": [],
+  "httpErrors": [],
+  "expectedCdnWarnings": [
+    "cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation",
+    "You are using the in-browser Babel transformer. Be sure to precompile your scripts for production - https://babeljs.io/docs/setup/"
+  ],
+  "limitations": [
+    "Initial feed has 3 downloaded / 39 catalog-only funds; all-selected may request their not-yet-published metadata (404).",
+    "No live financial provider calls were used by browser checks; source acceptance is a separate real CLI exercise.",
+    "CDN Babel and Tailwind warnings are intentional shared no-build architecture, not suppressed."
+  ]
+}

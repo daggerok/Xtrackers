@@ -1,0 +1,54 @@
+{
+  "retrieved": "2026-10-01",
+  "purpose": "Offline source fixtures; actual official responses, not invented product data. No cookies or auth headers.",
+  "files": [
+    {
+      "path": "ASHR-distributions.xlsx",
+      "url": "https://etf.dws.com/api/pdp/en-us/export/etf/ASHR/Distributions",
+      "bytes": 25103,
+      "sha256": "06388c41786cf7cd16067b2671411fbb3264cd2d0797b71991b7c1d5f8875718"
+    },
+    {
+      "path": "ASHR-meta.json",
+      "url": "https://etf.dws.com/api/pdp/en-us/etfus/ASHR/pdpMetaTagsTealium",
+      "bytes": 84972,
+      "sha256": "c30950d4510b60c856e47107e3f388b235dfc28e1bbd013da6d61cd946658e89"
+    },
+    {
+      "path": "ASHR-performance.xlsx",
+      "url": "https://etf.dws.com/api/pdp/en-us/Export/etf/ASHR/Performance",
+      "bytes": 192877,
+      "sha256": "85e0ea0e10d1c7fd6cfc8ff0d486a6227da07944f992e6d3d1ff06eb0ee0222a"
+    },
+    {
+      "path": "ASHR-securities.xlsx",
+      "url": "https://etf.dws.com/api/pdp/en-us/export/etf/ASHR/Securities",
+      "bytes": 75756,
+      "sha256": "cfebf9aed93ff7ae4a71b119cdaf39906fab16115177e9b5783fd51d3e6beb04"
+    },
+    {
+      "path": "DBEF-meta.json",
+      "url": "https://etf.dws.com/api/pdp/en-us/etfus/DBEF/pdpMetaTagsTealium",
+      "bytes": 101847,
+      "sha256": "2c71058f68d25cbeecea9bddd1d7e118b250b851b382ebc8165bf8fd1ae38e5a"
+    },
+    {
+      "path": "HYLB-meta.json",
+      "url": "https://etf.dws.com/api/pdp/en-us/etfus/HYLB/pdpMetaTagsTealium",
+      "bytes": 140611,
+      "sha256": "d2032383fc67bed122f9d9436cdad0ba83fa45accb48ec34b651c37d44314205"
+    },
+    {
+      "path": "catalog-empty.xlsx",
+      "url": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A0%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
+      "bytes": 19982,
+      "sha256": "c3c9f38fcbc1d186a5062959a7942e49e83b58b1c0056d2f5a90e41143d1f616"
+    },
+    {
+      "path": "us-sitemap.xml",
+      "url": "https://etf.dws.com/en-us/sitemap.xml",
+      "bytes": 25750,
+      "sha256": "dd05d65f908350b0ad25bd56110373a5ebefadd89134470fa5f9ba0b91ad3072"
+    }
+  ]
+}

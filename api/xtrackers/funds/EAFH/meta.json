@@ -1,0 +1,117 @@
+{
+  "ticker": "EAFH",
+  "name": "Xtrackers MSCI EAFE 50% Hedged Equity ETF",
+  "category": "Equities / International",
+  "fundPage": "https://etf.dws.com/en-us/EAFH-msci-eafe-50-hedged-equity-etf/",
+  "dataFile": "funds/EAFH/meta.json",
+  "ter": "0.20%",
+  "terValue": 0.2,
+  "nav": "$25.00",
+  "navValue": 25,
+  "aum": "$5,000,025",
+  "aumValue": 5000025,
+  "asOfDate": "2026-09-30",
+  "inceptionDate": "2026-10-01",
+  "exchange": "Cboe",
+  "closePrice": "—",
+  "closePriceAsOfDate": null,
+  "premiumDiscount": "—",
+  "cusip": "23306X753",
+  "isin": "US23306X7536",
+  "distributions": {
+    "frequency": "Semi-annually",
+    "exDate": null,
+    "dividend": null,
+    "paymentsPerYear": 2,
+    "headers": [
+      "Ex-Date",
+      "Amount"
+    ],
+    "rows": []
+  },
+  "returns": {
+    "monthEnd": {
+      "asOfDate": "2026-09-30",
+      "ytd": null,
+      "yr1": null,
+      "yr3": null,
+      "yr5": null,
+      "yr10": null,
+      "sinceInception": null
+    },
+    "quarterEnd": {
+      "asOfDate": "2026-09-30",
+      "ytd": null,
+      "yr1": null,
+      "yr3": null,
+      "yr5": null,
+      "yr10": null,
+      "sinceInception": null
+    }
+  },
+  "metrics": {
+    "ytd": null,
+    "tr1y": null,
+    "cagr3y": null,
+    "cagr5y": null,
+    "cagr10y": null,
+    "tr3y": null,
+    "tr5y": null,
+    "tr10y": null,
+    "siAnn": null,
+    "dividendYield": null,
+    "dividendYieldText": "—",
+    "secYield": null,
+    "secYieldText": "—",
+    "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns"
+  },
+  "holdings": {
+    "pages": [
+      "holdings/001.json",
+      "holdings/002.json",
+      "holdings/003.json"
+    ],
+    "pageSize": 250,
+    "totalRows": 572,
+    "asOfDate": "2026-09-30",
+    "source": "https://etf.dws.com/api/pdp/en-us/export/etf/EAFH/Securities"
+  },
+  "history": {
+    "pages": [
+      "history/001.json"
+    ],
+    "pageSize": 1000,
+    "totalRows": 1,
+    "asOfDate": "2026-09-30",
+    "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/EAFH/Performance"
+  },
+  "generatedAt": "2026-10-01T21:24:40.665Z",
+  "netTerValue": 0.2,
+  "source": {
+    "provider": "Xtrackers (DWS)",
+    "site": "https://etf.dws.com/en-us/",
+    "catalog": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A1%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
+    "details": "https://etf.dws.com/api/pdp/en-us/etfus/EAFH/pdpMetaTagsTealium",
+    "holdingsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/EAFH/Securities",
+    "historySource": "https://etf.dws.com/api/pdp/en-us/Export/etf/EAFH/Performance",
+    "distributionsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/EAFH/Distributions",
+    "yahoo": "https://query1.finance.yahoo.com/v8/finance/chart/EAFH",
+    "trust": "DBX ETF TRUST",
+    "trustCik": "0001503123"
+  },
+  "identifiers": {
+    "cusip": "23306X753",
+    "isin": "US23306X7536",
+    "indexTicker": "HU123756"
+  },
+  "yields": {
+    "dividendYield": null,
+    "dividendYieldText": "—",
+    "dividendYieldKind": "latest positive distribution x payments per year / NAV",
+    "distributionRate": null,
+    "secYield": null,
+    "secYieldText": "—",
+    "secYieldKind": null
+  },
+  "distributionEvents": []
+}

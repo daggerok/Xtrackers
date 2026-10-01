@@ -1,0 +1,152 @@
+{
+  "ticker": "IND",
+  "name": "Xtrackers Nifty 500 India ETF",
+  "category": "Equities",
+  "fundPage": "https://etf.dws.com/en-us/IND-nifty-500-india-etf/",
+  "dataFile": "funds/IND/meta.json",
+  "ter": "0.19%",
+  "terValue": 0.19,
+  "nav": "$21.57",
+  "navValue": 21.57,
+  "aum": "$4,314,721",
+  "aumValue": 4314721,
+  "asOfDate": "2026-09-30",
+  "inceptionDate": "2025-11-25",
+  "exchange": "NASDAQ",
+  "closePrice": "$21.50",
+  "closePriceAsOfDate": "2026-10-01",
+  "premiumDiscount": "—",
+  "cusip": "23306X787",
+  "isin": "US23306X7874",
+  "distributions": {
+    "frequency": "Semi-annually",
+    "exDate": "2026-06-18",
+    "dividend": "0.07775",
+    "paymentsPerYear": 2,
+    "headers": [
+      "Ex-Date",
+      "Amount"
+    ],
+    "rows": [
+      [
+        "2025-12-05",
+        "0"
+      ],
+      [
+        "2025-12-19",
+        "0"
+      ],
+      [
+        "2026-06-18",
+        "0.07775"
+      ]
+    ]
+  },
+  "returns": {
+    "monthEnd": {
+      "asOfDate": "2026-09-30",
+      "ytd": -13.01,
+      "yr1": null,
+      "yr3": null,
+      "yr5": null,
+      "yr10": null,
+      "sinceInception": null
+    },
+    "quarterEnd": {
+      "asOfDate": "2026-09-30",
+      "ytd": -13.01,
+      "yr1": null,
+      "yr3": null,
+      "yr5": null,
+      "yr10": null,
+      "sinceInception": null
+    }
+  },
+  "metrics": {
+    "ytd": -13.01,
+    "tr1y": null,
+    "cagr3y": null,
+    "cagr5y": null,
+    "cagr10y": null,
+    "tr3y": null,
+    "tr5y": null,
+    "tr10y": null,
+    "siAnn": null,
+    "dividendYield": 0.72,
+    "dividendYieldText": "0.72%",
+    "secYield": 0.89,
+    "secYieldText": "0.89%",
+    "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns"
+  },
+  "holdings": {
+    "pages": [
+      "holdings/001.json",
+      "holdings/002.json",
+      "holdings/003.json"
+    ],
+    "pageSize": 250,
+    "totalRows": 527,
+    "asOfDate": "2026-09-30",
+    "source": "https://etf.dws.com/api/pdp/en-us/export/etf/IND/Securities"
+  },
+  "history": {
+    "pages": [
+      "history/001.json"
+    ],
+    "pageSize": 1000,
+    "totalRows": 214,
+    "asOfDate": "2026-10-01",
+    "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/IND/Performance + https://query1.finance.yahoo.com/v8/finance/chart/IND"
+  },
+  "generatedAt": "2026-10-01T21:24:48.133Z",
+  "netTerValue": 0.19,
+  "source": {
+    "provider": "Xtrackers (DWS)",
+    "site": "https://etf.dws.com/en-us/",
+    "catalog": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A1%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
+    "details": "https://etf.dws.com/api/pdp/en-us/etfus/IND/pdpMetaTagsTealium",
+    "holdingsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/IND/Securities",
+    "historySource": "https://etf.dws.com/api/pdp/en-us/Export/etf/IND/Performance + https://query1.finance.yahoo.com/v8/finance/chart/IND",
+    "distributionsSource": "https://etf.dws.com/api/pdp/en-us/export/etf/IND/Distributions",
+    "yahoo": "https://query1.finance.yahoo.com/v8/finance/chart/IND",
+    "trust": "DBX ETF TRUST",
+    "trustCik": "0001503123"
+  },
+  "identifiers": {
+    "cusip": "23306X787",
+    "isin": "US23306X7874",
+    "indexTicker": "N500USNT"
+  },
+  "yields": {
+    "dividendYield": 0.72,
+    "dividendYieldText": "0.72%",
+    "dividendYieldKind": "official indicated distribution rate / NAV",
+    "distributionRate": 0.72,
+    "secYield": 0.89,
+    "secYieldText": "0.89%",
+    "secYieldKind": "official DWS 30-day SEC yield"
+  },
+  "distributionEvents": [
+    {
+      "exDate": "2025-12-05",
+      "epoch": 1764892800,
+      "amount": 0,
+      "recordDate": "2025-12-05",
+      "payDate": "2025-12-12"
+    },
+    {
+      "exDate": "2025-12-19",
+      "epoch": 1766102400,
+      "amount": 0,
+      "recordDate": "2025-12-19",
+      "payDate": "2025-12-29"
+    },
+    {
+      "exDate": "2026-06-18",
+      "epoch": 1781740800,
+      "amount": 0.07775,
+      "recordDate": "2026-06-18",
+      "payDate": "2026-06-26"
+    }
+  ]
+}

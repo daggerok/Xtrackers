@@ -1,0 +1,71 @@
+--- JPMorgan@8ce0ddc/index.html
++++ Xtrackers/index.html
+@@ -3,8 +3,8 @@
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-  <meta name="description" content="JPMorgan ETF holdings to Watchlist from the static api/jpmorgan JSON feed, generated from the am.jpmorgan.com ETF fund explorer, product-data and historical-data JSON (daily holdings, NAV history, dividends), with SEC EDGAR N-PORT-P and Yahoo Finance as fallbacks." />
+-  <title>JPMorgan ETFs</title>
++  <meta name="description" content="Xtrackers ETF holdings to Watchlist from the static api/xtrackers JSON feed, generated from the etf.dws.com official catalog/sitemap, PDP and XLSX exports (daily holdings, NAV history, distributions), with SEC EDGAR N-PORT-P as a holdings fallback and Yahoo Finance for daily prices/history/dividend fallbacks." />
++  <title>Xtrackers ETFs</title>
+   <link rel="icon" type="image/x-icon" href="./favicon.ico">
+ 
+   <!-- Inter font (same as Amplify / iShares apps) -->
+@@ -27,7 +27,7 @@
+   <!-- Synchronous theme init (prevents flash, same strategy as Amplify / iShares) -->
+   <script>
+     (function () {
+-      var dark = localStorage.getItem('jpmorgan-theme') === 'dark';
++      var dark = localStorage.getItem('xtrackers-theme') === 'dark';
+       document.documentElement.classList.toggle('dark', dark);
+       document.documentElement.style.backgroundColor = dark ? '#020617' : '#f8fafc';
+     })();
+@@ -176,7 +176,7 @@
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 7l-8.5 8.5-5-5L2 17" />
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7h6v6" />
+           </svg>
+-          <h1 class="min-w-0 text-xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">JPMorgan ETFs</h1>
++          <h1 class="min-w-0 text-xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">Xtrackers ETFs</h1>
+         </div>
+         <span id="app-subtitle" class="basis-full sm:basis-auto text-sm text-slate-500 dark:text-slate-400"></span>
+       </div>
+@@ -185,9 +185,9 @@
+           Loading…
+         </button>
+         <span id="app-summary" role="region" aria-label="ETF catalog information" hidden>
+-          Search JPMorgan ETFs, select ETFs via the “Use” checkbox, then use the Watchlist tab. Data comes from
+-          <a href="./api/jpmorgan/index.json" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 dark:text-blue-400 hover:underline">api/jpmorgan/index.json</a> generated from
+-          <a href="https://am.jpmorgan.com/us/en/asset-management/adv/products/fund-explorer/etf" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 dark:text-blue-400 hover:underline">am.jpmorgan.com ETF fund data</a> + SEC EDGAR N-PORT-P + Yahoo Finance (fallbacks)
++          Search Xtrackers ETFs, select ETFs via the “Use” checkbox, then use the Watchlist tab. Data comes from
++          <a href="./api/xtrackers/index.json" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 dark:text-blue-400 hover:underline">api/xtrackers/index.json</a> generated from
++          <a href="https://etf.dws.com/en-us/etf-products/" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 dark:text-blue-400 hover:underline">etf.dws.com PDP and XLSX fund data</a> + SEC EDGAR N-PORT-P (DBX ETF TRUST, CIK 0001503123 — holdings fallback only) + Yahoo Finance daily prices (dividend/history fallbacks)
+         </span>
+         <button id="theme-toggle" class="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition text-base leading-none" title="Toggle Theme">🌙</button>
+       </div>
+@@ -217,7 +217,7 @@
+           >✕</button>
+         </div>
+ 
+-        <!-- ETF catalogue tabs: All ETFs + JPMorgan categories. -->
++        <!-- ETF catalogue tabs: All ETFs + Xtrackers categories. -->
+         <div id="tabs-bar" class="hidden flex flex-wrap items-center justify-center gap-1.5 overflow-x-auto py-1 w-full max-w-full flex-1 themed-scroll"></div>
+ 
+         <!-- Actions intentionally match Amplify / iShares naming and placement -->
+@@ -227,7 +227,7 @@
+           <div
+             id="dropzone"
+             class="flex items-center gap-2 border border-dashed border-slate-300 dark:border-slate-600 hover:border-blue-500 bg-slate-50 dark:bg-slate-900/60 transition-all rounded-lg px-3.5 py-2 cursor-pointer text-sm text-slate-600 dark:text-slate-300"
+-            title="Upload SEC Form N-PORT-P primary_doc.xml (JPMorgan ETF holdings from EDGAR, used by the feed only when am.jpmorgan.com publishes no daily holdings for a fund). Parsed in your browser; uploads live for this session only."
++            title="Upload SEC Form N-PORT-P primary_doc.xml (Xtrackers ETF holdings from EDGAR (DBX ETF TRUST, CIK 0001503123), used by the feed only when etf.dws.com publishes no daily holdings for a fund). Parsed in your browser; uploads live for this session only."
+           >
+             <input type="file" id="file-input" accept=".xml" class="hidden" />
+             <svg class="w-4 h-4 text-blue-500 dark:text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+@@ -275,7 +275,7 @@
+             </thead>
+             <tbody id="table-body" class="divide-y divide-slate-100 dark:divide-slate-700/50 text-sm">
+               <tr>
+-                <td colspan="10" class="py-12 text-center text-slate-400 dark:text-slate-500">Loading JPMorgan ETF catalog…</td>
++                <td colspan="10" class="py-12 text-center text-slate-400 dark:text-slate-500">Loading Xtrackers ETF catalog…</td>
+               </tr>
+             </tbody>
+           </table>

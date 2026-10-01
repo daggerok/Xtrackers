@@ -1,3 +1,19 @@
+CURRENT STATE
+=============
+- Goal/acceptance: follow-up requested by user: mirror daggerok/iShares GitHub Actions and scripts/update-data.config.json approach in Xtrackers, including loader/precedence, help, docs and tests. Preserve issuer fetch/parse/financial/UI logic and current published data.
+- Status: COMPLETE. iShares-style config/workflow follow-up implemented, tested, real-source accepted and ordinary-pushed into existing OPEN PR#1.77offline tests;2live scoped CLI passes/byte-identical; both workflow and evidence checkpoint push/PR CI green. No merge/deployment/API/UI changes.
+- Repository: https://github.com/daggerok/Xtrackers
+- Branch: feat/xtrackers-etfs; existing PR #1 OPEN, not merged: https://github.com/daggerok/Xtrackers/pull/1.
+- Authorization: target-only edits/commits/ordinary fast-forward pushes to this branch/PR. No merge, force push, sibling edits, About changes or production data refresh.
+- Hard constraints: Bun-only, dependencies={}, exact types-only dev deps, no tsc/tsconfig; full embedded plan preserved; secrets never in files/config/URLs/output; first/second-line reference directive. New iShares config/workflow instruction overrides prior baked/manual-default design, not DWS-specific safe pacing or supported controls.
+- Completed: exact reference config/workflow mechanism +related README/CI/Pages/reporting/contracts;77offline tests/frozen install/both builds/diff checks; actual public remote clone ff9a5133-fund CLI twice with JSON defaults/blankENV;40 unrequested catalog rows/files preserved; repeat25selected+index26snapshot files byte-identical; target251hashes and provider/financial/request/writer code groups exact; push+PR CI successful.
+- Remaining: no implementation work. Only final delivery-journal ordinary push and its exact head/public check readback (recorded externally after push to avoid recursive self-hash commits). Owner merge/Pages enablement remain outside authorization.
+- Last explicit confirmed pushed checkpoint SHA: f2a4735e5d35a27df62958e8d17220d2f51ed6e8 (evidence stage remote/PR and both cloud CI events verified). The final delivery-journal commit containing this state is identified by git HEAD/remote readback; implementation source ff9a513, external API baseline89ba459 and main13c6007 unchanged.
+- Current published data:43 funds /21171 holdings /77473 history from the user's external update; all files must remain untouched by this follow-up.
+- Reference: daggerok/iShares main297a2e41e4a7a438ece2b8bde8e3384e960dfaeb; config lives in scripts/, NOT repo root. Full relevant snapshots below/reference.json.
+- Blockers: none. All GitHub API readback unauthenticated/public; fresh short-lived push credential remained runtime-memory-only and is to be stopped after final exact push/CI/PR readback. No secret persisted.
+- Exact next action: push this final delivery-journal checkpoint, verify local==remote==PR head and latest CI without authenticated API, stop runtime-only push transport, report PR#1 and verification in Russian. On a later recovery fully read this file and reconcile actual Git/remote/PR; do not redo the implementation or scoped live run. No merge/deployment/full refresh/sibling edits authorized.
+
 === 1st PROMPT: COPY-PASTE THIS TO THE IMPLEMENTING AGENT (WITH YOUR GITHUB ACCESS TOKEN) ===
 
 Read .worklog.txt in the repository root. It is the canonical, self-contained handoff file containing the complete mandatory recovery protocol, architecture rules, and brand-specific research.
@@ -61,8 +77,8 @@ GitHub Personal Access Token: <PASTE_YOUR_TOKEN_HERE>
 ==============================================================================================
 
 ================================================================
-CURRENT STATE
-=============
+INITIAL RESEARCH STATE (historical snapshot, 2026-09-28)
+=======================================================
 - Goal: Implement Xtrackers ETFs (DWS) holdings-to-watchlist web application in daggerok/Xtrackers matching sibling parity (Bun-only, zero runtime dependencies, static client app + update-data feed).
 - Status: Researched & Baseline Initialized. Repository cloned, clean baseline verified (LICENSE + placeholder README), official ETF brand site researched, data endpoints discovered and verified live, SEC EDGAR CIK confirmed, and self-contained plan embedded. Ready for implementation.
 - Repository: https://github.com/daggerok/Xtrackers
@@ -95,6 +111,16 @@ AUTHORITY / USER AMENDMENTS
 
 CHRONOLOGICAL JOURNAL
 =====================
+### 2026-10-01 — Recovery reconciliation and implementation authorization (completed)
+- Fully read existing .worklog.txt (828 lines, 52,811 bytes) before changes. main and origin/main both 13c600703279ebc67b495495c8be5248ca529853; clean tree; GitHub branches: main only; all-state PR list empty.
+- Historical CURRENT STATE omitted main's final docs(prompt) commit and .prompt.txt; no implementation exists. Preserved the historical snapshot below and moved active CURRENT STATE to the beginning.
+- Created feat/xtrackers-etfs. No user changes to preserve. Baseline files: .prompt.txt, .worklog.txt, LICENSE, README.md.
+- Pinned primary UI/README/shared updater reference: daggerok/JPMorgan main 8ce0ddca58b5459dd7df98f22463fb31afa82f2b. Brand-specific XLSX reference: daggerok/iShares main 297a2e41e4a7a438ece2b8bde8e3384e960dfaeb. Secondary brand-specific reference: daggerok/Aberdeen main 10a6be3f5cab48aad80b52634e3bdd8123748f7d.
+- GitHub metadata baseline: Xtrackers description/homepage null, topics [], has_pages=false. JPMorgan About matches prescribed shared pattern; its homepage is https://daggerok.github.io/JPMorgan/ and shared topics include jpmorgan/jpmorgan-etfs.
+- Installed Bun 1.4.2 from official bun.sh installer; no Bun executable originally present. git 2.47.3 and Python available. No application baseline tests exist.
+- User authorized target implementation, pushes and PR only; no merge or sibling README PRs. Russian chat requested. Credential supplied by user will be used runtime-only; no token/auth header written to tracked or config files.
+- This checkpoint is docs-only; tests not applicable. Next: verify live DWS workbook endpoints and downstream providers before choosing parser design.
+
 ### 2026-09-28 — Initial research, baseline audit, and planning (completed)
 - Cloned https://github.com/daggerok/Xtrackers at main branch.
 - Verified repository contents: LICENSE (MIT) and minimal README.md.
@@ -103,6 +129,641 @@ CHRONOLOGICAL JOURNAL
 - Verified SEC EDGAR filing registrant CIK: CONFIRMED: 'DBX ETF TRUST', CIK 0001503123..
 - Assembled self-contained plan integrating the full generic build requirements (PART 1) and brand-specific research (PART 2).
 - Committed initialized .worklog.txt to main branch. Repository is ready for implementing agent.
+
+### 2026-10-01 — Live endpoint verification and source-fixture checkpoint (completed)
+- Confirmed previous checkpoint 3389d138bccdcb085e3aad92398a43fb29530549 pushed to feat/xtrackers-etfs; git ls-remote matched local HEAD.
+- Important departure from initial research: catalog download returns HTTP 200 / real XLSX but ZERO product rows (only headers/disclaimer); monthly tab also empty. Official fundfinder datatable POST returns values=[] too. Never treat this as an empty universe or erase previous funds.
+- Official products HTML is a Nuxt client shell (2,536 bytes), not SSR and not a WAF challenge. Browser chunks reveal real PDP productType=etfus; the plan's export namespace etf still works.
+- Clean catalog fallback verified: https://etf.dws.com/en-us/sitemap.xml (HTTP 200, 25,750 bytes), 42 uppercase ticker-prefixed /en-us/...-etf/ URLs. Root /sitemap.xml is European, so do NOT use it for US discovery.
+- Verified PDP details URL: https://etf.dws.com/api/pdp/en-us/etfus/{TICKER}/pdpMetaTagsTealium. ASHR/HYLB/DBEF responses include legal name, exact net assets, expenses, frequency, SEC yield, NAV date, category and official URL. Annualised/cumulative return tables currently empty; derive only adequately covered NAV total returns, do not interpret empty cells as zero. Ignore Morningstar 3Y/5Y/10Y ratings as performance.
+- ASHR exports all HTTP 200: Securities (75,756 bytes, sparse OpenXML columns, date 2026-09-29, Symbol/ISIN/CUSIP/SEDOL/Name/Weight %/$ Market Value/$ Notional Value/Quantity/Country/Sector/Asset Class); Distributions (25,103 bytes, Excel serial dates and explicit zero-dollar events); Performance (192,877 bytes, whole-life daily Date/NAV/AUM/Outstanding shares/Dividends paid, not a growth chart).
+- Yahoo ASHR chart: HTTP 200, 2,512 daily observations for research range=10y. Runtime will use explicit periods for daily whole-life history and round adjusted close to 2 decimals; persisted provider URL will be query-free.
+- SEC data.sec.gov/submissions/CIK0001503123.json and www.sec.gov/files/company_tickers_mf.json: HTTP 403 in this environment. Official holdings work; SEC fallback must be offline-tested for exact series and documented as live-unverified.
+- References corrected after inspection: iShares currently reads legacy SpreadsheetML, NOT ZIP/OpenXML; use its request-lane shape only. Pinned OpenXML reference explicitly named in generic plan: daggerok/SPDR main d26fe5547c98f1a259f1198f4e789363b11f2491, scripts/update-data.ts ZIP/shared-string/sparse-sheet helpers. Shared updater/reporting/NPORT/derived metrics and UI/README remain JPMorgan pinned SHA. Aberdeen consulted only for source/Actions limitations.
+- Planned normal pacing unchanged: REQUEST_SLEEP=1.5, CONCURRENCY=2. No issuer denials/WAF observed, so independent lanes appropriate; no rendering proxy needed.
+- Acceptance subset: ASHR (China A equities), HYLB (fixed income / identifier-only holdings), DBEF (currency-hedged equity with forwards). Exactly these three requested; never start an unbounded updater during implementation.
+- Tracked actual source fixtures: scripts/fixtures/2026-10-01/{catalog-empty.xlsx,us-sitemap.xml,ASHR-securities.xlsx,ASHR-distributions.xlsx,ASHR-performance.xlsx,ASHR-meta.json,HYLB-meta.json,DBEF-meta.json}. research/2026-10-01/fixtures.json records URLs/bytes/SHA-256; endpoints.json records first live responses/denials.
+- Commands: Python stdlib urllib + zipfile/XML inspection; no project runtime dependencies. Fixture paths/hashes make evidence recoverable without chat or workspace research copies. No source cookies/headers/secrets persisted.
+- Next: coherent pure-parser/toolchain checkpoint with offline tests before provider orchestration.
+
+### 2026-10-01 — Bun toolchain and pure XLSX/source/metrics parsers (completed)
+- Confirmed research checkpoint a1df8156d6e7764b34c9985ab52840a6ddeb48be pushed with remote equality.
+- Added package.json (dependencies={}, exact dev @types/bun=1.4.2, @types/node=26.6.2, matching all three pinned siblings), bun.lock and .gitignore. No TypeScript package, tsconfig or runtime dependency added. bun install --frozen-lockfile passes.
+- Implemented scripts/update-data.ts pure helpers: bounded in-memory stored/deflate ZIP, OpenXML shared/rich/inline strings, namespace/sparse-cell handling, zero/null/formula errors, catalog/sitemap, exact-ticker PDP details, holdings, sorted distributions, daily NAV, Yahoo adjusted-close rounding, reinvested NAV returns, frequency/yield/TR/CAGR, coverage-limited windows and page manifests. Reference directive is line 2 before imports.
+- Dated fixture facts independently checked: ASHR holdings=287 rows (includes cash; weights sum 100.00000006), distributions=23 rows (including explicit zero-dollar events), NAV=3242 rows. First NAV serial 41583 is 2013-11-05, one day BEFORE official listing 2013-11-06; preserved both source dates. Latest NAV 2026-09-29=32.56, latest positive distribution 2025-12-19=0.75811, annual frequency, official SEC yield=1.37. HYLB category Fixed Income, SEC yield=8.10; DBEF categories Currency-hedged / Equities / International.
+- Initial fixture test run: 19 pass/5 fail revealed DWS x:-prefixed XML (SPDR parser assumed unprefixed tags) and an incorrect normalized catalog header key. Fixed parser namespace handling/key. Second run: 23 pass/1 fail exposed a test's incorrect first-NAV date; checked Excel serial independently, corrected EXPECTATION ONLY, not source/financial logic.
+- Final commands: bun test scripts/update-data.test.ts -> 24 pass, 0 fail; bun build --target=bun scripts/update-data.ts --outfile=/dev/null -> success; bun install --frozen-lockfile -> success; git diff --check -> clean.
+- Type-safety review: returnHeaderSlot returns NumericReturnKey = Exclude<keyof OfficialReturnRow,'asOfDate'> | null, numeric assignments cannot select the string metadata slot. Tests cover every tenor/reordered headers/zero/negative/null/missing/unknown headers and string preservation. No any/index-widening/assertion used for that mapping. Bun build is transpilation, NOT semantic type checking; no IDE diagnostics or tsc available/run.
+- CLI is deliberately not wired yet at this bounded checkpoint; no real updater run or production API writes have occurred. Next: request/persistence/filter/fallback layer with offline orchestration tests.
+
+### 2026-10-01 — Real updater orchestration, stable persistence and offline acceptance (completed)
+- Confirmed pure-parser checkpoint 4aadfc8742841cd2cde9dd5acd350b24aa8625e0 pushed with remote equality.
+- Added strict config/help and 23 canonical controls: MAX_FETCHES, REQUEST_SLEEP, CONCURRENCY, TICKERS, AUM, TER, DIVIDEND_YIELD, SEC_YIELD, HOLDINGS_PAGE_SIZE, HISTORY_PAGE_SIZE, MAX_RETRIES, SEC_UA, VERBOSE plus PERFORMANCE/TOTAL_RETURN for YTD/1Y/3Y/5Y/10Y. These fit GitHub's 25-input ceiling, so no advanced/hidden config or skip-provider switches are needed. Defaults: 0 / 1.5s / 2 workers / all tickers / unrestricted filters / 250 holdings / 1000 history / 2 retries.
+- Added shared JPMorgan console helper prelude (effective VERBOSE supplied without duplicate header; all named status brackets use 9-character padding). Null fields omitted; real zero and false retained. Request gate uses independent lanes with synchronous lane reservation and same-lane pacing, avoiding both a global bottleneck and concurrent callers selecting the same unreserved lane. Transient errors/408/425/429/5xx retry with bounded exponential/Retry-After delay; 403 is not retried. Request timeout 45s.
+- Added catalog XLSX -> official US sitemap -> published catalog; exact TICKERS validation before writes; data-dependent AND filters; deterministic scoped MAX_FETCHES cursor (scope fingerprint, no advance on failures, full-success cursor removal); concurrent continue-on-error workers. Unknown/malformed tickers or unusable empty catalog fail without writes. Failed/excluded/unselected entries survive unchanged, including funds absent from discovery.
+- Added real fallback chain: official PDP/holdings/NAV/distributions -> exact-trust/series SEC N-PORT holdings -> Yahoo daily prices/dividends -> prior published facts/pages/events. SEC lazy table/Atom/submissions resolver and N-PORT XML use pinned JPMorgan logic; unknown-schema JSON boundaries made defensive, XML namespaces/date/row types narrowed, exact series/trust acceptance strengthened. Company-ticker enrichment restricted to equity positions: a bond's issuer is not the bond's equity ticker. No third-party holdings scraper or synthetic positions.
+- Actual writes use recursive generatedAt/catalogReadAt/savedAt stripping + sorted-content comparison, atomic per-file rename and publish-manifest-before-stale-page-removal. Stable source URLs omit Yahoo live period parameters. Updated values retain previous nonmissing data; true zero wins. Whole-life events retained separately for reliable return reconstruction, with recent 12-event UI schedule unchanged.
+- Financial safeguards: official total distribution amount is used once (income/gains not double counted); dividend ex-dates require a matching NAV for coverage; >7-day-stale window anchors are rejected; range-limited history cannot claim SI; reporting periods depend on source dates, never fetch time; premium/discount only from same-date NAV/market prices. Empty Morningstar/return tables are not converted to zero. Different return dates are not mixed into one labelled row.
+- Added initial api/xtrackers/index.json from the tracked official US sitemap: 42 catalog-only funds, unknown facts explicitly null/Unclassified, holdings/history=0. This is an initial discovery seed, NOT a full-provider refresh or a claim that all funds have downloaded details. It allows the mandatory live smoke to start with a real published catalog and check all 39 unrequested rows for retention.
+- Tests now 43 pass / 0 fail / 274 expectations, all offline. Injected fetches use dated/literal fixtures, test real worker fallback/scope/cursor paths, exact rerun hashes, total-provider outage retention, per-fund failure continuation and wrong SEC series rejection. No network request occurs in bun test. Generic queue normalizes both promise outcomes with work.then(() => undefined, () => undefined) while returning original Promise<T>; ordering/value/rejection/recovery covered. Two simultaneous request lanes verified separately.
+- Commands: bun test scripts/update-data.test.ts; bun build --target=bun scripts/update-data.ts --outfile=/dev/null; bun install --frozen-lockfile; CLI --help; git diff --check. All pass. Manual numeric-key and Promise<T>/Promise<void> review performed; build/tests still NOT a semantic TypeScript guarantee; no tsc/tsconfig/TypeScript dependency/IDE diagnostics used.
+- No live CLI smoke has run yet. Next action above is mandatory before UI implementation/completion claims.
+
+### 2026-10-01 — Mandatory first scoped live acceptance (partial: upstream variance identified)
+- Confirmed updater checkpoint 0aec10ed050444bc7aca73f39aab3ab383ab9e78 pushed; cloned that remote feature revision into /home/user/.cache/xtrackers-live/acceptance, including the 42-fund catalog-only seed. Production api/ was NOT refreshed.
+- Actual CLI command BOTH TIMES: TICKERS="ASHR HYLB DBEF" VERBOSE=1 bun scripts/update-data.ts. Effective defaults confirmed in logs: MAX_FETCHES=0, REQUEST_SLEEP=1.5, CONCURRENCY=2, MAX_RETRIES=2, unrestricted ranges, pages=250/1000. No mocks, no skip flags, no reduced sleep.
+- Run 1: 2026-10-01T05:39:47.817Z -> 05:40:00.606Z, CLI exit 0; ASHR/DBEF/HYLB processed, 0 failures/0 skipped. Run 2: 05:40:00.650Z -> 05:40:12.867Z, CLI exit 0, all three processed again, 0 failures/0 skipped.
+- Counts both runs: 42 catalog funds, 2238 holdings, 9562 daily-history rows. ASHR=287 holdings/3244 history; DBEF=674/3851; HYLB=1277/2467. All page totals, page tickers, lengths and manifests verified. Exactly 39 unrequested catalog entries retained byte-for-byte; no unrequested paths modified, no funds dropped.
+- Official DWS Securities/NAV/Distributions/PDP supplied selected funds; Yahoo supplied daily market prices. Only warning: catalog workbook zero products -> official US sitemap. No SEC fallback invocation needed; SEC live access remains unverified/403 from research. Source URLs/date provenance retained, no Yahoo live query URL persisted. NAV/price dates differ, so headline premium/discount left unavailable rather than computed across dates.
+- Strict repeat hash check: 25 of 26 API files byte-identical; only funds/HYLB/history/002.json differs. One cell: 2022-09-09 Adj Close 27.07 -> 27.08, while NAV=34.71, Market Price=34.709999, Volume=1867900 remain equal. This is upstream Yahoo adjusted-series variance crossing a cent rounding boundary, NOT timestamp churn. Both real states preserved; no restoration/hidden mutation to manufacture a clean result.
+- Acceptance harness exit 1 is its strict byte-stability assertion; it is NOT a CLI/provider failure. Do not claim final acceptance passed yet.
+- Evidence: research/2026-10-01/scoped-live-smoke/{run-1.log,run-2.log,summary.json,hashes-before.json,hashes-after-1.json,hashes-after-2.json,second-run-upstream-diff.json}. Complete outputs stored as api-after-run-{1,2}.tar.gz (SHA-256 + member prefix in summary.json), avoiding duplicate multi-MB textual PR diffs. Unpack with tar -xzf into a scratch directory; the archives contain all 26 API files for independent verification.
+- Decision for next bounded fix: official NAV history should use the pinned primary sibling's Date/NAV/Market Price/Premium-Discount schema. Optional Yahoo adjusted-close/volume columns do not supply official NAV returns and were unnecessarily mixed into that primary sheet. Keep rounded adjusted closes in Yahoo-only fallback history and derived fallback metrics, without freezing any previous provider value. This is a source/schema correction, not a UI redesign or suppression of a material NAV/market-price change. Preserve the observed variance evidence above and repeat full live validation after the fix.
+
+### 2026-10-01 — Official NAV history schema correction from real live evidence (completed)
+- Confirmed partial live-evidence checkpoint 307052537c3d8bd175923cedbbca3189dcab6035 pushed with remote equality.
+- Changed only source publication/associated tests: official NAV history now has the pinned primary sibling's exact Date / NAV / Market Price / Premium-Discount header set. Yahoo-only fallback retains Date / Close / Adj Close / Volume, with adjusted closes still parsed at 2 decimals. No provider values frozen/restored; no UI/financial-return formula redesign.
+- Prevented a cached ordinary market close from being used as though it were an adjusted total-return close when official dividend coverage is unavailable. A fresh Yahoo chart or explicitly adjusted cached fallback is required; otherwise retain published returns.
+- Added regressions using the actual observed 2022-09-09 HYLB values: official NAV/price sheet independent of optional adjusted-close variance; a material market-price change still changes output; Yahoo-only mode still publishes adjusted corrections; actual offline worker reaches Yahoo history fallback without inventing NAV cells.
+- Commands: bun test scripts/update-data.test.ts -> 46 pass, 0 fail / 286 assertions; bun build --target=bun scripts/update-data.ts --outfile=/dev/null -> success; git diff --check -> clean. No production API files changed.
+- Next: new isolated real runs. First partial evidence remains tracked, so the final validation cannot conceal the original issue or confuse fixture replay with live success.
+
+### 2026-10-01 — Mandatory corrected scoped live acceptance (PASSED)
+- Confirmed history-fix checkpoint 94e231baa9a6119b163e1af8880344493a0d2f39 pushed with remote equality; cloned THAT remote revision into a fresh /home/user/.cache/xtrackers-live/acceptance-v2 with the untouched published 42-fund catalog-only seed. No local mock or unpushed updater used.
+- Actual command BOTH TIMES unchanged: TICKERS="ASHR HYLB DBEF" VERBOSE=1 bun scripts/update-data.ts. Effective MAX_FETCHES=0, REQUEST_SLEEP=1.5, CONCURRENCY=2, MAX_RETRIES=2, pages=250/1000, no financial filters. No provider disabled and no sleep reduction.
+- Run 1: 2026-10-01T05:44:53.800Z -> 2026-10-01T05:45:05.977Z (see exact captured timestamps in run-1.log/summary.json); CLI exit 0, all 3 updated. Run 2: 2026-10-01T05:45:06.024Z -> 2026-10-01T05:45:18.201Z, CLI exit 0, all 3 unchanged, 0 failures/0 skipped. The timestamp fields in evidence are authoritative if this narrative rounds times.
+- Counts: 42 funds / 2238 holdings / 9562 history. ASHR 287/3244; DBEF 674/3851; HYLB 1277/2467. All manifests/page totals/tickers/rows independently verified. Scope: all 39 unrequested entries retained, no unrequested files or index entries modified, no funds dropped.
+- Byte-stability: ALL 26 API files exactly equal after run 1 vs run 2, zero changed paths; both index and per-fund metadata timestamps retained when underlying published content unchanged. Updated actual NAV/market price data is never frozen.
+- Live sources: official US sitemap discovery after empty XLSX; selected official PDP/Securities/NAV/Distributions; Yahoo matched daily market prices. Only warning is the expected empty-catalog fallback. SEC live fallback NOT exercised here and remains research-403/unverified; pure and real-worker offline SEC tests are separate and not called live validation.
+- Evidence: research/2026-10-01/scoped-live-smoke-v2/{run-1.log,run-2.log,summary.json,hashes-before.json,hashes-after-1.json,hashes-after-2.json,api-after-run-2.tar.gz}. Archive SHA-256 recorded in summary, all 26 complete files included; both hash ledgers equal, so no duplicate archive needed. Prior failed strict-repeat evidence remains in scoped-live-smoke/.
+- Production api/ still contains only the original discovery seed; this smoke did not refresh production. Next separate in-scope initial-publication stage may promote this validated 3-fund snapshot, explicitly documented as 3 downloaded / 39 catalog-only, then copy the sibling UI.
+
+### 2026-10-01 — Initial usable static API publication (completed, separate from smoke)
+- Confirmed successful live-evidence checkpoint 4a5df0e6c163ae9e1f1a079c3b4b86fc05c82128 pushed with remote equality.
+- Within explicitly recorded initial-feed implementation scope, promoted the validated v2 snapshot from isolated acceptance into production api/xtrackers. This is initial publication, NOT another live refresh. All 26 files SHA-256 matched research/2026-10-01/scoped-live-smoke-v2/hashes-after-2.json exactly after copying.
+- Current initial feed: 42 official discovered tickers; ASHR/DBEF/HYLB populated; 39 catalog-only with no invented facts/holdings. Aggregated counts=2238 holdings, 9562 history. Source values/date provenance are the live-accepted ones.
+- Checked actual holding weights: ASHR=100.00000006 across 287 positions, DBEF=100.00000005 across 674, HYLB=99.9999999 across 1277. ASHR has 1 untickered cash position, DBEF 15 untickered cash/derivative positions, HYLB all 1277 identifier-based bonds/cash (no invented issuer equity tickers). Whole-life events=23/40/123 respectively; recent UI schedule remains max 12.
+- Added scripts/api.test.ts, offline structural/manifest/count/provenance guards. It validates linked pages, integer counts, numeric positions, dates, source URLs and same-date premium rules but does not freeze exact future counts or block legitimate scheduled refreshes.
+- bun test -> 49 pass, 0 fail; git diff --check -> clean. No external runtime dependency. Browser tooling (Playwright 1.63.0 / Chromium 153) installed with Bun in workspace .cache only; not in target package.json/bun.lock or tracked files.
+- Next: literal UI copy/substitutions/parity, then real browser checks.
+
+### 2026-10-01 — Literal sibling UI / shared exceptions / real browser verification (completed)
+- Confirmed initial API checkpoint fbeac91cd8903a4889aebd1689ac4171bf7d88b5 pushed with remote equality.
+- Copied pinned JPMorgan 8ce0ddca58b5459dd7df98f22463fb31afa82f2b app.tsx, index.html and favicon.ico, then applied ONLY enumerated brand/storage/API/export/source-status/provenance strings, shared frequency/header exceptions and explicit first-line Bun directive hygiene. Favicon unchanged. No columns/metrics/helpers/sorting/aggregation/selection/paging/layout/CSS/event-handler redesign. All colHelp keys/order unchanged; only actual source names/field provenance changed. Extra adjective removed from legal-name help to keep source-only wording discipline.
+- Exact per-file substitution manifest + source/current SHA-256: research/2026-10-01/ui-parity.json; every hunk in ui-parity-{app.tsx,index.html}.diff reviewed and category-labelled. Reverse substitutions reproduce all three pinned reference file hashes offline. The active manifest is embedded verbatim below for self-contained recovery.
+- Frequency: missing/whitespace/single/multiple dash glyphs and legacy 00-dash placeholders -> 00 - None; explicit Unknown -> 00 - Unknown; Monthly/Quarterly/Semi-annually/Annually/Irregular and unknown values unchanged. Existing sorting/export/selection consumers untouched.
+- Count-badge panel: copied markup/layout/CSS/hover/focus/touch/outside/Escape/resize/scroll handlers verbatim. Rich details preserve original nodes, API/provider links, dataset timestamp, total counts, active selection, source/fallback attribution (including DBX ETF TRUST CIK 0001503123). Hidden details also explicitly include current catalog/Watchlist view count and session-local N-PORT provenance; visible subtitle stays ONLY sorted bold clickable selected tickers (empty at zero, full list even all-selected). All checkboxes remain selection controls; row/link/title/Tab/upload actions never become alternate selection toggles.
+- Truthful catalog-only status: initial 39 not-downloaded entries are not falsely labelled as funds whose provider publishes no holdings; existing status text only substituted, no loader/coverage/business-flow change.
+- Early test attempt: 57 pass/1 failed expectation for CSS max-height. Read actual reference CSS (min(70vh,32rem)) and corrected expectation only; CSS never changed. Browser attempt 1 found our new local-upload caption reading late uploadedFunds before initialization on restored selections. Fixed caption to read already-initialized fundMetaCache uploaded flags, without moving bootstrap/cache/selection logic. Browser attempt 2 identified missing per-category view counts in copied default rich details; added required readonly view/count text inside hidden panel. Browser attempt 3 used an incorrect test assumption that upload selects a fund; corrected TEST to click Use after upload, preserving the required original selection semantics. Failed summaries retained as browser/attempt-{1,2,3}-summary.json.
+- Final browser run: Playwright 1.63.0 / Chromium 153.0.8010.12, actual CDN Babel 7.24.0/Tailwind, real static feed. 12 scenarios pass: zero; hover/focus/link/Escape; 1/2/3 selections; activation without mutation; restored selection; filtered bulk selection; category/overview/holdings/history/distributions/Watchlist contexts; CSV prefix/clipboard; dark theme; blacklist/deselect/Clear/reload with sort retained; all42 listed; 390px/320px touch/outside/resize bounds; local N-PORT upload context and Use-only selection. No JS errors, failed requests or HTTP errors. Expected CDN architecture warnings preserved, not suppressed.
+- Browser tooling only: /home/user/.cache/xtrackers-browser (Bun-installed playwright), .cache/ms-playwright browser; first launch lacked OS shared libraries. Installed Debian browser libraries with sudo -n apt-get: libnspr4 libnss3 libatk1.0-0t64 libatk-bridge2.0-0t64 libatspi2.0-0t64 libxdamage1 libxkbcommon0 libasound2t64. No target dependencies/lock/runtime tooling changes. Recreate tooling in .cache with bun add -E playwright@1.63.0; bun x --bun playwright install chromium.
+- Reproducible browser command: PLAYWRIGHT_MODULE=/home/user/.cache/xtrackers-browser/node_modules/playwright/index.mjs bun research/2026-10-01/browser-check.ts, using static server bun x --bun serve . --listen tcp://0.0.0.0:3000. Current preview process xtrackers-etf-watchlist-d8304422 (port3000); no host/origin/embed warnings. Only serve/Bun tools, no localhost API URLs in the client.
+- Evidence: research/2026-10-01/browser/summary.json (passed=true, 12 cases, exact app/HTML hashes), four PNG screenshots; browser-check.ts (verification-only, optional Playwright import; NOT application dependency).
+- Final checks: bun test -> 61 pass/0 fail; Bun builds app+updater -> success; bun install --frozen-lockfile -> unchanged; git diff --check -> clean. Tests/build are not semantic TS validation; no tsc/tsconfig/TypeScript package introduced. Numeric-key and generic Promise<void> rules reviewed and offline-tested.
+- No updater, API seed, sibling repo, remote metadata, PR or main changes in this UI step. Next separate source-safety audit and automation/docs step above.
+
+ACTIVE UI PARITY MANIFEST SNAPSHOT (authoritative bounded substitutions):
+{
+  "reference": {
+    "repository": "daggerok/JPMorgan",
+    "revision": "8ce0ddca58b5459dd7df98f22463fb31afa82f2b"
+  },
+  "headerException": "Rich count-badge markup/layout and hover/focus/touch/Escape/viewport handlers copied verbatim. Hidden rich details add current view/count plus explicit local-upload/static-catalog source context, using initialized metadata flags. Visible sorted selected tickers, selection/financial/loading logic unchanged.",
+  "files": {
+    "app.tsx": {
+      "referenceSha256": "6b58d96ccafdbbc762bfb10bd4707ede5b1e41cd841e35e0695353073dae9fb4",
+      "substitutions": [
+        {
+          "from": "am.jpmorgan.com",
+          "to": "etf.dws.com",
+          "occurrences": 17,
+          "category": "6: source host/name"
+        },
+        {
+          "from": "JPMorgan",
+          "to": "Xtrackers",
+          "occurrences": 19,
+          "category": "1/5/6/8: brand strings"
+        },
+        {
+          "from": "jpmorgan",
+          "to": "xtrackers",
+          "occurrences": 18,
+          "category": "2/3/4: storage/API/export prefixes"
+        },
+        {
+          "from": "https://etf.dws.com/us/en/asset-management/adv/products/fund-explorer/etf",
+          "to": "https://etf.dws.com/en-us/etf-products/",
+          "occurrences": 1,
+          "category": "5: official source link"
+        },
+        {
+          "from": "etf.dws.com ETF fund data</a> + SEC EDGAR N-PORT-P + Yahoo Finance (fallbacks)",
+          "to": "etf.dws.com PDP and XLSX fund data</a> + SEC EDGAR N-PORT-P (DBX ETF TRUST, CIK 0001503123 — holdings fallback only) + Yahoo Finance daily prices (dividend/history fallbacks)",
+          "occurrences": 1,
+          "category": "5/8: truthful provider/fallback attribution"
+        },
+        {
+          "from": "as published in the etf.dws.com ETF fund explorer.",
+          "to": "as published on the etf.dws.com PDP fund page.",
+          "occurrences": 1,
+          "category": "6: legal-name provenance"
+        },
+        {
+          "from": "(\"U.S. Equity\", \"Fixed Income Taxable\", \"International Equity\")",
+          "to": "(\"Equities\", \"Fixed Income\", \"Currency-hedged\")",
+          "occurrences": 1,
+          "category": "6: provider asset-class names"
+        },
+        {
+          "from": "in the etf.dws.com daily holdings (CUSIP for US securities, SEDOL for foreign ones;",
+          "to": "in the etf.dws.com Securities workbook (CUSIP, ISIN or SEDOL;",
+          "occurrences": 1,
+          "category": "6: security identifier provenance"
+        },
+        {
+          "from": "the 12-month rolling dividend yield published by etf.dws.com (product-data)",
+          "to": "the indicated distribution rate published by etf.dws.com (PDP fund facts)",
+          "occurrences": 1,
+          "category": "6: distribution-yield provenance"
+        },
+        {
+          "from": "otherwise indicated (latest distribution per share x payments per year / market price)",
+          "to": "otherwise indicated (latest distribution per share x payments per year / NAV)",
+          "occurrences": 1,
+          "category": "6: indicated yield basis"
+        },
+        {
+          "from": "etf.dws.com (daily product-data figure, month-end fund-explorer figure otherwise; the 7-day SEC yield for the money market ETF)",
+          "to": "etf.dws.com (PDP fund facts figure)",
+          "occurrences": 1,
+          "category": "6: actual SEC-yield source"
+        },
+        {
+          "from": "(cumulative returns block)",
+          "to": "(performance tables)",
+          "occurrences": 3,
+          "category": "6: provider return-table name"
+        },
+        {
+          "from": "from the etf.dws.com dividend-frequency code (MDEC = monthly, QDEC = quarterly, YDEC = annual), inferred from the published dividend schedule when no code exists:",
+          "to": "from the etf.dws.com distribution frequency, inferred from the published dividend schedule when no frequency exists:",
+          "occurrences": 1,
+          "category": "6: published frequency rather than JPMorgan code"
+        },
+        {
+          "from": "Closing market price on that date, as published by etf.dws.com.",
+          "to": "Closing market price on that date, as published by Yahoo Finance.",
+          "occurrences": 1,
+          "category": "6: daily market-price provenance"
+        },
+        {
+          "from": "closing market price versus NAV on that date (%), as published by etf.dws.com.",
+          "to": "closing market price versus NAV on that date (%), derived from etf.dws.com NAV and Yahoo Finance closing price.",
+          "occurrences": 1,
+          "category": "6: matched-date premium provenance"
+        },
+        {
+          "from": "frequency from the published dividend-frequency code, inferred from the cadence otherwise.",
+          "to": "frequency from the published distribution frequency, inferred from the cadence otherwise.",
+          "occurrences": 1,
+          "category": "5: distributions status source"
+        },
+        {
+          "from": "Returns are derived from adjusted market-price closes, not official NAV returns.",
+          "to": "Returns are derived from official daily NAV with distributions reinvested (Yahoo adjusted market-price fallback), not published standardized NAV returns.",
+          "occurrences": 1,
+          "category": "5: overview return source status"
+        },
+        {
+          "from": "if (!normalized || normalized === '-') return '00 - None';",
+          "to": "if (!normalized || /^[\\s-]+$/.test(normalized) || /^00\\s*-\\s*-+$/.test(normalized)) return '00 - None';",
+          "occurrences": 1,
+          "category": "shared frequency exception: blank/dash/legacy coded placeholder -> None; all other mappings unchanged"
+        },
+        {
+          "from": "${escapeHtml(fund.ticker)} publishes no ${sheet === 'holdings' ? 'holdings workbook' : 'NAV history workbook'} (catalog-only fund, e.g. a commodity trust).",
+          "to": "${escapeHtml(fund.ticker)} has no downloaded static ${sheet === 'holdings' ? 'holdings workbook' : 'NAV history workbook'} yet (catalog-only until the next feed refresh).",
+          "occurrences": 1,
+          "category": "5: truthful starter catalog-only status, no false claim of provider absence"
+        },
+        {
+          "from": "the feed records the provider coverage limitation in meta.json.",
+          "to": "run the updater to populate this catalog-only entry.",
+          "occurrences": 1,
+          "category": "5: truthful catalog-only status; metadata not fetched yet"
+        },
+        {
+          "from": "const base = text ? String(text) : 'Search Xtrackers ETFs, select ETFs via the “Use” checkbox, then use the Watchlist tab.';",
+          "to": "const baseText = text ? String(text) : 'Search Xtrackers ETFs, select ETFs via the “Use” checkbox, then use the Watchlist tab.';\n  const viewLabel = state.activeTab === 'All' ? 'All ETFs' : state.activeTab === 'watchlist' ? 'Watchlist' : state.activeTab.startsWith('detail:') ? state.activeTab.slice(7) : categoryLabel(state.activeTab);\n  const contextText = text ? baseText : `${baseText} ${viewLabel}: ${el.tickerCount.textContent || ''}.`;\n  const hasLocalHoldings = [...state.selected].some(ticker => Boolean(fundMetaCache.get(ticker)?.uploaded));\n  const base = hasLocalHoldings ? `${contextText} Local N-PORT XML holdings are included for this session.` : contextText;\n  const dataLabel = hasLocalHoldings ? 'Static catalog data:' : 'Data:';",
+          "occurrences": 1,
+          "category": "shared rich header exception: appropriate file-aware provenance without changing visible subtitle/selection/data logic"
+        },
+        {
+          "from": "${countsText ? ` · ${escapeHtml(countsText)}.` : '.'} Data: <a",
+          "to": "${countsText ? ` · ${escapeHtml(countsText)}.` : '.'} ${dataLabel} <a",
+          "occurrences": 1,
+          "category": "shared rich header exception: distinguish static-catalog links/counts from session-local uploaded holdings"
+        },
+        {
+          "from": "/**\n * @file Xtrackers Watchlist Application\n * Client-side static feed viewer for api/xtrackers/** with multi-ETF Watchlist\n * aggregation. Same single-file approach as daggerok/Amplify: the paginated\n * static API and lazy sheet loading follow daggerok/iShares.\n *\n * Babel standalone note: the inline pipeline strips type annotations, but it\n * does not accept every TypeScript-only expression. Follow the Amplify dev\n * style — plain `byId()` instead of DOM casts, no `as` casts, no non-null\n * `!`, no interfaces or enums.\n */\n\n/// <reference types=\"bun\" />\n\n",
+          "to": "/// <reference types=\"bun\" />\n\n/**\n * @file Xtrackers Watchlist Application\n * Client-side static feed viewer for api/xtrackers/** with multi-ETF Watchlist\n * aggregation. Same single-file approach as daggerok/Amplify: the paginated\n * static API and lazy sheet loading follow daggerok/iShares.\n *\n * Babel standalone note: the inline pipeline strips type annotations, but it\n * does not accept every TypeScript-only expression. Follow the Amplify dev\n * style — plain `byId()` instead of DOM casts, no `as` casts, no non-null\n * `!`, no interfaces or enums.\n */\n\n",
+          "occurrences": 1,
+          "category": "explicit toolchain requirement: Bun directive first line, before documentation/imports; runtime/UI unchanged"
+        }
+      ],
+      "currentSha256": "0b7aaf80de4b60ac35250c026e0050efad49c92e79c8e17a99187b1fcad24a6c"
+    },
+    "index.html": {
+      "referenceSha256": "c85aaa1210e6e75e5fc4c2358be18b4be36cdd0280a07ed6ca7ba871d07a8e3d",
+      "substitutions": [
+        {
+          "from": "am.jpmorgan.com",
+          "to": "etf.dws.com",
+          "occurrences": 4,
+          "category": "6: source host/name"
+        },
+        {
+          "from": "JPMorgan",
+          "to": "Xtrackers",
+          "occurrences": 7,
+          "category": "1/5/6/8: brand strings"
+        },
+        {
+          "from": "jpmorgan",
+          "to": "xtrackers",
+          "occurrences": 4,
+          "category": "2/3/4: storage/API/export prefixes"
+        },
+        {
+          "from": "https://etf.dws.com/us/en/asset-management/adv/products/fund-explorer/etf",
+          "to": "https://etf.dws.com/en-us/etf-products/",
+          "occurrences": 1,
+          "category": "5: official source link"
+        },
+        {
+          "from": "etf.dws.com ETF fund data</a> + SEC EDGAR N-PORT-P + Yahoo Finance (fallbacks)",
+          "to": "etf.dws.com PDP and XLSX fund data</a> + SEC EDGAR N-PORT-P (DBX ETF TRUST, CIK 0001503123 — holdings fallback only) + Yahoo Finance daily prices (dividend/history fallbacks)",
+          "occurrences": 1,
+          "category": "5/8: truthful provider/fallback attribution"
+        },
+        {
+          "from": "generated from the etf.dws.com ETF fund explorer, product-data and historical-data JSON (daily holdings, NAV history, dividends), with SEC EDGAR N-PORT-P and Yahoo Finance as fallbacks.",
+          "to": "generated from the etf.dws.com official catalog/sitemap, PDP and XLSX exports (daily holdings, NAV history, distributions), with SEC EDGAR N-PORT-P as a holdings fallback and Yahoo Finance for daily prices/history/dividend fallbacks.",
+          "occurrences": 1,
+          "category": "5/8: actual DWS source/fallback description"
+        },
+        {
+          "from": "Xtrackers ETF holdings from EDGAR, used by the feed only when etf.dws.com publishes no daily holdings for a fund",
+          "to": "Xtrackers ETF holdings from EDGAR (DBX ETF TRUST, CIK 0001503123), used by the feed only when etf.dws.com publishes no daily holdings for a fund",
+          "occurrences": 1,
+          "category": "8: verified trust in upload provenance"
+        }
+      ],
+      "currentSha256": "c0a8c1e6563ca0fb505d04d1ba74ce2d3f2e9168e7187de7a01ea3e3211084a2"
+    },
+    "favicon.ico": {
+      "referenceSha256": "16bf670a1a4b86945a57a4d5bffa1713c82c54a9abc19870e217626c36cc2fc2",
+      "substitutions": [],
+      "currentSha256": "16bf670a1a4b86945a57a4d5bffa1713c82c54a9abc19870e217626c36cc2fc2"
+    }
+  }
+}
+
+### 2026-10-01 — Final updater source-safety audit (completed, separate from UI)
+- Confirmed UI/browser checkpoint b0504170cc075e9d27c964b4f15adc6f3f07b107 pushed with remote equality.
+- Tightened return coalescing: a nonempty undated official return row retains asOfDate=null and cannot inherit the derived month date or mix in unrelated dated gaps. Empty official rows still use fully dated derivation; same-date numeric gaps still fill; zero and negatives preserved. Explicit typed numeric key list excludes asOfDate. This closes a future catalog-date-fetch failure edge, not a change to current accepted derived NAV figures.
+- Published since-inception numbers from funds <1 year old are cumulative under the provider's performance disclaimer, not SI Ann. Unknown inception/source dates cannot certify annualized SI either. Added conservative copy-based guard (does not mutate raw source), preserving mature true zero/negative annualized SI. Derived SI already requires full inception coverage and >=1 year.
+- Intended to reject mathematically impossible annualized returns <-100% during CAGR->TR conversion, but an unmatched text replacement did NOT add that guard initially. The new boundary regression exposed this in the next strict verification; actual guard added in the corrective checkpoint below.
+- Focused regression tests added: undated official zero/negative numbers, same/different-date mixing, empty source, young/unknown/mature SI, source immutability and -100 boundary.
+- Correction after inspecting redirected test output: initial audit run actually had 61 pass/2 fail, because dated test fixtures passed an ignored argument to zero-argument emptyReturns(). A compound shell continued to the journal/commit section despite that failed check segment, so the initial green claim was WRONG and build was skipped. Explicitly corrected, with full gated revalidation in the immediate checkpoint below. No main/API change or forbidden type checker/dependency.
+- Next: final-code revision live repeat, preserving validated production data and every unselected entry/path. Prior v2 source acceptance remains recorded, but final completion will use the new revision rather than silently treating older CLI evidence as final.
+
+### 2026-10-01 — Correct audit fixtures / impossible CAGR guard and fully gate validation (completed)
+- Inspected redirected output immediately after 59aec1d44a8b35cd6d495a07a4873f1e4c08c2ca and corrected its mistaken green claim above rather than silently hiding the failure. Subsequent commands now use set -e before check/log/commit/push steps.
+- Corrected two typed test fixtures: emptyReturns() has zero arguments, so assign asOfDate explicitly on the object. Manual call-site audit verified no ignored date arguments remain. First strict rerun then gave 62 pass/1 fail, correctly STOPPED before log/commit, exposing that the intended <-100% annualized-return guard had not actually matched the source identifier during the prior edit.
+- Added actual guard using the real annualizedPercent identifier; no behavior change for valid returns. Exact -100/zero/ordinary negatives pass. No application/API changes.
+- Final STRICT commands all executed: bun test -> 63 pass, 0 fail; bun build --target=bun scripts/update-data.ts --outfile=/dev/null -> success; bun install --frozen-lockfile -> unchanged; git diff --check -> clean. No semantic compiler claim.
+- No checks bypassed, no force push/history rewrite or main modification. Next: fresh isolated final-code scoped live repeat and automation/docs/metadata/PR.
+
+### 2026-10-01 — Final-code mandatory scoped live acceptance (PASSED)
+- Verified pushed final updater revision 15627abf182e0feca6f8173c4a4816cdb2c67269; fresh remote clone /home/user/.cache/xtrackers-live/acceptance-v3 includes the actual published 42/3 static API and final UI (no mock provider, no unpushed source).
+- Actual command both times unchanged: TICKERS="ASHR HYLB DBEF" VERBOSE=1 bun scripts/update-data.ts. Effective defaults 1.5s / 2 independent lanes / 2 retries / MAX_FETCHES=0; no extra filters or skip-provider flags.
+- Run1 2026-10-01T06:26:28.510Z -> 2026-10-01T06:26:41.147Z, exit0, all3 updated because real DWS headlines advanced. Run2 2026-10-01T06:26:41.184Z -> 2026-10-01T06:26:53.374Z, exit0, all3 unchanged; no failures/skips.
+- Aggregate published counts still 42 funds / 2238 positions / 9562 history; ASHR287/3244, DBEF674/3851, HYLB1277/2467. All manifests/page totals/tickers valid. All39 unrequested index entries preserved; no unrequested paths modified or old funds dropped. New discovery count43 does NOT change published unrequested scope: new ticker is deferred until a full/explicitly selected run.
+- Repeat hashes: all26 API files EXACTLY equal after run1 vsrun2. Normal source chain satisfied with official DWS holdings/NAV/distributions/PDP plus Yahoo prices. Expected empty-XLSX -> sitemap warning only. SEC still not exercised live (research403, offline worker fallback tests separate).
+- Real baseline->run1 changes: PDP NAV/AUM/yields now asof2026-09-30; daily performance still through2026-09-29. Recorded exact field values in headline-upstream-changes.json; no source values restored to manufacture equality. Return periods still anchored to covered daily-performance dates. Published starter snapshot remains the explicit v2 initial seed, not silently refreshed by this smoke.
+- Evidence: research/2026-10-01/scoped-live-smoke-v3 logs, summary, all three hash ledgers, upstream field delta and complete api-after-run-2.tar.gz (SHA-256 in summary, same content for bothruns). Final updater file SHA-256 57ace28cc767fd10820f1cd4ce7a32b2e6d994c4bd645a493dbfbfda43b751c9 recorded to show that later documentation/workflow commits do not change live-accepted updater code.
+- All mandatory live criteria met on final updater; remaining work is automation/docs/metadata/PR only.
+
+### 2026-10-01 — Automation, pinned README and offline contract guards (completed)
+- Confirmed final live checkpoint 4557d7e5cdd43650b1d50604fb6e1689d25e0935 pushed with remote equality.
+- Added Verify Xtrackers CI: feature/main pushes, PR/manual; Bun1.4.2 frozen-lock install, all offline tests, app/updater transpilation, diff check. No tsc or runtime dependencies.
+- Added Update Xtrackers ETF data: Sunday00:00UTC cron plus workflow_dispatch. Exactly all23 controls with real defaults, env mappings and meanings exposed (under25). No advanced/skip knobs. Normal default pacing1.5s/2lanes; data step continues per fund, post-update API validation and api/xtrackers-only commit. Partial failure is surfaced after healthy data can be published; check steps themselves are never bypassed. Workflow push is ordinary non-force; checkout persist-credentials=false; runtime askpass contains only literal environment references, never an embedded secret or git-config auth header. Concurrency queue prevents competing update jobs.
+- Added prepared main-only Pages workflow (push/manual/successful main data-workflow completion), public app+api artifact only, no research/logs/tooling/prompt/worklog/credentials published. Pages is NOT currently enabled/deployed and unmerged feature cannot deploy. Target Pages GET404 recorded; setting homepage later is not a deployment claim.
+- Copied pinned sibling Dependabot monthly Bun + GitHub Actions sections verbatim.
+- README copied from JPMorgan@8ce0ddc: common intro structure/generic feature sentences, headings/order, Using Bun commands and TypeScript paragraph unchanged except allowed brand/repo paths. Actual DWS namespaces/sources, empty-catalog fallback, initial42/3/39 scope, later43discovery, coverage/yield/return caveats, SEC403,23controls/defaults/examples, independent pacing and pending deployment placed in the existing source/update sections. All20 old Brands rows and20 old Sibling rows preserved byte-for-byte, new Xtrackers rows appended alphabetically; no sibling README modified. Target trademark/non-affiliation fields adapted only to issuer.
+- Evidence: readme-reference.json (pin/hash/common text/all original rows) and readme-parity.diff. Browser source/parity manifests unchanged; final updater SHA-256 still equals final live evidence, no source/API changes in this step.
+- Added scripts/automation.test.ts: Bun.YAML parser validates workflow/dependabot shapes, all23 config/help/README/Actions controls/defaults/env agree, no unsupported switches, scoped commits/credentials, main-only Pages staging, exact types-only deps, common README structure (ignoring code fences) and full21-row sorted tables.
+- Strict gates all executed: bun test ->69 pass/0 fail; both Bun builds pass; bun install --frozen-lockfile unchanged; git diff --check clean. YAML syntax checks pass. These are not semantic TypeScript validation or proof of a successful remote Actions run; inspect remote CI next.
+- Read public current JPMorgan/iShares/aberdeen About/homepage/topics before any metadata edits; each uses the mandated shared pattern and18standard+2brand topics. Target before: description=null, homepage=null, topics=[], default_branch=main; Pages404. Full selected public values in metadata-before.json; no secret fields stored. Metadata writes not yet performed at this checkpoint.
+
+### 2026-10-01 — Target metadata readback / real remote CI portability fix (completed locally)
+- Confirmed automation/docs a962c705ce85149462bfcf29b8b8fe601fe5d180 pushed with remote equality.
+- Applied ONLY target Xtrackers About/homepage/topics through REST PATCH + topics PUT, then GET-verified exact fields. Before description/homepage=null, topics=[]; after mandated family pattern below, exact-case homepage,18shared+2brand topics. Default branch remains main, language remains null because main has not received TypeScript yet; no Linguist override/branch change/merge. Pages remains GET404, NOT enabled/deployed. No sibling metadata or files edited.
+TARGET METADATA AFTER (public fields only):
+{
+  "description": "Xtrackers ETF. A single-file client-side tool reading ./api/xtrackers (etf.dws.com catalog/PDP/XLSX, SEC EDGAR N-PORT-P holdings fallback and Yahoo Finance) into a searchable ETF/asset-class catalog with per-fund tabs, watchlist, CSV/TXT export. TailwindCSS, dark mode, Bun updater.",
+  "homepage": "https://daggerok.github.io/Xtrackers/",
+  "topics": [
+    "css",
+    "csv",
+    "dark-mode",
+    "edgar",
+    "etf",
+    "finance",
+    "github-pages",
+    "holdings",
+    "html",
+    "json",
+    "nport",
+    "single-file",
+    "static-api",
+    "tailwindcss",
+    "txt",
+    "typescript",
+    "watchlist",
+    "xtrackers",
+    "xtrackers-etfs",
+    "yahoo-finance"
+  ],
+  "default_branch": "main",
+  "language": null,
+  "pages": {
+    "status": 404,
+    "data": null
+  }
+}
+- Fetched origin/main and ls-remote: main still 13c600703279ebc67b495495c8be5248ca529853, feature a962c705ce85149462bfcf29b8b8fe601fe5d180; no user changes overwritten.
+- Actual remote CI run36827598737: https://github.com/daggerok/Xtrackers/actions/runs/36827598737 failed in bun test after checkout/setup/frozen-install SUCCESS. Check annotations pinpointed test helper trying mkdir('/home/user') on GitHub's /home/runner runner (EACCES); later build/diff steps correctly skipped, not treated as green. This is a test portability bug, not provider/production updater failure.
+- Fixed only test tempRoot: node:os tmpdir() + mkdtemp(join(tmpdir(),'xtrackers-tests-')). No sudo/permission workaround, no tests disabled, no CI continue-on-error for checks. Runtime updater/API/app/workflows unchanged; final live/code hashes remain valid.
+- Strict local gates re-executed: all69 tests pass, both Bun builds pass, frozen-lock install unchanged, diff check clean. Need actual new remote CI success before final completion/PR claim.
+
+### 2026-10-01 — Final remote verification and PR delivery (COMPLETE)
+- Confirmed portable-test checkpoint f2617b52b643070b03cb22ec88faf5f193062d34 pushed with remote equality.
+- ACTUAL GitHub CI SUCCESS: run36828012152, https://github.com/daggerok/Xtrackers/actions/runs/36828012152. Checkout, Bun1.4.2 setup, frozen install, all tests, updater build, app build and git diff check ALL executed successfully; no skipped verification step. Public run/step evidence in research/2026-10-01/remote-ci.json. Prior failed temp-path run was fixed, not waived.
+- Final strict local gates repeated: bun test ->69 pass/0 fail/71091 expectations; both Bun builds pass; frozen install unchanged; git diff --check clean. All offline; actual real provider acceptance is separately final v3 evidence.
+- Integrity audit passed: final updater SHA-256 still57ace28cc767fd10820f1cd4ce7a32b2e6d994c4bd645a493dbfbfda43b751c9 equals live-accepted code; all26 production initial API files match v2 ledger; current app/HTML hashes match successful12-scenario browser artifact; source reverses exactly to pinned UI and README common/table guards pass. Bun transpilation is NOT semantic TS validation; no tsc/tsconfig/TypeScript package added.
+- Credentials audit: target .git/config has plain https://github.com/daggerok/Xtrackers.git origin, no auth headers/passwords/credential storage; tracked text has no credential-like token. Auth transport remains memory-only, nonsecret wrapper outside target; no secret/header/token file written. Optional preview remains process xtrackers-etf-watchlist-d8304422 on0.0.0.0:3000; no host/embed warnings. Auth helper can be stopped after final readback, never needed as a persisted deliverable.
+- Remote main verified unchanged13c600703279ebc67b495495c8be5248ca529853. No force-push, history rewrite, merge, default-branch/language override, unbounded live updater, full production refresh, sibling README/metadata write or sibling PR.
+- Created one ready-for-review PR #1: https://github.com/daggerok/Xtrackers/pull/1 ; feat/xtrackers-etfs -> main; OPEN, draft=false, merged=false, created2026-10-01T07:14:39Z. Creation source revision f2617b5; this final journal/evidence-only commit is pushed onto the same PR without changing live-accepted code. Creation snapshot + final verification facts in pull-request.json/final-verification.json. Read back PR head/main after publishing; do not merge.
+- Target About/homepage/20topics verified exact (metadata-after.json and inline prior entry). Pages remains404/unconfigured; deployment URL is a target, not a claim of a live GitHub Pages app. Owner must merge and enable Actions Pages. Static local live preview is available independently.
+- Initial feed deliberately42 discovered/3 populated/39catalog-only,2238 positions/9562history; later official discovery43 is documented and scoped new-entry deferral preserves unrequested universe. Source SEC403 is an honest limitation: offline fallback/worker validated, fresh SEC success not claimed. Derived NAV returns are not published standardized returns. First adjusted-close variance and later real DWS headline changes retained in separate evidence.
+- All requested implementation stages complete and pushed after scoped Conventional Commits; only owner review/explicit merge and Pages configuration remain. This final entry is prepared before its own commit, so it records the last independently verified implementation SHA rather than a circular self-hash; recover exact latest journal commit from Git/PR head, require local/remote equality before further work.
+
+### 2026-10-01 — User follow-up: exact iShares workflow/config approach (audit complete)
+- New user instruction verbatim: "check daggerok/iShares implement exactly same approach for github acrion workflows and update-data.config.json use - check everything related and do exactly the same". This explicitly replaces the prior all-baked-defaults workflow design for this concern. UI/provider/financial logic, supported Xtrackers controls and safe issuer pacing remain unchanged.
+- User later authorized a fresh short-lived credential ONLY for fast-forward push via process-scoped header, never file/Git config/URL/output. Actual secret value excluded from all records. Runtime-only transport started; no authenticated API operations used.
+- Fully read journal1243lines/109577bytes. Snapshot dropped .git/config and executable permission (not code): restored plain public origin URL and chmod+ x on updater after confirming exact live-accepted content hash57ace28cc767fd10820f1cd4ce7a32b2e6d994c4bd645a493dbfbfda43b751c9.
+- Remote feature advanced from our a8b3cb6 to external89ba459a248a4d1eb9bd97314b0d44c49b1c105b ("data update: Thu Oct1 17:25:13EDT2026"),251 API-only files. Read diff/log, then git merge --ff-only origin/feat/xtrackers-etfs; no remote changes overwritten, no force/rebase. Journal itself unchanged. Published current43/21171/77473; hash baseline recorded in workflow-config-followup/published-baseline-hashes.json. Earlier42/3 data statements remain historical, not current.
+- Public API PR#1 stillopen/unmerged; main unchanged13c6007. No local code changes before audit. Reinstalled Bun1.4.2 in excluded .local/bun and bun install --frozen-lockfile; baseline bun test69pass/0fail/601988assertions against expanded published data, no network in tests.
+- Fresh sparse clone of actual iShares defaultmain297a2e41e4a7a438ece2b8bde8e3384e960dfaeb; same pin as original reference. Config is scripts/update-data.config.json (root lookup absent was not evidence config missing). Entire .github/workflows/update-data.yml, JSON, loader, readConfig/env parser, help, GitHub summary/main consumers, tests, README, package, Dependabot inspected. No other iShares workflows exist; its optional backfill imports the same updater/config.
+- Required pattern: flat JSON string defaults; load relative to import.meta.url (cwd-independent), fill only missing/blank process ENV, nonblank ENV wins including0/false; ENOENT permits built-in fallbacks, other file/parse errors propagate. Workflow inputs optional strings/default="", env at job scope, schedule+manual only, checkoutv7/setup-bunv2 (no fixed Bun version), frozeninstall -> updatertests -> update -> api-only commit/push. Reference also appends GITHUB_STEP_SUMMARY automatically; include corresponding target diagnostic support without changing financial/source behavior.
+- Justified target-only deltas: DWS23 supported controls (TER/SEC_YIELD/SEC_UA/VERBOSE kept; no unsupported STORE_RAW_DOWNLOADS), safe DWS1.5s/2workers rather than iShares0/4, mandatory correct directive position, no persisted checkout/push credentials. Existing target CI/Pages remain; align their common action versions/setup pattern, do not delete separate required verification/deployment functionality or enable Pages/merge.
+- Reference README has stale1/2 defaults and unsupported switches; target related help/docs must match checked-in effective JSON, not copy inaccuracies. Record all deltas explicitly, not claim byte-identical different-provider files.
+- Evidence: research/2026-10-01/workflow-config-followup/reference.json, per-file SHA-256 plus full relevant config/loader/workflow. Authoritative textual input snapshots embedded here for self-contained recovery:
+REFERENCE CONFIG JSON:
+{
+  "MAX_FETCHES": "0",
+  "REQUEST_SLEEP": "0",
+  "AUM": ":",
+  "CONCURRENCY": "4",
+  "HOLDINGS_PAGE_SIZE": "250",
+  "HISTORY_PAGE_SIZE": "1000",
+  "STORE_RAW_DOWNLOADS": "false",
+  "MAX_RETRIES": "2",
+  "TICKERS": "",
+  "DIVIDEND_YIELD": ":",
+  "PERFORMANCE_YTD": ":",
+  "PERFORMANCE_1Y": ":",
+  "PERFORMANCE_3Y": ":",
+  "PERFORMANCE_5Y": ":",
+  "PERFORMANCE_10Y": ":",
+  "TOTAL_RETURN_YTD": ":",
+  "TOTAL_RETURN_1Y": ":",
+  "TOTAL_RETURN_3Y": ":",
+  "TOTAL_RETURN_5Y": ":",
+  "TOTAL_RETURN_10Y": ":",
+  "VERBOSE": "false"
+}
+
+REFERENCE LOADER (directive must be moved to first/second line in target):
+#!/usr/bin/env bun
+// Checked-in JSON is the runtime default; any nonblank environment value wins.
+import { readFileSync as readUpdaterConfig } from 'node:fs';
+try {
+  const updaterDefaults = JSON.parse(readUpdaterConfig(new URL('./update-data.config.json', import.meta.url), 'utf8')) as Record<string, unknown>;
+  for (const [key, value] of Object.entries(updaterDefaults)) {
+    const current = process.env[key];
+    if ((current === undefined || current.trim() === '') && value !== null && value !== undefined) process.env[key] = String(value);
+  }
+} catch (error) {
+  if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
+}
+
+REFERENCE DATA WORKFLOW:
+name: Update iShares ETF data
+on:
+  # Weekly refresh (every Sunday at 00:00 UTC) plus manual runs.
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+    inputs:
+      max_fetches:
+        description: "Batch size; continue after the saved ticker cursor; empty or 0 means all"
+        required: false
+        default: ""
+        type: string
+      request_sleep:
+        description: "Seconds between outgoing request starts"
+        required: false
+        default: ""
+        type: string
+      aum:
+        description: "AUM min:max; bounds may be amounts or nano/micro/small/mid/large"
+        required: false
+        default: ""
+        type: string
+      concurrency:
+        description: "Parallel fund update workers"
+        required: false
+        default: ""
+        type: string
+      holdings_page_size:
+        description: "Rows in each generated current-holdings JSON page"
+        required: false
+        default: ""
+        type: string
+      history_page_size:
+        description: "Rows in each generated historical NAV JSON page"
+        required: false
+        default: ""
+        type: string
+      store_raw_downloads:
+        description: "Store source XLS files (true/yes/on/1)"
+        required: false
+        default: ""
+        type: string
+      max_retries:
+        description: "Retries after the initial request (default 2)"
+        required: false
+        default: ""
+        type: string
+      tickers:
+        description: "Only update these tickers, separated by spaces or commas"
+        required: false
+        default: ""
+        type: string
+      dividend_yield:
+        description: "12m trailing dividend yield range: min:max, min:, :max, or :"
+        required: false
+        default: ""
+        type: string
+      performance_ytd:
+        description: "YTD NAV performance range: min:max, min:, :max, or :; colon required"
+        required: false
+        default: ""
+        type: string
+      performance_1y:
+        description: "1Y average-annual NAV performance range; colon required"
+        required: false
+        default: ""
+        type: string
+      performance_3y:
+        description: "3Y average-annual NAV performance/CAGR range; colon required"
+        required: false
+        default: ""
+        type: string
+      performance_5y:
+        description: "5Y average-annual NAV performance/CAGR range; colon required"
+        required: false
+        default: ""
+        type: string
+      performance_10y:
+        description: "10Y average-annual NAV performance/CAGR range; colon required"
+        required: false
+        default: ""
+        type: string
+      total_return_ytd:
+        description: "YTD cumulative NAV total-return range; colon required"
+        required: false
+        default: ""
+        type: string
+      total_return_1y:
+        description: "1Y cumulative NAV total-return range; colon required"
+        required: false
+        default: ""
+        type: string
+      total_return_3y:
+        description: "3Y cumulative NAV total-return range; colon required"
+        required: false
+        default: ""
+        type: string
+      total_return_5y:
+        description: "5Y cumulative NAV total-return range; colon required"
+        required: false
+        default: ""
+        type: string
+      total_return_10y:
+        description: "10Y cumulative NAV total-return range; colon required"
+        required: false
+        default: ""
+        type: string
+permissions: { contents: write }
+concurrency: { group: update-data, cancel-in-progress: false }
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      MAX_FETCHES: ${{ inputs.max_fetches || '' }}
+      REQUEST_SLEEP: ${{ inputs.request_sleep || '' }}
+      AUM: ${{ inputs.aum || '' }}
+      CONCURRENCY: ${{ inputs.concurrency || '' }}
+      HOLDINGS_PAGE_SIZE: ${{ inputs.holdings_page_size || '' }}
+      HISTORY_PAGE_SIZE: ${{ inputs.history_page_size || '' }}
+      STORE_RAW_DOWNLOADS: ${{ inputs.store_raw_downloads || '' }}
+      MAX_RETRIES: ${{ inputs.max_retries || '' }}
+      TICKERS: ${{ inputs.tickers || '' }}
+      DIVIDEND_YIELD: ${{ inputs.dividend_yield || '' }}
+      PERFORMANCE_YTD: ${{ inputs.performance_ytd || '' }}
+      PERFORMANCE_1Y: ${{ inputs.performance_1y || '' }}
+      PERFORMANCE_3Y: ${{ inputs.performance_3y || '' }}
+      PERFORMANCE_5Y: ${{ inputs.performance_5y || '' }}
+      PERFORMANCE_10Y: ${{ inputs.performance_10y || '' }}
+      TOTAL_RETURN_YTD: ${{ inputs.total_return_ytd || '' }}
+      TOTAL_RETURN_1Y: ${{ inputs.total_return_1y || '' }}
+      TOTAL_RETURN_3Y: ${{ inputs.total_return_3y || '' }}
+      TOTAL_RETURN_5Y: ${{ inputs.total_return_5y || '' }}
+      TOTAL_RETURN_10Y: ${{ inputs.total_return_10y || '' }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+      - name: Test updater
+        run: bun test scripts/update-data.test.ts
+      - name: Update data
+        run: bun scripts/update-data.ts
+      - name: Commit changed data
+        run: |
+          git add api/ishares
+          git diff --cached --quiet && exit 0
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git commit -m 'Update iShares ETF data'
+          git push
+
+### 2026-10-01 — iShares-style checked-in config/default precedence (completed)
+- Audit checkpoint c41e75e0da1fec293dea8a00c22e8e4ec0136743 pushed and remote equality verified. First push failed because snapshot excluded plain .git/config/origin; restored only nonsecret public origin in the same command and retried successfully. No token/header ever stored there.
+- Tool snapshots also discard installed .local/.cache binaries between calls. Installed Bun1.4.2 from official release; retained only a nonsecret compressed tool archive + wrapper outside target to re-extract into excluded .cache as needed. No project dependency/lock/runtime changes. Commands are equivalent to bun1.4.2 CLI, invoked through /home/user/run-bun.sh in this environment.
+- Added scripts/update-data.config.json, same flat string-valued canonical-control schema and module-relative filename as pinned iShares. All23 existing controls, same conservative DWS1.5/2 defaults, unrestricted filters, no new skip/provider flags.
+- Added loadUpdaterDefaults +applyUpdaterDefaults in the single updater: checked-in JSON wins over built-in emergency fallbacks; nonblank ENV wins over JSON; only undefined/whitespaceENV filled;0/false preserved; null defaults skipped and scalar strings/numbers/booleans converted to strings. ENOENT alone permits fallback; malformed/unreadable/nonscalar structure throws, not silently ignored. No broad any or numeric-return-key casts introduced; directive stays line2 before imports.
+- Unlike stale reference docs, exported effective defaults/readConfig({})/help use actual loaded JSON, so JSON edits are reflected consistently, not hidden behind hardcoded help values. Help now names config path/precedence. No cwd-dependent reads or extra CONFIG knob.
+- Added5 offline regression tests: exact23-key file/runtime equality; missing/blankENV inheritance; explicit zero/false and all financial ranges/contact/tickers precedence; scalar/null cases and valid edits; missing/malformed/unreadable/nonflat config behavior; CLI help from a different cwd.
+- Strict local checks:74pass/0fail (previous69 retained), both Bun builds success, git diff--check clean. Source/API/UI/hash baselines remain unchanged except config plumbing in updater; no live source request in this checkpoint.
+- Next: data workflow mirror and related summary/docs/CI/Pages contract validation, separate coherent checkpoint.
+
+### 2026-10-01 — Exact iShares workflow mechanics +automatic Actions summary (completed)
+- Config stage ecd78dc202b3a6751d733b919da97f77e9a40318 ordinary-pushed; helper readback confirmed local/remote equality. Prior audit c41e75e and external API-only89ba459 preserved.
+- update-data.yml now mirrors pinned iShares Sunday00UTC/manual, all supported optional STRING inputs with EMPTY defaults (including VERBOSE; blank means JSON, explicit false survives), canonical job-level ENV, global serialized update-data group/no cancel, checkout@v7, setup-bun@v2 with NO bun-version, frozen install→updater tests→normal CLI→conditional api-only commit/push.
+- Removed old continue-on-error/commit-healthy-on-failure/final-error pattern and extra step chain to follow reference exactly: an updater failure now prevents commit. Runtime continues per fund and retains published data as before; no failed-provider data invention. No branch merge, deployment or live workflow dispatch performed.
+- Security-specific intentional adaptation: checkout persist-credentials:false; conditional commit uses existing NONSECRET temporary askpass program, with literal GH_TOKEN variable reference and runner token only in process memory, trap cleanup, no credentials in Git config/URL/file. The bot identity and conventional data commit stay; no force push. Target23 supported knobs retained rather than reference unsupported raw downloads.
+- CI and main-only Pages retained (reference repo currently only has data workflow); common checkoutv7/unpinned setup-bunv2 conventions aligned. Pages stages only public app/feed; guards/deploy permissions unchanged. Monthly Bun/Actions Dependabot already matched, unchanged. package.json/lock/runtime deps remain unchanged.
+- Automatic GITHUB_STEP_SUMMARY uses same reference result table +configuration details +filtered/failure reasons. Adapted to native Xtrackers statuses, published counts, catalog source, real manifest/progress change flags and retained-source diagnostics. CLI writes it only when GITHUB_STEP_SUMMARY is supplied; helper tests target separate temporary summary roots, never API. Presentation result fields capture already-performed writes; fetch/parse/filter/financial/stable-write/retention semantics unchanged.
+- README config path, ENV-over-JSON priority, blank manual defaults, zero/false semantics, missing vs invalid-file behavior, truthful safe1.5/2, fail-before-push, summary/actions and nonsecret credential handling documented without changing pinned family headings/intro/brand rows. Initial seed remains explicitly historical; current external43/21171/77473 also stated.
+- Updated automation contracts to blank optional strings/job ENV/reference6-step chain/global serialization/actions/no fixed Bun/conditional api-only commit/default failure gating/security; added real bootstrap subprocess JSON-edit/override/blank/ENOENT/malformed/help checks and actual offline orchestrator summary/cursor/filter/cached diagnostics checks.
+- Initial new summary test failed76pass/1fail because the test put step-summary.md INSIDE the temporary API hash root, correctly detecting one additional file. Fixed TEST path to a separate temp root and cleanup; did not weaken hash helper or change runtime behavior. Strict rerun77pass/0fail/602161expectations; frozen install and both Bun builds success; diff--check clean. No false green/commit after failed check (set-e used).
+- All251 published API hashes exactly match new external baseline; app.tsx/index.html hashes exact; no runtime dependencies, financial/UI/provider edits, credentials, generated build output or production data refresh. Pinned reference/target workflow comparison saved in research/2026-10-01/workflow-config-followup/workflow-comparison.json.
+- Next: isolated actual remote-clone CLI3-ticker checked-in-default/blankENV acceptance and remote CI/PR readback; separate evidence checkpoint.
+
+### 2026-10-01 — Real CLI checked-in-config acceptance +remote CI proof (completed)
+- Workflow/reporting ff9a5136d89dd4b42300718e731767a8f853f49d ordinary-pushed, local/remote equality verified. Public GitHub CI green for both push run36934647223 and pull_request run36934653865; public jobs readback verifies every step success, including checkoutv7/setup-bunv2/frozen install/tests/builds/diff. Existing PR#1 remainsOPEN/unmerged, base main13c600703279ebc67b495495c8be5248ca529853.
+- Fresh public remote branch clone into excluded .cache/xtrackers-followup-live, exact ff9a513HEAD; updater/config/package/lock hashes equal target. Never used authenticated API operations or changed any sibling. No workflow dispatch or production API write.
+- Ran ACTUAL normal CLI twice on live DWS/Yahoo sources: only TICKERS="ASHR HYLB DBEF" nonblank; every other manual control ENV blank, inheriting checked-in JSON1.5sleep/2lanes/retries2/MAX_FETCHES0/VERBOSEfalse. GITHUB_STEP_SUMMARY supplied as native Actions reporting signal. Commands used restored official Bun1.4.2 wrapper, not a substitute updater or mock. Runs22:24:35→22:24:48UTC and22:24:48→22:25:01UTC, bothexit0, processed3, failures0, fresh official DWS holdings/NAV/distributions +Yahoo with no retained-source reason. Regular bounded catalog/sitemap discovery still happens as usual; no unrestricted fund pass.
+- Each CLI automatically wrote correct Actions summary (all23 effective controls; catalog43, attempts3, updated0/unchanged3, failed0, manifest/progress unchanged). No data drift: entire repeat API hash set exact;25selected per-fund files +index26file snapshot saved. Current three-fund data2254holdings/9565history: ASHR287/3245, DBEF674/3852, HYLB1293/2468. These are current real data, not old initial2238/9562 seed figures forced back.
+- All40 unrequested catalog rows and unrequested file hashes preserved byte-for-byte; current43/21171/77473 dataset counts unchanged. Target251published files exactly match protected external89ba459 ledger; neither target API nor UI modified.
+- Re-ran frozen install, all77offline tests/602161expectations/0fail, both Bun builds and diff--check in the ACTUAL remote clone after acceptance; stdout saved. Builds are only transpilation, not semantic TS proof. No runtime/types package changes.
+- Byte-comparison proof of4 original source groups (pure parsing/financial/reporting helpers; SEC/N-PORT +derived reporting/returns; complete per-fund provider/retention/write logic; request lanes/retries/stable writers) against89ba459: all EXACT, no financial/provider redesign. Source/control changes limited to requested JSON/config/workflow/reporting plumbing.
+- Evidence saved under research/2026-10-01/workflow-config-followup: actual logs/Actions markdown, before/after hash ledgers,3actual metas, deterministic gzip26file snapshot, final frozen/tests/build output, summary/final-verification/source-preservation, public CI job/PR proof. No tokens/auth headers/cookies/credentials anywhere in committed evidence.
+- Next: scoped evidence commit+ordinary push, final current head/CI/PR reconciliation and delivery journal checkpoint; no more implementation/live update.
+
+### 2026-10-01 — Follow-up delivery reconciliation (complete; journal-only checkpoint)
+- Evidence/acceptance f2a4735e5d35a27df62958e8d17220d2f51ed6e8 ordinary-pushed and helper equality verified. Public readback now confirms exact PR#1head f2a4735, OPEN/unmerged, main/base13c6007 unchanged; latest evidence-stage push and pull_request CI both COMPLETED/SUCCESS (IDs and URLs saved in remote-ci-evidence-stage.json).
+- No follow-up implementation remains: JSON/default/env/help mechanism, all23 blank manual inputs/job ENV, exact common data-workflow step chain, checkoutv7/unpinned setup-bunv2, automatic summary, related CI/Pages/docs/contracts done. Source checkpoint ff9a513, config ecd78dc, audit c41e75e, data-only external89ba459 all preserved in ordinary linear history.
+- Final protected251API hash check exact; provider/financial/request/writer source4groups byte-identical to original; UI/package/lock/Dependabot unchanged;77offline tests/0fail, frozen lock/Bun builds/diff checks passed; actual3tickerCLI twice exit0,25selected files +index repeat exact,40unrequested catalog/file scope exact; no production updater dispatch/full fund pass/deploy/merge/sibling edit.
+- Credential-like-literal scan of all tracked files passed without echoing any content. No token or auth header in files/config/URL/commits/logs; runner askpass is only NONSECRET code, GitHub token passed through process memory. All public CI/PR readbacks unauthenticated.
+- This commit contains only final journal/readback-verification evidence (no source/API changes). Its own SHA cannot be embedded in its contents without recursive hash changes: f2a4735 is last explicit pushed checkpoint in this record; final gitHEAD/remote/PR/check readback is workspace-only/user-facing after this ordinary push.
+- After confirmed final push, verify latest head/check status with public GET, stop runtime-only credential process, deliver concise Russian report linking existing PR#1. Do not merge. No additional implementation or live validation needed.
 
 =============================================================================
 FULL SELF-CONTAINED IMPLEMENTATION PLAN
