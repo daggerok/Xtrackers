@@ -1,7 +1,7 @@
 CURRENT STATE
 =============
 - Goal/acceptance: Xtrackers holdings-to-watchlist static app; sibling-parity UI; Bun-only, zero runtime dependencies; offline tests; isolated >=3-ticker live runs with repeat byte-stability; scheduled/manual feed; PR to main.
-- Status: Live research complete; DWS catalog-empty condition discovered and official US sitemap fallback verified. Implementation not yet started.
+- Status: Toolchain + pure parser/financial helper checkpoint complete (24 offline tests pass). CLI/provider orchestration is the next unfinished step.
 - Repository: https://github.com/daggerok/Xtrackers
 - Branch: feat/xtrackers-etfs (created from main 13c600703279ebc67b495495c8be5248ca529853).
 - PR: none (GitHub API checked 2026-10-01).
@@ -9,9 +9,9 @@ CURRENT STATE
 - Hard constraints: preserve full embedded plan; no secrets in files/config; Bun-only/no tsc/no tsconfig; dependencies {}; only exact @types/bun and @types/node devDependencies; copied UI with enumerated substitutions + shared header/frequency exceptions; real acceptance isolated from production API.
 - Completed: baseline/recovery; named references; Bun 1.4.2; verified XLSX/PDP endpoints and 42-fund US sitemap; dated source fixtures committed for offline tests.
 - Remaining: updater/parsers/offline tests; scoped live acceptance/retention/idempotency; copied UI/browser parity; workflow/docs/metadata; final checks and PR.
-- Last confirmed pushed SHA: 3389d138bccdcb085e3aad92398a43fb29530549 (origin/feat/xtrackers-etfs; verified remote equality).
+- Last confirmed pushed SHA: a1df8156d6e7764b34c9985ab52840a6ddeb48be (origin/feat/xtrackers-etfs; verified remote equality).
 - Blockers: none.
-- Exact next action: scaffold exact pinned Bun manifest/lock; implement pure XLSX, catalog/sitemap/PDP/holdings/distributions/NAV parsers with fixture tests. Use SPDR ZIP reader (true OpenXML), JPMorgan shared helpers and iShares lane pacing; keep UI unchanged until live acceptance.
+- Exact next action: add CLI/config/filter/pacing/retry/NPORT provider orchestration and stable paginated writing to scripts/update-data.ts; extend offline tests for scopes, failure retention, cursor, repeat writes and queue recovery. Then isolated three-ticker live acceptance; no unbounded run.
 
 === 1st PROMPT: COPY-PASTE THIS TO THE IMPLEMENTING AGENT (WITH YOUR GITHUB ACCESS TOKEN) ===
 
@@ -144,6 +144,16 @@ CHRONOLOGICAL JOURNAL
 - Tracked actual source fixtures: scripts/fixtures/2026-10-01/{catalog-empty.xlsx,us-sitemap.xml,ASHR-securities.xlsx,ASHR-distributions.xlsx,ASHR-performance.xlsx,ASHR-meta.json,HYLB-meta.json,DBEF-meta.json}. research/2026-10-01/fixtures.json records URLs/bytes/SHA-256; endpoints.json records first live responses/denials.
 - Commands: Python stdlib urllib + zipfile/XML inspection; no project runtime dependencies. Fixture paths/hashes make evidence recoverable without chat or workspace research copies. No source cookies/headers/secrets persisted.
 - Next: coherent pure-parser/toolchain checkpoint with offline tests before provider orchestration.
+
+### 2026-10-01 — Bun toolchain and pure XLSX/source/metrics parsers (completed)
+- Confirmed research checkpoint a1df8156d6e7764b34c9985ab52840a6ddeb48be pushed with remote equality.
+- Added package.json (dependencies={}, exact dev @types/bun=1.4.2, @types/node=26.6.2, matching all three pinned siblings), bun.lock and .gitignore. No TypeScript package, tsconfig or runtime dependency added. bun install --frozen-lockfile passes.
+- Implemented scripts/update-data.ts pure helpers: bounded in-memory stored/deflate ZIP, OpenXML shared/rich/inline strings, namespace/sparse-cell handling, zero/null/formula errors, catalog/sitemap, exact-ticker PDP details, holdings, sorted distributions, daily NAV, Yahoo adjusted-close rounding, reinvested NAV returns, frequency/yield/TR/CAGR, coverage-limited windows and page manifests. Reference directive is line 2 before imports.
+- Dated fixture facts independently checked: ASHR holdings=287 rows (includes cash; weights sum 100.00000006), distributions=23 rows (including explicit zero-dollar events), NAV=3242 rows. First NAV serial 41583 is 2013-11-05, one day BEFORE official listing 2013-11-06; preserved both source dates. Latest NAV 2026-09-29=32.56, latest positive distribution 2025-12-19=0.75811, annual frequency, official SEC yield=1.37. HYLB category Fixed Income, SEC yield=8.10; DBEF categories Currency-hedged / Equities / International.
+- Initial fixture test run: 19 pass/5 fail revealed DWS x:-prefixed XML (SPDR parser assumed unprefixed tags) and an incorrect normalized catalog header key. Fixed parser namespace handling/key. Second run: 23 pass/1 fail exposed a test's incorrect first-NAV date; checked Excel serial independently, corrected EXPECTATION ONLY, not source/financial logic.
+- Final commands: bun test scripts/update-data.test.ts -> 24 pass, 0 fail; bun build --target=bun scripts/update-data.ts --outfile=/dev/null -> success; bun install --frozen-lockfile -> success; git diff --check -> clean.
+- Type-safety review: returnHeaderSlot returns NumericReturnKey = Exclude<keyof OfficialReturnRow,'asOfDate'> | null, numeric assignments cannot select the string metadata slot. Tests cover every tenor/reordered headers/zero/negative/null/missing/unknown headers and string preservation. No any/index-widening/assertion used for that mapping. Bun build is transpilation, NOT semantic type checking; no IDE diagnostics or tsc available/run.
+- CLI is deliberately not wired yet at this bounded checkpoint; no real updater run or production API writes have occurred. Next: request/persistence/filter/fallback layer with offline orchestration tests.
 
 =============================================================================
 FULL SELF-CONTAINED IMPLEMENTATION PLAN
