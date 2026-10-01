@@ -1,7 +1,7 @@
 CURRENT STATE
 =============
 - Goal/acceptance: Xtrackers holdings-to-watchlist static app; sibling-parity UI; Bun-only, zero runtime dependencies; offline tests; isolated >=3-ticker live runs with repeat byte-stability; scheduled/manual feed; PR to main.
-- Status: Implementation/docs/metadata complete; local69 tests pass. First remote CI found sandbox-specific test temp path; fixed using OS tmpdir, awaiting new remote run. Final updater/live/browser code unchanged. PR/final audit pending; no merge.
+- Status: COMPLETE. Implementation/docs/automation/target metadata committed, all69 offline tests +12 real browser cases +final real scoped acceptance pass; actual GitHub CI green. PR #1 OPEN (not draft), no merge, main/siblings unchanged. Pages pending owner merge/enablement.
 - Repository: https://github.com/daggerok/Xtrackers
 - Branch: feat/xtrackers-etfs (created from main 13c600703279ebc67b495495c8be5248ca529853).
 - PR: none (GitHub API checked 2026-10-01).
@@ -9,9 +9,9 @@ CURRENT STATE
 - Hard constraints: preserve full embedded plan; no secrets in files/config; Bun-only/no tsc/no tsconfig; dependencies {}; only exact @types/bun and @types/node devDependencies; copied UI with enumerated substitutions + shared header/frequency exceptions; real acceptance isolated from production API.
 - Completed: baseline/recovery; named references; Bun 1.4.2; verified XLSX/PDP endpoints and 42-fund US sitemap; dated source fixtures committed for offline tests.
 - Remaining: updater/parsers/offline tests; scoped live acceptance/retention/idempotency; copied UI/browser parity; workflow/docs/metadata; final checks and PR.
-- Last confirmed pushed SHA: a962c705ce85149462bfcf29b8b8fe601fe5d180 (origin/feat/xtrackers-etfs; verified remote equality).
+- Last confirmed pushed implementation SHA: f2617b52b643070b03cb22ec88faf5f193062d34 (origin/feat/xtrackers-etfs equality and remote CI success verified). The final journal/evidence-only commit containing this entry follows; resolve its own HEAD with git rev-parse HEAD and compare git ls-remote origin refs/heads/feat/xtrackers-etfs. No runtime source changes after final live acceptance.
 - Blockers: none.
-- Exact next action: inspect the remote Verify Xtrackers run for this portable-test correction (all steps must actually pass), preserve final updater/browser parity hashes and run final local gates/credential/Git audit. origin/main verified 13c6007 unchanged. Create/update one PR feat/xtrackers-etfs -> main, record URL in journal; do not merge or enable Pages or change siblings.
+- Exact next action: owner review of https://github.com/daggerok/Xtrackers/pull/1. No implementation work unfinished. Merge/Pages enablement requires owner action/explicit authorization; no sibling work authorized. On resume read this journal, verify clean HEAD/upstream/main and secure auth availability before any edit or push.
 
 === 1st PROMPT: COPY-PASTE THIS TO THE IMPLEMENTING AGENT (WITH YOUR GITHUB ACCESS TOKEN) ===
 
@@ -507,6 +507,18 @@ TARGET METADATA AFTER (public fields only):
 - Actual remote CI run36827598737: https://github.com/daggerok/Xtrackers/actions/runs/36827598737 failed in bun test after checkout/setup/frozen-install SUCCESS. Check annotations pinpointed test helper trying mkdir('/home/user') on GitHub's /home/runner runner (EACCES); later build/diff steps correctly skipped, not treated as green. This is a test portability bug, not provider/production updater failure.
 - Fixed only test tempRoot: node:os tmpdir() + mkdtemp(join(tmpdir(),'xtrackers-tests-')). No sudo/permission workaround, no tests disabled, no CI continue-on-error for checks. Runtime updater/API/app/workflows unchanged; final live/code hashes remain valid.
 - Strict local gates re-executed: all69 tests pass, both Bun builds pass, frozen-lock install unchanged, diff check clean. Need actual new remote CI success before final completion/PR claim.
+
+### 2026-10-01 — Final remote verification and PR delivery (COMPLETE)
+- Confirmed portable-test checkpoint f2617b52b643070b03cb22ec88faf5f193062d34 pushed with remote equality.
+- ACTUAL GitHub CI SUCCESS: run36828012152, https://github.com/daggerok/Xtrackers/actions/runs/36828012152. Checkout, Bun1.4.2 setup, frozen install, all tests, updater build, app build and git diff check ALL executed successfully; no skipped verification step. Public run/step evidence in research/2026-10-01/remote-ci.json. Prior failed temp-path run was fixed, not waived.
+- Final strict local gates repeated: bun test ->69 pass/0 fail/71091 expectations; both Bun builds pass; frozen install unchanged; git diff --check clean. All offline; actual real provider acceptance is separately final v3 evidence.
+- Integrity audit passed: final updater SHA-256 still57ace28cc767fd10820f1cd4ce7a32b2e6d994c4bd645a493dbfbfda43b751c9 equals live-accepted code; all26 production initial API files match v2 ledger; current app/HTML hashes match successful12-scenario browser artifact; source reverses exactly to pinned UI and README common/table guards pass. Bun transpilation is NOT semantic TS validation; no tsc/tsconfig/TypeScript package added.
+- Credentials audit: target .git/config has plain https://github.com/daggerok/Xtrackers.git origin, no auth headers/passwords/credential storage; tracked text has no credential-like token. Auth transport remains memory-only, nonsecret wrapper outside target; no secret/header/token file written. Optional preview remains process xtrackers-etf-watchlist-d8304422 on0.0.0.0:3000; no host/embed warnings. Auth helper can be stopped after final readback, never needed as a persisted deliverable.
+- Remote main verified unchanged13c600703279ebc67b495495c8be5248ca529853. No force-push, history rewrite, merge, default-branch/language override, unbounded live updater, full production refresh, sibling README/metadata write or sibling PR.
+- Created one ready-for-review PR #1: https://github.com/daggerok/Xtrackers/pull/1 ; feat/xtrackers-etfs -> main; OPEN, draft=false, merged=false, created2026-10-01T07:14:39Z. Creation source revision f2617b5; this final journal/evidence-only commit is pushed onto the same PR without changing live-accepted code. Creation snapshot + final verification facts in pull-request.json/final-verification.json. Read back PR head/main after publishing; do not merge.
+- Target About/homepage/20topics verified exact (metadata-after.json and inline prior entry). Pages remains404/unconfigured; deployment URL is a target, not a claim of a live GitHub Pages app. Owner must merge and enable Actions Pages. Static local live preview is available independently.
+- Initial feed deliberately42 discovered/3 populated/39catalog-only,2238 positions/9562history; later official discovery43 is documented and scoped new-entry deferral preserves unrequested universe. Source SEC403 is an honest limitation: offline fallback/worker validated, fresh SEC success not claimed. Derived NAV returns are not published standardized returns. First adjusted-close variance and later real DWS headline changes retained in separate evidence.
+- All requested implementation stages complete and pushed after scoped Conventional Commits; only owner review/explicit merge and Pages configuration remain. This final entry is prepared before its own commit, so it records the last independently verified implementation SHA rather than a circular self-hash; recover exact latest journal commit from Git/PR head, require local/remote equality before further work.
 
 =============================================================================
 FULL SELF-CONTAINED IMPLEMENTATION PLAN
