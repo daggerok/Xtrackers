@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-10-01T22:32:06.948193+00:00",
+  "authentication": "none/public GET only",
+  "headSha": "f2a4735e5d35a27df62958e8d17220d2f51ed6e8",
+  "mainSha": "13c600703279ebc67b495495c8be5248ca529853",
+  "pr": {
+    "number": 1,
+    "state": "open",
+    "merged": false,
+    "url": "https://github.com/daggerok/Xtrackers/pull/1"
+  },
+  "ciRuns": [
+    {
+      "id": 36935341228,
+      "name": "Verify Xtrackers",
+      "head_sha": "f2a4735e5d35a27df62958e8d17220d2f51ed6e8",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/daggerok/Xtrackers/actions/runs/36935341228",
+      "created_at": "2026-10-01T22:29:10Z",
+      "updated_at": "2026-10-01T22:29:22Z"
+    },
+    {
+      "id": 36935336199,
+      "name": "Verify Xtrackers",
+      "head_sha": "f2a4735e5d35a27df62958e8d17220d2f51ed6e8",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/daggerok/Xtrackers/actions/runs/36935336199",
+      "created_at": "2026-10-01T22:29:07Z",
+      "updated_at": "2026-10-01T22:29:19Z"
+    }
+  ],
+  "sourceCommit": "ff9a5136d89dd4b42300718e731767a8f853f49d",
+  "nextCommit": "delivery journal/evidence only; no implementation changes"
+}

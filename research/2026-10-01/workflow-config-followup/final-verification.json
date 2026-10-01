@@ -39,5 +39,10 @@
   "mainSha": "13c600703279ebc67b495495c8be5248ca529853",
   "pagesDeployed": false,
   "productionUpdateDispatched": false,
-  "remaining": "ordinary evidence checkpoint push and final head/CI/PR public readback"
+  "remaining": "no implementation work; final delivery-journal push/head readback only",
+  "evidenceCheckpointSha": "f2a4735e5d35a27df62958e8d17220d2f51ed6e8",
+  "evidenceStageCi": {
+    "pull_request": "success",
+    "push": "success"
+  }
 }

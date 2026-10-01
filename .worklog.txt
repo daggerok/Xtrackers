@@ -1,18 +1,18 @@
 CURRENT STATE
 =============
 - Goal/acceptance: follow-up requested by user: mirror daggerok/iShares GitHub Actions and scripts/update-data.config.json approach in Xtrackers, including loader/precedence, help, docs and tests. Preserve issuer fetch/parse/financial/UI logic and current published data.
-- Status: Follow-up implementation and actual scoped acceptance complete:77offline tests pass; real3-ticker CLI twice exit0/byte-identical +automatic summaries; workflow-stage push/PR CI green. Evidence checkpoint/final head readback remain; UI/published data untouched.
+- Status: COMPLETE. iShares-style config/workflow follow-up implemented, tested, real-source accepted and ordinary-pushed into existing OPEN PR#1.77offline tests;2live scoped CLI passes/byte-identical; both workflow and evidence checkpoint push/PR CI green. No merge/deployment/API/UI changes.
 - Repository: https://github.com/daggerok/Xtrackers
 - Branch: feat/xtrackers-etfs; existing PR #1 OPEN, not merged: https://github.com/daggerok/Xtrackers/pull/1.
 - Authorization: target-only edits/commits/ordinary fast-forward pushes to this branch/PR. No merge, force push, sibling edits, About changes or production data refresh.
 - Hard constraints: Bun-only, dependencies={}, exact types-only dev deps, no tsc/tsconfig; full embedded plan preserved; secrets never in files/config/URLs/output; first/second-line reference directive. New iShares config/workflow instruction overrides prior baked/manual-default design, not DWS-specific safe pacing or supported controls.
 - Completed: exact reference config/workflow mechanism +related README/CI/Pages/reporting/contracts;77offline tests/frozen install/both builds/diff checks; actual public remote clone ff9a5133-fund CLI twice with JSON defaults/blankENV;40 unrequested catalog rows/files preserved; repeat25selected+index26snapshot files byte-identical; target251hashes and provider/financial/request/writer code groups exact; push+PR CI successful.
-- Remaining: ordinary evidence-checkpoint push, then final feature head/remote equality/public CI/PR readback; no implementation or live request remains.
-- Last confirmed pushed checkpoint SHA: ff9a5136d89dd4b42300718e731767a8f853f49d (workflow stage local/remote verified; both cloud CI events successful). External data baseline89ba459 preserved; main13c6007 unchanged.
+- Remaining: no implementation work. Only final delivery-journal ordinary push and its exact head/public check readback (recorded externally after push to avoid recursive self-hash commits). Owner merge/Pages enablement remain outside authorization.
+- Last explicit confirmed pushed checkpoint SHA: f2a4735e5d35a27df62958e8d17220d2f51ed6e8 (evidence stage remote/PR and both cloud CI events verified). The final delivery-journal commit containing this state is identified by git HEAD/remote readback; implementation source ff9a513, external API baseline89ba459 and main13c6007 unchanged.
 - Current published data:43 funds /21171 holdings /77473 history from the user's external update; all files must remain untouched by this follow-up.
 - Reference: daggerok/iShares main297a2e41e4a7a438ece2b8bde8e3384e960dfaeb; config lives in scripts/, NOT repo root. Full relevant snapshots below/reference.json.
-- Blockers: none; fresh short-lived push credential supplied, held only in runtime memory. No API-auth use authorized/needed; public readback is unauthenticated.
-- Exact next action: ordinary-push this scoped verification/evidence stage (no source/API modifications), then verify exact remote/PR head and latest CI via public GET. Update final recovery/delivery state, push journal checkpoint, confirm head and stop runtime-only credential transport. No further live updater, deployment, merge or sibling edits.
+- Blockers: none. All GitHub API readback unauthenticated/public; fresh short-lived push credential remained runtime-memory-only and is to be stopped after final exact push/CI/PR readback. No secret persisted.
+- Exact next action: push this final delivery-journal checkpoint, verify local==remote==PR head and latest CI without authenticated API, stop runtime-only push transport, report PR#1 and verification in Russian. On a later recovery fully read this file and reconcile actual Git/remote/PR; do not redo the implementation or scoped live run. No merge/deployment/full refresh/sibling edits authorized.
 
 === 1st PROMPT: COPY-PASTE THIS TO THE IMPLEMENTING AGENT (WITH YOUR GITHUB ACCESS TOKEN) ===
 
@@ -756,6 +756,14 @@ jobs:
 - Byte-comparison proof of4 original source groups (pure parsing/financial/reporting helpers; SEC/N-PORT +derived reporting/returns; complete per-fund provider/retention/write logic; request lanes/retries/stable writers) against89ba459: all EXACT, no financial/provider redesign. Source/control changes limited to requested JSON/config/workflow/reporting plumbing.
 - Evidence saved under research/2026-10-01/workflow-config-followup: actual logs/Actions markdown, before/after hash ledgers,3actual metas, deterministic gzip26file snapshot, final frozen/tests/build output, summary/final-verification/source-preservation, public CI job/PR proof. No tokens/auth headers/cookies/credentials anywhere in committed evidence.
 - Next: scoped evidence commit+ordinary push, final current head/CI/PR reconciliation and delivery journal checkpoint; no more implementation/live update.
+
+### 2026-10-01 — Follow-up delivery reconciliation (complete; journal-only checkpoint)
+- Evidence/acceptance f2a4735e5d35a27df62958e8d17220d2f51ed6e8 ordinary-pushed and helper equality verified. Public readback now confirms exact PR#1head f2a4735, OPEN/unmerged, main/base13c6007 unchanged; latest evidence-stage push and pull_request CI both COMPLETED/SUCCESS (IDs and URLs saved in remote-ci-evidence-stage.json).
+- No follow-up implementation remains: JSON/default/env/help mechanism, all23 blank manual inputs/job ENV, exact common data-workflow step chain, checkoutv7/unpinned setup-bunv2, automatic summary, related CI/Pages/docs/contracts done. Source checkpoint ff9a513, config ecd78dc, audit c41e75e, data-only external89ba459 all preserved in ordinary linear history.
+- Final protected251API hash check exact; provider/financial/request/writer source4groups byte-identical to original; UI/package/lock/Dependabot unchanged;77offline tests/0fail, frozen lock/Bun builds/diff checks passed; actual3tickerCLI twice exit0,25selected files +index repeat exact,40unrequested catalog/file scope exact; no production updater dispatch/full fund pass/deploy/merge/sibling edit.
+- Credential-like-literal scan of all tracked files passed without echoing any content. No token or auth header in files/config/URL/commits/logs; runner askpass is only NONSECRET code, GitHub token passed through process memory. All public CI/PR readbacks unauthenticated.
+- This commit contains only final journal/readback-verification evidence (no source/API changes). Its own SHA cannot be embedded in its contents without recursive hash changes: f2a4735 is last explicit pushed checkpoint in this record; final gitHEAD/remote/PR/check readback is workspace-only/user-facing after this ordinary push.
+- After confirmed final push, verify latest head/check status with public GET, stop runtime-only credential process, deliver concise Russian report linking existing PR#1. Do not merge. No additional implementation or live validation needed.
 
 =============================================================================
 FULL SELF-CONTAINED IMPLEMENTATION PLAN
