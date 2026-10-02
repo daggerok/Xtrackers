@@ -54,6 +54,8 @@ Each fund carries a derived `metrics` object that powers the catalog columns sha
 - `siAnn` - since-inception annualized when date/age/coverage support it (not young cumulative SI) -> *SI Ann.*
 - `dividendYield` - official indicated distribution rate, or latest positive distribution × frequency ÷ NAV
 - `secYield` - 30-day SEC yield when published; `—` otherwise
+- `returnsBasis` - mandatory non-empty label of how the returns were computed: official DWS NAV total returns, derived from the official DWS daily NAV with distributions reinvested at ex-date NAV, or derived from Yahoo adjusted market-price closes (an estimate, not official NAV returns)
+- `performanceAsOf` - mandatory ISO `YYYY-MM-DD` date the returns are as of: the DWS performance table date for official figures, the last covered series date when derived (never the NAV date); `null` only when truly unknown
 
 ### Update controls
 

@@ -1226,7 +1226,10 @@ export function indexRowForCatalog(fund: CatalogFund): JsonRecord {
     nav: '—', navValue: null, aum: moneyText(fund.aumValue), aumValue: fund.aumValue,
     asOfDate: null, inceptionDate: fund.inceptionDate, exchange: null, closePrice: '—', premiumDiscount: '—',
     cusip: null, isin: null, distributions: { frequency: null, exDate: null, dividend: null },
-    returns: { monthEnd: fund.officialReturns, quarterEnd: emptyReturns() }, metrics: {}, holdings: 0, history: 0,
+    returns: { monthEnd: fund.officialReturns, quarterEnd: emptyReturns() },
+    metrics: deriveCatalogMetrics(fund.officialReturns, null, null, Object.values(fund.officialReturns).some(value => typeof value === 'number')
+      ? 'official DWS catalog NAV total returns (catalog-only entry, not yet updated)' : 'unavailable: catalog-only entry, returns not fetched yet'),
+    holdings: 0, history: 0,
   };
 }
 const percentageText = (value: number | null): string => value === null ? '—' : `${value.toFixed(2)}%`;
@@ -1326,7 +1329,8 @@ export function annualizedOfficialReturns(source: OfficialReturnRow, inception: 
 export function deriveCatalogMetrics(returns: OfficialReturnRow, dividendYield: number | null, secYield: number | null, basis: string): JsonRecord {
   return { ytd: returns.ytd, tr1y: returns.yr1, cagr3y: returns.yr3, cagr5y: returns.yr5, cagr10y: returns.yr10,
     tr3y: annualizedToTotal(returns.yr3, 3), tr5y: annualizedToTotal(returns.yr5, 5), tr10y: annualizedToTotal(returns.yr10, 10),
-    siAnn: returns.sinceInception, dividendYield, dividendYieldText: percentageText(dividendYield), secYield, secYieldText: percentageText(secYield), returnsBasis: basis };
+    siAnn: returns.sinceInception, dividendYield, dividendYieldText: percentageText(dividendYield), secYield, secYieldText: percentageText(secYield), returnsBasis: basis,
+    performanceAsOf: toIsoDate(returns.asOfDate) };
 }
 
 export type FundOutcome = { ticker: string; status: 'updated' | 'unchanged' | 'skipped' | 'failed'; freshSources: string[]; retainedSources: string[]; holdings: number; history: number; reason?: string };

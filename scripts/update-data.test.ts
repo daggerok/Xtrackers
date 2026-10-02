@@ -272,6 +272,17 @@ describe('official holdings / distributions / daily NAV', () => {
 });
 
 describe('history and financial metrics', () => {
+  test('metrics end with returnsBasis then performanceAsOf, catalog-only rows included', () => {
+    const stub = indexRowForCatalog({ ticker: 'NEWF', name: 'New', category: null, fundPage: 'https://etf.dws.com/en-us/NEWF/', inceptionDate: null, terValue: null, netTerValue: null, aumValue: null, officialReturns: emptyReturns() });
+    const keys = Object.keys(record(stub.metrics));
+    expect(keys.slice(-2)).toEqual(['returnsBasis', 'performanceAsOf']);
+    expect(String(record(stub.metrics).returnsBasis)).toContain('unavailable'); expect(record(stub.metrics).performanceAsOf).toBeNull();
+    expect(record(stub.metrics).ytd).toBeNull();
+    const dated = indexRowForCatalog({ ticker: 'NEWF', name: 'New', category: null, fundPage: 'x', inceptionDate: null, terValue: null, netTerValue: null, aumValue: null,
+      officialReturns: { ...emptyReturns(), asOfDate: '2026-09-30', ytd: 1.5 } });
+    expect(record(dated.metrics).performanceAsOf).toBe('2026-09-30'); expect(record(dated.metrics).ytd).toBe(1.5);
+    expect(String(record(dated.metrics).returnsBasis)).toContain('official DWS');
+  });
   test('Yahoo rounds adjusted closes to 2 decimals, retains daily prices, drops null close', () => {
     const result = parseChart({ chart: { result: [{ meta: {}, timestamp: [1767225600, 1767312000], indicators: { quote: [{ close: [12.12345678, null], volume: [0, 12] }], adjclose: [{ adjclose: [11.98765432, 12] }] }, events: { dividends: { first: { date: 1767225600, amount: 0.5 } } } }] } });
     expect(result.days).toEqual([{ date: '2026-01-01', close: 12.123457, adjClose: 11.99, volume: 0 }]);
@@ -601,6 +612,12 @@ describe('offline real-orchestrator scope / retention / repeat runs', () => {
       expect(result.selected).toEqual(['ASHR', 'DBEF', 'HYLB']); expect(result.failures).toBe(0); expect(result.outcomes.every(r => r.freshSources.length === 5)).toBe(true);
       const afterIndex = await Bun.file(join(root, 'index.json')).json();
       expect(afterIndex.funds).toHaveLength(SITEMAP_TICKERS.length + 1);
+      for (const ticker of result.selected) {
+        const metrics = record(record(afterIndex.funds.find((fund: JsonRecord) => fund.ticker === ticker)).metrics), keys = Object.keys(metrics);
+        expect(keys.slice(-2)).toEqual(['returnsBasis', 'performanceAsOf']);
+        expect(String(metrics.returnsBasis).trim()).not.toMatch(/^(-|—)?$/);
+        expect(metrics.performanceAsOf === null || /^\d{4}-\d{2}-\d{2}$/.test(String(metrics.performanceAsOf))).toBe(true);
+      }
       const selected = new Set(result.selected);
       for (const row of beforeIndex.funds) if (!selected.has(row.ticker)) expect(afterIndex.funds.find((fund: JsonRecord) => fund.ticker === row.ticker)).toEqual(row);
       expect(await Bun.file(join(root, 'funds', 'CHPS', 'untouched.json')).text()).toBe('{"sentinel":true}\n');
@@ -882,6 +899,10 @@ describe('published feed structure (offline, tolerates legitimate refreshes)', (
       const ticker = String(fund.ticker);
       expect(ticker).toMatch(/^[A-Z][A-Z0-9.-]{0,9}$/);
       expect(fund.dataFile).toBe(`funds/${ticker}/meta.json`);
+      const fundMetrics = record(fund.metrics);
+      expect(Object.keys(fundMetrics).slice(-2)).toEqual(['returnsBasis', 'performanceAsOf']);
+      expect(String(fundMetrics.returnsBasis).trim()).not.toMatch(/^(-|—)?$/);
+      expect(fundMetrics.performanceAsOf === null || /^\d{4}-\d{2}-\d{2}$/.test(String(fundMetrics.performanceAsOf))).toBe(true);
       if (!fund.holdings && !fund.history) continue; // catalog-only until a real update
       const meta = await json(`funds/${ticker}/meta.json`);
       expect(meta.ticker).toBe(ticker);
