@@ -77,6 +77,7 @@ Defaults below are from `scripts/update-data.config.json`; blank Actions inputs 
 | `SKIP_YAHOO` | `false` | Do not call Yahoo Finance; published prices are retained |
 | `EDGAR_FALLBACK` | `true` | Use the SEC N-PORT-P holdings fallback when official holdings fail |
 | `VERBOSE` | `false` | Provider/fallback/retry detail; the normal compact fund reporter always retains real zero/false and omits missing fields. |
+| `USE_SYSTEM_CA` | `auto` | TLS trust store: `auto` restarts the updater once with Bun's `--use-system-ca` when a request fails with an untrusted-certificate error; `true` always uses the system CA store; `false` never restarts. Not an individual workflow input: use `advanced`, the config file or the CLI environment. |
 | `PERFORMANCE_YTD` | `:` | YTD performance percent min:max (3Y/5Y/10Y annualized) |
 | `PERFORMANCE_1Y` | `:` | 1Y performance percent min:max (3Y/5Y/10Y annualized) |
 | `PERFORMANCE_3Y` | `:` | 3Y performance percent min:max (3Y/5Y/10Y annualized) |

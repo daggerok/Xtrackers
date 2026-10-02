@@ -600,6 +600,47 @@ function outputCreateReporter(root: URL | string, total: number) {
   };
 }
 
+// --- TLS trust store (identical in every ETF repo) ---
+const SYSTEM_CA_MARKER = 'ETF_UPDATER_SYSTEM_CA';
+const CERT_ERROR = /UNABLE_TO_GET_ISSUER_CERT|UNABLE_TO_VERIFY_LEAF_SIGNATURE|SELF_SIGNED_CERT|CERT_HAS_EXPIRED|unable to get (?:local )?issuer certificate|self[- ]signed certificate|certificate has expired/i;
+
+export function isCertError(error: unknown): boolean {
+  const e = error as { code?: unknown; message?: unknown; cause?: unknown } | null;
+  return CERT_ERROR.test(`${String(e?.code ?? '')} ${String(e?.message ?? '')}`) || (e?.cause ? isCertError(e.cause) : false);
+}
+
+export function systemCaActive(env: Record<string, string | undefined> = process.env, execArgv: string[] = process.execArgv): boolean {
+  return execArgv.includes('--use-system-ca') || env.NODE_USE_SYSTEM_CA === '1' || env[SYSTEM_CA_MARKER] === '1';
+}
+
+export function reexecWithSystemCa(): never {
+  const child = Bun.spawnSync([process.execPath, '--use-system-ca', ...process.argv.slice(1)], {
+    env: { ...process.env, [SYSTEM_CA_MARKER]: '1' },
+    stdio: ['inherit', 'inherit', 'inherit'],
+  });
+  process.exit(child.exitCode ?? 1);
+}
+
+/** mode: auto (restart once on an untrusted-certificate error), true (restart now), false (never). */
+export function installSystemCa(mode: string, reexec: () => never = reexecWithSystemCa, active: boolean = systemCaActive()): void {
+  if (mode === 'false' || active) return;
+  if (mode === 'true') reexec();
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = (async (...args: Parameters<typeof fetch>) => {
+    try { return await realFetch(...args); }
+    catch (error) {
+      if (!isCertError(error)) throw error;
+      console.error('[ notice   ] TLS certificate not trusted; restarting once with --use-system-ca');
+      return reexec();
+    }
+  }) as typeof fetch;
+}
+export function parseSystemCaMode(raw: string): 'auto' | 'true' | 'false' {
+  const mode = raw.trim().toLowerCase();
+  if (mode !== 'auto' && mode !== 'true' && mode !== 'false') throw new Error('USE_SYSTEM_CA: auto, true or false required');
+  return mode;
+}
+
 // Configuration: canonical controls are also used to generate/guard help and Actions inputs.
 export const RETURN_PERIODS = ['YTD', '1Y', '3Y', '5Y', '10Y'] as const;
 export type ReturnPeriod = typeof RETURN_PERIODS[number];
@@ -610,14 +651,14 @@ export type UpdaterConfig = {
   aumRange?: Range; terRange?: Range; dividendYieldRange?: Range; secYieldRange?: Range;
   performanceRanges: RangeMap; totalReturnRanges: RangeMap;
   holdingsPageSize: number; historyPageSize: number; maxRetries: number; historyRange: string;
-  secUa: string; skipYahoo: boolean; edgarFallback: boolean; verbose: boolean;
+  secUa: string; skipYahoo: boolean; edgarFallback: boolean; verbose: boolean; useSystemCa: 'auto' | 'true' | 'false';
 };
 export const DEFAULT_SEC_UA = 'daggerok ETF feed daggerok@gmail.com';
 // Built-in values used when a control resolves blank; the checked-in JSON mirrors them.
 const BUILTIN_CONTROL_DEFAULTS: Record<string, string> = {
   MAX_FETCHES: '0', REQUEST_SLEEP: '1.5', CONCURRENCY: '2', TICKERS: '', AUM: ':', TER: ':',
   DIVIDEND_YIELD: ':', SEC_YIELD: ':', HOLDINGS_PAGE_SIZE: '250', HISTORY_PAGE_SIZE: '1000', MAX_RETRIES: '2',
-  HISTORY_RANGE: 'max', SEC_UA: DEFAULT_SEC_UA, SKIP_YAHOO: 'false', EDGAR_FALLBACK: 'true', VERBOSE: 'false',
+  HISTORY_RANGE: 'max', SEC_UA: DEFAULT_SEC_UA, SKIP_YAHOO: 'false', EDGAR_FALLBACK: 'true', VERBOSE: 'false', USE_SYSTEM_CA: 'auto',
   ...Object.fromEntries(RETURN_PERIODS.flatMap(period => [[`PERFORMANCE_${period}`, ':'], [`TOTAL_RETURN_${period}`, ':']])),
 };
 export const CONFIG_FILE_URL = new URL('./update-data.config.json', import.meta.url);
@@ -716,14 +757,14 @@ export function readConfig(env: Record<string, string | undefined> = process.env
     historyPageSize: parsePositiveInt(value('HISTORY_PAGE_SIZE'), 'HISTORY_PAGE_SIZE'),
     maxRetries: parsePositiveInt(value('MAX_RETRIES'), 'MAX_RETRIES', 1), historyRange: parseHistoryRange(value('HISTORY_RANGE')),
     secUa, skipYahoo: parseBoolean(value('SKIP_YAHOO'), 'SKIP_YAHOO'), edgarFallback: parseBoolean(value('EDGAR_FALLBACK'), 'EDGAR_FALLBACK'),
-    verbose: parseBoolean(value('VERBOSE'), 'VERBOSE'),
+    verbose: parseBoolean(value('VERBOSE'), 'VERBOSE'), useSystemCa: parseSystemCaMode(value('USE_SYSTEM_CA')),
   };
 }
 // Allowlisted scalar controls, shared by the CLI and the Actions resolver step so user input is never interpolated into bash.
 // Precedence: config file < advanced JSON < nonblank individual inputs < environment (an explicitly set variable wins, even empty).
 export const CONTROL_NAMES = [
   'MAX_FETCHES', 'REQUEST_SLEEP', 'CONCURRENCY', 'TICKERS', 'AUM', 'TER', 'DIVIDEND_YIELD', 'SEC_YIELD',
-  'HOLDINGS_PAGE_SIZE', 'HISTORY_PAGE_SIZE', 'MAX_RETRIES', 'HISTORY_RANGE', 'SEC_UA', 'SKIP_YAHOO', 'EDGAR_FALLBACK', 'VERBOSE',
+  'HOLDINGS_PAGE_SIZE', 'HISTORY_PAGE_SIZE', 'MAX_RETRIES', 'HISTORY_RANGE', 'SEC_UA', 'SKIP_YAHOO', 'EDGAR_FALLBACK', 'VERBOSE', 'USE_SYSTEM_CA',
   ...(['PERFORMANCE', 'TOTAL_RETURN'] as const).flatMap(prefix => RETURN_PERIODS.map(period => `${prefix}_${period}` as const)),
 ] as const;
 export type ControlName = (typeof CONTROL_NAMES)[number];
@@ -787,7 +828,7 @@ export function printHelp(): void {
     const value = String(raw[name] ?? BUILTIN_CONTROL_DEFAULTS[name] ?? '');
     console.log(`  ${name}=${name === 'SEC_UA' ? value : value || 'all'}`);
   }
-  console.log('\nMAX_FETCHES: 0 = full selected pass; positive = resumable evaluation batch.\nREQUEST_SLEEP: seconds per independent request lane, including retries.\nTICKERS: spaces, commas or semicolons; an unknown requested ticker fails before writes.\nAUM: min:max, K/M/B/T or nano/micro/small/mid/large. Other ranges: min:max in %.\nPERFORMANCE: annualized 3Y/5Y/10Y; TOTAL_RETURN: cumulative.\nMAX_RETRIES: retries after the initial request, integer >= 1.\nHISTORY_RANGE: Yahoo request window and published history rows, max or Ny (e.g. 5y).\nSEC_UA: User-Agent with a real contact for SEC EDGAR (default daggerok ETF feed daggerok@gmail.com).\nSKIP_YAHOO: do not call Yahoo Finance (published prices are retained). EDGAR_FALLBACK: SEC N-PORT-P holdings fallback.\nVERBOSE: per-request warnings. All source failures keep existing published data.\n\nExamples:\n  TICKERS="ASHR HYLB DBEF" VERBOSE=1 bun scripts/update-data.ts\n  MAX_FETCHES=3 bun scripts/update-data.ts\n  AUM="1B:" TER=":0.5" bun scripts/update-data.ts\n  PERFORMANCE_1Y="15:" HISTORY_RANGE=5y bun scripts/update-data.ts');
+  console.log('\nMAX_FETCHES: 0 = full selected pass; positive = resumable evaluation batch.\nREQUEST_SLEEP: seconds per independent request lane, including retries.\nTICKERS: spaces, commas or semicolons; an unknown requested ticker fails before writes.\nAUM: min:max, K/M/B/T or nano/micro/small/mid/large. Other ranges: min:max in %.\nPERFORMANCE: annualized 3Y/5Y/10Y; TOTAL_RETURN: cumulative.\nMAX_RETRIES: retries after the initial request, integer >= 1.\nHISTORY_RANGE: Yahoo request window and published history rows, max or Ny (e.g. 5y).\nSEC_UA: User-Agent with a real contact for SEC EDGAR (default daggerok ETF feed daggerok@gmail.com).\nSKIP_YAHOO: do not call Yahoo Finance (published prices are retained). EDGAR_FALLBACK: SEC N-PORT-P holdings fallback.\nVERBOSE: per-request warnings. All source failures keep existing published data.\nUSE_SYSTEM_CA: auto restarts once with Bun --use-system-ca on an untrusted-certificate error; true always uses the system CA store; false never restarts.\n\nExamples:\n  TICKERS="ASHR HYLB DBEF" VERBOSE=1 bun scripts/update-data.ts\n  MAX_FETCHES=3 bun scripts/update-data.ts\n  AUM="1B:" TER=":0.5" bun scripts/update-data.ts\n  PERFORMANCE_1Y="15:" HISTORY_RANGE=5y bun scripts/update-data.ts');
 }
 
 // Independently paced request lanes. Reserve a lane synchronously before awaiting it.
@@ -1549,6 +1590,7 @@ if (import.meta.main) {
     else {
       if (args.length) throw new Error(`unknown arguments: ${args.join(' ')}`);
       const config = readConfig(await runtimeControls());
+      installSystemCa(config.useSystemCa);
       const result = await runUpdater(config);
       await writeSummary(config, result);
       if (result.failures) process.exitCode = 1;
