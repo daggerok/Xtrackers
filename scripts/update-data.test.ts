@@ -1,5 +1,5 @@
 /// <reference types="bun" />
-import { describe, expect, test } from 'bun:test';
+import { afterEach, describe, expect, test } from 'bun:test';
 import { mkdir, mkdtemp, readdir, readFile, rm } from 'node:fs/promises';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -17,6 +17,7 @@ import {
   parseCatalogRows, parseSitemap, parseFundDetails, parseHoldingsRows, parseDistributionsRows,
   parseNavRows, parseChart, returnHeaderSlot, parseReturnRow, emptyReturns, navTotalReturnDays,
   deriveReturns, historySheet, pageManifest, exportUrl, detailsUrl, yahooSourceUrl, record, array,
+  isCertError, installSystemCa,
   type Dividend, type ChartDay, type Fetcher, type FundDetails, type JsonRecord,
 } from './update-data';
 
@@ -902,5 +903,59 @@ describe('published feed structure (offline, tolerates legitimate refreshes)', (
         expect(actual).toEqual(pages.map(path => path.split('/')[1]).sort());
       }
     }
+  });
+});
+
+describe('system CA support', () => {
+  const realFetch = globalThis.fetch;
+  afterEach(() => { globalThis.fetch = realFetch; });
+  const reexecSpy = () => { const calls: number[] = []; return { calls, reexec: ((): never => { calls.push(1); throw new Error('reexec'); }) as () => never }; };
+
+  test('USE_SYSTEM_CA resolver accepts auto/true/false case-insensitively, rejects others, defaults to auto', () => {
+    expect(configFile().USE_SYSTEM_CA).toBe('auto');
+    expect(readConfig({}).useSystemCa).toBe('auto');
+    for (const mode of ['auto', 'true', 'false', 'AUTO', 'True', 'FALSE']) expect(readConfig({ USE_SYSTEM_CA: mode }).useSystemCa).toBe(mode.toLowerCase());
+    expect(() => readConfig({ USE_SYSTEM_CA: 'maybe' })).toThrow('USE_SYSTEM_CA');
+    expect(() => resolveControls({}, { USE_SYSTEM_CA: 'maybe' })).toThrow('USE_SYSTEM_CA');
+    expect(resolveControls({}, {}, {}, { USE_SYSTEM_CA: 'true' }).USE_SYSTEM_CA).toBe('true');
+  });
+
+  test('isCertError recognizes certificate failures, including nested causes', () => {
+    expect(isCertError({ code: 'UNABLE_TO_GET_ISSUER_CERT_LOCALLY' })).toBe(true);
+    expect(isCertError(new Error('unable to get local issuer certificate'))).toBe(true);
+    expect(isCertError(Object.assign(new Error('fetch failed'), { cause: { code: 'SELF_SIGNED_CERT_IN_CHAIN' } }))).toBe(true);
+    expect(isCertError({ code: 'ECONNRESET' })).toBe(false);
+    expect(isCertError(new Error('HTTP 403 Forbidden'))).toBe(false);
+    expect(isCertError(null)).toBe(false);
+  });
+
+  test('installSystemCa: false and active leave fetch alone, true restarts now', () => {
+    const off = reexecSpy();
+    installSystemCa('false', off.reexec, false); expect(globalThis.fetch).toBe(realFetch);
+    installSystemCa('auto', off.reexec, true); expect(globalThis.fetch).toBe(realFetch);
+    installSystemCa('true', off.reexec, true); expect(globalThis.fetch).toBe(realFetch);
+    expect(off.calls.length).toBe(0);
+    const on = reexecSpy();
+    expect(() => installSystemCa('true', on.reexec, false)).toThrow('reexec');
+    expect(on.calls.length).toBe(1);
+  });
+
+  test('installSystemCa auto: cert error restarts once, other errors rethrow, success passes through', async () => {
+    const spy = reexecSpy();
+    const responses: Array<() => Promise<Response>> = [
+      async () => new Response('ok'),
+      async () => { throw Object.assign(new Error('fetch failed'), { code: 'ECONNRESET' }); },
+      async () => { throw Object.assign(new Error('x'), { cause: new Error('unable to get local issuer certificate') }); },
+    ];
+    let index = 0;
+    globalThis.fetch = (async () => responses[index++]()) as unknown as typeof fetch;
+    installSystemCa('auto', spy.reexec, false);
+    expect(globalThis.fetch).not.toBe(realFetch);
+    expect(await (await fetch('https://example.test/')).text()).toBe('ok');
+    await expect(fetch('https://example.test/')).rejects.toThrow('fetch failed');
+    expect(spy.calls.length).toBe(0);
+    const quiet = console.error; console.error = () => {};
+    try { await expect(fetch('https://example.test/')).rejects.toThrow('reexec'); } finally { console.error = quiet; }
+    expect(spy.calls.length).toBe(1);
   });
 });
