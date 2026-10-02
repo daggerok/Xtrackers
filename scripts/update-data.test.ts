@@ -829,22 +829,11 @@ describe('workflow shape and hardening', () => {
     expect(record(workflow.permissions).contents).toBe('write');
     expect(record(workflow.concurrency)).toEqual({ group: 'update-data', 'cancel-in-progress': false });
   });
-  test('CI and Pages keep their guards; Dependabot is monthly for bun and github-actions', () => {
-    const pages = Bun.YAML.parse(read('.github/workflows/pages.yml')) as any;
-    expect(String(pages.jobs.deploy.if)).toContain("github.ref == 'refs/heads/main'");
-    const pagesSource = read('.github/workflows/pages.yml');
-    expect(pagesSource).toContain('cp index.html app.tsx favicon.ico _site/'); expect(pagesSource).toContain('cp -R api/xtrackers _site/api/');
+  test('only the update-data workflow exists; Dependabot is monthly for bun and github-actions', async () => {
+    expect((await readdir(new URL('../.github/workflows/', import.meta.url))).sort()).toEqual(['update-data.yml']);
     const dependabot = Bun.YAML.parse(read('.github/dependabot.yml')) as any;
     expect(array(dependabot.updates).map(item => record(item)['package-ecosystem']).sort()).toEqual(['bun', 'github-actions']);
     expect(array(dependabot.updates).every(item => record(record(item).schedule).interval === 'monthly')).toBe(true);
-    for (const file of ['ci.yml', 'pages.yml']) {
-      for (const job of Object.values(record((Bun.YAML.parse(read('.github/workflows/' + file)) as any).jobs)).map(record)) {
-        const checkout = array(job.steps).map(record).find(step => step.uses === 'actions/checkout@v7');
-        expect(record(checkout?.with)['persist-credentials']).toBe(false);
-      }
-    }
-    const ci = read('.github/workflows/ci.yml');
-    for (const check of ['bun install --frozen-lockfile', 'bun test', 'bun build --target=bun scripts/update-data.ts', 'git diff --check']) expect(ci).toContain(check);
   });
   test('Bun-only package: zero runtime deps, no tsconfig, scripts folder holds exactly three files', async () => {
     const pkg = JSON.parse(read('package.json'));
