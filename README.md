@@ -10,7 +10,7 @@ bunx serve . -p 1234
 open http://0:1234
 ```
 
-The deployment target is <https://daggerok.github.io/Xtrackers/>. Deployment is pending: this feature must first be merged to `main` by the owner and GitHub Pages enabled with GitHub Actions. The prepared Pages workflow never deploys an unmerged feature branch.
+The application is published at <https://daggerok.github.io/Xtrackers/>. The Pages workflow deploys only from `main`.
 
 ## Updating the static Xtrackers data
 
@@ -23,9 +23,9 @@ bun scripts/update-data.ts
 
 Run `bun scripts/update-data.ts --help` to print every control with its default and usage examples.
 
-[scripts/update-data.config.json](scripts/update-data.config.json) is the checked-in runtime default for every supported control, loaded relative to the updater, not the current working directory. Edit this flat JSON to change defaults locally and in Actions. Precedence: file defaults < `advanced` JSON < nonblank workflow inputs < protected Actions variable (`SEC_UA`) or nonblank environment value. A nonblank environment value wins over JSON, including `0` and `false`; absent, empty or whitespace-only values inherit the layer below, so blank manual inputs and scheduled runs use the checked-in defaults. Unknown keys, non-scalar values and CR/LF/NUL are rejected, and a missing JSON file is the only case that falls back to built-in defaults. The CLI and the workflow share one resolver (`resolveControls` in `scripts/update-data.ts`). DWS-safe pacing stays at **1.5 seconds / 2 lanes**. `STORE_RAW_DOWNLOADS` and provider-skip switches are not supported. All supplied filters use **AND** logic.
+[scripts/update-data.config.json](scripts/update-data.config.json) is the checked-in runtime default for every supported control, loaded relative to the updater, not the current working directory. Edit this flat JSON to change defaults locally and in Actions. Precedence: file defaults < `advanced` JSON < nonblank workflow inputs < environment variable < protected Actions variable (`SEC_UA`, workflow only). An environment variable that is explicitly set wins over every file and input layer, including `0`, `false` and an empty value (empty clears the control to its built-in default); an unset variable inherits the layer below. The workflow writes the resolved values to `GITHUB_ENV` and the updater resolves them again, so the environment is authoritative. Blank manual inputs and scheduled runs use the checked-in defaults. Unknown keys, non-scalar values and CR/LF/NUL are rejected, every control is validated strictly (integers, booleans, ranges, `min:max` filters; an invalid value is an error, never a silent fallback), and a missing JSON file is the only case that falls back to built-in defaults. The CLI and the workflow share one resolver (`resolveControls` in `scripts/update-data.ts`). DWS-safe pacing stays at **1.5 seconds / 2 lanes**. All supplied filters use **AND** logic.
 
-The **Update Xtrackers ETF data** GitHub Actions workflow runs on Sunday 00:00 UTC and manually. It exposes all 23 controls as individual optional inputs plus an `advanced` JSON object for any control by its UPPER_CASE name. Steps: checkout, setup-bun, frozen install, tests, resolve controls, updater, commit and push only changed `api/xtrackers` files. No changes means no commit. A failed updater still lets the commit step run for the funds it did publish, and previously published data is preserved. The output directory is fixed and cannot be set from the workflow. The repository Actions variable `SEC_UA` (your real SEC contact) overrides every other layer when nonblank and is never printed. In GitHub Actions the updater appends configuration, counts, filtered/failure reasons and retained-source diagnostics to `GITHUB_STEP_SUMMARY`.
+The **Update Xtrackers ETF data** GitHub Actions workflow runs on Sunday 00:00 UTC and manually. It exposes the 24 most used controls as individual optional inputs plus an `advanced` JSON object for any control by its UPPER_CASE name (`TOTAL_RETURN_5Y` and `TOTAL_RETURN_10Y` are reachable only through `advanced`). Steps: checkout without persisted credentials, setup-bun, frozen install, tests, resolve controls, updater, commit and push only changed `api/xtrackers` files with a runtime-only token. No changes means no commit. A failed updater still lets the commit step run for the funds it did publish, and previously published data is preserved. The output directory is fixed and cannot be set from the workflow. The repository Actions variable `SEC_UA` overrides every other layer when nonblank and is never printed. In GitHub Actions the updater appends configuration (with `SEC_UA` redacted), counts, filtered/failure reasons and retained-source diagnostics to `GITHUB_STEP_SUMMARY`.
 
 CI and the main-only Pages workflow keep their checks and deployment guards. Dependabot is monthly for Bun and GitHub Actions.
 
@@ -40,11 +40,11 @@ CI and the main-only Pages workflow keep their checks and deployment guards. Dep
 
 ### Metrics and caveats
 
-The official finder workbook was genuinely empty during research; the official US sitemap provided dynamic discovery, not a hardcoded ticker list. The initial published snapshot contains **42 discovered funds, 3 downloaded (ASHR, HYLB, DBEF), 39 catalog-only**: 2,238 positions and 9,562 daily-history rows. Later live discovery found 43 funds; a scoped run does not insert or modify an unrequested new entry. A full pass populates new discoveries. The later external data-only update on this feature branch contains **43 funds, 21,171 positions and 77,473 history rows**; this configuration/workflow follow-up leaves those published files unchanged. Unknown facts are unavailable, never invented as zero.
+The official finder workbook came back empty in live checks, so catalog discovery falls back to the official US sitemap (dynamic, not a hardcoded ticker list); the published `index.json` records which source was used. A scoped run does not insert or modify an unrequested new entry, and a full pass populates new discoveries. Funds that were never updated stay catalog-only (no holdings or history files). Unknown facts are unavailable, never invented as zero.
 
 Official NAV history uses `Date / NAV / Market Price / Premium/Discount`; the market price comes from Yahoo and premium/discount requires a matching NAV date. Yahoo-only fallback uses `Date / Close / Adj Close / Volume`, with adjusted closes rounded to two decimals. Dataset source dates can differ and returns use the covered NAV series, not the fetch timestamp or a newer headline date. NAV total returns reinvest the total cash distribution once on the exact ex-date. Missing payout NAV, stale window anchors, incomplete inception coverage and young funds leave unsupported metrics unavailable; Morningstar ratings are not performance returns. Derived figures are **not published standardized NAV returns**.
 
-SEC endpoints returned HTTP 403 in this environment; SEC fallback is implemented and exercised offline, but fresh SEC success is not claimed. Official DWS holdings satisfied the real three-fund acceptance. Logs, provenance, scope checks and repeat hashes are in [final live evidence](research/2026-10-01/scoped-live-smoke-v3/summary.json). The first observed Yahoo half-cent adjustment variance is retained separately, not hidden.
+The SEC N-PORT-P fallback runs only when official DWS holdings fail and `EDGAR_FALLBACK` is enabled; it requires the exact trust and series and sends the `SEC_UA` contact User-Agent (SEC rejects a User-Agent without a contact with HTTP 403). Yahoo adjusted-close half-cent variance never changes the official NAV history.
 
 Each fund carries a derived `metrics` object that powers the catalog columns shared with the sibling sites:
 
@@ -57,7 +57,7 @@ Each fund carries a derived `metrics` object that powers the catalog columns sha
 
 ### Update controls
 
-Defaults below are from `scripts/update-data.config.json`; blank Actions inputs do not override them. Every control is also an individual workflow input (lowercase name) and can be set through `advanced`.
+Defaults below are from `scripts/update-data.config.json`; blank Actions inputs do not override them. Every control can be set through `advanced`; all except `TOTAL_RETURN_5Y` and `TOTAL_RETURN_10Y` are also individual workflow inputs (lowercase name).
 
 | Environment variable | Default | Meaning |
 | --- | --: | --- |
@@ -71,18 +71,21 @@ Defaults below are from `scripts/update-data.config.json`; blank Actions inputs 
 | `SEC_YIELD` | `:` | Official 30-day SEC-yield range in %, min:max; missing values do not pass. |
 | `HOLDINGS_PAGE_SIZE` | `250` | Current holdings rows per JSON page |
 | `HISTORY_PAGE_SIZE` | `1000` | Daily history rows per JSON page |
-| `MAX_RETRIES` | `2` | Retries after the initial request (transient HTTP/network failures only) |
-| `SEC_UA` | declared UA | SEC contact User-Agent; override with your real contact. Do not put credentials here. |
+| `MAX_RETRIES` | `2` | Retries after the initial request, integer >= 1 (transient HTTP/network failures only) |
+| `HISTORY_RANGE` | `max` | Yahoo request window and published history rows: `max` or `Ny` (e.g. `5y`); returns still use the full NAV series |
+| `SEC_UA` | `daggerok ETF feed daggerok@gmail.com` | User-Agent with a real contact for SEC EDGAR; the repository Actions variable `SEC_UA` overrides it. Redacted in logs. Do not put credentials here. |
+| `SKIP_YAHOO` | `false` | Do not call Yahoo Finance; published prices are retained |
+| `EDGAR_FALLBACK` | `true` | Use the SEC N-PORT-P holdings fallback when official holdings fail |
 | `VERBOSE` | `false` | Provider/fallback/retry detail; the normal compact fund reporter always retains real zero/false and omits missing fields. |
 | `PERFORMANCE_YTD` | `:` | YTD performance percent min:max (3Y/5Y/10Y annualized) |
-| `TOTAL_RETURN_YTD` | `:` | YTD cumulative total return percent min:max |
 | `PERFORMANCE_1Y` | `:` | 1Y performance percent min:max (3Y/5Y/10Y annualized) |
-| `TOTAL_RETURN_1Y` | `:` | 1Y cumulative total return percent min:max |
 | `PERFORMANCE_3Y` | `:` | 3Y performance percent min:max (3Y/5Y/10Y annualized) |
-| `TOTAL_RETURN_3Y` | `:` | 3Y cumulative total return percent min:max |
 | `PERFORMANCE_5Y` | `:` | 5Y performance percent min:max (3Y/5Y/10Y annualized) |
-| `TOTAL_RETURN_5Y` | `:` | 5Y cumulative total return percent min:max |
 | `PERFORMANCE_10Y` | `:` | 10Y performance percent min:max (3Y/5Y/10Y annualized) |
+| `TOTAL_RETURN_YTD` | `:` | YTD cumulative total return percent min:max |
+| `TOTAL_RETURN_1Y` | `:` | 1Y cumulative total return percent min:max |
+| `TOTAL_RETURN_3Y` | `:` | 3Y cumulative total return percent min:max |
+| `TOTAL_RETURN_5Y` | `:` | 5Y cumulative total return percent min:max |
 | `TOTAL_RETURN_10Y` | `:` | 10Y cumulative total return percent min:max |
 
 `TICKERS` combines with AUM, TER, yield and return filters using AND logic; it does not override them. Funds not selected for a successful update keep their prior published metadata and data files.
@@ -94,9 +97,10 @@ MAX_FETCHES=10 bun scripts/update-data.ts
 TICKERS="ASHR HYLB DBEF" bun scripts/update-data.ts
 AUM="1B:" TER=":0.5" bun scripts/update-data.ts
 PERFORMANCE_1Y="15:" bun scripts/update-data.ts
+HISTORY_RANGE=5y TICKERS=ASHR bun scripts/update-data.ts
 ```
 
-Workflow `advanced` input example: `{"MAX_RETRIES": 3, "VERBOSE": true}`
+Workflow `advanced` input example: `{"MAX_RETRIES": 3, "TOTAL_RETURN_5Y": "5:"}`
 
 ## TypeScript and verification
 
@@ -111,7 +115,7 @@ bun build --target=bun scripts/update-data.ts --outfile=/dev/null
 git diff --check
 ```
 
-The README controls table, the config file, `--help` and the workflow inputs are checked against `CONTROL_NAMES` by `bun test` (`scripts/config-docs.test.ts`).
+`bun test` runs the offline suite in `scripts/update-data.test.ts`: it checks the config file, `--help` and the README controls table against `CONTROL_NAMES`, the workflow shape, the README structure and the parsers.
 
 ## Brands table
 
@@ -136,7 +140,7 @@ The README controls table, the config file, `--help` and the workflow inputs are
 | **ProShares** | [proshares.com](https://www.proshares.com/our-etfs/find-proshares-etfs) \| [ProShares](https://daggerok.github.io/ProShares/) |
 | **Schwab** | [schwabassetmanagement.com](https://www.schwabassetmanagement.com/products) \| [Schwab](https://daggerok.github.io/Schwab/) |
 | **SPDR** | [ssga.com](https://www.ssga.com/us/en/intermediary/etfs/fund-finder) \| [SPDR](https://daggerok.github.io/SPDR/) |
-| **Sprott ETFs** | [sprottetfs.com](https://sprottetfs.com/) \| [Sprott](https://daggerok.github.io/Sprott/) (deployment pending) |
+| **Sprott ETFs** | [sprottetfs.com](https://sprottetfs.com/) \| [Sprott](https://daggerok.github.io/Sprott/) |
 | **Tema ETFs** | [temaetfs.com](https://temaetfs.com/funds) \| [Tema](https://daggerok.github.io/Tema/) |
 | **Themes ETFs** | [themesetfs.com/etfs](https://themesetfs.com/etfs) \| [Themes](https://daggerok.github.io/Themes/) |
 | **VanEck** | [vaneck.com](https://www.vaneck.com/us/en/etf-mutual-fund-finder/) \| [VanEck](https://daggerok.github.io/VanEck/) |
