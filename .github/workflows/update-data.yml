@@ -56,12 +56,27 @@ on:
         default: ""
         type: string
       max_retries:
-        description: "Retries after the initial request (transient HTTP/network failures only); blank inherits scripts/update-data.config.json"
+        description: "Retries after the initial request, integer >= 1 (transient HTTP/network failures only); blank inherits scripts/update-data.config.json"
+        required: false
+        default: ""
+        type: string
+      history_range:
+        description: "Yahoo request window and published history rows: max or Ny (e.g. 5y); blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       sec_ua:
-        description: "SEC User-Agent; declare a real contact, never a token or secret; blank inherits scripts/update-data.config.json"
+        description: "SEC User-Agent with a real contact, never a token or secret; the repository variable SEC_UA overrides it; blank inherits scripts/update-data.config.json"
+        required: false
+        default: ""
+        type: string
+      skip_yahoo:
+        description: "Do not call Yahoo Finance; published prices are retained; blank inherits scripts/update-data.config.json"
+        required: false
+        default: ""
+        type: string
+      edgar_fallback:
+        description: "Use the SEC N-PORT-P holdings fallback when official holdings fail; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
@@ -75,18 +90,8 @@ on:
         required: false
         default: ""
         type: string
-      total_return_ytd:
-        description: "YTD cumulative total return percent min:max; blank inherits scripts/update-data.config.json"
-        required: false
-        default: ""
-        type: string
       performance_1y:
         description: "1Y performance percent min:max (3Y/5Y/10Y annualized); blank inherits scripts/update-data.config.json"
-        required: false
-        default: ""
-        type: string
-      total_return_1y:
-        description: "1Y cumulative total return percent min:max; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
@@ -95,18 +100,8 @@ on:
         required: false
         default: ""
         type: string
-      total_return_3y:
-        description: "3Y cumulative total return percent min:max; blank inherits scripts/update-data.config.json"
-        required: false
-        default: ""
-        type: string
       performance_5y:
         description: "5Y performance percent min:max (3Y/5Y/10Y annualized); blank inherits scripts/update-data.config.json"
-        required: false
-        default: ""
-        type: string
-      total_return_5y:
-        description: "5Y cumulative total return percent min:max; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
@@ -115,8 +110,18 @@ on:
         required: false
         default: ""
         type: string
-      total_return_10y:
-        description: "10Y cumulative total return percent min:max; blank inherits scripts/update-data.config.json"
+      total_return_ytd:
+        description: "YTD cumulative total return percent min:max; blank inherits scripts/update-data.config.json"
+        required: false
+        default: ""
+        type: string
+      total_return_1y:
+        description: "1Y cumulative total return percent min:max; blank inherits scripts/update-data.config.json"
+        required: false
+        default: ""
+        type: string
+      total_return_3y:
+        description: "3Y cumulative total return percent min:max; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
@@ -165,7 +170,7 @@ jobs:
               .filter(([key]) => key !== "advanced")
               .map(([key, value]) => [key.toUpperCase(), value]));
             const file = await Bun.file("scripts/update-data.config.json").json();
-            // Protected repository Actions variable: highest precedence, applied only when nonblank (never printed).
+            // Protected repository Actions variables: highest precedence, applied only when nonblank (never printed).
             const protectedVars = {};
             if ((process.env.PROTECTED_SEC_UA ?? "").trim()) protectedVars.SEC_UA = process.env.PROTECTED_SEC_UA.trim();
             const controls = resolveControls(file, advanced, individual, protectedVars);
@@ -175,9 +180,9 @@ jobs:
       - name: Generate api/xtrackers static data
         run: bun ./scripts/update-data.ts
       - name: Commit updated data
+        if: ${{ !cancelled() }}
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        if: ${{ !cancelled() }}
         run: |
           git add api/xtrackers
           if git diff --cached --quiet -- api/xtrackers; then
