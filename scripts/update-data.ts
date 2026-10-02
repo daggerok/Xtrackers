@@ -3,7 +3,7 @@
 
 // Xtrackers (DWS) static feed. Bun-only, zero runtime dependencies.
 // ZIP/OpenXML helpers adapted from daggerok/SPDR @ d26fe5547c98f1a259f1198f4e789363b11f2491.
-// Reporting, N-PORT and financial helpers follow pinned JPMorgan; see .worklog.txt.
+// Reporting, N-PORT and financial helpers follow pinned JPMorgan.
 import { inflateRawSync } from 'node:zlib';
 import { readFileSync as readUpdaterConfig } from 'node:fs';
 import { appendFile, readFile, readdir, mkdir, writeFile, rename, rm } from 'node:fs/promises';
@@ -515,7 +515,7 @@ function outputConfigEntries(config: Record<string, any>): [string, string][] {
 }
 function outputPrintConfig(brand: string, config: Record<string, any>): void {
   const entries = outputConfigEntries(config);
-  console.log(`[ config   ] ${brand} updater:\n${entries.map(([key, value]) => `              ${key}=${/TOKEN|PASSWORD|SECRET|COOKIE/i.test(key) ? '<redacted>' : outputClean(value)}`).join('\n')}`);
+  console.log(`[ config   ] ${brand} updater:\n${entries.map(([key, value]) => `              ${key}=${/TOKEN|PASSWORD|SECRET|COOKIE|^SEC_UA$/i.test(key) ? '<redacted>' : outputClean(value)}`).join('\n')}`);
 }
 function outputHasOutputFilters(config: Record<string, any>): boolean {
   return outputConfigEntries(config).some(([name, value]) =>
@@ -609,35 +609,24 @@ export type UpdaterConfig = {
   maxFetches: number; requestSleepSeconds: number; concurrency: number; tickers: Set<string>;
   aumRange?: Range; terRange?: Range; dividendYieldRange?: Range; secYieldRange?: Range;
   performanceRanges: RangeMap; totalReturnRanges: RangeMap;
-  holdingsPageSize: number; historyPageSize: number; maxRetries: number; secUa: string; verbose: boolean;
+  holdingsPageSize: number; historyPageSize: number; maxRetries: number; historyRange: string;
+  secUa: string; skipYahoo: boolean; edgarFallback: boolean; verbose: boolean;
 };
+export const DEFAULT_SEC_UA = 'daggerok ETF feed daggerok@gmail.com';
+// Built-in values used when a control resolves blank; the checked-in JSON mirrors them.
 const BUILTIN_CONTROL_DEFAULTS: Record<string, string> = {
   MAX_FETCHES: '0', REQUEST_SLEEP: '1.5', CONCURRENCY: '2', TICKERS: '', AUM: ':', TER: ':',
   DIVIDEND_YIELD: ':', SEC_YIELD: ':', HOLDINGS_PAGE_SIZE: '250', HISTORY_PAGE_SIZE: '1000', MAX_RETRIES: '2',
-  SEC_UA: 'daggerok Xtrackers ETF feed (https://github.com/daggerok/Xtrackers)', VERBOSE: 'false',
+  HISTORY_RANGE: 'max', SEC_UA: DEFAULT_SEC_UA, SKIP_YAHOO: 'false', EDGAR_FALLBACK: 'true', VERBOSE: 'false',
   ...Object.fromEntries(RETURN_PERIODS.flatMap(period => [[`PERFORMANCE_${period}`, ':'], [`TOTAL_RETURN_${period}`, ':']])),
 };
-// Checked-in flat JSON defaults, resolved relative to the updater (not cwd); only ENOENT permits built-in fallbacks.
-export function loadUpdaterDefaults(path: string | URL = new URL('./update-data.config.json', import.meta.url)): Record<string, string> {
-  try {
-    const parsed: unknown = JSON.parse(readUpdaterConfig(path, 'utf8'));
-    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) throw new Error('update-data.config.json: expected a flat object');
-    const defaults: Record<string, string> = {};
-    for (const [key, value] of Object.entries(parsed)) {
-      if (value === null || value === undefined) continue;
-      if (!['string', 'number', 'boolean'].includes(typeof value)) throw new Error(`update-data.config.json: ${key} must be a scalar`);
-      defaults[key] = String(value);
-    }
-    return defaults;
-  } catch (error) {
-    if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
-    return {};
-  }
+export const CONFIG_FILE_URL = new URL('./update-data.config.json', import.meta.url);
+function readConfigFile(path: string | URL = CONFIG_FILE_URL): unknown {
+  try { return JSON.parse(readUpdaterConfig(path, 'utf8')); }
+  catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error; return {}; }
 }
-export const CONTROL_DEFAULTS: Record<string, string> = { ...BUILTIN_CONTROL_DEFAULTS, ...loadUpdaterDefaults() };
-export function envValue(env: Record<string, string | undefined>, name: string): string {
-  return env[name]?.trim() || CONTROL_DEFAULTS[name] || '';
-}
+// A control that resolves blank uses its built-in default; every other value is validated strictly.
+const controlValue = (env: Record<string, string | undefined>, name: string): string => env[name]?.trim() || BUILTIN_CONTROL_DEFAULTS[name] || '';
 export function parsePositiveInt(raw: string, name: string, minimum = 1): number {
   if (!/^\d+$/.test(raw) || !Number.isSafeInteger(Number(raw)) || Number(raw) < minimum) throw new Error(`${name}: integer >= ${minimum} required`);
   return Number(raw);
@@ -646,10 +635,30 @@ export function parseDecimal(raw: string, name: string, minimum = 0): number {
   if (!/^(?:\d+(?:\.\d*)?|\.\d+)$/.test(raw) || !Number.isFinite(Number(raw)) || Number(raw) < minimum) throw new Error(`${name}: decimal >= ${minimum} required`);
   return Number(raw);
 }
-function parseBoolean(raw: string, name: string): boolean {
-  if (/^(1|true|yes|on)$/i.test(raw)) return true;
-  if (/^(0|false|no|off)$/i.test(raw)) return false;
+export function parseBoolean(raw: string, name: string): boolean {
+  if (/^(1|true|yes|y|on)$/i.test(raw)) return true;
+  if (/^(0|false|no|n|off)$/i.test(raw)) return false;
   throw new Error(`${name}: boolean required`);
+}
+export function parseHistoryRange(raw: string): string {
+  if (!/^(max|[1-9]\d*y)$/i.test(raw)) throw new Error('HISTORY_RANGE: use max or Ny (e.g. 5y)');
+  return raw.toLowerCase();
+}
+/** First epoch second of the Yahoo/history window: `max` -> 0, `Ny` -> N years before now. */
+export function historyWindowStartEpoch(historyRange: string, nowEpochSeconds: number): number {
+  const years = /^([1-9]\d*)y$/i.exec(historyRange.trim());
+  return years ? Math.max(0, Math.floor(nowEpochSeconds - Number(years[1]) * 365.25 * 86400)) : 0;
+}
+export function yahooChartUrl(ticker: string, nowEpochSeconds = Math.floor(Date.now() / 1000), historyRange = 'max'): string {
+  return yahooSourceUrl(ticker) + `?period1=${historyWindowStartEpoch(historyRange, nowEpochSeconds)}&period2=${Math.floor(nowEpochSeconds)}&interval=1d&events=div%7Csplit`;
+}
+/** Rows dated before the HISTORY_RANGE window are not published; an empty window keeps everything. */
+export function windowByHistoryRange<T extends { date: string }>(items: T[], historyRange: string, nowEpochSeconds = Math.floor(Date.now() / 1000)): T[] {
+  const start = historyWindowStartEpoch(historyRange, nowEpochSeconds);
+  if (!start) return items;
+  const from = new Date(start * 1000).toISOString().slice(0, 10);
+  const kept = items.filter(item => item.date >= from);
+  return kept.length ? kept : items;
 }
 export function parseRange(raw: string, name = 'range'): Range | undefined {
   if (!raw.trim() || raw.trim() === ':') return undefined;
@@ -686,36 +695,38 @@ export function parseAumRange(raw: string): Range | undefined {
   return { ...parseRange(`${bound(min, 0)}:${bound(max, 1)}`, 'AUM'), source: raw.trim() };
 }
 export function readConfig(env: Record<string, string | undefined> = process.env): UpdaterConfig {
+  const value = (name: string): string => controlValue(env, name);
   const ranges = (prefix: string): RangeMap => Object.fromEntries(RETURN_PERIODS.flatMap(period => {
-    const value = parseRange(envValue(env, `${prefix}_${period}`), `${prefix}_${period}`);
-    return value ? [[period, value]] : [];
+    const parsed = parseRange(value(`${prefix}_${period}`), `${prefix}_${period}`);
+    return parsed ? [[period, parsed]] : [];
   }));
-  const tickers = new Set(envValue(env, 'TICKERS').split(/[\s,;]+/).filter(Boolean).map(raw => {
+  const tickers = new Set(value('TICKERS').split(/[\s,;]+/).filter(Boolean).map(raw => {
     const ticker = sanitizeTicker(raw); if (!ticker) throw new Error(`TICKERS: invalid ticker ${cleanText(raw)}`); return ticker;
   }));
-  const secUa = envValue(env, 'SEC_UA');
+  const secUa = value('SEC_UA');
   if (/[\r\n\x00-\x1f]/.test(secUa)) throw new Error('SEC_UA: control characters forbidden');
   return {
-    maxFetches: parsePositiveInt(envValue(env, 'MAX_FETCHES'), 'MAX_FETCHES', 0),
-    requestSleepSeconds: parseDecimal(envValue(env, 'REQUEST_SLEEP'), 'REQUEST_SLEEP'),
-    concurrency: parsePositiveInt(envValue(env, 'CONCURRENCY'), 'CONCURRENCY'), tickers,
-    aumRange: parseAumRange(envValue(env, 'AUM')), terRange: parseRange(envValue(env, 'TER'), 'TER'),
-    dividendYieldRange: parseRange(envValue(env, 'DIVIDEND_YIELD'), 'DIVIDEND_YIELD'), secYieldRange: parseRange(envValue(env, 'SEC_YIELD'), 'SEC_YIELD'),
+    maxFetches: parsePositiveInt(value('MAX_FETCHES'), 'MAX_FETCHES', 0),
+    requestSleepSeconds: parseDecimal(value('REQUEST_SLEEP'), 'REQUEST_SLEEP'),
+    concurrency: parsePositiveInt(value('CONCURRENCY'), 'CONCURRENCY'), tickers,
+    aumRange: parseAumRange(value('AUM')), terRange: parseRange(value('TER'), 'TER'),
+    dividendYieldRange: parseRange(value('DIVIDEND_YIELD'), 'DIVIDEND_YIELD'), secYieldRange: parseRange(value('SEC_YIELD'), 'SEC_YIELD'),
     performanceRanges: ranges('PERFORMANCE'), totalReturnRanges: ranges('TOTAL_RETURN'),
-    holdingsPageSize: parsePositiveInt(envValue(env, 'HOLDINGS_PAGE_SIZE'), 'HOLDINGS_PAGE_SIZE'),
-    historyPageSize: parsePositiveInt(envValue(env, 'HISTORY_PAGE_SIZE'), 'HISTORY_PAGE_SIZE'),
-    maxRetries: parsePositiveInt(envValue(env, 'MAX_RETRIES'), 'MAX_RETRIES', 0), secUa, verbose: parseBoolean(envValue(env, 'VERBOSE'), 'VERBOSE'),
+    holdingsPageSize: parsePositiveInt(value('HOLDINGS_PAGE_SIZE'), 'HOLDINGS_PAGE_SIZE'),
+    historyPageSize: parsePositiveInt(value('HISTORY_PAGE_SIZE'), 'HISTORY_PAGE_SIZE'),
+    maxRetries: parsePositiveInt(value('MAX_RETRIES'), 'MAX_RETRIES', 1), historyRange: parseHistoryRange(value('HISTORY_RANGE')),
+    secUa, skipYahoo: parseBoolean(value('SKIP_YAHOO'), 'SKIP_YAHOO'), edgarFallback: parseBoolean(value('EDGAR_FALLBACK'), 'EDGAR_FALLBACK'),
+    verbose: parseBoolean(value('VERBOSE'), 'VERBOSE'),
   };
 }
 // Allowlisted scalar controls, shared by the CLI and the Actions resolver step so user input is never interpolated into bash.
-// Precedence: config file < advanced JSON < nonblank individual inputs < environment (nonblank).
+// Precedence: config file < advanced JSON < nonblank individual inputs < environment (an explicitly set variable wins, even empty).
 export const CONTROL_NAMES = [
   'MAX_FETCHES', 'REQUEST_SLEEP', 'CONCURRENCY', 'TICKERS', 'AUM', 'TER', 'DIVIDEND_YIELD', 'SEC_YIELD',
-  'HOLDINGS_PAGE_SIZE', 'HISTORY_PAGE_SIZE', 'MAX_RETRIES', 'SEC_UA', 'VERBOSE',
+  'HOLDINGS_PAGE_SIZE', 'HISTORY_PAGE_SIZE', 'MAX_RETRIES', 'HISTORY_RANGE', 'SEC_UA', 'SKIP_YAHOO', 'EDGAR_FALLBACK', 'VERBOSE',
   ...(['PERFORMANCE', 'TOTAL_RETURN'] as const).flatMap(prefix => RETURN_PERIODS.map(period => `${prefix}_${period}` as const)),
 ] as const;
 export type ControlName = (typeof CONTROL_NAMES)[number];
-export const CONFIG_FILE_URL = new URL('./update-data.config.json', import.meta.url);
 export function resolveControls(
   file: unknown = {}, advanced: unknown = {}, inputs: unknown = {}, env: Record<string, string | undefined> = {},
 ): Record<string, string> {
@@ -735,16 +746,14 @@ export function resolveControls(
   apply(file);
   apply(advanced);
   apply(inputs, true);
-  // Blank environment values inherit (documented behavior since the JSON defaults were introduced); `0` and `false` override.
-  apply(Object.fromEntries(CONTROL_NAMES.flatMap(key => env[key]?.trim() ? [[key, env[key]!.trim()]] : [])));
-  readConfig(result); // validates every control before any request or write; blank values fall back to built-in defaults
+  // The workflow writes resolved values to GITHUB_ENV and the updater resolves again, so env is authoritative:
+  // an explicitly set variable wins even when empty (it clears the control to its built-in default).
+  apply(Object.fromEntries(CONTROL_NAMES.flatMap(key => env[key] === undefined ? [] : [[key, env[key]!.trim()]])));
+  readConfig(result); // strict validation of every control before any request or write
   return result;
 }
 export async function runtimeControls(env: Record<string, string | undefined> = process.env): Promise<Record<string, string>> {
-  let file: unknown = {};
-  try { file = JSON.parse(readUpdaterConfig(CONFIG_FILE_URL, 'utf8')); }
-  catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error; }
-  return resolveControls(file, {}, {}, env);
+  return resolveControls(readConfigFile(), {}, {}, env);
 }
 export function inRange(value: number | null | undefined, range?: Range): boolean {
   if (!range) return true;
@@ -772,9 +781,13 @@ export function selectUpdateBatch<T extends { ticker: string }>(funds: T[], maxi
   return (at < 0 ? sorted : sorted.slice(at + 1).concat(sorted.slice(0, at + 1))).slice(0, maximum);
 }
 export function printHelp(): void {
-  console.log('Xtrackers ETF updater (Bun-only, zero runtime dependencies)\nUsage: bun scripts/update-data.ts [-h|--help]\n\nDefaults: scripts/update-data.config.json (nonblank environment values override JSON; filters use AND):');
-  for (const [key, value] of Object.entries(CONTROL_DEFAULTS)) console.log(`  ${key}=${value || 'all'}`);
-  console.log('\nMAX_FETCHES: 0 = full selected pass; positive = resumable evaluation batch.\nREQUEST_SLEEP: seconds per independent request lane, including retries.\nTICKERS: spaces, commas or semicolons; an unknown requested ticker fails before writes.\nAUM: min:max, K/M/B/T or nano/micro/small/mid/large. Other ranges: min:max in %.\nPERFORMANCE: annualized 3Y/5Y/10Y; TOTAL_RETURN: cumulative.\nSEC_UA: identify yourself with a real contact per SEC policy. VERBOSE: per-request warnings.\nAll source failures keep existing published data; no skip-provider or dry-run mode.\n\nExamples:\n  TICKERS="ASHR HYLB DBEF" VERBOSE=1 bun scripts/update-data.ts\n  MAX_FETCHES=3 bun scripts/update-data.ts\n  AUM="1B:" TER=":0.5" bun scripts/update-data.ts\n  PERFORMANCE_1Y="15:" bun scripts/update-data.ts');
+  const raw = readConfigFile() as Record<string, unknown>;
+  console.log('Xtrackers ETF updater (Bun-only, zero runtime dependencies)\nUsage: bun scripts/update-data.ts [-h|--help]\n\nDefaults: scripts/update-data.config.json (an explicitly set environment variable overrides JSON; filters use AND):');
+  for (const name of CONTROL_NAMES) {
+    const value = String(raw[name] ?? BUILTIN_CONTROL_DEFAULTS[name] ?? '');
+    console.log(`  ${name}=${name === 'SEC_UA' ? value : value || 'all'}`);
+  }
+  console.log('\nMAX_FETCHES: 0 = full selected pass; positive = resumable evaluation batch.\nREQUEST_SLEEP: seconds per independent request lane, including retries.\nTICKERS: spaces, commas or semicolons; an unknown requested ticker fails before writes.\nAUM: min:max, K/M/B/T or nano/micro/small/mid/large. Other ranges: min:max in %.\nPERFORMANCE: annualized 3Y/5Y/10Y; TOTAL_RETURN: cumulative.\nMAX_RETRIES: retries after the initial request, integer >= 1.\nHISTORY_RANGE: Yahoo request window and published history rows, max or Ny (e.g. 5y).\nSEC_UA: User-Agent with a real contact for SEC EDGAR (default daggerok ETF feed daggerok@gmail.com).\nSKIP_YAHOO: do not call Yahoo Finance (published prices are retained). EDGAR_FALLBACK: SEC N-PORT-P holdings fallback.\nVERBOSE: per-request warnings. All source failures keep existing published data.\n\nExamples:\n  TICKERS="ASHR HYLB DBEF" VERBOSE=1 bun scripts/update-data.ts\n  MAX_FETCHES=3 bun scripts/update-data.ts\n  AUM="1B:" TER=":0.5" bun scripts/update-data.ts\n  PERFORMANCE_1Y="15:" HISTORY_RANGE=5y bun scripts/update-data.ts');
 }
 
 // Independently paced request lanes. Reserve a lane synchronously before awaiting it.
@@ -1295,7 +1308,7 @@ export function renderUpdateSummary(config: UpdaterConfig, result: UpdateResult)
     `| Manifest changed | ${result.manifestChanged ? 'yes' : 'no'} |`, `| Progress state changed | ${result.progressChanged ? 'yes' : 'no'} |`,
     `| Processed through | ${result.processedThrough || '—'} |`, '', `Catalog source: ${clean(result.catalogSource)}`, '',
     '<details><summary>Configuration</summary>', '', '```text',
-    ...outputConfigEntries(config).map(([key, value]) => `${key}=${outputClean(value).replace(/`/g, "'")}`),
+    ...outputConfigEntries(config).map(([key, value]) => `${key}=${key === 'SEC_UA' ? '<redacted>' : outputClean(value).replace(/`/g, "'")}`),
     '```', '</details>', '',
   ];
   for (const [title, outcomes] of [
@@ -1346,15 +1359,14 @@ async function updateFund(fund: CatalogFund, previousRow: JsonRecord, root: stri
   let holdings = await attempt('DWS Securities', async () => parseHoldingsRows(parseXlsxSheet(await client.bytes(exportUrl(fund.ticker, 'Securities'))), fund.ticker));
   let holdingsSource = exportUrl(fund.ticker, 'Securities');
   if (!holdings) {
-    const fallback = await edgar({ ...fund, name: details.name });
+    const fallback = config.edgarFallback ? await edgar({ ...fund, name: details.name }) : null;
     if (fallback) { holdings = fallback.sheet; holdingsSource = fallback.source; freshSources.push('SEC N-PORT'); }
     else if (previousHoldings.rows.length) { holdings = previousHoldings; holdingsSource = cleanText(previousSource.holdingsSource) || exportUrl(fund.ticker, 'Securities'); retainedSources.push('holdings'); }
   }
   const currentNav = await attempt('DWS Performance', async () => parseNavRows(parseXlsxSheet(await client.bytes(exportUrl(fund.ticker, 'Performance'))), fund.ticker));
   const currentEvents = await attempt('DWS Distributions', async () => parseDistributionsRows(parseXlsxSheet(await client.bytes(exportUrl(fund.ticker, 'Distributions'))), fund.ticker));
-  const chart = await attempt('Yahoo', async () => {
-    const url = yahooSourceUrl(fund.ticker) + `?period1=0&period2=${Math.floor(Date.now() / 1000)}&interval=1d&events=div%7Csplit`;
-    const parsed = parseChart(await client.json(url));
+  const chart = config.skipYahoo ? null : await attempt('Yahoo', async () => {
+    const parsed = parseChart(await client.json(yahooChartUrl(fund.ticker, Math.floor(Date.now() / 1000), config.historyRange)));
     if (!parsed.days.length) throw new Error('Yahoo: no usable daily prices');
     return parsed;
   });
@@ -1369,7 +1381,7 @@ async function updateFund(fund: CatalogFund, previousRow: JsonRecord, root: stri
   if (!chart && days.length) retainedSources.push('market-price history');
   if (!currentEvents && previousEvents.length) retainedSources.push('distributions');
   if (!holdings?.rows.length) throw new Error('no usable holdings and no published holdings to retain');
-  const history = historySheet(points, days);
+  const history = historySheet(windowByHistoryRange(points, config.historyRange), windowByHistoryRange(days, config.historyRange));
   if (!history.rows.length) throw new Error('no usable history and no published history to retain');
   if (!freshSources.length) return { row: previousRow, outcome: outcome('unchanged', holdings.rows.length, history.rows.length, 'all providers unavailable; retained published data') };
 
