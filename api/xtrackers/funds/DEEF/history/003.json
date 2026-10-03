@@ -2,7 +2,7 @@
   "ticker": "DEEF",
   "page": 3,
   "pageSize": 1000,
-  "totalRows": 2729,
+  "totalRows": 2730,
   "headers": [
     "Date",
     "NAV",
@@ -4380,8 +4380,14 @@
     },
     {
       "Date": "2026-10-01",
-      "NAV": "",
+      "NAV": "38.7",
       "Market Price": "38.536999",
+      "Premium/Discount": "-0.4212"
+    },
+    {
+      "Date": "2026-10-02",
+      "NAV": "",
+      "Market Price": "38.946999",
       "Premium/Discount": ""
     }
   ]

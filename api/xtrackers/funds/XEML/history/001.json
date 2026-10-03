@@ -2,7 +2,7 @@
   "ticker": "XEML",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 194,
+  "totalRows": 196,
   "headers": [
     "Date",
     "NAV",
@@ -1173,6 +1173,18 @@
       "NAV": "24.41",
       "Market Price": "24.304001",
       "Premium/Discount": "-0.4342"
+    },
+    {
+      "Date": "2026-10-01",
+      "NAV": "24",
+      "Market Price": "23.986",
+      "Premium/Discount": "-0.0583"
+    },
+    {
+      "Date": "2026-10-02",
+      "NAV": "",
+      "Market Price": "24.190001",
+      "Premium/Discount": ""
     }
   ]
 }

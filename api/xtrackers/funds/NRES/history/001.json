@@ -2,7 +2,7 @@
   "ticker": "NRES",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 653,
+  "totalRows": 654,
   "headers": [
     "Date",
     "NAV",
@@ -3924,8 +3924,14 @@
     },
     {
       "Date": "2026-10-01",
+      "NAV": "33.29",
+      "Market Price": "33.245998",
+      "Premium/Discount": "-0.1322"
+    },
+    {
+      "Date": "2026-10-02",
       "NAV": "",
-      "Market Price": "33.246399",
+      "Market Price": "33.645",
       "Premium/Discount": ""
     }
   ]

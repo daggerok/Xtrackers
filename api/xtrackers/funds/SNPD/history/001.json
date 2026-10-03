@@ -2,7 +2,7 @@
   "ticker": "SNPD",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 977,
+  "totalRows": 978,
   "headers": [
     "Date",
     "NAV",
@@ -5868,8 +5868,14 @@
     },
     {
       "Date": "2026-10-01",
+      "NAV": "28.62",
+      "Market Price": "28.625",
+      "Premium/Discount": "0.0175"
+    },
+    {
+      "Date": "2026-10-02",
       "NAV": "",
-      "Market Price": "28.6252",
+      "Market Price": "28.737",
       "Premium/Discount": ""
     }
   ]

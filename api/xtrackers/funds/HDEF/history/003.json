@@ -2,7 +2,7 @@
   "ticker": "HDEF",
   "page": 3,
   "pageSize": 1000,
-  "totalRows": 2802,
+  "totalRows": 2803,
   "headers": [
     "Date",
     "NAV",
@@ -4818,8 +4818,14 @@
     },
     {
       "Date": "2026-10-01",
-      "NAV": "",
+      "NAV": "32.09",
       "Market Price": "32.040001",
+      "Premium/Discount": "-0.1558"
+    },
+    {
+      "Date": "2026-10-02",
+      "NAV": "",
+      "Market Price": "32.18",
       "Premium/Discount": ""
     }
   ]

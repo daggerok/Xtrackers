@@ -2,7 +2,7 @@
   "ticker": "DBEU",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3271,
+  "totalRows": 3272,
   "headers": [
     "Date",
     "NAV",
@@ -1632,8 +1632,14 @@
     },
     {
       "Date": "2026-10-01",
-      "NAV": "",
+      "NAV": "52.8",
       "Market Price": "52.799999",
+      "Premium/Discount": "0"
+    },
+    {
+      "Date": "2026-10-02",
+      "NAV": "",
+      "Market Price": "53.240002",
       "Premium/Discount": ""
     }
   ]

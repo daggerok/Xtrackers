@@ -3,19 +3,23 @@
   "name": "Xtrackers Europe Defense Technologies ETF",
   "category": "Equities",
   "fundPage": "https://etf.dws.com/en-us/XDEF-europe-defense-technologies-etf/",
-  "dataFile": "funds/XDEF/meta.json",
+  "dataFile": "./funds/XDEF/meta.json",
   "ter": "0.35%",
   "terValue": 0.35,
-  "nav": "$21.20",
-  "navValue": 21.2,
-  "aum": "$4,239,077",
-  "aumValue": 4239077,
-  "asOfDate": "2026-09-30",
+  "terGross": "0.35%",
+  "terGrossValue": 0.35,
+  "nav": "$20.81",
+  "navValue": 20.81,
+  "aum": "$4,162,413",
+  "aumValue": 4162413,
+  "asOfDate": "2026-10-01",
   "inceptionDate": "2026-02-19",
   "exchange": "NASDAQ",
-  "closePrice": "$20.91",
-  "closePriceAsOfDate": "2026-10-01",
-  "premiumDiscount": "—",
+  "closePrice": "$21.02",
+  "closePriceAsOfDate": "2026-10-02",
+  "premiumDiscount": "0.48%",
+  "premiumDiscountValue": 0.4805,
+  "premiumDiscountAsOfDate": "2026-10-01",
   "cusip": "23306X761",
   "isin": "US23306X7619",
   "distributions": {
@@ -72,12 +76,12 @@
     "tr5y": null,
     "tr10y": null,
     "siAnn": null,
-    "dividendYield": 0.52,
-    "dividendYieldText": "0.52%",
-    "secYield": 0.9,
-    "secYieldText": "0.90%",
+    "dividendYield": 0.53,
+    "dividendYieldText": "0.53%",
+    "secYield": 0.92,
+    "secYieldText": "0.92%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
-    "performanceAsOf": "2026-09-30"
+    "performanceAsOf": null
   },
   "holdings": {
     "pages": [
@@ -85,7 +89,7 @@
     ],
     "pageSize": 250,
     "totalRows": 37,
-    "asOfDate": "2026-09-30",
+    "asOfDate": "2026-10-01",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/XDEF/Securities"
   },
   "history": {
@@ -93,11 +97,11 @@
       "history/001.json"
     ],
     "pageSize": 1000,
-    "totalRows": 160,
-    "asOfDate": "2026-10-01",
+    "totalRows": 161,
+    "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/XDEF/Performance + https://query1.finance.yahoo.com/v8/finance/chart/XDEF"
   },
-  "generatedAt": "2026-10-01T21:24:54.240Z",
+  "generatedAt": "2026-10-03T05:24:06.985Z",
   "netTerValue": 0.35,
   "source": {
     "provider": "Xtrackers (DWS)",
@@ -117,12 +121,12 @@
     "indexTicker": "SXDSCCV"
   },
   "yields": {
-    "dividendYield": 0.52,
-    "dividendYieldText": "0.52%",
+    "dividendYield": 0.53,
+    "dividendYieldText": "0.53%",
     "dividendYieldKind": "official indicated distribution rate / NAV",
-    "distributionRate": 0.52,
-    "secYield": 0.9,
-    "secYieldText": "0.90%",
+    "distributionRate": 0.53,
+    "secYield": 0.92,
+    "secYieldText": "0.92%",
     "secYieldKind": "official DWS 30-day SEC yield"
   },
   "distributionEvents": [

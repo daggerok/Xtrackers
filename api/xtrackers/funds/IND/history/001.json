@@ -2,7 +2,7 @@
   "ticker": "IND",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 214,
+  "totalRows": 215,
   "headers": [
     "Date",
     "NAV",
@@ -1290,8 +1290,14 @@
     },
     {
       "Date": "2026-10-01",
+      "NAV": "21.26",
+      "Market Price": "21.504",
+      "Premium/Discount": "1.1477"
+    },
+    {
+      "Date": "2026-10-02",
       "NAV": "",
-      "Market Price": "21.5042",
+      "Market Price": "21.5",
       "Premium/Discount": ""
     }
   ]

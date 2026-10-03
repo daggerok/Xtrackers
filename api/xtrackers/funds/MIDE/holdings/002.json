@@ -14,29 +14,29 @@
   ],
   "rows": [
     {
-      "Name": "Graphic Packaging Holding Co",
-      "Ticker": "GPK",
-      "Identifier": "388689101",
-      "Weight": "0.11945463",
-      "Market Value": "3882.45",
-      "Shares Held": "429",
-      "Asset Category": "Equity"
-    },
-    {
       "Name": "Harley-Davidson Inc",
       "Ticker": "HOG.N",
       "Identifier": "412822108",
-      "Weight": "0.11650707",
-      "Market Value": "3786.65",
+      "Weight": "0.1172517",
+      "Market Value": "3848.65",
       "Shares Held": "155",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Graphic Packaging Holding Co",
+      "Ticker": "GPK",
+      "Identifier": "388689101",
+      "Weight": "0.11710516",
+      "Market Value": "3843.84",
+      "Shares Held": "429",
       "Asset Category": "Equity"
     },
     {
       "Name": "KYNDRYL HOLDINGS INC",
       "Ticker": "KD",
       "Identifier": "50155Q100",
-      "Weight": "0.10670535",
-      "Market Value": "3468.08",
+      "Weight": "0.11372712",
+      "Market Value": "3732.96",
       "Shares Held": "308",
       "Asset Category": "Equity"
     },
@@ -44,35 +44,44 @@
       "Name": "Visteon Corp",
       "Ticker": "VC.N",
       "Identifier": "92839U206",
-      "Weight": "0.10667828",
-      "Market Value": "3467.2",
+      "Weight": "0.10767786",
+      "Market Value": "3534.4",
       "Shares Held": "40",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Scotts Miracle-Gro",
-      "Ticker": "SMG.N",
-      "Identifier": "810186106",
-      "Weight": "0.10175727",
-      "Market Value": "3307.26",
-      "Shares Held": "66",
       "Asset Category": "Equity"
     },
     {
       "Name": "Euronet Worldwide Inc",
       "Ticker": "EEFT",
       "Identifier": "298736109",
-      "Weight": "0.10058747",
-      "Market Value": "3269.24",
+      "Weight": "0.10081943",
+      "Market Value": "3309.28",
       "Shares Held": "52",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Scotts Miracle-Gro",
+      "Ticker": "SMG.N",
+      "Identifier": "810186106",
+      "Weight": "0.10057692",
+      "Market Value": "3301.32",
+      "Shares Held": "66",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "IPG Photonics Corp",
+      "Ticker": "IPGP",
+      "Identifier": "44980X109",
+      "Weight": "0.0968528",
+      "Market Value": "3179.08",
+      "Shares Held": "38",
       "Asset Category": "Equity"
     },
     {
       "Name": "Choice Hotels International Inc",
       "Ticker": "CHH.N",
       "Identifier": "169905106",
-      "Weight": "0.09767899",
-      "Market Value": "3174.71",
+      "Weight": "0.09662522",
+      "Market Value": "3171.61",
       "Shares Held": "31",
       "Asset Category": "Equity"
     },
@@ -80,26 +89,17 @@
       "Name": "Westlake Chemical Corp",
       "Ticker": "WLK",
       "Identifier": "960413102",
-      "Weight": "0.09585723",
-      "Market Value": "3115.5",
+      "Weight": "0.09515952",
+      "Market Value": "3123.5",
       "Shares Held": "50",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "IPG Photonics Corp",
-      "Ticker": "IPGP",
-      "Identifier": "44980X109",
-      "Weight": "0.09152327",
-      "Market Value": "2974.64",
-      "Shares Held": "38",
       "Asset Category": "Equity"
     },
     {
       "Name": "Greif Inc-CL A",
       "Ticker": "GEF",
       "Identifier": "397624107",
-      "Weight": "0.09060608",
-      "Market Value": "2944.83",
+      "Weight": "0.09193686",
+      "Market Value": "3017.72",
       "Shares Held": "37",
       "Asset Category": "Equity"
     },
@@ -107,8 +107,8 @@
       "Name": "Whirlpool Corp",
       "Ticker": "WHR.N",
       "Identifier": "963320106",
-      "Weight": "0.08873201",
-      "Market Value": "2883.92",
+      "Weight": "0.0872878",
+      "Market Value": "2865.12",
       "Shares Held": "94",
       "Asset Category": "Equity"
     },
@@ -116,8 +116,8 @@
       "Name": "Hilton Grand Vacations Inc",
       "Ticker": "HGV",
       "Identifier": "43283X105",
-      "Weight": "0.0863795",
-      "Market Value": "2807.46",
+      "Weight": "0.08595066",
+      "Market Value": "2821.23",
       "Shares Held": "81",
       "Asset Category": "Equity"
     },
@@ -125,35 +125,35 @@
       "Name": "LANCASTER COLONY CORP",
       "Ticker": "LANC",
       "Identifier": "513847103",
-      "Weight": "0.08240029",
-      "Market Value": "2678.13",
+      "Weight": "0.08200231",
+      "Market Value": "2691.63",
       "Shares Held": "27",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "DENTSPLY SIRONA INC",
-      "Ticker": "XRAY",
-      "Identifier": "24906P109",
-      "Weight": "0.08232614",
-      "Market Value": "2675.72",
-      "Shares Held": "302",
       "Asset Category": "Equity"
     },
     {
       "Name": "Avis Budget Group Inc",
       "Ticker": "CAR",
       "Identifier": "053774105",
-      "Weight": "0.08205015",
-      "Market Value": "2666.75",
+      "Weight": "0.08082542",
+      "Market Value": "2653",
       "Shares Held": "25",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "DENTSPLY SIRONA INC",
+      "Ticker": "XRAY",
+      "Identifier": "24906P109",
+      "Weight": "0.08041352",
+      "Market Value": "2639.48",
+      "Shares Held": "302",
       "Asset Category": "Equity"
     },
     {
       "Name": "Pilgrim's Pride Corp",
       "Ticker": "PPC",
       "Identifier": "72147K108",
-      "Weight": "0.05651069",
-      "Market Value": "1836.68",
+      "Weight": "0.05220597",
+      "Market Value": "1713.6",
       "Shares Held": "68",
       "Asset Category": "Equity"
     },

@@ -2,7 +2,7 @@
   "ticker": "DBEM",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3852,
+  "totalRows": 3853,
   "headers": [
     "Date",
     "NAV",
@@ -5118,8 +5118,14 @@
     },
     {
       "Date": "2026-10-01",
+      "NAV": "39.17",
+      "Market Price": "39.189999",
+      "Premium/Discount": "0.0511"
+    },
+    {
+      "Date": "2026-10-02",
       "NAV": "",
-      "Market Price": "39.185101",
+      "Market Price": "39.57",
       "Premium/Discount": ""
     }
   ]

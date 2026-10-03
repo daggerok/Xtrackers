@@ -2,7 +2,7 @@
   "ticker": "DBJP",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3852,
+  "totalRows": 3853,
   "headers": [
     "Date",
     "NAV",
@@ -5118,8 +5118,14 @@
     },
     {
       "Date": "2026-10-01",
-      "NAV": "",
+      "NAV": "118.07",
       "Market Price": "117.110001",
+      "Premium/Discount": "-0.8131"
+    },
+    {
+      "Date": "2026-10-02",
+      "NAV": "",
+      "Market Price": "118.980003",
       "Premium/Discount": ""
     }
   ]

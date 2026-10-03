@@ -2,7 +2,7 @@
   "ticker": "SPXD",
   "page": 3,
   "pageSize": 250,
-  "totalRows": 507,
+  "totalRows": 508,
   "headers": [
     "Name",
     "Ticker",
@@ -14,11 +14,20 @@
   ],
   "rows": [
     {
+      "Name": "Microchip Technology Inc",
+      "Ticker": "MCHP.O",
+      "Identifier": "595017104",
+      "Weight": "0.00770728",
+      "Market Value": "549.5",
+      "Shares Held": "7",
+      "Asset Category": "Equity"
+    },
+    {
       "Name": "Autodesk Inc",
       "Ticker": "ADSK.O",
       "Identifier": "052769106",
-      "Weight": "0.00588513",
-      "Market Value": "418",
+      "Weight": "0.00592767",
+      "Market Value": "422.62",
       "Shares Held": "2",
       "Asset Category": "Equity"
     },
@@ -26,8 +35,8 @@
       "Name": "Old Dominion Freight Line Inc",
       "Ticker": "ODFL",
       "Identifier": "679580100",
-      "Weight": "0.00489508",
-      "Market Value": "347.68",
+      "Weight": "0.00499606",
+      "Market Value": "356.2",
       "Shares Held": "2",
       "Asset Category": "Equity"
     },
@@ -35,8 +44,8 @@
       "Name": "PTC Inc",
       "Ticker": "PMTC",
       "Identifier": "69370C100",
-      "Weight": "0.00395064",
-      "Market Value": "280.6",
+      "Weight": "0.00410877",
+      "Market Value": "292.94",
       "Shares Held": "2",
       "Asset Category": "Equity"
     },
@@ -44,8 +53,8 @@
       "Name": "Franklin Resources Inc",
       "Ticker": "BEN",
       "Identifier": "354613101",
-      "Weight": "0.00316558",
-      "Market Value": "224.84",
+      "Weight": "0.00319091",
+      "Market Value": "227.5",
       "Shares Held": "7",
       "Asset Category": "Equity"
     },
@@ -53,8 +62,8 @@
       "Name": "Incyte",
       "Ticker": "INCY",
       "Identifier": "45337C102",
-      "Weight": "0.00170852",
-      "Market Value": "121.35",
+      "Weight": "0.001643",
+      "Market Value": "117.14",
       "Shares Held": "1",
       "Asset Category": "Equity"
     },
@@ -62,7 +71,7 @@
       "Name": "TPG Inc. - Contingent Value Right",
       "Ticker": "-",
       "Identifier": "436CVR021",
-      "Weight": "0.00000352",
+      "Weight": "0.00000351",
       "Market Value": "0.25",
       "Shares Held": "25",
       "Asset Category": "Equity"
