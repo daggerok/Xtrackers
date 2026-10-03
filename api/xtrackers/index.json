@@ -1,6 +1,6 @@
 {
   "provider": "Xtrackers (DWS)",
-  "generatedAt": "2026-10-03T06:15:32.655Z",
+  "generatedAt": "2026-10-03T06:47:56.801Z",
   "source": {
     "catalog": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A1%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
     "catalogSource": "official US sitemap (catalog XLSX unavailable/empty)",
@@ -11,7 +11,7 @@
   },
   "counts": {
     "funds": 43,
-    "holdings": 21108,
+    "holdings": 21109,
     "history": 77522
   },
   "funds": [
@@ -1483,9 +1483,9 @@
       "exchange": "NYSE",
       "closePrice": "$39.49",
       "closePriceAsOfDate": "2026-10-02",
-      "premiumDiscount": "0.29%",
-      "premiumDiscountValue": 0.292,
-      "premiumDiscountAsOfDate": "2026-10-01",
+      "premiumDiscount": "-0.11%",
+      "premiumDiscountValue": -0.1138,
+      "premiumDiscountAsOfDate": "2026-10-02",
       "cusip": "233051259",
       "isin": "US2330512599",
       "distributions": {
@@ -2496,7 +2496,7 @@
         "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
         "performanceAsOf": "2026-09-30"
       },
-      "holdings": 49,
+      "holdings": 50,
       "history": 811
     },
     {

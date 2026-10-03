@@ -17,9 +17,9 @@
   "exchange": "NYSE",
   "closePrice": "$39.49",
   "closePriceAsOfDate": "2026-10-02",
-  "premiumDiscount": "0.29%",
-  "premiumDiscountValue": 0.292,
-  "premiumDiscountAsOfDate": "2026-10-01",
+  "premiumDiscount": "-0.11%",
+  "premiumDiscountValue": -0.1138,
+  "premiumDiscountAsOfDate": "2026-10-02",
   "cusip": "233051259",
   "isin": "US2330512599",
   "distributions": {
@@ -141,7 +141,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/HYUP/Performance + https://query1.finance.yahoo.com/v8/finance/chart/HYUP"
   },
-  "generatedAt": "2026-10-03T06:14:14.119Z",
+  "generatedAt": "2026-10-03T06:46:37.917Z",
   "netTerValue": 0.2,
   "source": {
     "provider": "Xtrackers (DWS)",

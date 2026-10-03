@@ -124,8 +124,8 @@
       "holdings/001.json"
     ],
     "pageSize": 250,
-    "totalRows": 49,
-    "asOfDate": "2026-10-01",
+    "totalRows": 50,
+    "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/UPGR/Securities"
   },
   "history": {
@@ -137,7 +137,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/UPGR/Performance + https://query1.finance.yahoo.com/v8/finance/chart/UPGR"
   },
-  "generatedAt": "2026-10-03T06:15:06.960Z",
+  "generatedAt": "2026-10-03T06:47:30.394Z",
   "netTerValue": 0.35,
   "source": {
     "provider": "Xtrackers (DWS)",
