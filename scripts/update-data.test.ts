@@ -650,7 +650,7 @@ describe('offline real-orchestrator scope / retention / repeat runs', () => {
       expect(result.outcomes.every(row => row.reason?.includes('retained published data'))).toBe(true); expect(await hashes(root)).toEqual(before);
     } finally { await rm(root, { recursive: true, force: true }); }
   });
-  test('one failed fund does not abort healthy funds and does not advance a bounded cursor', async () => {
+  test('one failed fund does not abort healthy funds and the bounded cursor still moves past it', async () => {
     const root = await tempRoot();
     try {
       await seed(root);
@@ -659,7 +659,8 @@ describe('offline real-orchestrator scope / retention / repeat runs', () => {
       expect(result.outcomes.find(r => r.ticker === 'ASHR')?.status).toBe('updated');
       expect(result.outcomes.find(r => r.ticker === 'DBEF')?.status).toBe('updated');
       expect(await Bun.file(join(root, 'funds', 'HYLB', 'meta.json')).exists()).toBe(false);
-      expect(await Bun.file(join(root, 'update-state.json')).exists()).toBe(false);
+      const cursors = Object.values((await Bun.file(join(root, 'update-state.json')).json()).cursors);
+      expect(cursors).toEqual(['HYLB']); // the failing fund no longer pins the batch
     } finally { await rm(root, { recursive: true, force: true }); }
   });
   test('exact-series SEC fallback is reachable in the worker; the wrong series is rejected', async () => {
@@ -684,7 +685,7 @@ describe('offline real-orchestrator scope / retention / repeat runs', () => {
       const third = await quietRun(root, { MAX_FETCHES: '1', TICKERS: 'HYLB' }); expect(third.selected).toEqual(['HYLB']);
       await Bun.write(join(root, 'funds', 'ASHR', 'holdings', '003.json'), '{"old":true}\n');
       const full = await quietRun(root); expect(full.selected).toEqual(['ASHR', 'DBEF', 'HYLB']); expect(full.failures).toBe(0);
-      expect(await Bun.file(join(root, 'update-state.json')).exists()).toBe(false);
+      expect(Object.values((await Bun.file(join(root, 'update-state.json')).json()).cursors)).toEqual(['HYLB']); // only the full pass's own scope was cleared
       expect(await Bun.file(join(root, 'funds', 'ASHR', 'holdings', '003.json')).exists()).toBe(false);
     } finally { await rm(root, { recursive: true, force: true }); }
   });
@@ -748,7 +749,7 @@ describe('automatic GitHub step summary (offline actual updater)', () => {
       await seed(root);
       const config = readConfig({ TICKERS: 'ASHR HYLB DBEF', REQUEST_SLEEP: '0', MAX_FETCHES: '3' });
       const result = await quietRun(root, { MAX_FETCHES: '3' }, fakeFetch(['/HYLB/Securities']));
-      expect(result.manifestChanged).toBe(true); expect(result.progressChanged).toBe(false); expect(result.processedThrough).toBeNull();
+      expect(result.manifestChanged).toBe(true); expect(result.progressChanged).toBe(true); expect(result.processedThrough).toBe('HYLB');
       const before = await hashes(root), path = join(summaryRoot, 'step-summary.md');
       await writeSummary(config, result, path);
       const text = await Bun.file(path).text();
