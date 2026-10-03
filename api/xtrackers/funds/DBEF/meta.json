@@ -8,18 +8,18 @@
   "terValue": 0.35,
   "terGross": "0.35%",
   "terGrossValue": 0.35,
-  "nav": "$54.54",
-  "navValue": 54.54,
-  "aum": "$9,171,563,819",
-  "aumValue": 9171563819,
-  "asOfDate": "2026-10-01",
+  "nav": "$54.66",
+  "navValue": 54.66,
+  "aum": "$9,191,154,753",
+  "aumValue": 9191154753,
+  "asOfDate": "2026-10-02",
   "inceptionDate": "2011-06-09",
   "exchange": "NYSE",
   "closePrice": "$55.02",
   "closePriceAsOfDate": "2026-10-02",
-  "premiumDiscount": "0.09%",
-  "premiumDiscountValue": 0.0917,
-  "premiumDiscountAsOfDate": "2026-10-01",
+  "premiumDiscount": "0.66%",
+  "premiumDiscountValue": 0.6586,
+  "premiumDiscountAsOfDate": "2026-10-02",
   "cusip": "233051200",
   "isin": "US2330512003",
   "distributions": {
@@ -126,8 +126,8 @@
       "holdings/003.json"
     ],
     "pageSize": 250,
-    "totalRows": 673,
-    "asOfDate": "2026-10-01",
+    "totalRows": 672,
+    "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/DBEF/Securities"
   },
   "history": {
@@ -142,7 +142,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/DBEF/Performance + https://query1.finance.yahoo.com/v8/finance/chart/DBEF"
   },
-  "generatedAt": "2026-10-03T05:22:02.963Z",
+  "generatedAt": "2026-10-03T06:13:20.138Z",
   "netTerValue": 0.35,
   "source": {
     "provider": "Xtrackers (DWS)",

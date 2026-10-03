@@ -8,11 +8,11 @@
   "terValue": 0.2,
   "terGross": "0.20%",
   "terGrossValue": 0.2,
-  "nav": "$39.38",
-  "navValue": 39.38,
-  "aum": "$45,291,301",
-  "aumValue": 45291301,
-  "asOfDate": "2026-10-01",
+  "nav": "$39.53",
+  "navValue": 39.53,
+  "aum": "$45,456,795",
+  "aumValue": 45456795,
+  "asOfDate": "2026-10-02",
   "inceptionDate": "2018-01-11",
   "exchange": "NYSE",
   "closePrice": "$39.49",
@@ -112,10 +112,10 @@
     "tr5y": 19.06,
     "tr10y": null,
     "siAnn": 4.54,
-    "dividendYield": 8.16,
-    "dividendYieldText": "8.16%",
-    "secYield": 9.51,
-    "secYieldText": "9.51%",
+    "dividendYield": 8.13,
+    "dividendYieldText": "8.13%",
+    "secYield": 9.49,
+    "secYieldText": "9.49%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
     "performanceAsOf": "2026-09-30"
   },
@@ -127,7 +127,7 @@
     ],
     "pageSize": 250,
     "totalRows": 692,
-    "asOfDate": "2026-10-01",
+    "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/HYUP/Securities"
   },
   "history": {
@@ -141,7 +141,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/HYUP/Performance + https://query1.finance.yahoo.com/v8/finance/chart/HYUP"
   },
-  "generatedAt": "2026-10-03T05:22:59.566Z",
+  "generatedAt": "2026-10-03T06:14:14.119Z",
   "netTerValue": 0.2,
   "source": {
     "provider": "Xtrackers (DWS)",
@@ -161,12 +161,12 @@
     "indexTicker": "SOLHYCHB"
   },
   "yields": {
-    "dividendYield": 8.16,
-    "dividendYieldText": "8.16%",
+    "dividendYield": 8.13,
+    "dividendYieldText": "8.13%",
     "dividendYieldKind": "official indicated distribution rate / NAV",
-    "distributionRate": 8.16,
-    "secYield": 9.51,
-    "secYieldText": "9.51%",
+    "distributionRate": 8.13,
+    "secYield": 9.49,
+    "secYieldText": "9.49%",
     "secYieldKind": "official DWS 30-day SEC yield"
   },
   "distributionEvents": [

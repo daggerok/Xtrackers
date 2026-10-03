@@ -8,18 +8,18 @@
   "terValue": 0.1,
   "terGross": "0.10%",
   "terGrossValue": 0.1,
-  "nav": "$70.14",
-  "navValue": 70.14,
-  "aum": "$2,808,938,968",
-  "aumValue": 2808938968,
-  "asOfDate": "2026-10-01",
+  "nav": "$70.56",
+  "navValue": 70.56,
+  "aum": "$2,829,581,781",
+  "aumValue": 2829581781,
+  "asOfDate": "2026-10-02",
   "inceptionDate": "2019-06-26",
   "exchange": "NYSE",
   "closePrice": "$70.59",
   "closePriceAsOfDate": "2026-10-02",
-  "premiumDiscount": "0.00%",
-  "premiumDiscountValue": 0,
-  "premiumDiscountAsOfDate": "2026-10-01",
+  "premiumDiscount": "0.04%",
+  "premiumDiscountValue": 0.0425,
+  "premiumDiscountAsOfDate": "2026-10-02",
   "cusip": "233051143",
   "isin": "US2330511435",
   "distributions": {
@@ -114,8 +114,8 @@
     "siAnn": 16.85,
     "dividendYield": 1,
     "dividendYieldText": "1.00%",
-    "secYield": 1.1,
-    "secYieldText": "1.10%",
+    "secYield": 1.09,
+    "secYieldText": "1.09%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
     "performanceAsOf": "2026-09-30"
   },
@@ -126,7 +126,7 @@
     ],
     "pageSize": 250,
     "totalRows": 328,
-    "asOfDate": "2026-10-01",
+    "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/SNPE/Securities"
   },
   "history": {
@@ -139,7 +139,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/SNPE/Performance + https://query1.finance.yahoo.com/v8/finance/chart/SNPE"
   },
-  "generatedAt": "2026-10-03T05:23:35.973Z",
+  "generatedAt": "2026-10-03T06:14:51.616Z",
   "netTerValue": 0.1,
   "source": {
     "provider": "Xtrackers (DWS)",
@@ -163,8 +163,8 @@
     "dividendYieldText": "1.00%",
     "dividendYieldKind": "official indicated distribution rate / NAV",
     "distributionRate": 1,
-    "secYield": 1.1,
-    "secYieldText": "1.10%",
+    "secYield": 1.09,
+    "secYieldText": "1.09%",
     "secYieldKind": "official DWS 30-day SEC yield"
   },
   "distributionEvents": [

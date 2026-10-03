@@ -8,18 +8,18 @@
   "terValue": 0.1,
   "terGross": "0.10%",
   "terGrossValue": 0.1,
-  "nav": "$48.69",
-  "navValue": 48.69,
-  "aum": "$299,468,395",
-  "aumValue": 299468395,
-  "asOfDate": "2026-10-01",
+  "nav": "$49.08",
+  "navValue": 49.08,
+  "aum": "$301,843,315",
+  "aumValue": 301843315,
+  "asOfDate": "2026-10-02",
   "inceptionDate": "2022-06-28",
   "exchange": "NYSE",
   "closePrice": "$49.10",
   "closePriceAsOfDate": "2026-10-02",
-  "premiumDiscount": "0.10%",
-  "premiumDiscountValue": 0.1006,
-  "premiumDiscountAsOfDate": "2026-10-01",
+  "premiumDiscount": "0.03%",
+  "premiumDiscountValue": 0.0326,
+  "premiumDiscountAsOfDate": "2026-10-02",
   "cusip": "23306X209",
   "isin": "US23306X2099",
   "distributions": {
@@ -114,8 +114,8 @@
     "siAnn": 18.33,
     "dividendYield": 0.84,
     "dividendYieldText": "0.84%",
-    "secYield": 0.92,
-    "secYieldText": "0.92%",
+    "secYield": 0.91,
+    "secYieldText": "0.91%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
     "performanceAsOf": "2026-09-30"
   },
@@ -126,7 +126,7 @@
     ],
     "pageSize": 250,
     "totalRows": 300,
-    "asOfDate": "2026-10-01",
+    "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/USNZ/Securities"
   },
   "history": {
@@ -139,7 +139,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/USNZ/Performance + https://query1.finance.yahoo.com/v8/finance/chart/USNZ"
   },
-  "generatedAt": "2026-10-03T05:23:59.514Z",
+  "generatedAt": "2026-10-03T06:15:14.464Z",
   "netTerValue": 0.1,
   "source": {
     "provider": "Xtrackers (DWS)",
@@ -163,8 +163,8 @@
     "dividendYieldText": "0.84%",
     "dividendYieldKind": "official indicated distribution rate / NAV",
     "distributionRate": 0.84,
-    "secYield": 0.92,
-    "secYieldText": "0.92%",
+    "secYield": 0.91,
+    "secYieldText": "0.91%",
     "secYieldKind": "official DWS 30-day SEC yield"
   },
   "distributionEvents": [

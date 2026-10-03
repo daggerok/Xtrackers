@@ -8,18 +8,18 @@
   "terValue": 0.15,
   "terGross": "0.15%",
   "terGrossValue": 0.15,
-  "nav": "$59.97",
-  "navValue": 59.97,
-  "aum": "$14,392,308",
-  "aumValue": 14392308,
-  "asOfDate": "2026-10-01",
+  "nav": "$60.28",
+  "navValue": 60.28,
+  "aum": "$14,467,287",
+  "aumValue": 14467287,
+  "asOfDate": "2026-10-02",
   "inceptionDate": "2022-11-09",
   "exchange": "Cboe",
   "closePrice": "$60.31",
   "closePriceAsOfDate": "2026-10-02",
   "premiumDiscount": "0.05%",
-  "premiumDiscountValue": 0.0484,
-  "premiumDiscountAsOfDate": "2026-10-01",
+  "premiumDiscountValue": 0.0547,
+  "premiumDiscountAsOfDate": "2026-10-02",
   "cusip": "23306X308",
   "isin": "US23306X3089",
   "distributions": {
@@ -114,8 +114,8 @@
     "siAnn": 25.85,
     "dividendYield": 0.44,
     "dividendYieldText": "0.44%",
-    "secYield": 0.53,
-    "secYieldText": "0.53%",
+    "secYield": 0.52,
+    "secYieldText": "0.52%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
     "performanceAsOf": "2026-09-30"
   },
@@ -125,7 +125,7 @@
     ],
     "pageSize": 250,
     "totalRows": 86,
-    "asOfDate": "2026-10-01",
+    "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/SNPG/Securities"
   },
   "history": {
@@ -137,7 +137,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/SNPG/Performance + https://query1.finance.yahoo.com/v8/finance/chart/SNPG"
   },
-  "generatedAt": "2026-10-03T05:23:38.961Z",
+  "generatedAt": "2026-10-03T06:14:56.091Z",
   "netTerValue": 0.15,
   "source": {
     "provider": "Xtrackers (DWS)",
@@ -161,8 +161,8 @@
     "dividendYieldText": "0.44%",
     "dividendYieldKind": "official indicated distribution rate / NAV",
     "distributionRate": 0.44,
-    "secYield": 0.53,
-    "secYieldText": "0.53%",
+    "secYield": 0.52,
+    "secYieldText": "0.52%",
     "secYieldKind": "official DWS 30-day SEC yield"
   },
   "distributionEvents": [

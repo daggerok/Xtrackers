@@ -10,16 +10,16 @@
   "terGrossValue": 0.19,
   "nav": "$21.26",
   "navValue": 21.26,
-  "aum": "$4,251,522",
-  "aumValue": 4251522,
-  "asOfDate": "2026-10-01",
+  "aum": "$4,252,019",
+  "aumValue": 4252019,
+  "asOfDate": "2026-10-02",
   "inceptionDate": "2025-11-25",
   "exchange": "NASDAQ",
   "closePrice": "$21.50",
   "closePriceAsOfDate": "2026-10-02",
-  "premiumDiscount": "1.15%",
-  "premiumDiscountValue": 1.1477,
-  "premiumDiscountAsOfDate": "2026-10-01",
+  "premiumDiscount": "1.13%",
+  "premiumDiscountValue": 1.1289,
+  "premiumDiscountAsOfDate": "2026-10-02",
   "cusip": "23306X787",
   "isin": "US23306X7874",
   "distributions": {
@@ -78,8 +78,8 @@
     "siAnn": null,
     "dividendYield": 0.73,
     "dividendYieldText": "0.73%",
-    "secYield": 0.9,
-    "secYieldText": "0.90%",
+    "secYield": 0.95,
+    "secYieldText": "0.95%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
     "performanceAsOf": "2026-09-30"
   },
@@ -91,7 +91,7 @@
     ],
     "pageSize": 250,
     "totalRows": 504,
-    "asOfDate": "2026-10-01",
+    "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/IND/Securities"
   },
   "history": {
@@ -103,7 +103,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/IND/Performance + https://query1.finance.yahoo.com/v8/finance/chart/IND"
   },
-  "generatedAt": "2026-10-03T05:22:59.920Z",
+  "generatedAt": "2026-10-03T06:14:18.560Z",
   "netTerValue": 0.19,
   "source": {
     "provider": "Xtrackers (DWS)",
@@ -127,8 +127,8 @@
     "dividendYieldText": "0.73%",
     "dividendYieldKind": "official indicated distribution rate / NAV",
     "distributionRate": 0.73,
-    "secYield": 0.9,
-    "secYieldText": "0.90%",
+    "secYield": 0.95,
+    "secYieldText": "0.95%",
     "secYieldKind": "official DWS 30-day SEC yield"
   },
   "distributionEvents": [

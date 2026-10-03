@@ -8,18 +8,18 @@
   "terValue": 0.15,
   "terGross": "0.15%",
   "terGrossValue": 0.15,
-  "nav": "$46.79",
-  "navValue": 46.79,
-  "aum": "$1,116,004,276",
-  "aumValue": 1116004276,
-  "asOfDate": "2026-10-01",
+  "nav": "$46.68",
+  "navValue": 46.68,
+  "aum": "$1,113,426,832",
+  "aumValue": 1113426832,
+  "asOfDate": "2026-10-02",
   "inceptionDate": "2018-12-06",
   "exchange": "NYSE",
   "closePrice": "$47.28",
   "closePriceAsOfDate": "2026-10-02",
-  "premiumDiscount": "0.03%",
-  "premiumDiscountValue": 0.0278,
-  "premiumDiscountAsOfDate": "2026-10-01",
+  "premiumDiscount": "1.29%",
+  "premiumDiscountValue": 1.2918,
+  "premiumDiscountAsOfDate": "2026-10-02",
   "cusip": "233051226",
   "isin": "US2330512268",
   "distributions": {
@@ -114,8 +114,8 @@
     "siAnn": 10.41,
     "dividendYield": 1.05,
     "dividendYieldText": "1.05%",
-    "secYield": 2.24,
-    "secYieldText": "2.24%",
+    "secYield": 2.27,
+    "secYieldText": "2.27%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
     "performanceAsOf": "2026-09-30"
   },
@@ -125,7 +125,7 @@
     ],
     "pageSize": 250,
     "totalRows": 67,
-    "asOfDate": "2026-10-01",
+    "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/EMCS/Securities"
   },
   "history": {
@@ -138,7 +138,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/EMCS/Performance + https://query1.finance.yahoo.com/v8/finance/chart/EMCS"
   },
-  "generatedAt": "2026-10-03T05:22:38.972Z",
+  "generatedAt": "2026-10-03T06:13:56.096Z",
   "netTerValue": 0.15,
   "source": {
     "provider": "Xtrackers (DWS)",
@@ -162,8 +162,8 @@
     "dividendYieldText": "1.05%",
     "dividendYieldKind": "official indicated distribution rate / NAV",
     "distributionRate": 1.05,
-    "secYield": 2.24,
-    "secYieldText": "2.24%",
+    "secYield": 2.27,
+    "secYieldText": "2.27%",
     "secYieldKind": "official DWS 30-day SEC yield"
   },
   "distributionEvents": [

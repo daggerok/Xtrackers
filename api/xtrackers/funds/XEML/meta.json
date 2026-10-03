@@ -8,18 +8,18 @@
   "terValue": 0.35,
   "terGross": "0.35%",
   "terGrossValue": 0.35,
-  "nav": "$24.00",
-  "navValue": 24,
-  "aum": "$4,800,500",
-  "aumValue": 4800500,
-  "asOfDate": "2026-10-01",
+  "nav": "$24.11",
+  "navValue": 24.11,
+  "aum": "$4,822,250",
+  "aumValue": 4822250,
+  "asOfDate": "2026-10-02",
   "inceptionDate": "2025-12-23",
   "exchange": "Cboe",
   "closePrice": "$24.19",
   "closePriceAsOfDate": "2026-10-02",
-  "premiumDiscount": "-0.06%",
-  "premiumDiscountValue": -0.0583,
-  "premiumDiscountAsOfDate": "2026-10-01",
+  "premiumDiscount": "0.33%",
+  "premiumDiscountValue": 0.3318,
+  "premiumDiscountAsOfDate": "2026-10-02",
   "cusip": "23306X779",
   "isin": "US23306X7791",
   "distributions": {
@@ -78,8 +78,8 @@
     "siAnn": null,
     "dividendYield": 0.46,
     "dividendYieldText": "0.46%",
-    "secYield": 2.11,
-    "secYieldText": "2.11%",
+    "secYield": 2.09,
+    "secYieldText": "2.09%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
     "performanceAsOf": "2026-09-30"
   },
@@ -89,7 +89,7 @@
     ],
     "pageSize": 250,
     "totalRows": 40,
-    "asOfDate": "2026-10-01",
+    "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/XEML/Securities"
   },
   "history": {
@@ -101,7 +101,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/XEML/Performance + https://query1.finance.yahoo.com/v8/finance/chart/XEML"
   },
-  "generatedAt": "2026-10-03T05:24:14.492Z",
+  "generatedAt": "2026-10-03T06:15:29.442Z",
   "netTerValue": 0.35,
   "source": {
     "provider": "Xtrackers (DWS)",
@@ -125,8 +125,8 @@
     "dividendYieldText": "0.46%",
     "dividendYieldKind": "official indicated distribution rate / NAV",
     "distributionRate": 0.46,
-    "secYield": 2.11,
-    "secYieldText": "2.11%",
+    "secYield": 2.09,
+    "secYieldText": "2.09%",
     "secYieldKind": "official DWS 30-day SEC yield"
   },
   "distributionEvents": [
