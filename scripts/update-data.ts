@@ -804,7 +804,7 @@ export function inRange(value: number | null | undefined, range?: Range): boolea
 export function fundFilterReasons(details: FundDetails, metrics: JsonRecord, config: UpdaterConfig): string[] {
   const reasons: string[] = [];
   for (const [name, value, range] of [
-    ['AUM', details.aumValue, config.aumRange], ['TER', details.terValue, config.terRange],
+    ['AUM', details.aumValue, config.aumRange], ['TER', details.netTerValue ?? details.terValue, config.terRange],
     ['DIVIDEND_YIELD', numberOrNull(metrics.dividendYield), config.dividendYieldRange], ['SEC_YIELD', numberOrNull(metrics.secYield), config.secYieldRange],
   ] as const) if (!inRange(value, range)) reasons.push(name);
   const annualizedKeys: Record<ReturnPeriod, string> = { YTD: 'ytd', '1Y': 'tr1y', '3Y': 'cagr3y', '5Y': 'cagr5y', '10Y': 'cagr10y' };
@@ -1189,7 +1189,7 @@ function createEdgarFallback(client: SourceClient, config: UpdaterConfig) {
   const loadCompanyTickerTable = () => companies ??= client.json(SEC_COMPANY_TICKERS_URL, secHeaders(config)).then(parseCompanyTickerMap).catch(error => {
     outputNote(`[ edgar    ] company ticker table: ${errorMessage(error)}`); return new Map<string, string>();
   });
-  return async (fund: CatalogFund): Promise<{ sheet: Sheet; source: string } | null> => {
+  return async (fund: CatalogFund, publishedAsOf: string | null = null): Promise<{ sheet: Sheet; source: string } | null> => {
     const ref = (await loadFundTickerTable()).get(fund.ticker) || null;
     // The brand's verified Trust is fixed. Do not silently use another registrant.
     if (ref && Number(ref.cik) !== Number(TRUST_CIK)) return null;
@@ -1206,6 +1206,8 @@ function createEdgarFallback(client: SourceClient, config: UpdaterConfig) {
       try {
         const parsed = parseNport(await client.text(filing.url, secHeaders(config)));
         if (!matchesNportFund(parsed, fund, ref)) continue;
+        // A filing older than the published sheet never replaces it.
+        if (publishedAsOf && parsed.repPdDate && parsed.repPdDate < publishedAsOf) return null;
         const rows = fillNportTickers(parsed.holdings, await loadCompanyTickerTable());
         rows.sort((a, b) => Number(b.Weight) - Number(a.Weight) || a.Identifier.localeCompare(b.Identifier) || a.Name.localeCompare(b.Name));
         return { sheet: { headers: HOLDINGS_HEADERS, rows, asOfDate: parsed.repPdDate }, source: filing.url };
@@ -1222,9 +1224,9 @@ function createEdgarFallback(client: SourceClient, config: UpdaterConfig) {
 export function indexRowForCatalog(fund: CatalogFund): JsonRecord {
   return {
     ticker: fund.ticker, name: fund.name || fund.ticker, category: fund.category || 'Unclassified', fundPage: fund.fundPage,
-    dataFile: `funds/${fund.ticker}/meta.json`, ter: percentageText(fund.terValue), terValue: fund.terValue,
+    dataFile: null, ...expenseFields(fund.terValue, fund.netTerValue),
     nav: '—', navValue: null, aum: moneyText(fund.aumValue), aumValue: fund.aumValue,
-    asOfDate: null, inceptionDate: fund.inceptionDate, exchange: null, closePrice: '—', premiumDiscount: '—',
+    asOfDate: null, inceptionDate: fund.inceptionDate, exchange: null, closePrice: '—', premiumDiscount: '—', premiumDiscountValue: null,
     cusip: null, isin: null, distributions: { frequency: null, exDate: null, dividend: null },
     returns: { monthEnd: fund.officialReturns, quarterEnd: emptyReturns() },
     metrics: deriveCatalogMetrics(fund.officialReturns, null, null, Object.values(fund.officialReturns).some(value => typeof value === 'number')
@@ -1239,7 +1241,7 @@ function detailsFromPrevious(fund: CatalogFund, previous: JsonRecord, meta: Json
   return {
     ...fund, name: cleanText(previous.name) || fund.name, category: cleanText(previous.category) || fund.category,
     inceptionDate: toIsoDate(previous.inceptionDate) || fund.inceptionDate,
-    terValue: numberOrNull(previous.terValue) ?? fund.terValue, netTerValue: numberOrNull(meta.netTerValue) ?? fund.netTerValue,
+    terValue: previousExpenses(previous, meta).gross ?? fund.terValue, netTerValue: previousExpenses(previous, meta).net ?? fund.netTerValue,
     aumValue: numberOrNull(previous.aumValue) ?? fund.aumValue, fundPage: cleanText(previous.fundPage) || fund.fundPage,
     cusip: cleanText(identifiers.cusip || previous.cusip) || null, isin: cleanText(identifiers.isin || previous.isin) || null,
     indexTicker: cleanText(identifiers.indexTicker) || null, exchange: cleanText(previous.exchange) || null,
@@ -1330,7 +1332,38 @@ export function deriveCatalogMetrics(returns: OfficialReturnRow, dividendYield: 
   return { ytd: returns.ytd, tr1y: returns.yr1, cagr3y: returns.yr3, cagr5y: returns.yr5, cagr10y: returns.yr10,
     tr3y: annualizedToTotal(returns.yr3, 3), tr5y: annualizedToTotal(returns.yr5, 5), tr10y: annualizedToTotal(returns.yr10, 10),
     siAnn: returns.sinceInception, dividendYield, dividendYieldText: percentageText(dividendYield), secYield, secYieldText: percentageText(secYield), returnsBasis: basis,
-    performanceAsOf: toIsoDate(returns.asOfDate) };
+    // The date describes the returns: with no return figure there is nothing to date.
+    performanceAsOf: (['ytd', 'yr1', 'yr3', 'yr5', 'yr10', 'sinceInception'] as const).some(key => returns[key] !== null) ? toIsoDate(returns.asOfDate) : null };
+}
+
+/** Net and gross expense ratio of a published row. Rows published before the split carried the gross ratio in terValue and the net ratio only in meta.json. */
+export function previousExpenses(previous: JsonRecord, meta: JsonRecord): { gross: number | null; net: number | null } {
+  if ('terGrossValue' in previous) return { gross: numberOrNull(previous.terGrossValue), net: numberOrNull(previous.terValue) };
+  return { gross: numberOrNull(previous.terValue), net: numberOrNull(meta.netTerValue) };
+}
+/** terValue is the NET ratio (the gross one when that is the only number); terGrossValue is the gross ratio when published. */
+export function expenseFields(gross: number | null, net: number | null): JsonRecord {
+  const value = net ?? gross;
+  return { ter: percentageText(value), terValue: value, terGross: percentageText(gross), terGrossValue: gross };
+}
+
+/** The latest date that has both an official NAV and a market close (premium/discount needs a same-date pair), within 7 days of the newest point. */
+export function latestSamePair(points: NavPoint[], days: ChartDay[]): { date: string; nav: number; close: number; premium: number } | null {
+  const prices = new Map(days.map(day => [day.date, day.close]));
+  const common = points.filter(point => point.nav > 0 && (prices.get(point.date) ?? 0) > 0).at(-1);
+  if (!common) return null;
+  const newest = [points.at(-1)?.date, days.at(-1)?.date].filter(Boolean).sort().at(-1)!;
+  if (Date.parse(newest) - Date.parse(common.date) > 7 * 86400000) return null;
+  const close = prices.get(common.date)!;
+  return { date: common.date, nav: common.nav, close, premium: round((close / common.nav - 1) * 100, 4) };
+}
+
+/** Sum of distributions with an ex-date in the 365 days up to asOf, over NAV, in percent; null without payments or a usable NAV. */
+export function trailingYearYield(events: Dividend[], asOf: string | null, nav: number | null): number | null {
+  if (!asOf || nav === null || !(nav > 0)) return null;
+  const end = Date.parse(asOf), start = end - 365 * 86400000;
+  const paid = events.filter(event => event.amount > 0 && Date.parse(event.exDate) > start && Date.parse(event.exDate) <= end);
+  return paid.length ? round(paid.reduce((sum, event) => sum + event.amount, 0) / nav * 100, 2) : null;
 }
 
 export type FundOutcome = { ticker: string; status: 'updated' | 'unchanged' | 'skipped' | 'failed'; freshSources: string[]; retainedSources: string[]; holdings: number; history: number; reason?: string };
@@ -1338,8 +1371,11 @@ export type UpdateResult = {
   selected: string[]; outcomes: FundOutcome[]; failures: number; updated: number;
   counts: { funds: number; holdings: number; history: number };
   catalogFunds: number; catalogSource: string; manifestChanged: boolean; progressChanged: boolean; processedThrough: string | null;
+  newFunds: string[]; deadlineReached: boolean;
 };
-export type RuntimeOptions = { root?: string; fetcher?: Fetcher };
+export type RuntimeOptions = { root?: string; fetcher?: Fetcher; deadlineMs?: number };
+/** The run stops taking new funds after this long and still writes the index (the workflow times out at 30 minutes). */
+export const SOFT_DEADLINE_MS = 25 * 60_000;
 // Same iShares automatic GITHUB_STEP_SUMMARY presentation; no extra runtime knob.
 export function renderUpdateSummary(config: UpdaterConfig, result: UpdateResult): string {
   const count = (status: FundOutcome['status']) => result.outcomes.filter(row => row.status === status).length;
@@ -1352,6 +1388,8 @@ export function renderUpdateSummary(config: UpdaterConfig, result: UpdateResult)
     `| Published funds | ${result.counts.funds} |`, `| Holdings rows | ${result.counts.holdings} |`, `| History rows | ${result.counts.history} |`,
     `| Manifest changed | ${result.manifestChanged ? 'yes' : 'no'} |`, `| Progress state changed | ${result.progressChanged ? 'yes' : 'no'} |`,
     `| Processed through | ${result.processedThrough || '—'} |`, '', `Catalog source: ${clean(result.catalogSource)}`, '',
+    ...(result.newFunds.length ? [`NEW FUNDS: ${clean(result.newFunds.join(', '))}`, ''] : []),
+    ...(result.deadlineReached ? ['Soft deadline reached: not every selected fund was taken this run; the index was still written.', ''] : []),
     '<details><summary>Configuration</summary>', '', '```text',
     ...outputConfigEntries(config).map(([key, value]) => `${key}=${key === 'SEC_UA' ? '<redacted>' : outputClean(value).replace(/`/g, "'")}`),
     '```', '</details>', '',
@@ -1374,7 +1412,7 @@ function catalogFromPrevious(row: JsonRecord): CatalogFund {
   const ticker = sanitizeTicker(row.ticker);
   return { ticker, name: cleanText(row.name) || null, category: cleanText(row.category) || null,
     fundPage: cleanText(row.fundPage) || `https://etf.dws.com/en-us/etf-products/?SearchTerm=${ticker}`,
-    inceptionDate: toIsoDate(row.inceptionDate), terValue: numberOrNull(row.terValue), netTerValue: null,
+    inceptionDate: toIsoDate(row.inceptionDate), terValue: previousExpenses(row, {}).gross, netTerValue: previousExpenses(row, {}).net,
     aumValue: numberOrNull(row.aumValue), officialReturns: emptyReturns() };
 }
 function returnsFromPublished(raw: unknown): OfficialReturnRow {
@@ -1404,7 +1442,7 @@ async function updateFund(fund: CatalogFund, previousRow: JsonRecord, root: stri
   let holdings = await attempt('DWS Securities', async () => parseHoldingsRows(parseXlsxSheet(await client.bytes(exportUrl(fund.ticker, 'Securities'))), fund.ticker));
   let holdingsSource = exportUrl(fund.ticker, 'Securities');
   if (!holdings) {
-    const fallback = config.edgarFallback ? await edgar({ ...fund, name: details.name }) : null;
+    const fallback = config.edgarFallback ? await edgar({ ...fund, name: details.name }, previousHoldings.asOfDate) : null;
     if (fallback) { holdings = fallback.sheet; holdingsSource = fallback.source; freshSources.push('SEC N-PORT'); }
     else if (previousHoldings.rows.length) { holdings = previousHoldings; holdingsSource = cleanText(previousSource.holdingsSource) || exportUrl(fund.ticker, 'Securities'); retainedSources.push('holdings'); }
   }
@@ -1428,7 +1466,7 @@ async function updateFund(fund: CatalogFund, previousRow: JsonRecord, root: stri
   if (!holdings?.rows.length) throw new Error('no usable holdings and no published holdings to retain');
   const history = historySheet(windowByHistoryRange(points, config.historyRange), windowByHistoryRange(days, config.historyRange));
   if (!history.rows.length) throw new Error('no usable history and no published history to retain');
-  if (!freshSources.length) return { row: previousRow, outcome: outcome('unchanged', holdings.rows.length, history.rows.length, 'all providers unavailable; retained published data') };
+  if (!freshSources.length) return { row: Object.keys(previousRow).length ? previousRow : null, outcome: outcome('unchanged', holdings.rows.length, history.rows.length, 'all providers unavailable; retained published data') };
 
   // Prefer official NAV total-return reconstruction, but never silently ignore a missing distribution series.
   const navReinvestmentKnown = currentEvents !== null || previousEvents.length > 0;
@@ -1449,12 +1487,24 @@ async function updateFund(fund: CatalogFund, previousRow: JsonRecord, root: stri
   const navValue = details.navValue ?? latestNav?.nav ?? null;
   const navAsOfDate = details.navAsOfDate ?? latestNav?.date ?? null;
   const price = latestPrice?.close ?? null;
-  const premiumDiscount = latestPrice && navAsOfDate === latestPrice.date && navValue !== null && navValue > 0 ? round((latestPrice.close / navValue - 1) * 100, 4) : null;
-  const dividendYield = details.distributionRate ?? indicatedYield(latestDividend?.amount ?? null, frequency.paymentsPerYear, navValue);
+  // Premium/discount needs a NAV and a close of the same date: the latest such pair, or null.
+  const pair = latestSamePair(points, days);
+  const premiumDiscount = pair?.premium ?? null;
+  const yieldAsOf = navAsOfDate ?? latestNav?.date ?? latestPrice?.date ?? null;
+  const trailing = trailingYearYield(events, yieldAsOf, navValue);
+  // An official distribution rate of 0 next to payments in the last 12 months is a stale or empty field: use the trailing distributions.
+  const officialRate = details.distributionRate;
+  const dividendYield = officialRate === null ? indicatedYield(latestDividend?.amount ?? null, frequency.paymentsPerYear, navValue)
+    : officialRate === 0 && trailing !== null ? trailing : officialRate;
+  const dividendYieldKind = officialRate === null ? 'latest positive distribution x payments per year / NAV'
+    : officialRate === 0 ? (trailing !== null ? 'trailing 12-month distributions / NAV (the official distribution rate is 0 but distributions were paid)' : 'official distribution rate 0.00% (no distributions in the last 12 months)')
+    : 'official indicated distribution rate / NAV';
   const basis = Object.values(official).some(value => typeof value === 'number') ? (official.asOfDate ? 'official DWS NAV total returns; covered daily-series derivation fills same-date gaps' : 'official DWS NAV total returns (source as-of date unavailable; no dated-series mixing)')
     : points.length && navReinvestmentKnown ? 'derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns'
     : 'derived from Yahoo adjusted market-price closes; not official NAV returns';
-  const metrics = deriveCatalogMetrics(monthEnd, dividendYield, details.secYield, basis);
+  // Returns kept from the published row keep the basis they were published with.
+  const retainedBasis = returnDays.length ? '' : cleanText(record(previousRow.metrics).returnsBasis);
+  const metrics = deriveCatalogMetrics(monthEnd, dividendYield, details.secYield, retainedBasis || basis);
   const filters = fundFilterReasons(details, metrics, config);
   if (filters.length) return { row: null, outcome: outcome('skipped', previousHoldings.rows.length, previousHistory.rows.length, `filters: ${filters.join(',')}`) };
 
@@ -1464,12 +1514,12 @@ async function updateFund(fund: CatalogFund, previousRow: JsonRecord, root: stri
   const generatedAt = new Date().toISOString();
   const row: JsonRecord = {
     ticker: fund.ticker, name: details.name || cleanText(previousRow.name) || fund.ticker, category: details.category || 'Unclassified',
-    fundPage: details.fundPage, dataFile: `funds/${fund.ticker}/meta.json`, ter: percentageText(details.terValue), terValue: details.terValue,
+    fundPage: details.fundPage, dataFile: `./funds/${fund.ticker}/meta.json`, ...expenseFields(details.terValue, details.netTerValue),
     nav: navValue === null ? '—' : `$${navValue.toFixed(2)}`, navValue,
     aum: moneyText(details.aumValue ?? latestNav?.aum ?? null), aumValue: details.aumValue ?? latestNav?.aum ?? null,
     asOfDate: navAsOfDate, inceptionDate: details.inceptionDate, exchange: details.exchange || chart?.exchange || null,
     closePrice: price === null ? '—' : `$${price.toFixed(2)}`, closePriceAsOfDate: latestPrice?.date || null,
-    premiumDiscount: percentageText(premiumDiscount), cusip: details.cusip, isin: details.isin,
+    premiumDiscount: percentageText(premiumDiscount), premiumDiscountValue: premiumDiscount, premiumDiscountAsOfDate: pair?.date ?? null, cusip: details.cusip, isin: details.isin,
     distributions: { frequency: frequency.frequency, exDate: latestDividend?.exDate || null, dividend: latestDividend ? String(latestDividend.amount) : null },
     returns: { monthEnd, quarterEnd }, metrics, holdings: holdings.rows.length, history: history.rows.length,
   };
@@ -1479,7 +1529,7 @@ async function updateFund(fund: CatalogFund, previousRow: JsonRecord, root: stri
       holdingsSource, historySource, distributionsSource: currentEvents !== null || previousEvents.length ? exportUrl(fund.ticker, 'Distributions') : yahooSourceUrl(fund.ticker),
       yahoo: yahooSourceUrl(fund.ticker), trust: 'DBX ETF TRUST', trustCik: TRUST_CIK },
     identifiers: { cusip: details.cusip, isin: details.isin, indexTicker: details.indexTicker },
-    yields: { dividendYield, dividendYieldText: percentageText(dividendYield), dividendYieldKind: details.distributionRate !== null ? 'official indicated distribution rate / NAV' : 'latest positive distribution x payments per year / NAV',
+    yields: { dividendYield, dividendYieldText: percentageText(dividendYield), dividendYieldKind,
       distributionRate: details.distributionRate, secYield: details.secYield, secYieldText: percentageText(details.secYield), secYieldKind: details.secYield === null ? null : 'official DWS 30-day SEC yield' },
     distributions: { ...record(row.distributions), paymentsPerYear: frequency.paymentsPerYear, headers: ['Ex-Date', 'Amount'],
       rows: events.slice(-12).map(event => [event.exDate, String(event.amount)]) },
@@ -1498,6 +1548,7 @@ async function updateFund(fund: CatalogFund, previousRow: JsonRecord, root: stri
 }
 export async function runUpdater(config: UpdaterConfig, options: RuntimeOptions = {}): Promise<UpdateResult> {
   const root = resolve(options.root || API_ROOT);
+  const startedAt = Date.now(), deadlineMs = options.deadlineMs ?? SOFT_DEADLINE_MS;
   currentVerbose = config.verbose;
   outputPrintConfig('Xtrackers', config);
   const gate = createRequestGate(config.requestSleepSeconds, config.concurrency);
@@ -1531,6 +1582,8 @@ export async function runUpdater(config: UpdaterConfig, options: RuntimeOptions 
       catalogSource = 'official US sitemap (catalog XLSX unavailable/empty)'; catalogFresh = true;
     } catch (fallbackError) { console.warn(`[ catalog  ] ${errorMessage(fallbackError)} — retaining published catalog`); }
   }
+  const newFunds = catalogFresh && previousRows.size ? discovered.map(fund => fund.ticker).filter(ticker => !previousRows.has(ticker)) : [];
+  if (newFunds.length) console.log(`[ catalog  ] NEW FUNDS: ${newFunds.join(', ')}`);
   const catalog = new Map(discovered.map(fund => [fund.ticker, fund]));
   for (const [ticker, row] of previousRows) if (!catalog.has(ticker)) catalog.set(ticker, catalogFromPrevious(row));
   if (!catalog.size) throw new Error('no official or published catalog available; no files changed');
@@ -1543,20 +1596,28 @@ export async function runUpdater(config: UpdaterConfig, options: RuntimeOptions 
   outputPrintFilter(filtered.length, universe.length, deferred);
   const statePath = join(root, 'update-state.json'), updateState = await readJson(statePath);
   const scope = outputContentKey({ tickers: [...config.tickers].sort(), aum: config.aumRange, ter: config.terRange, dividend: config.dividendYieldRange, sec: config.secYieldRange, performance: config.performanceRanges, totalReturn: config.totalReturnRanges });
-  const cursor = config.maxFetches > 0 && updateState.scope === scope ? cleanText(updateState.cursor) || null : null;
+  // One cursor per filter scope (TICKERS included): a run with other filters never moves or deletes this scope's cursor.
+  const scopeId = outputCreateHash('sha256').update(scope).digest('hex').slice(0, 12);
+  const cursors: Record<string, string> = Object.fromEntries(Object.entries(record(updateState.cursors)).map(([key, value]) => [key, cleanText(value)]).filter(([, value]) => value));
+  if (typeof updateState.scope === 'string' && cleanText(updateState.cursor)) cursors[outputCreateHash('sha256').update(updateState.scope).digest('hex').slice(0, 12)] ??= cleanText(updateState.cursor); // legacy single-cursor file
+  const cursor = config.maxFetches > 0 ? cursors[scopeId] || null : null;
   const batch = selectUpdateBatch(filtered, config.maxFetches, cursor), queue = [...batch];
   if (config.maxFetches > 0) console.log(`[ cursor   ] ${batch.length} selected for this batch; after ${cursor || 'start'}`);
   const rows = new Map(previousRows);
   for (const fund of universe) if (!rows.has(fund.ticker) && (!config.tickers.size || !previousRows.size || config.tickers.has(fund.ticker))) rows.set(fund.ticker, indexRowForCatalog(fund));
   const outcomes: FundOutcome[] = [], edgar = createEdgarFallback(client, config);
   const reporter = outputCreateReporter(root, batch.length);
+  // Advances for every fund taken from the queue, whatever its outcome, so one failing fund can never pin the cursor.
+  let lastDispatched: string | null = null, deadlineReached = false;
   async function worker(): Promise<void> {
     for (;;) {
+      if (Date.now() - startedAt >= deadlineMs) { deadlineReached = deadlineReached || queue.length > 0; return; }
       const fund = queue.shift(); if (!fund) return;
+      lastDispatched = fund.ticker;
       const before = await reporter.before(fund.ticker);
       try {
         const result = await updateFund(fund, previousRows.get(fund.ticker) || {}, root, client, config, edgar);
-        if (result.row) rows.set(fund.ticker, result.row);
+        if (result.row?.ticker) rows.set(fund.ticker, result.row);
         outcomes.push(result.outcome);
         await reporter.result(fund.ticker, before, result.outcome.status, result.outcome.reason);
       } catch (error) {
@@ -1566,6 +1627,12 @@ export async function runUpdater(config: UpdaterConfig, options: RuntimeOptions 
     }
   }
   await Promise.all(Array.from({ length: Math.min(config.concurrency, batch.length) }, worker));
+  // A row points at its meta.json only when that file exists (the path is written with the same ./ prefix everywhere).
+  for (const [ticker, row] of rows) {
+    const hasMeta = await Bun.file(join(root, 'funds', ticker, 'meta.json')).exists();
+    const dataFile = hasMeta ? `./funds/${ticker}/meta.json` : null;
+    if (row.dataFile !== dataFile) rows.set(ticker, { ...row, dataFile });
+  }
   const funds = [...rows.values()].sort((a, b) => String(a.ticker).localeCompare(String(b.ticker)));
   const counts = { funds: funds.length, holdings: funds.reduce((sum, row) => sum + (numberOrNull(row.holdings) || 0), 0), history: funds.reduce((sum, row) => sum + (numberOrNull(row.history) || 0), 0) };
   const manifestChanged = await writeJsonIfChanged(join(root, 'index.json'), {
@@ -1575,16 +1642,24 @@ export async function runUpdater(config: UpdaterConfig, options: RuntimeOptions 
   });
   const failures = outcomes.filter(result => result.status === 'failed').length;
   let progressChanged = false;
-  if (!failures) {
-    if (config.maxFetches > 0 && batch.length) progressChanged = await writeJsonIfChanged(statePath, { scope, cursor: batch.at(-1)?.ticker, generatedAt: new Date().toISOString() });
-    else if (config.maxFetches === 0) { progressChanged = await Bun.file(statePath).exists(); await rm(statePath, { force: true }); }
+  {
+    // The cursor moves past every fund taken (failed or filtered too). A full pass over exactly this scope resets only this scope's cursor;
+    // a full pass that evaluates data-dependent filters leaves it alone. Other scopes' cursors are never touched.
+    const next = { ...cursors };
+    if (config.maxFetches > 0 && lastDispatched) next[scopeId] = lastDispatched;
+    else if (config.maxFetches === 0 && !deferred) delete next[scopeId];
+    const keys = Object.keys(next).slice(-8);
+    const state = keys.length ? { cursors: Object.fromEntries(keys.map(key => [key, next[key]])), generatedAt: new Date().toISOString() } : null;
+    if (state) progressChanged = await writeJsonIfChanged(statePath, state);
+    else if (await Bun.file(statePath).exists()) { await rm(statePath, { force: true }); progressChanged = true; }
   }
+  if (deadlineReached) console.warn('[ done     ] soft deadline reached; the remaining selected funds were not taken this run (the index was still written)');
   const updated = outcomes.filter(result => result.status === 'updated').length;
   console.log(`[ done     ] ${updated} funds updated, ${failures} failures`);
   console.log(`[ done     ] counts: funds=${counts.funds} holdings=${counts.holdings} history=${counts.history}; processed=${outcomes.length} skipped=${outcomes.filter(result => result.status === 'skipped').length}`);
   return { selected: batch.map(fund => fund.ticker), outcomes, failures, updated, counts,
     catalogFunds: universe.length, catalogSource, manifestChanged, progressChanged,
-    processedThrough: failures ? cursor : config.maxFetches > 0 && batch.length ? batch.at(-1)?.ticker || null : null };
+    processedThrough: config.maxFetches > 0 ? lastDispatched : null, newFunds, deadlineReached };
 }
 export { outputFundLine, outputConfigEntries };
 if (import.meta.main) {
