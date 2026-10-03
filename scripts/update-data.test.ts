@@ -17,7 +17,7 @@ import {
   parseCatalogRows, parseSitemap, parseFundDetails, parseHoldingsRows, parseDistributionsRows,
   parseNavRows, parseChart, returnHeaderSlot, parseReturnRow, emptyReturns, navTotalReturnDays,
   deriveReturns, historySheet, pageManifest, exportUrl, detailsUrl, yahooSourceUrl, record, array,
-  isCertError, installSystemCa,
+  isCertError, installSystemCa, deriveCatalogMetrics, expenseFields, previousExpenses, latestSamePair, trailingYearYield, SOFT_DEADLINE_MS,
   type Dividend, type ChartDay, type Fetcher, type FundDetails, type JsonRecord,
 } from './update-data';
 
@@ -136,6 +136,9 @@ async function seed(root: string): Promise<void> {
 // ---------------------------------------------------------------------------
 // Parsers
 // ---------------------------------------------------------------------------
+// main() may set process.exitCode when a run fails; a test must never leak that into the runner's exit code.
+afterEach(() => { process.exitCode = 0; });
+
 describe('numeric/date parsing', () => {
   test('preserves zero, negatives, empty/null and currency precision', () => {
     expect([0, '0', '-1.25%', '($1,234.5)', ' $2,500.25 ', null, undefined, '', ' ', '—', '--', 'N/A', 'garbage'].map(numberOrNull))
@@ -899,7 +902,7 @@ describe('published feed structure (offline, tolerates legitimate refreshes)', (
     for (const fund of funds) {
       const ticker = String(fund.ticker);
       expect(ticker).toMatch(/^[A-Z][A-Z0-9.-]{0,9}$/);
-      expect(fund.dataFile).toBe(`funds/${ticker}/meta.json`);
+      expect([null, `funds/${ticker}/meta.json`, `./funds/${ticker}/meta.json`]).toContain(fund.dataFile);
       const fundMetrics = record(fund.metrics);
       expect(Object.keys(fundMetrics).slice(-2)).toEqual(['returnsBasis', 'performanceAsOf']);
       expect(String(fundMetrics.returnsBasis).trim()).not.toMatch(/^(-|—)?$/);
@@ -979,5 +982,186 @@ describe('system CA support', () => {
     const quiet = console.error; console.error = () => {};
     try { await expect(fetch('https://example.test/')).rejects.toThrow('reexec'); } finally { console.error = quiet; }
     expect(spy.calls.length).toBe(1);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Data-contract fixes: cursor, premium/discount, expense ratio, yields, notices
+// ---------------------------------------------------------------------------
+const override = (base: Fetcher, match: (url: string) => boolean, make: (url: string) => Response): Fetcher => (url, init) => match(url) ? Promise.resolve(make(url)) : base(url, init);
+const indexOf = async (root: string): Promise<JsonRecord[]> => array((await Bun.file(join(root, 'index.json')).json()).funds).map(record);
+const rowOf = async (root: string, ticker: string): Promise<JsonRecord> => (await indexOf(root)).find(row => row.ticker === ticker)!;
+
+describe('cursor and state', () => {
+  test('a fund that fails on every run cannot pin a bounded batch', async () => {
+    const root = await tempRoot();
+    try {
+      await seed(root);
+      const denied = fakeFetch(['/ASHR/Securities']);
+      const first = await quietRun(root, { MAX_FETCHES: '1' }, denied);
+      expect(first.failures).toBe(1); expect(first.processedThrough).toBe('ASHR');
+      const second = await quietRun(root, { MAX_FETCHES: '1' }, denied);
+      expect(second.selected).toEqual(['DBEF']); expect(second.failures).toBe(0);
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+
+  test('a TICKERS run never deletes or moves the cursor of another scope', async () => {
+    const root = await tempRoot();
+    try {
+      await seed(root);
+      await quietRun(root, { MAX_FETCHES: '1', TICKERS: '' });
+      const state = await readFile(join(root, 'update-state.json'), 'utf8');
+      await quietRun(root, { TICKERS: 'HYLB' }); // full pass over a ticker list
+      expect(await readFile(join(root, 'update-state.json'), 'utf8')).toBe(state);
+      const next = await quietRun(root, { MAX_FETCHES: '1', TICKERS: '' });
+      expect(next.selected).not.toEqual(first(state)); // resumes after the saved cursor
+    } finally { await rm(root, { recursive: true, force: true }); }
+    function first(text: string): string[] { return [Object.values(JSON.parse(text).cursors)[0] as string]; }
+  });
+
+  test('the run stops taking funds at the soft deadline and still writes the index', async () => {
+    const root = await tempRoot();
+    try {
+      await seed(root);
+      const log = console.warn; console.warn = () => {};
+      const logLine = console.log; console.log = () => {};
+      let result; try { result = await runUpdater(readConfig({ TICKERS: 'ASHR DBEF', REQUEST_SLEEP: '0' }), { root, fetcher: fakeFetch(), deadlineMs: 0 }); } finally { console.warn = log; console.log = logLine; }
+      expect(SOFT_DEADLINE_MS).toBe(25 * 60_000);
+      expect(result.outcomes).toHaveLength(0); expect(result.deadlineReached).toBe(true);
+      expect(renderUpdateSummary(readConfig({}), result)).toContain('Soft deadline reached');
+      expect((await indexOf(root)).length).toBeGreaterThan(0);
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+});
+
+describe('premium/discount, performanceAsOf, expense ratio and yield', () => {
+  const nav = (date: string, value: number) => ({ date, nav: value, aum: null, shares: null, dividend: null });
+  const day = (date: string, close: number): ChartDay => ({ date, close, adjClose: close, volume: 1 });
+
+  test('premium/discount uses the latest date that has both a NAV and a close', () => {
+    // NAV dated 09-30, newest close dated 10-01: the old same-date test against the NAV date gave null for most funds
+    const pair = latestSamePair([nav('2026-09-29', 50), nav('2026-09-30', 50.1)], [day('2026-09-29', 50.5), day('2026-09-30', 50.2), day('2026-10-01', 50.3)]);
+    expect(pair).toMatchObject({ date: '2026-09-30', premium: 0.1996 });
+    expect(latestSamePair([nav('2026-09-01', 50)], [day('2026-09-30', 50)])).toBeNull(); // no pair within 7 days: null, not a mixed-date number
+    expect(latestSamePair([], [day('2026-09-30', 50)])).toBeNull();
+  });
+
+  test('the worker publishes the same-date premium with its date', async () => {
+    const root = await tempRoot();
+    try {
+      await seed(root);
+      await quietRun(root, { TICKERS: 'ASHR' });
+      const row = await rowOf(root, 'ASHR');
+      expect(row.premiumDiscountValue).not.toBeNull();
+      expect(row.premiumDiscountAsOfDate).toBe('2026-09-29');
+      expect(row.premiumDiscount).not.toBe('—');
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+
+  test('performanceAsOf is null when no return figure exists', () => {
+    const none = { ...emptyReturns(), asOfDate: '2026-09-30' };
+    expect(deriveCatalogMetrics(none, null, null, 'x').performanceAsOf).toBeNull();
+    expect(deriveCatalogMetrics({ ...none, yr1: 4.2 }, null, null, 'x').performanceAsOf).toBe('2026-09-30');
+  });
+
+  test('terValue is the net ratio, terGrossValue the gross one; legacy rows are mapped', async () => {
+    expect(expenseFields(0.65, 0.6)).toEqual({ ter: '0.60%', terValue: 0.6, terGross: '0.65%', terGrossValue: 0.65 });
+    expect(expenseFields(0.65, null)).toMatchObject({ terValue: 0.65, terGrossValue: 0.65 });
+    expect(expenseFields(null, null)).toMatchObject({ terValue: null, terGrossValue: null, ter: '—' });
+    expect(previousExpenses({ terValue: 0.65 }, { netTerValue: 0.6 })).toEqual({ gross: 0.65, net: 0.6 }); // published before the split
+    expect(previousExpenses({ terValue: 0.6, terGrossValue: 0.65 }, {})).toEqual({ gross: 0.65, net: 0.6 });
+    const root = await tempRoot();
+    try {
+      await seed(root);
+      await quietRun(root, { TICKERS: 'ASHR' });
+      const row = await rowOf(root, 'ASHR');
+      expect(row).toMatchObject({ terValue: 0.6, terGrossValue: 0.65, dataFile: './funds/ASHR/meta.json' });
+      // PDP down on the next run: the retained row keeps the same net and gross numbers
+      await quietRun(root, { TICKERS: 'ASHR' }, fakeFetch(['/pdpMetaTagsTealium']));
+      expect(await rowOf(root, 'ASHR')).toMatchObject({ terValue: 0.6, terGrossValue: 0.65 });
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+
+  test('an official distribution rate of 0 with payments in the last 12 months falls back to trailing distributions', async () => {
+    expect(trailingYearYield([dividend('2025-12-19', 1.25), dividend('2024-01-01', 9)], '2026-09-30', 50)).toBe(2.5);
+    expect(trailingYearYield([dividend('2024-01-01', 9)], '2026-09-30', 50)).toBeNull();
+    const root = await tempRoot();
+    try {
+      await seed(root);
+      const zeroRate = override(fakeFetch(), url => url.includes('/pdpMetaTagsTealium'), url => Response.json(pdp(/\/etfus\/([A-Z]+)\//.exec(url)![1], { rate: '0%' })));
+      await quietRun(root, { TICKERS: 'ASHR' }, zeroRate);
+      const paid = await rowOf(root, 'ASHR');
+      expect(Number(record(paid.metrics).dividendYield)).toBeGreaterThan(0); // 0.2 paid on 09/01/2026 over NAV 32.56
+      expect(record((await Bun.file(join(root, 'funds', 'ASHR', 'meta.json')).json()).yields).dividendYieldKind).toContain('trailing 12-month');
+      const noPayments = override(zeroRate, url => url.includes('/Distributions'), url => new Response(literalWorkbook([...META_ROWS(/etf\/([A-Z]+)\//.exec(url)![1]), ['Ex-Date', 'Record date', 'Pay date', 'US$ / Share']])));
+      const rootTwo = await tempRoot();
+      try {
+        await seed(rootTwo);
+        await quietRun(rootTwo, { TICKERS: 'DBEF' }, noPayments);
+        expect(record((await rowOf(rootTwo, 'DBEF')).metrics).dividendYield).toBe(0); // a published 0.00% with no payments stays and says so
+        expect(record((await Bun.file(join(rootTwo, 'funds', 'DBEF', 'meta.json')).json()).yields).dividendYieldKind).toContain('no distributions in the last 12 months');
+      } finally { await rm(rootTwo, { recursive: true, force: true }); }
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+
+  test('quarterEnd is the last completed quarter-end, and equals monthEnd only when the data ends on a quarter-end', () => {
+    expect(reportingPeriodEnds('2026-08-15')).toEqual({ monthEnd: '2026-07-31', quarterEnd: '2026-06-30' });
+    expect(reportingPeriodEnds('2026-09-30')).toEqual({ monthEnd: '2026-09-30', quarterEnd: '2026-09-30' });
+    expect(reportingPeriodEnds('2026-10-02')).toEqual({ monthEnd: '2026-09-30', quarterEnd: '2026-09-30' });
+  });
+});
+
+describe('index integrity and notices', () => {
+  test('an all-providers outage never writes an empty {} row into index.json', async () => {
+    const root = await tempRoot();
+    try {
+      await seed(root);
+      await quietRun(root, { TICKERS: 'ASHR' });
+      // the published row vanished but the fund files remain: with every provider down nothing may replace the catalog stub by {}
+      const index = await Bun.file(join(root, 'index.json')).json();
+      index.funds = index.funds.filter((row: JsonRecord) => row.ticker !== 'ASHR');
+      await Bun.write(join(root, 'index.json'), JSON.stringify(index));
+      await quietRun(root, { TICKERS: 'ASHR' }, async url => url.endsWith('/en-us/sitemap.xml') ? new Response(SITEMAP) : url.includes('downloadxls/') ? new Response(EMPTY_CATALOG) : new Response('down', { status: 403 }));
+      const rows = await indexOf(root);
+      expect(rows.every(row => typeof row.ticker === 'string' && row.ticker.length > 0)).toBe(true);
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+
+  test('rows without meta.json have dataFile null and a full metrics object; rows with it use the ./ prefix', async () => {
+    const root = await tempRoot();
+    try {
+      await seed(root);
+      await quietRun(root, { TICKERS: 'ASHR' });
+      const stub = await rowOf(root, 'CHPS');
+      expect(stub.dataFile).toBeNull();
+      expect(Object.keys(record(stub.metrics))).toEqual(expect.arrayContaining(['ytd', 'tr1y', 'tr3y', 'tr5y', 'tr10y', 'cagr3y', 'cagr5y', 'cagr10y', 'siAnn', 'dividendYield', 'dividendYieldText', 'secYield', 'secYieldText', 'returnsBasis', 'performanceAsOf']));
+      expect((await rowOf(root, 'ASHR')).dataFile).toBe('./funds/ASHR/meta.json');
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+
+  test('NEW FUNDS are printed and listed in the step summary', async () => {
+    const root = await tempRoot();
+    try {
+      await seed(root);
+      const withNew = override(fakeFetch(), url => url.endsWith('/en-us/sitemap.xml'), () => new Response(SITEMAP.replace('</urlset>', '<url><loc>https://etf.dws.com/en-us/NEWX-xtrackers-test-etf/</loc></url></urlset>')));
+      const lines: string[] = [];
+      const log = console.log, warn = console.warn; console.log = (...args: unknown[]) => { lines.push(args.join(' ')); }; console.warn = () => {};
+      let result; try { result = await runUpdater(readConfig({ TICKERS: 'ASHR', REQUEST_SLEEP: '0' }), { root, fetcher: withNew }); } finally { console.log = log; console.warn = warn; }
+      expect(result.newFunds).toEqual(['NEWX']);
+      expect(lines.some(line => line.includes('NEW FUNDS: NEWX'))).toBe(true);
+      expect(renderUpdateSummary(readConfig({}), result)).toContain('NEW FUNDS: NEWX');
+    } finally { await rm(root, { recursive: true, force: true }); }
+  });
+
+  test('an older SEC filing never replaces fresher published holdings', async () => {
+    const root = await tempRoot();
+    try {
+      await seed(root);
+      await quietRun(root, { TICKERS: 'HYLB' }); // published holdings dated 2026-09-29
+      await quietRun(root, { TICKERS: 'HYLB' }, fakeFetch(['/HYLB/Securities'], NPORT)); // filing report date 2026-08-31
+      const meta = await Bun.file(join(root, 'funds', 'HYLB', 'meta.json')).json();
+      expect(record(meta.source).holdingsSource).not.toContain('primary_doc.xml');
+      expect(record(meta.holdings).asOfDate).toBe('2026-09-29');
+    } finally { await rm(root, { recursive: true, force: true }); }
   });
 });

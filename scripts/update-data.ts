@@ -1337,7 +1337,7 @@ export function deriveCatalogMetrics(returns: OfficialReturnRow, dividendYield: 
 }
 
 /** Net and gross expense ratio of a published row. Rows published before the split carried the gross ratio in terValue and the net ratio only in meta.json. */
-function previousExpenses(previous: JsonRecord, meta: JsonRecord): { gross: number | null; net: number | null } {
+export function previousExpenses(previous: JsonRecord, meta: JsonRecord): { gross: number | null; net: number | null } {
   if ('terGrossValue' in previous) return { gross: numberOrNull(previous.terGrossValue), net: numberOrNull(previous.terValue) };
   return { gross: numberOrNull(previous.terValue), net: numberOrNull(meta.netTerValue) };
 }

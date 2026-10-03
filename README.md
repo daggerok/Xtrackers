@@ -42,7 +42,7 @@ CI and the main-only Pages workflow keep their checks and deployment guards. Dep
 
 The official finder workbook came back empty in live checks, so catalog discovery falls back to the official US sitemap (dynamic, not a hardcoded ticker list); the published `index.json` records which source was used. A scoped run does not insert or modify an unrequested new entry, and a full pass populates new discoveries. Funds that were never updated stay catalog-only (no holdings or history files). Unknown facts are unavailable, never invented as zero.
 
-Official NAV history uses `Date / NAV / Market Price / Premium/Discount`; the market price comes from Yahoo and premium/discount requires a matching NAV date. Yahoo-only fallback uses `Date / Close / Adj Close / Volume`, with adjusted closes rounded to two decimals. Dataset source dates can differ and returns use the covered NAV series, not the fetch timestamp or a newer headline date. NAV total returns reinvest the total cash distribution once on the exact ex-date. Missing payout NAV, stale window anchors, incomplete inception coverage and young funds leave unsupported metrics unavailable; Morningstar ratings are not performance returns. Derived figures are **not published standardized NAV returns**.
+Official NAV history uses `Date / NAV / Market Price / Premium/Discount`; the market price comes from Yahoo and premium/discount is computed from the latest date that has both an official NAV and a Yahoo close (within 7 days of the newest point), published with `premiumDiscountAsOfDate`; with no such pair it is empty (`null`), never a mixed-date number. Yahoo-only fallback uses `Date / Close / Adj Close / Volume`, with adjusted closes rounded to two decimals. Dataset source dates can differ and returns use the covered NAV series, not the fetch timestamp or a newer headline date. NAV total returns reinvest the total cash distribution once on the exact ex-date. Missing payout NAV, stale window anchors, incomplete inception coverage and young funds leave unsupported metrics unavailable; Morningstar ratings are not performance returns. Derived figures are **not published standardized NAV returns**.
 
 The SEC N-PORT-P fallback runs only when official DWS holdings fail and `EDGAR_FALLBACK` is enabled; it requires the exact trust and series and sends the `SEC_UA` contact User-Agent (SEC rejects a User-Agent without a contact with HTTP 403). Yahoo adjusted-close half-cent variance never changes the official NAV history.
 
@@ -52,10 +52,12 @@ Each fund carries a derived `metrics` object that powers the catalog columns sha
 - `cagr3y` / `cagr5y` / `cagr10y` - published or coverage-checked derived annualized 3Y/5Y/10Y figures -> *CAGR 3Y/5Y/10Y*
 - `tr3y` / `tr5y` / `tr10y` - cumulative 3Y/5Y/10Y figures `(1 + CAGR)^n - 1` -> *TR 3Y/5Y/10Y*
 - `siAnn` - since-inception annualized when date/age/coverage support it (not young cumulative SI) -> *SI Ann.*
-- `dividendYield` - official indicated distribution rate, or latest positive distribution × frequency ÷ NAV
+- `dividendYield` - official indicated distribution rate, or latest positive distribution × frequency ÷ NAV when the rate is missing; when the official rate is 0 but distributions were paid in the last 12 months, the trailing 12-month distributions ÷ NAV; a published 0.00% with no payments in 12 months stays 0 and `yields.dividendYieldKind` says so
+- `terValue` / `terGrossValue` - net expense ratio (after waivers; the gross one when it is the only number) and gross expense ratio (`Total operating expenses`), with `ter` / `terGross` text; `meta.json` keeps `netTerValue`
 - `secYield` - 30-day SEC yield when published; `—` otherwise
 - `returnsBasis` - mandatory non-empty label of how the returns were computed: official DWS NAV total returns, derived from the official DWS daily NAV with distributions reinvested at ex-date NAV, or derived from Yahoo adjusted market-price closes (an estimate, not official NAV returns)
-- `performanceAsOf` - mandatory ISO `YYYY-MM-DD` date the returns are as of: the DWS performance table date for official figures, the last covered series date when derived (never the NAV date); `null` only when truly unknown
+- `quarterEnd` - derived for the last completed quarter-end on or before the newest NAV date: it equals `monthEnd` only when the data ends exactly on a quarter-end (for example 09-30)
+- `performanceAsOf` - mandatory ISO `YYYY-MM-DD` date the returns are as of: the DWS performance table date for official figures, the last covered series date when derived (never the NAV date); `null` when no return figure exists (or the date is unknown)
 
 ### Update controls
 
@@ -63,12 +65,12 @@ Defaults below are from `scripts/update-data.config.json`; blank Actions inputs 
 
 | Environment variable | Default | Meaning |
 | --- | --: | --- |
-| `MAX_FETCHES` | `0` | Batch evaluation size: positive resumes the scoped cursor in `api/xtrackers/update-state.json`; `0` is a full selected pass. A failed fund prevents cursor advancement. |
+| `MAX_FETCHES` | `0` | Batch evaluation size: positive resumes the scoped cursor in `api/xtrackers/update-state.json`; `0` is a full selected pass. The cursor moves past every fund taken (failed or filtered too) and is kept per filter scope (`TICKERS` included): a run with other filters never moves or deletes it; only an unfiltered full pass resets its own scope. |
 | `REQUEST_SLEEP` | `1.5` | Minimum seconds between outgoing request starts **in each independent lane**, including retries; normal DWS pacing is 1.5 seconds. |
 | `CONCURRENCY` | `2` | Parallel fund workers / independent paced lanes; two lanes, not one global bottleneck. |
 | `TICKERS` | all | Space/comma/semicolon allowlist, e.g. ASHR HYLB DBEF. Unknown requested tickers fail before writes. |
 | `AUM` | `:` | Net Assets range: USD amounts or K/M/B/T suffixes; nano/micro/small/mid/large presets; inclusive min:max. |
-| `TER` | `:` | Gross expense ratio range in % (strict min:max). |
+| `TER` | `:` | Net expense ratio range in % (the gross ratio when no net one is published; strict min:max). |
 | `DIVIDEND_YIELD` | `:` | Distribution-yield range in %, min:max; missing values do not pass an active range. |
 | `SEC_YIELD` | `:` | Official 30-day SEC-yield range in %, min:max; missing values do not pass. |
 | `HOLDINGS_PAGE_SIZE` | `250` | Current holdings rows per JSON page |
@@ -91,7 +93,7 @@ Defaults below are from `scripts/update-data.config.json`; blank Actions inputs 
 | `TOTAL_RETURN_5Y` | `:` | 5Y cumulative total return percent min:max |
 | `TOTAL_RETURN_10Y` | `:` | 10Y cumulative total return percent min:max |
 
-`TICKERS` combines with AUM, TER, yield and return filters using AND logic; it does not override them. Funds not selected for a successful update keep their prior published metadata and data files.
+`TICKERS` combines with AUM, TER, yield and return filters using AND logic; it does not override them. Funds not selected for a successful update keep their prior published metadata and data files. The run takes no new fund after 25 minutes and still writes the index. When the live catalog adds funds the run prints `NEW FUNDS: ...` and lists them in the Actions step summary. A row without `funds/<T>/meta.json` has `dataFile: null`; others use `./funds/<T>/meta.json`. An SEC filing older than the published holdings never replaces them.
 
 ### Examples
 
