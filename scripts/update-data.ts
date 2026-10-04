@@ -768,6 +768,10 @@ export const CONTROL_NAMES = [
   ...(['PERFORMANCE', 'TOTAL_RETURN'] as const).flatMap(prefix => RETURN_PERIODS.map(period => `${prefix}_${period}` as const)),
 ] as const;
 export type ControlName = (typeof CONTROL_NAMES)[number];
+// Environment aliases of every control: XTRACKERS_<NAME> plus the legacy HISTORICAL_PAGE_SIZE. They sit in the
+// environment layer; the plain name wins when both are set, and an explicitly empty alias counts as set.
+export const ENV_ALIASES: Record<string, string[]> = { HISTORY_PAGE_SIZE: ['HISTORICAL_PAGE_SIZE'] };
+export const envNames = (key: string): string[] => [key, `XTRACKERS_${key}`, ...(ENV_ALIASES[key] ?? [])];
 export function resolveControls(
   file: unknown = {}, advanced: unknown = {}, inputs: unknown = {}, env: Record<string, string | undefined> = {},
 ): Record<string, string> {
@@ -789,7 +793,10 @@ export function resolveControls(
   apply(inputs, true);
   // The workflow writes resolved values to GITHUB_ENV and the updater resolves again, so env is authoritative:
   // an explicitly set variable wins even when empty (it clears the control to its built-in default).
-  apply(Object.fromEntries(CONTROL_NAMES.flatMap(key => env[key] === undefined ? [] : [[key, env[key]!.trim()]])));
+  apply(Object.fromEntries(CONTROL_NAMES.flatMap(key => {
+    const value = envNames(key).map(name => env[name]).find(candidate => candidate !== undefined);
+    return value === undefined ? [] : [[key, value.trim()]];
+  })));
   readConfig(result); // strict validation of every control before any request or write
   return result;
 }
@@ -823,7 +830,7 @@ export function selectUpdateBatch<T extends { ticker: string }>(funds: T[], maxi
 }
 export function printHelp(): void {
   const raw = readConfigFile() as Record<string, unknown>;
-  console.log('Xtrackers ETF updater (Bun-only, zero runtime dependencies)\nUsage: bun scripts/update-data.ts [-h|--help]\n\nDefaults: scripts/update-data.config.json (an explicitly set environment variable overrides JSON; filters use AND):');
+  console.log('Xtrackers ETF updater (Bun-only, zero runtime dependencies)\nUsage: bun scripts/update-data.ts [-h|--help]\n\nDefaults: scripts/update-data.config.json (an explicitly set environment variable overrides JSON; filters use AND). Every control also reads XTRACKERS_<NAME> from the environment (the plain name wins when both are set); HISTORICAL_PAGE_SIZE is an alias of HISTORY_PAGE_SIZE:');
   for (const name of CONTROL_NAMES) {
     const value = String(raw[name] ?? BUILTIN_CONTROL_DEFAULTS[name] ?? '');
     console.log(`  ${name}=${name === 'SEC_UA' ? value : value || 'all'}`);

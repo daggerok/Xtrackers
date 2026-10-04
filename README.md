@@ -61,7 +61,7 @@ Each fund carries a derived `metrics` object that powers the catalog columns sha
 
 ### Update controls
 
-Defaults below are from `scripts/update-data.config.json`; blank Actions inputs do not override them. Every control can be set through `advanced`; all except `TOTAL_RETURN_5Y` and `TOTAL_RETURN_10Y` are also individual workflow inputs (lowercase name).
+Defaults below are from `scripts/update-data.config.json`; blank Actions inputs do not override them. Every control can be set through `advanced`; all except `TOTAL_RETURN_5Y` and `TOTAL_RETURN_10Y` are also individual workflow inputs (lowercase name). Every control also reads `XTRACKERS_<NAME>` from the environment (for example `XTRACKERS_CONCURRENCY=7`), and `HISTORICAL_PAGE_SIZE` is an alias of `HISTORY_PAGE_SIZE`. Aliases sit in the environment layer: the plain name wins when both are set, an explicitly empty alias counts as set, and validation is the same.
 
 | Environment variable | Default | Meaning |
 | --- | --: | --- |
