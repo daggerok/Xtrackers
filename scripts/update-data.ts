@@ -1335,10 +1335,17 @@ export function annualizedOfficialReturns(source: OfficialReturnRow, inception: 
   }
   return result;
 }
-export function deriveCatalogMetrics(returns: OfficialReturnRow, dividendYield: number | null, secYield: number | null, basis: string): JsonRecord {
+export type DividendYieldBasis = 'official-distribution-rate' | 'computed-trailing-12m' | 'indicated';
+/** Which definition stands behind dividendYield; null exactly when the yield is null. */
+export function dividendYieldBasisCode(dividendYield: number | null, officialRate: number | null, trailing: number | null): DividendYieldBasis | null {
+  if (dividendYield === null) return null;
+  if (officialRate === null) return 'indicated';
+  return officialRate === 0 && trailing !== null ? 'computed-trailing-12m' : 'official-distribution-rate';
+}
+export function deriveCatalogMetrics(returns: OfficialReturnRow, dividendYield: number | null, secYield: number | null, basis: string, yieldBasis: DividendYieldBasis | null = null): JsonRecord {
   return { ytd: returns.ytd, tr1y: returns.yr1, cagr3y: returns.yr3, cagr5y: returns.yr5, cagr10y: returns.yr10,
     tr3y: annualizedToTotal(returns.yr3, 3), tr5y: annualizedToTotal(returns.yr5, 5), tr10y: annualizedToTotal(returns.yr10, 10),
-    siAnn: returns.sinceInception, dividendYield, dividendYieldText: percentageText(dividendYield), secYield, secYieldText: percentageText(secYield), returnsBasis: basis,
+    siAnn: returns.sinceInception, dividendYield, dividendYieldText: percentageText(dividendYield), dividendYieldBasis: dividendYield === null ? null : yieldBasis, secYield, secYieldText: percentageText(secYield), returnsBasis: basis,
     // The date describes the returns: with no return figure there is nothing to date.
     performanceAsOf: (['ytd', 'yr1', 'yr3', 'yr5', 'yr10', 'sinceInception'] as const).some(key => returns[key] !== null) ? toIsoDate(returns.asOfDate) : null };
 }
@@ -1511,7 +1518,7 @@ async function updateFund(fund: CatalogFund, previousRow: JsonRecord, root: stri
     : 'derived from Yahoo adjusted market-price closes; not official NAV returns';
   // Returns kept from the published row keep the basis they were published with.
   const retainedBasis = returnDays.length ? '' : cleanText(record(previousRow.metrics).returnsBasis);
-  const metrics = deriveCatalogMetrics(monthEnd, dividendYield, details.secYield, retainedBasis || basis);
+  const metrics = deriveCatalogMetrics(monthEnd, dividendYield, details.secYield, retainedBasis || basis, dividendYieldBasisCode(dividendYield, officialRate, trailing));
   const filters = fundFilterReasons(details, metrics, config);
   if (filters.length) return { row: null, outcome: outcome('skipped', previousHoldings.rows.length, previousHistory.rows.length, `filters: ${filters.join(',')}`) };
 
