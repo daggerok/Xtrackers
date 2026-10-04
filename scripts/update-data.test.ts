@@ -192,6 +192,25 @@ describe('controls', () => {
     expect([config.tickers.size, config.concurrency, config.secUa]).toEqual([0, 2, DEFAULT_SEC_UA]);
   });
 
+  test('brand env aliases: XTRACKERS_<NAME> for every control and HISTORICAL_PAGE_SIZE, plain name wins, same validation', () => {
+    const file = configFile();
+    const sample: Record<string, string> = { CONCURRENCY: '7', TICKERS: 'AAA', MAX_RETRIES: '4', HISTORY_RANGE: '5y', SKIP_YAHOO: 'true', TER: '0:1', SEC_UA: 'me me@x.io' };
+    for (const key of CONTROL_NAMES) {
+      const value = sample[key] ?? file[key];
+      expect([key, resolveControls(file, {}, {}, { [`XTRACKERS_${key}`]: value })[key]]).toEqual([key, value]);
+    }
+    expect(resolveControls(file, {}, {}, { HISTORICAL_PAGE_SIZE: '123' }).HISTORY_PAGE_SIZE).toBe('123');
+    expect(resolveControls(file, {}, { CONCURRENCY: '4' }, { XTRACKERS_CONCURRENCY: '7' }).CONCURRENCY).toBe('7');
+    expect(resolveControls(file, {}, {}, { XTRACKERS_CONCURRENCY: '7', CONCURRENCY: '5' }).CONCURRENCY).toBe('5');
+    expect(resolveControls(file, {}, {}, { XTRACKERS_TICKERS: '' }).TICKERS).toBe('');
+    expect(resolveControls(file, {}, {}, { XTRACKERS_TICKERS: 'A', TICKERS: '' }).TICKERS).toBe('');
+    expect(resolveControls(file, {}, {}, { XTRACKERS_HISTORY_PAGE_SIZE: '9', HISTORICAL_PAGE_SIZE: '8' }).HISTORY_PAGE_SIZE).toBe('9');
+    for (const env of [{ XTRACKERS_MAX_RETRIES: '0' }, { XTRACKERS_CONCURRENCY: 'x' }, { HISTORICAL_PAGE_SIZE: '0' }, { XTRACKERS_HISTORY_RANGE: 'forever' }, { XTRACKERS_SEC_UA: 'a\nb' }, { XTRACKERS_TICKERS: 'a\0b' }, { XTRACKERS_VERBOSE: 'maybe' }]) {
+      expect(() => resolveControls(file, {}, {}, env)).toThrow();
+    }
+    expect(readConfig(resolveControls(file, {}, {}, { XTRACKERS_CONCURRENCY: '7', HISTORICAL_PAGE_SIZE: '123' })).concurrency).toBe(7);
+  });
+
   test('strict validation: bad ranges, HISTORY_RANGE, MAX_RETRIES < 1, unknown keys, non-scalars, booleans, CR/LF/NUL', () => {
     for (const value of [
       { UNKNOWN: 1 }, { OUTPUT_DIR: '/tmp' }, { SEC_UA: 'x\nEVIL=yes' }, { CONCURRENCY: 0 }, { MAX_RETRIES: 0 }, { MAX_RETRIES: -1 }, { MAX_FETCHES: 1.5 },
@@ -232,6 +251,8 @@ describe('controls', () => {
     expect(await command.exited).toBe(0);
     for (const name of CONTROL_NAMES) expect(help).toContain(`${name}=`);
     expect(help).toContain('MAX_RETRIES: retries after the initial request, integer >= 1');
+    expect(help).toContain('XTRACKERS_<NAME>');
+    expect(help).toContain('HISTORICAL_PAGE_SIZE');
   });
 
   test('a real bootstrap uses the edited adjacent config, ENOENT keeps the built-in defaults, malformed JSON or unknown keys fail', async () => {
