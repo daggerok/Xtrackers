@@ -114,6 +114,7 @@
     "siAnn": 8.29,
     "dividendYield": 6.5,
     "dividendYieldText": "6.50%",
+    "dividendYieldBasis": "official-distribution-rate",
     "secYield": 7.27,
     "secYieldText": "7.27%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
@@ -142,7 +143,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/BHYB/Performance + https://query1.finance.yahoo.com/v8/finance/chart/BHYB"
   },
-  "generatedAt": "2026-10-03T06:13:05.405Z",
+  "generatedAt": "2026-10-04T03:28:56.181Z",
   "netTerValue": 0.2,
   "source": {
     "provider": "Xtrackers (DWS)",

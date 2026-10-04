@@ -114,6 +114,7 @@
     "siAnn": -3.21,
     "dividendYield": 10.11,
     "dividendYieldText": "10.11%",
+    "dividendYieldBasis": "official-distribution-rate",
     "secYield": 0.4,
     "secYieldText": "0.40%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
@@ -137,7 +138,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/UPGR/Performance + https://query1.finance.yahoo.com/v8/finance/chart/UPGR"
   },
-  "generatedAt": "2026-10-03T06:47:30.394Z",
+  "generatedAt": "2026-10-04T03:30:57.738Z",
   "netTerValue": 0.35,
   "source": {
     "provider": "Xtrackers (DWS)",

@@ -114,6 +114,7 @@
     "siAnn": 18.12,
     "dividendYield": 0.92,
     "dividendYieldText": "0.92%",
+    "dividendYieldBasis": "official-distribution-rate",
     "secYield": 1.32,
     "secYieldText": "1.32%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
@@ -142,7 +143,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/KOKU/Performance + https://query1.finance.yahoo.com/v8/finance/chart/KOKU"
   },
-  "generatedAt": "2026-10-03T06:14:21.970Z",
+  "generatedAt": "2026-10-04T03:30:12.742Z",
   "netTerValue": 0.09,
   "source": {
     "provider": "Xtrackers (DWS)",

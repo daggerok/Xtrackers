@@ -114,6 +114,7 @@
     "siAnn": 3.82,
     "dividendYield": 5.41,
     "dividendYieldText": "5.41%",
+    "dividendYieldBasis": "official-distribution-rate",
     "secYield": 6.27,
     "secYieldText": "6.27%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
@@ -141,7 +142,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/HYDW/Performance + https://query1.finance.yahoo.com/v8/finance/chart/HYDW"
   },
-  "generatedAt": "2026-10-03T06:14:06.979Z",
+  "generatedAt": "2026-10-04T03:29:57.100Z",
   "netTerValue": 0.2,
   "source": {
     "provider": "Xtrackers (DWS)",

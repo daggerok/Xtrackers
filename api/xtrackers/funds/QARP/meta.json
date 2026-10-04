@@ -114,6 +114,7 @@
     "siAnn": 14,
     "dividendYield": 1.05,
     "dividendYieldText": "1.05%",
+    "dividendYieldBasis": "official-distribution-rate",
     "secYield": 1.14,
     "secYieldText": "1.14%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
@@ -140,7 +141,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/QARP/Performance + https://query1.finance.yahoo.com/v8/finance/chart/QARP"
   },
-  "generatedAt": "2026-10-03T06:14:36.609Z",
+  "generatedAt": "2026-10-04T03:30:27.761Z",
   "netTerValue": 0.19,
   "source": {
     "provider": "Xtrackers (DWS)",

@@ -114,6 +114,7 @@
     "siAnn": 18.33,
     "dividendYield": 0.84,
     "dividendYieldText": "0.84%",
+    "dividendYieldBasis": "official-distribution-rate",
     "secYield": 0.91,
     "secYieldText": "0.91%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
@@ -139,7 +140,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/USNZ/Performance + https://query1.finance.yahoo.com/v8/finance/chart/USNZ"
   },
-  "generatedAt": "2026-10-03T06:15:14.464Z",
+  "generatedAt": "2026-10-04T03:31:05.244Z",
   "netTerValue": 0.1,
   "source": {
     "provider": "Xtrackers (DWS)",

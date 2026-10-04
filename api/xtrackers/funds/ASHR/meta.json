@@ -114,6 +114,7 @@
     "siAnn": 5.25,
     "dividendYield": 2.32,
     "dividendYieldText": "2.32%",
+    "dividendYieldBasis": "official-distribution-rate",
     "secYield": 1.38,
     "secYieldText": "1.38%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
@@ -141,7 +142,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/ASHR/Performance + https://query1.finance.yahoo.com/v8/finance/chart/ASHR"
   },
-  "generatedAt": "2026-10-03T06:12:57.664Z",
+  "generatedAt": "2026-10-04T03:28:46.556Z",
   "netTerValue": 0.65,
   "source": {
     "provider": "Xtrackers (DWS)",

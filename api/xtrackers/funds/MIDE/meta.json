@@ -114,6 +114,7 @@
     "siAnn": 8.26,
     "dividendYield": 1.42,
     "dividendYieldText": "1.42%",
+    "dividendYieldBasis": "official-distribution-rate",
     "secYield": 1.37,
     "secYieldText": "1.37%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
@@ -139,7 +140,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/MIDE/Performance + https://query1.finance.yahoo.com/v8/finance/chart/MIDE"
   },
-  "generatedAt": "2026-10-03T06:14:26.463Z",
+  "generatedAt": "2026-10-04T03:30:15.109Z",
   "netTerValue": 0.15,
   "source": {
     "provider": "Xtrackers (DWS)",

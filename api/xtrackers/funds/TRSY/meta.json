@@ -114,6 +114,7 @@
     "siAnn": 4.01,
     "dividendYield": 3.55,
     "dividendYieldText": "3.55%",
+    "dividendYieldBasis": "official-distribution-rate",
     "secYield": 3.97,
     "secYieldText": "3.97%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
@@ -137,7 +138,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/TRSY/Performance + https://query1.finance.yahoo.com/v8/finance/chart/TRSY"
   },
-  "generatedAt": "2026-10-03T06:15:03.577Z",
+  "generatedAt": "2026-10-04T03:30:52.601Z",
   "netTerValue": 0.06,
   "source": {
     "provider": "Xtrackers (DWS)",

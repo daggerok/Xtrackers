@@ -114,6 +114,7 @@
     "siAnn": 10.34,
     "dividendYield": 1.45,
     "dividendYieldText": "1.45%",
+    "dividendYieldBasis": "official-distribution-rate",
     "secYield": 1.48,
     "secYieldText": "1.48%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
@@ -144,7 +145,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/EMCR/Performance + https://query1.finance.yahoo.com/v8/finance/chart/EMCR"
   },
-  "generatedAt": "2026-10-03T06:13:51.968Z",
+  "generatedAt": "2026-10-04T03:29:43.605Z",
   "netTerValue": 0.15,
   "source": {
     "provider": "Xtrackers (DWS)",

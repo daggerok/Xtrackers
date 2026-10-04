@@ -114,6 +114,7 @@
     "siAnn": 20.23,
     "dividendYield": 1.36,
     "dividendYieldText": "1.36%",
+    "dividendYieldBasis": "official-distribution-rate",
     "secYield": 0.83,
     "secYieldText": "0.83%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
@@ -137,7 +138,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/CRTC/Performance + https://query1.finance.yahoo.com/v8/finance/chart/CRTC"
   },
-  "generatedAt": "2026-10-03T06:13:12.532Z",
+  "generatedAt": "2026-10-04T03:29:00.695Z",
   "netTerValue": 0.35,
   "source": {
     "provider": "Xtrackers (DWS)",

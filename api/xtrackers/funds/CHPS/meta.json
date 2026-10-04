@@ -114,6 +114,7 @@
     "siAnn": 50.22,
     "dividendYield": 0.43,
     "dividendYieldText": "0.43%",
+    "dividendYieldBasis": "official-distribution-rate",
     "secYield": 0.39,
     "secYieldText": "0.39%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
@@ -137,7 +138,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/CHPS/Performance + https://query1.finance.yahoo.com/v8/finance/chart/CHPS"
   },
-  "generatedAt": "2026-10-03T06:13:05.024Z",
+  "generatedAt": "2026-10-04T03:28:53.948Z",
   "netTerValue": 0.15,
   "source": {
     "provider": "Xtrackers (DWS)",

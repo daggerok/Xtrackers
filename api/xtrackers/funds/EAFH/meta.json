@@ -65,6 +65,7 @@
     "siAnn": null,
     "dividendYield": null,
     "dividendYieldText": "—",
+    "dividendYieldBasis": null,
     "secYield": 1.79,
     "secYieldText": "1.79%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
@@ -90,7 +91,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/EAFH/Performance + https://query1.finance.yahoo.com/v8/finance/chart/EAFH"
   },
-  "generatedAt": "2026-10-03T06:13:48.532Z",
+  "generatedAt": "2026-10-04T03:29:37.547Z",
   "netTerValue": 0.2,
   "source": {
     "provider": "Xtrackers (DWS)",

@@ -114,6 +114,7 @@
     "siAnn": 14.21,
     "dividendYield": 2.39,
     "dividendYieldText": "2.39%",
+    "dividendYieldBasis": "official-distribution-rate",
     "secYield": 0.53,
     "secYieldText": "0.53%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
@@ -140,7 +141,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/DBJP/Performance + https://query1.finance.yahoo.com/v8/finance/chart/DBJP"
   },
-  "generatedAt": "2026-10-03T06:13:35.485Z",
+  "generatedAt": "2026-10-04T03:29:23.295Z",
   "netTerValue": 0.45,
   "source": {
     "provider": "Xtrackers (DWS)",

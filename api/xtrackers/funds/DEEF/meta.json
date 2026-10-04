@@ -114,6 +114,7 @@
     "siAnn": 7.84,
     "dividendYield": 0.74,
     "dividendYieldText": "0.74%",
+    "dividendYieldBasis": "official-distribution-rate",
     "secYield": 2.47,
     "secYieldText": "2.47%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
@@ -143,7 +144,7 @@
     "asOfDate": "2026-10-02",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/DEEF/Performance + https://query1.finance.yahoo.com/v8/finance/chart/DEEF"
   },
-  "generatedAt": "2026-10-03T06:13:35.107Z",
+  "generatedAt": "2026-10-04T03:29:27.153Z",
   "netTerValue": 0.24,
   "source": {
     "provider": "Xtrackers (DWS)",
