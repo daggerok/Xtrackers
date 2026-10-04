@@ -60,7 +60,7 @@ const roundForTest = (value: number) => Math.round(value * 1000000) / 1000000;
 // ---------------------------------------------------------------------------
 function xmlEscape(value: string): string { return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
 // A literal stored-entry ZIP builder, intentionally not a runtime dependency.
-function literalWorkbook(rows: string[][]): Uint8Array {
+function literalWorkbook(rows: string[][]): Uint8Array<ArrayBuffer> {
   const xml = '<worksheet><sheetData>' + rows.map((row, i) => `<row r="${i + 1}">` + row.map((cell, j) => `<c r="${String.fromCharCode(65 + j)}${i + 1}" t="inlineStr"><is><t>${xmlEscape(cell)}</t></is></c>`).join('') + '</row>').join('') + '</sheetData></worksheet>';
   const content = Buffer.from(xml), name = Buffer.from('xl/worksheets/sheet1.xml');
   const local = Buffer.alloc(30); local.writeUInt32LE(0x04034b50, 0); local.writeUInt16LE(20, 4); local.writeUInt32LE(content.length, 18); local.writeUInt32LE(content.length, 22); local.writeUInt16LE(name.length, 26);
@@ -73,7 +73,7 @@ const SITEMAP = '<urlset>' + SITEMAP_TICKERS.map(t => `<url><loc>https://etf.dws
 const EMPTY_CATALOG = literalWorkbook([['Product List'], ['Fund name', 'Ticker', 'Asset class', 'Gross expenses (%)']]);
 const META_ROWS = (ticker: string) => [['Ticker:', ticker], ['As of:', '09/29/2026']];
 const HOLDINGS_HEADER = ['Symbol', 'ISIN', 'CUSIP', 'SEDOL', 'Name', 'Weight %', '$ Market Value', '$ Notional Value', 'Quantity', 'Country', 'Sector', 'Asset Class'];
-function syntheticWorkbook(ticker: string, kind: string): Uint8Array {
+function syntheticWorkbook(ticker: string, kind: string): Uint8Array<ArrayBuffer> {
   const meta = META_ROWS(ticker);
   if (kind === 'Securities') return literalWorkbook([...meta, HOLDINGS_HEADER,
     ['001280', 'CNE100007CS8', '000000001', '', `${ticker} test position`, '99', '100', '', '10', 'CN', '', ticker === 'HYLB' ? 'Fixed Income' : 'Equity'],
@@ -316,7 +316,7 @@ describe('controls', () => {
   test('USE_SYSTEM_CA: auto by default, case-insensitive, restart only on certificate errors', async () => {
     expect(configFile().USE_SYSTEM_CA).toBe('auto');
     expect(readConfig({}).useSystemCa).toBe('auto');
-    for (const mode of ['auto', 'true', 'false', 'AUTO', 'True', 'FALSE']) expect(readConfig({ USE_SYSTEM_CA: mode }).useSystemCa).toBe(mode.toLowerCase());
+    for (const mode of ['auto', 'true', 'false', 'AUTO', 'True', 'FALSE']) expect(readConfig({ USE_SYSTEM_CA: mode }).useSystemCa as string).toBe(mode.toLowerCase());
     expect(isCertError({ code: 'UNABLE_TO_GET_ISSUER_CERT_LOCALLY' })).toBe(true);
     expect(isCertError(Object.assign(new Error('fetch failed'), { cause: { code: 'SELF_SIGNED_CERT_IN_CHAIN' } }))).toBe(true);
     expect([isCertError({ code: 'ECONNRESET' }), isCertError(new Error('HTTP 403 Forbidden')), isCertError(null)]).toEqual([false, false, false]);
@@ -789,7 +789,7 @@ describe('pipeline', () => {
     for (const fund of funds) {
       const ticker = String(fund.ticker);
       expect(ticker).toMatch(/^[A-Z][A-Z0-9.-]{0,9}$/);
-      expect([null, `./funds/${ticker}/meta.json`]).toContain(fund.dataFile);
+      expect<unknown[]>([null, `./funds/${ticker}/meta.json`]).toContain(fund.dataFile);
       if (!fund.holdings && !fund.history) continue;
       const meta = await json(`funds/${ticker}/meta.json`);
       expect([meta.ticker, record(meta.source).trustCik]).toEqual([ticker, '0001503123']);
@@ -803,7 +803,7 @@ describe('pipeline', () => {
           expect(rows.length).toBeLessThanOrEqual(Number(manifest.pageSize));
           rowCount += rows.length;
         }
-        expect([rowCount, rowCount]).toEqual([manifest.totalRows, fund[kind]]);
+        expect<unknown[]>([rowCount, rowCount]).toEqual([manifest.totalRows, fund[kind]]);
         const actual = (await readdir(join(root, `funds/${ticker}/${kind}`))).filter(name => /^\d+\.json$/.test(name)).sort();
         expect(actual).toEqual(pages.map(path => path.split('/')[1]).sort());
       }
