@@ -70,6 +70,13 @@ Each fund carries a derived `metrics` object that powers the catalog columns sha
 - `tr3y` / `tr5y` / `tr10y` - cumulative 3Y/5Y/10Y figures `(1 + CAGR)^n - 1` -> *TR 3Y/5Y/10Y*
 - `siAnn` - since-inception annualized when date/age/coverage support it (not young cumulative SI) -> *SI Ann.*
 - `dividendYield` - official indicated distribution rate, or latest positive distribution × frequency ÷ NAV when the rate is missing; when the official rate is 0 but distributions were paid in the last 12 months, the trailing 12-month distributions ÷ NAV; a published 0.00% with no payments in 12 months stays 0 and `yields.dividendYieldKind` says so
+- `dividendYieldBasis` - code of the definition behind `dividendYield`, `null` exactly when the yield is `null`:
+
+  | Code | Meaning for Xtrackers |
+  | --- | --- |
+  | `official-distribution-rate` | the official DWS distribution rate (also a published 0.00% with no payments in 12 months) |
+  | `computed-trailing-12m` | the official rate is 0 but distributions were paid: trailing 12-month distributions ÷ NAV |
+  | `indicated` | no official rate: latest positive distribution × payments per year ÷ NAV |
 - `terValue` / `terGrossValue` - net expense ratio (after waivers; the gross one when it is the only number) and gross expense ratio (`Total operating expenses`), with `ter` / `terGross` text; `meta.json` keeps `netTerValue`
 - `secYield` - 30-day SEC yield when published; `—` otherwise
 - `returnsBasis` - mandatory non-empty label of how the returns were computed: official DWS NAV total returns, derived from the official DWS daily NAV with distributions reinvested at ex-date NAV, or derived from Yahoo adjusted market-price closes (an estimate, not official NAV returns)

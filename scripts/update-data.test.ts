@@ -17,7 +17,7 @@ import {
   parseCatalogRows, parseSitemap, parseFundDetails, parseHoldingsRows, parseDistributionsRows,
   parseNavRows, parseChart, returnHeaderSlot, parseReturnRow, emptyReturns, navTotalReturnDays,
   deriveReturns, historySheet, pageManifest, exportUrl, detailsUrl, yahooSourceUrl, record, array,
-  isCertError, installSystemCa, deriveCatalogMetrics, expenseFields, previousExpenses, latestSamePair, trailingYearYield,
+  isCertError, installSystemCa, deriveCatalogMetrics, dividendYieldBasisCode, expenseFields, previousExpenses, latestSamePair, trailingYearYield,
   type Dividend, type ChartDay, type Fetcher, type FundDetails, type JsonRecord,
 } from './update-data';
 
@@ -490,6 +490,17 @@ describe('metrics', () => {
     expect(deriveCatalogMetrics({ ...none, yr1: 4.2 }, null, null, 'x').performanceAsOf).toBe('2026-09-30');
   });
 
+  test('dividendYieldBasis maps each yield source to its code and is null exactly when the yield is null', () => {
+    expect([dividendYieldBasisCode(2.1, 2.1, 1.9), dividendYieldBasisCode(1.9, 0, 1.9), dividendYieldBasisCode(0, 0, null), dividendYieldBasisCode(3.2, null, 1.9), dividendYieldBasisCode(null, null, null)])
+      .toEqual(['official-distribution-rate', 'computed-trailing-12m', 'official-distribution-rate', 'indicated', null]);
+    const none = { ...emptyReturns(), asOfDate: '2026-09-30' };
+    expect(record(deriveCatalogMetrics(none, null, null, 'x', 'indicated')).dividendYieldBasis).toBeNull();
+    expect(record(deriveCatalogMetrics(none, 2, null, 'x', 'indicated')).dividendYieldBasis).toBe('indicated');
+    const stub = indexRowForCatalog({ ticker: 'NEWF', name: 'New', category: null, fundPage: 'x', inceptionDate: null, terValue: null, netTerValue: null, aumValue: null, officialReturns: emptyReturns() });
+    expect(Object.keys(record(stub.metrics))).toEqual(Object.keys(deriveCatalogMetrics(none, 2, null, 'x', 'indicated')));
+    expect(record(stub.metrics)).toHaveProperty('dividendYieldBasis', null);
+  });
+
   test('a young or range-limited fund cannot claim long history or since-inception; stale anchors are not valid', () => {
     const days: ChartDay[] = ['2025-12-31', '2026-01-02', '2026-08-31'].map((date, i) => ({ date, close: 10 + i, adjClose: 10 + i, volume: 0 }));
     const returns = deriveReturns(days, '2026-08-31', '2015-01-01');
@@ -725,11 +736,18 @@ describe('pipeline', () => {
     await quietRun(root, { TICKERS: 'ASHR' }, zeroRate);
     expect(Number(record((await rowOf(root, 'ASHR')).metrics).dividendYield)).toBeGreaterThan(0);
     expect(String(record((await metaOf(root, 'ASHR')).yields).dividendYieldKind)).toContain('trailing 12-month');
+    expect(record((await rowOf(root, 'ASHR')).metrics).dividendYieldBasis).toBe('computed-trailing-12m');
     const noPayments = override(zeroRate, url => url.includes('/Distributions'), url => new Response(literalWorkbook([...META_ROWS(/etf\/([A-Z]+)\//.exec(url)![1]), ['Ex-Date', 'Record date', 'Pay date', 'US$ / Share']])));
     const second = await seeded();
     await quietRun(second, { TICKERS: 'DBEF' }, noPayments);
     expect(record((await rowOf(second, 'DBEF')).metrics).dividendYield).toBe(0);
     expect(String(record((await metaOf(second, 'DBEF')).yields).dividendYieldKind)).toContain('no distributions in the last 12 months');
+    expect(record((await rowOf(second, 'DBEF')).metrics).dividendYieldBasis).toBe('official-distribution-rate');
+    const noRate = override(fakeFetch(), url => url.includes('/pdpMetaTagsTealium'), url => Response.json(pdp(/\/etfus\/([A-Z]+)\//.exec(url)![1], { rate: 'n/a' })));
+    const third = await seeded();
+    await quietRun(third, { TICKERS: 'ASHR' }, noRate);
+    const thirdMetrics = record((await rowOf(third, 'ASHR')).metrics);
+    expect([thirdMetrics.dividendYield, thirdMetrics.dividendYieldBasis]).toEqual([0.61, 'indicated']);
   });
 
   test('a new catalog fund is reported, the step summary lists controls, outcomes and failures and redacts the SEC contact', async () => {
