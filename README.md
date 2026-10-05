@@ -6,11 +6,13 @@ One of the app's features lets you select Xtrackers ETFs in the Watchlist and ag
 
 ```bash
 bunx degit daggerok/Xtrackers#main ./12345 && cd $_
-bunx serve . -p 1234
-open http://0:1234
+bun install
+bun run serve
 ```
 
-The application is published at <https://daggerok.github.io/Xtrackers/>. The Pages workflow deploys only from `main`.
+`bun run serve` starts the Parcel dev server (it copies `api/` to `dist/api` first) and prints the local address. `bun run build` writes the site to `dist/`, `bun run build-github-pages` does the same with the `/Xtrackers/` public URL used by the Pages workflow.
+
+The application is published at <https://daggerok.github.io/Xtrackers/>. The site is deployed by `.github/workflows/github-pages.yml` (GitHub Actions) from `main`.
 
 ### Column types and filters
 
@@ -135,7 +137,7 @@ Workflow `advanced` input example: `{"MAX_RETRIES": 3, "TOTAL_RETURN_5Y": "5:"}`
 
 ## TypeScript and verification
 
-The browser app is intentionally build-free: `index.html` carries the markup, styles and bootstrap, and `app.tsx` is TypeScript compiled in the browser with Babel standalone - no build step, no bundler, no `tsconfig.json` needed. Bun runs TypeScript out of the box.
+The browser app lives in `src/`: `src/index.html` carries the markup, `src/main.tsx` is the TypeScript app, `src/index.css` holds Tailwind v4 and the component styles. Parcel bundles them into `dist/` (`bun run build`) - no `tsconfig.json` needed, Bun runs the updater TypeScript out of the box.
 
 Verification before every publish:
 
