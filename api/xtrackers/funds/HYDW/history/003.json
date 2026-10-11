@@ -2,7 +2,7 @@
   "ticker": "HYDW",
   "page": 3,
   "pageSize": 1000,
-  "totalRows": 2194,
+  "totalRows": 2199,
   "headers": [
     "Date",
     "NAV",
@@ -1173,6 +1173,36 @@
       "NAV": "45.51",
       "Market Price": "45.509998",
       "Premium/Discount": "0"
+    },
+    {
+      "Date": "2026-10-05",
+      "NAV": "45.5",
+      "Market Price": "45.560001",
+      "Premium/Discount": "0.1319"
+    },
+    {
+      "Date": "2026-10-06",
+      "NAV": "45.64",
+      "Market Price": "45.708",
+      "Premium/Discount": "0.149"
+    },
+    {
+      "Date": "2026-10-07",
+      "NAV": "45.62",
+      "Market Price": "45.653999",
+      "Premium/Discount": "0.0745"
+    },
+    {
+      "Date": "2026-10-08",
+      "NAV": "45.64",
+      "Market Price": "45.599998",
+      "Premium/Discount": "-0.0876"
+    },
+    {
+      "Date": "2026-10-09",
+      "NAV": "45.7",
+      "Market Price": "45.782001",
+      "Premium/Discount": "0.1794"
     }
   ]
 }

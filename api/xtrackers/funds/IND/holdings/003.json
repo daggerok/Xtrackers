@@ -2,7 +2,7 @@
   "ticker": "IND",
   "page": 3,
   "pageSize": 250,
-  "totalRows": 504,
+  "totalRows": 501,
   "headers": [
     "Name",
     "Ticker",
@@ -21,33 +21,6 @@
       "Market Value": "0",
       "Shares Held": "1",
       "Asset Category": "Future"
-    },
-    {
-      "Name": "Blue Jet Healthcare Ltd",
-      "Ticker": "BLUEJET",
-      "Identifier": "Y091Q0111",
-      "Weight": "0",
-      "Market Value": "0",
-      "Shares Held": "0",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Chalet Hotels Ltd",
-      "Ticker": "CHALET",
-      "Identifier": "Y1R93H110",
-      "Weight": "0",
-      "Market Value": "0",
-      "Shares Held": "0",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Travel Food Services Ltd",
-      "Ticker": "TRAVELF",
-      "Identifier": "Y8T6L2112",
-      "Weight": "0",
-      "Market Value": "0",
-      "Shares Held": "0",
-      "Asset Category": "Equity"
     }
   ]
 }

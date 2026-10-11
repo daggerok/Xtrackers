@@ -2,7 +2,7 @@
   "ticker": "ASHR",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3246,
+  "totalRows": 3251,
   "headers": [
     "Date",
     "NAV",
@@ -1485,6 +1485,36 @@
       "NAV": "32.68",
       "Market Price": "32.509998",
       "Premium/Discount": "-0.5202"
+    },
+    {
+      "Date": "2026-10-05",
+      "NAV": "32.69",
+      "Market Price": "32.650002",
+      "Premium/Discount": "-0.1224"
+    },
+    {
+      "Date": "2026-10-06",
+      "NAV": "32.7",
+      "Market Price": "32.650002",
+      "Premium/Discount": "-0.1529"
+    },
+    {
+      "Date": "2026-10-07",
+      "NAV": "32.7",
+      "Market Price": "32.450001",
+      "Premium/Discount": "-0.7645"
+    },
+    {
+      "Date": "2026-10-08",
+      "NAV": "32.32",
+      "Market Price": "32.139999",
+      "Premium/Discount": "-0.5569"
+    },
+    {
+      "Date": "2026-10-09",
+      "NAV": "32.44",
+      "Market Price": "32.380001",
+      "Premium/Discount": "-0.185"
     }
   ]
 }

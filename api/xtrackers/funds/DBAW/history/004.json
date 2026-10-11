@@ -2,7 +2,7 @@
   "ticker": "DBAW",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3194,
+  "totalRows": 3199,
   "headers": [
     "Date",
     "NAV",
@@ -1173,6 +1173,36 @@
       "NAV": "47.72",
       "Market Price": "48.169998",
       "Premium/Discount": "0.943"
+    },
+    {
+      "Date": "2026-10-05",
+      "NAV": "48.1",
+      "Market Price": "48.48",
+      "Premium/Discount": "0.79"
+    },
+    {
+      "Date": "2026-10-06",
+      "NAV": "48.3",
+      "Market Price": "48.41",
+      "Premium/Discount": "0.2277"
+    },
+    {
+      "Date": "2026-10-07",
+      "NAV": "47.84",
+      "Market Price": "47.919998",
+      "Premium/Discount": "0.1672"
+    },
+    {
+      "Date": "2026-10-08",
+      "NAV": "47.37",
+      "Market Price": "47.5",
+      "Premium/Discount": "0.2744"
+    },
+    {
+      "Date": "2026-10-09",
+      "NAV": "47.71",
+      "Market Price": "47.91",
+      "Premium/Discount": "0.4192"
     }
   ]
 }

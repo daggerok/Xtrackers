@@ -2,7 +2,7 @@
   "ticker": "TRSY",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 497,
+  "totalRows": 502,
   "headers": [
     "Date",
     "NAV",
@@ -2990,6 +2990,36 @@
       "Date": "2026-10-02",
       "NAV": "30.12",
       "Market Price": "30.115",
+      "Premium/Discount": "-0.0166"
+    },
+    {
+      "Date": "2026-10-05",
+      "NAV": "30.12",
+      "Market Price": "30.125",
+      "Premium/Discount": "0.0166"
+    },
+    {
+      "Date": "2026-10-06",
+      "NAV": "30.13",
+      "Market Price": "30.139999",
+      "Premium/Discount": "0.0332"
+    },
+    {
+      "Date": "2026-10-07",
+      "NAV": "30.13",
+      "Market Price": "30.135",
+      "Premium/Discount": "0.0166"
+    },
+    {
+      "Date": "2026-10-08",
+      "NAV": "30.14",
+      "Market Price": "30.139999",
+      "Premium/Discount": "0"
+    },
+    {
+      "Date": "2026-10-09",
+      "NAV": "30.15",
+      "Market Price": "30.145",
       "Premium/Discount": "-0.0166"
     }
   ]

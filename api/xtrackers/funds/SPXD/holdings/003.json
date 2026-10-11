@@ -2,7 +2,7 @@
   "ticker": "SPXD",
   "page": 3,
   "pageSize": 250,
-  "totalRows": 508,
+  "totalRows": 506,
   "headers": [
     "Name",
     "Ticker",
@@ -14,29 +14,11 @@
   ],
   "rows": [
     {
-      "Name": "Applovin Corp",
-      "Ticker": "APP",
-      "Identifier": "03831W108",
-      "Weight": "0.00748854",
-      "Market Value": "536.44",
-      "Shares Held": "2",
-      "Asset Category": "Equity"
-    },
-    {
       "Name": "Autodesk Inc",
       "Ticker": "ADSK.O",
       "Identifier": "052769106",
-      "Weight": "0.00591891",
-      "Market Value": "424",
-      "Shares Held": "2",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Old Dominion Freight Line Inc",
-      "Ticker": "ODFL",
-      "Identifier": "679580100",
-      "Weight": "0.00503889",
-      "Market Value": "360.96",
+      "Weight": "0.00645023",
+      "Market Value": "470.7",
       "Shares Held": "2",
       "Asset Category": "Equity"
     },
@@ -44,26 +26,26 @@
       "Name": "PTC Inc",
       "Ticker": "PMTC",
       "Identifier": "69370C100",
-      "Weight": "0.00402123",
-      "Market Value": "288.06",
+      "Weight": "0.00532928",
+      "Market Value": "388.9",
       "Shares Held": "2",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Franklin Resources Inc",
-      "Ticker": "BEN",
-      "Identifier": "354613101",
-      "Weight": "0.00320613",
-      "Market Value": "229.67",
-      "Shares Held": "7",
+      "Name": "Old Dominion Freight Line Inc",
+      "Ticker": "ODFL",
+      "Identifier": "679580100",
+      "Weight": "0.00498724",
+      "Market Value": "363.94",
+      "Shares Held": "2",
       "Asset Category": "Equity"
     },
     {
       "Name": "Incyte",
       "Ticker": "INCY",
       "Identifier": "45337C102",
-      "Weight": "0.00160955",
-      "Market Value": "115.3",
+      "Weight": "0.00154561",
+      "Market Value": "112.79",
       "Shares Held": "1",
       "Asset Category": "Equity"
     },
@@ -71,7 +53,7 @@
       "Name": "TPG Inc. - Contingent Value Right",
       "Ticker": "-",
       "Identifier": "436CVR021",
-      "Weight": "0.00000349",
+      "Weight": "0.00000343",
       "Market Value": "0.25",
       "Shares Held": "25",
       "Asset Category": "Equity"

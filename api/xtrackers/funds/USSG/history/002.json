@@ -2,7 +2,7 @@
   "ticker": "USSG",
   "page": 2,
   "pageSize": 1000,
-  "totalRows": 1906,
+  "totalRows": 1911,
   "headers": [
     "Date",
     "NAV",
@@ -5445,6 +5445,36 @@
       "NAV": "72.01",
       "Market Price": "72.014",
       "Premium/Discount": "0.0056"
+    },
+    {
+      "Date": "2026-10-05",
+      "NAV": "72.68",
+      "Market Price": "72.779999",
+      "Premium/Discount": "0.1376"
+    },
+    {
+      "Date": "2026-10-06",
+      "NAV": "73.06",
+      "Market Price": "73.049004",
+      "Premium/Discount": "-0.0151"
+    },
+    {
+      "Date": "2026-10-07",
+      "NAV": "72.78",
+      "Market Price": "72.778999",
+      "Premium/Discount": "-0.0014"
+    },
+    {
+      "Date": "2026-10-08",
+      "NAV": "72.38",
+      "Market Price": "72.352997",
+      "Premium/Discount": "-0.0373"
+    },
+    {
+      "Date": "2026-10-09",
+      "NAV": "72.81",
+      "Market Price": "72.796997",
+      "Premium/Discount": "-0.0179"
     }
   ]
 }

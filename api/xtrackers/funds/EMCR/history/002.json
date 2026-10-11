@@ -2,7 +2,7 @@
   "ticker": "EMCR",
   "page": 2,
   "pageSize": 1000,
-  "totalRows": 1967,
+  "totalRows": 1972,
   "headers": [
     "Date",
     "NAV",
@@ -5811,6 +5811,36 @@
       "NAV": "43.42",
       "Market Price": "43.601002",
       "Premium/Discount": "0.4169"
+    },
+    {
+      "Date": "2026-10-05",
+      "NAV": "44.15",
+      "Market Price": "44.263",
+      "Premium/Discount": "0.2559"
+    },
+    {
+      "Date": "2026-10-06",
+      "NAV": "44.3",
+      "Market Price": "44.09",
+      "Premium/Discount": "-0.474"
+    },
+    {
+      "Date": "2026-10-07",
+      "NAV": "43.88",
+      "Market Price": "43.577999",
+      "Premium/Discount": "-0.6882"
+    },
+    {
+      "Date": "2026-10-08",
+      "NAV": "43.19",
+      "Market Price": "42.721001",
+      "Premium/Discount": "-1.0859"
+    },
+    {
+      "Date": "2026-10-09",
+      "NAV": "43.53",
+      "Market Price": "43.200001",
+      "Premium/Discount": "-0.7581"
     }
   ]
 }

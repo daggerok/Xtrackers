@@ -2,7 +2,7 @@
   "ticker": "SNPG",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 978,
+  "totalRows": 983,
   "headers": [
     "Date",
     "NAV",
@@ -5877,6 +5877,36 @@
       "NAV": "60.28",
       "Market Price": "60.313",
       "Premium/Discount": "0.0547"
+    },
+    {
+      "Date": "2026-10-05",
+      "NAV": "60.69",
+      "Market Price": "60.678001",
+      "Premium/Discount": "-0.0198"
+    },
+    {
+      "Date": "2026-10-06",
+      "NAV": "60.93",
+      "Market Price": "60.93",
+      "Premium/Discount": "0"
+    },
+    {
+      "Date": "2026-10-07",
+      "NAV": "60.94",
+      "Market Price": "60.973",
+      "Premium/Discount": "0.0542"
+    },
+    {
+      "Date": "2026-10-08",
+      "NAV": "60.17",
+      "Market Price": "60.139999",
+      "Premium/Discount": "-0.0499"
+    },
+    {
+      "Date": "2026-10-09",
+      "NAV": "60.76",
+      "Market Price": "60.779999",
+      "Premium/Discount": "0.0329"
     }
   ]
 }

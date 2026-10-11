@@ -2,7 +2,7 @@
   "ticker": "NRES",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 654,
+  "totalRows": 659,
   "headers": [
     "Date",
     "NAV",
@@ -3933,6 +3933,36 @@
       "NAV": "33.63",
       "Market Price": "33.645",
       "Premium/Discount": "0.0446"
+    },
+    {
+      "Date": "2026-10-05",
+      "NAV": "33.98",
+      "Market Price": "33.911999",
+      "Premium/Discount": "-0.2001"
+    },
+    {
+      "Date": "2026-10-06",
+      "NAV": "34.03",
+      "Market Price": "33.985001",
+      "Premium/Discount": "-0.1322"
+    },
+    {
+      "Date": "2026-10-07",
+      "NAV": "33.62",
+      "Market Price": "33.583",
+      "Premium/Discount": "-0.1101"
+    },
+    {
+      "Date": "2026-10-08",
+      "NAV": "34.1",
+      "Market Price": "34.075001",
+      "Premium/Discount": "-0.0733"
+    },
+    {
+      "Date": "2026-10-09",
+      "NAV": "34.28",
+      "Market Price": "34.185001",
+      "Premium/Discount": "-0.2771"
     }
   ]
 }
