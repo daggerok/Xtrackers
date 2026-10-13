@@ -466,7 +466,7 @@ describe('parsing', () => {
 
   test('Yahoo chart: adjusted closes rounded to 2 decimals, daily prices retained, a null close dropped', () => {
     const result = parseChart({ chart: { result: [{ meta: {}, timestamp: [1767225600, 1767312000], indicators: { quote: [{ close: [12.12345678, null], volume: [0, 12] }], adjclose: [{ adjclose: [11.98765432, 12] }] }, events: { dividends: { first: { date: 1767225600, amount: 0.5 } } } }] } });
-    expect(result.days).toEqual([{ date: '2026-01-01', close: 12.123457, adjClose: 11.99, volume: 0 }]);
+    expect(result.days).toEqual([{ date: '2026-01-01', close: 12.123457, adjClose: 11.99, volume: 0, adjCloseRaw: 11.98765432 }]);
     expect(result.dividends[0].amount).toBe(0.5);
     expect(yahooSourceUrl('ASHR')).not.toContain('?');
     expect(() => parseChart({ chart: { result: null, error: {} } })).toThrow('empty');
@@ -709,6 +709,25 @@ describe('pipeline', () => {
     const skippedPage = await Bun.file(join(skipRoot, 'funds', 'HYLB', 'history', '001.json')).json();
     expect(skippedPage.headers).toEqual(['Date', 'NAV', 'Market Price', 'Premium/Discount']);
     expect(skippedPage.rows.every((row: JsonRecord) => row['Market Price'] === '')).toBe(true);
+  });
+
+  test('two Yahoo-only runs on the same source data write zero changes even when adjusted closes jitter across a cent boundary', async () => {
+    // Yahoo float32 noise seen live: AAM SPDV 2024-11-12 came back as 31.544998 and 31.545001 a minute apart
+    const jittered = (adjclose: number[]): Fetcher => override(fakeFetch(['/HYLB/Performance']), url => url.includes('finance.yahoo.com'), () => Response.json({ chart: { result: [{ meta: { exchangeName: 'NYSE' }, timestamp: [1790553600, 1790640000], indicators: { quote: [{ close: [35, 35.3], volume: [100, 110] }], adjclose: [{ adjclose }] } }] } }));
+    const root = await seeded();
+    expect((await quietRun(root, { TICKERS: 'HYLB' }, jittered([34.124999, 35.235001]))).failures).toBe(0);
+    const page = await Bun.file(join(root, 'funds', 'HYLB', 'history', '001.json')).json();
+    expect(page.rows.map((row: JsonRecord) => row['Adj Close'])).toEqual(['34.12', '35.24']);
+    backdate(root);
+    const before = await hashes(root);
+    const second = await quietRun(root, { TICKERS: 'HYLB' }, jittered([34.125002, 35.234998]));
+    expect([second.failures, second.updated, second.outcomes.every(r => r.status === 'unchanged')]).toEqual([0, 0, true]);
+    expect(await hashes(root)).toEqual(before);
+    expect(touched(root)).toEqual([]);
+    // a real change beyond the noise is still written
+    await quietRun(root, { TICKERS: 'HYLB' }, jittered([34.1, 35.25]));
+    const changed = await Bun.file(join(root, 'funds', 'HYLB', 'history', '001.json')).json();
+    expect(changed.rows.map((row: JsonRecord) => row['Adj Close'])).toEqual(['34.1', '35.25']);
   });
 
   test('rows without meta.json have dataFile null and a full metrics object, rows with it use the ./ prefix', async () => {
