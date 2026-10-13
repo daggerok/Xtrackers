@@ -68,7 +68,8 @@ export type NavPoint = {
   shares: number | null;
   dividend: number | null;
 };
-export type ChartDay = { date: string; close: number; adjClose: number; volume: number };
+// adjCloseRaw: Yahoo's unrounded value, only used to tell float noise from a real change (never persisted).
+export type ChartDay = { date: string; close: number; adjClose: number; volume: number; adjCloseRaw?: number };
 export type ParsedChart = {
   days: ChartDay[];
   dividends: Dividend[];
@@ -387,8 +388,9 @@ export function parseChart(payload: unknown): ParsedChart {
   const days = array(result.timestamp).flatMap((epoch, i) => {
     const close = numberOrNull(array(quote.close)[i]);
     if (typeof epoch !== 'number' || !Number.isFinite(epoch) || close === null || close <= 0) return [];
-    return [{ date: epochToIsoDate(epoch), close: round(close), adjClose: round(numberOrNull(array(adj.adjclose)[i]) ?? close, 2),
-      volume: numberOrNull(array(quote.volume)[i]) ?? 0 }];
+    const adjClose = numberOrNull(array(adj.adjclose)[i]) ?? close;
+    return [{ date: epochToIsoDate(epoch), close: round(close), adjClose: round(adjClose, 2),
+      volume: numberOrNull(array(quote.volume)[i]) ?? 0, adjCloseRaw: adjClose }];
   }).sort((a, b) => a.date.localeCompare(b.date));
   const dividends = Object.values(record(record(result.events).dividends)).map(record).flatMap(event => {
     const epoch = numberOrNull(event.date), amount = numberOrNull(event.amount);
@@ -457,6 +459,17 @@ export function deriveReturns(days: ChartDay[], asOfDate: string, inception: str
   // A range-limited chart must never be labelled since inception.
   if (inception && Math.abs(Date.parse(first.date) - Date.parse(inception)) <= 7 * 86400000 && span >= 1) result.sinceInception = change(first, span);
   return result;
+}
+// Yahoo's adjusted close is float32 and its last digits move with the request's period2, so a value
+// sitting on a cent boundary (31.544998 vs 31.545001) flips between runs. Within that noise the
+// published cent is kept: a rerun with the same source data changes nothing.
+export const ADJ_CLOSE_NOISE = 1e-4;
+export function keepPublishedAdjClose(published: ChartDay[], fresh: ChartDay[]): ChartDay[] {
+  const prior = new Map(published.map(day => [day.date, day.adjClose]));
+  return fresh.map(day => {
+    const kept = prior.get(day.date), raw = day.adjCloseRaw ?? day.adjClose;
+    return kept !== undefined && kept !== day.adjClose && Math.abs(raw - kept) <= 0.005 + ADJ_CLOSE_NOISE ? { ...day, adjClose: kept } : day;
+  });
 }
 export function historySheet(points: NavPoint[], days: ChartDay[]): Sheet {
   // Keep official NAV and adjusted market-price series distinct, as in the primary sibling.
@@ -1503,7 +1516,9 @@ async function updateFund(fund: CatalogFund, previousRow: JsonRecord, root: stri
   currentNav?.forEach(point => nav.set(point.date, point));
   const points = [...nav.values()].sort((a, b) => a.date.localeCompare(b.date));
   const prices = new Map(pricesFromPublished(previousHistory).map(day => [day.date, day]));
-  chart?.days.forEach(day => prices.set(day.date, day));
+  // Only a published Adj Close column is a cent to keep; the NAV schema has none.
+  const chartDays = chart ? keepPublishedAdjClose(previousHistory.headers.includes('Adj Close') ? [...prices.values()] : [], chart.days) : null;
+  chartDays?.forEach(day => prices.set(day.date, day));
   const days = [...prices.values()].sort((a, b) => a.date.localeCompare(b.date));
   const events = mergeDividends(previousEvents, currentEvents ?? chart?.dividends ?? []);
   if (!currentNav && points.length) retainedSources.push('NAV history');
@@ -1517,7 +1532,7 @@ async function updateFund(fund: CatalogFund, previousRow: JsonRecord, root: stri
   // Prefer official NAV total-return reconstruction, but never silently ignore a missing distribution series.
   const navReinvestmentKnown = currentEvents !== null || previousEvents.length > 0;
   const returnDays = points.length && navReinvestmentKnown ? navTotalReturnDays(points, events)
-    : chart?.days ?? (previousHistory.headers.includes('Adj Close') ? days : []);
+    : chartDays ?? (previousHistory.headers.includes('Adj Close') ? days : []);
   const coverage = points.length && navReinvestmentKnown ? reinvestmentCoverageStart(points, events) : null;
   const coveredDays = coverage ? returnDays.filter(day => day.date >= coverage) : returnDays;
   const latestDate = returnDays.at(-1)?.date;
