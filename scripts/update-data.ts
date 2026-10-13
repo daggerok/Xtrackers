@@ -480,11 +480,12 @@ export function pageManifest(kind: 'holdings' | 'history', sheet: Sheet, pageSiz
 
 
 
-// Shared console contract copied from the pinned JPMorgan reference.
+// Console presentation; no changes to provider requests or persisted data.
+/** Presentation only: no requests, writes, filtering, or changes to updater state. */
+
 const outputClean = (value: unknown): string => String(value ?? 'null').replace(/[\r\n\t]+/g, ' ');
 /** Presentation only: per-fund retry and fallback notices are printed when VERBOSE is enabled. */
-let currentVerbose = false;
-const outputVerbose = (): boolean => currentVerbose;
+const outputVerbose = (): boolean => /^(1|true|yes|on)$/i.test((globalThis as any).process?.env?.VERBOSE ?? '');
 function outputNote(message: string): void { if (outputVerbose()) console.warn(message); }
 /** Names are the canonical environment knobs, not internal parser properties. */
 function outputConfigEntries(config: Record<string, any>): [string, string][] {
@@ -495,10 +496,12 @@ function outputConfigEntries(config: Record<string, any>): [string, string][] {
     performanceRanges: 'PERFORMANCE', totalReturnRanges: 'TOTAL_RETURN',
     skipVanEck: 'SKIP_VANECK', skipProShares: 'SKIP_PROSHARES',
     skipWisdomTree: 'SKIP_WISDOMTREE', skipGoldmanSachs: 'SKIP_GOLDMANSACHS',
+    skipGlobalX: 'SKIP_GLOBALX', skipNorthernTrust: 'SKIP_NORTHERNTRUST',
   };
-  const range = (v: any): string => v?.source ?? `${Number.isFinite(v?.min) ? v.min : ''}:${Number.isFinite(v?.max) ? v.max : ''}`;
+  const range = (v: any): string => typeof v === 'string' ? v : v?.source ?? `${Number.isFinite(v?.min) ? v.min : ''}:${Number.isFinite(v?.max) ? v.max : ''}`;
   for (const [key, value] of Object.entries(config)) {
-    const name = aliases[key] ?? key.replace(/([a-z0-9])([A-Z])/g, '$1_$2').toUpperCase();
+    if (['proxyGapMs', 'fetchTimeoutMs', 'retryDelayMs'].includes(key)) continue;
+    const name = aliases[key] ?? (/^[A-Z0-9_]+$/.test(key) ? key : key.replace(/([a-z0-9])([A-Z])/g, '$1_$2').toUpperCase());
     if (name === 'PERFORMANCE' || name === 'TOTAL_RETURN') {
       for (const period of ['YTD', '1Y', '3Y', '5Y', '10Y']) values.set(`${name}_${period}`, range(value?.[period]));
     } else if (['AUM', 'TER', 'DIVIDEND_YIELD', 'SEC_YIELD'].includes(name)) {
@@ -519,7 +522,7 @@ function outputConfigValue(key: string, value: string): string {
   return outputClean(value);
 }
 function outputPrintConfig(brand: string, config: Record<string, any>): void {
-  const entries = outputConfigEntries(config);
+  const entries: [string, string][] = [...outputConfigEntries(config), ['VERBOSE', String(outputVerbose())]];
   console.log(`[ config   ] ${brand} updater:\n${entries.map(([key, value]) => `              ${key}=${outputConfigValue(key, value)}`).join('\n')}`);
 }
 function outputHasOutputFilters(config: Record<string, any>): boolean {
@@ -532,7 +535,7 @@ function outputPrintFilter(selected: number, total: number, deferred = false): v
 }
 function outputStable(value: any): any {
   if (Array.isArray(value)) return value.map(outputStable);
-  if (value && typeof value === 'object') return Object.fromEntries(Object.keys(value).sort().filter(key => !['generatedAt', 'catalogReadAt', 'savedAt'].includes(key)).map(key => [key, outputStable(value[key])]));
+  if (value && typeof value === 'object') return Object.fromEntries(Object.keys(value).sort().filter(key => !['generatedAt', 'catalogReadAt'].includes(key)).map(key => [key, outputStable(value[key])]));
   return value;
 }
 function outputContentKey(value: unknown): string { return JSON.stringify(outputStable(value)) ?? 'null'; }
@@ -1592,7 +1595,7 @@ async function updateFund(fund: CatalogFund, previousRow: JsonRecord, root: stri
 export async function runUpdater(config: UpdaterConfig, options: RuntimeOptions = {}): Promise<UpdateResult> {
   const root = resolve(options.root || API_ROOT);
   const startedAt = Date.now(), deadlineMs = options.deadlineMs ?? SOFT_DEADLINE_MS;
-  currentVerbose = config.verbose;
+  process.env.VERBOSE = String(config.verbose);
   outputPrintConfig('Xtrackers', config);
   const gate = createRequestGate(config.requestSleepSeconds, config.concurrency);
   const get = (url: string, headers?: Record<string, string>) => fetchWithRetry(url, config, gate, options.fetcher || fetch, headers);
