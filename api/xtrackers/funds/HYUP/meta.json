@@ -15,8 +15,8 @@
   "asOfDate": "2026-10-09",
   "inceptionDate": "2018-01-11",
   "exchange": "NYSE",
-  "closePrice": "$39.59",
-  "closePriceAsOfDate": "2026-10-09",
+  "closePrice": "$39.62",
+  "closePriceAsOfDate": "2026-10-12",
   "premiumDiscount": "0.08%",
   "premiumDiscountValue": 0.0758,
   "premiumDiscountAsOfDate": "2026-10-09",
@@ -138,11 +138,11 @@
       "history/003.json"
     ],
     "pageSize": 1000,
-    "totalRows": 2199,
-    "asOfDate": "2026-10-09",
+    "totalRows": 2200,
+    "asOfDate": "2026-10-12",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/HYUP/Performance + https://query1.finance.yahoo.com/v8/finance/chart/HYUP"
   },
-  "generatedAt": "2026-10-11T04:59:57.516Z",
+  "generatedAt": "2026-10-13T02:40:37.187Z",
   "netTerValue": 0.2,
   "source": {
     "provider": "Xtrackers (DWS)",

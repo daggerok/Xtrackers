@@ -2,7 +2,7 @@
   "ticker": "DBEZ",
   "page": 3,
   "pageSize": 1000,
-  "totalRows": 2976,
+  "totalRows": 2977,
   "headers": [
     "Date",
     "NAV",
@@ -5865,6 +5865,12 @@
       "NAV": "61.08",
       "Market Price": "61.094002",
       "Premium/Discount": "0.0229"
+    },
+    {
+      "Date": "2026-10-12",
+      "NAV": "",
+      "Market Price": "61.094002",
+      "Premium/Discount": ""
     }
   ]
 }

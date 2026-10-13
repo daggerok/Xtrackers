@@ -15,8 +15,8 @@
   "asOfDate": "2026-10-09",
   "inceptionDate": "2013-11-06",
   "exchange": "NYSE",
-  "closePrice": "$32.38",
-  "closePriceAsOfDate": "2026-10-09",
+  "closePrice": "$32.17",
+  "closePriceAsOfDate": "2026-10-12",
   "premiumDiscount": "-0.18%",
   "premiumDiscountValue": -0.185,
   "premiumDiscountAsOfDate": "2026-10-09",
@@ -138,11 +138,11 @@
       "history/004.json"
     ],
     "pageSize": 1000,
-    "totalRows": 3251,
-    "asOfDate": "2026-10-09",
+    "totalRows": 3252,
+    "asOfDate": "2026-10-12",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/ASHR/Performance + https://query1.finance.yahoo.com/v8/finance/chart/ASHR"
   },
-  "generatedAt": "2026-10-11T04:58:40.918Z",
+  "generatedAt": "2026-10-13T02:40:07.743Z",
   "netTerValue": 0.65,
   "source": {
     "provider": "Xtrackers (DWS)",

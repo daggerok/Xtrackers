@@ -15,8 +15,8 @@
   "asOfDate": "2026-10-09",
   "inceptionDate": "2015-11-24",
   "exchange": "NYSE",
-  "closePrice": "$64.84",
-  "closePriceAsOfDate": "2026-10-09",
+  "closePrice": "$65.04",
+  "closePriceAsOfDate": "2026-10-12",
   "premiumDiscount": "-0.01%",
   "premiumDiscountValue": -0.0139,
   "premiumDiscountAsOfDate": "2026-10-09",
@@ -139,11 +139,11 @@
       "history/003.json"
     ],
     "pageSize": 1000,
-    "totalRows": 2735,
-    "asOfDate": "2026-10-09",
+    "totalRows": 2736,
+    "asOfDate": "2026-10-12",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/DEUS/Performance + https://query1.finance.yahoo.com/v8/finance/chart/DEUS"
   },
-  "generatedAt": "2026-10-11T04:59:27.471Z",
+  "generatedAt": "2026-10-13T02:40:22.123Z",
   "netTerValue": 0.17,
   "source": {
     "provider": "Xtrackers (DWS)",

@@ -1,6 +1,6 @@
 {
   "provider": "Xtrackers (DWS)",
-  "generatedAt": "2026-10-11T05:01:15.502Z",
+  "generatedAt": "2026-10-13T02:41:05.249Z",
   "source": {
     "catalog": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A1%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
     "catalogSource": "official US sitemap (catalog XLSX unavailable/empty)",
@@ -12,7 +12,7 @@
   "counts": {
     "funds": 43,
     "holdings": 21091,
-    "history": 77737
+    "history": 77780
   },
   "funds": [
     {
@@ -32,8 +32,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2013-11-06",
       "exchange": "NYSE",
-      "closePrice": "$32.38",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$32.17",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "-0.18%",
       "premiumDiscountValue": -0.185,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -83,7 +83,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 287,
-      "history": 3251
+      "history": 3252
     },
     {
       "ticker": "ASHS",
@@ -102,8 +102,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2014-05-21",
       "exchange": "NYSE",
-      "closePrice": "$39.43",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$38.63",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "-0.73%",
       "premiumDiscountValue": -0.7301,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -153,7 +153,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 496,
-      "history": 3117
+      "history": 3118
     },
     {
       "ticker": "BHYB",
@@ -172,8 +172,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2023-10-27",
       "exchange": "Cboe",
-      "closePrice": "$52.53",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$52.57",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.16%",
       "premiumDiscountValue": 0.1621,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -223,7 +223,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 1491,
-      "history": 741
+      "history": 742
     },
     {
       "ticker": "CHPS",
@@ -242,8 +242,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2023-07-13",
       "exchange": "NASDAQ",
-      "closePrice": "$89.52",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$87.30",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "-0.21%",
       "premiumDiscountValue": -0.2118,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -293,7 +293,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 55,
-      "history": 816
+      "history": 817
     },
     {
       "ticker": "CRTC",
@@ -312,8 +312,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2023-11-16",
       "exchange": "NYSE",
-      "closePrice": "$42.17",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$42.21",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "-0.09%",
       "premiumDiscountValue": -0.0948,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -363,7 +363,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 209,
-      "history": 727
+      "history": 728
     },
     {
       "ticker": "DBAW",
@@ -382,8 +382,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2014-01-23",
       "exchange": "NYSE",
-      "closePrice": "$47.91",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$47.79",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.42%",
       "premiumDiscountValue": 0.4192,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -433,7 +433,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 1738,
-      "history": 3199
+      "history": 3200
     },
     {
       "ticker": "DBEF",
@@ -452,8 +452,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2011-06-09",
       "exchange": "NYSE",
-      "closePrice": "$54.90",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$54.93",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.51%",
       "premiumDiscountValue": 0.5126,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -503,7 +503,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 671,
-      "history": 3858
+      "history": 3859
     },
     {
       "ticker": "DBEM",
@@ -522,8 +522,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2011-06-09",
       "exchange": "NYSE",
-      "closePrice": "$38.88",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$38.49",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "-0.21%",
       "premiumDiscountValue": -0.2053,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -573,7 +573,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 1159,
-      "history": 3858
+      "history": 3859
     },
     {
       "ticker": "DBEU",
@@ -581,10 +581,10 @@
       "category": "Currency-hedged / Equities / International",
       "fundPage": "https://etf.dws.com/en-us/DBEU-msci-europe-hedged-equity-etf/",
       "dataFile": "./funds/DBEU/meta.json",
-      "ter": "0.45%",
-      "terValue": 0.45,
-      "terGross": "0.45%",
-      "terGrossValue": 0.45,
+      "ter": "0.46%",
+      "terValue": 0.46,
+      "terGross": "0.46%",
+      "terGrossValue": 0.46,
       "nav": "$53.12",
       "navValue": 53.12,
       "aum": "$770,256,536",
@@ -592,8 +592,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2013-10-01",
       "exchange": "NYSE",
-      "closePrice": "$53.23",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$53.37",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.21%",
       "premiumDiscountValue": 0.2071,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -643,7 +643,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 397,
-      "history": 3277
+      "history": 3278
     },
     {
       "ticker": "DBEZ",
@@ -663,7 +663,7 @@
       "inceptionDate": "2014-12-10",
       "exchange": "NYSE",
       "closePrice": "$61.09",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.02%",
       "premiumDiscountValue": 0.0229,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -713,7 +713,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 595,
-      "history": 2976
+      "history": 2977
     },
     {
       "ticker": "DBJP",
@@ -732,8 +732,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2011-06-09",
       "exchange": "NYSE",
-      "closePrice": "$117.99",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$117.75",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.67%",
       "premiumDiscountValue": 0.6655,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -783,7 +783,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 171,
-      "history": 3858
+      "history": 3859
     },
     {
       "ticker": "DEEF",
@@ -802,8 +802,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2015-11-24",
       "exchange": "NYSE",
-      "closePrice": "$38.94",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$38.86",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.35%",
       "premiumDiscountValue": 0.3479,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -853,7 +853,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 1205,
-      "history": 2735
+      "history": 2736
     },
     {
       "ticker": "DEUS",
@@ -872,8 +872,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2015-11-24",
       "exchange": "NYSE",
-      "closePrice": "$64.84",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$65.04",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "-0.01%",
       "premiumDiscountValue": -0.0139,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -923,7 +923,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 864,
-      "history": 2735
+      "history": 2736
     },
     {
       "ticker": "DMXU",
@@ -942,8 +942,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2018-09-06",
       "exchange": "NYSE",
-      "closePrice": "$37.42",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$37.21",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "-0.30%",
       "premiumDiscountValue": -0.3038,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -993,7 +993,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 637,
-      "history": 2035
+      "history": 2036
     },
     {
       "ticker": "EAFH",
@@ -1012,8 +1012,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2026-10-01",
       "exchange": "Cboe",
-      "closePrice": "$24.74",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$24.89",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.00%",
       "premiumDiscountValue": 0.004,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -1063,7 +1063,7 @@
         "performanceAsOf": null
       },
       "holdings": 626,
-      "history": 8
+      "history": 9
     },
     {
       "ticker": "EMCR",
@@ -1082,8 +1082,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2018-12-06",
       "exchange": "NYSE",
-      "closePrice": "$43.20",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$42.85",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "-0.76%",
       "premiumDiscountValue": -0.7581,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -1133,7 +1133,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 1539,
-      "history": 1972
+      "history": 1973
     },
     {
       "ticker": "EMCS",
@@ -1152,8 +1152,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2018-12-06",
       "exchange": "NYSE",
-      "closePrice": "$46.31",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$45.91",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "-0.77%",
       "premiumDiscountValue": -0.7714,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -1203,7 +1203,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 68,
-      "history": 1972
+      "history": 1973
     },
     {
       "ticker": "HAUZ",
@@ -1222,8 +1222,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2013-10-01",
       "exchange": "NYSE",
-      "closePrice": "$21.07",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$20.92",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.57%",
       "premiumDiscountValue": 0.5728,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -1273,7 +1273,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 411,
-      "history": 3277
+      "history": 3278
     },
     {
       "ticker": "HDEF",
@@ -1292,8 +1292,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2015-08-12",
       "exchange": "NYSE",
-      "closePrice": "$32.49",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$32.57",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.15%",
       "premiumDiscountValue": 0.1541,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -1343,7 +1343,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 121,
-      "history": 2808
+      "history": 2809
     },
     {
       "ticker": "HYDW",
@@ -1362,8 +1362,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2018-01-11",
       "exchange": "NYSE",
-      "closePrice": "$45.78",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$45.81",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.18%",
       "premiumDiscountValue": 0.1794,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -1413,7 +1413,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 578,
-      "history": 2199
+      "history": 2200
     },
     {
       "ticker": "HYLB",
@@ -1432,8 +1432,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2016-12-07",
       "exchange": "NYSE",
-      "closePrice": "$35.18",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$35.22",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.03%",
       "premiumDiscountValue": 0.0284,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -1483,7 +1483,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 1275,
-      "history": 2474
+      "history": 2475
     },
     {
       "ticker": "HYUP",
@@ -1502,8 +1502,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2018-01-11",
       "exchange": "NYSE",
-      "closePrice": "$39.59",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$39.62",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.08%",
       "premiumDiscountValue": 0.0758,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -1553,7 +1553,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 692,
-      "history": 2199
+      "history": 2200
     },
     {
       "ticker": "IND",
@@ -1572,8 +1572,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2025-11-25",
       "exchange": "NASDAQ",
-      "closePrice": "$21.24",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$21.42",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.33%",
       "premiumDiscountValue": 0.3307,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -1623,7 +1623,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 501,
-      "history": 220
+      "history": 221
     },
     {
       "ticker": "KOKU",
@@ -1642,8 +1642,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2020-04-08",
       "exchange": "NYSE",
-      "closePrice": "$134.04",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$133.86",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.00%",
       "premiumDiscountValue": 0.0022,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -1693,7 +1693,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 1090,
-      "history": 1636
+      "history": 1637
     },
     {
       "ticker": "MIDE",
@@ -1712,8 +1712,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2021-02-24",
       "exchange": "NYSE",
-      "closePrice": "$36.91",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$36.80",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.14%",
       "premiumDiscountValue": 0.1356,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -1763,7 +1763,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 266,
-      "history": 1415
+      "history": 1416
     },
     {
       "ticker": "NRES",
@@ -1782,8 +1782,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2024-02-27",
       "exchange": "NASDAQ",
-      "closePrice": "$34.19",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$34.34",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "-0.28%",
       "premiumDiscountValue": -0.2771,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -1833,7 +1833,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 58,
-      "history": 659
+      "history": 660
     },
     {
       "ticker": "PSWD",
@@ -1852,8 +1852,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2023-07-13",
       "exchange": "NASDAQ",
-      "closePrice": "$50.83",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$49.44",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.44%",
       "premiumDiscountValue": 0.4367,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -1903,7 +1903,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 50,
-      "history": 816
+      "history": 817
     },
     {
       "ticker": "QARP",
@@ -1922,8 +1922,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2018-04-05",
       "exchange": "NYSE",
-      "closePrice": "$68.40",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$68.76",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "-0.06%",
       "premiumDiscountValue": -0.0643,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -1973,7 +1973,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 416,
-      "history": 2142
+      "history": 2143
     },
     {
       "ticker": "RVNU",
@@ -1992,8 +1992,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2013-06-04",
       "exchange": "NYSE",
-      "closePrice": "$23.32",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$23.30",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "-0.13%",
       "premiumDiscountValue": -0.1285,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -2043,7 +2043,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 221,
-      "history": 3360
+      "history": 3361
     },
     {
       "ticker": "SHYL",
@@ -2062,8 +2062,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2018-01-10",
       "exchange": "NYSE",
-      "closePrice": "$43.01",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$42.99",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.16%",
       "premiumDiscountValue": 0.163,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -2113,7 +2113,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 832,
-      "history": 2200
+      "history": 2201
     },
     {
       "ticker": "SNPD",
@@ -2132,8 +2132,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2022-11-09",
       "exchange": "Cboe",
-      "closePrice": "$28.76",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$28.93",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.02%",
       "premiumDiscountValue": 0.0243,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -2183,7 +2183,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 106,
-      "history": 983
+      "history": 984
     },
     {
       "ticker": "SNPE",
@@ -2202,8 +2202,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2019-06-26",
       "exchange": "NYSE",
-      "closePrice": "$71.25",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$71.13",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.04%",
       "premiumDiscountValue": 0.0421,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -2253,7 +2253,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 327,
-      "history": 1834
+      "history": 1835
     },
     {
       "ticker": "SNPG",
@@ -2272,8 +2272,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2022-11-09",
       "exchange": "Cboe",
-      "closePrice": "$60.78",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$60.38",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.03%",
       "premiumDiscountValue": 0.0329,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -2323,7 +2323,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 86,
-      "history": 983
+      "history": 984
     },
     {
       "ticker": "SPXD",
@@ -2342,8 +2342,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2025-07-24",
       "exchange": "NASDAQ",
-      "closePrice": "$29.18",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$29.24",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "-0.03%",
       "premiumDiscountValue": -0.0343,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -2393,7 +2393,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 506,
-      "history": 307
+      "history": 308
     },
     {
       "ticker": "TRSY",
@@ -2412,8 +2412,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2024-10-09",
       "exchange": "Cboe",
-      "closePrice": "$30.14",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$30.15",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "-0.02%",
       "premiumDiscountValue": -0.0166,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -2463,7 +2463,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 88,
-      "history": 502
+      "history": 503
     },
     {
       "ticker": "UPGR",
@@ -2482,8 +2482,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2023-07-13",
       "exchange": "NASDAQ",
-      "closePrice": "$21.59",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$21.32",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.01%",
       "premiumDiscountValue": 0.0093,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -2533,7 +2533,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 50,
-      "history": 816
+      "history": 817
     },
     {
       "ticker": "USCA",
@@ -2552,8 +2552,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2023-04-04",
       "exchange": "NYSE",
-      "closePrice": "$46.41",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$46.40",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.02%",
       "premiumDiscountValue": 0.0151,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -2603,7 +2603,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 395,
-      "history": 884
+      "history": 885
     },
     {
       "ticker": "USNZ",
@@ -2622,8 +2622,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2022-06-28",
       "exchange": "NYSE",
-      "closePrice": "$49.55",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$49.46",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.05%",
       "premiumDiscountValue": 0.0485,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -2673,7 +2673,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 300,
-      "history": 1077
+      "history": 1078
     },
     {
       "ticker": "USSG",
@@ -2692,8 +2692,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2019-03-07",
       "exchange": "NYSE",
-      "closePrice": "$72.80",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$72.76",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "-0.02%",
       "premiumDiscountValue": -0.0179,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -2743,7 +2743,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 255,
-      "history": 1911
+      "history": 1912
     },
     {
       "ticker": "XAIX",
@@ -2762,8 +2762,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2024-08-02",
       "exchange": "NASDAQ",
-      "closePrice": "$59.99",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$59.37",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "-0.10%",
       "premiumDiscountValue": -0.1032,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -2813,7 +2813,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 104,
-      "history": 550
+      "history": 551
     },
     {
       "ticker": "XDEF",
@@ -2832,8 +2832,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2026-02-19",
       "exchange": "NASDAQ",
-      "closePrice": "$20.30",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$20.46",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.79%",
       "premiumDiscountValue": 0.7944,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -2883,7 +2883,7 @@
         "performanceAsOf": null
       },
       "holdings": 36,
-      "history": 166
+      "history": 167
     },
     {
       "ticker": "XEML",
@@ -2902,8 +2902,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2025-12-23",
       "exchange": "Cboe",
-      "closePrice": "$24.14",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$24.09",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.56%",
       "premiumDiscountValue": 0.5625,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -2953,7 +2953,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 40,
-      "history": 201
+      "history": 202
     },
     {
       "ticker": "XOEX",
@@ -2972,8 +2972,8 @@
       "asOfDate": "2026-10-09",
       "inceptionDate": "2022-11-09",
       "exchange": "Cboe",
-      "closePrice": "$40.27",
-      "closePriceAsOfDate": "2026-10-09",
+      "closePrice": "$40.42",
+      "closePriceAsOfDate": "2026-10-12",
       "premiumDiscount": "0.03%",
       "premiumDiscountValue": 0.0348,
       "premiumDiscountAsOfDate": "2026-10-09",
@@ -3023,7 +3023,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 79,
-      "history": 983
+      "history": 984
     }
   ]
 }

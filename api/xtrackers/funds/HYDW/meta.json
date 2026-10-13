@@ -15,8 +15,8 @@
   "asOfDate": "2026-10-09",
   "inceptionDate": "2018-01-11",
   "exchange": "NYSE",
-  "closePrice": "$45.78",
-  "closePriceAsOfDate": "2026-10-09",
+  "closePrice": "$45.81",
+  "closePriceAsOfDate": "2026-10-12",
   "premiumDiscount": "0.18%",
   "premiumDiscountValue": 0.1794,
   "premiumDiscountAsOfDate": "2026-10-09",
@@ -138,11 +138,11 @@
       "history/003.json"
     ],
     "pageSize": 1000,
-    "totalRows": 2199,
-    "asOfDate": "2026-10-09",
+    "totalRows": 2200,
+    "asOfDate": "2026-10-12",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/HYDW/Performance + https://query1.finance.yahoo.com/v8/finance/chart/HYDW"
   },
-  "generatedAt": "2026-10-11T04:59:50.785Z",
+  "generatedAt": "2026-10-13T02:40:31.152Z",
   "netTerValue": 0.2,
   "source": {
     "provider": "Xtrackers (DWS)",

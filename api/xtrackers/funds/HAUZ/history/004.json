@@ -2,7 +2,7 @@
   "ticker": "HAUZ",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3277,
+  "totalRows": 3278,
   "headers": [
     "Date",
     "NAV",
@@ -1671,6 +1671,12 @@
       "NAV": "20.95",
       "Market Price": "21.07",
       "Premium/Discount": "0.5728"
+    },
+    {
+      "Date": "2026-10-12",
+      "NAV": "",
+      "Market Price": "20.92",
+      "Premium/Discount": ""
     }
   ]
 }

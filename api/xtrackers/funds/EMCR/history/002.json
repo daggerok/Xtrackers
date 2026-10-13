@@ -2,7 +2,7 @@
   "ticker": "EMCR",
   "page": 2,
   "pageSize": 1000,
-  "totalRows": 1972,
+  "totalRows": 1973,
   "headers": [
     "Date",
     "NAV",
@@ -5841,6 +5841,12 @@
       "NAV": "43.53",
       "Market Price": "43.200001",
       "Premium/Discount": "-0.7581"
+    },
+    {
+      "Date": "2026-10-12",
+      "NAV": "",
+      "Market Price": "42.852001",
+      "Premium/Discount": ""
     }
   ]
 }

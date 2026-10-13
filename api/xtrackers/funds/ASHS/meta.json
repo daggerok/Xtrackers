@@ -15,8 +15,8 @@
   "asOfDate": "2026-10-09",
   "inceptionDate": "2014-05-21",
   "exchange": "NYSE",
-  "closePrice": "$39.43",
-  "closePriceAsOfDate": "2026-10-09",
+  "closePrice": "$38.63",
+  "closePriceAsOfDate": "2026-10-12",
   "premiumDiscount": "-0.73%",
   "premiumDiscountValue": -0.7301,
   "premiumDiscountAsOfDate": "2026-10-09",
@@ -138,11 +138,11 @@
       "history/004.json"
     ],
     "pageSize": 1000,
-    "totalRows": 3117,
-    "asOfDate": "2026-10-09",
+    "totalRows": 3118,
+    "asOfDate": "2026-10-12",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/ASHS/Performance + https://query1.finance.yahoo.com/v8/finance/chart/ASHS"
   },
-  "generatedAt": "2026-10-11T04:58:41.402Z",
+  "generatedAt": "2026-10-13T02:40:08.639Z",
   "netTerValue": 0.65,
   "source": {
     "provider": "Xtrackers (DWS)",

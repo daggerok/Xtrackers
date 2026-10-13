@@ -15,8 +15,8 @@
   "asOfDate": "2026-10-09",
   "inceptionDate": "2018-12-06",
   "exchange": "NYSE",
-  "closePrice": "$46.31",
-  "closePriceAsOfDate": "2026-10-09",
+  "closePrice": "$45.91",
+  "closePriceAsOfDate": "2026-10-12",
   "premiumDiscount": "-0.77%",
   "premiumDiscountValue": -0.7714,
   "premiumDiscountAsOfDate": "2026-10-09",
@@ -135,11 +135,11 @@
       "history/002.json"
     ],
     "pageSize": 1000,
-    "totalRows": 1972,
-    "asOfDate": "2026-10-09",
+    "totalRows": 1973,
+    "asOfDate": "2026-10-12",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/EMCS/Performance + https://query1.finance.yahoo.com/v8/finance/chart/EMCS"
   },
-  "generatedAt": "2026-10-11T04:59:40.381Z",
+  "generatedAt": "2026-10-13T02:40:28.182Z",
   "netTerValue": 0.15,
   "source": {
     "provider": "Xtrackers (DWS)",

@@ -15,8 +15,8 @@
   "asOfDate": "2026-10-09",
   "inceptionDate": "2019-06-26",
   "exchange": "NYSE",
-  "closePrice": "$71.25",
-  "closePriceAsOfDate": "2026-10-09",
+  "closePrice": "$71.13",
+  "closePriceAsOfDate": "2026-10-12",
   "premiumDiscount": "0.04%",
   "premiumDiscountValue": 0.0421,
   "premiumDiscountAsOfDate": "2026-10-09",
@@ -136,11 +136,11 @@
       "history/002.json"
     ],
     "pageSize": 1000,
-    "totalRows": 1834,
-    "asOfDate": "2026-10-09",
+    "totalRows": 1835,
+    "asOfDate": "2026-10-12",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/SNPE/Performance + https://query1.finance.yahoo.com/v8/finance/chart/SNPE"
   },
-  "generatedAt": "2026-10-11T05:00:34.448Z",
+  "generatedAt": "2026-10-13T02:40:51.265Z",
   "netTerValue": 0.1,
   "source": {
     "provider": "Xtrackers (DWS)",
