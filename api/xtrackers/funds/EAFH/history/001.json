@@ -2,7 +2,7 @@
   "ticker": "EAFH",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 9,
+  "totalRows": 13,
   "headers": [
     "Date",
     "NAV",
@@ -31,14 +31,14 @@
     {
       "Date": "2026-10-05",
       "NAV": "24.9",
-      "Market Price": "24.903999",
-      "Premium/Discount": "0.0161"
+      "Market Price": "25.049999",
+      "Premium/Discount": "0.6024"
     },
     {
       "Date": "2026-10-06",
       "NAV": "25.08",
-      "Market Price": "",
-      "Premium/Discount": ""
+      "Market Price": "25.17",
+      "Premium/Discount": "0.3589"
     },
     {
       "Date": "2026-10-07",
@@ -60,8 +60,32 @@
     },
     {
       "Date": "2026-10-12",
-      "NAV": "",
+      "NAV": "24.81",
       "Market Price": "24.885",
+      "Premium/Discount": "0.3023"
+    },
+    {
+      "Date": "2026-10-13",
+      "NAV": "24.83",
+      "Market Price": "",
+      "Premium/Discount": ""
+    },
+    {
+      "Date": "2026-10-14",
+      "NAV": "24.85",
+      "Market Price": "",
+      "Premium/Discount": ""
+    },
+    {
+      "Date": "2026-10-15",
+      "NAV": "24.78",
+      "Market Price": "",
+      "Premium/Discount": ""
+    },
+    {
+      "Date": "2026-10-16",
+      "NAV": "25.01",
+      "Market Price": "",
       "Premium/Discount": ""
     }
   ]

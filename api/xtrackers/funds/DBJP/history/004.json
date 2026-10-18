@@ -2,7 +2,7 @@
   "ticker": "DBJP",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3859,
+  "totalRows": 3863,
   "headers": [
     "Date",
     "NAV",
@@ -5160,9 +5160,33 @@
     },
     {
       "Date": "2026-10-12",
-      "NAV": "",
+      "NAV": "117.21",
       "Market Price": "117.75",
-      "Premium/Discount": ""
+      "Premium/Discount": "0.4607"
+    },
+    {
+      "Date": "2026-10-13",
+      "NAV": "116.9",
+      "Market Price": "117.260002",
+      "Premium/Discount": "0.308"
+    },
+    {
+      "Date": "2026-10-14",
+      "NAV": "116.58",
+      "Market Price": "115.419998",
+      "Premium/Discount": "-0.995"
+    },
+    {
+      "Date": "2026-10-15",
+      "NAV": "113.36",
+      "Market Price": "115",
+      "Premium/Discount": "1.4467"
+    },
+    {
+      "Date": "2026-10-16",
+      "NAV": "115.27",
+      "Market Price": "114.010002",
+      "Premium/Discount": "-1.0931"
     }
   ]
 }

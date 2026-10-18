@@ -2,7 +2,7 @@
   "ticker": "EMCS",
   "page": 2,
   "pageSize": 1000,
-  "totalRows": 1973,
+  "totalRows": 1977,
   "headers": [
     "Date",
     "NAV",
@@ -5844,9 +5844,33 @@
     },
     {
       "Date": "2026-10-12",
-      "NAV": "",
+      "NAV": "46.43",
       "Market Price": "45.912998",
-      "Premium/Discount": ""
+      "Premium/Discount": "-1.1135"
+    },
+    {
+      "Date": "2026-10-13",
+      "NAV": "45.25",
+      "Market Price": "45.460999",
+      "Premium/Discount": "0.4663"
+    },
+    {
+      "Date": "2026-10-14",
+      "NAV": "45.21",
+      "Market Price": "44.504002",
+      "Premium/Discount": "-1.5616"
+    },
+    {
+      "Date": "2026-10-15",
+      "NAV": "43.92",
+      "Market Price": "44.359001",
+      "Premium/Discount": "0.9995"
+    },
+    {
+      "Date": "2026-10-16",
+      "NAV": "44.28",
+      "Market Price": "43.512001",
+      "Premium/Discount": "-1.7344"
     }
   ]
 }

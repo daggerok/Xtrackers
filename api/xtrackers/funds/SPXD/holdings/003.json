@@ -2,7 +2,7 @@
   "ticker": "SPXD",
   "page": 3,
   "pageSize": 250,
-  "totalRows": 506,
+  "totalRows": 507,
   "headers": [
     "Name",
     "Ticker",
@@ -14,11 +14,20 @@
   ],
   "rows": [
     {
+      "Name": "Datadog Inc",
+      "Ticker": "DDOG",
+      "Identifier": "23804L103",
+      "Weight": "0.00669994",
+      "Market Value": "494.22",
+      "Shares Held": "2",
+      "Asset Category": "Equity"
+    },
+    {
       "Name": "Autodesk Inc",
       "Ticker": "ADSK.O",
       "Identifier": "052769106",
-      "Weight": "0.00645023",
-      "Market Value": "470.7",
+      "Weight": "0.00650445",
+      "Market Value": "479.8",
       "Shares Held": "2",
       "Asset Category": "Equity"
     },
@@ -26,8 +35,8 @@
       "Name": "PTC Inc",
       "Ticker": "PMTC",
       "Identifier": "69370C100",
-      "Weight": "0.00532928",
-      "Market Value": "388.9",
+      "Weight": "0.0052323",
+      "Market Value": "385.96",
       "Shares Held": "2",
       "Asset Category": "Equity"
     },
@@ -35,8 +44,8 @@
       "Name": "Old Dominion Freight Line Inc",
       "Ticker": "ODFL",
       "Identifier": "679580100",
-      "Weight": "0.00498724",
-      "Market Value": "363.94",
+      "Weight": "0.00508968",
+      "Market Value": "375.44",
       "Shares Held": "2",
       "Asset Category": "Equity"
     },
@@ -44,8 +53,8 @@
       "Name": "Incyte",
       "Ticker": "INCY",
       "Identifier": "45337C102",
-      "Weight": "0.00154561",
-      "Market Value": "112.79",
+      "Weight": "0.00153284",
+      "Market Value": "113.07",
       "Shares Held": "1",
       "Asset Category": "Equity"
     },
@@ -53,7 +62,7 @@
       "Name": "TPG Inc. - Contingent Value Right",
       "Ticker": "-",
       "Identifier": "436CVR021",
-      "Weight": "0.00000343",
+      "Weight": "0.00000339",
       "Market Value": "0.25",
       "Shares Held": "25",
       "Asset Category": "Equity"

@@ -2,7 +2,7 @@
   "ticker": "PSWD",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 817,
+  "totalRows": 821,
   "headers": [
     "Date",
     "NAV",
@@ -4908,9 +4908,33 @@
     },
     {
       "Date": "2026-10-12",
-      "NAV": "",
+      "NAV": "49.26",
       "Market Price": "49.442001",
-      "Premium/Discount": ""
+      "Premium/Discount": "0.3695"
+    },
+    {
+      "Date": "2026-10-13",
+      "NAV": "48.84",
+      "Market Price": "48.999001",
+      "Premium/Discount": "0.3256"
+    },
+    {
+      "Date": "2026-10-14",
+      "NAV": "46.69",
+      "Market Price": "46.686001",
+      "Premium/Discount": "-0.0086"
+    },
+    {
+      "Date": "2026-10-15",
+      "NAV": "46.85",
+      "Market Price": "47.049",
+      "Premium/Discount": "0.4248"
+    },
+    {
+      "Date": "2026-10-16",
+      "NAV": "44.69",
+      "Market Price": "44.709",
+      "Premium/Discount": "0.0425"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "ticker": "SPXD",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 308,
+  "totalRows": 312,
   "headers": [
     "Date",
     "NAV",
@@ -1854,9 +1854,33 @@
     },
     {
       "Date": "2026-10-12",
-      "NAV": "",
+      "NAV": "29.27",
       "Market Price": "29.242001",
-      "Premium/Discount": ""
+      "Premium/Discount": "-0.0957"
+    },
+    {
+      "Date": "2026-10-13",
+      "NAV": "29.31",
+      "Market Price": "29.295",
+      "Premium/Discount": "-0.0512"
+    },
+    {
+      "Date": "2026-10-14",
+      "NAV": "29.26",
+      "Market Price": "29.236",
+      "Premium/Discount": "-0.082"
+    },
+    {
+      "Date": "2026-10-15",
+      "NAV": "29.56",
+      "Market Price": "29.542",
+      "Premium/Discount": "-0.0609"
+    },
+    {
+      "Date": "2026-10-16",
+      "NAV": "29.51",
+      "Market Price": "29.479",
+      "Premium/Discount": "-0.105"
     }
   ]
 }
