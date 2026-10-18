@@ -1,6 +1,6 @@
 {
   "provider": "Xtrackers (DWS)",
-  "generatedAt": "2026-10-18T03:52:27.086Z",
+  "generatedAt": "2026-10-18T07:03:46.943Z",
   "source": {
     "catalog": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A1%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
     "catalogSource": "official US sitemap (catalog XLSX unavailable/empty)",
@@ -1012,11 +1012,11 @@
       "asOfDate": "2026-10-16",
       "inceptionDate": "2026-10-01",
       "exchange": "Cboe",
-      "closePrice": "$24.89",
-      "closePriceAsOfDate": "2026-10-12",
-      "premiumDiscount": "0.30%",
-      "premiumDiscountValue": 0.3023,
-      "premiumDiscountAsOfDate": "2026-10-12",
+      "closePrice": "$25.01",
+      "closePriceAsOfDate": "2026-10-16",
+      "premiumDiscount": "0.01%",
+      "premiumDiscountValue": 0.008,
+      "premiumDiscountAsOfDate": "2026-10-16",
       "cusip": "23306X753",
       "isin": "US23306X7536",
       "distributions": {
