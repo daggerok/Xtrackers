@@ -15,8 +15,8 @@
   "asOfDate": "2026-10-16",
   "inceptionDate": "2013-06-04",
   "exchange": "NYSE",
-  "closePrice": "$23.53",
-  "closePriceAsOfDate": "2026-10-16",
+  "closePrice": "$23.60",
+  "closePriceAsOfDate": "2026-10-19",
   "premiumDiscount": "-0.51%",
   "premiumDiscountValue": -0.5074,
   "premiumDiscountAsOfDate": "2026-10-16",
@@ -137,11 +137,11 @@
       "history/004.json"
     ],
     "pageSize": 1000,
-    "totalRows": 3365,
-    "asOfDate": "2026-10-16",
+    "totalRows": 3366,
+    "asOfDate": "2026-10-19",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/RVNU/Performance + https://query1.finance.yahoo.com/v8/finance/chart/RVNU"
   },
-  "generatedAt": "2026-10-18T03:51:36.122Z",
+  "generatedAt": "2026-10-20T04:54:22.198Z",
   "netTerValue": 0.15,
   "source": {
     "provider": "Xtrackers (DWS)",

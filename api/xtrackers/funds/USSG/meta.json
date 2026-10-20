@@ -15,8 +15,8 @@
   "asOfDate": "2026-10-16",
   "inceptionDate": "2019-03-07",
   "exchange": "NYSE",
-  "closePrice": "$71.41",
-  "closePriceAsOfDate": "2026-10-16",
+  "closePrice": "$71.70",
+  "closePriceAsOfDate": "2026-10-19",
   "premiumDiscount": "0.06%",
   "premiumDiscountValue": 0.0561,
   "premiumDiscountAsOfDate": "2026-10-16",
@@ -136,11 +136,11 @@
       "history/002.json"
     ],
     "pageSize": 1000,
-    "totalRows": 1916,
-    "asOfDate": "2026-10-16",
+    "totalRows": 1917,
+    "asOfDate": "2026-10-19",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/USSG/Performance + https://query1.finance.yahoo.com/v8/finance/chart/USSG"
   },
-  "generatedAt": "2026-10-18T03:52:13.596Z",
+  "generatedAt": "2026-10-20T04:54:59.720Z",
   "netTerValue": 0.09,
   "source": {
     "provider": "Xtrackers (DWS)",

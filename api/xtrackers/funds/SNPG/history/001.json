@@ -2,7 +2,7 @@
   "ticker": "SNPG",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 988,
+  "totalRows": 989,
   "headers": [
     "Date",
     "NAV",
@@ -5937,6 +5937,12 @@
       "NAV": "58.14",
       "Market Price": "58.167999",
       "Premium/Discount": "0.0482"
+    },
+    {
+      "Date": "2026-10-19",
+      "NAV": "",
+      "Market Price": "58.443001",
+      "Premium/Discount": ""
     }
   ]
 }

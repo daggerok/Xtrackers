@@ -2,7 +2,7 @@
   "ticker": "CRTC",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 732,
+  "totalRows": 733,
   "headers": [
     "Date",
     "NAV",
@@ -4401,6 +4401,12 @@
       "NAV": "41.06",
       "Market Price": "41.029999",
       "Premium/Discount": "-0.0731"
+    },
+    {
+      "Date": "2026-10-19",
+      "NAV": "",
+      "Market Price": "41.222",
+      "Premium/Discount": ""
     }
   ]
 }

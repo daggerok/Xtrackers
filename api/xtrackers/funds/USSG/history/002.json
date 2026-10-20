@@ -2,7 +2,7 @@
   "ticker": "USSG",
   "page": 2,
   "pageSize": 1000,
-  "totalRows": 1916,
+  "totalRows": 1917,
   "headers": [
     "Date",
     "NAV",
@@ -5505,6 +5505,12 @@
       "NAV": "71.37",
       "Market Price": "71.410004",
       "Premium/Discount": "0.0561"
+    },
+    {
+      "Date": "2026-10-19",
+      "NAV": "",
+      "Market Price": "71.704002",
+      "Premium/Discount": ""
     }
   ]
 }

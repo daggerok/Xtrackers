@@ -15,8 +15,8 @@
   "asOfDate": "2026-10-16",
   "inceptionDate": "2023-04-04",
   "exchange": "NYSE",
-  "closePrice": "$45.45",
-  "closePriceAsOfDate": "2026-10-16",
+  "closePrice": "$45.71",
+  "closePriceAsOfDate": "2026-10-19",
   "premiumDiscount": "0.01%",
   "premiumDiscountValue": 0.0066,
   "premiumDiscountAsOfDate": "2026-10-16",
@@ -135,11 +135,11 @@
       "history/001.json"
     ],
     "pageSize": 1000,
-    "totalRows": 889,
-    "asOfDate": "2026-10-16",
+    "totalRows": 890,
+    "asOfDate": "2026-10-19",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/USCA/Performance + https://query1.finance.yahoo.com/v8/finance/chart/USCA"
   },
-  "generatedAt": "2026-10-18T03:52:04.995Z",
+  "generatedAt": "2026-10-20T04:54:52.103Z",
   "netTerValue": 0.07,
   "source": {
     "provider": "Xtrackers (DWS)",

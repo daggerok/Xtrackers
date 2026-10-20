@@ -15,8 +15,8 @@
   "asOfDate": "2026-10-16",
   "inceptionDate": "2022-06-28",
   "exchange": "NYSE",
-  "closePrice": "$48.33",
-  "closePriceAsOfDate": "2026-10-16",
+  "closePrice": "$48.63",
+  "closePriceAsOfDate": "2026-10-19",
   "premiumDiscount": "0.05%",
   "premiumDiscountValue": 0.0455,
   "premiumDiscountAsOfDate": "2026-10-16",
@@ -136,11 +136,11 @@
       "history/002.json"
     ],
     "pageSize": 1000,
-    "totalRows": 1082,
-    "asOfDate": "2026-10-16",
+    "totalRows": 1083,
+    "asOfDate": "2026-10-19",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/USNZ/Performance + https://query1.finance.yahoo.com/v8/finance/chart/USNZ"
   },
-  "generatedAt": "2026-10-18T03:52:10.571Z",
+  "generatedAt": "2026-10-20T04:54:52.821Z",
   "netTerValue": 0.1,
   "source": {
     "provider": "Xtrackers (DWS)",

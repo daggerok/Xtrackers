@@ -15,8 +15,8 @@
   "asOfDate": "2026-10-16",
   "inceptionDate": "2026-02-19",
   "exchange": "NASDAQ",
-  "closePrice": "$21.66",
-  "closePriceAsOfDate": "2026-10-16",
+  "closePrice": "$21.27",
+  "closePriceAsOfDate": "2026-10-19",
   "premiumDiscount": "0.14%",
   "premiumDiscountValue": 0.1387,
   "premiumDiscountAsOfDate": "2026-10-16",
@@ -98,11 +98,11 @@
       "history/001.json"
     ],
     "pageSize": 1000,
-    "totalRows": 171,
-    "asOfDate": "2026-10-16",
+    "totalRows": 172,
+    "asOfDate": "2026-10-19",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/XDEF/Performance + https://query1.finance.yahoo.com/v8/finance/chart/XDEF"
   },
-  "generatedAt": "2026-10-18T03:52:21.049Z",
+  "generatedAt": "2026-10-20T04:55:06.939Z",
   "netTerValue": 0.35,
   "source": {
     "provider": "Xtrackers (DWS)",
