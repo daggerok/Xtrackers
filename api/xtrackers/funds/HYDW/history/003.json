@@ -2,7 +2,7 @@
   "ticker": "HYDW",
   "page": 3,
   "pageSize": 1000,
-  "totalRows": 2205,
+  "totalRows": 2206,
   "headers": [
     "Date",
     "NAV",
@@ -1236,8 +1236,14 @@
     },
     {
       "Date": "2026-10-19",
-      "NAV": "",
+      "NAV": "45.77",
       "Market Price": "45.790001",
+      "Premium/Discount": "0.0437"
+    },
+    {
+      "Date": "2026-10-20",
+      "NAV": "",
+      "Market Price": "45.845001",
       "Premium/Discount": ""
     }
   ]

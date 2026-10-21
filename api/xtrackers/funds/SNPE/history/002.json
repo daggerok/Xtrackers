@@ -2,7 +2,7 @@
   "ticker": "SNPE",
   "page": 2,
   "pageSize": 1000,
-  "totalRows": 1840,
+  "totalRows": 1841,
   "headers": [
     "Date",
     "NAV",
@@ -5046,8 +5046,14 @@
     },
     {
       "Date": "2026-10-19",
-      "NAV": "",
+      "NAV": "70.05",
       "Market Price": "70.080002",
+      "Premium/Discount": "0.0428"
+    },
+    {
+      "Date": "2026-10-20",
+      "NAV": "",
+      "Market Price": "70.300003",
       "Premium/Discount": ""
     }
   ]
