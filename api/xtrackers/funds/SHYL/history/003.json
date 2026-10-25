@@ -2,7 +2,7 @@
   "ticker": "SHYL",
   "page": 3,
   "pageSize": 1000,
-  "totalRows": 2207,
+  "totalRows": 2210,
   "headers": [
     "Date",
     "NAV",
@@ -1248,8 +1248,26 @@
     },
     {
       "Date": "2026-10-20",
-      "NAV": "",
+      "NAV": "42.74",
       "Market Price": "42.740002",
+      "Premium/Discount": "0"
+    },
+    {
+      "Date": "2026-10-21",
+      "NAV": "42.82",
+      "Market Price": "42.709999",
+      "Premium/Discount": "-0.2569"
+    },
+    {
+      "Date": "2026-10-22",
+      "NAV": "42.78",
+      "Market Price": "42.77",
+      "Premium/Discount": "-0.0234"
+    },
+    {
+      "Date": "2026-10-23",
+      "NAV": "",
+      "Market Price": "42.799999",
       "Premium/Discount": ""
     }
   ]

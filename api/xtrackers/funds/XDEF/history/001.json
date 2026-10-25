@@ -2,7 +2,7 @@
   "ticker": "XDEF",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 173,
+  "totalRows": 176,
   "headers": [
     "Date",
     "NAV",
@@ -1044,8 +1044,26 @@
     },
     {
       "Date": "2026-10-20",
-      "NAV": "",
+      "NAV": "21.23",
       "Market Price": "21.4",
+      "Premium/Discount": "0.8008"
+    },
+    {
+      "Date": "2026-10-21",
+      "NAV": "21.19",
+      "Market Price": "21.27",
+      "Premium/Discount": "0.3775"
+    },
+    {
+      "Date": "2026-10-22",
+      "NAV": "20.81",
+      "Market Price": "21.049999",
+      "Premium/Discount": "1.1533"
+    },
+    {
+      "Date": "2026-10-23",
+      "NAV": "",
+      "Market Price": "20.559999",
       "Premium/Discount": ""
     }
   ]

@@ -2,7 +2,7 @@
   "ticker": "DEUS",
   "page": 3,
   "pageSize": 1000,
-  "totalRows": 2742,
+  "totalRows": 2745,
   "headers": [
     "Date",
     "NAV",
@@ -4458,8 +4458,26 @@
     },
     {
       "Date": "2026-10-20",
-      "NAV": "",
+      "NAV": "66.46",
       "Market Price": "66.485001",
+      "Premium/Discount": "0.0376"
+    },
+    {
+      "Date": "2026-10-21",
+      "NAV": "66.52",
+      "Market Price": "66.560997",
+      "Premium/Discount": "0.0616"
+    },
+    {
+      "Date": "2026-10-22",
+      "NAV": "67.17",
+      "Market Price": "67.25",
+      "Premium/Discount": "0.1191"
+    },
+    {
+      "Date": "2026-10-23",
+      "NAV": "",
+      "Market Price": "66.709999",
       "Premium/Discount": ""
     }
   ]

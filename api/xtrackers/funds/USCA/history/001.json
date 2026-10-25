@@ -2,7 +2,7 @@
   "ticker": "USCA",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 891,
+  "totalRows": 894,
   "headers": [
     "Date",
     "NAV",
@@ -5352,8 +5352,26 @@
     },
     {
       "Date": "2026-10-20",
-      "NAV": "",
+      "NAV": "45.78",
       "Market Price": "45.772999",
+      "Premium/Discount": "-0.0153"
+    },
+    {
+      "Date": "2026-10-21",
+      "NAV": "46.06",
+      "Market Price": "46.078999",
+      "Premium/Discount": "0.0412"
+    },
+    {
+      "Date": "2026-10-22",
+      "NAV": "45.46",
+      "Market Price": "45.452999",
+      "Premium/Discount": "-0.0154"
+    },
+    {
+      "Date": "2026-10-23",
+      "NAV": "",
+      "Market Price": "45.208",
       "Premium/Discount": ""
     }
   ]
