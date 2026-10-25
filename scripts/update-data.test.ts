@@ -13,7 +13,7 @@ import {
   reinvestmentCoverageStart, reportingPeriodEnds, coalesceReturns, annualizedOfficialReturns, renderUpdateSummary, writeSummary,
   historyWindowStartEpoch, yahooChartUrl, windowByHistoryRange, parseHistoryRange,
   annualizedToTotal, totalToAnnualized, indicatedYield, distributionFrequency,
-  numberOrNull, toIsoDate, parseSharedStrings, parseWorksheetXml, readZipEntries, parseXlsxSheet,
+  holdingsGuard, numberOrNull, toIsoDate, parseSharedStrings, parseWorksheetXml, readZipEntries, parseXlsxSheet,
   parseCatalogRows, parseSitemap, parseFundDetails, parseHoldingsRows, parseDistributionsRows,
   parseNavRows, parseChart, returnHeaderSlot, parseReturnRow, emptyReturns, navTotalReturnDays,
   deriveReturns, historySheet, pageManifest, exportUrl, detailsUrl, yahooSourceUrl, record, array,
@@ -113,6 +113,7 @@ function pdp(ticker: string, options: { name?: string; classes?: string[]; sec?:
   };
 }
 const NPORT = '<edgarSubmission><genInfo><regName>DBX ETF TRUST</regName><regCik>1503123</regCik><seriesName>Xtrackers USD High Yield Corporate Bond ETF</seriesName><seriesId>S000001</seriesId><repPdDate>2026-08-31</repPdDate></genInfo><fundInfo><netAssets>3000000000</netAssets></fundInfo><invstOrSec><name>ACME INC</name><cusip>012345678</cusip><pctVal>0</pctVal><valUSD>123.45</valUSD><balance>10</balance><assetCat>DB</assetCat></invstOrSec><invstOrSec><name>ACME INC</name><cusip>N/A</cusip><identifiers><isin value="US1234567890"/></identifiers><pctVal>-0.5</pctVal><curVal>-2</curVal><balance>-1</balance><assetCat>EC</assetCat></invstOrSec></edgarSubmission>';
+const NPORT_FUND = NPORT.replace('<pctVal>0</pctVal>', '<pctVal>100.5</pctVal>');
 const calls: string[] = [];
 function fakeFetch(denied: string[] = [], secXml: string | null = null): Fetcher {
   return async (url: string) => {
@@ -419,6 +420,21 @@ describe('parsing', () => {
     expect(() => parseHoldingsRows([['Ticker:', 'ASHR'], ['Name', 'Weight %', '$ Market Value']], 'ASHR')).toThrow('no usable');
   });
 
+  test('holdings guard: header-only, renamed weight column, broken weights, a bad weight sum and a halved sheet are rejected', () => {
+    const headers = ['Name', 'Ticker', 'Weight'];
+    const rows = [{ Name: 'A', Ticker: 'A', Weight: '60%' }, { Name: 'B', Ticker: 'B', Weight: '40%' }];
+    expect(holdingsGuard(headers, rows, 2)).toBeNull();
+    expect(holdingsGuard(headers, [['A', 'A', '60'], ['B', 'B', '40']], null)).toBeNull();
+    expect(holdingsGuard([], [], 0)).toBeNull(); // nothing published before: an empty sheet is honest
+    expect(holdingsGuard(headers, [], 505)).toContain('no holdings rows');
+    expect(holdingsGuard(['Name', 'Ticker', 'Wt'], rows, 2)).toContain('no weight column');
+    expect(holdingsGuard(headers, rows.map((row) => ({ ...row, Weight: '6\u200B0' })), 2)).toContain('numeric weight');
+    const allocation = [{ Name: 'Cash&Collateral', Ticker: '-', Weight: '100' }, { Name: 'Equities', Ticker: '-', Weight: '476' }];
+    expect(holdingsGuard(headers, allocation, 2)).toContain('outside 50..150');
+    expect(holdingsGuard(headers, allocation, 2, ['sum'])).toBeNull();
+    expect(holdingsGuard(headers, rows, 5)).toContain('less than half');
+  });
+
   test('distributions retain zero events, are chronological with the latest positive amount; daily NAV is not confused with a growth chart', () => {
     const events = parseDistributionsRows([...META_ROWS('ASHR'), ['Ex-Date', 'Record date', 'Pay date', 'US$ / Share'],
       ['12/19/2025', '12/19/2025', '12/29/2025', '0.75811'], ['06/20/2025', '', '', '0'], ['12/19/2025', '12/19/2025', '12/29/2025', '0.75811']], 'ASHR');
@@ -672,24 +688,37 @@ describe('pipeline', () => {
 
   test('SEC fallback: the exact series fills failed official holdings, the wrong series is rejected, EDGAR_FALLBACK=false never calls SEC', async () => {
     const root = await seeded();
-    const result = await quietRun(root, { TICKERS: 'HYLB' }, fakeFetch(['/HYLB/Securities'], NPORT));
+    const result = await quietRun(root, { TICKERS: 'HYLB' }, fakeFetch(['/HYLB/Securities'], NPORT_FUND));
     expect([result.failures, result.outcomes[0].freshSources.includes('SEC N-PORT')]).toEqual([0, true]);
     const meta = await metaOf(root, 'HYLB');
     expect([record(meta.holdings).totalRows, String(record(meta.source).holdingsSource).includes('primary_doc.xml')]).toEqual([2, true]);
     const wrongRoot = await seeded();
-    const wrong = await quietRun(wrongRoot, { TICKERS: 'HYLB' }, fakeFetch(['/HYLB/Securities'], NPORT.replace('S000001', 'S000002')));
+    const wrong = await quietRun(wrongRoot, { TICKERS: 'HYLB' }, fakeFetch(['/HYLB/Securities'], NPORT_FUND.replace('S000001', 'S000002')));
     expect(wrong.failures).toBe(1);
     expect(await Bun.file(join(wrongRoot, 'funds', 'HYLB', 'meta.json')).exists()).toBe(false);
     const offRoot = await seeded();
     calls.length = 0;
-    const off = await quietRun(offRoot, { TICKERS: 'HYLB', EDGAR_FALLBACK: 'false' }, fakeFetch(['/HYLB/Securities'], NPORT));
+    const off = await quietRun(offRoot, { TICKERS: 'HYLB', EDGAR_FALLBACK: 'false' }, fakeFetch(['/HYLB/Securities'], NPORT_FUND));
     expect([off.failures, calls.some(url => url.includes('sec.gov'))]).toEqual([1, false]);
+  });
+
+  test('holdings that fail the guard keep the fund exactly as published and report it failed', async () => {
+    const root = await seeded();
+    await quietRun(root, { TICKERS: 'ASHR' });
+    const before = await hashes(root);
+    // The DWS export still parses, but "Weight %" arrives as fractions: the weights add up to 0.98, not ~100
+    const fractions = literalWorkbook([...META_ROWS('ASHR'), HOLDINGS_HEADER,
+      ['001280', 'CNE100007CS8', '000000001', '', 'ASHR test position', '0.99', '100', '', '10', 'CN', '', 'Equity'],
+      ['EURUSD', '', '', '', 'ASHR test forward', '-0.01', '-1', '10', '-10', '', '', 'Forward']]);
+    const result = await quietRun(root, { TICKERS: 'ASHR' }, override(fakeFetch(), url => url.includes('/ASHR/Securities'), () => new Response(fractions)));
+    expect([result.failures, result.outcomes[0].status, String(result.outcomes[0].reason).startsWith('holdings guard:')]).toEqual([1, 'failed', true]);
+    expect(await hashes(root)).toEqual(before);
   });
 
   test('N-PORT freshness: an older SEC filing never replaces fresher published holdings', async () => {
     const root = await seeded();
     await quietRun(root, { TICKERS: 'HYLB' }); // published holdings dated 2026-09-29
-    await quietRun(root, { TICKERS: 'HYLB' }, fakeFetch(['/HYLB/Securities'], NPORT)); // filing report date 2026-08-31
+    await quietRun(root, { TICKERS: 'HYLB' }, fakeFetch(['/HYLB/Securities'], NPORT_FUND)); // filing report date 2026-08-31
     const meta = await metaOf(root, 'HYLB');
     expect([String(record(meta.source).holdingsSource).includes('primary_doc.xml'), record(meta.holdings).asOfDate]).toEqual([false, '2026-09-29']);
   });
