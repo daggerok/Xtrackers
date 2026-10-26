@@ -8,10 +8,11 @@ import { tmpdir } from 'node:os';
 import {
   CLOSED_FUNDS, closedFund, CONTROL_NAMES, DEFAULT_SEC_UA, SOFT_DEADLINE_MS, resolveControls, runtimeControls, readConfig, parseRange, parseAumRange, inRange,
   fundFilterReasons, mergeDetails, outputConfigEntries, createRequestGate, fetchWithRetry,
-  HttpError, samePublishedContent, writeJsonIfChanged, selectUpdateBatch, runUpdater, indexRowForCatalog, parseNport,
-  parseFundTickerMap, parseCompanyTickerMap, parseNportAccessions, parseEdgarAtomFilings, matchesNportFund, fillNportTickers,
+  HttpError, samePublishedContent, writeJsonIfChanged, selectUpdateBatch, runUpdater, indexRowForCatalog, parseNportFiling,
+  parseSecFundTickers, parseSecCompanyNames, parseNportSubmissions, parseNportFeed, nportDocumentUrl, nportIdentity, nportIsFresh, nportTickers, nportHoldingsSheet,
+  HOLDINGS_GUARD_RELAX, holdingsWeightCount, dwsTicker,
   reinvestmentCoverageStart, reportingPeriodEnds, coalesceReturns, annualizedOfficialReturns, renderUpdateSummary, writeSummary,
-  historyWindowStartEpoch, yahooChartUrl, windowByHistoryRange, parseHistoryRange,
+  historyWindowStartEpoch, yahooChartUrl, parseHistoryRange,
   annualizedToTotal, totalToAnnualized, indicatedYield, distributionFrequency,
   holdingsGuard, numberOrNull, toIsoDate, parseSharedStrings, parseWorksheetXml, readZipEntries, parseXlsxSheet,
   parseCatalogRows, parseSitemap, parseFundDetails, parseHoldingsRows, parseDistributionsRows,
@@ -112,7 +113,7 @@ function pdp(ticker: string, options: { name?: string; classes?: string[]; sec?:
     metaTags: { canonical: `https://etf.dws.com/en-us/${ticker}-xtrackers-test-etf/` },
   };
 }
-const NPORT = '<edgarSubmission><genInfo><regName>DBX ETF TRUST</regName><regCik>1503123</regCik><seriesName>Xtrackers USD High Yield Corporate Bond ETF</seriesName><seriesId>S000001</seriesId><repPdDate>2026-08-31</repPdDate></genInfo><fundInfo><netAssets>3000000000</netAssets></fundInfo><invstOrSec><name>ACME INC</name><cusip>012345678</cusip><pctVal>0</pctVal><valUSD>123.45</valUSD><balance>10</balance><assetCat>DB</assetCat></invstOrSec><invstOrSec><name>ACME INC</name><cusip>N/A</cusip><identifiers><isin value="US1234567890"/></identifiers><pctVal>-0.5</pctVal><curVal>-2</curVal><balance>-1</balance><assetCat>EC</assetCat></invstOrSec></edgarSubmission>';
+const NPORT = '<edgarSubmission><genInfo><regName>DBX ETF TRUST</regName><regCik>1503123</regCik><seriesName>Xtrackers USD High Yield Corporate Bond ETF</seriesName><seriesId>S000000001</seriesId><repPdDate>2026-08-31</repPdDate></genInfo><fundInfo><netAssets>3000000000</netAssets></fundInfo><invstOrSec><name>ACME INC</name><cusip>012345678</cusip><pctVal>0</pctVal><valUSD>123.45</valUSD><balance>10</balance><assetCat>DB</assetCat></invstOrSec><invstOrSec><name>ACME INC</name><cusip>N/A</cusip><identifiers><isin value="US1234567890"/></identifiers><pctVal>-0.5</pctVal><curVal>-2</curVal><balance>-1</balance><assetCat>EC</assetCat></invstOrSec></edgarSubmission>';
 const NPORT_FUND = NPORT.replace('<pctVal>0</pctVal>', '<pctVal>100.5</pctVal>');
 const calls: string[] = [];
 function fakeFetch(denied: string[] = [], secXml: string | null = null): Fetcher {
@@ -126,7 +127,7 @@ function fakeFetch(denied: string[] = [], secXml: string | null = null): Fetcher
     const exportMatch = /\/(?:Export|export)\/etf\/([A-Z]+)\/(\w+)/.exec(url);
     if (exportMatch) return new Response(syntheticWorkbook(exportMatch[1], exportMatch[2]));
     if (url.includes('finance.yahoo.com')) return Response.json({ chart: { result: [{ meta: { exchangeName: 'NYSE' }, timestamp: [1790553600, 1790640000], indicators: { quote: [{ close: [35, 35.3], volume: [100, 110] }], adjclose: [{ adjclose: [34.123456, 35.234567] }] } }] } });
-    if (secXml && url.endsWith('company_tickers_mf.json')) return Response.json({ fields: ['symbol', 'cik', 'seriesId', 'classId'], data: [['HYLB', 1503123, 'S000001', 'C000001']] });
+    if (secXml && url.endsWith('company_tickers_mf.json')) return Response.json({ fields: ['symbol', 'cik', 'seriesId', 'classId'], data: [['HYLB', 1503123, 'S000000001', 'C000001']] });
     if (secXml && url.includes('browse-edgar')) return new Response('<feed><entry><filing-type>NPORT-P</filing-type><accession-number>0001503123-26-000001</accession-number><filing-date>2026-09-01</filing-date><filing-href>https://www.sec.gov/Archives/edgar/data/1503123/000150312326000001/x.html</filing-href></entry></feed>');
     if (secXml && url.endsWith('primary_doc.xml')) return new Response(secXml);
     if (secXml && url.endsWith('company_tickers.json')) return Response.json({ 0: { ticker: 'ACME', title: 'ACME INC' } });
@@ -165,8 +166,10 @@ async function quietRun(root: string, env: Record<string, string> = {}, fetcher:
 async function seed(root: string): Promise<void> {
   const funds = parseSitemap(SITEMAP).map(indexRowForCatalog);
   // Delisted/old catalog entries and unselected files are never deleted.
-  funds.push({ ...indexRowForCatalog({ ticker: 'RETD', name: 'Retired test fund', category: 'Equities', fundPage: 'https://etf.dws.com/en-us/RETD-test-etf/', inceptionDate: null, terValue: null, netTerValue: null, aumValue: null, officialReturns: emptyReturns() }), customSentinel: 'preserve byte-for-byte' });
+  funds.push({ ...indexRowForCatalog({ ticker: 'RETD', name: 'Retired test fund', category: 'Equities', fundPage: 'https://etf.dws.com/en-us/RETD-test-etf/', inceptionDate: null, terValue: null, netTerValue: null, aumValue: null, officialReturns: emptyReturns() }), dataFile: './funds/RETD/meta.json', customSentinel: 'preserve byte-for-byte' });
   await writeJsonIfChanged(join(root, 'index.json'), { provider: 'Xtrackers (DWS)', generatedAt: '2026-09-01', source: {}, counts: { funds: funds.length, holdings: 0, history: 0 }, funds });
+  await mkdir(join(root, 'funds', 'RETD'), { recursive: true });
+  await Bun.write(join(root, 'funds', 'RETD', 'meta.json'), '{"ticker":"RETD"}\n');
   await mkdir(join(root, 'funds', 'CHPS'), { recursive: true });
   await Bun.write(join(root, 'funds', 'CHPS', 'untouched.json'), '{"sentinel":true}\n');
 }
@@ -298,15 +301,11 @@ describe('controls 2', () => {
     expect([merged.aumValue, merged.terValue, merged.secYield]).toEqual([details.aumValue, 0, 1.37]);
   });
 
-  test('HISTORY_RANGE maps to the Yahoo request window and to the published history rows', () => {
+  test('HISTORY_RANGE maps to the Yahoo request window', () => {
     const now = Date.parse('2026-10-01T00:00:00Z') / 1000;
     expect([historyWindowStartEpoch('max', now), historyWindowStartEpoch('5y', now)]).toEqual([0, Math.floor(now - 5 * 365.25 * 86400)]);
     expect(yahooChartUrl('ASHR', now)).toContain('period1=0&period2=' + now);
     expect(yahooChartUrl('ASHR', now, '1y')).toContain(`period1=${Math.floor(now - 365.25 * 86400)}&period2=${now}`);
-    const items = ['2020-01-01', '2025-10-02', '2026-09-30'].map(date => ({ date }));
-    expect(windowByHistoryRange(items, 'max', now)).toEqual(items);
-    expect(windowByHistoryRange(items, '1y', now).map(i => i.date)).toEqual(['2025-10-02', '2026-09-30']);
-    expect(windowByHistoryRange(items, '1y', Date.parse('2040-01-01T00:00:00Z') / 1000)).toEqual(items);
   });
 
   test('bounded cursor rotates only a deterministic selected universe, a full pass ignores the cursor', () => {
@@ -421,6 +420,8 @@ describe('parsing 2', () => {
     const bond = parseHoldingsRows(rows, 'BOND');
     expect([bond.rows.length, bond.rows[0].Ticker, bond.rows[0].Identifier, bond.rows[1].Weight]).toEqual([2, '-', '012345678', '-0.5']);
     expect(() => parseHoldingsRows(rows, 'WRONG')).toThrow('ticker mismatch');
+    // XT-1: a U.S. venue suffix is dropped, a foreign exchange code stays
+    expect(['NVDA.O', 'TER.N', 'HPE.UN', 'GOOG UW', 'TSM US', 'BRK.B UN', '8035 JT', 'SAP GY', 'BRK.B', '001280'].map(dwsTicker)).toEqual(['NVDA', 'TER', 'HPE', 'GOOG', 'TSM', 'BRK.B', '8035 JT', 'SAP GY', 'BRK.B', '001280']);
     expect(() => parseHoldingsRows([['Ticker:', 'ASHR'], ['Name', 'Weight %', '$ Market Value']], 'ASHR')).toThrow('no usable');
   });
 
@@ -457,23 +458,22 @@ describe('parsing 2', () => {
 });
 
 describe('parsing 3', () => {
-  test('SEC: N-PORT identifiers and negative or zero weights, company mapping never gives bonds an equity ticker, exact series and trust', () => {
-    const parsed = parseNport(NPORT), names = parseCompanyTickerMap({ 0: { ticker: 'ACME', title: 'ACME INC' } });
-    expect([parsed.repPdDate, parsed.netAssets, parsed.holdings.length, parsed.holdings[0].Weight, parsed.holdings[1].Identifier, parsed.holdings[1].Weight]).toEqual(['2026-08-31', 3e9, 2, '0', 'US1234567890', '-0.5']);
-    const filled = fillNportTickers(parsed.holdings, names);
-    expect([filled[0].Ticker, filled[1].Ticker]).toEqual(['-', 'ACME']);
-    expect(parseNport(NPORT.replace(/(<\/?)([a-zA-Z])/g, '$1n:$2')).holdings).toEqual(parsed.holdings);
-    const map = parseFundTickerMap({ fields: ['symbol', 'classId', 'cik', 'seriesId'], data: [['HYLB', 'C000001', 1503123, 'S000001']] });
-    expect(map.get('HYLB')).toEqual({ cik: '0001503123', seriesId: 'S000001', classId: 'C000001' });
-    const catalogFund = { ticker: 'HYLB', name: 'Xtrackers USD High Yield Corporate Bond ETF', category: null, fundPage: '', inceptionDate: null, terValue: null, netTerValue: null, aumValue: null, officialReturns: emptyReturns() };
-    const ref = map.get('HYLB') || null;
-    expect([
-      matchesNportFund(parsed, catalogFund, ref), matchesNportFund(parseNport(NPORT.replace('S000001', 'S000002')), catalogFund, ref),
-      matchesNportFund(parseNport(NPORT.replace('<regCik>1503123', '<regCik>999999')), catalogFund, ref), matchesNportFund(parsed, catalogFund, null), matchesNportFund(parsed, { ...catalogFund, name: 'Another fund' }, null),
-    ]).toEqual([true, false, false, true, false]);
+  test('SEC (shared nport-reader): own identifiers, empty missing numbers, negative and zero weights, no equity ticker on a bond, exact series', () => {
+    const filing = parseNportFiling(NPORT), names = parseSecCompanyNames({ 0: { ticker: 'ACME', title: 'ACME INC' } });
+    expect([filing.repPdDate, filing.netAssets, filing.positions.length]).toEqual(['2026-08-31', 3e9, 2]);
+    const rows = nportHoldingsSheet(filing, nportTickers(filing.positions, names));
+    // the bond keeps no ticker and a 0 weight stays 0; the equity has no valUSD (an empty cell, never 0) and its ISIN as identifier
+    expect(rows.map(row => [row.Ticker, row.Identifier, row.Weight, row['Market Value']])).toEqual([['-', '012345678', '0', '123.45'], ['ACME', 'US1234567890', '-0.5', '']]);
+    expect(parseNportFiling(NPORT.replace(/(<\/?)([a-zA-Z])/g, '$1n:$2')).positions).toEqual(filing.positions);
+    const map = parseSecFundTickers({ fields: ['symbol', 'classId', 'cik', 'seriesId'], data: [['HYLB', 'C000001', 1503123, 'S000000001']] });
+    expect(map.get('HYLB')).toEqual({ cik: '0001503123', seriesId: 'S000000001', classId: 'C000001' });
+    const name = 'Xtrackers USD High Yield Corporate Bond ETF';
+    expect([nportIdentity(filing, { seriesId: 'S000000001' }).problem, nportIdentity(filing, { seriesId: 'S000000002' }).problem === null, nportIdentity(filing, { name }).problem, nportIdentity(filing, { name: 'Another fund' }).problem === null]).toEqual([null, false, null, false]);
     const accession = '0001503123-26-000001';
-    expect(parseNportAccessions({ cik: 1503123, filings: { recent: { form: ['NPORT-P', '10-K'], accessionNumber: [accession, accession], filingDate: ['2026-09-01'], reportDate: ['2026-08-31'] } } })).toHaveLength(1);
-    expect(parseEdgarAtomFilings(`<feed><entry><filing-type>NPORT-P</filing-type><accession-number>${accession}</accession-number><filing-href>https://www.sec.gov/Archives/edgar/data/1503123/x</filing-href></entry></feed>`)[0].url).toContain('/1503123/000150312326000001/primary_doc.xml');
+    expect(parseNportSubmissions({ cik: 1503123, filings: { recent: { form: ['NPORT-P', '10-K'], accessionNumber: [accession, accession], filingDate: ['2026-09-01'], reportDate: ['2026-08-31'] } } })).toHaveLength(1);
+    const [candidate] = parseNportFeed(`<feed><entry><filing-type>NPORT-P</filing-type><accession-number>${accession}</accession-number><filing-href>https://www.sec.gov/Archives/edgar/data/1503123/x</filing-href></entry></feed>`);
+    expect(nportDocumentUrl(candidate.cik, candidate.accession)).toContain('/1503123/000150312326000001/primary_doc.xml');
+    expect([nportIsFresh('2026-08-31', '2026-08-31', 10), nportIsFresh('2026-09-30', '2026-08-31', 10), nportIsFresh('2026-08-31', null, 0)]).toEqual([false, true, true]);
   });
 
   test('page manifests cover zero rows and exact boundaries; the verified official URL namespaces stay case-correct', () => {
@@ -575,7 +575,8 @@ describe('metrics 2', () => {
     expect(coalesceReturns(emptyReturns(), derived)).toEqual(derived);
     expect([coalesceReturns({ ...primary, asOfDate: '2026-08-31' }, derived).yr3, coalesceReturns({ ...primary, asOfDate: '2026-07-31' }, derived).yr3]).toEqual([5, null]);
     const source = { ...emptyReturns(), asOfDate: '2026-08-31', sinceInception: 0, yr1: -1 };
-    expect([annualizedOfficialReturns(source, '2026-01-01').sinceInception, annualizedOfficialReturns(source, '2024-01-01').sinceInception, annualizedOfficialReturns({ ...source, sinceInception: -5 }, '2024-01-01').sinceInception, annualizedOfficialReturns({ ...source, asOfDate: null }, '2024-01-01').sinceInception, annualizedOfficialReturns(source, null).sinceInception]).toEqual([null, 0, -5, null, null]);
+    // the shared calendar-anniversary rule: an unknown date keeps the figure (was null)
+    expect([annualizedOfficialReturns(source, '2026-01-01').sinceInception, annualizedOfficialReturns(source, '2024-01-01').sinceInception, annualizedOfficialReturns({ ...source, sinceInception: -5 }, '2024-01-01').sinceInception, annualizedOfficialReturns({ ...source, asOfDate: null }, '2024-01-01').sinceInception, annualizedOfficialReturns(source, null).sinceInception, annualizedOfficialReturns(source, '2025-08-31').sinceInception]).toEqual([null, 0, -5, 0, 0, 0]);
     expect([source.sinceInception, annualizedOfficialReturns(source, '2026-01-01').yr1]).toEqual([0, -1]);
     expect(reportingPeriodEnds('2026-09-29')).toEqual({ monthEnd: '2026-08-31', quarterEnd: '2026-06-30' });
     expect(reportingPeriodEnds('2026-09-30')).toEqual({ monthEnd: '2026-09-30', quarterEnd: '2026-09-30' });
@@ -634,7 +635,7 @@ describe('pipeline', () => {
   test('an unknown ticker fails before any write; TICKERS does not bypass financial filters', async () => {
     const root = await seeded();
     const before = await hashes(root);
-    await expect(quietRun(root, { TICKERS: 'NOTREAL' })).rejects.toThrow('absent from catalog');
+    await expect(quietRun(root, { TICKERS: 'NOTREAL' })).rejects.toThrow('TICKERS: NOTREAL not in the Xtrackers catalog or published feed; nothing was fetched or written');
     expect(await hashes(root)).toEqual(before);
     const result = await quietRun(root, { TICKERS: 'ASHR', AUM: '2B:' });
     expect([result.selected, result.outcomes[0].status]).toEqual([['ASHR'], 'skipped']);
@@ -705,7 +706,7 @@ describe('pipeline 2', () => {
     const meta = await metaOf(root, 'HYLB');
     expect([record(meta.holdings).totalRows, String(record(meta.source).holdingsSource).includes('primary_doc.xml')]).toEqual([2, true]);
     const wrongRoot = await seeded();
-    const wrong = await quietRun(wrongRoot, { TICKERS: 'HYLB' }, fakeFetch(['/HYLB/Securities'], NPORT_FUND.replace('S000001', 'S000002')));
+    const wrong = await quietRun(wrongRoot, { TICKERS: 'HYLB' }, fakeFetch(['/HYLB/Securities'], NPORT_FUND.replace('S000000001', 'S000000002')));
     expect(wrong.failures).toBe(1);
     expect(await Bun.file(join(wrongRoot, 'funds', 'HYLB', 'meta.json')).exists()).toBe(false);
     const offRoot = await seeded();
@@ -873,9 +874,10 @@ describe('pipeline 4', () => {
     const root = await seeded();
     const withNew = override(fakeFetch(), url => url.endsWith('/en-us/sitemap.xml'), () => new Response(SITEMAP.replace('</urlset>', '<url><loc>https://etf.dws.com/en-us/NEWX-xtrackers-test-etf/</loc></url></urlset>')));
     console.log = () => {}; console.warn = () => {};
-    let fresh; try { fresh = await runUpdater(readConfig({ TICKERS: 'ASHR', REQUEST_SLEEP: '0' }), { root, fetcher: withNew }); } finally { Object.assign(console, realConsole); }
-    expect(fresh.newFunds).toEqual(['NEWX']);
-    expect(renderUpdateSummary(readConfig({}), fresh)).toContain('NEW FUNDS: NEWX');
+    let fresh; try { fresh = await runUpdater(readConfig({ TICKERS: 'ASHR NEWX', REQUEST_SLEEP: '0' }), { root, fetcher: withNew }); } finally { Object.assign(console, realConsole); }
+    // ASHR had only a catalog-only row, NEWX no row: both are published for the first time
+    expect(fresh.newFunds).toEqual(['NEW FUNDS: ASHR, NEWX']);
+    expect(renderUpdateSummary(readConfig({}), fresh)).toContain('### NEW FUNDS\n\nNEW FUNDS: ASHR, NEWX\n');
 
     const summaryRoot = await seeded();
     const config = readConfig({ TICKERS: 'ASHR HYLB DBEF', REQUEST_SLEEP: '0', MAX_FETCHES: '3' });
@@ -944,6 +946,78 @@ describe('pipeline 4', () => {
 });
 
 // ===========================================================================
+describe('pipeline 5', () => {
+  test('a fund younger than one year publishes no 1y, 5y or since-inception return, official or derived', async () => {
+    const root = await seeded();
+    const young = override(fakeFetch(), url => url.includes('/ASHR/pdpMetaTagsTealium'), () => new Response(JSON.stringify(pdp('ASHR')).replace('11/06/2013', '01/15/2026')));
+    expect((await quietRun(root, { TICKERS: 'ASHR' }, young)).failures).toBe(0);
+    const metrics = record((await rowOf(root, 'ASHR')).metrics);
+    expect([metrics.ytd, metrics.tr1y, metrics.cagr5y, metrics.siAnn]).toEqual([1.5, null, null, null]);
+  });
+
+  test('dates: month-name and U.S. dates are the same calendar day in every time zone', () => {
+    for (const tz of ['Asia/Tokyo', 'America/Los_Angeles', 'UTC']) {
+      process.env.TZ = tz;
+      expect(['Oct 24, 2026', 'October 24 2026', '24 Oct 2026', '10/24/2026', '10/24/26', '2026-10-24'].map(raw => toIsoDate(raw))).toEqual(Array(6).fill('2026-10-24'));
+      expect(toIsoDate('not a date')).toBeNull();
+    }
+  });
+
+  test('a HISTORY_RANGE run keeps the older published history, rescaled by the overlapping days, and a same-data rerun writes nothing (Q25)', async () => {
+    const day = (daysAgo: number): number => Math.floor(Date.now() / 86_400_000 - daysAgo) * 86_400 + 48_600;
+    const chart = (timestamp: number[], close: number[], adjclose: number[]): Fetcher => override(fakeFetch(['/HYLB/Performance']), url => url.includes('finance.yahoo.com'), () => Response.json({ chart: { result: [{ meta: { exchangeName: 'NYSE' }, timestamp, indicators: { quote: [{ close, volume: close.map(() => 100) }], adjclose: [{ adjclose }] } }] } }));
+    const root = await seeded();
+    expect((await quietRun(root, { TICKERS: 'HYLB' }, chart([day(400), day(10), day(3)], [30, 35, 35.3], [30, 35, 35.3]))).failures).toBe(0);
+    backdate(root);
+    const before = await hashes(root);
+    expect((await quietRun(root, { TICKERS: 'HYLB', HISTORY_RANGE: '1y' }, chart([day(10), day(3)], [35, 35.3], [35, 35.3]))).failures).toBe(0);
+    expect(await hashes(root)).toEqual(before);
+    expect(touched(root)).toEqual([]);
+    // a distribution re-adjusted the series by 0.99: the kept older day is rescaled with it
+    await quietRun(root, { TICKERS: 'HYLB', HISTORY_RANGE: '1y' }, chart([day(10), day(3)], [35, 35.3], [34.65, 34.947]));
+    const page = await Bun.file(join(root, 'funds', 'HYLB', 'history', '001.json')).json();
+    expect(page.rows.map((row: JsonRecord) => row['Adj Close'])).toEqual(['29.7', '34.65', '34.95']);
+  });
+
+  test('a relaxed guard still keeps numeric published weights from an all-blank N-PORT sheet (Q24)', async () => {
+    const root = await seeded();
+    expect((await quietRun(root, { TICKERS: 'HYLB' })).failures).toBe(0); // DWS holdings dated 2026-09-29
+    const before = await hashes(root);
+    const blank = NPORT_FUND.replace('2026-08-31', '2026-10-15').replace(/<pctVal>[^<]*<\/pctVal>/g, '');
+    HOLDINGS_GUARD_RELAX['*'] = ['numeric', 'sum'];
+    let result;
+    try { result = await quietRun(root, { TICKERS: 'HYLB' }, fakeFetch(['/HYLB/Securities'], blank)); } finally { delete HOLDINGS_GUARD_RELAX['*']; }
+    expect([result.failures, String(result.outcomes[0].reason)]).toEqual([1, expect.stringContaining('no row has a numeric weight')]);
+    expect(await hashes(root)).toEqual(before);
+    expect(holdingsWeightCount(['Name', 'Weight'], [['A', '-'], ['B', '2']])).toBe(1);
+  });
+});
+
+describe('pipeline 6', () => {
+  test('TICKERS outside the live catalog stops the run before any fund request; a stale catalog-only row is dropped (Q27)', async () => {
+    const root = await seeded();
+    const index = await Bun.file(join(root, 'index.json')).json();
+    index.funds.push({ ...index.funds[0], ticker: 'NOPE', name: 'NOPE', dataFile: null });
+    await Bun.write(join(root, 'index.json'), JSON.stringify(index));
+    const before = await hashes(root);
+    calls.length = 0;
+    await expect(quietRun(root, { TICKERS: 'NOPE' })).rejects.toThrow('TICKERS: NOPE not in the Xtrackers catalog or published feed; nothing was fetched or written');
+    expect(calls.filter(url => !/downloadxls|sitemap\.xml|fundFinder/i.test(url))).toEqual([]);
+    expect(await hashes(root)).toEqual(before);
+    await quietRun(root);
+    expect((await indexOf(root)).map(row => row.ticker)).not.toContain('NOPE');
+  });
+
+  test('NEW FUNDS announces a fund on its first successful publish, a failed new fund as not published yet (Q28)', async () => {
+    const root = await seeded();
+    const sitemap = SITEMAP.replace('</urlset>', '<url><loc>https://etf.dws.com/en-us/NEWY-xtrackers-test-etf/</loc></url></urlset>');
+    const withNew = (denied: string[]): Fetcher => override(fakeFetch(denied), url => url.endsWith('/en-us/sitemap.xml'), () => new Response(sitemap));
+    expect((await quietRun(root, { TICKERS: 'ASHR NEWY' }, withNew(['NEWY']))).newFunds).toEqual(['NEW FUNDS: ASHR', 'NEW FUNDS (not published yet): NEWY']);
+    expect((await quietRun(root, { TICKERS: 'ASHR NEWY' }, withNew(['NEWY']))).newFunds).toEqual([]);
+    expect((await quietRun(root, { TICKERS: 'ASHR NEWY' }, withNew([]))).newFunds).toEqual(['NEW FUNDS: NEWY']);
+  });
+});
+
 describe('network', () => {
   test('two independent request lanes start two requests immediately, the rest wait one REQUEST_SLEEP', async () => {
     const waits: number[] = [];
