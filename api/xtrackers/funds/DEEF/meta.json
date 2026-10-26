@@ -10,16 +10,16 @@
   "terGrossValue": 0.24,
   "nav": "$39.49",
   "navValue": 39.49,
-  "aum": "$55,288,618",
-  "aumValue": 55288618,
-  "asOfDate": "2026-10-22",
+  "aum": "$55,282,549",
+  "aumValue": 55282549,
+  "asOfDate": "2026-10-23",
   "inceptionDate": "2015-11-24",
   "exchange": "NYSE",
   "closePrice": "$39.46",
   "closePriceAsOfDate": "2026-10-23",
-  "premiumDiscount": "0.11%",
-  "premiumDiscountValue": 0.114,
-  "premiumDiscountAsOfDate": "2026-10-22",
+  "premiumDiscount": "-0.09%",
+  "premiumDiscountValue": -0.0861,
+  "premiumDiscountAsOfDate": "2026-10-23",
   "cusip": "233051515",
   "isin": "US2330515154",
   "distributions": {
@@ -130,7 +130,7 @@
     ],
     "pageSize": 250,
     "totalRows": 1203,
-    "asOfDate": "2026-10-22",
+    "asOfDate": "2026-10-23",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/DEEF/Securities"
   },
   "history": {
@@ -144,7 +144,7 @@
     "asOfDate": "2026-10-23",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/DEEF/Performance + https://query1.finance.yahoo.com/v8/finance/chart/DEEF"
   },
-  "generatedAt": "2026-10-25T03:58:09.931Z",
+  "generatedAt": "2026-10-26T02:18:30.317Z",
   "netTerValue": 0.24,
   "source": {
     "provider": "Xtrackers (DWS)",

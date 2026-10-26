@@ -8,18 +8,18 @@
   "terValue": 0.2,
   "terGross": "0.20%",
   "terGrossValue": 0.2,
-  "nav": "$46.23",
-  "navValue": 46.23,
-  "aum": "$6,240,662",
-  "aumValue": 6240662,
-  "asOfDate": "2026-10-22",
+  "nav": "$48.02",
+  "navValue": 48.02,
+  "aum": "$6,483,031",
+  "aumValue": 6483031,
+  "asOfDate": "2026-10-23",
   "inceptionDate": "2023-07-13",
   "exchange": "NASDAQ",
   "closePrice": "$48.22",
   "closePriceAsOfDate": "2026-10-23",
   "premiumDiscount": "0.41%",
-  "premiumDiscountValue": 0.411,
-  "premiumDiscountAsOfDate": "2026-10-22",
+  "premiumDiscountValue": 0.4123,
+  "premiumDiscountAsOfDate": "2026-10-23",
   "cusip": "23306X803",
   "isin": "US23306X8039",
   "distributions": {
@@ -112,8 +112,8 @@
     "tr5y": null,
     "tr10y": null,
     "siAnn": 23.44,
-    "dividendYield": 0.38,
-    "dividendYieldText": "0.38%",
+    "dividendYield": 0.37,
+    "dividendYieldText": "0.37%",
     "dividendYieldBasis": "official-distribution-rate",
     "secYield": 0.02,
     "secYieldText": "0.02%",
@@ -126,7 +126,7 @@
     ],
     "pageSize": 250,
     "totalRows": 50,
-    "asOfDate": "2026-10-22",
+    "asOfDate": "2026-10-23",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/PSWD/Securities"
   },
   "history": {
@@ -138,7 +138,7 @@
     "asOfDate": "2026-10-23",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/PSWD/Performance + https://query1.finance.yahoo.com/v8/finance/chart/PSWD"
   },
-  "generatedAt": "2026-10-25T03:59:04.862Z",
+  "generatedAt": "2026-10-26T02:19:29.605Z",
   "netTerValue": 0.2,
   "source": {
     "provider": "Xtrackers (DWS)",
@@ -158,10 +158,10 @@
     "indexTicker": "SOCYBSSN"
   },
   "yields": {
-    "dividendYield": 0.38,
-    "dividendYieldText": "0.38%",
+    "dividendYield": 0.37,
+    "dividendYieldText": "0.37%",
     "dividendYieldKind": "official indicated distribution rate / NAV",
-    "distributionRate": 0.38,
+    "distributionRate": 0.37,
     "secYield": 0.02,
     "secYieldText": "0.02%",
     "secYieldKind": "official DWS 30-day SEC yield"

@@ -8,18 +8,18 @@
   "terValue": 0.35,
   "terGross": "0.35%",
   "terGrossValue": 0.35,
-  "nav": "$20.50",
-  "navValue": 20.5,
-  "aum": "$512,621",
-  "aumValue": 512621,
-  "asOfDate": "2026-10-22",
+  "nav": "$20.33",
+  "navValue": 20.33,
+  "aum": "$508,211",
+  "aumValue": 508211,
+  "asOfDate": "2026-10-23",
   "inceptionDate": "2023-07-13",
   "exchange": "NASDAQ",
   "closePrice": "$20.32",
   "closePriceAsOfDate": "2026-10-23",
   "premiumDiscount": "-0.04%",
-  "premiumDiscountValue": -0.0439,
-  "premiumDiscountAsOfDate": "2026-10-22",
+  "premiumDiscountValue": -0.0393,
+  "premiumDiscountAsOfDate": "2026-10-23",
   "cusip": "23306X704",
   "isin": "US23306X7049",
   "distributions": {
@@ -112,8 +112,8 @@
     "tr5y": null,
     "tr10y": null,
     "siAnn": -3.21,
-    "dividendYield": 10.78,
-    "dividendYieldText": "10.78%",
+    "dividendYield": 10.88,
+    "dividendYieldText": "10.88%",
     "dividendYieldBasis": "official-distribution-rate",
     "secYield": 0.29,
     "secYieldText": "0.29%",
@@ -126,7 +126,7 @@
     ],
     "pageSize": 250,
     "totalRows": 50,
-    "asOfDate": "2026-10-22",
+    "asOfDate": "2026-10-23",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/UPGR/Securities"
   },
   "history": {
@@ -138,7 +138,7 @@
     "asOfDate": "2026-10-23",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/UPGR/Performance + https://query1.finance.yahoo.com/v8/finance/chart/UPGR"
   },
-  "generatedAt": "2026-10-25T03:59:41.448Z",
+  "generatedAt": "2026-10-26T02:20:01.145Z",
   "netTerValue": 0.35,
   "source": {
     "provider": "Xtrackers (DWS)",
@@ -158,10 +158,10 @@
     "indexTicker": "SOLUSGIT"
   },
   "yields": {
-    "dividendYield": 10.78,
-    "dividendYieldText": "10.78%",
+    "dividendYield": 10.88,
+    "dividendYieldText": "10.88%",
     "dividendYieldKind": "official indicated distribution rate / NAV",
-    "distributionRate": 10.78,
+    "distributionRate": 10.88,
     "secYield": 0.29,
     "secYieldText": "0.29%",
     "secYieldKind": "official DWS 30-day SEC yield"
