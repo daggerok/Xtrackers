@@ -1,6 +1,6 @@
 {
   "provider": "Xtrackers (DWS)",
-  "generatedAt": "2026-10-26T02:20:26.699Z",
+  "generatedAt": "2026-10-26T19:42:52.468Z",
   "source": {
     "catalog": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A1%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
     "catalogSource": "official US sitemap (catalog XLSX unavailable/empty)",
@@ -12,7 +12,7 @@
   "counts": {
     "funds": 43,
     "holdings": 21079,
-    "history": 78167
+    "history": 78168
   },
   "funds": [
     {
@@ -32,8 +32,8 @@
       "asOfDate": "2026-10-23",
       "inceptionDate": "2013-11-06",
       "exchange": "NYSE",
-      "closePrice": "$30.74",
-      "closePriceAsOfDate": "2026-10-23",
+      "closePrice": "$30.95",
+      "closePriceAsOfDate": "2026-10-26",
       "premiumDiscount": "-0.68%",
       "premiumDiscountValue": -0.6785,
       "premiumDiscountAsOfDate": "2026-10-23",
@@ -83,7 +83,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 286,
-      "history": 3261
+      "history": 3262
     },
     {
       "ticker": "ASHS",
