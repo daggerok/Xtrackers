@@ -6,7 +6,7 @@ import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { tmpdir } from 'node:os';
 import {
-  CONTROL_NAMES, DEFAULT_SEC_UA, SOFT_DEADLINE_MS, resolveControls, runtimeControls, readConfig, parseRange, parseAumRange, inRange,
+  CLOSED_FUNDS, closedFund, CONTROL_NAMES, DEFAULT_SEC_UA, SOFT_DEADLINE_MS, resolveControls, runtimeControls, readConfig, parseRange, parseAumRange, inRange,
   fundFilterReasons, mergeDetails, outputConfigEntries, createRequestGate, fetchWithRetry,
   HttpError, samePublishedContent, writeJsonIfChanged, selectUpdateBatch, runUpdater, indexRowForCatalog, parseNport,
   parseFundTickerMap, parseCompanyTickerMap, parseNportAccessions, parseEdgarAtomFilings, matchesNportFund, fillNportTickers,
@@ -280,7 +280,9 @@ describe('controls', () => {
     await Bun.write(file, '{"UNKNOWN":"1"}');
     expect((await evaluate({})).status).not.toBe(0);
   });
+});
 
+describe('controls 2', () => {
   test('ranges are ANDed; true zero and missing data differ; AUM presets respect boundaries; missing current facts retain published ones', () => {
     expect(parseRange('-5:0')).toMatchObject({ min: -5, max: 0 });
     expect(() => parseRange('5')).toThrow('min:max');
@@ -390,7 +392,9 @@ describe('parsing', () => {
       .toEqual({ asOfDate: '2026-08-31', ytd: 0, yr1: null, yr3: null, yr5: -5, yr10: 4.2, sinceInception: 6 });
     expect(parseReturnRow(['asOfDate', '1Y'], [123, ''], 'unchanged-string').asOfDate).toBe('unchanged-string');
   });
+});
 
+describe('parsing 2', () => {
   test('PDP details: legal name, exact AUM, gross and net costs, NAV, date, frequency, identifiers, yields, annualized returns only', () => {
     const details = parseFundDetails(pdp('ASHR', { name: 'Xtrackers Harvest CSI 300 China A-Shares ETF' }), 'ASHR', 'https://etf.dws.com/en-us/');
     expect([details.name, details.aumValue, details.terValue, details.netTerValue, details.navValue, details.navAsOfDate]).toEqual(['Xtrackers Harvest CSI 300 China A-Shares ETF', 1387217695, 0.65, 0.6, 32.56, '2026-09-29']);
@@ -450,7 +454,9 @@ describe('parsing', () => {
     expect(() => parseNavRows([['Ticker:', 'ASHR'], ['Date', 'Cumulative growth'], ['46294', '100']], 'ASHR')).toThrow('headers');
     expect(() => parseNavRows([['Ticker:', 'ASHR'], ['Date', 'NAV'], ['2026-09-29', '']], 'ASHR')).toThrow('no daily');
   });
+});
 
+describe('parsing 3', () => {
   test('SEC: N-PORT identifiers and negative or zero weights, company mapping never gives bonds an equity ticker, exact series and trust', () => {
     const parsed = parseNport(NPORT), names = parseCompanyTickerMap({ 0: { ticker: 'ACME', title: 'ACME INC' } });
     expect([parsed.repPdDate, parsed.netAssets, parsed.holdings.length, parsed.holdings[0].Weight, parsed.holdings[1].Identifier, parsed.holdings[1].Weight]).toEqual(['2026-08-31', 3e9, 2, '0', 'US1234567890', '-0.5']);
@@ -492,7 +498,6 @@ describe('parsing', () => {
 // ===========================================================================
 describe('metrics', () => {
   const nav = (date: string, value: number) => ({ date, nav: value, aum: null, shares: null, dividend: null });
-  const day = (date: string, close: number): ChartDay => ({ date, close, adjClose: close, volume: 1 });
 
   test('metrics end with returnsBasis then performanceAsOf, catalog-only rows included; performanceAsOf is null without a return figure', () => {
     const stub = indexRowForCatalog({ ticker: 'NEWF', name: 'New', category: null, fundPage: 'https://etf.dws.com/en-us/NEWF/', inceptionDate: null, terValue: null, netTerValue: null, aumValue: null, officialReturns: emptyReturns() });
@@ -535,6 +540,11 @@ describe('metrics', () => {
       .toEqual([0, 33.1, 10, -27.1, null, null, null, -100]);
     expect([indicatedYield(0.5, 12, 100), indicatedYield(0, 12, 100), indicatedYield(1, 4, 0)]).toEqual([6, null, null]);
   });
+});
+
+describe('metrics 2', () => {
+  const nav = (date: string, value: number) => ({ date, nav: value, aum: null, shares: null, dividend: null });
+  const day = (date: string, close: number): ChartDay => ({ date, close, adjClose: close, volume: 1 });
 
   test('distribution frequency prioritizes the official value, zero distributions create no cadence', () => {
     expect(distributionFrequency('Annual', [])).toEqual({ frequency: 'Annually', paymentsPerYear: 1 });
@@ -660,7 +670,9 @@ describe('pipeline', () => {
     const second = await quietRun(pinned, { MAX_FETCHES: '1' }, denied);
     expect([second.selected, second.failures]).toEqual([['DBEF'], 0]);
   });
+});
 
+describe('pipeline 2', () => {
   test('the bounded cursor resumes, scope changes reset it, a TICKERS run never moves it, a full pass clears only its own scope, stale pages go', async () => {
     const root = await seeded();
     expect((await quietRun(root, { MAX_FETCHES: '1' })).selected).toEqual(['ASHR']);
@@ -715,6 +727,63 @@ describe('pipeline', () => {
     expect(await hashes(root)).toEqual(before);
   });
 
+  test('a closed fund is never fetched or reported failed: its files stay as published, its index row says closed, a rerun writes nothing', async () => {
+    const entry = { ticker: 'ASHR', closed: '2026-10-01', source: 'https://www.sec.gov/Archives/edgar/data/1503123/notice.htm' };
+    expect(() => closedFund([{ ...entry, closed: 'soon' }], 'ASHR')).toThrow('CLOSED_FUNDS');
+    expect(closedFund([entry], 'ashr')).toEqual(entry);
+    const root = await seeded();
+    await quietRun(root);
+    const first = await hashes(root), rowsBefore = await indexOf(root);
+    // the guard would reject these holdings (weights as fractions, sum 0.98), and the live sitemap no longer lists the fund
+    const fractions = literalWorkbook([...META_ROWS('ASHR'), HOLDINGS_HEADER,
+      ['001280', 'CNE100007CS8', '000000001', '', 'ASHR test position', '0.99', '100', '', '10', 'CN', '', 'Equity'],
+      ['EURUSD', '', '', '', 'ASHR test forward', '-0.01', '-1', '10', '-10', '', '', 'Forward']]);
+    const seen: string[] = [];
+    const inner = override(override(fakeFetch(), url => url.includes('/ASHR/Securities'), () => new Response(fractions)),
+      url => url.endsWith('/en-us/sitemap.xml'), () => new Response(SITEMAP.replace(/<url><loc>[^<]*\/ASHR-[^<]*<\/loc><\/url>/, '')));
+    const fetcher: Fetcher = (url, init) => { seen.push(url); return inner(url, init); };
+    CLOSED_FUNDS.push(entry);
+    try {
+      const result = await quietRun(root, { TICKERS: 'ASHR' }, fetcher);
+      expect([seen.filter(url => /ashr/i.test(url)), result.failures, result.outcomes, process.exitCode === 1]).toEqual([[], 0, [], false]);
+      const closed = await hashes(root);
+      for (const path of Object.keys(first)) if (path !== 'index.json') expect([path, closed[path]]).toEqual([path, first[path]]);
+      const rows = await indexOf(root);
+      expect(rows.map(row => row.ticker)).toEqual(rowsBefore.map(row => row.ticker));
+      expect(await rowOf(root, 'ASHR')).toEqual({ ...rowsBefore.find(row => row.ticker === 'ASHR'), status: 'closed', closedDate: '2026-10-01', closedSource: entry.source });
+      expect(rows.filter(row => row.status === 'closed').map(row => row.dataFile)).toEqual(['./funds/ASHR/meta.json']);
+      const rerun = await quietRun(root, {}, fetcher);
+      expect([rerun.selected, rerun.failures, seen.filter(url => /ashr/i.test(url))]).toEqual([['DBEF', 'HYLB'], 0, []]);
+      expect(await hashes(root)).toEqual(closed);
+    } finally {
+      CLOSED_FUNDS.splice(CLOSED_FUNDS.indexOf(entry), 1);
+    }
+  });
+});
+
+describe('pipeline 3', () => {
+  test('a new fund rejected by the guard or answered by no source is failed with a catalog-only row, which is never read as published state', async () => {
+    const root = await seeded();
+    const sitemap = SITEMAP.replace('</urlset>', ['NEWX', 'NEWY'].map(t => `<url><loc>https://etf.dws.com/en-us/${t}-xtrackers-test-etf/</loc></url>`).join('') + '</urlset>');
+    const withNew = override(fakeFetch(['NEWY']), url => url.endsWith('/en-us/sitemap.xml'), () => new Response(sitemap));
+    // NEWX: the export parses but the weights are fractions (sum 0.98), NEWY: every source is down
+    const fractions = literalWorkbook([...META_ROWS('NEWX'), HOLDINGS_HEADER,
+      ['001280', 'CNE100007CS8', '000000001', '', 'NEWX test position', '0.99', '100', '', '10', 'CN', '', 'Equity'],
+      ['EURUSD', '', '', '', 'NEWX test forward', '-0.01', '-1', '10', '-10', '', '', 'Forward']]);
+    const first = await quietRun(root, { TICKERS: 'NEWX NEWY' }, override(withNew, url => url.includes('/NEWX/Securities'), () => new Response(fractions)));
+    expect([first.failures, first.outcomes.map(row => row.status), String(first.outcomes.find(row => row.ticker === 'NEWX')?.reason).startsWith('holdings guard:')]).toEqual([2, ['failed', 'failed'], true]);
+    const keys = Object.keys(record(indexRowForCatalog(parseSitemap(SITEMAP)[0]).metrics));
+    for (const ticker of ['NEWX', 'NEWY']) {
+      const row = await rowOf(root, ticker);
+      expect([row.dataFile, row.holdings, Object.keys(record(row.metrics)), String(record(row.metrics).returnsBasis).length > 0]).toEqual([null, 0, keys, true]);
+      expect(await Bun.file(join(root, 'funds', ticker, 'meta.json')).exists()).toBe(false);
+    }
+    // next run: NEWX refreshes without a daily return series (no distributions, no Yahoo); its catalog-only row must not leak in as the published state
+    const second = await quietRun(root, { TICKERS: 'NEWX', SKIP_YAHOO: 'true' }, override(withNew, url => url.includes('/NEWX/Distributions'), () => new Response('down', { status: 403 })));
+    expect([second.failures, second.outcomes[0].status, second.outcomes[0].retainedSources]).toEqual([0, 'updated', []]);
+    expect(String(record((await metaOf(root, 'NEWX')).metrics).returnsBasis)).not.toContain('catalog-only');
+  });
+
   test('N-PORT freshness: an older SEC filing never replaces fresher published holdings', async () => {
     const root = await seeded();
     await quietRun(root, { TICKERS: 'HYLB' }); // published holdings dated 2026-09-29
@@ -767,7 +836,9 @@ describe('pipeline', () => {
     expect(Object.keys(record(stub.metrics))).toEqual(Object.keys(record((await rowOf(root, 'ASHR')).metrics)));
     expect((await rowOf(root, 'ASHR')).dataFile).toBe('./funds/ASHR/meta.json');
   });
+});
 
+describe('pipeline 4', () => {
   test('premium/discount is published with its date, the net and gross TER survive an outage of the product page', async () => {
     const root = await seeded();
     await quietRun(root, { TICKERS: 'ASHR' });
