@@ -625,7 +625,7 @@ function outputFundLine(index: number, total: number, ticker: string, status: st
     field('sec', outputPercent(data.secYield ?? data.yields?.secYield ?? metrics.secYield)),
     field('wp', data.workplaceRaw),
   ].filter(part => part !== '').join(' ');
-  return `[ ${String(index).padStart(width)}/${String(total).padEnd(width)}  ] ${outputClean(ticker).padEnd(5)} ${status.padEnd(9)}${detail ? ` ${detail}` : ''}${reason ? ` reason=${outputClean(reason)}` : ''}`;
+  return `[ ${`${String(index).padStart(width)}/${total}`.padEnd(8)} ] ${outputClean(ticker).padEnd(5)} ${status.padEnd(9)}${detail ? ` ${detail}` : ''}${reason ? ` reason=${outputClean(reason)}` : ''}`;
 }
 function outputCreateReporter(root: URL | string, total: number) {
   let completed = 0;
@@ -1261,7 +1261,7 @@ async function updateFund(fund: CatalogFund, previousRow: JsonRecord, root: stri
   const outcome = (status: FundOutcome['status'], holdings: number, history: number, reason?: string): FundOutcome => ({ ticker: fund.ticker, status, holdings, history, freshSources, retainedSources, ...(reason ? { reason } : {}) });
   const attempt = async <T>(label: string, fn: () => Promise<T>): Promise<T | null> => {
     try { const value = await fn(); freshSources.push(label); return value; }
-    catch (error) { outputNote(`[ ${(label === 'Yahoo' ? 'history' : 'product').padEnd(9)}] ${fund.ticker} ${label}: ${errorMessage(error)} — trying fallbacks/published data`); return null; }
+    catch (error) { outputNote(`[ ${(label === 'Yahoo' ? 'history' : 'product').padEnd(8)} ] ${fund.ticker} ${label}: ${errorMessage(error)} — trying fallbacks/published data`); return null; }
   };
   let details = detailsFromPrevious(fund, previousRow, previousMeta);
   const currentDetails = await attempt('DWS PDP', async () => parseFundDetails(await client.json(detailsUrl(fund.ticker)), fund.ticker, fund.fundPage));
