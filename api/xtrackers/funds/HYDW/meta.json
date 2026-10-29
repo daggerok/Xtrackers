@@ -8,18 +8,18 @@
   "terValue": 0.2,
   "terGross": "0.20%",
   "terGrossValue": 0.2,
-  "nav": "$45.94",
-  "navValue": 45.94,
-  "aum": "$62,021,196",
-  "aumValue": 62021196,
-  "asOfDate": "2026-10-23",
+  "nav": "$46.14",
+  "navValue": 46.14,
+  "aum": "$62,285,817",
+  "aumValue": 62285817,
+  "asOfDate": "2026-10-28",
   "inceptionDate": "2018-01-11",
   "exchange": "NYSE",
-  "closePrice": "$46.03",
-  "closePriceAsOfDate": "2026-10-23",
-  "premiumDiscount": "0.20%",
-  "premiumDiscountValue": 0.1981,
-  "premiumDiscountAsOfDate": "2026-10-23",
+  "closePrice": "$46.12",
+  "closePriceAsOfDate": "2026-10-29",
+  "premiumDiscount": "0.12%",
+  "premiumDiscountValue": 0.1214,
+  "premiumDiscountAsOfDate": "2026-10-28",
   "cusip": "233051267",
   "isin": "US2330512672",
   "distributions": {
@@ -112,11 +112,11 @@
     "tr5y": 16.66,
     "tr10y": null,
     "siAnn": 3.82,
-    "dividendYield": 5.36,
-    "dividendYieldText": "5.36%",
+    "dividendYield": 5.34,
+    "dividendYieldText": "5.34%",
     "dividendYieldBasis": "official-distribution-rate",
-    "secYield": 6.23,
-    "secYieldText": "6.23%",
+    "secYield": 6.16,
+    "secYieldText": "6.16%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
     "performanceAsOf": "2026-09-30"
   },
@@ -127,8 +127,8 @@
       "holdings/003.json"
     ],
     "pageSize": 250,
-    "totalRows": 575,
-    "asOfDate": "2026-10-23",
+    "totalRows": 574,
+    "asOfDate": "2026-10-28",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/HYDW/Securities"
   },
   "history": {
@@ -138,11 +138,11 @@
       "history/003.json"
     ],
     "pageSize": 1000,
-    "totalRows": 2209,
-    "asOfDate": "2026-10-23",
+    "totalRows": 2213,
+    "asOfDate": "2026-10-29",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/HYDW/Performance + https://query1.finance.yahoo.com/v8/finance/chart/HYDW"
   },
-  "generatedAt": "2026-10-26T02:19:01.836Z",
+  "generatedAt": "2026-10-29T21:16:17.019Z",
   "netTerValue": 0.2,
   "source": {
     "provider": "Xtrackers (DWS)",
@@ -162,12 +162,12 @@
     "indexTicker": "SOLHYCLB"
   },
   "yields": {
-    "dividendYield": 5.36,
-    "dividendYieldText": "5.36%",
+    "dividendYield": 5.34,
+    "dividendYieldText": "5.34%",
     "dividendYieldKind": "official indicated distribution rate / NAV",
-    "distributionRate": 5.36,
-    "secYield": 6.23,
-    "secYieldText": "6.23%",
+    "distributionRate": 5.34,
+    "secYield": 6.16,
+    "secYieldText": "6.16%",
     "secYieldKind": "official DWS 30-day SEC yield"
   },
   "distributionEvents": [

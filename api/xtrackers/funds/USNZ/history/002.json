@@ -2,7 +2,7 @@
   "ticker": "USNZ",
   "page": 2,
   "pageSize": 1000,
-  "totalRows": 1087,
+  "totalRows": 1091,
   "headers": [
     "Date",
     "NAV",
@@ -531,6 +531,30 @@
       "NAV": "48.1",
       "Market Price": "48.130001",
       "Premium/Discount": "0.0624"
+    },
+    {
+      "Date": "2026-10-26",
+      "NAV": "48.42",
+      "Market Price": "48.439999",
+      "Premium/Discount": "0.0413"
+    },
+    {
+      "Date": "2026-10-27",
+      "NAV": "48.79",
+      "Market Price": "48.82",
+      "Premium/Discount": "0.0615"
+    },
+    {
+      "Date": "2026-10-28",
+      "NAV": "48.93",
+      "Market Price": "48.945999",
+      "Premium/Discount": "0.0327"
+    },
+    {
+      "Date": "2026-10-29",
+      "NAV": "",
+      "Market Price": "48.632999",
+      "Premium/Discount": ""
     }
   ]
 }
