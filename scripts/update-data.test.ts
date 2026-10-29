@@ -8,7 +8,7 @@ import { tmpdir } from 'node:os';
 import {
   CLOSED_FUNDS, closedFund, CONTROL_NAMES, DEFAULT_SEC_UA, SOFT_DEADLINE_MS, resolveControls, runtimeControls, readConfig, parseRange, parseAumRange, inRange,
   fundFilterReasons, mergeDetails, outputConfigEntries, createRequestGate, fetchWithRetry,
-  HttpError, samePublishedContent, writeJsonIfChanged, selectUpdateBatch, runUpdater, indexRowForCatalog, parseNportFiling,
+  HttpError, samePublishedContent, writeJsonIfChanged, selectUpdateBatch, runUpdater, indexRowForCatalog, withRange52w, parseNportFiling,
   parseSecFundTickers, parseSecCompanyNames, parseNportSubmissions, parseNportFeed, nportDocumentUrl, nportIdentity, nportIsFresh, nportTickers, nportHoldingsSheet,
   HOLDINGS_GUARD_RELAX, holdingsWeightCount, dwsTicker,
   reinvestmentCoverageStart, reportingPeriodEnds, coalesceReturns, annualizedOfficialReturns, renderUpdateSummary, writeSummary,
@@ -613,8 +613,12 @@ describe('pipeline', () => {
       expect(String(metrics.returnsBasis).trim()).not.toMatch(/^(-|—)?$/);
       expect(metrics.performanceAsOf === null || /^\d{4}-\d{2}-\d{2}$/.test(String(metrics.performanceAsOf))).toBe(true);
     }
+    // untouched rows stay as published; the 52-week keys are added to every row from its history pages (range-52w block)
+    const RANGE_KEYS = ['week52Low', 'week52High', 'range52w', 'range52wClose', 'range52wAsOf', 'range52wSince', 'range52wBasis'];
+    const rangeless = (row: JsonRecord) => ({ ...row, metrics: Object.fromEntries(Object.entries(record(row.metrics)).filter(([k]) => !RANGE_KEYS.includes(k))) });
+    for (const fund of afterIndex.funds) expect(Object.keys(record(fund.metrics))).toEqual(expect.arrayContaining(RANGE_KEYS));
     const selected = new Set(result.selected);
-    for (const row of beforeIndex.funds) if (!selected.has(row.ticker)) expect(afterIndex.funds.find((fund: JsonRecord) => fund.ticker === row.ticker)).toEqual(row);
+    for (const row of beforeIndex.funds) if (!selected.has(row.ticker)) expect(rangeless(afterIndex.funds.find((fund: JsonRecord) => fund.ticker === row.ticker))).toEqual(rangeless(row));
     expect(await Bun.file(join(root, 'funds', 'CHPS', 'untouched.json')).text()).toBe('{"sentinel":true}\n');
     const meta = await metaOf(root, 'ASHR');
     expect([record(meta.holdings).totalRows, record(meta.history).totalRows]).toEqual([2, 4]);
@@ -773,7 +777,8 @@ describe('pipeline 3', () => {
       ['EURUSD', '', '', '', 'NEWX test forward', '-0.01', '-1', '10', '-10', '', '', 'Forward']]);
     const first = await quietRun(root, { TICKERS: 'NEWX NEWY' }, override(withNew, url => url.includes('/NEWX/Securities'), () => new Response(fractions)));
     expect([first.failures, first.outcomes.map(row => row.status), String(first.outcomes.find(row => row.ticker === 'NEWX')?.reason).startsWith('holdings guard:')]).toEqual([2, ['failed', 'failed'], true]);
-    const keys = Object.keys(record(indexRowForCatalog(parseSitemap(SITEMAP)[0]).metrics));
+    // the catalog-only row as written: the range-52w block adds its seven keys (all null without dataFile)
+    const keys = Object.keys(record((await withRange52w(root, [indexRowForCatalog(parseSitemap(SITEMAP)[0])]))[0].metrics));
     for (const ticker of ['NEWX', 'NEWY']) {
       const row = await rowOf(root, ticker);
       expect([row.dataFile, row.holdings, Object.keys(record(row.metrics)), String(record(row.metrics).returnsBasis).length > 0]).toEqual([null, 0, keys, true]);
