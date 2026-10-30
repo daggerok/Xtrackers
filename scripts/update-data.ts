@@ -1281,10 +1281,11 @@ async function updateFund(fund: CatalogFund, previousRow: JsonRecord, root: stri
   const chart = config.skipYahoo ? null : await attempt('Yahoo', async () => {
     const parsed = parseChart(await client.json(yahooChartUrl(fund.ticker, Math.floor(Date.now() / 1000), config.historyRange)));
     if (!parsed.days.length) throw new Error('Yahoo: no usable daily prices');
-    if (!historyWindowStartEpoch(config.historyRange, Math.floor(Date.now() / 1000))) return parsed;
-    // A HISTORY_RANGE window never shrinks the published market-price history: older published closes join it, rescaled
+    // A fresh chart never shrinks the published market-price history: older published closes join it, rescaled. This covers a
+    // HISTORY_RANGE window and also a truncated `max` answer (2026-10-29: Yahoo returned 2 bars for Franklin DVAL and USFI). A full
+    // `max` answer starts at inception: nothing older is published, so it comes back unchanged
     const merged = mergeWindowedChart(parsed, previousHistory.headers.includes('Adj Close') ? previousHistory.rows : []);
-    if (!merged) throw new Error(`the ${config.historyRange} chart window does not join the published history`);
+    if (!merged) throw new Error(`chart does not join the published history (${config.historyRange}, ${parsed.days.length} days)`);
     return merged;
   });
   const nav = new Map(navFromPublished(previousHistory).map(point => [point.date, point]));
