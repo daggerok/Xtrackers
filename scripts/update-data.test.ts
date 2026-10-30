@@ -982,6 +982,13 @@ describe('pipeline 5', () => {
     await quietRun(root, { TICKERS: 'HYLB', HISTORY_RANGE: '1y' }, chart([day(10), day(3)], [35, 35.3], [34.65, 34.947]));
     const page = await Bun.file(join(root, 'funds', 'HYLB', 'history', '001.json')).json();
     expect(page.rows.map((row: JsonRecord) => row['Adj Close'])).toEqual(['29.7', '34.65', '34.95']);
+    // a truncated default-range (max) answer never shrinks the history either: one that joins the published days keeps and rescales
+    // them, one of a new day that does not join keeps the fund as published
+    await quietRun(root, { TICKERS: 'HYLB' }, chart([day(10), day(3)], [35, 35.3], [31.185, 31.4523]));
+    const truncated = await Bun.file(join(root, 'funds', 'HYLB', 'history', '001.json')).json();
+    expect(truncated.rows.map((row: JsonRecord) => row['Adj Close'])).toEqual(['26.73', '31.19', '31.45']);
+    await quietRun(root, { TICKERS: 'HYLB' }, chart([day(1)], [50], [50]));
+    expect((await Bun.file(join(root, 'funds', 'HYLB', 'history', '001.json')).json()).rows).toEqual(truncated.rows);
   });
 
   test('a relaxed guard still keeps numeric published weights from an all-blank N-PORT sheet (Q24)', async () => {
