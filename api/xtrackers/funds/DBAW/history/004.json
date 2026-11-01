@@ -2,7 +2,7 @@
   "ticker": "DBAW",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3213,
+  "totalRows": 3214,
   "headers": [
     "Date",
     "NAV",
@@ -1284,9 +1284,15 @@
     },
     {
       "Date": "2026-10-29",
-      "NAV": "",
-      "Market Price": "47.247101",
-      "Premium/Discount": ""
+      "NAV": "47.09",
+      "Market Price": "47.25",
+      "Premium/Discount": "0.3398"
+    },
+    {
+      "Date": "2026-10-30",
+      "NAV": "46.63",
+      "Market Price": "46.389999",
+      "Premium/Discount": "-0.5147"
     }
   ]
 }

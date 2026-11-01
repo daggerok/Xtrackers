@@ -8,34 +8,30 @@
   "terValue": 0.2,
   "terGross": "0.20%",
   "terGrossValue": 0.2,
-  "nav": "$46.14",
-  "navValue": 46.14,
-  "aum": "$62,285,817",
-  "aumValue": 62285817,
-  "asOfDate": "2026-10-28",
+  "nav": "$46.10",
+  "navValue": 46.1,
+  "aum": "$62,239,542",
+  "aumValue": 62239542,
+  "asOfDate": "2026-10-30",
   "inceptionDate": "2018-01-11",
   "exchange": "NYSE",
-  "closePrice": "$46.12",
-  "closePriceAsOfDate": "2026-10-29",
-  "premiumDiscount": "0.12%",
-  "premiumDiscountValue": 0.1214,
-  "premiumDiscountAsOfDate": "2026-10-28",
+  "closePrice": "$46.20",
+  "closePriceAsOfDate": "2026-10-30",
+  "premiumDiscount": "0.23%",
+  "premiumDiscountValue": 0.2256,
+  "premiumDiscountAsOfDate": "2026-10-30",
   "cusip": "233051267",
   "isin": "US2330512672",
   "distributions": {
     "frequency": "Monthly",
-    "exDate": "2026-10-01",
-    "dividend": "0.20519",
+    "exDate": "2026-11-02",
+    "dividend": "0.21111",
     "paymentsPerYear": 12,
     "headers": [
       "Ex-Date",
       "Amount"
     ],
     "rows": [
-      [
-        "2025-12-01",
-        "0.20182"
-      ],
       [
         "2025-12-05",
         "0"
@@ -79,6 +75,10 @@
       [
         "2026-10-01",
         "0.20519"
+      ],
+      [
+        "2026-11-02",
+        "0.21111"
       ]
     ]
   },
@@ -115,8 +115,8 @@
     "dividendYield": 5.34,
     "dividendYieldText": "5.34%",
     "dividendYieldBasis": "official-distribution-rate",
-    "secYield": 6.16,
-    "secYieldText": "6.16%",
+    "secYield": 6.14,
+    "secYieldText": "6.14%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
     "performanceAsOf": "2026-09-30"
   },
@@ -127,8 +127,8 @@
       "holdings/003.json"
     ],
     "pageSize": 250,
-    "totalRows": 574,
-    "asOfDate": "2026-10-28",
+    "totalRows": 585,
+    "asOfDate": "2026-10-30",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/HYDW/Securities"
   },
   "history": {
@@ -138,11 +138,11 @@
       "history/003.json"
     ],
     "pageSize": 1000,
-    "totalRows": 2213,
-    "asOfDate": "2026-10-29",
+    "totalRows": 2214,
+    "asOfDate": "2026-10-30",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/HYDW/Performance + https://query1.finance.yahoo.com/v8/finance/chart/HYDW"
   },
-  "generatedAt": "2026-10-29T21:16:17.019Z",
+  "generatedAt": "2026-11-01T05:16:29.403Z",
   "netTerValue": 0.2,
   "source": {
     "provider": "Xtrackers (DWS)",
@@ -166,8 +166,8 @@
     "dividendYieldText": "5.34%",
     "dividendYieldKind": "official indicated distribution rate / NAV",
     "distributionRate": 5.34,
-    "secYield": 6.16,
-    "secYieldText": "6.16%",
+    "secYield": 6.14,
+    "secYieldText": "6.14%",
     "secYieldKind": "official DWS 30-day SEC yield"
   },
   "distributionEvents": [
@@ -947,6 +947,13 @@
       "amount": 0.20519,
       "recordDate": "2026-10-01",
       "payDate": "2026-10-08"
+    },
+    {
+      "exDate": "2026-11-02",
+      "epoch": 1793577600,
+      "amount": 0.21111,
+      "recordDate": "2026-11-02",
+      "payDate": "2026-11-09"
     }
   ]
 }

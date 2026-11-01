@@ -2,7 +2,7 @@
   "ticker": "XAIX",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 564,
+  "totalRows": 565,
   "headers": [
     "Date",
     "NAV",
@@ -3390,9 +3390,15 @@
     },
     {
       "Date": "2026-10-29",
-      "NAV": "",
+      "NAV": "56.47",
       "Market Price": "56.455002",
-      "Premium/Discount": ""
+      "Premium/Discount": "-0.0266"
+    },
+    {
+      "Date": "2026-10-30",
+      "NAV": "54.22",
+      "Market Price": "54.189999",
+      "Premium/Discount": "-0.0553"
     }
   ]
 }

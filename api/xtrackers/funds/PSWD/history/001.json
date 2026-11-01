@@ -2,7 +2,7 @@
   "ticker": "PSWD",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 830,
+  "totalRows": 831,
   "headers": [
     "Date",
     "NAV",
@@ -4986,9 +4986,15 @@
     },
     {
       "Date": "2026-10-29",
-      "NAV": "",
-      "Market Price": "48.856499",
-      "Premium/Discount": ""
+      "NAV": "48.76",
+      "Market Price": "48.856998",
+      "Premium/Discount": "0.1989"
+    },
+    {
+      "Date": "2026-10-30",
+      "NAV": "47.02",
+      "Market Price": "47.119999",
+      "Premium/Discount": "0.2127"
     }
   ]
 }

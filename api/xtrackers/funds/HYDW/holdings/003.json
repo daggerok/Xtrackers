@@ -2,7 +2,7 @@
   "ticker": "HYDW",
   "page": 3,
   "pageSize": 250,
-  "totalRows": 574,
+  "totalRows": 585,
   "headers": [
     "Name",
     "Ticker",
@@ -14,11 +14,137 @@
   ],
   "rows": [
     {
+      "Name": "Match Group Inc 5.00 12/15/2027",
+      "Ticker": "-",
+      "Identifier": "57665RAG1",
+      "Weight": "0.09615061",
+      "Market Value": "59579",
+      "Shares Held": "60000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Alcoa Nederland Holding Bv 4.125 03/31/2029",
+      "Ticker": "-",
+      "Identifier": "013822AG6",
+      "Weight": "0.0960279",
+      "Market Value": "59502.96",
+      "Shares Held": "62000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Charles River Laboratories International Inc 3.75 03/15/2029",
+      "Ticker": "-",
+      "Identifier": "159864AG2",
+      "Weight": "0.09593555",
+      "Market Value": "59445.74",
+      "Shares Held": "62000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Blackstone Mortgage Trust Inc 7.75 12/01/2029",
+      "Ticker": "-",
+      "Identifier": "09257WAF7",
+      "Weight": "0.09585736",
+      "Market Value": "59397.29",
+      "Shares Held": "60000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Edgewell Personal Care Co 4.125 04/01/2029",
+      "Ticker": "-",
+      "Identifier": "28035QAB8",
+      "Weight": "0.09583501",
+      "Market Value": "59383.44",
+      "Shares Held": "62000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "ATI Inc 5.875 6/15/2033",
+      "Ticker": "-",
+      "Identifier": "01741RAP7",
+      "Weight": "0.09565957",
+      "Market Value": "59274.73",
+      "Shares Held": "60000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Xpo Logistics Inc 7.125 06/01/2031",
+      "Ticker": "-",
+      "Identifier": "98379KAB8",
+      "Weight": "0.09558459",
+      "Market Value": "59228.27",
+      "Shares Held": "58000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Paramount Global 4.2 06/01/2029",
+      "Ticker": "-",
+      "Identifier": "124857AZ6",
+      "Weight": "0.095291",
+      "Market Value": "59046.35",
+      "Shares Held": "64000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "US Foods Inc",
+      "Ticker": "-",
+      "Identifier": "90290MAG6",
+      "Weight": "0.09511807",
+      "Market Value": "58939.19",
+      "Shares Held": "58000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Adient Global Holdings Ltd 8.25 04/15/2031",
+      "Ticker": "-",
+      "Identifier": "00687YAC9",
+      "Weight": "0.09408478",
+      "Market Value": "58298.92",
+      "Shares Held": "57000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Levi Strauss & Co 3.50 03/01/2031",
+      "Ticker": "-",
+      "Identifier": "52736RBJ0",
+      "Weight": "0.09408155",
+      "Market Value": "58296.92",
+      "Shares Held": "64000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "US Bonanza Creek Energy Inc 8.375 01/07/2028",
+      "Ticker": "-",
+      "Identifier": "17888HAA1",
+      "Weight": "0.0938697",
+      "Market Value": "58165.65",
+      "Shares Held": "57000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Williams Scotsman International Inc 4.625 08/15/2028",
+      "Ticker": "-",
+      "Identifier": "96950GAE2",
+      "Weight": "0.09373228",
+      "Market Value": "58080.5",
+      "Shares Held": "59000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "US Foods Inc 4.625 06/01/2030",
+      "Ticker": "-",
+      "Identifier": "90290MAE1",
+      "Weight": "0.09333465",
+      "Market Value": "57834.11",
+      "Shares Held": "60000",
+      "Asset Category": "Fixed Income"
+    },
+    {
       "Name": "Outfront Media Capital Llc 7.375 02/15/2031",
       "Ticker": "-",
       "Identifier": "69007TAG9",
-      "Weight": "0.09289229",
-      "Market Value": "57867.55",
+      "Weight": "0.09326724",
+      "Market Value": "57792.34",
       "Shares Held": "56000",
       "Asset Category": "Fixed Income"
     },
@@ -26,44 +152,44 @@
       "Name": "Leggett & Platt Inc 4.4 3/15/2029",
       "Ticker": "-",
       "Identifier": "524660AZ0",
-      "Weight": "0.09275578",
-      "Market Value": "57782.51",
+      "Weight": "0.09313199",
+      "Market Value": "57708.53",
       "Shares Held": "60000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Howard Hughes Corp 5.875 03/01/2032",
-      "Ticker": "-",
-      "Identifier": "44267DAG2",
-      "Weight": "0.09252082",
-      "Market Value": "57636.14",
-      "Shares Held": "60000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Wyndham Hotels & Resorts Inc 4.375 08/15/2028",
-      "Ticker": "-",
-      "Identifier": "98311AAB1",
-      "Weight": "0.0925099",
-      "Market Value": "57629.34",
-      "Shares Held": "59000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Nordstrom Inc 4.375 04/01/2030",
       "Ticker": "-",
       "Identifier": "655664AT7",
-      "Weight": "0.09242587",
-      "Market Value": "57576.99",
+      "Weight": "0.09276615",
+      "Market Value": "57481.84",
       "Shares Held": "61000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Amsted Industries Incorporated 4.625 05/15/2030",
+      "Ticker": "-",
+      "Identifier": "032177AJ6",
+      "Weight": "0.09249497",
+      "Market Value": "57313.81",
+      "Shares Held": "60000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Pitney Bowes Inc 7.25 03/15/2029",
+      "Ticker": "-",
+      "Identifier": "724479AQ3",
+      "Weight": "0.09223469",
+      "Market Value": "57152.53",
+      "Shares Held": "57000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Twilio Inc 3.875 03/15/2031",
       "Ticker": "-",
       "Identifier": "90138FAD4",
-      "Weight": "0.09220296",
-      "Market Value": "57438.13",
+      "Weight": "0.09204373",
+      "Market Value": "57034.2",
       "Shares Held": "62000",
       "Asset Category": "Fixed Income"
     },
@@ -71,17 +197,17 @@
       "Name": "Murphy Oil Usa Inc 3.75 02/15/2031",
       "Ticker": "-",
       "Identifier": "626738AF5",
-      "Weight": "0.09171696",
-      "Market Value": "57135.37",
+      "Weight": "0.09203643",
+      "Market Value": "57029.68",
       "Shares Held": "62000",
       "Asset Category": "Fixed Income"
     },
     {
-      "Name": "Pitney Bowes Inc 7.25 03/15/2029",
+      "Name": "L Brands Inc 5.25 02/01/2028",
       "Ticker": "-",
-      "Identifier": "724479AQ3",
-      "Weight": "0.09169561",
-      "Market Value": "57122.07",
+      "Identifier": "501797AN4",
+      "Weight": "0.09183041",
+      "Market Value": "56902.02",
       "Shares Held": "57000",
       "Asset Category": "Fixed Income"
     },
@@ -89,35 +215,17 @@
       "Name": "Cnx Resources Corp 5.875 03/01/2034",
       "Ticker": "-",
       "Identifier": "12653CAM0",
-      "Weight": "0.09139944",
-      "Market Value": "56937.57",
+      "Weight": "0.0916796",
+      "Market Value": "56808.57",
       "Shares Held": "59000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "L Brands Inc 5.25 02/01/2028",
-      "Ticker": "-",
-      "Identifier": "501797AN4",
-      "Weight": "0.09130798",
-      "Market Value": "56880.6",
-      "Shares Held": "57000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Murphy Oil USA Inc 4.75 09/15/2029",
-      "Ticker": "-",
-      "Identifier": "626738AE8",
-      "Weight": "0.09042034",
-      "Market Value": "56327.64",
-      "Shares Held": "58000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Mattamy Group Corp 6 12/15/2033",
       "Ticker": "-",
       "Identifier": "57701RAQ5",
-      "Weight": "0.09023707",
-      "Market Value": "56213.47",
+      "Weight": "0.09043007",
+      "Market Value": "56034.31",
       "Shares Held": "60000",
       "Asset Category": "Fixed Income"
     },
@@ -125,8 +233,8 @@
       "Name": "Lgi Homes Inc 8.75 12/15/2028",
       "Ticker": "-",
       "Identifier": "50187TAH9",
-      "Weight": "0.0897579",
-      "Market Value": "55914.97",
+      "Weight": "0.09010214",
+      "Market Value": "55831.11",
       "Shares Held": "55000",
       "Asset Category": "Fixed Income"
     },
@@ -134,188 +242,125 @@
       "Name": "Match Group Holdings II LLC 3.625 10/01/2031",
       "Ticker": "-",
       "Identifier": "57667JAA0",
-      "Weight": "0.08953915",
-      "Market Value": "55778.7",
+      "Weight": "0.08995033",
+      "Market Value": "55737.04",
       "Shares Held": "63000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Nordstrom Inc 4.25 8/1/2031",
+      "Ticker": "-",
+      "Identifier": "655664AY6",
+      "Weight": "0.08957466",
+      "Market Value": "55504.26",
+      "Shares Held": "61000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Garda World Security Corp 7.75 02/15/2028",
       "Ticker": "-",
       "Identifier": "36485MAM1",
-      "Weight": "0.08887262",
-      "Market Value": "55363.48",
+      "Weight": "0.08925385",
+      "Market Value": "55305.47",
       "Shares Held": "55000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Sensata Technologies Inc 4.375 02/15/2030",
+      "Ticker": "-",
+      "Identifier": "81728UAA2",
+      "Weight": "0.08910718",
+      "Market Value": "55214.59",
+      "Shares Held": "58000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "FMG Resources (August 2006) Pty Ltd 5.875 04/15/2030",
       "Ticker": "-",
       "Identifier": "30251GBD8",
-      "Weight": "0.08881359",
-      "Market Value": "55326.71",
+      "Weight": "0.08905856",
+      "Market Value": "55184.46",
       "Shares Held": "56000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Ritchie Bros Holdings Inc 6.75 3/15/2028",
-      "Ticker": "-",
-      "Identifier": "76774LAB3",
-      "Weight": "0.08874701",
-      "Market Value": "55285.23",
-      "Shares Held": "55000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Graphic Packaging International Inc 3.50 03/15/2028",
       "Ticker": "-",
       "Identifier": "38869AAB3",
-      "Weight": "0.08860012",
-      "Market Value": "55193.73",
+      "Weight": "0.08898918",
+      "Market Value": "55141.47",
       "Shares Held": "57000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "MEDCO MAPLE TREE PTE LTD 8.96 4/27/2029",
-      "Ticker": "-",
-      "Identifier": "58407HAA7",
-      "Weight": "0.08859531",
-      "Market Value": "55190.73",
-      "Shares Held": "54000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Outfront Media Capital LLC 4.25 01/15/2029",
-      "Ticker": "-",
-      "Identifier": "69007TAE4",
-      "Weight": "0.08853657",
-      "Market Value": "55154.14",
-      "Shares Held": "57000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Brandywine Operating Partnership LP 3.95 11/15/2027",
-      "Ticker": "-",
-      "Identifier": "105340AQ6",
-      "Weight": "0.08835897",
-      "Market Value": "55043.5",
-      "Shares Held": "56000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Match Group Inc 5.00 12/15/2027",
-      "Ticker": "-",
-      "Identifier": "57665RAG1",
-      "Weight": "0.08785074",
-      "Market Value": "54726.9",
-      "Shares Held": "55000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Jefferson Capital Holdings Llc 9.5 02/15/2029",
       "Ticker": "-",
       "Identifier": "472481AB6",
-      "Weight": "0.08780165",
-      "Market Value": "54696.32",
+      "Weight": "0.08818131",
+      "Market Value": "54640.88",
       "Shares Held": "53000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Blackstone Mortgage Trust Inc 7.75 12/01/2029",
-      "Ticker": "-",
-      "Identifier": "09257WAF7",
-      "Weight": "0.08753982",
-      "Market Value": "54533.21",
-      "Shares Held": "55000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "ATI Inc 5.875 6/15/2033",
-      "Ticker": "-",
-      "Identifier": "01741RAP7",
-      "Weight": "0.08717511",
-      "Market Value": "54306.01",
-      "Shares Held": "55000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "NCR Corp 5.125 04/15/2029",
-      "Ticker": "-",
-      "Identifier": "62886EBA5",
-      "Weight": "0.08585708",
-      "Market Value": "53484.94",
-      "Shares Held": "55000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "ATI Inc 7.25 8/15/2030",
       "Ticker": "-",
       "Identifier": "01741RAN2",
-      "Weight": "0.08576757",
-      "Market Value": "53429.18",
+      "Weight": "0.08611629",
+      "Market Value": "53361.31",
       "Shares Held": "52000",
       "Asset Category": "Fixed Income"
     },
     {
-      "Name": "Chobani Llc 4.625 11/15/2028",
+      "Name": "NCR Corp 5.125 04/15/2029",
       "Ticker": "-",
-      "Identifier": "17027NAB8",
-      "Weight": "0.0852682",
-      "Market Value": "53118.1",
-      "Shares Held": "54000",
+      "Identifier": "62886EBA5",
+      "Weight": "0.08596648",
+      "Market Value": "53268.48",
+      "Shares Held": "55000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Hilton Domestic Operating Company Inc 6.125 04/01/2032",
       "Ticker": "-",
       "Identifier": "432833AQ4",
-      "Weight": "0.08483774",
-      "Market Value": "52849.94",
+      "Weight": "0.08557629",
+      "Market Value": "53026.7",
       "Shares Held": "53000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Chobani Llc 4.625 11/15/2028",
+      "Ticker": "-",
+      "Identifier": "17027NAB8",
+      "Weight": "0.08552597",
+      "Market Value": "52995.52",
+      "Shares Held": "54000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Global Infrastructure Solutions Inc 5.625 06/01/2029",
       "Ticker": "-",
       "Identifier": "37960XAA5",
-      "Weight": "0.08465477",
-      "Market Value": "52735.96",
+      "Weight": "0.08454055",
+      "Market Value": "52384.91",
       "Shares Held": "53000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Enova International Inc 11.25 12/15/2028",
-      "Ticker": "-",
-      "Identifier": "29357KAH6",
-      "Weight": "0.08296763",
-      "Market Value": "51684.95",
-      "Shares Held": "50000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Ryman Hospitality Properties 7.25 07/15/2028",
       "Ticker": "-",
       "Identifier": "749571AJ4",
-      "Weight": "0.08295899",
-      "Market Value": "51679.57",
+      "Weight": "0.08299607",
+      "Market Value": "51427.89",
       "Shares Held": "51000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Century Communities Inc 3.875 15/08/2029",
-      "Ticker": "-",
-      "Identifier": "156504AM4",
-      "Weight": "0.08291212",
-      "Market Value": "51650.37",
-      "Shares Held": "55000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Ashland LLC 3.375 01/09/2031",
       "Ticker": "-",
       "Identifier": "04433LAA0",
-      "Weight": "0.08287278",
-      "Market Value": "51625.86",
+      "Weight": "0.082955",
+      "Market Value": "51402.44",
       "Shares Held": "57000",
       "Asset Category": "Fixed Income"
     },
@@ -323,8 +368,8 @@
       "Name": "Asbury Automotive Group Inc 4.50 03/01/2028",
       "Ticker": "-",
       "Identifier": "043436AU8",
-      "Weight": "0.082497",
-      "Market Value": "51391.77",
+      "Weight": "0.08288214",
+      "Market Value": "51357.29",
       "Shares Held": "52000",
       "Asset Category": "Fixed Income"
     },
@@ -332,17 +377,26 @@
       "Name": "Nova Chemicals Corp 7 12/01/2031",
       "Ticker": "-",
       "Identifier": "66977WAV1",
-      "Weight": "0.08192124",
-      "Market Value": "51033.1",
+      "Weight": "0.08237154",
+      "Market Value": "51040.9",
       "Shares Held": "50000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Service Properties Trust 3.95 01/15/2028",
+      "Ticker": "-",
+      "Identifier": "44106MAX0",
+      "Weight": "0.082314",
+      "Market Value": "51005.25",
+      "Shares Held": "53000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Scotts Miracle-Gro Co 4.00 04/01/2031",
       "Ticker": "-",
       "Identifier": "810186AX4",
-      "Weight": "0.08151853",
-      "Market Value": "50782.23",
+      "Weight": "0.08208085",
+      "Market Value": "50860.78",
       "Shares Held": "55000",
       "Asset Category": "Fixed Income"
     },
@@ -350,17 +404,8 @@
       "Name": "GGAM Finance Limited 6.875 04/15/2029",
       "Ticker": "-",
       "Identifier": "36170JAD8",
-      "Weight": "0.08118258",
-      "Market Value": "50572.95",
-      "Shares Held": "50000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Brinks Co 6.5 06/15/2029",
-      "Ticker": "-",
-      "Identifier": "109696AC8",
-      "Weight": "0.08099589",
-      "Market Value": "50456.65",
+      "Weight": "0.08138716",
+      "Market Value": "50430.94",
       "Shares Held": "50000",
       "Asset Category": "Fixed Income"
     },
@@ -368,26 +413,26 @@
       "Name": "Magnolia Oil & Gas Operating Llc 6.875 12/01/2032",
       "Ticker": "-",
       "Identifier": "559665AB0",
-      "Weight": "0.08096692",
-      "Market Value": "50438.6",
+      "Weight": "0.08124912",
+      "Market Value": "50345.4",
       "Shares Held": "50000",
       "Asset Category": "Fixed Income"
     },
     {
-      "Name": "Buckeye Partners Lp 4.125 12/01/2027",
+      "Name": "Brinks Co 6.5 06/15/2029",
       "Ticker": "-",
-      "Identifier": "118230AR2",
-      "Weight": "0.08062554",
-      "Market Value": "50225.94",
-      "Shares Held": "51000",
+      "Identifier": "109696AC8",
+      "Weight": "0.08115277",
+      "Market Value": "50285.7",
+      "Shares Held": "50000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Pebblebrook Hotel Lp 6.375 10/15/2029",
       "Ticker": "-",
       "Identifier": "70510LAA7",
-      "Weight": "0.08055716",
-      "Market Value": "50183.34",
+      "Weight": "0.08096371",
+      "Market Value": "50168.55",
       "Shares Held": "50000",
       "Asset Category": "Fixed Income"
     },
@@ -395,26 +440,8 @@
       "Name": "SM Energy Company 6.50 15/07/2028",
       "Ticker": "-",
       "Identifier": "78454LAW0",
-      "Weight": "0.08051456",
-      "Market Value": "50156.8",
-      "Shares Held": "50000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Banijay Entertainment Sas 8.125 05/01/2029",
-      "Ticker": "-",
-      "Identifier": "060335AB2",
-      "Weight": "0.08000633",
-      "Market Value": "49840.2",
-      "Shares Held": "49000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Seagate Data Storage Technology PTE Ltd. 5.875 07/15/2030",
-      "Ticker": "-",
-      "Identifier": "81180LAT2",
-      "Weight": "0.07988473",
-      "Market Value": "49764.45",
+      "Weight": "0.08087043",
+      "Market Value": "50110.75",
       "Shares Held": "50000",
       "Asset Category": "Fixed Income"
     },
@@ -422,8 +449,8 @@
       "Name": "Scotts Miracle-Gro Co 4.50 10/15/2029",
       "Ticker": "-",
       "Identifier": "810186AS5",
-      "Weight": "0.07968499",
-      "Market Value": "49640.02",
+      "Weight": "0.0801936",
+      "Market Value": "49691.36",
       "Shares Held": "51000",
       "Asset Category": "Fixed Income"
     },
@@ -431,8 +458,8 @@
       "Name": "Encompass Health Corp 4.50 02/01/2028",
       "Ticker": "-",
       "Identifier": "29261AAA8",
-      "Weight": "0.07952103",
-      "Market Value": "49537.88",
+      "Weight": "0.08001206",
+      "Market Value": "49578.87",
       "Shares Held": "50000",
       "Asset Category": "Fixed Income"
     },
@@ -440,8 +467,8 @@
       "Name": "Lithia Motors Inc 4.625 12/15/2027",
       "Ticker": "-",
       "Identifier": "536797AE3",
-      "Weight": "0.0794653",
-      "Market Value": "49503.16",
+      "Weight": "0.07976917",
+      "Market Value": "49428.36",
       "Shares Held": "50000",
       "Asset Category": "Fixed Income"
     },
@@ -449,8 +476,8 @@
       "Name": "GGAM Finance Limited 5.875 03/15/2030",
       "Ticker": "-",
       "Identifier": "36170JAE6",
-      "Weight": "0.0790631",
-      "Market Value": "49252.61",
+      "Weight": "0.07957896",
+      "Market Value": "49310.5",
       "Shares Held": "50000",
       "Asset Category": "Fixed Income"
     },
@@ -458,17 +485,8 @@
       "Name": "Entegris Inc 4.375 04/15/2028",
       "Ticker": "-",
       "Identifier": "29362UAC8",
-      "Weight": "0.07874702",
-      "Market Value": "49055.71",
-      "Shares Held": "50000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Starwood Property Trust Inc 6 04/15/2030",
-      "Ticker": "-",
-      "Identifier": "85571BBC8",
-      "Weight": "0.07869636",
-      "Market Value": "49024.15",
+      "Weight": "0.07915717",
+      "Market Value": "49049.14",
       "Shares Held": "50000",
       "Asset Category": "Fixed Income"
     },
@@ -476,8 +494,8 @@
       "Name": "Hess Midstream Operations LP 5.50 10/15/2030",
       "Ticker": "-",
       "Identifier": "428102AF4",
-      "Weight": "0.07861554",
-      "Market Value": "48973.8",
+      "Weight": "0.07910756",
+      "Market Value": "49018.4",
       "Shares Held": "50000",
       "Asset Category": "Fixed Income"
     },
@@ -485,8 +503,17 @@
       "Name": "BWX Technologies Inc 4.125 06/30/2028",
       "Ticker": "-",
       "Identifier": "05605HAB6",
-      "Weight": "0.07858547",
-      "Market Value": "48955.07",
+      "Weight": "0.07886955",
+      "Market Value": "48870.92",
+      "Shares Held": "50000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Starwood Property Trust Inc 6 04/15/2030",
+      "Ticker": "-",
+      "Identifier": "85571BBC8",
+      "Weight": "0.07875536",
+      "Market Value": "48800.16",
       "Shares Held": "50000",
       "Asset Category": "Fixed Income"
     },
@@ -494,8 +521,8 @@
       "Name": "Arcosa Inc 4.375 04/15/2029",
       "Ticker": "-",
       "Identifier": "039653AA8",
-      "Weight": "0.07813699",
-      "Market Value": "48675.69",
+      "Weight": "0.0784435",
+      "Market Value": "48606.92",
       "Shares Held": "50000",
       "Asset Category": "Fixed Income"
     },
@@ -503,8 +530,8 @@
       "Name": "Lamar Media Corp 5.375 11/01/2033",
       "Ticker": "-",
       "Identifier": "513075CA7",
-      "Weight": "0.07767202",
-      "Market Value": "48386.03",
+      "Weight": "0.07814508",
+      "Market Value": "48422.01",
       "Shares Held": "51000",
       "Asset Category": "Fixed Income"
     },
@@ -512,8 +539,8 @@
       "Name": "BWX Technologies Inc 4.125 04/15/2029",
       "Ticker": "-",
       "Identifier": "05605HAC4",
-      "Weight": "0.0776397",
-      "Market Value": "48365.9",
+      "Weight": "0.07801919",
+      "Market Value": "48344",
       "Shares Held": "50000",
       "Asset Category": "Fixed Income"
     },
@@ -521,8 +548,8 @@
       "Name": "American Builders & Contractors Supply Co Inc 3.875 11/15/2029",
       "Ticker": "-",
       "Identifier": "024747AG2",
-      "Weight": "0.07727871",
-      "Market Value": "48141.02",
+      "Weight": "0.07747544",
+      "Market Value": "48007.07",
       "Shares Held": "51000",
       "Asset Category": "Fixed Income"
     },
@@ -530,35 +557,17 @@
       "Name": "Ciena Corporation 4 01/31/2030",
       "Ticker": "-",
       "Identifier": "171779AL5",
-      "Weight": "0.07698784",
-      "Market Value": "47959.82",
+      "Weight": "0.07728191",
+      "Market Value": "47887.15",
       "Shares Held": "51000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Methanex Corp 5.125 10/15/2027",
-      "Ticker": "-",
-      "Identifier": "59151KAM0",
-      "Weight": "0.07677376",
-      "Market Value": "47826.46",
-      "Shares Held": "48000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Amsted Industries Incorporated 4.625 05/15/2030",
-      "Ticker": "-",
-      "Identifier": "032177AJ6",
-      "Weight": "0.07675609",
-      "Market Value": "47815.45",
-      "Shares Held": "50000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Encompass Health Corp 4.625 04/01/2031",
       "Ticker": "-",
       "Identifier": "29261AAE0",
-      "Weight": "0.07654999",
-      "Market Value": "47687.06",
+      "Weight": "0.07702432",
+      "Market Value": "47727.54",
       "Shares Held": "50000",
       "Asset Category": "Fixed Income"
     },
@@ -566,8 +575,8 @@
       "Name": "Entegris Inc 3.625 05/01/2029",
       "Ticker": "-",
       "Identifier": "29362UAD6",
-      "Weight": "0.07606727",
-      "Market Value": "47386.35",
+      "Weight": "0.07649702",
+      "Market Value": "47400.8",
       "Shares Held": "50000",
       "Asset Category": "Fixed Income"
     },
@@ -575,8 +584,8 @@
       "Name": "Us Ashton Woods 4 5/8 Due 30 144A",
       "Ticker": "-",
       "Identifier": "045086AP0",
-      "Weight": "0.07599484",
-      "Market Value": "47341.23",
+      "Weight": "0.07596959",
+      "Market Value": "47073.98",
       "Shares Held": "51000",
       "Asset Category": "Fixed Income"
     },
@@ -584,44 +593,26 @@
       "Name": "Ryan Specialty Group LLC 4.375 02/01/2030",
       "Ticker": "-",
       "Identifier": "78351MAA0",
-      "Weight": "0.07532561",
-      "Market Value": "46924.33",
+      "Weight": "0.07565831",
+      "Market Value": "46881.1",
       "Shares Held": "49000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Service Properties Trust 3.95 01/15/2028",
-      "Ticker": "-",
-      "Identifier": "44106MAX0",
-      "Weight": "0.07477307",
-      "Market Value": "46580.12",
-      "Shares Held": "48000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Transdigm Inc 6.25 01/31/2034",
       "Ticker": "-",
       "Identifier": "893647BZ9",
-      "Weight": "0.07476388",
-      "Market Value": "46574.4",
+      "Weight": "0.07486054",
+      "Market Value": "46386.77",
       "Shares Held": "47000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Nordstrom Inc 4.25 8/1/2031",
-      "Ticker": "-",
-      "Identifier": "655664AY6",
-      "Weight": "0.07455955",
-      "Market Value": "46447.11",
-      "Shares Held": "51000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Penn National Gaming Inc 4.125 01/07/-2029",
       "Ticker": "-",
       "Identifier": "707569AV1",
-      "Weight": "0.07444972",
-      "Market Value": "46378.69",
+      "Weight": "0.07467702",
+      "Market Value": "46273.05",
       "Shares Held": "49000",
       "Asset Category": "Fixed Income"
     },
@@ -629,26 +620,17 @@
       "Name": "Graphic Packaging International LLC 3.75 02/01/2030",
       "Ticker": "-",
       "Identifier": "38869AAD9",
-      "Weight": "0.07397103",
-      "Market Value": "46080.49",
+      "Weight": "0.07428549",
+      "Market Value": "46030.44",
       "Shares Held": "50000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Sensata Technologies Inc 4.375 02/15/2030",
-      "Ticker": "-",
-      "Identifier": "81728UAA2",
-      "Weight": "0.07333383",
-      "Market Value": "45683.54",
-      "Shares Held": "48000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Central Garden & Pet Co 4.125 04/30/2031",
       "Ticker": "-",
       "Identifier": "153527AP1",
-      "Weight": "0.07277462",
-      "Market Value": "45335.18",
+      "Weight": "0.07293645",
+      "Market Value": "45194.52",
       "Shares Held": "49000",
       "Asset Category": "Fixed Income"
     },
@@ -656,27 +638,144 @@
       "Name": "Huntsman International Llc 2.95 06/15/2031",
       "Ticker": "-",
       "Identifier": "44701QBF8",
-      "Weight": "0.07210887",
-      "Market Value": "44920.45",
+      "Weight": "0.07241045",
+      "Market Value": "44868.59",
       "Shares Held": "53000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "HUDSON PACIFIC PROPERTIES L.P.",
-      "Ticker": "-",
-      "Identifier": "44409MAA4",
-      "Weight": "0.06582183",
-      "Market Value": "41003.92",
-      "Shares Held": "42000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Allison Transmission Inc 4.75 10/01/2027",
       "Ticker": "-",
       "Identifier": "019736AE7",
-      "Weight": "0.05734925",
-      "Market Value": "35725.9",
-      "Shares Held": "36000",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Arsenal Aic Parent Llc 11.5 10/01/2031",
+      "Ticker": "-",
+      "Identifier": "04288BAC4",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Brinks Co 4.625 10/15/2027",
+      "Ticker": "-",
+      "Identifier": "109696AA2",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "HUDSON PACIFIC PROPERTIES L.P.",
+      "Ticker": "-",
+      "Identifier": "44409MAA4",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Lifepoint Health Inc 9.875 08/15/2030",
+      "Ticker": "-",
+      "Identifier": "53219LAV1",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Live Nation Entertainment Inc 4.75 10/15/2027",
+      "Ticker": "-",
+      "Identifier": "538034AR0",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "MPT Finance Corp 5.00 10/15/2027",
+      "Ticker": "-",
+      "Identifier": "55342UAH7",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Methanex Corp 5.125 10/15/2027",
+      "Ticker": "-",
+      "Identifier": "59151KAM0",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "NortonLifeLock Inc 6.75 09/30/2027",
+      "Ticker": "-",
+      "Identifier": "668771AK4",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Skydance Corp 6.25 5/15/2029",
+      "Ticker": "-",
+      "Identifier": "69932AAA3",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Skydance Corp 4.875 5/15/2030",
+      "Ticker": "-",
+      "Identifier": "69932AAB1",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Skydance Corp 6.304 3/15/2029",
+      "Ticker": "-",
+      "Identifier": "69932AAJ4",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "SBA Communications Corp 3.125 02/01/2029",
+      "Ticker": "-",
+      "Identifier": "78410GAG9",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "SS&C Technologies Inc 5.50 09/30/2027",
+      "Ticker": "-",
+      "Identifier": "78466CAC0",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Seagate Data Storage Technology PTE Ltd. 5.875 07/15/2030",
+      "Ticker": "-",
+      "Identifier": "81180LAT2",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
       "Asset Category": "Fixed Income"
     }
   ]

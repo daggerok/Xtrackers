@@ -8,34 +8,30 @@
   "terValue": 0.06,
   "terGross": "0.06%",
   "terGrossValue": 0.06,
-  "nav": "$30.20",
-  "navValue": 30.2,
-  "aum": "$103,293,133",
-  "aumValue": 103293133,
-  "asOfDate": "2026-10-28",
+  "nav": "$30.22",
+  "navValue": 30.22,
+  "aum": "$103,355,214",
+  "aumValue": 103355214,
+  "asOfDate": "2026-10-30",
   "inceptionDate": "2024-10-09",
   "exchange": "Cboe",
-  "closePrice": "$30.20",
-  "closePriceAsOfDate": "2026-10-29",
-  "premiumDiscount": "0.00%",
-  "premiumDiscountValue": 0.0033,
-  "premiumDiscountAsOfDate": "2026-10-28",
+  "closePrice": "$30.23",
+  "closePriceAsOfDate": "2026-10-30",
+  "premiumDiscount": "0.02%",
+  "premiumDiscountValue": 0.0165,
+  "premiumDiscountAsOfDate": "2026-10-30",
   "cusip": "23306X811",
   "isin": "US23306X8112",
   "distributions": {
     "frequency": "Monthly",
-    "exDate": "2026-10-01",
-    "dividend": "0.08922",
+    "exDate": "2026-11-02",
+    "dividend": "0.09737",
     "paymentsPerYear": 12,
     "headers": [
       "Ex-Date",
       "Amount"
     ],
     "rows": [
-      [
-        "2025-12-01",
-        "0.08529"
-      ],
       [
         "2025-12-05",
         "0"
@@ -79,6 +75,10 @@
       [
         "2026-10-01",
         "0.08922"
+      ],
+      [
+        "2026-11-02",
+        "0.09737"
       ]
     ]
   },
@@ -125,8 +125,8 @@
       "holdings/001.json"
     ],
     "pageSize": 250,
-    "totalRows": 88,
-    "asOfDate": "2026-10-28",
+    "totalRows": 102,
+    "asOfDate": "2026-10-30",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/TRSY/Securities"
   },
   "history": {
@@ -134,11 +134,11 @@
       "history/001.json"
     ],
     "pageSize": 1000,
-    "totalRows": 516,
-    "asOfDate": "2026-10-29",
+    "totalRows": 517,
+    "asOfDate": "2026-10-30",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/TRSY/Performance + https://query1.finance.yahoo.com/v8/finance/chart/TRSY"
   },
-  "generatedAt": "2026-10-29T21:17:12.353Z",
+  "generatedAt": "2026-11-01T05:17:27.120Z",
   "netTerValue": 0.06,
   "source": {
     "provider": "Xtrackers (DWS)",
@@ -348,6 +348,13 @@
       "amount": 0.08922,
       "recordDate": "2026-10-01",
       "payDate": "2026-10-08"
+    },
+    {
+      "exDate": "2026-11-02",
+      "epoch": 1793577600,
+      "amount": 0.09737,
+      "recordDate": "2026-11-02",
+      "payDate": "2026-11-09"
     }
   ]
 }

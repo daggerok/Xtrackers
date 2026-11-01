@@ -2,7 +2,7 @@
   "ticker": "CHPS",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 830,
+  "totalRows": 831,
   "headers": [
     "Date",
     "NAV",
@@ -4986,9 +4986,15 @@
     },
     {
       "Date": "2026-10-29",
-      "NAV": "",
+      "NAV": "81.09",
       "Market Price": "81.300003",
-      "Premium/Discount": ""
+      "Premium/Discount": "0.259"
+    },
+    {
+      "Date": "2026-10-30",
+      "NAV": "75.55",
+      "Market Price": "74.809998",
+      "Premium/Discount": "-0.9795"
     }
   ]
 }
