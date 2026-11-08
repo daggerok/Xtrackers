@@ -2,7 +2,7 @@
   "ticker": "DBEF",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3873,
+  "totalRows": 3878,
   "headers": [
     "Date",
     "NAV",
@@ -5247,6 +5247,36 @@
       "NAV": "54.85",
       "Market Price": "54.740002",
       "Premium/Discount": "-0.2005"
+    },
+    {
+      "Date": "2026-11-02",
+      "NAV": "54.81",
+      "Market Price": "54.82",
+      "Premium/Discount": "0.0182"
+    },
+    {
+      "Date": "2026-11-03",
+      "NAV": "54.63",
+      "Market Price": "54.619999",
+      "Premium/Discount": "-0.0183"
+    },
+    {
+      "Date": "2026-11-04",
+      "NAV": "55.15",
+      "Market Price": "55.849998",
+      "Premium/Discount": "1.2693"
+    },
+    {
+      "Date": "2026-11-05",
+      "NAV": "55.18",
+      "Market Price": "54.27",
+      "Premium/Discount": "-1.6491"
+    },
+    {
+      "Date": "2026-11-06",
+      "NAV": "54.05",
+      "Market Price": "54.169998",
+      "Premium/Discount": "0.222"
     }
   ]
 }

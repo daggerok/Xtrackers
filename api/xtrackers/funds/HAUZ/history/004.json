@@ -2,7 +2,7 @@
   "ticker": "HAUZ",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3292,
+  "totalRows": 3297,
   "headers": [
     "Date",
     "NAV",
@@ -1761,6 +1761,36 @@
       "NAV": "21.46",
       "Market Price": "21.440001",
       "Premium/Discount": "-0.0932"
+    },
+    {
+      "Date": "2026-11-02",
+      "NAV": "21.6",
+      "Market Price": "21.639999",
+      "Premium/Discount": "0.1852"
+    },
+    {
+      "Date": "2026-11-03",
+      "NAV": "21.64",
+      "Market Price": "21.52",
+      "Premium/Discount": "-0.5545"
+    },
+    {
+      "Date": "2026-11-04",
+      "NAV": "21.86",
+      "Market Price": "22.129999",
+      "Premium/Discount": "1.2351"
+    },
+    {
+      "Date": "2026-11-05",
+      "NAV": "22.36",
+      "Market Price": "22.040001",
+      "Premium/Discount": "-1.4311"
+    },
+    {
+      "Date": "2026-11-06",
+      "NAV": "21.91",
+      "Market Price": "21.82",
+      "Premium/Discount": "-0.4108"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "ticker": "XOEX",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 998,
+  "totalRows": 1003,
   "headers": [
     "Date",
     "NAV",
@@ -5997,6 +5997,18 @@
       "NAV": "40.82",
       "Market Price": "40.826",
       "Premium/Discount": "0.0147"
+    },
+    {
+      "Date": "2026-11-02",
+      "NAV": "40.89",
+      "Market Price": "40.931",
+      "Premium/Discount": "0.1003"
+    },
+    {
+      "Date": "2026-11-03",
+      "NAV": "40.82",
+      "Market Price": "40.812",
+      "Premium/Discount": "-0.0196"
     }
   ]
 }

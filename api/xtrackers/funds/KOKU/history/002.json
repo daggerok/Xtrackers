@@ -2,7 +2,7 @@
   "ticker": "KOKU",
   "page": 2,
   "pageSize": 1000,
-  "totalRows": 1651,
+  "totalRows": 1656,
   "headers": [
     "Date",
     "NAV",
@@ -3915,6 +3915,36 @@
       "NAV": "131.5",
       "Market Price": "131.315994",
       "Premium/Discount": "-0.1399"
+    },
+    {
+      "Date": "2026-11-02",
+      "NAV": "131.09",
+      "Market Price": "130.936005",
+      "Premium/Discount": "-0.1175"
+    },
+    {
+      "Date": "2026-11-03",
+      "NAV": "131.28",
+      "Market Price": "131.018997",
+      "Premium/Discount": "-0.1988"
+    },
+    {
+      "Date": "2026-11-04",
+      "NAV": "133.41",
+      "Market Price": "133.75",
+      "Premium/Discount": "0.2549"
+    },
+    {
+      "Date": "2026-11-05",
+      "NAV": "128.69",
+      "Market Price": "128.453003",
+      "Premium/Discount": "-0.1842"
+    },
+    {
+      "Date": "2026-11-06",
+      "NAV": "128.61",
+      "Market Price": "128.429001",
+      "Premium/Discount": "-0.1407"
     }
   ]
 }

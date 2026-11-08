@@ -2,7 +2,7 @@
   "ticker": "QARP",
   "page": 3,
   "pageSize": 1000,
-  "totalRows": 2157,
+  "totalRows": 2162,
   "headers": [
     "Date",
     "NAV",
@@ -951,6 +951,36 @@
       "NAV": "68.82",
       "Market Price": "68.790001",
       "Premium/Discount": "-0.0436"
+    },
+    {
+      "Date": "2026-11-02",
+      "NAV": "68.95",
+      "Market Price": "68.900002",
+      "Premium/Discount": "-0.0725"
+    },
+    {
+      "Date": "2026-11-03",
+      "NAV": "68.77",
+      "Market Price": "68.737",
+      "Premium/Discount": "-0.048"
+    },
+    {
+      "Date": "2026-11-04",
+      "NAV": "70.42",
+      "Market Price": "70.402",
+      "Premium/Discount": "-0.0256"
+    },
+    {
+      "Date": "2026-11-05",
+      "NAV": "68.53",
+      "Market Price": "68.730003",
+      "Premium/Discount": "0.2918"
+    },
+    {
+      "Date": "2026-11-06",
+      "NAV": "68.29",
+      "Market Price": "68.273003",
+      "Premium/Discount": "-0.0249"
     }
   ]
 }

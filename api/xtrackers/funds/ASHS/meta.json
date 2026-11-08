@@ -8,18 +8,18 @@
   "terValue": 0.65,
   "terGross": "0.65%",
   "terGrossValue": 0.65,
-  "nav": "$34.58",
-  "navValue": 34.58,
-  "aum": "$24,203,319",
-  "aumValue": 24203319,
-  "asOfDate": "2026-10-30",
+  "nav": "$36.29",
+  "navValue": 36.29,
+  "aum": "$25,405,791",
+  "aumValue": 25405791,
+  "asOfDate": "2026-11-06",
   "inceptionDate": "2014-05-21",
   "exchange": "NYSE",
-  "closePrice": "$34.44",
-  "closePriceAsOfDate": "2026-10-30",
-  "premiumDiscount": "-0.40%",
-  "premiumDiscountValue": -0.4049,
-  "premiumDiscountAsOfDate": "2026-10-30",
+  "closePrice": "$36.39",
+  "closePriceAsOfDate": "2026-11-06",
+  "premiumDiscount": "0.28%",
+  "premiumDiscountValue": 0.2756,
+  "premiumDiscountAsOfDate": "2026-11-06",
   "cusip": "233051754",
   "isin": "US2330517549",
   "distributions": {
@@ -84,13 +84,13 @@
   },
   "returns": {
     "monthEnd": {
-      "asOfDate": "2026-09-30",
-      "ytd": 4.93,
-      "yr1": 7.57,
-      "yr3": 13.46,
-      "yr5": 1.01,
-      "yr10": 2.11,
-      "sinceInception": 5.14
+      "asOfDate": "2026-10-30",
+      "ytd": -10.69,
+      "yr1": -7.52,
+      "yr3": 8.79,
+      "yr5": -2.06,
+      "yr10": 0.44,
+      "sinceInception": 3.76
     },
     "quarterEnd": {
       "asOfDate": "2026-09-30",
@@ -103,22 +103,22 @@
     }
   },
   "metrics": {
-    "ytd": 4.93,
-    "tr1y": 7.57,
-    "cagr3y": 13.46,
-    "cagr5y": 1.01,
-    "cagr10y": 2.11,
-    "tr3y": 46.06,
-    "tr5y": 5.15,
-    "tr10y": 23.22,
-    "siAnn": 5.14,
+    "ytd": -10.69,
+    "tr1y": -7.52,
+    "cagr3y": 8.79,
+    "cagr5y": -2.06,
+    "cagr10y": 0.44,
+    "tr3y": 28.76,
+    "tr5y": -9.88,
+    "tr10y": 4.49,
+    "siAnn": 3.76,
     "dividendYield": 0,
     "dividendYieldText": "0.00%",
     "dividendYieldBasis": "official-distribution-rate",
     "secYield": 0.55,
     "secYieldText": "0.55%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
-    "performanceAsOf": "2026-09-30"
+    "performanceAsOf": "2026-10-30"
   },
   "holdings": {
     "pages": [
@@ -126,8 +126,8 @@
       "holdings/002.json"
     ],
     "pageSize": 250,
-    "totalRows": 497,
-    "asOfDate": "2026-10-30",
+    "totalRows": 496,
+    "asOfDate": "2026-11-06",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/ASHS/Securities"
   },
   "history": {
@@ -138,11 +138,11 @@
       "history/004.json"
     ],
     "pageSize": 1000,
-    "totalRows": 3132,
-    "asOfDate": "2026-10-30",
+    "totalRows": 3137,
+    "asOfDate": "2026-11-06",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/ASHS/Performance + https://query1.finance.yahoo.com/v8/finance/chart/ASHS"
   },
-  "generatedAt": "2026-11-01T05:15:21.084Z",
+  "generatedAt": "2026-11-08T05:19:41.455Z",
   "netTerValue": 0.65,
   "source": {
     "provider": "Xtrackers (DWS)",

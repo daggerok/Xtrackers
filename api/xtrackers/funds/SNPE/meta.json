@@ -8,18 +8,18 @@
   "terValue": 0.1,
   "terGross": "0.10%",
   "terGrossValue": 0.1,
-  "nav": "$68.72",
-  "navValue": 68.72,
-  "aum": "$2,855,121,853",
-  "aumValue": 2855121853,
-  "asOfDate": "2026-10-30",
+  "nav": "$66.75",
+  "navValue": 66.75,
+  "aum": "$2,786,846,173",
+  "aumValue": 2786846173,
+  "asOfDate": "2026-11-06",
   "inceptionDate": "2019-06-26",
   "exchange": "NYSE",
-  "closePrice": "$68.70",
-  "closePriceAsOfDate": "2026-10-30",
-  "premiumDiscount": "-0.03%",
-  "premiumDiscountValue": -0.0291,
-  "premiumDiscountAsOfDate": "2026-10-30",
+  "closePrice": "$66.76",
+  "closePriceAsOfDate": "2026-11-06",
+  "premiumDiscount": "0.01%",
+  "premiumDiscountValue": 0.015,
+  "premiumDiscountAsOfDate": "2026-11-06",
   "cusip": "233051143",
   "isin": "US2330511435",
   "distributions": {
@@ -84,13 +84,13 @@
   },
   "returns": {
     "monthEnd": {
-      "asOfDate": "2026-09-30",
-      "ytd": 12.8,
-      "yr1": 17.68,
-      "yr3": 22.72,
-      "yr5": 14.46,
+      "asOfDate": "2026-10-30",
+      "ytd": 10.9,
+      "yr1": 12.59,
+      "yr3": 22.78,
+      "yr5": 12.26,
       "yr10": null,
-      "sinceInception": 16.85
+      "sinceInception": 16.38
     },
     "quarterEnd": {
       "asOfDate": "2026-09-30",
@@ -103,22 +103,22 @@
     }
   },
   "metrics": {
-    "ytd": 12.8,
-    "tr1y": 17.68,
-    "cagr3y": 22.72,
-    "cagr5y": 14.46,
+    "ytd": 10.9,
+    "tr1y": 12.59,
+    "cagr3y": 22.78,
+    "cagr5y": 12.26,
     "cagr10y": null,
-    "tr3y": 84.82,
-    "tr5y": 96.46,
+    "tr3y": 85.09,
+    "tr5y": 78.29,
     "tr10y": null,
-    "siAnn": 16.85,
-    "dividendYield": 1.02,
-    "dividendYieldText": "1.02%",
+    "siAnn": 16.38,
+    "dividendYield": 1.05,
+    "dividendYieldText": "1.05%",
     "dividendYieldBasis": "official-distribution-rate",
-    "secYield": 1.12,
-    "secYieldText": "1.12%",
+    "secYield": 1.17,
+    "secYieldText": "1.17%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
-    "performanceAsOf": "2026-09-30"
+    "performanceAsOf": "2026-10-30"
   },
   "holdings": {
     "pages": [
@@ -127,7 +127,7 @@
     ],
     "pageSize": 250,
     "totalRows": 327,
-    "asOfDate": "2026-10-30",
+    "asOfDate": "2026-11-06",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/SNPE/Securities"
   },
   "history": {
@@ -136,11 +136,11 @@
       "history/002.json"
     ],
     "pageSize": 1000,
-    "totalRows": 1849,
-    "asOfDate": "2026-10-30",
+    "totalRows": 1854,
+    "asOfDate": "2026-11-06",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/SNPE/Performance + https://query1.finance.yahoo.com/v8/finance/chart/SNPE"
   },
-  "generatedAt": "2026-11-01T05:17:13.631Z",
+  "generatedAt": "2026-11-08T05:21:35.450Z",
   "netTerValue": 0.1,
   "source": {
     "provider": "Xtrackers (DWS)",
@@ -160,12 +160,12 @@
     "indexTicker": "SPXESUT"
   },
   "yields": {
-    "dividendYield": 1.02,
-    "dividendYieldText": "1.02%",
+    "dividendYield": 1.05,
+    "dividendYieldText": "1.05%",
     "dividendYieldKind": "official indicated distribution rate / NAV",
-    "distributionRate": 1.02,
-    "secYield": 1.12,
-    "secYieldText": "1.12%",
+    "distributionRate": 1.05,
+    "secYield": 1.17,
+    "secYieldText": "1.17%",
     "secYieldKind": "official DWS 30-day SEC yield"
   },
   "distributionEvents": [

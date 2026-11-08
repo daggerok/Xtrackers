@@ -2,7 +2,7 @@
   "ticker": "EMCR",
   "page": 7,
   "pageSize": 250,
-  "totalRows": 1538,
+  "totalRows": 1540,
   "headers": [
     "Name",
     "Ticker",
@@ -14,65 +14,47 @@
   ],
   "rows": [
     {
-      "Name": "SinoPac Financial Holdings Co - Rights",
-      "Ticker": "-",
-      "Identifier": "RT6525875",
-      "Weight": "0.00218976",
-      "Market Value": "1223.86",
-      "Shares Held": "3515",
-      "Asset Category": "Right"
-    },
-    {
-      "Name": "Cw Enerji Muhendislik Ticaret Ve Sanayi As",
-      "Ticker": "CWENE",
-      "Identifier": "M2681T112",
-      "Weight": "0.00205072",
-      "Market Value": "1146.15",
-      "Shares Held": "4197",
-      "Asset Category": "Equity"
-    },
-    {
       "Name": "Kiler Holding A.S.",
       "Ticker": "KLRHO",
       "Identifier": "M6320M123",
-      "Weight": "0.00204621",
-      "Market Value": "1143.63",
+      "Weight": "0.00251522",
+      "Market Value": "1367.15",
       "Shares Held": "6581",
       "Asset Category": "Equity"
     },
     {
-      "Name": "China Railway Signal & Communication Corp Ltd",
-      "Ticker": "3969",
-      "Identifier": "Y1R0AG105",
-      "Weight": "0.0019861",
-      "Market Value": "1110.03",
-      "Shares Held": "2937",
+      "Name": "Mnc Digital Entertainment",
+      "Ticker": "MSIN",
+      "Identifier": "Y603B6108",
+      "Weight": "0.00248339",
+      "Market Value": "1349.85",
+      "Shares Held": "287200",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "MRF Ltd",
+      "Ticker": "MRF",
+      "Identifier": "Y6145L117",
+      "Weight": "0.00245447",
+      "Market Value": "1334.13",
+      "Shares Held": "1",
       "Asset Category": "Equity"
     },
     {
       "Name": "Katilimevim Tasarruf Finans Try 1.0",
       "Ticker": "KTLEV",
       "Identifier": "M6250U103",
-      "Weight": "0.00172315",
-      "Market Value": "963.07",
+      "Weight": "0.00232387",
+      "Market Value": "1263.14",
       "Shares Held": "13036",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Destek Finans Faktoring As",
-      "Ticker": "DSTKF",
-      "Identifier": "M2784A101",
-      "Weight": "0.00165611",
-      "Market Value": "925.6",
-      "Shares Held": "490",
       "Asset Category": "Equity"
     },
     {
       "Name": "Hektas Ticaret TAS",
       "Ticker": "HEKTS",
       "Identifier": "M5297Q109",
-      "Weight": "0.00145902",
-      "Market Value": "815.45",
+      "Weight": "0.00164338",
+      "Market Value": "893.26",
       "Shares Held": "25456",
       "Asset Category": "Equity"
     },
@@ -80,35 +62,71 @@
       "Name": "Nio Inc",
       "Ticker": "NIO",
       "Identifier": "62914V106",
-      "Weight": "0.00140714",
-      "Market Value": "786.45",
+      "Weight": "0.00152801",
+      "Market Value": "830.55",
       "Shares Held": "245",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Al Ahli Bank of Kuwait - Rights",
+      "Ticker": "-",
+      "Identifier": "KW0002460317",
+      "Weight": "0.00142047",
+      "Market Value": "772.1",
+      "Shares Held": "3246",
+      "Asset Category": "Right"
+    },
+    {
+      "Name": "Samsung Biologics Co Ltd - Rights",
+      "Ticker": "-",
+      "Identifier": "KRA2079401G1",
+      "Weight": "0.00139085",
+      "Market Value": "756",
+      "Shares Held": "3",
+      "Asset Category": "Right"
+    },
+    {
+      "Name": "Peker Gayrimenkul Yatirim Ortakligi AS",
+      "Ticker": "PEKGY",
+      "Identifier": "M78651102",
+      "Weight": "0.00129498",
+      "Market Value": "703.89",
+      "Shares Held": "36776",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "SinoPac Financial Holdings Co - Rights",
+      "Ticker": "-",
+      "Identifier": "RT6525875",
+      "Weight": "0.00129486",
+      "Market Value": "703.82",
+      "Shares Held": "3515",
+      "Asset Category": "Right"
+    },
+    {
+      "Name": "Destek Finans Faktoring As",
+      "Ticker": "DSTKF",
+      "Identifier": "M2784A101",
+      "Weight": "0.00126891",
+      "Market Value": "689.72",
+      "Shares Held": "490",
       "Asset Category": "Equity"
     },
     {
       "Name": "Lydia Holding As Try 1.0",
       "Ticker": "LYDHO",
       "Identifier": "M7022Q107",
-      "Weight": "0.00123596",
-      "Market Value": "690.78",
+      "Weight": "0.00125534",
+      "Market Value": "682.34",
       "Shares Held": "1861",
       "Asset Category": "Equity"
-    },
-    {
-      "Name": "Samsung Biologics Co Ltd - Rights",
-      "Ticker": "-",
-      "Identifier": "KRA2079401G1",
-      "Weight": "0.00118271",
-      "Market Value": "661.02",
-      "Shares Held": "3",
-      "Asset Category": "Right"
     },
     {
       "Name": "LDR Turizm AS",
       "Ticker": "LIDER",
       "Identifier": "M6678Q106",
-      "Weight": "0.00116824",
-      "Market Value": "652.93",
+      "Weight": "0.00125501",
+      "Market Value": "682.16",
       "Shares Held": "4331",
       "Asset Category": "Equity"
     },
@@ -116,8 +134,8 @@
       "Name": "Infosys Ltd-SP ADR",
       "Ticker": "INFY",
       "Identifier": "456788108",
-      "Weight": "0.00116765",
-      "Market Value": "652.6",
+      "Weight": "0.00119584",
+      "Market Value": "650",
       "Shares Held": "52",
       "Asset Category": "Equity"
     },
@@ -125,71 +143,62 @@
       "Name": "Tera Yatirim Menkul Degerler A.S.",
       "Ticker": "TERA",
       "Identifier": "M87646119",
-      "Weight": "0.00103863",
-      "Market Value": "580.49",
+      "Weight": "0.00106351",
+      "Market Value": "578.07",
       "Shares Held": "2725",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Peker Gayrimenkul Yatirim Ortakligi AS",
-      "Ticker": "PEKGY",
-      "Identifier": "M78651102",
-      "Weight": "0.0010144",
-      "Market Value": "566.95",
-      "Shares Held": "36776",
       "Asset Category": "Equity"
     },
     {
       "Name": "Himile Mechanical Science and Technology Shandong Co Ltd",
       "Ticker": "002595",
       "Identifier": "Y767AC109",
-      "Weight": "0.00081079",
-      "Market Value": "453.15",
+      "Weight": "0.00088113",
+      "Market Value": "478.94",
       "Shares Held": "75",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Pera Yatir Try1",
-      "Ticker": "PEHOL",
-      "Identifier": "M7864Y101",
-      "Weight": "0.00079524",
-      "Market Value": "444.46",
-      "Shares Held": "13136",
       "Asset Category": "Equity"
     },
     {
       "Name": "Metemteks Tekstil As",
       "Ticker": "IEYHO",
       "Identifier": "M6996P103",
-      "Weight": "0.00076735",
-      "Market Value": "428.87",
+      "Weight": "0.00059593",
+      "Market Value": "323.92",
       "Shares Held": "2681",
       "Asset Category": "Equity"
+    },
+    {
+      "Name": "Pera Yatir Try1",
+      "Ticker": "PEHOL",
+      "Identifier": "M7864Y101",
+      "Weight": "0.0005541",
+      "Market Value": "301.18",
+      "Shares Held": "13136",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Abu Dhabi Islamic Bank - Right 11/25/2026",
+      "Ticker": "-",
+      "Identifier": "AER02084A267",
+      "Weight": "0.00040324",
+      "Market Value": "219.18",
+      "Shares Held": "175",
+      "Asset Category": "Right"
     },
     {
       "Name": "Ral Yatirim Holding",
       "Ticker": "RALYH",
       "Identifier": "9EQ0QRNV3",
-      "Weight": "0.00064475",
-      "Market Value": "360.35",
+      "Weight": "0.0003908",
+      "Market Value": "212.42",
       "Shares Held": "1724",
       "Asset Category": "Equity"
-    },
-    {
-      "Name": "ABU DHABI ISLAMIC BANK",
-      "Ticker": "-",
-      "Identifier": "AER02084A267",
-      "Weight": "0.0002924",
-      "Market Value": "163.42",
-      "Shares Held": "175",
-      "Asset Category": "Right"
     },
     {
       "Name": "Lens Technology (H)",
       "Ticker": "6613",
       "Identifier": "Y5227A114",
-      "Weight": "0.00019376",
-      "Market Value": "108.29",
+      "Weight": "0.00020833",
+      "Market Value": "113.24",
       "Shares Held": "65",
       "Asset Category": "Equity"
     },
@@ -197,8 +206,8 @@
       "Name": "Energy Absolute PCL",
       "Ticker": "EA-R1",
       "Identifier": "TH35450582R4",
-      "Weight": "0.00010415",
-      "Market Value": "58.21",
+      "Weight": "0.00009173",
+      "Market Value": "49.86",
       "Shares Held": "5767",
       "Asset Category": "Equity"
     },
@@ -206,8 +215,8 @@
       "Name": "KLABIN SA-PREF",
       "Ticker": "KLBN4 BS",
       "Identifier": "P60933101",
-      "Weight": "0.00000562",
-      "Market Value": "3.14",
+      "Weight": "0.00000585",
+      "Market Value": "3.18",
       "Shares Held": "5",
       "Asset Category": "Equity"
     },
@@ -215,8 +224,8 @@
       "Name": "Bosch Fren Sistemleri",
       "Ticker": "BFREN",
       "Identifier": "M20258105",
-      "Weight": "7.3e-7",
-      "Market Value": "0.41",
+      "Weight": "8.6e-7",
+      "Market Value": "0.47",
       "Shares Held": "0",
       "Asset Category": "Equity"
     },
@@ -224,7 +233,7 @@
       "Name": "BTS Group Holdings PCL - Warrants 8",
       "Ticker": "-",
       "Identifier": "TH0221056BR3",
-      "Weight": "4.3e-7",
+      "Weight": "4.4e-7",
       "Market Value": "0.24",
       "Shares Held": "800",
       "Asset Category": "Other"
@@ -254,6 +263,15 @@
       "Weight": "0",
       "Market Value": "0",
       "Shares Held": "28889",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Akcansa Cimento AS",
+      "Ticker": "AKCNS",
+      "Identifier": "M03343122",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
       "Asset Category": "Equity"
     },
     {

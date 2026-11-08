@@ -2,7 +2,7 @@
   "ticker": "PSWD",
   "page": 1,
   "pageSize": 250,
-  "totalRows": 50,
+  "totalRows": 53,
   "headers": [
     "Name",
     "Ticker",
@@ -14,453 +14,480 @@
   ],
   "rows": [
     {
-      "Name": "Zscaler Inc",
-      "Ticker": "ZS",
-      "Identifier": "98980G102",
-      "Weight": "6.83428093",
-      "Market Value": "433801.92",
-      "Shares Held": "1824",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Rubrik, Inc. - A Class",
-      "Ticker": "RBRK",
-      "Identifier": "781154109",
-      "Weight": "6.06331003",
-      "Market Value": "384865",
-      "Shares Held": "3100",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Okta",
-      "Ticker": "OKTA",
-      "Identifier": "679295105",
-      "Weight": "5.85275524",
-      "Market Value": "371500.16",
-      "Shares Held": "1784",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Booz Allen Hamilton",
-      "Ticker": "BAH",
-      "Identifier": "099502106",
-      "Weight": "5.81481286",
-      "Market Value": "369091.79",
-      "Shares Held": "4171",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "CACI International Inc-CL A",
-      "Ticker": "CACI",
-      "Identifier": "127190304",
-      "Weight": "5.63066289",
-      "Market Value": "357402.98",
-      "Shares Held": "529",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Crowdstrike Holdings Inc",
-      "Ticker": "CRWD",
-      "Identifier": "22788C105",
-      "Weight": "5.40515656",
-      "Market Value": "343089.1",
-      "Shares Held": "1370",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "SENTINELONE INC",
-      "Ticker": "S",
-      "Identifier": "81730H109",
-      "Weight": "4.79310593",
-      "Market Value": "304239.55",
-      "Shares Held": "12097",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Qualys Inc",
-      "Ticker": "QLYS",
-      "Identifier": "74758T303",
-      "Weight": "4.71371409",
-      "Market Value": "299200.2",
-      "Shares Held": "1335",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Palo Alto Networks",
-      "Ticker": "PANW",
-      "Identifier": "697435105",
-      "Weight": "4.70923339",
-      "Market Value": "298915.79",
-      "Shares Held": "817",
-      "Asset Category": "Equity"
-    },
-    {
       "Name": "Check Point Software Technologies Ltd",
       "Ticker": "CHKP",
       "Identifier": "M22465104",
-      "Weight": "4.58191482",
-      "Market Value": "290834.32",
-      "Shares Held": "1912",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Fortinet Inc",
-      "Ticker": "FTNT",
-      "Identifier": "34959E109",
-      "Weight": "3.57809605",
-      "Market Value": "227117.52",
-      "Shares Held": "1669",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Trend Micro Inc",
-      "Ticker": "4704 JT",
-      "Identifier": "J9298Q104",
-      "Weight": "3.45793171",
-      "Market Value": "219490.16",
-      "Shares Held": "4728",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "F5 Networks Inc",
-      "Ticker": "FFIV",
-      "Identifier": "315616102",
-      "Weight": "3.32613056",
-      "Market Value": "211124.16",
-      "Shares Held": "624",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Tenable Holdings Inc",
-      "Ticker": "TENB",
-      "Identifier": "88025T102",
-      "Weight": "3.3188692",
-      "Market Value": "210663.25",
-      "Shares Held": "4151",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "VARONIS SYSTEMS INC",
-      "Ticker": "VRNS",
-      "Identifier": "922280102",
-      "Weight": "3.3092866",
-      "Market Value": "210055",
-      "Shares Held": "4300",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Akamai Technologies Inc",
-      "Ticker": "AKAM",
-      "Identifier": "00971T101",
-      "Weight": "3.02082325",
-      "Market Value": "191744.96",
-      "Shares Held": "2068",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Yandex N.V. Cl A",
-      "Ticker": "NBIS",
-      "Identifier": "N97284108",
-      "Weight": "2.93591186",
-      "Market Value": "186355.26",
-      "Shares Held": "1209",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "BlackBerry Ltd",
-      "Ticker": "BB CT",
-      "Identifier": "09228F103",
-      "Weight": "2.899414",
-      "Market Value": "184038.58",
-      "Shares Held": "21863",
+      "Weight": "5.58706247",
+      "Market Value": "315155.62",
+      "Shares Held": "2186",
       "Asset Category": "Equity"
     },
     {
       "Name": "Netspoke, Inc. USD 0.0001",
       "Ticker": "NTSK",
       "Identifier": "64119N608",
-      "Weight": "2.56650217",
-      "Market Value": "162907.2",
-      "Shares Held": "6704",
+      "Weight": "5.53569362",
+      "Market Value": "312258",
+      "Shares Held": "14660",
       "Asset Category": "Equity"
     },
     {
-      "Name": "COREWEAVE INC USD 0.0001",
-      "Ticker": "CRWV",
-      "Identifier": "21873S108",
-      "Weight": "2.51379999",
-      "Market Value": "159561.96",
-      "Shares Held": "2908",
+      "Name": "Tenable Holdings Inc",
+      "Ticker": "TENB",
+      "Identifier": "88025T102",
+      "Weight": "5.46117525",
+      "Market Value": "308054.56",
+      "Shares Held": "7312",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CACI International Inc-CL A",
+      "Ticker": "CACI",
+      "Identifier": "127190304",
+      "Weight": "5.29812564",
+      "Market Value": "298857.24",
+      "Shares Held": "489",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "VARONIS SYSTEMS INC",
+      "Ticker": "VRNS",
+      "Identifier": "922280102",
+      "Weight": "5.02983016",
+      "Market Value": "283723.2",
+      "Shares Held": "5814",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "BlackBerry Ltd",
+      "Ticker": "BB CT",
+      "Identifier": "09228F103",
+      "Weight": "5.02761612",
+      "Market Value": "283598.31",
+      "Shares Held": "32439",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Qualys Inc",
+      "Ticker": "QLYS",
+      "Identifier": "74758T303",
+      "Weight": "4.93509591",
+      "Market Value": "278379.42",
+      "Shares Held": "1462",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Zscaler Inc",
+      "Ticker": "ZS",
+      "Identifier": "98980G102",
+      "Weight": "4.67097359",
+      "Market Value": "263480.78",
+      "Shares Held": "1333",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Trend Micro Inc",
+      "Ticker": "4704 JT",
+      "Identifier": "J9298Q104",
+      "Weight": "4.66463691",
+      "Market Value": "263123.34",
+      "Shares Held": "6428",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "SENTINELONE INC",
+      "Ticker": "S",
+      "Identifier": "81730H109",
+      "Weight": "4.34218202",
+      "Market Value": "244934.27",
+      "Shares Held": "11251",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Rubrik, Inc. - A Class",
+      "Ticker": "RBRK",
+      "Identifier": "781154109",
+      "Weight": "4.31375491",
+      "Market Value": "243330.75",
+      "Shares Held": "2301",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Crowdstrike Holdings Inc",
+      "Ticker": "CRWD",
+      "Identifier": "22788C105",
+      "Weight": "4.12589095",
+      "Market Value": "232733.7",
+      "Shares Held": "1073",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Akamai Technologies Inc",
+      "Ticker": "AKAM",
+      "Identifier": "00971T101",
+      "Weight": "4.00807438",
+      "Market Value": "226087.89",
+      "Shares Held": "2721",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Palo Alto Networks",
+      "Ticker": "PANW",
+      "Identifier": "697435105",
+      "Weight": "3.90574494",
+      "Market Value": "220315.68",
+      "Shares Held": "702",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Okta",
+      "Ticker": "OKTA",
+      "Identifier": "679295105",
+      "Weight": "3.905629",
+      "Market Value": "220309.14",
+      "Shares Held": "1306",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "F5 Networks Inc",
+      "Ticker": "FFIV",
+      "Identifier": "315616102",
+      "Weight": "3.36143878",
+      "Market Value": "189612.4",
+      "Shares Held": "610",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Fortinet Inc",
+      "Ticker": "FTNT",
+      "Identifier": "34959E109",
+      "Weight": "3.17071797",
+      "Market Value": "178854.2",
+      "Shares Held": "1505",
       "Asset Category": "Equity"
     },
     {
       "Name": "FASTLY INC - CLASS A",
       "Ticker": "FSLY",
       "Identifier": "31188V100",
-      "Weight": "2.08483055",
-      "Market Value": "132333.38",
-      "Shares Held": "5725",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "NEXTDC",
-      "Ticker": "NXT",
-      "Identifier": "Q6750Y106",
-      "Weight": "1.80172825",
-      "Market Value": "114363.63",
-      "Shares Held": "27694",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "GDS Holdings Ltd - P",
-      "Ticker": "9698",
-      "Identifier": "G3902L109",
-      "Weight": "1.4962612",
-      "Market Value": "94974.29",
-      "Shares Held": "33898",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "NETCOMPANY GROUP AS",
-      "Ticker": "NETC",
-      "Identifier": "K7020C102",
-      "Weight": "1.0911357",
-      "Market Value": "69259.19",
-      "Shares Held": "1301",
+      "Weight": "3.16308166",
+      "Market Value": "178423.45",
+      "Shares Held": "11257",
       "Asset Category": "Equity"
     },
     {
       "Name": "A10 NETWORKS INC",
       "Ticker": "ATEN",
       "Identifier": "002121101",
-      "Weight": "1.02780324",
-      "Market Value": "65239.2",
-      "Shares Held": "2665",
+      "Weight": "2.35712925",
+      "Market Value": "132961.2",
+      "Shares Held": "5370",
       "Asset Category": "Equity"
     },
     {
       "Name": "Sailpoint Inc Usd 0.0001",
       "Ticker": "SAIL",
       "Identifier": "78781J109",
-      "Weight": "0.70073472",
-      "Market Value": "44478.72",
-      "Shares Held": "2112",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "TeamViewer AG",
-      "Ticker": "TMV",
-      "Identifier": "D8T895100",
-      "Weight": "0.69318601",
-      "Market Value": "43999.57",
-      "Shares Held": "5392",
+      "Weight": "1.4562084",
+      "Market Value": "82141.96",
+      "Shares Held": "4276",
       "Asset Category": "Equity"
     },
     {
       "Name": "Rapid7",
       "Ticker": "RPD",
       "Identifier": "753422104",
-      "Weight": "0.65692746",
-      "Market Value": "41698.08",
-      "Shares Held": "2518",
+      "Weight": "1.32387282",
+      "Market Value": "74677.16",
+      "Shares Held": "5087",
       "Asset Category": "Equity"
     },
     {
-      "Name": "RADWARE (USD)",
-      "Ticker": "RDWR",
-      "Identifier": "M81873107",
-      "Weight": "0.63740022",
-      "Market Value": "40458.6",
-      "Shares Held": "1170",
+      "Name": "CSquare Inc USD 0.01",
+      "Ticker": "CSQR",
+      "Identifier": "22946R101",
+      "Weight": "1.22380919",
+      "Market Value": "69032.76",
+      "Shares Held": "4814",
       "Asset Category": "Equity"
     },
     {
       "Name": "AL MOAMMAR INFORMATION SYSTEMS CO",
       "Ticker": "MIS",
       "Identifier": "SA14PGMJGG18",
-      "Weight": "0.63397522",
-      "Market Value": "40241.2",
-      "Shares Held": "561",
+      "Weight": "1.08069501",
+      "Market Value": "60959.96",
+      "Shares Held": "874",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "NETCOMPANY GROUP AS",
+      "Ticker": "NETC",
+      "Identifier": "K7020C102",
+      "Weight": "1.07032398",
+      "Market Value": "60374.95",
+      "Shares Held": "1149",
       "Asset Category": "Equity"
     },
     {
       "Name": "Onespan Inc",
       "Ticker": "OSPN",
       "Identifier": "68287N100",
-      "Weight": "0.5223006",
-      "Market Value": "33152.72",
-      "Shares Held": "1292",
+      "Weight": "1.00815402",
+      "Market Value": "56868.06",
+      "Shares Held": "2634",
       "Asset Category": "Equity"
     },
     {
-      "Name": "NCC GROUP",
-      "Ticker": "NCC",
-      "Identifier": "G64319109",
-      "Weight": "0.34886959",
-      "Market Value": "22144.29",
-      "Shares Held": "9781",
+      "Name": "NEC Corp",
+      "Ticker": "6701 JT",
+      "Identifier": "J48818207",
+      "Weight": "0.96719288",
+      "Market Value": "54557.52",
+      "Shares Held": "2000",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "TeamViewer AG",
+      "Ticker": "TMV",
+      "Identifier": "D8T895100",
+      "Weight": "0.84299106",
+      "Market Value": "47551.53",
+      "Shares Held": "8448",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "RADWARE (USD)",
+      "Ticker": "RDWR",
+      "Identifier": "M81873107",
+      "Weight": "0.7776329",
+      "Market Value": "43864.8",
+      "Shares Held": "1470",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Datadog Inc",
+      "Ticker": "DDOG",
+      "Identifier": "23804L103",
+      "Weight": "0.73954476",
+      "Market Value": "41716.32",
+      "Shares Held": "233",
       "Asset Category": "Equity"
     },
     {
       "Name": "21VIANET GROUP INC USD 0.00001 ADR",
       "Ticker": "VNET",
       "Identifier": "90138A103",
-      "Weight": "0.32882608",
-      "Market Value": "20872.04",
-      "Shares Held": "6482",
+      "Weight": "0.73235359",
+      "Market Value": "41310.68",
+      "Shares Held": "13073",
       "Asset Category": "Equity"
     },
     {
       "Name": "AHNLAB INC",
       "Ticker": "053800",
       "Identifier": "Y0027T108",
-      "Weight": "0.32629734",
-      "Market Value": "20711.53",
-      "Shares Held": "234",
+      "Weight": "0.57217201",
+      "Market Value": "32275.14",
+      "Shares Held": "442",
       "Asset Category": "Equity"
-    },
-    {
-      "Name": "Cash & Cash Equivalents",
-      "Ticker": "-",
-      "Identifier": "-",
-      "Weight": "0.31034525",
-      "Market Value": "19698.98",
-      "Shares Held": "-",
-      "Asset Category": "Cash"
     },
     {
       "Name": "SUNeVision Holdings Ltd",
       "Ticker": "8008",
       "Identifier": "G85700105",
-      "Weight": "0.22582961",
-      "Market Value": "14334.4",
-      "Shares Held": "24003",
+      "Weight": "0.5128043",
+      "Market Value": "28926.32",
+      "Shares Held": "48003",
       "Asset Category": "Equity"
     },
     {
       "Name": "Digital Arts Inc",
       "Ticker": "2326",
       "Identifier": "J1228V105",
-      "Weight": "0.21713713",
-      "Market Value": "13782.65",
-      "Shares Held": "399",
+      "Weight": "0.46363637",
+      "Market Value": "26152.85",
+      "Shares Held": "799",
       "Asset Category": "Equity"
     },
     {
       "Name": "N-Able Inc",
       "Ticker": "NABL",
       "Identifier": "62878D100",
-      "Weight": "0.19798027",
-      "Market Value": "12566.68",
-      "Shares Held": "2426",
+      "Weight": "0.4279009",
+      "Market Value": "24137.08",
+      "Shares Held": "4987",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Kinx Inc Krw 500.0",
+      "Ticker": "093320",
+      "Identifier": "Y4791X105",
+      "Weight": "0.39775701",
+      "Market Value": "22436.72",
+      "Shares Held": "174",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cash & Cash Equivalents",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.38614839",
+      "Market Value": "21781.9",
+      "Shares Held": "-",
+      "Asset Category": "Cash"
+    },
+    {
+      "Name": "NCC GROUP",
+      "Ticker": "NCC",
+      "Identifier": "G64319109",
+      "Weight": "0.35773031",
+      "Market Value": "20178.89",
+      "Shares Held": "9404",
       "Asset Category": "Equity"
     },
     {
       "Name": "TELOS CORPORATION",
       "Ticker": "TLS",
       "Identifier": "87969B101",
-      "Weight": "0.17632776",
-      "Market Value": "11192.3",
-      "Shares Held": "2065",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Bit Digital Inc Usd 0.01",
-      "Ticker": "BTBT",
-      "Identifier": "G1144A105",
-      "Weight": "0.16781567",
-      "Market Value": "10652",
-      "Shares Held": "13315",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Global Security Experts Inc",
-      "Ticker": "4417",
-      "Identifier": "J1812T102",
-      "Weight": "0.16586197",
-      "Market Value": "10527.99",
-      "Shares Held": "200",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Allot Ltd",
-      "Ticker": "ALLT",
-      "Identifier": "M0854Q105",
-      "Weight": "0.13360283",
-      "Market Value": "8480.36",
-      "Shares Held": "977",
+      "Weight": "0.31539119",
+      "Market Value": "17790.62",
+      "Shares Held": "3691",
       "Asset Category": "Equity"
     },
     {
       "Name": "HENNGE KK",
       "Ticker": "4475",
       "Identifier": "J20457107",
-      "Weight": "0.12550681",
-      "Market Value": "7966.47",
-      "Shares Held": "600",
+      "Weight": "0.29721525",
+      "Market Value": "16765.35",
+      "Shares Held": "1200",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "SECUNET SECURITY",
+      "Ticker": "YSN",
+      "Identifier": "D69074108",
+      "Weight": "0.26697173",
+      "Market Value": "15059.37",
+      "Shares Held": "59",
       "Asset Category": "Equity"
     },
     {
       "Name": "Gorilla Technology Group Usd 0.001",
       "Ticker": "GRRR",
       "Identifier": "G4000K175",
-      "Weight": "0.11427409",
-      "Market Value": "7253.48",
-      "Shares Held": "962",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Btq Technologies Corp Npv",
-      "Ticker": "BTQ",
-      "Identifier": "055869101",
-      "Weight": "0.11154858",
-      "Market Value": "7080.48",
-      "Shares Held": "3576",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "CHANGE HLDGS INC",
-      "Ticker": "3962",
-      "Identifier": "J0625Q107",
-      "Weight": "0.10951532",
-      "Market Value": "6951.42",
-      "Shares Held": "1211",
+      "Weight": "0.23985524",
+      "Market Value": "13529.78",
+      "Shares Held": "1958",
       "Asset Category": "Equity"
     },
     {
       "Name": "Arqit Quantum Inc Usd 0.0025",
       "Ticker": "ARQQ",
       "Identifier": "G0567U127",
-      "Weight": "0.10532198",
-      "Market Value": "6685.25",
-      "Shares Held": "425",
+      "Weight": "0.21446704",
+      "Market Value": "12097.68",
+      "Shares Held": "758",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Whitefiber Inc Usd 0.01",
-      "Ticker": "WYFI",
-      "Identifier": "G96115103",
-      "Weight": "0.06071613",
-      "Market Value": "3853.92",
-      "Shares Held": "372",
+      "Name": "Duos Technologies Group I USD 0.001",
+      "Ticker": "DUOT",
+      "Identifier": "266042407",
+      "Weight": "0.21100548",
+      "Market Value": "11902.42",
+      "Shares Held": "2371",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CASwell, Inc.",
+      "Ticker": "6416",
+      "Identifier": "Y1R15Z107",
+      "Weight": "0.21092305",
+      "Market Value": "11897.77",
+      "Shares Held": "4000",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Btq Technologies Corp Npv",
+      "Ticker": "BTQ",
+      "Identifier": "055869101",
+      "Weight": "0.19149871",
+      "Market Value": "10802.08",
+      "Shares Held": "5792",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Soliton Systems K.K.",
+      "Ticker": "3040",
+      "Identifier": "J76086107",
+      "Weight": "0.18107149",
+      "Market Value": "10213.9",
+      "Shares Held": "600",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cyber Security Cloud NPV",
+      "Ticker": "4493",
+      "Identifier": "J11098100",
+      "Weight": "0.16917479",
+      "Market Value": "9542.83",
+      "Shares Held": "600",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Elements Inc/Japan NPV",
+      "Ticker": "5246",
+      "Identifier": "J13542105",
+      "Weight": "0.14647912",
+      "Market Value": "8262.61",
+      "Shares Held": "1400",
       "Asset Category": "Equity"
     },
     {
       "Name": "MY EG SERVICES",
       "Ticker": "MYEG",
       "Identifier": "Y6147P116",
-      "Weight": "0.05406557",
-      "Market Value": "3431.78",
-      "Shares Held": "214196",
+      "Weight": "0.12405965",
+      "Market Value": "6997.97",
+      "Shares Held": "436996",
       "Asset Category": "Equity"
     },
     {
       "Name": "Sinergi Inti Andalan Prima Idr 10.0",
       "Ticker": "INET",
       "Identifier": "Y7T3H0110",
-      "Weight": "0.04816272",
-      "Market Value": "3057.1",
-      "Shares Held": "369400",
+      "Weight": "0.11568036",
+      "Market Value": "6525.31",
+      "Shares Held": "746900",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Axgate Co. Ltd Krw 100.0",
+      "Ticker": "356680",
+      "Identifier": "Y048D3101",
+      "Weight": "0.10160064",
+      "Market Value": "5731.1",
+      "Shares Held": "674",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Amplify Cybersecurity Etf",
+      "Ticker": "HACK",
+      "Identifier": "032108664",
+      "Weight": "0.00982483",
+      "Market Value": "554.2",
+      "Shares Held": "5",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Global Security Experts Inc",
+      "Ticker": "4417",
+      "Identifier": "J1812T102",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "0",
       "Asset Category": "Equity"
     }
   ]

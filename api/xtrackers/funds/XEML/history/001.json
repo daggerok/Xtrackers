@@ -2,7 +2,7 @@
   "ticker": "XEML",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 216,
+  "totalRows": 221,
   "headers": [
     "Date",
     "NAV",
@@ -1305,6 +1305,36 @@
       "NAV": "25.13",
       "Market Price": "25.107",
       "Premium/Discount": "-0.0915"
+    },
+    {
+      "Date": "2026-11-02",
+      "NAV": "25.32",
+      "Market Price": "25.339001",
+      "Premium/Discount": "0.075"
+    },
+    {
+      "Date": "2026-11-03",
+      "NAV": "25.17",
+      "Market Price": "25.129",
+      "Premium/Discount": "-0.1629"
+    },
+    {
+      "Date": "2026-11-04",
+      "NAV": "25.81",
+      "Market Price": "26.007",
+      "Premium/Discount": "0.7633"
+    },
+    {
+      "Date": "2026-11-05",
+      "NAV": "25.78",
+      "Market Price": "25.598",
+      "Premium/Discount": "-0.706"
+    },
+    {
+      "Date": "2026-11-06",
+      "NAV": "25.39",
+      "Market Price": "25.367001",
+      "Premium/Discount": "-0.0906"
     }
   ]
 }

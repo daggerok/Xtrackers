@@ -2,7 +2,7 @@
   "ticker": "UPGR",
   "page": 1,
   "pageSize": 250,
-  "totalRows": 50,
+  "totalRows": 46,
   "headers": [
     "Name",
     "Ticker",
@@ -14,454 +14,418 @@
   ],
   "rows": [
     {
-      "Name": "WORTHINGTON STEEL",
-      "Ticker": "WS",
-      "Identifier": "982104101",
-      "Weight": "3.25932882",
-      "Market Value": "16792.58",
-      "Shares Held": "413",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "VERALTO CORP",
-      "Ticker": "VLTO",
-      "Identifier": "92338C103",
-      "Weight": "3.12674751",
-      "Market Value": "16109.5",
-      "Shares Held": "145",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Ryerson Holding Corp",
-      "Ticker": "RYI",
-      "Identifier": "783754104",
-      "Weight": "3.07137266",
-      "Market Value": "15824.2",
-      "Shares Held": "508",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Reliance Steel & Aluminum Co",
-      "Ticker": "RS",
-      "Identifier": "759509102",
-      "Weight": "2.96804705",
-      "Market Value": "15291.85",
-      "Shares Held": "35",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Itron Inc",
-      "Ticker": "ITRI",
-      "Identifier": "465741106",
-      "Weight": "2.93848856",
-      "Market Value": "15139.56",
-      "Shares Held": "158",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "REPUBLIC SERVICES INC",
-      "Ticker": "RSG",
-      "Identifier": "760759100",
-      "Weight": "2.84199309",
-      "Market Value": "14642.4",
-      "Shares Held": "60",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Ecolab",
-      "Ticker": "ECL",
-      "Identifier": "278865100",
-      "Weight": "2.82270797",
-      "Market Value": "14543.04",
-      "Shares Held": "48",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "IDEX Corp",
-      "Ticker": "IEX",
-      "Identifier": "45167R104",
-      "Weight": "2.76859473",
-      "Market Value": "14264.24",
-      "Shares Held": "61",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Ingersoll-Rand Inc",
-      "Ticker": "IR",
-      "Identifier": "45687V106",
-      "Weight": "2.68793146",
-      "Market Value": "13848.65",
-      "Shares Held": "173",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Tesla",
-      "Ticker": "TSLA",
-      "Identifier": "88160R101",
-      "Weight": "2.6384163",
-      "Market Value": "13593.54",
-      "Shares Held": "34",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "WASTE MANAGEMENT INC",
-      "Ticker": "WM",
-      "Identifier": "94106L109",
-      "Weight": "2.58273284",
-      "Market Value": "13306.65",
-      "Shares Held": "57",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Clean Harbors Inc",
-      "Ticker": "CLH",
-      "Identifier": "184496107",
-      "Weight": "2.58013781",
-      "Market Value": "13293.28",
-      "Shares Held": "44",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Clearway Energy Inc - Class C",
-      "Ticker": "CWEN",
-      "Identifier": "18539C204",
-      "Weight": "2.47429092",
-      "Market Value": "12747.94",
-      "Shares Held": "398",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Parker-Hannifin Corp",
-      "Ticker": "PH",
-      "Identifier": "701094104",
-      "Weight": "2.44508763",
-      "Market Value": "12597.48",
-      "Shares Held": "14",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Casella Waste Systems Inc",
-      "Ticker": "CWST",
-      "Identifier": "147448104",
-      "Weight": "2.42737467",
-      "Market Value": "12506.22",
-      "Shares Held": "134",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "AZZ INC",
-      "Ticker": "AZZ",
-      "Identifier": "002474104",
-      "Weight": "2.40064024",
-      "Market Value": "12368.48",
-      "Shares Held": "92",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Graco Inc",
-      "Ticker": "GGG",
-      "Identifier": "384109104",
-      "Weight": "2.36922817",
-      "Market Value": "12206.64",
-      "Shares Held": "181",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Energy Vault Holdings Inc - A",
-      "Ticker": "NRGV",
-      "Identifier": "29280W109",
-      "Weight": "2.24066071",
-      "Market Value": "11544.24",
-      "Shares Held": "3736",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Green Plains Inc",
-      "Ticker": "GPRE",
-      "Identifier": "393222104",
-      "Weight": "2.18116332",
-      "Market Value": "11237.7",
-      "Shares Held": "797",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "GEVO INC",
-      "Ticker": "GEVO",
-      "Identifier": "374396406",
-      "Weight": "2.17360338",
-      "Market Value": "11198.75",
-      "Shares Held": "8959",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "REX American Resources Corp",
-      "Ticker": "RSC",
-      "Identifier": "761624105",
-      "Weight": "2.1249267",
-      "Market Value": "10947.96",
-      "Shares Held": "279",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "SOLID POWER INC",
-      "Ticker": "SLDP",
-      "Identifier": "83422N105",
-      "Weight": "2.11933681",
-      "Market Value": "10919.16",
-      "Shares Held": "5571",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Brookfield Renewable Corp",
-      "Ticker": "BEPC",
-      "Identifier": "11285B108",
-      "Weight": "2.08773646",
-      "Market Value": "10756.35",
-      "Shares Held": "369",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Enviri Corporation",
-      "Ticker": "NVRI-W",
-      "Identifier": "29390K102",
-      "Weight": "2.07719137",
-      "Market Value": "10702.02",
-      "Shares Held": "581",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Ormat Technologies Inc",
-      "Ticker": "ORA",
-      "Identifier": "686688102",
-      "Weight": "2.07158013",
-      "Market Value": "10673.11",
-      "Shares Held": "119",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Carrier Global Corp",
-      "Ticker": "CARR",
-      "Identifier": "14448C104",
-      "Weight": "2.0714365",
-      "Market Value": "10672.37",
-      "Shares Held": "199",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "BLOOM ENERGY CORP",
-      "Ticker": "BE",
-      "Identifier": "093712107",
-      "Weight": "2.05056564",
-      "Market Value": "10564.84",
-      "Shares Held": "52",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "EnerSys",
-      "Ticker": "ENS",
-      "Identifier": "29275Y102",
-      "Weight": "2.04898572",
-      "Market Value": "10556.7",
-      "Shares Held": "66",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Xylem Inc",
-      "Ticker": "XYL",
-      "Identifier": "98419M100",
-      "Weight": "2.0086337",
-      "Market Value": "10348.8",
-      "Shares Held": "112",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "First Solar Inc",
-      "Ticker": "FSLR",
-      "Identifier": "336433107",
-      "Weight": "1.99714337",
-      "Market Value": "10289.6",
-      "Shares Held": "59",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "NEXTERA ENERGY PARTNERS LP",
-      "Ticker": "NEP",
-      "Identifier": "65341B106",
-      "Weight": "1.9559257",
-      "Market Value": "10077.24",
-      "Shares Held": "1063",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Amprius Technologies Inc Npv",
-      "Ticker": "AMPX",
-      "Identifier": "03214Q108",
-      "Weight": "1.90901527",
-      "Market Value": "9835.55",
-      "Shares Held": "1145",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Shoals Technologies Group Inc",
-      "Ticker": "SHLS",
-      "Identifier": "82489W107",
-      "Weight": "1.89637008",
-      "Market Value": "9770.4",
-      "Shares Held": "1357",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Rivian Automotive Inc",
-      "Ticker": "RIVN",
-      "Identifier": "76954A103",
-      "Weight": "1.87869982",
-      "Market Value": "9679.36",
-      "Shares Held": "796",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "NEXTRACKER INC-CL A",
-      "Ticker": "NXT",
-      "Identifier": "65290E101",
-      "Weight": "1.86308889",
-      "Market Value": "9598.93",
-      "Shares Held": "121",
-      "Asset Category": "Equity"
-    },
-    {
       "Name": "Montrose Environmental Group Inc",
       "Ticker": "MEG",
       "Identifier": "615111101",
-      "Weight": "1.79833739",
-      "Market Value": "9265.32",
-      "Shares Held": "621",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Lennox International Inc",
-      "Ticker": "LII",
-      "Identifier": "526107107",
-      "Weight": "1.66959136",
-      "Market Value": "8602",
-      "Shares Held": "25",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Sunrun",
-      "Ticker": "RUN",
-      "Identifier": "86771W105",
-      "Weight": "1.60280771",
-      "Market Value": "8257.92",
-      "Shares Held": "1104",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "QUANTUMSCAPE CORP",
-      "Ticker": "QS",
-      "Identifier": "74767V109",
-      "Weight": "1.57603835",
-      "Market Value": "8120",
-      "Shares Held": "2000",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Plug Power Inc",
-      "Ticker": "PLUG",
-      "Identifier": "72919P202",
-      "Weight": "1.42827893",
-      "Market Value": "7358.72",
-      "Shares Held": "5391",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Modine Manufacturing Co",
-      "Ticker": "MOD",
-      "Identifier": "607828100",
-      "Weight": "1.41039128",
-      "Market Value": "7266.56",
-      "Shares Held": "56",
+      "Weight": "3.55171634",
+      "Market Value": "18895.04",
+      "Shares Held": "862",
       "Asset Category": "Equity"
     },
     {
       "Name": "Array Technologies Inc",
       "Ticker": "ARRY",
       "Identifier": "04271T100",
-      "Weight": "1.37582907",
-      "Market Value": "7088.49",
-      "Shares Held": "2091",
+      "Weight": "3.53282715",
+      "Market Value": "18794.55",
+      "Shares Held": "3210",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Chargepoint Holdings INC. NPV",
+      "Ticker": "CHPT",
+      "Identifier": "15961R303",
+      "Weight": "3.25044421",
+      "Market Value": "17292.28",
+      "Shares Held": "1492",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Sunrun",
+      "Ticker": "RUN",
+      "Identifier": "86771W105",
+      "Weight": "3.02215364",
+      "Market Value": "16077.78",
+      "Shares Held": "1611",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "NEXTRACKER INC-CL A",
+      "Ticker": "NXT",
+      "Identifier": "65290E101",
+      "Weight": "2.81982936",
+      "Market Value": "15001.42",
+      "Shares Held": "143",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "VERALTO CORP",
+      "Ticker": "VLTO",
+      "Identifier": "92338C103",
+      "Weight": "2.81721656",
+      "Market Value": "14987.52",
+      "Shares Held": "128",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Shoals Technologies Group Inc",
+      "Ticker": "SHLS",
+      "Identifier": "82489W107",
+      "Weight": "2.76822385",
+      "Market Value": "14726.88",
+      "Shares Held": "1461",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Casella Waste Systems Inc",
+      "Ticker": "CWST",
+      "Identifier": "147448104",
+      "Weight": "2.69524981",
+      "Market Value": "14338.66",
+      "Shares Held": "146",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Itron Inc",
+      "Ticker": "ITRI",
+      "Identifier": "465741106",
+      "Weight": "2.64605033",
+      "Market Value": "14076.92",
+      "Shares Held": "143",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "REPUBLIC SERVICES INC",
+      "Ticker": "RSG",
+      "Identifier": "760759100",
+      "Weight": "2.59843356",
+      "Market Value": "13823.6",
+      "Shares Held": "56",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "WASTE MANAGEMENT INC",
+      "Ticker": "WM",
+      "Identifier": "94106L109",
+      "Weight": "2.57577931",
+      "Market Value": "13703.08",
+      "Shares Held": "58",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "First Solar Inc",
+      "Ticker": "FSLR",
+      "Identifier": "336433107",
+      "Weight": "2.57097478",
+      "Market Value": "13677.52",
+      "Shares Held": "68",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ecolab",
+      "Ticker": "ECL",
+      "Identifier": "278865100",
+      "Weight": "2.48683903",
+      "Market Value": "13229.92",
+      "Shares Held": "44",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ingersoll-Rand Inc",
+      "Ticker": "IR",
+      "Identifier": "45687V106",
+      "Weight": "2.48035216",
+      "Market Value": "13195.41",
+      "Shares Held": "159",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Brookfield Renewable Corp",
+      "Ticker": "BEPC",
+      "Identifier": "11285B108",
+      "Weight": "2.47597056",
+      "Market Value": "13172.1",
+      "Shares Held": "415",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "GEVO INC",
+      "Ticker": "GEVO",
+      "Identifier": "374396406",
+      "Weight": "2.46491036",
+      "Market Value": "13113.26",
+      "Shares Held": "9434",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Reliance Steel & Aluminum Co",
+      "Ticker": "RS",
+      "Identifier": "759509102",
+      "Weight": "2.42989891",
+      "Market Value": "12927",
+      "Shares Held": "31",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ryerson Holding Corp",
+      "Ticker": "RYI",
+      "Identifier": "783754104",
+      "Weight": "2.42798161",
+      "Market Value": "12916.8",
+      "Shares Held": "468",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "WORTHINGTON STEEL",
+      "Ticker": "WS",
+      "Identifier": "982104101",
+      "Weight": "2.38128965",
+      "Market Value": "12668.4",
+      "Shares Held": "345",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ormat Technologies Inc",
+      "Ticker": "ORA",
+      "Identifier": "686688102",
+      "Weight": "2.34933461",
+      "Market Value": "12498.4",
+      "Shares Held": "136",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Parker-Hannifin Corp",
+      "Ticker": "PH",
+      "Identifier": "701094104",
+      "Weight": "2.24273072",
+      "Market Value": "11931.27",
+      "Shares Held": "13",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "IDEX Corp",
+      "Ticker": "IEX",
+      "Identifier": "45167R104",
+      "Weight": "2.21870992",
+      "Market Value": "11803.48",
+      "Shares Held": "52",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Xylem Inc",
+      "Ticker": "XYL",
+      "Identifier": "98419M100",
+      "Weight": "2.20670235",
+      "Market Value": "11739.6",
+      "Shares Held": "120",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Carrier Global Corp",
+      "Ticker": "CARR",
+      "Identifier": "14448C104",
+      "Weight": "2.19563839",
+      "Market Value": "11680.74",
+      "Shares Held": "223",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Rivian Automotive Inc",
+      "Ticker": "RIVN",
+      "Identifier": "76954A103",
+      "Weight": "2.18733195",
+      "Market Value": "11636.55",
+      "Shares Held": "855",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Lennox International Inc",
+      "Ticker": "LII",
+      "Identifier": "526107107",
+      "Weight": "2.18553307",
+      "Market Value": "11626.98",
+      "Shares Held": "34",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "QUANTUMSCAPE CORP",
+      "Ticker": "QS",
+      "Identifier": "74767V109",
+      "Weight": "2.1826496",
+      "Market Value": "11611.64",
+      "Shares Held": "2713",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Tesla",
+      "Ticker": "TSLA",
+      "Identifier": "88160R101",
+      "Weight": "2.15471714",
+      "Market Value": "11463.04",
+      "Shares Held": "32",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Clean Harbors Inc",
+      "Ticker": "CLH",
+      "Identifier": "184496107",
+      "Weight": "2.08269799",
+      "Market Value": "11079.9",
+      "Shares Held": "39",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "AZZ INC",
+      "Ticker": "AZZ",
+      "Identifier": "002474104",
+      "Weight": "2.07942354",
+      "Market Value": "11062.48",
+      "Shares Held": "88",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Energy Vault Holdings Inc - A",
+      "Ticker": "NRGV",
+      "Identifier": "29280W109",
+      "Weight": "2.04023538",
+      "Market Value": "10854",
+      "Shares Held": "3350",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Graco Inc",
+      "Ticker": "GGG",
+      "Identifier": "384109104",
+      "Weight": "2.01540068",
+      "Market Value": "10721.88",
+      "Shares Held": "158",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Green Plains Inc",
+      "Ticker": "GPRE",
+      "Identifier": "393222104",
+      "Weight": "1.9820227",
+      "Market Value": "10544.31",
+      "Shares Held": "797",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Mayville Engineering Company Inc",
+      "Ticker": "MEC",
+      "Identifier": "578605107",
+      "Weight": "1.96307712",
+      "Market Value": "10443.52",
+      "Shares Held": "796",
       "Asset Category": "Equity"
     },
     {
       "Name": "Lucid Group Inc NPV",
       "Ticker": "LCID",
       "Identifier": "549498202",
-      "Weight": "1.33527714",
-      "Market Value": "6879.56",
-      "Shares Held": "2278",
+      "Weight": "1.94927254",
+      "Market Value": "10370.08",
+      "Shares Held": "3152",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Fuelcell Energy Inc Npv",
-      "Ticker": "FCEL",
-      "Identifier": "35952H700",
-      "Weight": "1.28268171",
-      "Market Value": "6608.58",
-      "Shares Held": "589",
+      "Name": "SOLID POWER INC",
+      "Ticker": "SLDP",
+      "Identifier": "83422N105",
+      "Weight": "1.90628173",
+      "Market Value": "10141.37",
+      "Shares Held": "5109",
       "Asset Category": "Equity"
     },
     {
-      "Name": "EOS Energy Enterprises Inc.",
-      "Ticker": "EOSE",
-      "Identifier": "29415C101",
-      "Weight": "1.07996669",
-      "Market Value": "5564.16",
-      "Shares Held": "2944",
+      "Name": "Plug Power Inc",
+      "Ticker": "PLUG",
+      "Identifier": "72919P202",
+      "Weight": "1.87765001",
+      "Market Value": "9989.05",
+      "Shares Held": "6889",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "EnerSys",
+      "Ticker": "ENS",
+      "Identifier": "29275Y102",
+      "Weight": "1.85157658",
+      "Market Value": "9850.34",
+      "Shares Held": "67",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "NEXTERA ENERGY PARTNERS LP",
+      "Ticker": "NEP",
+      "Identifier": "65341B106",
+      "Weight": "1.62912062",
+      "Market Value": "8666.88",
+      "Shares Held": "1184",
       "Asset Category": "Equity"
     },
     {
       "Name": "Fluence Energy Inc",
       "Ticker": "FLNC",
       "Identifier": "34379V103",
-      "Weight": "0.96033529",
-      "Market Value": "4947.8",
-      "Shares Held": "865",
+      "Weight": "1.58397943",
+      "Market Value": "8426.73",
+      "Shares Held": "1599",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Fervo Energy Co Usd 0.0001",
-      "Ticker": "FRVO",
-      "Identifier": "31556C106",
-      "Weight": "0.90264103",
-      "Market Value": "4650.55",
-      "Shares Held": "562",
+      "Name": "BLOOM ENERGY CORP",
+      "Ticker": "BE",
+      "Identifier": "093712107",
+      "Weight": "1.36769079",
+      "Market Value": "7276.08",
+      "Shares Held": "42",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Global X US Infrastructure",
-      "Ticker": "PAVE",
-      "Identifier": "37954Y673",
-      "Weight": "0.21814545",
-      "Market Value": "1123.92",
-      "Shares Held": "21",
+      "Name": "EOS Energy Enterprises Inc.",
+      "Ticker": "EOSE",
+      "Identifier": "29415C101",
+      "Weight": "1.29355886",
+      "Market Value": "6881.7",
+      "Shares Held": "3955",
       "Asset Category": "Equity"
     },
     {
-      "Name": "GENTHERM INC",
-      "Ticker": "THRM",
-      "Identifier": "37253A103",
-      "Weight": "0.14417257",
-      "Market Value": "742.8",
-      "Shares Held": "24",
+      "Name": "Fuelcell Energy Inc Npv",
+      "Ticker": "FCEL",
+      "Identifier": "35952H700",
+      "Weight": "1.24999474",
+      "Market Value": "6649.94",
+      "Shares Held": "668",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Modine Manufacturing Co",
+      "Ticker": "MOD",
+      "Identifier": "607828100",
+      "Weight": "1.18039102",
+      "Market Value": "6279.65",
+      "Shares Held": "65",
       "Asset Category": "Equity"
     },
     {
       "Name": "Cash & Cash Equivalents",
       "Ticker": "-",
       "Identifier": "-",
-      "Weight": "0.05632202",
-      "Market Value": "290.18",
+      "Weight": "0.01852453",
+      "Market Value": "98.55",
       "Shares Held": "-",
       "Asset Category": "Cash"
+    },
+    {
+      "Name": "Global X US Infrastructure",
+      "Ticker": "PAVE",
+      "Identifier": "37954Y673",
+      "Weight": "0.00961283",
+      "Market Value": "51.14",
+      "Shares Held": "1",
+      "Asset Category": "Equity"
     }
   ]
 }

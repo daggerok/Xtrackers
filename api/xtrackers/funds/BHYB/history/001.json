@@ -2,7 +2,7 @@
   "ticker": "BHYB",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 756,
+  "totalRows": 761,
   "headers": [
     "Date",
     "NAV",
@@ -4545,6 +4545,36 @@
       "NAV": "52.61",
       "Market Price": "52.685001",
       "Premium/Discount": "0.1426"
+    },
+    {
+      "Date": "2026-11-02",
+      "NAV": "52.38",
+      "Market Price": "52.394001",
+      "Premium/Discount": "0.0267"
+    },
+    {
+      "Date": "2026-11-03",
+      "NAV": "52.37",
+      "Market Price": "52.41",
+      "Premium/Discount": "0.0764"
+    },
+    {
+      "Date": "2026-11-04",
+      "NAV": "52.59",
+      "Market Price": "52.735001",
+      "Premium/Discount": "0.2757"
+    },
+    {
+      "Date": "2026-11-05",
+      "NAV": "52.5",
+      "Market Price": "52.603001",
+      "Premium/Discount": "0.1962"
+    },
+    {
+      "Date": "2026-11-06",
+      "NAV": "52.56",
+      "Market Price": "52.584999",
+      "Premium/Discount": "0.0476"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "ticker": "USSG",
   "page": 2,
   "pageSize": 250,
-  "totalRows": 255,
+  "totalRows": 254,
   "headers": [
     "Name",
     "Ticker",
@@ -14,19 +14,10 @@
   ],
   "rows": [
     {
-      "Name": "Xtrackers S&P 500 ESG ETF",
-      "Ticker": "SNPE",
-      "Identifier": "233051143",
-      "Weight": "0.01806289",
-      "Market Value": "103050",
-      "Shares Held": "1500",
-      "Asset Category": "Equity"
-    },
-    {
       "Name": "TPG Inc. - Contingent Value Right",
       "Ticker": "-",
       "Identifier": "436CVR021",
-      "Weight": "0.00000659",
+      "Weight": "0.00000671",
       "Market Value": "37.57",
       "Shares Held": "3757",
       "Asset Category": "Equity"
@@ -55,7 +46,7 @@
       "Identifier": "-",
       "Weight": "0",
       "Market Value": "0",
-      "Shares Held": "12",
+      "Shares Held": "16",
       "Asset Category": "Future"
     }
   ]
