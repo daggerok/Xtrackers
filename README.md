@@ -85,6 +85,13 @@ Each fund carries a derived `metrics` object that powers the catalog columns sha
   | `indicated` | no official rate: latest positive distribution × payments per year ÷ NAV |
 - `terValue` / `terGrossValue` - net expense ratio (after waivers; the gross one when it is the only number) and gross expense ratio (`Total operating expenses`), with `ter` / `terGross` text; `meta.json` keeps `netTerValue`
 - `secYield` - 30-day SEC yield when published; `—` otherwise
+- Swing metrics (shared `swing` block, the formulas of the Stocks feed) from the Yahoo Finance daily closes since listing (chart API, split-adjusted, not dividend-adjusted; the published NAV and market price history is not split-adjusted), with the last close as the price. Read for every fund the run updates; a failed chart, or one that starts more than 31 days after the published history, keeps the published values; `null` (never `0`) when the history is too short:
+  - `pctFrom52wHigh` - last close against the highest close of the last 52 weeks, in percent
+  - `athPrice`, `athDate`, `athBasis` - highest close of the whole history, its date and the history it covers (`daily closes since <first date>`)
+  - `pctFromAth` - last close against `athPrice`, in percent
+  - `volatility1y` - annualized volatility of the last 252 daily log returns, in percent (needs 253 closes)
+  - `sigmaFromMean60d` - distance of the last close from the mean of the last 60 closes, in sample standard deviations
+  - `high60d`, `low60d` - highest and lowest of the last 60 closes
 - `returnsBasis` - mandatory non-empty label of how the returns were computed: official DWS NAV total returns, derived from the official DWS daily NAV with distributions reinvested at ex-date NAV, or derived from Yahoo adjusted market-price closes (an estimate, not official NAV returns)
 - `quarterEnd` - derived for the last completed quarter-end on or before the newest NAV date: it equals `monthEnd` only when the data ends exactly on a quarter-end (for example 09-30)
 - `performanceAsOf` - mandatory ISO `YYYY-MM-DD` date the returns are as of: the DWS performance table date for official figures, the last covered series date when derived (never the NAV date); `null` when no return figure exists (or the date is unknown)
