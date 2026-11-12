@@ -8,7 +8,7 @@ import { tmpdir } from 'node:os';
 import {
   CLOSED_FUNDS, closedFund, CONTROL_NAMES, DEFAULT_SEC_UA, SOFT_DEADLINE_MS, resolveControls, runtimeControls, readConfig, parseRange, parseAumRange, inRange,
   fundFilterReasons, mergeDetails, outputConfigEntries, createRequestGate, fetchWithRetry,
-  HttpError, samePublishedContent, writeJsonIfChanged, selectUpdateBatch, runUpdater, indexRowForCatalog, withRange52w, parseNportFiling,
+  HttpError, samePublishedContent, writeJsonIfChanged, selectUpdateBatch, runUpdater, indexRowForCatalog, withRange52w, withSwing, parseNportFiling,
   parseSecFundTickers, parseSecCompanyNames, parseNportSubmissions, parseNportFeed, nportDocumentUrl, nportIdentity, nportIsFresh, nportTickers, nportHoldingsSheet,
   HOLDINGS_GUARD_RELAX, holdingsWeightCount, dwsTicker,
   reinvestmentCoverageStart, reportingPeriodEnds, coalesceReturns, annualizedOfficialReturns, renderUpdateSummary, writeSummary,
@@ -126,6 +126,8 @@ function fakeFetch(denied: string[] = [], secXml: string | null = null): Fetcher
     if (ticker) return Response.json(pdp(ticker, { classes: ticker === 'HYLB' ? ['Fixed Income'] : ['Equities'] }));
     const exportMatch = /\/(?:Export|export)\/etf\/([A-Z]+)\/(\w+)/.exec(url);
     if (exportMatch) return new Response(syntheticWorkbook(exportMatch[1], exportMatch[2]));
+    // the swing block's own chart request (period1=0, daily bars since listing): 300 daily closes from 2025-11-30
+    if (url.includes('finance.yahoo.com') && url.includes('includePrePost=false')) return Response.json(SWING_CHART);
     if (url.includes('finance.yahoo.com')) return Response.json({ chart: { result: [{ meta: { exchangeName: 'NYSE' }, timestamp: [1790553600, 1790640000], indicators: { quote: [{ close: [35, 35.3], volume: [100, 110] }], adjclose: [{ adjclose: [34.123456, 35.234567] }] } }] } });
     if (secXml && url.endsWith('company_tickers_mf.json')) return Response.json({ fields: ['symbol', 'cik', 'seriesId', 'classId'], data: [['HYLB', 1503123, 'S000000001', 'C000001']] });
     if (secXml && url.includes('browse-edgar')) return new Response('<feed><entry><filing-type>NPORT-P</filing-type><accession-number>0001503123-26-000001</accession-number><filing-date>2026-09-01</filing-date><filing-href>https://www.sec.gov/Archives/edgar/data/1503123/000150312326000001/x.html</filing-href></entry></feed>');
@@ -135,6 +137,7 @@ function fakeFetch(denied: string[] = [], secXml: string | null = null): Fetcher
     throw new Error(`Unexpected offline request: ${url}`);
   };
 }
+const SWING_CHART = { chart: { result: [{ meta: { dataGranularity: '1d' }, timestamp: Array.from({ length: 300 }, (_, i) => Date.UTC(2025, 10, 30) / 1000 + i * 86400 + 48_600), indicators: { quote: [{ close: Array.from({ length: 300 }, (_, i) => 50 + i * 0.01) }] } }] } };
 const override = (base: Fetcher, match: (url: string) => boolean, make: (url: string) => Response): Fetcher => (url, init) => match(url) ? Promise.resolve(make(url)) : base(url, init);
 async function tempRoot(): Promise<string> { const dir = await mkdtemp(join(tmpdir(), 'xtrackers-tests-')); tempDirs.push(dir); return dir; }
 async function hashes(root: string): Promise<Record<string, string>> {
@@ -613,10 +616,16 @@ describe('pipeline', () => {
       expect(String(metrics.returnsBasis).trim()).not.toMatch(/^(-|—)?$/);
       expect(metrics.performanceAsOf === null || /^\d{4}-\d{2}-\d{2}$/.test(String(metrics.performanceAsOf))).toBe(true);
     }
-    // untouched rows stay as published; the 52-week keys are added to every row from its history pages (range-52w block)
+    // untouched rows stay as published; the 52-week keys are added to every row from its history pages (range-52w block), the
+    // swing keys from the Yahoo daily closes (period1=0) of the funds the run updated (swing block, null for the others here)
     const RANGE_KEYS = ['week52Low', 'week52High', 'range52w', 'range52wClose', 'range52wAsOf', 'range52wSince', 'range52wBasis'];
-    const rangeless = (row: JsonRecord) => ({ ...row, metrics: Object.fromEntries(Object.entries(record(row.metrics)).filter(([k]) => !RANGE_KEYS.includes(k))) });
+    const SWING_KEYS = ['pctFrom52wHigh', 'athPrice', 'athDate', 'athBasis', 'pctFromAth', 'volatility1y', 'sigmaFromMean60d', 'high60d', 'low60d'];
+    const rangeless = (row: JsonRecord) => ({ ...row, metrics: Object.fromEntries(Object.entries(record(row.metrics)).filter(([k]) => !RANGE_KEYS.includes(k) && !SWING_KEYS.includes(k))) });
     for (const fund of afterIndex.funds) expect(Object.keys(record(fund.metrics))).toEqual(expect.arrayContaining(RANGE_KEYS));
+    for (const fund of afterIndex.funds) expect(Object.keys(record(fund.metrics)).slice(-11, -2)).toEqual(SWING_KEYS);
+    expect(calls.filter(url => /chart\/[A-Z]+\?period1=0&period2=\d+&interval=1d&includePrePost=false/.test(url)).map(url => /chart\/([A-Z]+)/.exec(url)?.[1]).sort()).toEqual(['ASHR', 'DBEF', 'HYLB']);
+    const ashr = record((await rowOf(root, 'ASHR')).metrics);
+    expect([ashr.athBasis, ashr.athPrice, ashr.high60d, ashr.volatility1y]).toEqual(['daily closes since 2025-11-30', 52.99, 52.99, expect.any(Number)]);
     const selected = new Set(result.selected);
     for (const row of beforeIndex.funds) if (!selected.has(row.ticker)) expect(rangeless(afterIndex.funds.find((fund: JsonRecord) => fund.ticker === row.ticker))).toEqual(rangeless(row));
     expect(await Bun.file(join(root, 'funds', 'CHPS', 'untouched.json')).text()).toBe('{"sentinel":true}\n');
@@ -777,8 +786,8 @@ describe('pipeline 3', () => {
       ['EURUSD', '', '', '', 'NEWX test forward', '-0.01', '-1', '10', '-10', '', '', 'Forward']]);
     const first = await quietRun(root, { TICKERS: 'NEWX NEWY' }, override(withNew, url => url.includes('/NEWX/Securities'), () => new Response(fractions)));
     expect([first.failures, first.outcomes.map(row => row.status), String(first.outcomes.find(row => row.ticker === 'NEWX')?.reason).startsWith('holdings guard:')]).toEqual([2, ['failed', 'failed'], true]);
-    // the catalog-only row as written: the range-52w block adds its seven keys (all null without dataFile)
-    const keys = Object.keys(record((await withRange52w(root, [indexRowForCatalog(parseSitemap(SITEMAP)[0])]))[0].metrics));
+    // the catalog-only row as written: the range-52w and swing blocks add their seven and nine keys (all null without dataFile)
+    const keys = Object.keys(record((await withSwing(root, await withRange52w(root, [indexRowForCatalog(parseSitemap(SITEMAP)[0])])))[0].metrics));
     for (const ticker of ['NEWX', 'NEWY']) {
       const row = await rowOf(root, ticker);
       expect([row.dataFile, row.holdings, Object.keys(record(row.metrics)), String(record(row.metrics).returnsBasis).length > 0]).toEqual([null, 0, keys, true]);
@@ -1085,11 +1094,11 @@ describe('network', () => {
     const root = await seeded(), other = await seeded();
     calls.length = 0;
     await quietRun(root, { TICKERS: 'HYLB', HISTORY_RANGE: '1y' });
-    const limited = /period1=(\d+)&period2=(\d+)/.exec(calls.find(url => url.includes('finance.yahoo.com')) ?? '');
+    const limited = /period1=(\d+)&period2=(\d+)/.exec(calls.find(url => url.includes('finance.yahoo.com') && !url.includes('includePrePost=false')) ?? '');
     expect(limited).not.toBeNull();
     expect(Number(limited![2]) - Number(limited![1])).toBe(Math.floor(365.25 * 86400));
     calls.length = 0;
     await quietRun(other, { TICKERS: 'HYLB', HISTORY_RANGE: 'max' });
-    expect(calls.find(url => url.includes('finance.yahoo.com'))).toContain('period1=0&');
+    expect(calls.find(url => url.includes('finance.yahoo.com') && !url.includes('includePrePost=false'))).toContain('period1=0&');
   });
 });
