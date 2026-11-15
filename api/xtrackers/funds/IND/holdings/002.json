@@ -2,7 +2,7 @@
   "ticker": "IND",
   "page": 2,
   "pageSize": 250,
-  "totalRows": 500,
+  "totalRows": 501,
   "headers": [
     "Name",
     "Ticker",
@@ -14,65 +14,110 @@
   ],
   "rows": [
     {
+      "Name": "Amber Enterprises India Ltd",
+      "Ticker": "AMBER",
+      "Identifier": "Y0102T106",
+      "Weight": "0.06851526",
+      "Market Value": "3233.36",
+      "Shares Held": "45",
+      "Asset Category": "Equity"
+    },
+    {
       "Name": "Mazagon Dock Shipbuilders",
       "Ticker": "MAZDOCK",
       "Identifier": "Y590BQ103",
-      "Weight": "0.06734786",
-      "Market Value": "3154.34",
+      "Weight": "0.06841397",
+      "Market Value": "3228.58",
       "Shares Held": "161",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Nuvama Wealth Management Ltd",
-      "Ticker": "NUVAMA",
-      "Identifier": "Y6S0DB119",
-      "Weight": "0.06722424",
-      "Market Value": "3148.55",
-      "Shares Held": "160",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Hindustan Copper Ltd",
-      "Ticker": "HCP",
-      "Identifier": "Y3213W117",
-      "Weight": "0.06721313",
-      "Market Value": "3148.03",
-      "Shares Held": "702",
+      "Name": "TD Power Systems Ltd",
+      "Ticker": "TDPS",
+      "Identifier": "Y854B8111",
+      "Weight": "0.06837392",
+      "Market Value": "3226.69",
+      "Shares Held": "477",
       "Asset Category": "Equity"
     },
     {
       "Name": "Patanjali Foods Ltd",
       "Ticker": "PATANJA",
       "Identifier": "Y7364P151",
-      "Weight": "0.06707627",
-      "Market Value": "3141.62",
+      "Weight": "0.06786705",
+      "Market Value": "3202.77",
       "Shares Held": "717",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Ajanta Pharma Ltd",
-      "Ticker": "AJP",
-      "Identifier": "Y0R6E1145",
-      "Weight": "0.06692618",
-      "Market Value": "3134.59",
-      "Shares Held": "89",
+      "Name": "Kirloskar Oil Engines Ltd",
+      "Ticker": "KOEL",
+      "Identifier": "Y47933109",
+      "Weight": "0.06734535",
+      "Market Value": "3178.15",
+      "Shares Held": "177",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Nuvama Wealth Management Ltd",
+      "Ticker": "NUVAMA",
+      "Identifier": "Y6S0DB119",
+      "Weight": "0.06647105",
+      "Market Value": "3136.89",
+      "Shares Held": "160",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "PI Industries Ltd",
+      "Ticker": "PI",
+      "Identifier": "Y6978D141",
+      "Weight": "0.06631318",
+      "Market Value": "3129.44",
+      "Shares Held": "172",
       "Asset Category": "Equity"
     },
     {
       "Name": "Indian Railway Catering and Tourism Corporation Ltd",
       "Ticker": "IRCTC",
       "Identifier": "Y3R2EY120",
-      "Weight": "0.06670093",
-      "Market Value": "3124.04",
+      "Weight": "0.06606526",
+      "Market Value": "3117.74",
       "Shares Held": "642",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ajanta Pharma Ltd",
+      "Ticker": "AJP",
+      "Identifier": "Y0R6E1145",
+      "Weight": "0.06571287",
+      "Market Value": "3101.11",
+      "Shares Held": "89",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Apollo Tyres Ltd",
+      "Ticker": "APTY",
+      "Identifier": "Y0188S147",
+      "Weight": "0.06565883",
+      "Market Value": "3098.56",
+      "Shares Held": "694",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CROMPTON GREAVES CONSUMER ELECTRICALS LTD.",
+      "Ticker": "CROMPTO",
+      "Identifier": "Y1786D102",
+      "Weight": "0.06563192",
+      "Market Value": "3097.29",
+      "Shares Held": "1381",
       "Asset Category": "Equity"
     },
     {
       "Name": "Abbott India Ltd",
       "Ticker": "BOOT",
       "Identifier": "Y4810G125",
-      "Weight": "0.06588276",
-      "Market Value": "3085.72",
+      "Weight": "0.06539014",
+      "Market Value": "3085.88",
       "Shares Held": "11",
       "Asset Category": "Equity"
     },
@@ -80,8 +125,8 @@
       "Name": "Berger Paints India Ltd",
       "Ticker": "BRGR",
       "Identifier": "Y0807G169",
-      "Weight": "0.0657933",
-      "Market Value": "3081.53",
+      "Weight": "0.064679",
+      "Market Value": "3052.32",
       "Shares Held": "605",
       "Asset Category": "Equity"
     },
@@ -89,35 +134,17 @@
       "Name": "General Insurance Corporation of India",
       "Ticker": "GICRE",
       "Identifier": "Y2691A100",
-      "Weight": "0.0656795",
-      "Market Value": "3076.2",
+      "Weight": "0.06418569",
+      "Market Value": "3029.04",
       "Shares Held": "844",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Apollo Tyres Ltd",
-      "Ticker": "APTY",
-      "Identifier": "Y0188S147",
-      "Weight": "0.06562677",
-      "Market Value": "3073.73",
-      "Shares Held": "694",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Amber Enterprises India Ltd",
-      "Ticker": "AMBER",
-      "Identifier": "Y0102T106",
-      "Weight": "0.06550528",
-      "Market Value": "3068.04",
-      "Shares Held": "45",
       "Asset Category": "Equity"
     },
     {
       "Name": "Himadri Speciality Chemical Ltd",
       "Ticker": "HSCH",
       "Identifier": "Y3196Z129",
-      "Weight": "0.06471145",
-      "Market Value": "3030.86",
+      "Weight": "0.06304503",
+      "Market Value": "2975.21",
       "Shares Held": "501",
       "Asset Category": "Equity"
     },
@@ -125,170 +152,179 @@
       "Name": "Tata Elxsi Ltd",
       "Ticker": "TELX",
       "Identifier": "Y8560N107",
-      "Weight": "0.06397763",
-      "Market Value": "2996.49",
+      "Weight": "0.06294268",
+      "Market Value": "2970.38",
       "Shares Held": "73",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Kirloskar Oil Engines Ltd",
-      "Ticker": "KOEL",
-      "Identifier": "Y47933109",
-      "Weight": "0.06367914",
-      "Market Value": "2982.51",
-      "Shares Held": "177",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "K.P.R. Mill Ltd",
-      "Ticker": "KPR",
-      "Identifier": "Y4964Y120",
-      "Weight": "0.0632675",
-      "Market Value": "2963.23",
-      "Shares Held": "239",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "TD Power Systems Ltd",
-      "Ticker": "TDPS",
-      "Identifier": "Y854B8111",
-      "Weight": "0.06251701",
-      "Market Value": "2928.08",
-      "Shares Held": "477",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Narayana Hrudayalaya Ltd",
-      "Ticker": "NARH",
-      "Identifier": "Y6S9B1106",
-      "Weight": "0.06229902",
-      "Market Value": "2917.87",
-      "Shares Held": "144",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Star Health and Allied Insurance Company Ltd",
-      "Ticker": "STARHEA",
-      "Identifier": "Y8152Z104",
-      "Weight": "0.06188481",
-      "Market Value": "2898.47",
-      "Shares Held": "482",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Onesource Specialty Pharma Ltd",
-      "Ticker": "ONESOUR",
-      "Identifier": "Y816AG105",
-      "Weight": "0.06073827",
-      "Market Value": "2844.77",
-      "Shares Held": "167",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Bharti Hexacom",
-      "Ticker": "BHARTIH",
-      "Identifier": "Y0R86G121",
-      "Weight": "0.06016372",
-      "Market Value": "2817.86",
-      "Shares Held": "159",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Kfin Technologies Ltd",
-      "Ticker": "KFINTEC",
-      "Identifier": "Y4S976105",
-      "Weight": "0.05850433",
-      "Market Value": "2740.14",
-      "Shares Held": "281",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Asahi India Glass Ltd",
-      "Ticker": "AISG",
-      "Identifier": "Y0205D131",
-      "Weight": "0.05832328",
-      "Market Value": "2731.66",
-      "Shares Held": "248",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Carborundum Universal Ltd",
-      "Ticker": "CU",
-      "Identifier": "Y11052142",
-      "Weight": "0.05823595",
-      "Market Value": "2727.57",
-      "Shares Held": "246",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Elgi Equipments Ltd",
-      "Ticker": "ELEQ",
-      "Identifier": "Y2286K141",
-      "Weight": "0.05811255",
-      "Market Value": "2721.79",
-      "Shares Held": "459",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "AIA Engineering Ltd",
-      "Ticker": "AIAE",
-      "Identifier": "Y0028Y106",
-      "Weight": "0.05804401",
-      "Market Value": "2718.58",
-      "Shares Held": "82",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Premier Energies Ltd",
-      "Ticker": "PREMIERE",
-      "Identifier": "Y708PC107",
-      "Weight": "0.05786765",
-      "Market Value": "2710.32",
-      "Shares Held": "286",
       "Asset Category": "Equity"
     },
     {
       "Name": "MTAR Technologies Ltd",
       "Ticker": "MTARTEC",
       "Identifier": "Y6S3C4102",
-      "Weight": "0.05697903",
-      "Market Value": "2668.7",
+      "Weight": "0.06263797",
+      "Market Value": "2956",
       "Shares Held": "46",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Odisha Cement Ltd",
-      "Ticker": "DALBHAR",
-      "Identifier": "Y6S3J2117",
-      "Weight": "0.05649009",
-      "Market Value": "2645.8",
-      "Shares Held": "169",
+      "Name": "K.P.R. Mill Ltd",
+      "Ticker": "KPR",
+      "Identifier": "Y4964Y120",
+      "Weight": "0.06224638",
+      "Market Value": "2937.52",
+      "Shares Held": "239",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Star Health and Allied Insurance Company Ltd",
+      "Ticker": "STARHEA",
+      "Identifier": "Y8152Z104",
+      "Weight": "0.06208448",
+      "Market Value": "2929.88",
+      "Shares Held": "482",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Asahi India Glass Ltd",
+      "Ticker": "AISG",
+      "Identifier": "Y0205D131",
+      "Weight": "0.06190564",
+      "Market Value": "2921.44",
+      "Shares Held": "248",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Onesource Specialty Pharma Ltd",
+      "Ticker": "ONESOUR",
+      "Identifier": "Y816AG105",
+      "Weight": "0.06045433",
+      "Market Value": "2852.95",
+      "Shares Held": "167",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Data Patterns India Ltd",
+      "Ticker": "DATAPAT",
+      "Identifier": "Y2000Q101",
+      "Weight": "0.06045369",
+      "Market Value": "2852.92",
+      "Shares Held": "63",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Elgi Equipments Ltd",
+      "Ticker": "ELEQ",
+      "Identifier": "Y2286K141",
+      "Weight": "0.06038101",
+      "Market Value": "2849.49",
+      "Shares Held": "459",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Narayana Hrudayalaya Ltd",
+      "Ticker": "NARH",
+      "Identifier": "Y6S9B1106",
+      "Weight": "0.06023183",
+      "Market Value": "2842.45",
+      "Shares Held": "144",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Kfin Technologies Ltd",
+      "Ticker": "KFINTEC",
+      "Identifier": "Y4S976105",
+      "Weight": "0.06007566",
+      "Market Value": "2835.08",
+      "Shares Held": "281",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Bharti Hexacom",
+      "Ticker": "BHARTIH",
+      "Identifier": "Y0R86G121",
+      "Weight": "0.0595387",
+      "Market Value": "2809.74",
+      "Shares Held": "159",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Carborundum Universal Ltd",
+      "Ticker": "CU",
+      "Identifier": "Y11052142",
+      "Weight": "0.05875424",
+      "Market Value": "2772.72",
+      "Shares Held": "246",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "AIA Engineering Ltd",
+      "Ticker": "AIAE",
+      "Identifier": "Y0028Y106",
+      "Weight": "0.05873772",
+      "Market Value": "2771.94",
+      "Shares Held": "82",
       "Asset Category": "Equity"
     },
     {
       "Name": "Global Health Ltd",
       "Ticker": "MEDANTA",
       "Identifier": "Y2R1K6136",
-      "Weight": "0.05646746",
-      "Market Value": "2644.74",
+      "Weight": "0.05851607",
+      "Market Value": "2761.48",
       "Shares Held": "179",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Premier Energies Ltd",
+      "Ticker": "PREMIERE",
+      "Identifier": "Y708PC107",
+      "Weight": "0.05760807",
+      "Market Value": "2718.63",
+      "Shares Held": "286",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Odisha Cement Ltd",
+      "Ticker": "DALBHAR",
+      "Identifier": "Y6S3J2117",
+      "Weight": "0.05668715",
+      "Market Value": "2675.17",
+      "Shares Held": "169",
       "Asset Category": "Equity"
     },
     {
       "Name": "Granules India Ltd",
       "Ticker": "GRAN",
       "Identifier": "Y2849A135",
-      "Weight": "0.05635622",
-      "Market Value": "2639.53",
+      "Weight": "0.05667825",
+      "Market Value": "2674.75",
       "Shares Held": "310",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "HDB Financial Services Limited",
+      "Ticker": "HDBFS",
+      "Identifier": "Y3R1A2100",
+      "Weight": "0.05666829",
+      "Market Value": "2674.28",
+      "Shares Held": "445",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "PVR Inox Ltd",
+      "Ticker": "PVRINOX",
+      "Identifier": "Y71626108",
+      "Weight": "0.05608705",
+      "Market Value": "2646.85",
+      "Shares Held": "152",
       "Asset Category": "Equity"
     },
     {
       "Name": "L&T Technology Services Ltd",
       "Ticker": "LTTS",
       "Identifier": "Y5S4BH104",
-      "Weight": "0.0561677",
-      "Market Value": "2630.7",
+      "Weight": "0.05538459",
+      "Market Value": "2613.7",
       "Shares Held": "58",
       "Asset Category": "Equity"
     },
@@ -296,62 +332,35 @@
       "Name": "Aditya Infotech Ltd",
       "Ticker": "CPPLUS",
       "Identifier": "Y001AG112",
-      "Weight": "0.05541529",
-      "Market Value": "2595.46",
+      "Weight": "0.05502351",
+      "Market Value": "2596.66",
       "Shares Held": "59",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Cartrade Tech Ltd",
-      "Ticker": "CARTRAD",
-      "Identifier": "Y6191F105",
-      "Weight": "0.05524427",
-      "Market Value": "2587.45",
-      "Shares Held": "90",
       "Asset Category": "Equity"
     },
     {
       "Name": "Tata Technologies Ltd",
       "Ticker": "TATATEC",
       "Identifier": "Y8T42X110",
-      "Weight": "0.05523552",
-      "Market Value": "2587.04",
+      "Weight": "0.05488408",
+      "Market Value": "2590.08",
       "Shares Held": "365",
       "Asset Category": "Equity"
     },
     {
-      "Name": "PVR Inox Ltd",
-      "Ticker": "PVRINOX",
-      "Identifier": "Y71626108",
-      "Weight": "0.05410093",
-      "Market Value": "2533.9",
-      "Shares Held": "152",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "HDB Financial Services Limited",
-      "Ticker": "HDBFS",
-      "Identifier": "Y3R1A2100",
-      "Weight": "0.05409922",
-      "Market Value": "2533.82",
-      "Shares Held": "445",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Data Patterns India Ltd",
-      "Ticker": "DATAPAT",
-      "Identifier": "Y2000Q101",
-      "Weight": "0.05396322",
-      "Market Value": "2527.45",
-      "Shares Held": "63",
+      "Name": "Cartrade Tech Ltd",
+      "Ticker": "CARTRAD",
+      "Identifier": "Y6191F105",
+      "Weight": "0.05455521",
+      "Market Value": "2574.56",
+      "Shares Held": "90",
       "Asset Category": "Equity"
     },
     {
       "Name": "Syrma Sgs Technology Ltd",
       "Ticker": "SYRMA",
       "Identifier": "Y83492101",
-      "Weight": "0.05341344",
-      "Market Value": "2501.7",
+      "Weight": "0.05444524",
+      "Market Value": "2569.37",
       "Shares Held": "161",
       "Asset Category": "Equity"
     },
@@ -359,8 +368,8 @@
       "Name": "Rail Vikas Nigam Ltd",
       "Ticker": "RVNL",
       "Identifier": "Y7177Z107",
-      "Weight": "0.05292108",
-      "Market Value": "2478.64",
+      "Weight": "0.05399325",
+      "Market Value": "2548.04",
       "Shares Held": "1204",
       "Asset Category": "Equity"
     },
@@ -368,206 +377,260 @@
       "Name": "Timken India Ltd",
       "Ticker": "TMKN",
       "Identifier": "Y8840Y105",
-      "Weight": "0.05283269",
-      "Market Value": "2474.5",
+      "Weight": "0.05331729",
+      "Market Value": "2516.14",
       "Shares Held": "76",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "CRISIL Ltd",
-      "Ticker": "CRISIL",
-      "Identifier": "Y1791U115",
-      "Weight": "0.05196158",
-      "Market Value": "2433.7",
-      "Shares Held": "52",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Home First Finance India Ltd",
-      "Ticker": "HOMEFIR",
-      "Identifier": "Y3269P107",
-      "Weight": "0.05183369",
-      "Market Value": "2427.71",
-      "Shares Held": "209",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Deepak Nitrite Ltd",
-      "Ticker": "DN",
-      "Identifier": "Y2025H177",
-      "Weight": "0.05125187",
-      "Market Value": "2400.46",
-      "Shares Held": "147",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Thermax Ltd",
-      "Ticker": "TMX",
-      "Identifier": "Y87948140",
-      "Weight": "0.05119679",
-      "Market Value": "2397.88",
-      "Shares Held": "82",
       "Asset Category": "Equity"
     },
     {
       "Name": "GlaxoSmithKline Pharmaceuticals",
       "Ticker": "GLXO",
       "Identifier": "Y2709V112",
-      "Weight": "0.05051143",
-      "Market Value": "2365.78",
+      "Weight": "0.0528778",
+      "Market Value": "2495.4",
       "Shares Held": "88",
       "Asset Category": "Equity"
     },
     {
-      "Name": "ZF Commercial Vehicle Control Systems India Ltd",
-      "Ticker": "ZCVCS",
-      "Identifier": "INE342J01019",
-      "Weight": "0.05002911",
-      "Market Value": "2343.19",
-      "Shares Held": "96",
+      "Name": "Deepak Nitrite Ltd",
+      "Ticker": "DN",
+      "Identifier": "Y2025H177",
+      "Weight": "0.05269536",
+      "Market Value": "2486.79",
+      "Shares Held": "147",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Cochin Shipyard Ltd",
-      "Ticker": "COCHIN",
-      "Identifier": "Y166AP121",
-      "Weight": "0.04992428",
-      "Market Value": "2338.28",
-      "Shares Held": "180",
+      "Name": "Home First Finance India Ltd",
+      "Ticker": "HOMEFIR",
+      "Identifier": "Y3269P107",
+      "Weight": "0.05213996",
+      "Market Value": "2460.58",
+      "Shares Held": "209",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Brigade Enterprises Ltd",
-      "Ticker": "BRGD",
-      "Identifier": "Y0970Q101",
-      "Weight": "0.04986813",
-      "Market Value": "2335.65",
-      "Shares Held": "393",
+      "Name": "Thermax Ltd",
+      "Ticker": "TMX",
+      "Identifier": "Y87948140",
+      "Weight": "0.05118259",
+      "Market Value": "2415.4",
+      "Shares Held": "82",
       "Asset Category": "Equity"
     },
     {
-      "Name": "The Ramco Cements Ltd",
-      "Ticker": "TRCL",
-      "Identifier": "Y53727148",
-      "Weight": "0.04979938",
-      "Market Value": "2332.43",
-      "Shares Held": "268",
+      "Name": "CRISIL Ltd",
+      "Ticker": "CRISIL",
+      "Identifier": "Y1791U115",
+      "Weight": "0.05088509",
+      "Market Value": "2401.36",
+      "Shares Held": "52",
       "Asset Category": "Equity"
     },
     {
       "Name": "Indiabulls Housing Finance Ltd",
       "Ticker": "IHFL",
       "Identifier": "Y3R12A119",
-      "Weight": "0.04916547",
-      "Market Value": "2302.74",
+      "Weight": "0.0505524",
+      "Market Value": "2385.66",
       "Shares Held": "1635",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "ZF Commercial Vehicle Control Systems India Ltd",
+      "Ticker": "ZCVCS",
+      "Identifier": "INE342J01019",
+      "Weight": "0.05034219",
+      "Market Value": "2375.74",
+      "Shares Held": "96",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "The Ramco Cements Ltd",
+      "Ticker": "TRCL",
+      "Identifier": "Y53727148",
+      "Weight": "0.04939097",
+      "Market Value": "2330.85",
+      "Shares Held": "268",
       "Asset Category": "Equity"
     },
     {
       "Name": "Affle 3I Ltd",
       "Ticker": "AFFLE",
       "Identifier": "Y0R1P9113",
-      "Weight": "0.04849206",
-      "Market Value": "2271.2",
+      "Weight": "0.04881248",
+      "Market Value": "2303.55",
       "Shares Held": "135",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Motherson Sumi Wiring India Limited",
-      "Ticker": "MSSSPINCO",
-      "Identifier": "Y613MV100",
-      "Weight": "0.04836161",
-      "Market Value": "2265.09",
-      "Shares Held": "5435",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Sagility Ltd",
-      "Ticker": "SAGILIT",
-      "Identifier": "Y7397A106",
-      "Weight": "0.04835414",
-      "Market Value": "2264.74",
-      "Shares Held": "4894",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Indraprastha Gas Ltd",
-      "Ticker": "IGL",
-      "Identifier": "Y39881126",
-      "Weight": "0.04786499",
-      "Market Value": "2241.83",
-      "Shares Held": "1483",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Kajaria Ceramics Ltd",
-      "Ticker": "KJC",
-      "Identifier": "Y45199166",
-      "Weight": "0.04751099",
-      "Market Value": "2225.25",
-      "Shares Held": "177",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Anthem Biosciences Ltd",
-      "Ticker": "ANTHEM",
-      "Identifier": "Y0145S115",
-      "Weight": "0.04704042",
-      "Market Value": "2203.21",
-      "Shares Held": "226",
       "Asset Category": "Equity"
     },
     {
       "Name": "Kaynes Technology India Ltd",
       "Ticker": "KAYNES",
       "Identifier": "Y459GV105",
-      "Weight": "0.04630488",
-      "Market Value": "2168.76",
+      "Weight": "0.04858384",
+      "Market Value": "2292.76",
       "Shares Held": "63",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Brigade Enterprises Ltd",
+      "Ticker": "BRGD",
+      "Identifier": "Y0970Q101",
+      "Weight": "0.04852218",
+      "Market Value": "2289.85",
+      "Shares Held": "393",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Sagility Ltd",
+      "Ticker": "SAGILIT",
+      "Identifier": "Y7397A106",
+      "Weight": "0.04827129",
+      "Market Value": "2278.01",
+      "Shares Held": "4894",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Kajaria Ceramics Ltd",
+      "Ticker": "KJC",
+      "Identifier": "Y45199166",
+      "Weight": "0.0478299",
+      "Market Value": "2257.18",
+      "Shares Held": "177",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Motherson Sumi Wiring India Limited",
+      "Ticker": "MSSSPINCO",
+      "Identifier": "Y613MV100",
+      "Weight": "0.04768093",
+      "Market Value": "2250.15",
+      "Shares Held": "5435",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cochin Shipyard Ltd",
+      "Ticker": "COCHIN",
+      "Identifier": "Y166AP121",
+      "Weight": "0.0476733",
+      "Market Value": "2249.79",
+      "Shares Held": "180",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Anthem Biosciences Ltd",
+      "Ticker": "ANTHEM",
+      "Identifier": "Y0145S115",
+      "Weight": "0.04760825",
+      "Market Value": "2246.72",
+      "Shares Held": "226",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Aarti Industries Ltd",
+      "Ticker": "ARTO",
+      "Identifier": "Y0000F133",
+      "Weight": "0.04756904",
+      "Market Value": "2244.87",
+      "Shares Held": "439",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Gabriel India Ltd",
+      "Ticker": "GABR",
+      "Identifier": "Y2677A132",
+      "Weight": "0.04747708",
+      "Market Value": "2240.53",
+      "Shares Held": "136",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Indraprastha Gas Ltd",
+      "Ticker": "IGL",
+      "Identifier": "Y39881126",
+      "Weight": "0.04745653",
+      "Market Value": "2239.56",
+      "Shares Held": "1483",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Pine Labs Ltd",
+      "Ticker": "PINELAB",
+      "Identifier": "Y697DC105",
+      "Weight": "0.04669071",
+      "Market Value": "2203.42",
+      "Shares Held": "1177",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Finolex Cables Ltd",
+      "Ticker": "FNXC",
+      "Identifier": "Y24953146",
+      "Weight": "0.04597131",
+      "Market Value": "2169.47",
+      "Shares Held": "161",
       "Asset Category": "Equity"
     },
     {
       "Name": "TATA CHEMICALS LTD.",
       "Ticker": "TTCH",
       "Identifier": "Y85478116",
-      "Weight": "0.04626325",
-      "Market Value": "2166.81",
+      "Weight": "0.04563566",
+      "Market Value": "2153.63",
       "Shares Held": "335",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "HBL Engineering Ltd",
-      "Ticker": "HBLENGI",
-      "Identifier": "Y3119M130",
-      "Weight": "0.04540964",
-      "Market Value": "2126.83",
-      "Shares Held": "238",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Cyient Ltd",
-      "Ticker": "CYL",
-      "Identifier": "Y4082D131",
-      "Weight": "0.04535349",
-      "Market Value": "2124.2",
-      "Shares Held": "180",
       "Asset Category": "Equity"
     },
     {
       "Name": "Bajaj Housing Finance Ltd",
       "Ticker": "BAJAJHF",
       "Identifier": "Y0546Z106",
-      "Weight": "0.04530481",
-      "Market Value": "2121.92",
+      "Weight": "0.0456221",
+      "Market Value": "2152.99",
       "Shares Held": "2491",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Capri Global Capital Ltd",
+      "Ticker": "CGCL",
+      "Identifier": "Y1R24U149",
+      "Weight": "0.04540278",
+      "Market Value": "2142.64",
+      "Shares Held": "820",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Indian Renewable Energy Development Agency",
+      "Ticker": "IREDA",
+      "Identifier": "Y3945C108",
+      "Weight": "0.04489676",
+      "Market Value": "2118.76",
+      "Shares Held": "1688",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cyient Ltd",
+      "Ticker": "CYL",
+      "Identifier": "Y4082D131",
+      "Weight": "0.04471495",
+      "Market Value": "2110.18",
+      "Shares Held": "180",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Shyam Metalics And Energy Ltd",
+      "Ticker": "SHYAMME",
+      "Identifier": "Y7T79Y108",
+      "Weight": "0.04437845",
+      "Market Value": "2094.3",
+      "Shares Held": "150",
       "Asset Category": "Equity"
     },
     {
       "Name": "Firstsource Solutions Ltd",
       "Ticker": "FSOL",
       "Identifier": "Y25655104",
-      "Weight": "0.04499565",
-      "Market Value": "2107.44",
+      "Weight": "0.04413498",
+      "Market Value": "2082.81",
       "Shares Held": "674",
       "Asset Category": "Equity"
     },
@@ -575,206 +638,143 @@
       "Name": "Castrol India Ltd",
       "Ticker": "CSTRL",
       "Identifier": "Y1143S149",
-      "Weight": "0.04483872",
-      "Market Value": "2100.09",
+      "Weight": "0.04407246",
+      "Market Value": "2079.86",
       "Shares Held": "1031",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Adani Wilmar Ltd",
-      "Ticker": "AWLTD",
-      "Identifier": "Y0R134118",
-      "Weight": "0.04472406",
-      "Market Value": "2094.72",
-      "Shares Held": "1178",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Capri Global Capital Ltd",
-      "Ticker": "CGCL",
-      "Identifier": "Y1R24U149",
-      "Weight": "0.04468691",
-      "Market Value": "2092.98",
-      "Shares Held": "820",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Shyam Metalics And Energy Ltd",
-      "Ticker": "SHYAMME",
-      "Identifier": "Y7T79Y108",
-      "Weight": "0.04435213",
-      "Market Value": "2077.3",
-      "Shares Held": "150",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Aarti Industries Ltd",
-      "Ticker": "ARTO",
-      "Identifier": "Y0000F133",
-      "Weight": "0.04431754",
-      "Market Value": "2075.68",
-      "Shares Held": "439",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Pine Labs Ltd",
-      "Ticker": "PINELAB",
-      "Identifier": "Y697DC105",
-      "Weight": "0.04346863",
-      "Market Value": "2035.92",
-      "Shares Held": "1177",
       "Asset Category": "Equity"
     },
     {
       "Name": "Force Motors Ltd",
       "Ticker": "FML",
       "Identifier": "Y05481117",
-      "Weight": "0.04312232",
-      "Market Value": "2019.7",
+      "Weight": "0.04406696",
+      "Market Value": "2079.6",
       "Shares Held": "10",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Amara Raja Energy & Mobility Ltd",
-      "Ticker": "ARENM",
-      "Identifier": "Y00968142",
-      "Weight": "0.0430461",
-      "Market Value": "2016.13",
-      "Shares Held": "260",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Indian Renewable Energy Development Agency",
-      "Ticker": "IREDA",
-      "Identifier": "Y3945C108",
-      "Weight": "0.04277324",
-      "Market Value": "2003.35",
-      "Shares Held": "1688",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Endurance Technologies Ltd",
-      "Ticker": "ENDU",
-      "Identifier": "Y2R9QW102",
-      "Weight": "0.04265901",
-      "Market Value": "1998",
-      "Shares Held": "75",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Gabriel India Ltd",
-      "Ticker": "GABR",
-      "Identifier": "Y2677A132",
-      "Weight": "0.04250678",
-      "Market Value": "1990.87",
-      "Shares Held": "136",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Jyoti Cnc Automation Ltd",
-      "Ticker": "JYOTICN",
-      "Identifier": "Y447AW120",
-      "Weight": "0.04219975",
-      "Market Value": "1976.49",
-      "Shares Held": "182",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "PG Electroplast Ltd",
-      "Ticker": "PGEL",
-      "Identifier": "Y6S267120",
-      "Weight": "0.04209129",
-      "Market Value": "1971.41",
-      "Shares Held": "339",
       "Asset Category": "Equity"
     },
     {
       "Name": "Indian Energy Exchange Ltd",
       "Ticker": "IEX",
       "Identifier": "Y39237139",
-      "Weight": "0.04187159",
-      "Market Value": "1961.12",
+      "Weight": "0.04401101",
+      "Market Value": "2076.96",
       "Shares Held": "1682",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Amara Raja Energy & Mobility Ltd",
+      "Ticker": "ARENM",
+      "Identifier": "Y00968142",
+      "Weight": "0.04394744",
+      "Market Value": "2073.96",
+      "Shares Held": "260",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Jyoti Cnc Automation Ltd",
+      "Ticker": "JYOTICN",
+      "Identifier": "Y447AW120",
+      "Weight": "0.04391057",
+      "Market Value": "2072.22",
+      "Shares Held": "182",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Adani Wilmar Ltd",
+      "Ticker": "AWLTD",
+      "Identifier": "Y0R134118",
+      "Weight": "0.04343295",
+      "Market Value": "2049.68",
+      "Shares Held": "1178",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "PG Electroplast Ltd",
+      "Ticker": "PGEL",
+      "Identifier": "Y6S267120",
+      "Weight": "0.04320028",
+      "Market Value": "2038.7",
+      "Shares Held": "339",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Endurance Technologies Ltd",
+      "Ticker": "ENDU",
+      "Identifier": "Y2R9QW102",
+      "Weight": "0.0428339",
+      "Market Value": "2021.41",
+      "Shares Held": "75",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "HBL Engineering Ltd",
+      "Ticker": "HBLENGI",
+      "Identifier": "Y3119M130",
+      "Weight": "0.04278389",
+      "Market Value": "2019.05",
+      "Shares Held": "238",
       "Asset Category": "Equity"
     },
     {
       "Name": "United Breweries",
       "Ticker": "UBBL IS",
       "Identifier": "Y9181N153",
-      "Weight": "0.04165232",
-      "Market Value": "1950.85",
+      "Weight": "0.04210284",
+      "Market Value": "1986.91",
       "Shares Held": "154",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Usha Martin Ltd",
-      "Ticker": "USM",
-      "Identifier": "Y9315Y174",
-      "Weight": "0.04080853",
-      "Market Value": "1911.33",
-      "Shares Held": "376",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Atul Ltd",
-      "Ticker": "ATLP",
-      "Identifier": "Y0450Y111",
-      "Weight": "0.04044535",
-      "Market Value": "1894.32",
-      "Shares Held": "34",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Kpit Technologies Ltd",
-      "Ticker": "KPITTEC",
-      "Identifier": "Y4984V106",
-      "Weight": "0.04005463",
-      "Market Value": "1876.02",
-      "Shares Held": "326",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Finolex Cables Ltd",
-      "Ticker": "FNXC",
-      "Identifier": "Y24953146",
-      "Weight": "0.03993293",
-      "Market Value": "1870.32",
-      "Shares Held": "161",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Escorts Kubota Ltd",
-      "Ticker": "ESCORTS",
-      "Identifier": "Y2296W127",
-      "Weight": "0.03943973",
-      "Market Value": "1847.22",
-      "Shares Held": "71",
       "Asset Category": "Equity"
     },
     {
       "Name": "Engineers India Ltd",
       "Ticker": "ENGR",
       "Identifier": "Y2294S136",
-      "Weight": "0.03879472",
-      "Market Value": "1817.01",
+      "Weight": "0.04095498",
+      "Market Value": "1932.74",
       "Shares Held": "583",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Welspun Living Ltd",
-      "Ticker": "WELSPUN",
-      "Identifier": "Y9T340128",
-      "Weight": "0.03878447",
-      "Market Value": "1816.53",
-      "Shares Held": "707",
+      "Name": "Usha Martin Ltd",
+      "Ticker": "USM",
+      "Identifier": "Y9315Y174",
+      "Weight": "0.04072549",
+      "Market Value": "1921.91",
+      "Shares Held": "376",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Deepak Fertilisers And Petrochemicals Corp Ltd",
+      "Ticker": "DFPC",
+      "Identifier": "Y2025D119",
+      "Weight": "0.04056804",
+      "Market Value": "1914.48",
+      "Shares Held": "143",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Kpit Technologies Ltd",
+      "Ticker": "KPITTEC",
+      "Identifier": "Y4984V106",
+      "Weight": "0.04045891",
+      "Market Value": "1909.33",
+      "Shares Held": "326",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Syngene International Ltd",
+      "Ticker": "SYNG",
+      "Identifier": "Y8T288113",
+      "Weight": "0.04025676",
+      "Market Value": "1899.79",
+      "Shares Held": "403",
       "Asset Category": "Equity"
     },
     {
       "Name": "Housing And Urban Development",
       "Ticker": "HUDCO",
       "Identifier": "Y3R23A108",
-      "Weight": "0.03869309",
-      "Market Value": "1812.25",
+      "Weight": "0.04009339",
+      "Market Value": "1892.08",
       "Shares Held": "1064",
       "Asset Category": "Equity"
     },
@@ -782,224 +782,233 @@
       "Name": "Acme Solar Holdings Ltd",
       "Ticker": "ACMESOL",
       "Identifier": "Y0R0YN114",
-      "Weight": "0.03842962",
-      "Market Value": "1799.91",
+      "Weight": "0.03987216",
+      "Market Value": "1881.64",
       "Shares Held": "428",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Cesc Ltd",
-      "Ticker": "CESC",
-      "Identifier": "Y1R834129",
-      "Weight": "0.0383171",
-      "Market Value": "1794.64",
-      "Shares Held": "1335",
+      "Name": "Welspun Living Ltd",
+      "Ticker": "WELSPUN",
+      "Identifier": "Y9T340128",
+      "Weight": "0.03976134",
+      "Market Value": "1876.41",
+      "Shares Held": "707",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Syngene International Ltd",
-      "Ticker": "SYNG",
-      "Identifier": "Y8T288113",
-      "Weight": "0.03823255",
-      "Market Value": "1790.68",
-      "Shares Held": "403",
+      "Name": "Atul Ltd",
+      "Ticker": "ATLP",
+      "Identifier": "Y0450Y111",
+      "Weight": "0.03949031",
+      "Market Value": "1863.62",
+      "Shares Held": "34",
       "Asset Category": "Equity"
     },
     {
       "Name": "Five-Star Business Finance Ltd",
       "Ticker": "FIVESTA",
       "Identifier": "Y2576G131",
-      "Weight": "0.03819198",
-      "Market Value": "1788.78",
+      "Weight": "0.03931105",
+      "Market Value": "1855.16",
       "Shares Held": "395",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Natco Pharma Ltd",
-      "Ticker": "NTCPH",
-      "Identifier": "Y6211C157",
-      "Weight": "0.03816081",
-      "Market Value": "1787.32",
-      "Shares Held": "208",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Inventurus Knowledge Solutions Ltd",
-      "Ticker": "IKS",
-      "Identifier": "Y4R63C111",
-      "Weight": "0.03804957",
-      "Market Value": "1782.11",
-      "Shares Held": "101",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Acc Ltd",
-      "Ticker": "ACC IS",
-      "Identifier": "Y0022S105",
-      "Weight": "0.03794047",
-      "Market Value": "1777",
-      "Shares Held": "135",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Deepak Fertilisers And Petrochemicals Corp Ltd",
-      "Ticker": "DFPC",
-      "Identifier": "Y2025D119",
-      "Weight": "0.03755872",
-      "Market Value": "1759.12",
-      "Shares Held": "143",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Nlc India Ltd",
-      "Ticker": "NLC",
-      "Identifier": "Y6345K117",
-      "Weight": "0.0374351",
-      "Market Value": "1753.33",
-      "Shares Held": "693",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Balrampur Chini Mills Ltd",
-      "Ticker": "BRCM",
-      "Identifier": "Y0548Y149",
-      "Weight": "0.03733496",
-      "Market Value": "1748.64",
-      "Shares Held": "245",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "NTPC Green Energy LTD",
-      "Ticker": "NTPCGRE",
-      "Identifier": "Y6S8K0100",
-      "Weight": "0.03723248",
-      "Market Value": "1743.84",
-      "Shares Held": "1982",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "NBCC India Ltd",
-      "Ticker": "NBCC",
-      "Identifier": "Y6S14N129",
-      "Weight": "0.03715006",
-      "Market Value": "1739.98",
-      "Shares Held": "2095",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Emami Ltd",
-      "Ticker": "HMN",
-      "Identifier": "Y22891132",
-      "Weight": "0.03679521",
-      "Market Value": "1723.36",
-      "Shares Held": "418",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Ceat Ltd",
-      "Ticker": "CEAT",
-      "Identifier": "Y1229V149",
-      "Weight": "0.03627489",
-      "Market Value": "1698.99",
-      "Shares Held": "45",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "BEML Ltd",
-      "Ticker": "BEML",
-      "Identifier": "Y0881N155",
-      "Weight": "0.03596765",
-      "Market Value": "1684.6",
-      "Shares Held": "81",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "SPR Auto Technologies Ltd",
-      "Ticker": "SHRIPIS",
-      "Identifier": "Y77618117",
-      "Weight": "0.03594715",
-      "Market Value": "1683.64",
-      "Shares Held": "37",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Cemindia Projects Ltd",
-      "Ticker": "CEMPRO",
-      "Identifier": "Y4211W125",
-      "Weight": "0.03580026",
-      "Market Value": "1676.76",
-      "Shares Held": "119",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Tata Investment Corporation Ltd",
-      "Ticker": "TATAINVE",
-      "Identifier": "INE672A01026",
-      "Weight": "0.03577336",
-      "Market Value": "1675.5",
-      "Shares Held": "275",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Honasa Consumer Ltd",
-      "Ticker": "HONASA",
-      "Identifier": "Y3R4AH101",
-      "Weight": "0.03552078",
-      "Market Value": "1663.67",
-      "Shares Held": "335",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Nava Ltd",
-      "Ticker": "NAVA",
-      "Identifier": "Y6254S143",
-      "Weight": "0.03524727",
-      "Market Value": "1650.86",
-      "Shares Held": "293",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Godfrey Phillips India Ltd",
-      "Ticker": "GP",
-      "Identifier": "Y2731H156",
-      "Weight": "0.03499704",
-      "Market Value": "1639.14",
-      "Shares Held": "86",
       "Asset Category": "Equity"
     },
     {
       "Name": "Ramkrishna Forgings Ltd",
       "Ticker": "RMKF",
       "Identifier": "Y7181Y120",
-      "Weight": "0.03486082",
-      "Market Value": "1632.76",
+      "Weight": "0.03899002",
+      "Market Value": "1840.01",
       "Shares Held": "221",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Vijaya Diagnostic Centre Ltd",
-      "Ticker": "VIJAYA",
-      "Identifier": "Y937XB105",
-      "Weight": "0.0347229",
-      "Market Value": "1626.3",
-      "Shares Held": "104",
+      "Name": "Cesc Ltd",
+      "Ticker": "CESC",
+      "Identifier": "Y1R834129",
+      "Weight": "0.03856325",
+      "Market Value": "1819.87",
+      "Shares Held": "1335",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Emami Ltd",
+      "Ticker": "HMN",
+      "Identifier": "Y22891132",
+      "Weight": "0.03835304",
+      "Market Value": "1809.95",
+      "Shares Held": "418",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Escorts Kubota Ltd",
+      "Ticker": "ESCORTS",
+      "Identifier": "Y2296W127",
+      "Weight": "0.03834012",
+      "Market Value": "1809.34",
+      "Shares Held": "71",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "BEML Ltd",
+      "Ticker": "BEML",
+      "Identifier": "Y0881N155",
+      "Weight": "0.03821107",
+      "Market Value": "1803.25",
+      "Shares Held": "81",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Natco Pharma Ltd",
+      "Ticker": "NTCPH",
+      "Identifier": "Y6211C157",
+      "Weight": "0.03790063",
+      "Market Value": "1788.6",
+      "Shares Held": "208",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Nava Ltd",
+      "Ticker": "NAVA",
+      "Identifier": "Y6254S143",
+      "Weight": "0.03786207",
+      "Market Value": "1786.78",
+      "Shares Held": "293",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Honasa Consumer Ltd",
+      "Ticker": "HONASA",
+      "Identifier": "Y3R4AH101",
+      "Weight": "0.03780612",
+      "Market Value": "1784.14",
+      "Shares Held": "335",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "NBCC India Ltd",
+      "Ticker": "NBCC",
+      "Identifier": "Y6S14N129",
+      "Weight": "0.03721068",
+      "Market Value": "1756.04",
+      "Shares Held": "2095",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Inventurus Knowledge Solutions Ltd",
+      "Ticker": "IKS",
+      "Identifier": "Y4R63C111",
+      "Weight": "0.03710706",
+      "Market Value": "1751.15",
+      "Shares Held": "101",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Nlc India Ltd",
+      "Ticker": "NLC",
+      "Identifier": "Y6345K117",
+      "Weight": "0.03706829",
+      "Market Value": "1749.32",
+      "Shares Held": "693",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Acc Ltd",
+      "Ticker": "ACC IS",
+      "Identifier": "Y0022S105",
+      "Weight": "0.0370329",
+      "Market Value": "1747.65",
+      "Shares Held": "135",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "NTPC Green Energy LTD",
+      "Ticker": "NTPCGRE",
+      "Identifier": "Y6S8K0100",
+      "Weight": "0.03697272",
+      "Market Value": "1744.81",
+      "Shares Held": "1982",
       "Asset Category": "Equity"
     },
     {
       "Name": "Emcure Pharmaceuticals Ltd",
       "Ticker": "EMCURE",
       "Identifier": "Y228AJ107",
-      "Weight": "0.03471137",
-      "Market Value": "1625.76",
+      "Weight": "0.03663791",
+      "Market Value": "1729.01",
       "Shares Held": "69",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Tata Investment Corporation Ltd",
+      "Ticker": "TATAINVE",
+      "Identifier": "INE672A01026",
+      "Weight": "0.03625331",
+      "Market Value": "1710.86",
+      "Shares Held": "275",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Balrampur Chini Mills Ltd",
+      "Ticker": "BRCM",
+      "Identifier": "Y0548Y149",
+      "Weight": "0.03606896",
+      "Market Value": "1702.16",
+      "Shares Held": "245",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Ceat Ltd",
+      "Ticker": "CEAT",
+      "Identifier": "Y1229V149",
+      "Weight": "0.0358187",
+      "Market Value": "1690.35",
+      "Shares Held": "45",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "SPR Auto Technologies Ltd",
+      "Ticker": "SHRIPIS",
+      "Identifier": "Y77618117",
+      "Weight": "0.03569919",
+      "Market Value": "1684.71",
+      "Shares Held": "37",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "IRB Infrastructure Developers Ltd",
+      "Ticker": "IRB",
+      "Identifier": "Y41784128",
+      "Weight": "0.03557735",
+      "Market Value": "1678.96",
+      "Shares Held": "8426",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cemindia Projects Ltd",
+      "Ticker": "CEMPRO",
+      "Identifier": "Y4211W125",
+      "Weight": "0.03517749",
+      "Market Value": "1660.09",
+      "Shares Held": "119",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Godfrey Phillips India Ltd",
+      "Ticker": "GP",
+      "Identifier": "Y2731H156",
+      "Weight": "0.03493931",
+      "Market Value": "1648.85",
+      "Shares Held": "86",
       "Asset Category": "Equity"
     },
     {
       "Name": "Honeywell Automation India Ltd",
       "Ticker": "HWA",
       "Identifier": "Y8547C117",
-      "Weight": "0.03419233",
-      "Market Value": "1601.45",
+      "Weight": "0.03428115",
+      "Market Value": "1617.79",
       "Shares Held": "5",
       "Asset Category": "Equity"
     },
@@ -1007,80 +1016,71 @@
       "Name": "Whirlpool of India Ltd",
       "Ticker": "WHIRL",
       "Identifier": "Y4641Q128",
-      "Weight": "0.03383",
-      "Market Value": "1584.48",
+      "Weight": "0.03354946",
+      "Market Value": "1583.26",
       "Shares Held": "180",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Chennai Petroleum Corporation Ltd",
-      "Ticker": "MRL",
-      "Identifier": "Y53733112",
-      "Weight": "0.03343373",
-      "Market Value": "1565.92",
-      "Shares Held": "102",
       "Asset Category": "Equity"
     },
     {
       "Name": "Ola Electric Mobility Ltd",
       "Ticker": "OLAELEC",
       "Identifier": "Y6473D307",
-      "Weight": "0.03318606",
-      "Market Value": "1554.32",
+      "Weight": "0.03324177",
+      "Market Value": "1568.74",
       "Shares Held": "4267",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Netweb Technologies India Ltd",
+      "Ticker": "NETWEB",
+      "Identifier": "Y6275F112",
+      "Weight": "0.03302034",
+      "Market Value": "1558.29",
+      "Shares Held": "35",
       "Asset Category": "Equity"
     },
     {
       "Name": "Ccl Products India Ltd",
       "Ticker": "CCLP",
       "Identifier": "Y1745C146",
-      "Weight": "0.03297939",
-      "Market Value": "1544.64",
+      "Weight": "0.03298792",
+      "Market Value": "1556.76",
       "Shares Held": "150",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Eclerx Services Ltd",
-      "Ticker": "ECLX",
-      "Identifier": "Y22385101",
-      "Weight": "0.03274965",
-      "Market Value": "1533.88",
-      "Shares Held": "90",
+      "Name": "Vijaya Diagnostic Centre Ltd",
+      "Ticker": "VIJAYA",
+      "Identifier": "Y937XB105",
+      "Weight": "0.0329716",
+      "Market Value": "1555.99",
+      "Shares Held": "104",
       "Asset Category": "Equity"
     },
     {
-      "Name": "IRB Infrastructure Developers Ltd",
-      "Ticker": "IRB",
-      "Identifier": "Y41784128",
-      "Weight": "0.03260318",
-      "Market Value": "1527.02",
-      "Shares Held": "8426",
+      "Name": "Chennai Petroleum Corporation Ltd",
+      "Ticker": "MRL",
+      "Identifier": "Y53733112",
+      "Weight": "0.03275271",
+      "Market Value": "1545.66",
+      "Shares Held": "102",
       "Asset Category": "Equity"
     },
     {
       "Name": "Azad Engineering Ltd",
       "Ticker": "AZAD",
       "Identifier": "Y0S2C4107",
-      "Weight": "0.03249622",
-      "Market Value": "1522.01",
+      "Weight": "0.03257768",
+      "Market Value": "1537.4",
       "Shares Held": "59",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Hexaware Technologies Ltd Inr 1.0",
-      "Ticker": "HEXT",
-      "Identifier": "Y31825147",
-      "Weight": "0.03216528",
-      "Market Value": "1506.51",
-      "Shares Held": "281",
       "Asset Category": "Equity"
     },
     {
       "Name": "E.I.D. Parry India Ltd",
       "Ticker": "EID",
       "Identifier": "Y67828163",
-      "Weight": "0.03206834",
-      "Market Value": "1501.97",
+      "Weight": "0.03224605",
+      "Market Value": "1521.75",
       "Shares Held": "219",
       "Asset Category": "Equity"
     },
@@ -1088,269 +1088,278 @@
       "Name": "Jaiprakash Power Ventures Ltd",
       "Ticker": "JPVL",
       "Identifier": "Y4253C102",
-      "Weight": "0.03181213",
-      "Market Value": "1489.97",
+      "Weight": "0.03193752",
+      "Market Value": "1507.19",
       "Shares Held": "10096",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Belrise Industries Ltd",
-      "Ticker": "BELRISE",
-      "Identifier": "Y0S2GK107",
-      "Weight": "0.03176281",
-      "Market Value": "1487.66",
-      "Shares Held": "654",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Zensar Technologies Ltd",
-      "Ticker": "ZENT",
-      "Identifier": "Y9894D120",
-      "Weight": "0.03129352",
-      "Market Value": "1465.68",
-      "Shares Held": "242",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Mahanagar Gas Ltd",
-      "Ticker": "MAHGL",
-      "Identifier": "Y5S732109",
-      "Weight": "0.03107361",
-      "Market Value": "1455.38",
-      "Shares Held": "121",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Can Fin Homes Ltd",
-      "Ticker": "CANF",
-      "Identifier": "Y1083T149",
-      "Weight": "0.0306483",
-      "Market Value": "1435.46",
-      "Shares Held": "180",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Aditya Birla Sun Life Amc Ltd",
-      "Ticker": "ABSLAMC",
-      "Identifier": "Y0R1KX610",
-      "Weight": "0.03057293",
-      "Market Value": "1431.93",
-      "Shares Held": "153",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "EIH Ltd",
-      "Ticker": "EIH",
-      "Identifier": "Y2233X154",
-      "Weight": "0.03053172",
-      "Market Value": "1430",
-      "Shares Held": "429",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Schneider Electric Infrastructure",
-      "Ticker": "SCHN",
-      "Identifier": "Y753BH107",
-      "Weight": "0.03021957",
-      "Market Value": "1415.38",
-      "Shares Held": "125",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Aptus Value Housing Finance India",
-      "Ticker": "APTUS",
-      "Identifier": "Y0R9A6126",
-      "Weight": "0.03017602",
-      "Market Value": "1413.34",
-      "Shares Held": "759",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Cohance Lifesciences Ltd",
-      "Ticker": "COHANCE",
-      "Identifier": "Y831GW103",
-      "Weight": "0.03016065",
-      "Market Value": "1412.62",
-      "Shares Held": "306",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Inox Wind Ltd",
-      "Ticker": "INXW",
-      "Identifier": "Y408DE103",
-      "Weight": "0.03014122",
-      "Market Value": "1411.71",
-      "Shares Held": "2046",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "R R Kabel Ltd",
-      "Ticker": "RRKABEL",
-      "Identifier": "Y7S37D122",
-      "Weight": "0.03013246",
-      "Market Value": "1411.3",
-      "Shares Held": "69",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Garden Reach Shipbuilders & Engineers Ltd",
-      "Ticker": "GRSE",
-      "Identifier": "Y2R8XK102",
-      "Weight": "0.03010321",
-      "Market Value": "1409.93",
-      "Shares Held": "62",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Netweb Technologies India Ltd",
-      "Ticker": "NETWEB",
-      "Identifier": "Y6275F112",
-      "Weight": "0.03000905",
-      "Market Value": "1405.52",
-      "Shares Held": "35",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Rainbow Childrens Medicare Ltd",
-      "Ticker": "RAINBOW",
-      "Identifier": "Y2745K104",
-      "Weight": "0.02998792",
-      "Market Value": "1404.53",
-      "Shares Held": "106",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Paradeep Phosphates Ltd",
-      "Ticker": "PARADEE",
-      "Identifier": "Y6S94E114",
-      "Weight": "0.02996102",
-      "Market Value": "1403.27",
-      "Shares Held": "926",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Jindal Saw Ltd",
-      "Ticker": "JSAW",
-      "Identifier": "Y4448P133",
-      "Weight": "0.02995803",
-      "Market Value": "1403.13",
-      "Shares Held": "525",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Poly Medicure Ltd",
-      "Ticker": "PLM",
-      "Identifier": "Y7062A142",
-      "Weight": "0.02969007",
-      "Market Value": "1390.58",
-      "Shares Held": "81",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Bagmane Prime Office REIT",
-      "Ticker": "BAGMANE",
-      "Identifier": "Y0S7WZ105",
-      "Weight": "0.02968388",
-      "Market Value": "1390.29",
-      "Shares Held": "1226",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Anant Raj Ltd",
-      "Ticker": "ARCP",
-      "Identifier": "Y01272122",
-      "Weight": "0.0292669",
-      "Market Value": "1370.76",
-      "Shares Held": "289",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Choice International Ltd",
-      "Ticker": "CFIS",
-      "Identifier": "Y1579A117",
-      "Weight": "0.02891653",
-      "Market Value": "1354.35",
-      "Shares Held": "170",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Physicswallah Ltd",
-      "Ticker": "PWL",
-      "Identifier": "Y6601D104",
-      "Weight": "0.02875661",
-      "Market Value": "1346.86",
-      "Shares Held": "973",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Lemon Tree Hotels Ltd",
-      "Ticker": "LEMONTR",
-      "Identifier": "Y5S322109",
-      "Weight": "0.02863598",
-      "Market Value": "1341.21",
-      "Shares Held": "1073",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Gillette India Ltd",
-      "Ticker": "GILL",
-      "Identifier": "Y3958N124",
-      "Weight": "0.02862488",
-      "Market Value": "1340.69",
-      "Shares Held": "17",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Minda Corporation Ltd",
-      "Ticker": "MDA",
-      "Identifier": "Y6S36A139",
-      "Weight": "0.02851471",
-      "Market Value": "1335.53",
-      "Shares Held": "176",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Talwandi Sabo Power LTD",
-      "Ticker": "VEDLSPINCO2",
-      "Identifier": "INE694L01019",
-      "Weight": "0.0284735",
-      "Market Value": "1333.6",
-      "Shares Held": "3545",
+      "Name": "Eclerx Services Ltd",
+      "Ticker": "ECLX",
+      "Identifier": "Y22385101",
+      "Weight": "0.03193668",
+      "Market Value": "1507.15",
+      "Shares Held": "90",
       "Asset Category": "Equity"
     },
     {
       "Name": "Zee Entertainment Enterprises",
       "Ticker": "Z IS",
       "Identifier": "Y98893152",
-      "Weight": "0.0284609",
-      "Market Value": "1333.01",
+      "Weight": "0.03174575",
+      "Market Value": "1498.14",
       "Shares Held": "1957",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Belrise Industries Ltd",
+      "Ticker": "BELRISE",
+      "Identifier": "Y0S2GK107",
+      "Weight": "0.03164298",
+      "Market Value": "1493.29",
+      "Shares Held": "654",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Can Fin Homes Ltd",
+      "Ticker": "CANF",
+      "Identifier": "Y1083T149",
+      "Weight": "0.03162497",
+      "Market Value": "1492.44",
+      "Shares Held": "180",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Cohance Lifesciences Ltd",
+      "Ticker": "COHANCE",
+      "Identifier": "Y831GW103",
+      "Weight": "0.03155102",
+      "Market Value": "1488.95",
+      "Shares Held": "306",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Mahanagar Gas Ltd",
+      "Ticker": "MAHGL",
+      "Identifier": "Y5S732109",
+      "Weight": "0.03151923",
+      "Market Value": "1487.45",
+      "Shares Held": "121",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Hexaware Technologies Ltd Inr 1.0",
+      "Ticker": "HEXT",
+      "Identifier": "Y31825147",
+      "Weight": "0.03118443",
+      "Market Value": "1471.65",
+      "Shares Held": "281",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Anant Raj Ltd",
+      "Ticker": "ARCP",
+      "Identifier": "Y01272122",
+      "Weight": "0.03109437",
+      "Market Value": "1467.4",
+      "Shares Held": "289",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Jammu And Kashmir Bank Ltd",
+      "Ticker": "JKBK",
+      "Identifier": "Y4S53D136",
+      "Weight": "0.03086255",
+      "Market Value": "1456.46",
+      "Shares Held": "1000",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Jindal Saw Ltd",
+      "Ticker": "JSAW",
+      "Identifier": "Y4448P133",
+      "Weight": "0.03086064",
+      "Market Value": "1456.37",
+      "Shares Held": "525",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Aditya Birla Sun Life Amc Ltd",
+      "Ticker": "ABSLAMC",
+      "Identifier": "Y0R1KX610",
+      "Weight": "0.03081318",
+      "Market Value": "1454.13",
+      "Shares Held": "153",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "R R Kabel Ltd",
+      "Ticker": "RRKABEL",
+      "Identifier": "Y7S37D122",
+      "Weight": "0.0307708",
+      "Market Value": "1452.13",
+      "Shares Held": "69",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Poly Medicure Ltd",
+      "Ticker": "PLM",
+      "Identifier": "Y7062A142",
+      "Weight": "0.03061696",
+      "Market Value": "1444.87",
+      "Shares Held": "81",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "EIH Ltd",
+      "Ticker": "EIH",
+      "Identifier": "Y2233X154",
+      "Weight": "0.0305322",
+      "Market Value": "1440.87",
+      "Shares Held": "429",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Garden Reach Shipbuilders & Engineers Ltd",
+      "Ticker": "GRSE",
+      "Identifier": "Y2R8XK102",
+      "Weight": "0.03045506",
+      "Market Value": "1437.23",
+      "Shares Held": "62",
       "Asset Category": "Equity"
     },
     {
       "Name": "Sun TV Network Ltd",
       "Ticker": "SUNTV",
       "Identifier": "Y8295N133",
-      "Weight": "0.02829245",
-      "Market Value": "1325.12",
+      "Weight": "0.03038831",
+      "Market Value": "1434.08",
       "Shares Held": "209",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Chambal Fertilisers And Chemicals Ltd",
-      "Ticker": "CHMB",
-      "Identifier": "Y12916139",
-      "Weight": "0.0282491",
-      "Market Value": "1323.09",
-      "Shares Held": "323",
+      "Name": "Rainbow Childrens Medicare Ltd",
+      "Ticker": "RAINBOW",
+      "Identifier": "Y2745K104",
+      "Weight": "0.03030249",
+      "Market Value": "1430.03",
+      "Shares Held": "106",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Aditya Birla Real Estate Ltd",
+      "Ticker": "ABREL",
+      "Identifier": "Y12504125",
+      "Weight": "0.03002236",
+      "Market Value": "1416.81",
+      "Shares Held": "111",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Zensar Technologies Ltd",
+      "Ticker": "ZENT",
+      "Identifier": "Y9894D120",
+      "Weight": "0.02990052",
+      "Market Value": "1411.06",
+      "Shares Held": "242",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Aptus Value Housing Finance India",
+      "Ticker": "APTUS",
+      "Identifier": "Y0R9A6126",
+      "Weight": "0.02985983",
+      "Market Value": "1409.14",
+      "Shares Held": "759",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Schneider Electric Infrastructure",
+      "Ticker": "SCHN",
+      "Identifier": "Y753BH107",
+      "Weight": "0.0298183",
+      "Market Value": "1407.18",
+      "Shares Held": "125",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Inox Wind Ltd",
+      "Ticker": "INXW",
+      "Identifier": "Y408DE103",
+      "Weight": "0.0296473",
+      "Market Value": "1399.11",
+      "Shares Held": "2046",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Lemon Tree Hotels Ltd",
+      "Ticker": "LEMONTR",
+      "Identifier": "Y5S322109",
+      "Weight": "0.02942226",
+      "Market Value": "1388.49",
+      "Shares Held": "1073",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Bagmane Prime Office REIT",
+      "Ticker": "BAGMANE",
+      "Identifier": "Y0S7WZ105",
+      "Weight": "0.02926778",
+      "Market Value": "1381.2",
+      "Shares Held": "1226",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Paradeep Phosphates Ltd",
+      "Ticker": "PARADEE",
+      "Identifier": "Y6S94E114",
+      "Weight": "0.02923261",
+      "Market Value": "1379.54",
+      "Shares Held": "926",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Minda Corporation Ltd",
+      "Ticker": "MDA",
+      "Identifier": "Y6S36A139",
+      "Weight": "0.02912983",
+      "Market Value": "1374.69",
+      "Shares Held": "176",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Physicswallah Ltd",
+      "Ticker": "PWL",
+      "Identifier": "Y6601D104",
+      "Weight": "0.02878465",
+      "Market Value": "1358.4",
+      "Shares Held": "973",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Central Bank Of India Ltd",
+      "Ticker": "CBOI",
+      "Identifier": "Y1243T104",
+      "Weight": "0.02860686",
+      "Market Value": "1350.01",
+      "Shares Held": "3949",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Titagarh Rail Systems Ltd",
+      "Ticker": "TITAGAR",
+      "Identifier": "Y8841L136",
+      "Weight": "0.02834071",
+      "Market Value": "1337.45",
+      "Shares Held": "171",
       "Asset Category": "Equity"
     },
     {
       "Name": "Creditaccess Grameen Ltd",
       "Ticker": "CREDAG",
       "Identifier": "Y2R43C102",
-      "Weight": "0.02807082",
-      "Market Value": "1314.74",
+      "Weight": "0.02826062",
+      "Market Value": "1333.67",
       "Shares Held": "114",
       "Asset Category": "Equity"
     },
@@ -1358,431 +1367,449 @@
       "Name": "Lt Foods Ltd",
       "Ticker": "LTFOODS",
       "Identifier": "Y5341V127",
-      "Weight": "0.02799674",
-      "Market Value": "1311.27",
+      "Weight": "0.02797752",
+      "Market Value": "1320.31",
       "Shares Held": "293",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Jammu And Kashmir Bank Ltd",
-      "Ticker": "JKBK",
-      "Identifier": "Y4S53D136",
-      "Weight": "0.0279882",
-      "Market Value": "1310.87",
-      "Shares Held": "1000",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Rubicon Research Ltd",
-      "Ticker": "RUBICON",
-      "Identifier": "Y7361W142",
-      "Weight": "0.02791496",
-      "Market Value": "1307.44",
-      "Shares Held": "74",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Sobha Ltd",
-      "Ticker": "SOBHA",
-      "Identifier": "Y806AJ100",
-      "Weight": "0.02754538",
-      "Market Value": "1290.13",
-      "Shares Held": "95",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Central Bank Of India Ltd",
-      "Ticker": "CBOI",
-      "Identifier": "Y1243T104",
-      "Weight": "0.02749883",
-      "Market Value": "1287.95",
-      "Shares Held": "3949",
       "Asset Category": "Equity"
     },
     {
       "Name": "Triveni Turbine Ltd",
       "Ticker": "TRIV",
       "Identifier": "Y89735107",
-      "Weight": "0.02733358",
-      "Market Value": "1280.21",
+      "Weight": "0.02796438",
+      "Market Value": "1319.69",
       "Shares Held": "244",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Aditya Birla Real Estate Ltd",
-      "Ticker": "ABREL",
-      "Identifier": "Y12504125",
-      "Weight": "0.02696101",
-      "Market Value": "1262.76",
-      "Shares Held": "111",
+      "Name": "Chambal Fertilisers And Chemicals Ltd",
+      "Ticker": "CHMB",
+      "Identifier": "Y12916139",
+      "Weight": "0.02790441",
+      "Market Value": "1316.86",
+      "Shares Held": "323",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Birlasoft Ltd",
-      "Ticker": "BSOFT",
-      "Identifier": "Y4984R147",
-      "Weight": "0.02684294",
-      "Market Value": "1257.23",
-      "Shares Held": "350",
+      "Name": "Rubicon Research Ltd",
+      "Ticker": "RUBICON",
+      "Identifier": "Y7361W142",
+      "Weight": "0.02790441",
+      "Market Value": "1316.86",
+      "Shares Held": "74",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Titagarh Rail Systems Ltd",
-      "Ticker": "TITAGAR",
-      "Identifier": "Y8841L136",
-      "Weight": "0.02635187",
-      "Market Value": "1234.23",
-      "Shares Held": "171",
+      "Name": "Talwandi Sabo Power LTD",
+      "Ticker": "VEDLSPINCO2",
+      "Identifier": "INE694L01019",
+      "Weight": "0.02783215",
+      "Market Value": "1313.45",
+      "Shares Held": "3545",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Choice International Ltd",
+      "Ticker": "CFIS",
+      "Identifier": "Y1579A117",
+      "Weight": "0.02780037",
+      "Market Value": "1311.95",
+      "Shares Held": "170",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Gillette India Ltd",
+      "Ticker": "GILL",
+      "Identifier": "Y3958N124",
+      "Weight": "0.02769908",
+      "Market Value": "1307.17",
+      "Shares Held": "17",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Sobha Ltd",
+      "Ticker": "SOBHA",
+      "Identifier": "Y806AJ100",
+      "Weight": "0.02715364",
+      "Market Value": "1281.43",
+      "Shares Held": "95",
       "Asset Category": "Equity"
     },
     {
       "Name": "Vardhman Textiles Ltd",
       "Ticker": "VTEX",
       "Identifier": "Y93497116",
-      "Weight": "0.0262575",
-      "Market Value": "1229.81",
+      "Weight": "0.02697798",
+      "Market Value": "1273.14",
       "Shares Held": "227",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Devyani International Ltd",
-      "Ticker": "DEVYANI",
-      "Identifier": "Y2R58Y114",
-      "Weight": "0.02600107",
-      "Market Value": "1217.8",
-      "Shares Held": "889",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Reliance Power",
-      "Ticker": "RPWR IS",
-      "Identifier": "Y7236V105",
-      "Weight": "0.02543271",
-      "Market Value": "1191.18",
-      "Shares Held": "6070",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Tbo Tek Ltd",
-      "Ticker": "TBOTEK",
-      "Identifier": "Y854DA106",
-      "Weight": "0.02525635",
-      "Market Value": "1182.92",
-      "Shares Held": "71",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Aether Industries Ltd",
-      "Ticker": "AETHER",
-      "Identifier": "Y001E9114",
-      "Weight": "0.02485453",
-      "Market Value": "1164.1",
-      "Shares Held": "70",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Malco Energy LTD",
-      "Ticker": "VEDLSPINCO3",
-      "Identifier": "INE704J01044",
-      "Weight": "0.02477425",
-      "Market Value": "1160.34",
-      "Shares Held": "3545",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Godawari Power And Ispat Ltd",
-      "Ticker": "GODPI",
-      "Identifier": "Y2R343137",
-      "Weight": "0.02474906",
-      "Market Value": "1159.16",
-      "Shares Held": "521",
       "Asset Category": "Equity"
     },
     {
       "Name": "NCC Ltd",
       "Ticker": "NJCC",
       "Identifier": "Y6198W135",
-      "Weight": "0.02440787",
-      "Market Value": "1143.18",
+      "Weight": "0.02644547",
+      "Market Value": "1248.01",
       "Shares Held": "874",
       "Asset Category": "Equity"
     },
     {
-      "Name": "PCBL Chemical Ltd",
-      "Ticker": "PCBL",
-      "Identifier": "Y6799A102",
-      "Weight": "0.02380706",
-      "Market Value": "1115.04",
-      "Shares Held": "375",
+      "Name": "Aether Industries Ltd",
+      "Ticker": "AETHER",
+      "Identifier": "Y001E9114",
+      "Weight": "0.0263961",
+      "Market Value": "1245.68",
+      "Shares Held": "70",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Thanga Mayil Jewellery Ltd Inr",
-      "Ticker": "TJL",
-      "Identifier": "Y87281104",
-      "Weight": "0.02357647",
-      "Market Value": "1104.24",
-      "Shares Held": "25",
+      "Name": "Devyani International Ltd",
+      "Ticker": "DEVYANI",
+      "Identifier": "Y2R58Y114",
+      "Weight": "0.02595789",
+      "Market Value": "1225",
+      "Shares Held": "889",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Jubilant Ingrevia Ltd",
-      "Ticker": "JUBLING",
-      "Identifier": "Y447D4103",
-      "Weight": "0.02355362",
-      "Market Value": "1103.17",
-      "Shares Held": "181",
+      "Name": "Godawari Power And Ispat Ltd",
+      "Ticker": "GODPI",
+      "Identifier": "Y2R343137",
+      "Weight": "0.02578667",
+      "Market Value": "1216.92",
+      "Shares Held": "521",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Tbo Tek Ltd",
+      "Ticker": "TBOTEK",
+      "Identifier": "Y854DA106",
+      "Weight": "0.02576908",
+      "Market Value": "1216.09",
+      "Shares Held": "71",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Birlasoft Ltd",
+      "Ticker": "BSOFT",
+      "Identifier": "Y4984R147",
+      "Weight": "0.02554701",
+      "Market Value": "1205.61",
+      "Shares Held": "350",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Reliance Power",
+      "Ticker": "RPWR IS",
+      "Identifier": "Y7236V105",
+      "Weight": "0.02531561",
+      "Market Value": "1194.69",
+      "Shares Held": "6070",
       "Asset Category": "Equity"
     },
     {
       "Name": "International Gemmological Institute India Ltd",
       "Ticker": "IGIL",
       "Identifier": "Y4R06E117",
-      "Weight": "0.02352523",
-      "Market Value": "1101.84",
+      "Weight": "0.0250643",
+      "Market Value": "1182.83",
       "Shares Held": "254",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Gravita India Ltd",
-      "Ticker": "GRAV",
-      "Identifier": "Y2R55H106",
-      "Weight": "0.02309458",
-      "Market Value": "1081.67",
-      "Shares Held": "68",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Indiamart Intermesh Ltd",
-      "Ticker": "INMART",
-      "Identifier": "Y39213106",
-      "Weight": "0.02286186",
-      "Market Value": "1070.77",
-      "Shares Held": "65",
       "Asset Category": "Equity"
     },
     {
       "Name": "Graphite India Ltd",
       "Ticker": "GRIL",
       "Identifier": "Y2851J149",
-      "Weight": "0.02279588",
-      "Market Value": "1067.68",
+      "Weight": "0.02481998",
+      "Market Value": "1171.3",
       "Shares Held": "138",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Caplin Point Laboratories Ltd",
-      "Ticker": "CLPL",
-      "Identifier": "Y1100T130",
-      "Weight": "0.02274891",
-      "Market Value": "1065.48",
-      "Shares Held": "42",
+      "Name": "Malco Energy LTD",
+      "Ticker": "VEDLSPINCO3",
+      "Identifier": "INE704J01044",
+      "Weight": "0.02460426",
+      "Market Value": "1161.12",
+      "Shares Held": "3545",
       "Asset Category": "Equity"
     },
     {
       "Name": "Fertilizers And Chemicals Travancore Ltd",
       "Ticker": "FCT",
       "Identifier": "Y87433119",
-      "Weight": "0.02268486",
-      "Market Value": "1062.48",
+      "Weight": "0.02416732",
+      "Market Value": "1140.5",
       "Shares Held": "133",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Intellect Design Arena Ltd",
-      "Ticker": "INDA",
-      "Identifier": "Y4R932109",
-      "Weight": "0.02259454",
-      "Market Value": "1058.25",
-      "Shares Held": "193",
+      "Name": "Jubilant Ingrevia Ltd",
+      "Ticker": "JUBLING",
+      "Identifier": "Y447D4103",
+      "Weight": "0.02407684",
+      "Market Value": "1136.23",
+      "Shares Held": "181",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Techno Electric And Engineering Lt",
-      "Ticker": "TECHNOE",
-      "Identifier": "Y7T39D103",
-      "Weight": "0.02258643",
-      "Market Value": "1057.87",
-      "Shares Held": "107",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Nmdc Steel Ltd",
-      "Ticker": "-",
-      "Identifier": "INE0NNS01018",
-      "Weight": "0.02253391",
-      "Market Value": "1055.41",
-      "Shares Held": "2503",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Aavas Financiers Ltd",
-      "Ticker": "AAVAS",
-      "Identifier": "Y0R7TT104",
-      "Weight": "0.02198498",
-      "Market Value": "1029.7",
-      "Shares Held": "85",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Zydus Wellness Ltd",
-      "Ticker": "ZYWL",
-      "Identifier": "Y9896K114",
-      "Weight": "0.02194569",
-      "Market Value": "1027.86",
-      "Shares Held": "206",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Aadhar Housing Finance Ltd",
-      "Ticker": "AADHARH",
-      "Identifier": "Y2R63Y109",
-      "Weight": "0.02187972",
-      "Market Value": "1024.77",
-      "Shares Held": "224",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "CIE Automotive India LTD",
-      "Ticker": "CIEINDI",
-      "Identifier": "Y53867100",
-      "Weight": "0.02182527",
-      "Market Value": "1022.22",
-      "Shares Held": "271",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "IDBI Bank",
-      "Ticker": "IDBI",
-      "Identifier": "Y40172119",
-      "Weight": "0.02168841",
-      "Market Value": "1015.81",
-      "Shares Held": "1200",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Vedanta Iron and Steel LTD",
-      "Ticker": "VEDLSPINCO",
-      "Identifier": "INE1CLE01013",
-      "Weight": "0.02160685",
-      "Market Value": "1011.99",
-      "Shares Held": "3545",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "IFCI Ltd",
-      "Ticker": "IFCI",
-      "Identifier": "Y8743E123",
-      "Weight": "0.02152081",
-      "Market Value": "1007.96",
-      "Shares Held": "1544",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Privi Speciality Chemicals Ltd",
-      "Ticker": "PRIVISC",
-      "Identifier": "Y3225F110",
-      "Weight": "0.02142153",
-      "Market Value": "1003.31",
-      "Shares Held": "28",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Jk Tyre And Industries Ltd",
-      "Ticker": "JKI",
-      "Identifier": "Y44455197",
-      "Weight": "0.02139825",
-      "Market Value": "1002.22",
-      "Shares Held": "262",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Shipping Corporation Of India Ltd",
-      "Ticker": "SCI",
-      "Identifier": "Y7757H113",
-      "Weight": "0.02136687",
-      "Market Value": "1000.75",
-      "Shares Held": "360",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "JM Financial Ltd",
-      "Ticker": "JM",
-      "Identifier": "Y44462110",
-      "Weight": "0.02097359",
-      "Market Value": "982.33",
-      "Shares Held": "828",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "KEC International Ltd",
-      "Ticker": "KECI",
-      "Identifier": "Y4605M113",
-      "Weight": "0.02084078",
-      "Market Value": "976.11",
-      "Shares Held": "275",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Canara Hsbc Oriental Bank Of Comme",
-      "Ticker": "CANHLIF",
-      "Identifier": "Y1081T109",
-      "Weight": "0.02081025",
-      "Market Value": "974.68",
-      "Shares Held": "750",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Bata India Ltd",
-      "Ticker": "BATA",
-      "Identifier": "Y07273165",
-      "Weight": "0.02059802",
-      "Market Value": "964.74",
-      "Shares Held": "142",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Olectra Greentech Ltd",
-      "Ticker": "OLECTRA",
-      "Identifier": "Y39315125",
-      "Weight": "0.02053333",
-      "Market Value": "961.71",
-      "Shares Held": "88",
+      "Name": "PCBL Chemical Ltd",
+      "Ticker": "PCBL",
+      "Identifier": "Y6799A102",
+      "Weight": "0.02382235",
+      "Market Value": "1124.22",
+      "Shares Held": "375",
       "Asset Category": "Equity"
     },
     {
       "Name": "Godrej Industries Ltd",
       "Ticker": "GDSP",
       "Identifier": "Y2733G164",
-      "Weight": "0.02042679",
-      "Market Value": "956.72",
+      "Weight": "0.02361002",
+      "Market Value": "1114.2",
       "Shares Held": "94",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Thanga Mayil Jewellery Ltd Inr",
+      "Ticker": "TJL",
+      "Identifier": "Y87281104",
+      "Weight": "0.0235793",
+      "Market Value": "1112.75",
+      "Shares Held": "25",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Indiamart Intermesh Ltd",
+      "Ticker": "INMART",
+      "Identifier": "Y39213106",
+      "Weight": "0.02350534",
+      "Market Value": "1109.26",
+      "Shares Held": "65",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Techno Electric And Engineering Lt",
+      "Ticker": "TECHNOE",
+      "Identifier": "Y7T39D103",
+      "Weight": "0.02306459",
+      "Market Value": "1088.46",
+      "Shares Held": "107",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Gravita India Ltd",
+      "Ticker": "GRAV",
+      "Identifier": "Y2R55H106",
+      "Weight": "0.02290079",
+      "Market Value": "1080.73",
+      "Shares Held": "68",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Nmdc Steel Ltd",
+      "Ticker": "-",
+      "Identifier": "INE0NNS01018",
+      "Weight": "0.02281412",
+      "Market Value": "1076.64",
+      "Shares Held": "2503",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Intellect Design Arena Ltd",
+      "Ticker": "INDA",
+      "Identifier": "Y4R932109",
+      "Weight": "0.02277683",
+      "Market Value": "1074.88",
+      "Shares Held": "193",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Canara Hsbc Oriental Bank Of Comme",
+      "Ticker": "CANHLIF",
+      "Identifier": "Y1081T109",
+      "Weight": "0.02273042",
+      "Market Value": "1072.69",
+      "Shares Held": "750",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Caplin Point Laboratories Ltd",
+      "Ticker": "CLPL",
+      "Identifier": "Y1100T130",
+      "Weight": "0.02255624",
+      "Market Value": "1064.47",
+      "Shares Held": "42",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "CIE Automotive India LTD",
+      "Ticker": "CIEINDI",
+      "Identifier": "Y53867100",
+      "Weight": "0.02244647",
+      "Market Value": "1059.29",
+      "Shares Held": "271",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Shipping Corporation Of India Ltd",
+      "Ticker": "SCI",
+      "Identifier": "Y7757H113",
+      "Weight": "0.02190062",
+      "Market Value": "1033.53",
+      "Shares Held": "360",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Aadhar Housing Finance Ltd",
+      "Ticker": "AADHARH",
+      "Identifier": "Y2R63Y109",
+      "Weight": "0.02178174",
+      "Market Value": "1027.92",
+      "Shares Held": "224",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Zydus Wellness Ltd",
+      "Ticker": "ZYWL",
+      "Identifier": "Y9896K114",
+      "Weight": "0.02176585",
+      "Market Value": "1027.17",
+      "Shares Held": "206",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "IFCI Ltd",
+      "Ticker": "IFCI",
+      "Identifier": "Y8743E123",
+      "Weight": "0.02159569",
+      "Market Value": "1019.14",
+      "Shares Held": "1544",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "IDBI Bank",
+      "Ticker": "IDBI",
+      "Identifier": "Y40172119",
+      "Weight": "0.02158382",
+      "Market Value": "1018.58",
+      "Shares Held": "1200",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Aavas Financiers Ltd",
+      "Ticker": "AAVAS",
+      "Identifier": "Y0R7TT104",
+      "Weight": "0.02147088",
+      "Market Value": "1013.25",
+      "Shares Held": "85",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Jk Tyre And Industries Ltd",
+      "Ticker": "JKI",
+      "Identifier": "Y44455197",
+      "Weight": "0.0214124",
+      "Market Value": "1010.49",
+      "Shares Held": "262",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "JM Financial Ltd",
+      "Ticker": "JM",
+      "Identifier": "Y44462110",
+      "Weight": "0.02132658",
+      "Market Value": "1006.44",
+      "Shares Held": "828",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Privi Speciality Chemicals Ltd",
+      "Ticker": "PRIVISC",
+      "Identifier": "Y3225F110",
+      "Weight": "0.02126936",
+      "Market Value": "1003.74",
+      "Shares Held": "28",
       "Asset Category": "Equity"
     },
     {
       "Name": "Inox India Ltd",
       "Ticker": "INOXIND",
       "Identifier": "Y4R87Z104",
-      "Weight": "0.02040843",
-      "Market Value": "955.86",
+      "Weight": "0.02117274",
+      "Market Value": "999.18",
       "Shares Held": "48",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Concord Biotech Ltd",
-      "Ticker": "CONCORD",
-      "Identifier": "Y1R98V114",
-      "Weight": "0.02013428",
-      "Market Value": "943.02",
-      "Shares Held": "140",
+      "Name": "Vedanta Iron and Steel LTD",
+      "Ticker": "VEDLSPINCO",
+      "Identifier": "INE1CLE01013",
+      "Weight": "0.02099368",
+      "Market Value": "990.73",
+      "Shares Held": "3545",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "KEC International Ltd",
+      "Ticker": "KECI",
+      "Identifier": "Y4605M113",
+      "Weight": "0.02062921",
+      "Market Value": "973.53",
+      "Shares Held": "275",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Bata India Ltd",
+      "Ticker": "BATA",
+      "Identifier": "Y07273165",
+      "Weight": "0.02050143",
+      "Market Value": "967.5",
+      "Shares Held": "142",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Sumitomo Chemical India Ltd",
+      "Ticker": "SUMICHE",
+      "Identifier": "Y81880109",
+      "Weight": "0.02041688",
+      "Market Value": "963.51",
+      "Shares Held": "262",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Olectra Greentech Ltd",
+      "Ticker": "OLECTRA",
+      "Identifier": "Y39315125",
+      "Weight": "0.02028487",
+      "Market Value": "957.28",
+      "Shares Held": "88",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Black Box Ltd",
+      "Ticker": "BBOX",
+      "Identifier": "Y09093108",
+      "Weight": "0.02004818",
+      "Market Value": "946.11",
+      "Shares Held": "99",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Allied Blenders And Distillers Ltd",
+      "Ticker": "ABDL",
+      "Identifier": "Y0038W116",
+      "Weight": "0.01993163",
+      "Market Value": "940.61",
+      "Shares Held": "117",
       "Asset Category": "Equity"
     },
     {
       "Name": "Sjvn Ltd",
       "Ticker": "SJVN",
       "Identifier": "Y80639100",
-      "Weight": "0.01998269",
-      "Market Value": "935.92",
+      "Weight": "0.01985196",
+      "Market Value": "936.85",
       "Shares Held": "1538",
       "Asset Category": "Equity"
     },
@@ -1790,8 +1817,8 @@
       "Name": "Nuvoco Vistas Ltd",
       "Ticker": "NUVOCO",
       "Identifier": "Y5S75W101",
-      "Weight": "0.01988448",
-      "Market Value": "931.32",
+      "Weight": "0.01957309",
+      "Market Value": "923.69",
       "Shares Held": "255",
       "Asset Category": "Equity"
     },
@@ -1799,179 +1826,179 @@
       "Name": "Kirloskar Brothers Ltd",
       "Ticker": "KKB",
       "Identifier": "Y4807B139",
-      "Weight": "0.01964001",
-      "Market Value": "919.87",
+      "Weight": "0.01953643",
+      "Market Value": "921.96",
       "Shares Held": "53",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Sumitomo Chemical India Ltd",
-      "Ticker": "SUMICHE",
-      "Identifier": "Y81880109",
-      "Weight": "0.01959347",
-      "Market Value": "917.69",
-      "Shares Held": "262",
       "Asset Category": "Equity"
     },
     {
       "Name": "Sarda Energy And Minerals Ltd",
       "Ticker": "SEML",
       "Identifier": "Y7527G106",
-      "Weight": "0.01933299",
-      "Market Value": "905.49",
+      "Weight": "0.01947901",
+      "Market Value": "919.25",
       "Shares Held": "195",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "HEG Graphite LTD",
-      "Ticker": "-",
-      "Identifier": "INE0Y9J01020",
-      "Weight": "0.01885152",
-      "Market Value": "882.94",
-      "Shares Held": "179",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Allied Blenders And Distillers Ltd",
-      "Ticker": "ABDL",
-      "Identifier": "Y0038W116",
-      "Weight": "0.0188321",
-      "Market Value": "882.03",
-      "Shares Held": "117",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Fractal Analytics Ltd",
-      "Ticker": "FRACTAL",
-      "Identifier": "Y2R37F103",
-      "Weight": "0.0187563",
-      "Market Value": "878.48",
-      "Shares Held": "102",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Indian Overseas Bank",
-      "Ticker": "IOB",
-      "Identifier": "Y39282119",
-      "Weight": "0.01870292",
-      "Market Value": "875.98",
-      "Shares Held": "2692",
       "Asset Category": "Equity"
     },
     {
       "Name": "Gujarat Mineral Development Corporation Ltd",
       "Ticker": "GMDC",
       "Identifier": "Y2946M131",
-      "Weight": "0.01855368",
-      "Market Value": "868.99",
+      "Weight": "0.0193222",
+      "Market Value": "911.85",
       "Shares Held": "176",
       "Asset Category": "Equity"
     },
     {
-      "Name": "New India Assurance Company Ltd",
-      "Ticker": "NIACL",
-      "Identifier": "Y6S6CP108",
-      "Weight": "0.01849198",
-      "Market Value": "866.1",
-      "Shares Held": "517",
+      "Name": "Indian Overseas Bank",
+      "Ticker": "IOB",
+      "Identifier": "Y39282119",
+      "Weight": "0.01914399",
+      "Market Value": "903.44",
+      "Shares Held": "2692",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Tejas Networks Ltd",
-      "Ticker": "TEJASNE",
-      "Identifier": "Y8T61P105",
-      "Weight": "0.01840038",
-      "Market Value": "861.81",
-      "Shares Held": "194",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Clean Max Enviro Energy Sol",
-      "Ticker": "CLEANMA",
-      "Identifier": "Y166C6303",
-      "Weight": "0.01832843",
-      "Market Value": "858.44",
-      "Shares Held": "64",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Black Box Ltd",
-      "Ticker": "BBOX",
-      "Identifier": "Y09093108",
-      "Weight": "0.01825199",
-      "Market Value": "854.86",
-      "Shares Held": "99",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Mangalore Refinery & Petrochemicals Ltd",
-      "Ticker": "MRPL",
-      "Identifier": "Y5763P137",
-      "Weight": "0.01821143",
-      "Market Value": "852.96",
-      "Shares Held": "456",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Transformers And Rectifiers India Ltd",
-      "Ticker": "TARIL",
-      "Identifier": "Y8T395116",
-      "Weight": "0.01811983",
-      "Market Value": "848.67",
-      "Shares Held": "260",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Elecon Engineering Co Ltd",
-      "Ticker": "ELCN",
-      "Identifier": "Y2R72B116",
-      "Weight": "0.01790611",
-      "Market Value": "838.66",
-      "Shares Held": "188",
+      "Name": "Fractal Analytics Ltd",
+      "Ticker": "FRACTAL",
+      "Identifier": "Y2R37F103",
+      "Weight": "0.01905266",
+      "Market Value": "899.13",
+      "Shares Held": "102",
       "Asset Category": "Equity"
     },
     {
       "Name": "Clean Science And Technology Ltd",
       "Ticker": "CLEAN",
       "Identifier": "Y166CL110",
-      "Weight": "0.01779338",
-      "Market Value": "833.38",
+      "Weight": "0.01904504",
+      "Market Value": "898.77",
       "Shares Held": "117",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Doms Industries Ltd",
-      "Ticker": "DOMS",
-      "Identifier": "Y97112109",
-      "Weight": "0.01774363",
-      "Market Value": "831.05",
-      "Shares Held": "38",
+      "Name": "Aegis Vopak Terminals Ltd",
+      "Ticker": "AEGISVO",
+      "Identifier": "Y001XD106",
+      "Weight": "0.01902872",
+      "Market Value": "898",
+      "Shares Held": "296",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Action Construction Equipment Ltd",
-      "Ticker": "ACCE",
-      "Identifier": "Y0010V102",
-      "Weight": "0.01725533",
-      "Market Value": "808.18",
-      "Shares Held": "65",
+      "Name": "Clean Max Enviro Energy Sol",
+      "Ticker": "CLEANMA",
+      "Identifier": "Y166C6303",
+      "Weight": "0.01895922",
+      "Market Value": "894.72",
+      "Shares Held": "64",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Elecon Engineering Co Ltd",
+      "Ticker": "ELCN",
+      "Identifier": "Y2R72B116",
+      "Weight": "0.01876723",
+      "Market Value": "885.66",
+      "Shares Held": "188",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Concord Biotech Ltd",
+      "Ticker": "CONCORD",
+      "Identifier": "Y1R98V114",
+      "Weight": "0.01869709",
+      "Market Value": "882.35",
+      "Shares Held": "140",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "HEG Graphite LTD",
+      "Ticker": "-",
+      "Identifier": "INE0Y9J01020",
+      "Weight": "0.01864348",
+      "Market Value": "879.82",
+      "Shares Held": "179",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Transformers And Rectifiers India Ltd",
+      "Ticker": "TARIL",
+      "Identifier": "Y8T395116",
+      "Weight": "0.01840213",
+      "Market Value": "868.43",
+      "Shares Held": "260",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Tejas Networks Ltd",
+      "Ticker": "TEJASNE",
+      "Identifier": "Y8T61P105",
+      "Weight": "0.01837161",
+      "Market Value": "866.99",
+      "Shares Held": "194",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "New India Assurance Company Ltd",
+      "Ticker": "NIACL",
+      "Identifier": "Y6S6CP108",
+      "Weight": "0.01836907",
+      "Market Value": "866.87",
+      "Shares Held": "517",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Mangalore Refinery & Petrochemicals Ltd",
+      "Ticker": "MRPL",
+      "Identifier": "Y5763P137",
+      "Weight": "0.01831885",
+      "Market Value": "864.5",
+      "Shares Held": "456",
       "Asset Category": "Equity"
     },
     {
       "Name": "Ircon International Ltd",
       "Ticker": "IRCON",
       "Identifier": "INE962Y01021",
-      "Weight": "0.0171157",
-      "Market Value": "801.64",
+      "Weight": "0.01740407",
+      "Market Value": "821.33",
       "Shares Held": "696",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Anupam Rasayan India Ltd",
+      "Ticker": "ANURAS",
+      "Identifier": "Y0R7UV107",
+      "Weight": "0.01725256",
+      "Market Value": "814.18",
+      "Shares Held": "59",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Action Construction Equipment Ltd",
+      "Ticker": "ACCE",
+      "Identifier": "Y0010V102",
+      "Weight": "0.01724451",
+      "Market Value": "813.8",
+      "Shares Held": "65",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Doms Industries Ltd",
+      "Ticker": "DOMS",
+      "Identifier": "Y97112109",
+      "Weight": "0.01720764",
+      "Market Value": "812.06",
+      "Shares Held": "38",
       "Asset Category": "Equity"
     },
     {
       "Name": "Brainbees Solutions Ltd",
       "Ticker": "FIRSTCR",
       "Identifier": "Y096B8200",
-      "Weight": "0.01709072",
-      "Market Value": "800.47",
+      "Weight": "0.01698578",
+      "Market Value": "801.59",
       "Shares Held": "471",
       "Asset Category": "Equity"
     },
@@ -1979,80 +2006,62 @@
       "Name": "Rites Ltd",
       "Ticker": "RITE",
       "Identifier": "Y73019104",
-      "Weight": "0.01708752",
-      "Market Value": "800.32",
+      "Weight": "0.01696819",
+      "Market Value": "800.76",
       "Shares Held": "386",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Trident Ltd",
-      "Ticker": "TRID",
-      "Identifier": "Y8T75X128",
-      "Weight": "0.0168676",
-      "Market Value": "790.02",
-      "Shares Held": "3107",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Uti Asset Managem Ltd",
-      "Ticker": "UTIAM",
-      "Identifier": "Y9T17K109",
-      "Weight": "0.01666605",
-      "Market Value": "780.58",
-      "Shares Held": "88",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Aegis Vopak Terminals Ltd",
-      "Ticker": "AEGISVO",
-      "Identifier": "Y001XD106",
-      "Weight": "0.01658791",
-      "Market Value": "776.92",
-      "Shares Held": "296",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Swan Corp Ltd",
-      "Ticker": "SWANCOR",
-      "Identifier": "Y831AK121",
-      "Weight": "0.01651553",
-      "Market Value": "773.53",
-      "Shares Held": "302",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Bls International Services Ltd",
-      "Ticker": "BLSIN",
-      "Identifier": "Y0R18P124",
-      "Weight": "0.01629946",
-      "Market Value": "763.41",
-      "Shares Held": "321",
       "Asset Category": "Equity"
     },
     {
       "Name": "Tenneco Clean Air India Ltd (Propo",
       "Ticker": "TENNIND",
       "Identifier": "Y8588Q108",
-      "Weight": "0.01616537",
-      "Market Value": "757.13",
+      "Weight": "0.01691034",
+      "Market Value": "798.03",
       "Shares Held": "168",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Uti Asset Managem Ltd",
+      "Ticker": "UTIAM",
+      "Identifier": "Y9T17K109",
+      "Weight": "0.01666306",
+      "Market Value": "786.36",
+      "Shares Held": "88",
       "Asset Category": "Equity"
     },
     {
       "Name": "Uco Bank",
       "Ticker": "UCO",
       "Identifier": "Y9035A100",
-      "Weight": "0.01608061",
-      "Market Value": "753.16",
+      "Weight": "0.01657024",
+      "Market Value": "781.98",
       "Shares Held": "2967",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Bls International Services Ltd",
+      "Ticker": "BLSIN",
+      "Identifier": "Y0R18P124",
+      "Weight": "0.01656261",
+      "Market Value": "781.62",
+      "Shares Held": "321",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Trident Ltd",
+      "Ticker": "TRID",
+      "Identifier": "Y8T75X128",
+      "Weight": "0.01644395",
+      "Market Value": "776.02",
+      "Shares Held": "3107",
       "Asset Category": "Equity"
     },
     {
       "Name": "Jupiter Wagons Ltd",
       "Ticker": "JWL",
       "Identifier": "Y1691D106",
-      "Weight": "0.0157501",
-      "Market Value": "737.68",
+      "Weight": "0.01628587",
+      "Market Value": "768.56",
       "Shares Held": "350",
       "Asset Category": "Equity"
     },
@@ -2060,26 +2069,17 @@
       "Name": "KSB Ltd",
       "Ticker": "KSB",
       "Identifier": "Y499DT109",
-      "Weight": "0.01572853",
-      "Market Value": "736.67",
+      "Weight": "0.01615216",
+      "Market Value": "762.25",
       "Shares Held": "110",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Anupam Rasayan India Ltd",
-      "Ticker": "ANURAS",
-      "Identifier": "Y0R7UV107",
-      "Weight": "0.01562904",
-      "Market Value": "732.01",
-      "Shares Held": "59",
       "Asset Category": "Equity"
     },
     {
       "Name": "Afcons Infrastructure Ltd",
       "Ticker": "AFCONS",
       "Identifier": "Y0R19K116",
-      "Weight": "0.01560705",
-      "Market Value": "730.98",
+      "Weight": "0.0158822",
+      "Market Value": "749.51",
       "Shares Held": "318",
       "Asset Category": "Equity"
     },
@@ -2087,62 +2087,71 @@
       "Name": "Urban Company Ltd",
       "Ticker": "URBANCO",
       "Identifier": "Y929FG119",
-      "Weight": "0.01499001",
-      "Market Value": "702.08",
+      "Weight": "0.01582774",
+      "Market Value": "746.94",
       "Shares Held": "417",
       "Asset Category": "Equity"
     },
     {
-      "Name": "JSW CEMENT LTD.",
-      "Ticker": "JSWCEME",
-      "Identifier": "Y4S6D2103",
-      "Weight": "0.0145331",
-      "Market Value": "680.68",
-      "Shares Held": "518",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Signatureglobal (India) Ltd",
-      "Ticker": "SIGNATU",
-      "Identifier": "Y7939W111",
-      "Weight": "0.01445154",
-      "Market Value": "676.86",
-      "Shares Held": "85",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Rhi Magnesita India Ltd",
-      "Ticker": "RHIM",
-      "Identifier": "Y6S892109",
-      "Weight": "0.01431468",
-      "Market Value": "670.45",
-      "Shares Held": "175",
+      "Name": "Swan Corp Ltd",
+      "Ticker": "SWANCOR",
+      "Identifier": "Y831AK121",
+      "Weight": "0.01578579",
+      "Market Value": "744.96",
+      "Shares Held": "302",
       "Asset Category": "Equity"
     },
     {
       "Name": "ITI Ltd",
       "Ticker": "ITI",
       "Identifier": "Y4212X114",
-      "Weight": "0.01414345",
-      "Market Value": "662.43",
+      "Weight": "0.01506765",
+      "Market Value": "711.07",
       "Shares Held": "250",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Tega Industries Ltd",
-      "Ticker": "TEGA",
-      "Identifier": "Y8T61G113",
-      "Weight": "0.01382489",
-      "Market Value": "647.51",
-      "Shares Held": "36",
+      "Name": "Signatureglobal (India) Ltd",
+      "Ticker": "SIGNATU",
+      "Identifier": "Y7939W111",
+      "Weight": "0.01465021",
+      "Market Value": "691.37",
+      "Shares Held": "85",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "JSW CEMENT LTD.",
+      "Ticker": "JSWCEME",
+      "Identifier": "Y4S6D2103",
+      "Weight": "0.01456608",
+      "Market Value": "687.4",
+      "Shares Held": "518",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Rhi Magnesita India Ltd",
+      "Ticker": "RHIM",
+      "Identifier": "Y6S892109",
+      "Weight": "0.01436499",
+      "Market Value": "677.91",
+      "Shares Held": "175",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Emmvee Photovoltaic Power Ltd (Pro",
+      "Ticker": "EMMVEE",
+      "Identifier": "Y228H8112",
+      "Weight": "0.01414186",
+      "Market Value": "667.38",
+      "Shares Held": "227",
       "Asset Category": "Equity"
     },
     {
       "Name": "Railtel Corp Of India Ltd",
       "Ticker": "RAILTEL",
       "Identifier": "Y717B5108",
-      "Weight": "0.01348093",
-      "Market Value": "631.4",
+      "Weight": "0.01405943",
+      "Market Value": "663.49",
       "Shares Held": "246",
       "Asset Category": "Equity"
     },
@@ -2150,44 +2159,44 @@
       "Name": "Avanti Feeds Ltd",
       "Ticker": "AVNT",
       "Identifier": "Y0485G150",
-      "Weight": "0.01340492",
-      "Market Value": "627.84",
+      "Weight": "0.01393229",
+      "Market Value": "657.49",
       "Shares Held": "83",
       "Asset Category": "Equity"
     },
     {
-      "Name": "Prime Focus Ltd",
-      "Ticker": "PRIF",
-      "Identifier": "Y707A4111",
-      "Weight": "0.01309726",
-      "Market Value": "613.43",
-      "Shares Held": "202",
-      "Asset Category": "Equity"
-    },
-    {
-      "Name": "Emmvee Photovoltaic Power Ltd (Pro",
-      "Ticker": "EMMVEE",
-      "Identifier": "Y228H8112",
-      "Weight": "0.01296936",
-      "Market Value": "607.44",
-      "Shares Held": "227",
+      "Name": "Tega Industries Ltd",
+      "Ticker": "TEGA",
+      "Identifier": "Y8T61G113",
+      "Weight": "0.01356231",
+      "Market Value": "640.03",
+      "Shares Held": "36",
       "Asset Category": "Equity"
     },
     {
       "Name": "India Cements Ltd",
       "Ticker": "ICEM",
       "Identifier": "Y39167153",
-      "Weight": "0.01278318",
-      "Market Value": "598.72",
+      "Weight": "0.01262592",
+      "Market Value": "595.84",
       "Shares Held": "161",
+      "Asset Category": "Equity"
+    },
+    {
+      "Name": "Prime Focus Ltd",
+      "Ticker": "PRIF",
+      "Identifier": "Y707A4111",
+      "Weight": "0.01225996",
+      "Market Value": "578.57",
+      "Shares Held": "202",
       "Asset Category": "Equity"
     },
     {
       "Name": "Tata Teleservices (Maharashtra) Ltd",
       "Ticker": "TTLS",
       "Identifier": "Y37526111",
-      "Weight": "0.012676",
-      "Market Value": "593.7",
+      "Weight": "0.01194656",
+      "Market Value": "563.78",
       "Shares Held": "1402",
       "Asset Category": "Equity"
     },
@@ -2195,8 +2204,8 @@
       "Name": "H.E.G. Ltd",
       "Ticker": "HEG",
       "Identifier": "Y3119F150",
-      "Weight": "0.01195883",
-      "Market Value": "560.11",
+      "Weight": "0.01118202",
+      "Market Value": "527.7",
       "Shares Held": "179",
       "Asset Category": "Equity"
     },
@@ -2204,8 +2213,8 @@
       "Name": "Central Mine Planning + DES",
       "Ticker": "CMPDI",
       "Identifier": "Y1R49Q115",
-      "Weight": "0.00906814",
-      "Market Value": "424.72",
+      "Weight": "0.00957115",
+      "Market Value": "451.68",
       "Shares Held": "225",
       "Asset Category": "Equity"
     },
@@ -2213,8 +2222,8 @@
       "Name": "Gallantt Ispat Ltd",
       "Ticker": "GALL",
       "Identifier": "Y26799109",
-      "Weight": "0.00862596",
-      "Market Value": "404.01",
+      "Weight": "0.00837984",
+      "Market Value": "395.46",
       "Shares Held": "71",
       "Asset Category": "Equity"
     },
@@ -2222,8 +2231,8 @@
       "Name": "Jain Resource Recycling Ltd",
       "Ticker": "JAINREC",
       "Identifier": "Y425DX105",
-      "Weight": "0.00755543",
-      "Market Value": "353.87",
+      "Weight": "0.00736505",
+      "Market Value": "347.57",
       "Shares Held": "116",
       "Asset Category": "Equity"
     },
@@ -2231,8 +2240,8 @@
       "Name": "JBM Auto Ltd",
       "Ticker": "JBMA",
       "Identifier": "Y44277161",
-      "Weight": "0.00721104",
-      "Market Value": "337.74",
+      "Weight": "0.00716077",
+      "Market Value": "337.93",
       "Shares Held": "64",
       "Asset Category": "Equity"
     },
@@ -2240,28 +2249,19 @@
       "Name": "Mmtc Ltd",
       "Ticker": "MMTC",
       "Identifier": "Y61323120",
-      "Weight": "0.002728",
-      "Market Value": "127.77",
+      "Weight": "0.00282422",
+      "Market Value": "133.28",
       "Shares Held": "225",
       "Asset Category": "Equity"
     },
     {
-      "Name": "OLA ELECTRIC MOB-PARTLY PAID",
+      "Name": "Ola Electric Mobility - Partly Paid",
       "Ticker": "OLAELEP",
-      "Identifier": "IN90LXG01014",
-      "Weight": "0.00163569",
-      "Market Value": "76.61",
+      "Identifier": "Y64742169",
+      "Weight": "0.00175793",
+      "Market Value": "82.96",
       "Shares Held": "341",
       "Asset Category": "Equity"
-    },
-    {
-      "Name": "MSCI India Dec26",
-      "Ticker": "-",
-      "Identifier": "-",
-      "Weight": "0",
-      "Market Value": "0",
-      "Shares Held": "1",
-      "Asset Category": "Future"
     }
   ]
 }

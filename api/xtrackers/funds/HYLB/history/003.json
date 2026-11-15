@@ -2,7 +2,7 @@
   "ticker": "HYLB",
   "page": 3,
   "pageSize": 1000,
-  "totalRows": 2494,
+  "totalRows": 2499,
   "headers": [
     "Date",
     "NAV",
@@ -2973,6 +2973,36 @@
       "NAV": "35.21",
       "Market Price": "35.209999",
       "Premium/Discount": "0"
+    },
+    {
+      "Date": "2026-11-09",
+      "NAV": "35.28",
+      "Market Price": "35.310001",
+      "Premium/Discount": "0.085"
+    },
+    {
+      "Date": "2026-11-10",
+      "NAV": "35.16",
+      "Market Price": "35.150002",
+      "Premium/Discount": "-0.0284"
+    },
+    {
+      "Date": "2026-11-11",
+      "NAV": "35.18",
+      "Market Price": "35.220001",
+      "Premium/Discount": "0.1137"
+    },
+    {
+      "Date": "2026-11-12",
+      "NAV": "35.14",
+      "Market Price": "35.080002",
+      "Premium/Discount": "-0.1707"
+    },
+    {
+      "Date": "2026-11-13",
+      "NAV": "35.1",
+      "Market Price": "35.049999",
+      "Premium/Discount": "-0.1425"
     }
   ]
 }

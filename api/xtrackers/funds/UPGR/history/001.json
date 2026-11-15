@@ -2,7 +2,7 @@
   "ticker": "UPGR",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 836,
+  "totalRows": 841,
   "headers": [
     "Date",
     "NAV",
@@ -5025,6 +5025,36 @@
       "NAV": "21.28",
       "Market Price": "21.283001",
       "Premium/Discount": "0.0141"
+    },
+    {
+      "Date": "2026-11-09",
+      "NAV": "21.81",
+      "Market Price": "21.808001",
+      "Premium/Discount": "-0.0092"
+    },
+    {
+      "Date": "2026-11-10",
+      "NAV": "21.31",
+      "Market Price": "21.326",
+      "Premium/Discount": "0.0751"
+    },
+    {
+      "Date": "2026-11-11",
+      "NAV": "21.87",
+      "Market Price": "21.856001",
+      "Premium/Discount": "-0.064"
+    },
+    {
+      "Date": "2026-11-12",
+      "NAV": "21.32",
+      "Market Price": "21.316",
+      "Premium/Discount": "-0.0188"
+    },
+    {
+      "Date": "2026-11-13",
+      "NAV": "21.2",
+      "Market Price": "21.195",
+      "Premium/Discount": "-0.0236"
     }
   ]
 }

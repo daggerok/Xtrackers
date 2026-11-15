@@ -2,7 +2,7 @@
   "ticker": "CHPS",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 836,
+  "totalRows": 841,
   "headers": [
     "Date",
     "NAV",
@@ -5025,6 +5025,36 @@
       "NAV": "64.85",
       "Market Price": "65.019997",
       "Premium/Discount": "0.2621"
+    },
+    {
+      "Date": "2026-11-09",
+      "NAV": "68.71",
+      "Market Price": "70.029999",
+      "Premium/Discount": "1.9211"
+    },
+    {
+      "Date": "2026-11-10",
+      "NAV": "69.75",
+      "Market Price": "69.620003",
+      "Premium/Discount": "-0.1864"
+    },
+    {
+      "Date": "2026-11-11",
+      "NAV": "73.3",
+      "Market Price": "73.769997",
+      "Premium/Discount": "0.6412"
+    },
+    {
+      "Date": "2026-11-12",
+      "NAV": "72.62",
+      "Market Price": "72.879997",
+      "Premium/Discount": "0.358"
+    },
+    {
+      "Date": "2026-11-13",
+      "NAV": "70.96",
+      "Market Price": "70.769997",
+      "Premium/Discount": "-0.2678"
     }
   ]
 }

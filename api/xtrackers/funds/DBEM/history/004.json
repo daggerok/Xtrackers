@@ -2,7 +2,7 @@
   "ticker": "DBEM",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3878,
+  "totalRows": 3883,
   "headers": [
     "Date",
     "NAV",
@@ -5277,6 +5277,36 @@
       "NAV": "34.57",
       "Market Price": "35.189999",
       "Premium/Discount": "1.7935"
+    },
+    {
+      "Date": "2026-11-09",
+      "NAV": "34.93",
+      "Market Price": "35.939999",
+      "Premium/Discount": "2.8915"
+    },
+    {
+      "Date": "2026-11-10",
+      "NAV": "35.54",
+      "Market Price": "35.580002",
+      "Premium/Discount": "0.1126"
+    },
+    {
+      "Date": "2026-11-11",
+      "NAV": "36.15",
+      "Market Price": "36.470001",
+      "Premium/Discount": "0.8852"
+    },
+    {
+      "Date": "2026-11-12",
+      "NAV": "35.72",
+      "Market Price": "36.049999",
+      "Premium/Discount": "0.9238"
+    },
+    {
+      "Date": "2026-11-13",
+      "NAV": "35.61",
+      "Market Price": "35.799999",
+      "Premium/Discount": "0.5336"
     }
   ]
 }

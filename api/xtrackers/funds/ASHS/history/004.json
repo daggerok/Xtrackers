@@ -2,7 +2,7 @@
   "ticker": "ASHS",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3137,
+  "totalRows": 3142,
   "headers": [
     "Date",
     "NAV",
@@ -831,6 +831,36 @@
       "NAV": "36.29",
       "Market Price": "36.389999",
       "Premium/Discount": "0.2756"
+    },
+    {
+      "Date": "2026-11-09",
+      "NAV": "36.24",
+      "Market Price": "36.790001",
+      "Premium/Discount": "1.5177"
+    },
+    {
+      "Date": "2026-11-10",
+      "NAV": "36.53",
+      "Market Price": "36.529999",
+      "Premium/Discount": "0"
+    },
+    {
+      "Date": "2026-11-11",
+      "NAV": "36.92",
+      "Market Price": "36.830002",
+      "Premium/Discount": "-0.2438"
+    },
+    {
+      "Date": "2026-11-12",
+      "NAV": "36.31",
+      "Market Price": "36.259998",
+      "Premium/Discount": "-0.1377"
+    },
+    {
+      "Date": "2026-11-13",
+      "NAV": "35.55",
+      "Market Price": "35.349998",
+      "Premium/Discount": "-0.5626"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "ticker": "IND",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 240,
+  "totalRows": 245,
   "headers": [
     "Date",
     "NAV",
@@ -1449,6 +1449,36 @@
       "NAV": "23.42",
       "Market Price": "23.264999",
       "Premium/Discount": "-0.6618"
+    },
+    {
+      "Date": "2026-11-09",
+      "NAV": "23.53",
+      "Market Price": "23.702999",
+      "Premium/Discount": "0.7352"
+    },
+    {
+      "Date": "2026-11-10",
+      "NAV": "23.53",
+      "Market Price": "23.834999",
+      "Premium/Discount": "1.2962"
+    },
+    {
+      "Date": "2026-11-11",
+      "NAV": "23.8",
+      "Market Price": "23.759001",
+      "Premium/Discount": "-0.1723"
+    },
+    {
+      "Date": "2026-11-12",
+      "NAV": "23.79",
+      "Market Price": "23.781",
+      "Premium/Discount": "-0.0378"
+    },
+    {
+      "Date": "2026-11-13",
+      "NAV": "23.6",
+      "Market Price": "23.771999",
+      "Premium/Discount": "0.7288"
     }
   ]
 }

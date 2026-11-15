@@ -1,0 +1,20 @@
+{
+  "ticker": "DBEZ",
+  "page": 4,
+  "pageSize": 1000,
+  "totalRows": 3001,
+  "headers": [
+    "Date",
+    "NAV",
+    "Market Price",
+    "Premium/Discount"
+  ],
+  "rows": [
+    {
+      "Date": "2026-11-13",
+      "NAV": "63.39",
+      "Market Price": "63.398998",
+      "Premium/Discount": "0.0142"
+    }
+  ]
+}
