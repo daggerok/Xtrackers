@@ -97,6 +97,17 @@ Each fund carries a derived `metrics` object that powers the catalog columns sha
   - `dividendGrowth`, `dividendGrowth3y`, `dividendGrowth5y` - last complete calendar year against 1, 3, 5 years earlier (3 and 5 as a yearly rate), the listing year is never a base
   - `dividendStreak` - complete calendar years in a row with a higher sum
   - `dividendCut10y` - `true` when a year of the last 10 paid more than 20% less than its base year and the next year did not come back
+  - `paymentsPerYear` - distributions with ex-dates in the last 12 months
+  - `payFrequency` - `weekly`, `monthly`, `quarterly`, `semiannual`, `annual` or `irregular` from the calendar months of those distributions; `null` for a fund under a year old that is not visibly monthly
+- Benchmark metrics (shared `benchmark` block) against SPY and QQQ from the same Yahoo daily chart (`close` for price metrics, `adjclose` for total-return metrics), read from the same Yahoo request as the swing metrics, plus one SPY and one QQQ chart per run; horizons start on the calendar date 1, 3, 5 or 10 years before the last bar; a failed or incomplete chart keeps the published values; `null` (never `0`) for a fund younger than the horizon:
+  - `perf1y`, `perf3y`, `perf5y`, `perf10y`, `perfSi` - price return over the horizon and since listing (split adjusted, dividends not included), in percent
+  - `maxDrawdown1y`, `maxDrawdown3y`, `maxDrawdown5y`, `maxDrawdown10y` - deepest fall from a running peak of the adjusted close, in percent
+  - `vsSpy1y` ... `vsSpy10y`, `vsQqq1y` ... `vsQqq10y` - total-return CAGR minus the benchmark's over the same dates, in percentage points a year
+  - `beta1ySpy`, `corr1ySpy`, `beta1yQqq`, `corr1yQqq` - beta and correlation of the last 252 daily log returns against the benchmark
+  - `upCapture3ySpy`, `downCapture3ySpy`, `upCapture3yQqq`, `downCapture3yQqq` - upside and downside capture over the last 36 complete months, in percent
+  - `relStrength3mSpy`, `relStrength3mQqq` - 3-month price return minus the benchmark's, in percentage points
+  - `stressReturnSpy`, `stressBasisSpy`, `stressReturnQqq`, `stressBasisQqq` - total return during the benchmark's latest fall of 10% or more in the last 5 years, and that episode (`SPY -19% 2025-02-19 to 2025-04-08`)
+  - `benchmarkAsOf` - last date the fund and SPY (else QQQ) have in common
 - `returnsBasis` - mandatory non-empty label of how the returns were computed: official DWS NAV total returns, derived from the official DWS daily NAV with distributions reinvested at ex-date NAV, or derived from Yahoo adjusted market-price closes (an estimate, not official NAV returns)
 - `quarterEnd` - derived for the last completed quarter-end on or before the newest NAV date: it equals `monthEnd` only when the data ends exactly on a quarter-end (for example 09-30)
 - `performanceAsOf` - mandatory ISO `YYYY-MM-DD` date the returns are as of: the DWS performance table date for official figures, the last covered series date when derived (never the NAV date); `null` when no return figure exists (or the date is unknown)

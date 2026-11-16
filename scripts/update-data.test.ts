@@ -8,7 +8,7 @@ import { tmpdir } from 'node:os';
 import {
   CLOSED_FUNDS, closedFund, CONTROL_NAMES, DEFAULT_SEC_UA, SOFT_DEADLINE_MS, resolveControls, runtimeControls, readConfig, parseRange, parseAumRange, inRange,
   fundFilterReasons, mergeDetails, outputConfigEntries, createRequestGate, fetchWithRetry,
-  HttpError, samePublishedContent, writeJsonIfChanged, selectUpdateBatch, runUpdater, indexRowForCatalog, withRange52w, withSwing, withDividends, parseNportFiling,
+  HttpError, samePublishedContent, writeJsonIfChanged, selectUpdateBatch, runUpdater, indexRowForCatalog, withRange52w, withSwing, withDividends, withBenchmark, parseNportFiling,
   parseSecFundTickers, parseSecCompanyNames, parseNportSubmissions, parseNportFeed, nportDocumentUrl, nportIdentity, nportIsFresh, nportTickers, nportHoldingsSheet,
   HOLDINGS_GUARD_RELAX, holdingsWeightCount, dwsTicker,
   reinvestmentCoverageStart, reportingPeriodEnds, coalesceReturns, annualizedOfficialReturns, renderUpdateSummary, writeSummary,
@@ -137,7 +137,7 @@ function fakeFetch(denied: string[] = [], secXml: string | null = null): Fetcher
     throw new Error(`Unexpected offline request: ${url}`);
   };
 }
-const SWING_CHART = { chart: { result: [{ meta: { dataGranularity: '1d', firstTradeDate: Date.UTC(2025, 10, 30) / 1000 + 48_600 }, events: { dividends: { [Date.UTC(2026, 8, 16) / 1000 + 48_600]: { amount: 0.25, date: Date.UTC(2026, 8, 16) / 1000 + 48_600 } } }, timestamp: Array.from({ length: 300 }, (_, i) => Date.UTC(2025, 10, 30) / 1000 + i * 86400 + 48_600), indicators: { quote: [{ close: Array.from({ length: 300 }, (_, i) => 50 + i * 0.01) }] } }] } };
+const SWING_CHART = { chart: { result: [{ meta: { dataGranularity: '1d', firstTradeDate: Date.UTC(2025, 10, 30) / 1000 + 48_600 }, events: { dividends: { [Date.UTC(2026, 8, 16) / 1000 + 48_600]: { amount: 0.25, date: Date.UTC(2026, 8, 16) / 1000 + 48_600 } } }, timestamp: Array.from({ length: 300 }, (_, i) => Date.UTC(2025, 10, 30) / 1000 + i * 86400 + 48_600), indicators: { quote: [{ close: Array.from({ length: 300 }, (_, i) => 50 + i * 0.01) }], adjclose: [{ adjclose: Array.from({ length: 300 }, (_, i) => 50 + i * 0.01) }] } }] } };
 const override = (base: Fetcher, match: (url: string) => boolean, make: (url: string) => Response): Fetcher => (url, init) => match(url) ? Promise.resolve(make(url)) : base(url, init);
 async function tempRoot(): Promise<string> { const dir = await mkdtemp(join(tmpdir(), 'xtrackers-tests-')); tempDirs.push(dir); return dir; }
 async function hashes(root: string): Promise<Record<string, string>> {
@@ -620,15 +620,23 @@ describe('pipeline', () => {
     // swing keys from the Yahoo daily closes (period1=0) of the funds the run updated (swing block, null for the others here)
     const RANGE_KEYS = ['week52Low', 'week52High', 'range52w', 'range52wClose', 'range52wAsOf', 'range52wSince', 'range52wBasis'];
     const SWING_KEYS = ['pctFrom52wHigh', 'athPrice', 'athDate', 'athBasis', 'pctFromAth', 'volatility1y', 'sigmaFromMean60d', 'high60d', 'low60d'];
-    const DIVIDEND_KEYS = ['dividendRate', 'dividendGrowth', 'dividendGrowth3y', 'dividendGrowth5y', 'dividendStreak', 'dividendCut10y'];
-    const rangeless = (row: JsonRecord) => ({ ...row, metrics: Object.fromEntries(Object.entries(record(row.metrics)).filter(([k]) => !RANGE_KEYS.includes(k) && !SWING_KEYS.includes(k) && !DIVIDEND_KEYS.includes(k))) });
+    const DIVIDEND_KEYS = ['dividendRate', 'dividendGrowth', 'dividendGrowth3y', 'dividendGrowth5y', 'dividendStreak', 'dividendCut10y', 'paymentsPerYear', 'payFrequency'];
+    // the 32 benchmark keys against SPY and QQQ sit before the two tail keys (shared benchmark block)
+    const BENCHMARK_KEYS = ['perf1y', 'perf3y', 'perf5y', 'perf10y', 'perfSi', 'maxDrawdown1y', 'maxDrawdown3y', 'maxDrawdown5y', 'maxDrawdown10y',
+      'vsSpy1y', 'vsSpy3y', 'vsSpy5y', 'vsSpy10y', 'beta1ySpy', 'corr1ySpy', 'upCapture3ySpy', 'downCapture3ySpy', 'relStrength3mSpy', 'stressReturnSpy', 'stressBasisSpy',
+      'vsQqq1y', 'vsQqq3y', 'vsQqq5y', 'vsQqq10y', 'beta1yQqq', 'corr1yQqq', 'upCapture3yQqq', 'downCapture3yQqq', 'relStrength3mQqq', 'stressReturnQqq', 'stressBasisQqq', 'benchmarkAsOf'];
+    const rangeless = (row: JsonRecord) => ({ ...row, metrics: Object.fromEntries(Object.entries(record(row.metrics)).filter(([k]) => !RANGE_KEYS.includes(k) && !SWING_KEYS.includes(k) && !DIVIDEND_KEYS.includes(k) && !BENCHMARK_KEYS.includes(k))) });
     for (const fund of afterIndex.funds) expect(Object.keys(record(fund.metrics))).toEqual(expect.arrayContaining(RANGE_KEYS));
-    for (const fund of afterIndex.funds) expect(Object.keys(record(fund.metrics)).slice(-17, -8)).toEqual(SWING_KEYS);
-    for (const fund of afterIndex.funds) expect(Object.keys(record(fund.metrics)).slice(-8, -2)).toEqual(DIVIDEND_KEYS);
-    expect(calls.filter(url => /chart\/[A-Z]+\?period1=0&period2=\d+&interval=1d&includePrePost=false/.test(url)).map(url => /chart\/([A-Z]+)/.exec(url)?.[1]).sort()).toEqual(['ASHR', 'DBEF', 'HYLB']);
+    for (const fund of afterIndex.funds) expect(Object.keys(record(fund.metrics)).slice(-51, -42)).toEqual(SWING_KEYS);
+    for (const fund of afterIndex.funds) expect(Object.keys(record(fund.metrics)).slice(-42, -34)).toEqual(DIVIDEND_KEYS);
+    for (const fund of afterIndex.funds) expect(Object.keys(record(fund.metrics)).slice(-34, -2)).toEqual(BENCHMARK_KEYS);
+    expect(calls.filter(url => /chart\/[A-Z]+\?period1=0&period2=\d+&interval=1d&includePrePost=false/.test(url)).map(url => /chart\/([A-Z]+)/.exec(url)?.[1]).sort()).toEqual(['ASHR', 'DBEF', 'HYLB', 'QQQ', 'SPY']);
+    // one request per fund feeds swing, dividends and benchmark; SPY and QQQ are read once more as the benchmarks
     const ashr = record((await rowOf(root, 'ASHR')).metrics);
     // the dividend keys come from the same request (dividends block): 0.25 in the last year, the rest null
-    expect(DIVIDEND_KEYS.map(key => ashr[key])).toEqual([0.25, null, null, null, null, null]);
+    expect(DIVIDEND_KEYS.map(key => ashr[key])).toEqual([0.25, null, null, null, null, null, 1, null]);
+    // the mock gives SPY and QQQ the same 300 bars as every fund: the fund equals both benchmarks, under a year of calendar history (horizons null), beta and correlation 1
+    expect([ashr.perf1y, ashr.vsSpy1y, ashr.beta1ySpy, ashr.corr1yQqq, ashr.relStrength3mSpy, ashr.stressReturnSpy, typeof ashr.benchmarkAsOf]).toEqual([null, null, 1, 1, 0, null, 'string']);
     expect([ashr.athBasis, ashr.athPrice, ashr.high60d, ashr.volatility1y]).toEqual(['daily closes since 2025-11-30', 52.99, 52.99, expect.any(Number)]);
     const selected = new Set(result.selected);
     for (const row of beforeIndex.funds) if (!selected.has(row.ticker)) expect(rangeless(afterIndex.funds.find((fund: JsonRecord) => fund.ticker === row.ticker))).toEqual(rangeless(row));
@@ -790,8 +798,8 @@ describe('pipeline 3', () => {
       ['EURUSD', '', '', '', 'NEWX test forward', '-0.01', '-1', '10', '-10', '', '', 'Forward']]);
     const first = await quietRun(root, { TICKERS: 'NEWX NEWY' }, override(withNew, url => url.includes('/NEWX/Securities'), () => new Response(fractions)));
     expect([first.failures, first.outcomes.map(row => row.status), String(first.outcomes.find(row => row.ticker === 'NEWX')?.reason).startsWith('holdings guard:')]).toEqual([2, ['failed', 'failed'], true]);
-    // the catalog-only row as written: the range-52w, swing and dividends blocks add their seven, nine and six keys (all null without dataFile)
-    const keys = Object.keys(record((await withDividends(root, await withSwing(root, await withRange52w(root, [indexRowForCatalog(parseSitemap(SITEMAP)[0])])), {}))[0].metrics));
+    // the catalog-only row as written: the range-52w, swing, dividends and benchmark blocks add their keys (all null without dataFile)
+    const keys = Object.keys(record((await withBenchmark(root, await withDividends(root, await withSwing(root, await withRange52w(root, [indexRowForCatalog(parseSitemap(SITEMAP)[0])])), {}), {}))[0].metrics));
     for (const ticker of ['NEWX', 'NEWY']) {
       const row = await rowOf(root, ticker);
       expect([row.dataFile, row.holdings, Object.keys(record(row.metrics)), String(record(row.metrics).returnsBasis).length > 0]).toEqual([null, 0, keys, true]);
