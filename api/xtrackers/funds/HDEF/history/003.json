@@ -2,7 +2,7 @@
   "ticker": "HDEF",
   "page": 3,
   "pageSize": 1000,
-  "totalRows": 2833,
+  "totalRows": 2836,
   "headers": [
     "Date",
     "NAV",
@@ -5007,6 +5007,24 @@
       "NAV": "34.61",
       "Market Price": "34.619999",
       "Premium/Discount": "0.0289"
+    },
+    {
+      "Date": "2026-11-16",
+      "NAV": "34.59",
+      "Market Price": "34.470001",
+      "Premium/Discount": "-0.3469"
+    },
+    {
+      "Date": "2026-11-17",
+      "NAV": "34.15",
+      "Market Price": "34.09",
+      "Premium/Discount": "-0.1757"
+    },
+    {
+      "Date": "2026-11-18",
+      "NAV": "33.67",
+      "Market Price": "33.650002",
+      "Premium/Discount": "-0.0594"
     }
   ]
 }
