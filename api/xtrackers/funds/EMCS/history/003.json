@@ -1,0 +1,26 @@
+{
+  "ticker": "EMCS",
+  "page": 3,
+  "pageSize": 1000,
+  "totalRows": 2002,
+  "headers": [
+    "Date",
+    "NAV",
+    "Market Price",
+    "Premium/Discount"
+  ],
+  "rows": [
+    {
+      "Date": "2026-11-19",
+      "NAV": "40.05",
+      "Market Price": "39.535",
+      "Premium/Discount": "-1.2859"
+    },
+    {
+      "Date": "2026-11-20",
+      "NAV": "",
+      "Market Price": "36.986099",
+      "Premium/Discount": ""
+    }
+  ]
+}

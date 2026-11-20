@@ -2,7 +2,7 @@
   "ticker": "DBEF",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3886,
+  "totalRows": 3888,
   "headers": [
     "Date",
     "NAV",
@@ -5325,6 +5325,18 @@
       "NAV": "54.19",
       "Market Price": "54.150002",
       "Premium/Discount": "-0.0738"
+    },
+    {
+      "Date": "2026-11-19",
+      "NAV": "53.85",
+      "Market Price": "53.41",
+      "Premium/Discount": "-0.8171"
+    },
+    {
+      "Date": "2026-11-20",
+      "NAV": "",
+      "Market Price": "51.860001",
+      "Premium/Discount": ""
     }
   ]
 }
