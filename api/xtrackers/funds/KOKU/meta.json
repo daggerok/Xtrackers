@@ -8,18 +8,18 @@
   "terValue": 0.09,
   "terGross": "0.09%",
   "terGrossValue": 0.09,
-  "nav": "$124.92",
-  "navValue": 124.92,
-  "aum": "$749,503,211",
-  "aumValue": 749503211,
-  "asOfDate": "2026-11-19",
+  "nav": "$125.45",
+  "navValue": 125.45,
+  "aum": "$752,725,719",
+  "aumValue": 752725719,
+  "asOfDate": "2026-11-23",
   "inceptionDate": "2020-04-08",
   "exchange": "NYSE",
-  "closePrice": "$124.73",
-  "closePriceAsOfDate": "2026-11-19",
-  "premiumDiscount": "-0.15%",
-  "premiumDiscountValue": -0.1537,
-  "premiumDiscountAsOfDate": "2026-11-19",
+  "closePrice": "$125.06",
+  "closePriceAsOfDate": "2026-11-24",
+  "premiumDiscount": "0.88%",
+  "premiumDiscountValue": 0.8768,
+  "premiumDiscountAsOfDate": "2026-11-23",
   "cusip": "233051135",
   "isin": "US2330511351",
   "distributions": {
@@ -112,11 +112,11 @@
     "tr5y": 67.37,
     "tr10y": null,
     "siAnn": 17.77,
-    "dividendYield": 0.98,
-    "dividendYieldText": "0.98%",
+    "dividendYield": 0.97,
+    "dividendYieldText": "0.97%",
     "dividendYieldBasis": "official-distribution-rate",
-    "secYield": 1.43,
-    "secYieldText": "1.43%",
+    "secYield": 1.4,
+    "secYieldText": "1.40%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
     "performanceAsOf": "2026-10-30"
   },
@@ -129,8 +129,8 @@
       "holdings/005.json"
     ],
     "pageSize": 250,
-    "totalRows": 1090,
-    "asOfDate": "2026-11-19",
+    "totalRows": 1091,
+    "asOfDate": "2026-11-23",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/KOKU/Securities"
   },
   "history": {
@@ -139,11 +139,11 @@
       "history/002.json"
     ],
     "pageSize": 1000,
-    "totalRows": 1665,
-    "asOfDate": "2026-11-19",
+    "totalRows": 1668,
+    "asOfDate": "2026-11-24",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/KOKU/Performance + https://query1.finance.yahoo.com/v8/finance/chart/KOKU"
   },
-  "generatedAt": "2026-11-20T22:34:14.678Z",
+  "generatedAt": "2026-11-25T06:04:41.097Z",
   "netTerValue": 0.09,
   "source": {
     "provider": "Xtrackers (DWS)",
@@ -163,12 +163,12 @@
     "indexTicker": "NDDUKOK"
   },
   "yields": {
-    "dividendYield": 0.98,
-    "dividendYieldText": "0.98%",
+    "dividendYield": 0.97,
+    "dividendYieldText": "0.97%",
     "dividendYieldKind": "official indicated distribution rate / NAV",
-    "distributionRate": 0.98,
-    "secYield": 1.43,
-    "secYieldText": "1.43%",
+    "distributionRate": 0.97,
+    "secYield": 1.4,
+    "secYieldText": "1.40%",
     "secYieldKind": "official DWS 30-day SEC yield"
   },
   "distributionEvents": [

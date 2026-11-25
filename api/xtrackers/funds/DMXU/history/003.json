@@ -2,7 +2,7 @@
   "ticker": "DMXU",
   "page": 3,
   "pageSize": 1000,
-  "totalRows": 2065,
+  "totalRows": 2067,
   "headers": [
     "Date",
     "NAV",
@@ -396,8 +396,20 @@
     },
     {
       "Date": "2026-11-20",
+      "NAV": "34.69",
+      "Market Price": "33.874001",
+      "Premium/Discount": "-2.3523"
+    },
+    {
+      "Date": "2026-11-23",
+      "NAV": "34.86",
+      "Market Price": "34.923",
+      "Premium/Discount": "0.1807"
+    },
+    {
+      "Date": "2026-11-24",
       "NAV": "",
-      "Market Price": "33.874401",
+      "Market Price": "34.994999",
       "Premium/Discount": ""
     }
   ]

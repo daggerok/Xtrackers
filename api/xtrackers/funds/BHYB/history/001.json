@@ -2,7 +2,7 @@
   "ticker": "BHYB",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 771,
+  "totalRows": 773,
   "headers": [
     "Date",
     "NAV",
@@ -4632,8 +4632,20 @@
     },
     {
       "Date": "2026-11-20",
+      "NAV": "52.1",
+      "Market Price": "52.069",
+      "Premium/Discount": "-0.0595"
+    },
+    {
+      "Date": "2026-11-23",
+      "NAV": "52.26",
+      "Market Price": "52.227001",
+      "Premium/Discount": "-0.0631"
+    },
+    {
+      "Date": "2026-11-24",
       "NAV": "",
-      "Market Price": "52.068699",
+      "Market Price": "52.223999",
       "Premium/Discount": ""
     }
   ]

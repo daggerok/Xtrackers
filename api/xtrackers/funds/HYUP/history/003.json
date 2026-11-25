@@ -2,7 +2,7 @@
   "ticker": "HYUP",
   "page": 3,
   "pageSize": 1000,
-  "totalRows": 2229,
+  "totalRows": 2231,
   "headers": [
     "Date",
     "NAV",
@@ -1380,8 +1380,20 @@
     },
     {
       "Date": "2026-11-20",
+      "NAV": "38.68",
+      "Market Price": "38.620998",
+      "Premium/Discount": "-0.1525"
+    },
+    {
+      "Date": "2026-11-23",
+      "NAV": "38.87",
+      "Market Price": "38.804001",
+      "Premium/Discount": "-0.1698"
+    },
+    {
+      "Date": "2026-11-24",
       "NAV": "",
-      "Market Price": "38.621399",
+      "Market Price": "38.715",
       "Premium/Discount": ""
     }
   ]

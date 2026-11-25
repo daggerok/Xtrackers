@@ -2,7 +2,7 @@
   "ticker": "MIDE",
   "page": 2,
   "pageSize": 1000,
-  "totalRows": 1444,
+  "totalRows": 1447,
   "headers": [
     "Date",
     "NAV",
@@ -2673,6 +2673,24 @@
       "NAV": "35.79",
       "Market Price": "35.830002",
       "Premium/Discount": "0.1118"
+    },
+    {
+      "Date": "2026-11-20",
+      "NAV": "34.89",
+      "Market Price": "34.861",
+      "Premium/Discount": "-0.0831"
+    },
+    {
+      "Date": "2026-11-23",
+      "NAV": "36",
+      "Market Price": "36.037998",
+      "Premium/Discount": "0.1056"
+    },
+    {
+      "Date": "2026-11-24",
+      "NAV": "",
+      "Market Price": "36.013",
+      "Premium/Discount": ""
     }
   ]
 }

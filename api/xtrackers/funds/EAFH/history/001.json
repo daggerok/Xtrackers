@@ -2,7 +2,7 @@
   "ticker": "EAFH",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 38,
+  "totalRows": 40,
   "headers": [
     "Date",
     "NAV",
@@ -234,8 +234,20 @@
     },
     {
       "Date": "2026-11-20",
-      "NAV": "",
+      "NAV": "23.59",
       "Market Price": "24.16",
+      "Premium/Discount": "2.4163"
+    },
+    {
+      "Date": "2026-11-23",
+      "NAV": "23.83",
+      "Market Price": "24.33",
+      "Premium/Discount": "2.0982"
+    },
+    {
+      "Date": "2026-11-24",
+      "NAV": "",
+      "Market Price": "24.32",
       "Premium/Discount": ""
     }
   ]
