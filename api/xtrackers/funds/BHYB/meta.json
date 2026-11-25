@@ -15,8 +15,8 @@
   "asOfDate": "2026-11-24",
   "inceptionDate": "2023-10-27",
   "exchange": "Cboe",
-  "closePrice": "$52.22",
-  "closePriceAsOfDate": "2026-11-24",
+  "closePrice": "$52.25",
+  "closePriceAsOfDate": "2026-11-25",
   "premiumDiscount": "0.14%",
   "premiumDiscountValue": 0.1419,
   "premiumDiscountAsOfDate": "2026-11-24",
@@ -139,11 +139,11 @@
       "history/001.json"
     ],
     "pageSize": 1000,
-    "totalRows": 773,
-    "asOfDate": "2026-11-24",
+    "totalRows": 774,
+    "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/BHYB/Performance + https://query1.finance.yahoo.com/v8/finance/chart/BHYB"
   },
-  "generatedAt": "2026-11-25T07:28:37.200Z",
+  "generatedAt": "2026-11-25T23:15:20.373Z",
   "netTerValue": 0.2,
   "source": {
     "provider": "Xtrackers (DWS)",

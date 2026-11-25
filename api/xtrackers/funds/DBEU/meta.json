@@ -15,8 +15,8 @@
   "asOfDate": "2026-11-24",
   "inceptionDate": "2013-10-01",
   "exchange": "NYSE",
-  "closePrice": "$53.73",
-  "closePriceAsOfDate": "2026-11-24",
+  "closePrice": "$53.55",
+  "closePriceAsOfDate": "2026-11-25",
   "premiumDiscount": "1.02%",
   "premiumDiscountValue": 1.0152,
   "premiumDiscountAsOfDate": "2026-11-24",
@@ -138,11 +138,11 @@
       "history/004.json"
     ],
     "pageSize": 1000,
-    "totalRows": 3309,
-    "asOfDate": "2026-11-24",
+    "totalRows": 3310,
+    "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/DBEU/Performance + https://query1.finance.yahoo.com/v8/finance/chart/DBEU"
   },
-  "generatedAt": "2026-11-25T07:28:58.243Z",
+  "generatedAt": "2026-11-25T23:15:38.437Z",
   "netTerValue": 0.46,
   "source": {
     "provider": "Xtrackers (DWS)",

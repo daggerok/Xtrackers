@@ -15,8 +15,8 @@
   "asOfDate": "2026-11-24",
   "inceptionDate": "2023-07-13",
   "exchange": "NASDAQ",
-  "closePrice": "$61.85",
-  "closePriceAsOfDate": "2026-11-24",
+  "closePrice": "$60.86",
+  "closePriceAsOfDate": "2026-11-25",
   "premiumDiscount": "-1.65%",
   "premiumDiscountValue": -1.6537,
   "premiumDiscountAsOfDate": "2026-11-24",
@@ -134,11 +134,11 @@
       "history/001.json"
     ],
     "pageSize": 1000,
-    "totalRows": 848,
-    "asOfDate": "2026-11-24",
+    "totalRows": 849,
+    "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/CHPS/Performance + https://query1.finance.yahoo.com/v8/finance/chart/CHPS"
   },
-  "generatedAt": "2026-11-25T07:28:38.975Z",
+  "generatedAt": "2026-11-25T23:15:17.369Z",
   "netTerValue": 0.15,
   "source": {
     "provider": "Xtrackers (DWS)",

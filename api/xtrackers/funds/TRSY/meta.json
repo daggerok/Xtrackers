@@ -16,7 +16,7 @@
   "inceptionDate": "2024-10-09",
   "exchange": "Cboe",
   "closePrice": "$30.20",
-  "closePriceAsOfDate": "2026-11-24",
+  "closePriceAsOfDate": "2026-11-25",
   "premiumDiscount": "0.02%",
   "premiumDiscountValue": 0.0166,
   "premiumDiscountAsOfDate": "2026-11-24",
@@ -134,11 +134,11 @@
       "history/001.json"
     ],
     "pageSize": 1000,
-    "totalRows": 534,
-    "asOfDate": "2026-11-24",
+    "totalRows": 535,
+    "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/TRSY/Performance + https://query1.finance.yahoo.com/v8/finance/chart/TRSY"
   },
-  "generatedAt": "2026-11-25T07:30:37.403Z",
+  "generatedAt": "2026-11-25T23:17:16.112Z",
   "netTerValue": 0.06,
   "source": {
     "provider": "Xtrackers (DWS)",

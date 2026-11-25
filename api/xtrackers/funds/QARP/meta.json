@@ -15,8 +15,8 @@
   "asOfDate": "2026-11-24",
   "inceptionDate": "2018-04-05",
   "exchange": "NYSE",
-  "closePrice": "$67.17",
-  "closePriceAsOfDate": "2026-11-24",
+  "closePrice": "$67.30",
+  "closePriceAsOfDate": "2026-11-25",
   "premiumDiscount": "-0.10%",
   "premiumDiscountValue": -0.1041,
   "premiumDiscountAsOfDate": "2026-11-24",
@@ -137,11 +137,11 @@
       "history/003.json"
     ],
     "pageSize": 1000,
-    "totalRows": 2174,
-    "asOfDate": "2026-11-24",
+    "totalRows": 2175,
+    "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/QARP/Performance + https://query1.finance.yahoo.com/v8/finance/chart/QARP"
   },
-  "generatedAt": "2026-11-25T07:30:15.182Z",
+  "generatedAt": "2026-11-25T23:16:52.143Z",
   "netTerValue": 0.19,
   "source": {
     "provider": "Xtrackers (DWS)",

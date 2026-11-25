@@ -15,8 +15,8 @@
   "asOfDate": "2026-11-24",
   "inceptionDate": "2011-06-09",
   "exchange": "NYSE",
-  "closePrice": "$33.26",
-  "closePriceAsOfDate": "2026-11-24",
+  "closePrice": "$33.14",
+  "closePriceAsOfDate": "2026-11-25",
   "premiumDiscount": "-1.51%",
   "premiumDiscountValue": -1.5102,
   "premiumDiscountAsOfDate": "2026-11-24",
@@ -141,11 +141,11 @@
       "history/004.json"
     ],
     "pageSize": 1000,
-    "totalRows": 3890,
-    "asOfDate": "2026-11-24",
+    "totalRows": 3891,
+    "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/DBEM/Performance + https://query1.finance.yahoo.com/v8/finance/chart/DBEM"
   },
-  "generatedAt": "2026-11-25T07:28:56.797Z",
+  "generatedAt": "2026-11-25T23:15:36.949Z",
   "netTerValue": 0.66,
   "source": {
     "provider": "Xtrackers (DWS)",

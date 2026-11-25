@@ -2,7 +2,7 @@
   "ticker": "SPXD",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 339,
+  "totalRows": 340,
   "headers": [
     "Date",
     "NAV",
@@ -2043,6 +2043,12 @@
       "NAV": "29.56",
       "Market Price": "29.570999",
       "Premium/Discount": "0.0372"
+    },
+    {
+      "Date": "2026-11-25",
+      "NAV": "",
+      "Market Price": "29.8421",
+      "Premium/Discount": ""
     }
   ]
 }

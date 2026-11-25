@@ -15,8 +15,8 @@
   "asOfDate": "2026-11-24",
   "inceptionDate": "2015-08-12",
   "exchange": "NYSE",
-  "closePrice": "$33.64",
-  "closePriceAsOfDate": "2026-11-24",
+  "closePrice": "$33.96",
+  "closePriceAsOfDate": "2026-11-25",
   "premiumDiscount": "0.57%",
   "premiumDiscountValue": 0.568,
   "premiumDiscountAsOfDate": "2026-11-24",
@@ -136,11 +136,11 @@
       "history/003.json"
     ],
     "pageSize": 1000,
-    "totalRows": 2840,
-    "asOfDate": "2026-11-24",
+    "totalRows": 2841,
+    "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/HDEF/Performance + https://query1.finance.yahoo.com/v8/finance/chart/HDEF"
   },
-  "generatedAt": "2026-11-25T07:29:37.498Z",
+  "generatedAt": "2026-11-25T23:16:16.131Z",
   "netTerValue": 0.09,
   "source": {
     "provider": "Xtrackers (DWS)",

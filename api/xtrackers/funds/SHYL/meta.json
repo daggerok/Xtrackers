@@ -15,8 +15,8 @@
   "asOfDate": "2026-11-24",
   "inceptionDate": "2018-01-10",
   "exchange": "NYSE",
-  "closePrice": "$42.42",
-  "closePriceAsOfDate": "2026-11-24",
+  "closePrice": "$42.44",
+  "closePriceAsOfDate": "2026-11-25",
   "premiumDiscount": "0.01%",
   "premiumDiscountValue": 0.0094,
   "premiumDiscountAsOfDate": "2026-11-24",
@@ -139,11 +139,11 @@
       "history/003.json"
     ],
     "pageSize": 1000,
-    "totalRows": 2232,
-    "asOfDate": "2026-11-24",
+    "totalRows": 2233,
+    "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/SHYL/Performance + https://query1.finance.yahoo.com/v8/finance/chart/SHYL"
   },
-  "generatedAt": "2026-11-25T07:30:21.530Z",
+  "generatedAt": "2026-11-25T23:16:59.644Z",
   "netTerValue": 0.2,
   "source": {
     "provider": "Xtrackers (DWS)",

@@ -2,7 +2,7 @@
   "ticker": "HYLB",
   "page": 3,
   "pageSize": 1000,
-  "totalRows": 2506,
+  "totalRows": 2507,
   "headers": [
     "Date",
     "NAV",
@@ -3045,6 +3045,12 @@
       "NAV": "34.83",
       "Market Price": "34.84",
       "Premium/Discount": "0.0287"
+    },
+    {
+      "Date": "2026-11-25",
+      "NAV": "",
+      "Market Price": "34.849998",
+      "Premium/Discount": ""
     }
   ]
 }

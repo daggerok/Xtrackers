@@ -15,8 +15,8 @@
   "asOfDate": "2026-11-24",
   "inceptionDate": "2023-07-13",
   "exchange": "NASDAQ",
-  "closePrice": "$44.69",
-  "closePriceAsOfDate": "2026-11-24",
+  "closePrice": "$45.34",
+  "closePriceAsOfDate": "2026-11-25",
   "premiumDiscount": "0.41%",
   "premiumDiscountValue": 0.4134,
   "premiumDiscountAsOfDate": "2026-11-24",
@@ -134,11 +134,11 @@
       "history/001.json"
     ],
     "pageSize": 1000,
-    "totalRows": 848,
-    "asOfDate": "2026-11-24",
+    "totalRows": 849,
+    "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/PSWD/Performance + https://query1.finance.yahoo.com/v8/finance/chart/PSWD"
   },
-  "generatedAt": "2026-11-25T07:30:07.108Z",
+  "generatedAt": "2026-11-25T23:16:45.301Z",
   "netTerValue": 0.2,
   "source": {
     "provider": "Xtrackers (DWS)",

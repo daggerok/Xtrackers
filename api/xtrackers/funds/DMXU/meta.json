@@ -15,8 +15,8 @@
   "asOfDate": "2026-11-24",
   "inceptionDate": "2018-09-06",
   "exchange": "NYSE",
-  "closePrice": "$34.99",
-  "closePriceAsOfDate": "2026-11-24",
+  "closePrice": "$35.09",
+  "closePriceAsOfDate": "2026-11-25",
   "premiumDiscount": "-0.78%",
   "premiumDiscountValue": -0.7797,
   "premiumDiscountAsOfDate": "2026-11-24",
@@ -138,11 +138,11 @@
       "history/003.json"
     ],
     "pageSize": 1000,
-    "totalRows": 2067,
-    "asOfDate": "2026-11-24",
+    "totalRows": 2068,
+    "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/DMXU/Performance + https://query1.finance.yahoo.com/v8/finance/chart/DMXU"
   },
-  "generatedAt": "2026-11-25T07:29:20.853Z",
+  "generatedAt": "2026-11-25T23:15:58.106Z",
   "netTerValue": 0.03,
   "source": {
     "provider": "Xtrackers (DWS)",

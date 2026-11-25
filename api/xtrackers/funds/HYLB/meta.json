@@ -15,8 +15,8 @@
   "asOfDate": "2026-11-24",
   "inceptionDate": "2016-12-07",
   "exchange": "NYSE",
-  "closePrice": "$34.84",
-  "closePriceAsOfDate": "2026-11-24",
+  "closePrice": "$34.85",
+  "closePriceAsOfDate": "2026-11-25",
   "premiumDiscount": "0.03%",
   "premiumDiscountValue": 0.0287,
   "premiumDiscountAsOfDate": "2026-11-24",
@@ -141,11 +141,11 @@
       "history/003.json"
     ],
     "pageSize": 1000,
-    "totalRows": 2506,
-    "asOfDate": "2026-11-24",
+    "totalRows": 2507,
+    "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/HYLB/Performance + https://query1.finance.yahoo.com/v8/finance/chart/HYLB"
   },
-  "generatedAt": "2026-11-25T07:29:46.013Z",
+  "generatedAt": "2026-11-25T23:16:23.666Z",
   "netTerValue": 0.05,
   "source": {
     "provider": "Xtrackers (DWS)",

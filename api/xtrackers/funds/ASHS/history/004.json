@@ -2,7 +2,7 @@
   "ticker": "ASHS",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3149,
+  "totalRows": 3150,
   "headers": [
     "Date",
     "NAV",
@@ -903,6 +903,12 @@
       "NAV": "33.69",
       "Market Price": "33.360001",
       "Premium/Discount": "-0.9795"
+    },
+    {
+      "Date": "2026-11-25",
+      "NAV": "",
+      "Market Price": "32.689999",
+      "Premium/Discount": ""
     }
   ]
 }

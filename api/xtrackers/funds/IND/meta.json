@@ -15,8 +15,8 @@
   "asOfDate": "2026-11-24",
   "inceptionDate": "2025-11-25",
   "exchange": "NASDAQ",
-  "closePrice": "$24.32",
-  "closePriceAsOfDate": "2026-11-24",
+  "closePrice": "$24.55",
+  "closePriceAsOfDate": "2026-11-25",
   "premiumDiscount": "1.40%",
   "premiumDiscountValue": 1.397,
   "premiumDiscountAsOfDate": "2026-11-24",
@@ -100,11 +100,11 @@
       "history/001.json"
     ],
     "pageSize": 1000,
-    "totalRows": 252,
-    "asOfDate": "2026-11-24",
+    "totalRows": 253,
+    "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/IND/Performance + https://query1.finance.yahoo.com/v8/finance/chart/IND"
   },
-  "generatedAt": "2026-11-25T07:29:52.514Z",
+  "generatedAt": "2026-11-25T23:16:31.074Z",
   "netTerValue": 0.19,
   "source": {
     "provider": "Xtrackers (DWS)",

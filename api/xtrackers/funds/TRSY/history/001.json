@@ -2,7 +2,7 @@
   "ticker": "TRSY",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 534,
+  "totalRows": 535,
   "headers": [
     "Date",
     "NAV",
@@ -3213,6 +3213,12 @@
       "NAV": "30.19",
       "Market Price": "30.195",
       "Premium/Discount": "0.0166"
+    },
+    {
+      "Date": "2026-11-25",
+      "NAV": "",
+      "Market Price": "30.195",
+      "Premium/Discount": ""
     }
   ]
 }

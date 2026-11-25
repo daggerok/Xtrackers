@@ -2,7 +2,7 @@
   "ticker": "RVNU",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3392,
+  "totalRows": 3393,
   "headers": [
     "Date",
     "NAV",
@@ -2361,6 +2361,12 @@
       "NAV": "23.96",
       "Market Price": "23.629999",
       "Premium/Discount": "-1.3773"
+    },
+    {
+      "Date": "2026-11-25",
+      "NAV": "",
+      "Market Price": "23.799",
+      "Premium/Discount": ""
     }
   ]
 }

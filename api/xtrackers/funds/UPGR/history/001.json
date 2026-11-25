@@ -2,7 +2,7 @@
   "ticker": "UPGR",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 848,
+  "totalRows": 849,
   "headers": [
     "Date",
     "NAV",
@@ -5097,6 +5097,12 @@
       "NAV": "19.11",
       "Market Price": "19.112",
       "Premium/Discount": "0.0105"
+    },
+    {
+      "Date": "2026-11-25",
+      "NAV": "",
+      "Market Price": "19.5158",
+      "Premium/Discount": ""
     }
   ]
 }

@@ -15,8 +15,8 @@
   "asOfDate": "2026-11-24",
   "inceptionDate": "2023-11-16",
   "exchange": "NYSE",
-  "closePrice": "$37.59",
-  "closePriceAsOfDate": "2026-11-24",
+  "closePrice": "$37.53",
+  "closePriceAsOfDate": "2026-11-25",
   "premiumDiscount": "0.05%",
   "premiumDiscountValue": 0.0453,
   "premiumDiscountAsOfDate": "2026-11-24",
@@ -134,11 +134,11 @@
       "history/001.json"
     ],
     "pageSize": 1000,
-    "totalRows": 759,
-    "asOfDate": "2026-11-24",
+    "totalRows": 760,
+    "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/CRTC/Performance + https://query1.finance.yahoo.com/v8/finance/chart/CRTC"
   },
-  "generatedAt": "2026-11-25T07:28:44.004Z",
+  "generatedAt": "2026-11-25T23:15:24.247Z",
   "netTerValue": 0.35,
   "source": {
     "provider": "Xtrackers (DWS)",
