@@ -10,16 +10,16 @@
   "terGrossValue": 0.15,
   "nav": "$36.00",
   "navValue": 36,
-  "aum": "$3,599,948",
-  "aumValue": 3599948,
-  "asOfDate": "2026-11-23",
+  "aum": "$3,599,997",
+  "aumValue": 3599997,
+  "asOfDate": "2026-11-24",
   "inceptionDate": "2021-02-24",
   "exchange": "NYSE",
   "closePrice": "$36.01",
   "closePriceAsOfDate": "2026-11-24",
-  "premiumDiscount": "0.11%",
-  "premiumDiscountValue": 0.1056,
-  "premiumDiscountAsOfDate": "2026-11-23",
+  "premiumDiscount": "0.04%",
+  "premiumDiscountValue": 0.0361,
+  "premiumDiscountAsOfDate": "2026-11-24",
   "cusip": "233051127",
   "isin": "US2330511278",
   "distributions": {
@@ -127,7 +127,7 @@
     ],
     "pageSize": 250,
     "totalRows": 266,
-    "asOfDate": "2026-11-23",
+    "asOfDate": "2026-11-24",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/MIDE/Securities"
   },
   "history": {
@@ -140,7 +140,7 @@
     "asOfDate": "2026-11-24",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/MIDE/Performance + https://query1.finance.yahoo.com/v8/finance/chart/MIDE"
   },
-  "generatedAt": "2026-11-25T06:04:46.364Z",
+  "generatedAt": "2026-11-25T07:29:59.619Z",
   "netTerValue": 0.15,
   "source": {
     "provider": "Xtrackers (DWS)",
