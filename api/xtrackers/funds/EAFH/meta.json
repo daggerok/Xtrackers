@@ -8,18 +8,18 @@
   "terValue": 0.2,
   "terGross": "0.20%",
   "terGrossValue": 0.2,
-  "nav": "$23.95",
-  "navValue": 23.95,
-  "aum": "$4,789,196",
-  "aumValue": 4789196,
-  "asOfDate": "2026-11-24",
+  "nav": "$23.74",
+  "navValue": 23.74,
+  "aum": "$4,747,300",
+  "aumValue": 4747300,
+  "asOfDate": "2026-11-25",
   "inceptionDate": "2026-10-01",
   "exchange": "Cboe",
   "closePrice": "$24.17",
   "closePriceAsOfDate": "2026-11-25",
-  "premiumDiscount": "1.54%",
-  "premiumDiscountValue": 1.5449,
-  "premiumDiscountAsOfDate": "2026-11-24",
+  "premiumDiscount": "1.81%",
+  "premiumDiscountValue": 1.8113,
+  "premiumDiscountAsOfDate": "2026-11-25",
   "cusip": "23306X753",
   "isin": "US23306X7536",
   "distributions": {
@@ -66,8 +66,8 @@
     "dividendYield": null,
     "dividendYieldText": "—",
     "dividendYieldBasis": null,
-    "secYield": 2.32,
-    "secYieldText": "2.32%",
+    "secYield": 2.35,
+    "secYieldText": "2.35%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
     "performanceAsOf": null
   },
@@ -79,7 +79,7 @@
     ],
     "pageSize": 250,
     "totalRows": 647,
-    "asOfDate": "2026-11-24",
+    "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/EAFH/Securities"
   },
   "history": {
@@ -91,7 +91,7 @@
     "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/EAFH/Performance + https://query1.finance.yahoo.com/v8/finance/chart/EAFH"
   },
-  "generatedAt": "2026-11-26T06:07:37.284Z",
+  "generatedAt": "2026-11-26T09:31:33.702Z",
   "netTerValue": 0.2,
   "source": {
     "provider": "Xtrackers (DWS)",
@@ -115,8 +115,8 @@
     "dividendYieldText": "—",
     "dividendYieldKind": "latest positive distribution x payments per year / NAV",
     "distributionRate": null,
-    "secYield": 2.32,
-    "secYieldText": "2.32%",
+    "secYield": 2.35,
+    "secYieldText": "2.35%",
     "secYieldKind": "official DWS 30-day SEC yield"
   },
   "distributionEvents": []

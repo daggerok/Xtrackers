@@ -10,16 +10,16 @@
   "terGrossValue": 0.05,
   "nav": "$34.83",
   "navValue": 34.83,
-  "aum": "$3,228,092,561",
-  "aumValue": 3228092561,
-  "asOfDate": "2026-11-24",
+  "aum": "$3,259,530,574",
+  "aumValue": 3259530574,
+  "asOfDate": "2026-11-25",
   "inceptionDate": "2016-12-07",
   "exchange": "NYSE",
   "closePrice": "$34.85",
   "closePriceAsOfDate": "2026-11-25",
-  "premiumDiscount": "0.03%",
-  "premiumDiscountValue": 0.0287,
-  "premiumDiscountAsOfDate": "2026-11-24",
+  "premiumDiscount": "0.06%",
+  "premiumDiscountValue": 0.0574,
+  "premiumDiscountAsOfDate": "2026-11-25",
   "cusip": "233051432",
   "isin": "US2330514322",
   "distributions": {
@@ -131,7 +131,7 @@
     ],
     "pageSize": 250,
     "totalRows": 1285,
-    "asOfDate": "2026-11-24",
+    "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/HYLB/Securities"
   },
   "history": {
@@ -145,7 +145,7 @@
     "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/HYLB/Performance + https://query1.finance.yahoo.com/v8/finance/chart/HYLB"
   },
-  "generatedAt": "2026-11-25T23:16:23.666Z",
+  "generatedAt": "2026-11-26T09:31:57.758Z",
   "netTerValue": 0.05,
   "source": {
     "provider": "Xtrackers (DWS)",
