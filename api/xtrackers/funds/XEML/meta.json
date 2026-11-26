@@ -15,8 +15,8 @@
   "asOfDate": "2026-11-24",
   "inceptionDate": "2025-12-23",
   "exchange": "Cboe",
-  "closePrice": "$24.87",
-  "closePriceAsOfDate": "2026-11-24",
+  "closePrice": "$25.01",
+  "closePriceAsOfDate": "2026-11-25",
   "premiumDiscount": "0.76%",
   "premiumDiscountValue": 0.7577,
   "premiumDiscountAsOfDate": "2026-11-24",
@@ -98,11 +98,11 @@
       "history/001.json"
     ],
     "pageSize": 1000,
-    "totalRows": 233,
-    "asOfDate": "2026-11-24",
+    "totalRows": 234,
+    "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/XEML/Performance + https://query1.finance.yahoo.com/v8/finance/chart/XEML"
   },
-  "generatedAt": "2026-11-25T07:31:06.646Z",
+  "generatedAt": "2026-11-26T06:09:17.891Z",
   "netTerValue": 0.35,
   "source": {
     "provider": "Xtrackers (DWS)",

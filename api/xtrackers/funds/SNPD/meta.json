@@ -15,8 +15,8 @@
   "asOfDate": "2026-11-24",
   "inceptionDate": "2022-11-09",
   "exchange": "Cboe",
-  "closePrice": "$31.20",
-  "closePriceAsOfDate": "2026-11-24",
+  "closePrice": "$31.62",
+  "closePriceAsOfDate": "2026-11-25",
   "premiumDiscount": "0.02%",
   "premiumDiscountValue": 0.016,
   "premiumDiscountAsOfDate": "2026-11-24",
@@ -135,11 +135,11 @@
       "history/002.json"
     ],
     "pageSize": 1000,
-    "totalRows": 1015,
-    "asOfDate": "2026-11-24",
+    "totalRows": 1016,
+    "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/SNPD/Performance + https://query1.finance.yahoo.com/v8/finance/chart/SNPD"
   },
-  "generatedAt": "2026-11-25T07:30:22.494Z",
+  "generatedAt": "2026-11-26T06:08:38.869Z",
   "netTerValue": 0.15,
   "source": {
     "provider": "Xtrackers (DWS)",

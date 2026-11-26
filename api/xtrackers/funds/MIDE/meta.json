@@ -15,8 +15,8 @@
   "asOfDate": "2026-11-24",
   "inceptionDate": "2021-02-24",
   "exchange": "NYSE",
-  "closePrice": "$36.01",
-  "closePriceAsOfDate": "2026-11-24",
+  "closePrice": "$36.52",
+  "closePriceAsOfDate": "2026-11-25",
   "premiumDiscount": "0.04%",
   "premiumDiscountValue": 0.0361,
   "premiumDiscountAsOfDate": "2026-11-24",
@@ -136,11 +136,11 @@
       "history/002.json"
     ],
     "pageSize": 1000,
-    "totalRows": 1447,
-    "asOfDate": "2026-11-24",
+    "totalRows": 1448,
+    "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/MIDE/Performance + https://query1.finance.yahoo.com/v8/finance/chart/MIDE"
   },
-  "generatedAt": "2026-11-25T07:29:59.619Z",
+  "generatedAt": "2026-11-26T06:08:16.365Z",
   "netTerValue": 0.15,
   "source": {
     "provider": "Xtrackers (DWS)",

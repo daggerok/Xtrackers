@@ -15,8 +15,8 @@
   "asOfDate": "2026-11-24",
   "inceptionDate": "2020-04-08",
   "exchange": "NYSE",
-  "closePrice": "$125.06",
-  "closePriceAsOfDate": "2026-11-24",
+  "closePrice": "$125.08",
+  "closePriceAsOfDate": "2026-11-25",
   "premiumDiscount": "0.03%",
   "premiumDiscountValue": 0.0344,
   "premiumDiscountAsOfDate": "2026-11-24",
@@ -139,11 +139,11 @@
       "history/002.json"
     ],
     "pageSize": 1000,
-    "totalRows": 1668,
-    "asOfDate": "2026-11-24",
+    "totalRows": 1669,
+    "asOfDate": "2026-11-25",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/KOKU/Performance + https://query1.finance.yahoo.com/v8/finance/chart/KOKU"
   },
-  "generatedAt": "2026-11-25T07:29:58.770Z",
+  "generatedAt": "2026-11-26T06:08:10.368Z",
   "netTerValue": 0.09,
   "source": {
     "provider": "Xtrackers (DWS)",
