@@ -2,7 +2,7 @@
   "ticker": "ASHR",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3284,
+  "totalRows": 3285,
   "headers": [
     "Date",
     "NAV",
@@ -1713,6 +1713,12 @@
       "NAV": "29.33",
       "Market Price": "29.5",
       "Premium/Discount": "0.5796"
+    },
+    {
+      "Date": "2026-11-27",
+      "NAV": "",
+      "Market Price": "30.75",
+      "Premium/Discount": ""
     }
   ]
 }
