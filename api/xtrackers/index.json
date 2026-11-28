@@ -1,6 +1,6 @@
 {
   "provider": "Xtrackers (DWS)",
-  "generatedAt": "2026-11-28T08:57:27.309Z",
+  "generatedAt": "2026-11-28T13:09:50.265Z",
   "source": {
     "catalog": "https://etf.dws.com/en-us/etf-products/downloadxls/?query=%7B%22selectedTabIndex%22%3A1%2C%22totalReturnType%22%3A0%2C%22searchTerm%22%3A%22%22%2C%22filters%22%3A%5B%5D%7D",
     "catalogSource": "official US sitemap (catalog XLSX unavailable/empty)",
@@ -3658,7 +3658,7 @@
         "beta1yQqq": 0.06,
         "corr1yQqq": 0.25,
         "upCapture3yQqq": 15.95,
-        "downCapture3yQqq": 8.76,
+        "downCapture3yQqq": 8.75,
         "relStrength3mQqq": 5.8,
         "stressReturnQqq": 2.27,
         "stressBasisQqq": "QQQ -20% 2026-10-06 to 2026-11-20",
