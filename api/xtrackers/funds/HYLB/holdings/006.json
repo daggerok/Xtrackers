@@ -2,7 +2,7 @@
   "ticker": "HYLB",
   "page": 6,
   "pageSize": 250,
-  "totalRows": 1285,
+  "totalRows": 1284,
   "headers": [
     "Name",
     "Ticker",
@@ -14,28 +14,28 @@
   ],
   "rows": [
     {
-      "Name": "Iheartcommunications Inc 7.75 8/15/2030",
-      "Ticker": "-",
-      "Identifier": "45174HBM8",
-      "Weight": "0.02751602",
-      "Market Value": "910832.12",
-      "Shares Held": "1918000",
-      "Asset Category": "Fixed Income"
-    },
-    {
       "Name": "Goodyear Tire & Rubber Co 5.625 04/30/2033",
       "Ticker": "-",
       "Identifier": "382550BK6",
-      "Weight": "0.0256107",
-      "Market Value": "847762.52",
+      "Weight": "0.02552368",
+      "Market Value": "846220.87",
       "Shares Held": "1356000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "OI European Group BV 4.75 02/15/2030",
+      "Ticker": "-",
+      "Identifier": "67777LAD5",
+      "Weight": "0.02513968",
+      "Market Value": "833489.44",
+      "Shares Held": "1172000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Camelot Return Merger Sub Inc 8.75 08/01/2028",
       "Ticker": "-",
       "Identifier": "13323NAA0",
-      "Weight": "0.02486686",
+      "Weight": "0.02482752",
       "Market Value": "823140",
       "Shares Held": "2152000",
       "Asset Category": "Fixed Income"
@@ -44,62 +44,53 @@
       "Name": "BCPE Ulysses Merger Sub LLC 6.25 01/15/2029",
       "Ticker": "-",
       "Identifier": "05552BAA4",
-      "Weight": "0.02480298",
-      "Market Value": "821025.31",
+      "Weight": "0.02439013",
+      "Market Value": "808638.6",
       "Shares Held": "2132000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "OI European Group BV 4.75 02/15/2030",
-      "Ticker": "-",
-      "Identifier": "67777LAD5",
-      "Weight": "0.02437977",
-      "Market Value": "807016.46",
-      "Shares Held": "1172000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Ineos Quattro Finance 2 Plc 9.625 03/15/2029",
       "Ticker": "-",
       "Identifier": "45674GAB0",
-      "Weight": "0.02360029",
+      "Weight": "0.02356295",
       "Market Value": "781214",
       "Shares Held": "1148000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Fmc Corp 5.65 5/18/2033",
-      "Ticker": "-",
-      "Identifier": "302491AX3",
-      "Weight": "0.02300449",
-      "Market Value": "761491.95",
-      "Shares Held": "1514000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Tronox Inc 9.125 09/30/2030",
-      "Ticker": "-",
-      "Identifier": "897051AD0",
-      "Weight": "0.02282884",
-      "Market Value": "755677.49",
-      "Shares Held": "1161000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Virgin Media Finance Plc 5.00 07/15/2030",
       "Ticker": "-",
       "Identifier": "92769VAJ8",
-      "Weight": "0.02252768",
-      "Market Value": "745708.84",
+      "Weight": "0.02310015",
+      "Market Value": "765870.38",
       "Shares Held": "2684000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Tronox Inc 9.125 09/30/2030",
+      "Ticker": "-",
+      "Identifier": "897051AD0",
+      "Weight": "0.02281215",
+      "Market Value": "756321.84",
+      "Shares Held": "1161000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Fmc Corp 5.65 5/18/2033",
+      "Ticker": "-",
+      "Identifier": "302491AX3",
+      "Weight": "0.02273312",
+      "Market Value": "753701.45",
+      "Shares Held": "1514000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "AAR Corp 7.125 11/15/2031",
       "Ticker": "-",
       "Identifier": "000361AT2",
-      "Weight": "0.02232588",
-      "Market Value": "739028.86",
+      "Weight": "0.02230832",
+      "Market Value": "739617.54",
       "Shares Held": "717000",
       "Asset Category": "Fixed Income"
     },
@@ -107,8 +98,8 @@
       "Name": "Motion Finco Sarl 8.375 01/02/1900",
       "Ticker": "-",
       "Identifier": "61980LAB5",
-      "Weight": "0.02214904",
-      "Market Value": "733174.83",
+      "Weight": "0.02189112",
+      "Market Value": "725785.76",
       "Shares Held": "1190000",
       "Asset Category": "Fixed Income"
     },
@@ -116,8 +107,8 @@
       "Name": "Clarivate Plc 3.875 07/01/2028",
       "Ticker": "-",
       "Identifier": "18064PAC3",
-      "Weight": "0.02030315",
-      "Market Value": "672072.58",
+      "Weight": "0.02023415",
+      "Market Value": "670849.83",
       "Shares Held": "694000",
       "Asset Category": "Fixed Income"
     },
@@ -125,7 +116,7 @@
       "Name": "Xerox Corporation 10.25 10/15/2030",
       "Ticker": "-",
       "Identifier": "984121CS0",
-      "Weight": "0.01990521",
+      "Weight": "0.01987372",
       "Market Value": "658900",
       "Shares Held": "1198000",
       "Asset Category": "Fixed Income"
@@ -134,8 +125,8 @@
       "Name": "Smyrna Ready Mix Concrete 8.5 12/1/2033",
       "Ticker": "-",
       "Identifier": "83283WAG8",
-      "Weight": "0.01966481",
-      "Market Value": "650942.2",
+      "Weight": "0.01973812",
+      "Market Value": "654404.52",
       "Shares Held": "649000",
       "Asset Category": "Fixed Income"
     },
@@ -143,8 +134,8 @@
       "Name": "Cornerstone Building 9.5 8/15/2029",
       "Ticker": "-",
       "Identifier": "21925DAB5",
-      "Weight": "0.01728065",
-      "Market Value": "572022.22",
+      "Weight": "0.0172313",
+      "Market Value": "571292.45",
       "Shares Held": "1452000",
       "Asset Category": "Fixed Income"
     },
@@ -152,8 +143,8 @@
       "Name": "BWX Technologies, Inc 6.5 11/15/2034",
       "Ticker": "-",
       "Identifier": "05605HAF7",
-      "Weight": "0.01594439",
-      "Market Value": "527789.27",
+      "Weight": "0.01594987",
+      "Market Value": "528807.33",
       "Shares Held": "519000",
       "Asset Category": "Fixed Income"
     },
@@ -161,35 +152,35 @@
       "Name": "Apex Escrow Issuer 8.875 10/15/2033",
       "Ticker": "-",
       "Identifier": "03755GAA3",
-      "Weight": "0.01490642",
-      "Market Value": "493430.48",
+      "Weight": "0.01489091",
+      "Market Value": "493698.38",
       "Shares Held": "475000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "CSC HOLDINGS LLC 7.5 4/1/2028",
-      "Ticker": "-",
-      "Identifier": "126307AY3",
-      "Weight": "0.0141136",
-      "Market Value": "467186.64",
-      "Shares Held": "3017000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Kronos Acquisition Holdi 10.75 6/30/2032",
       "Ticker": "-",
       "Identifier": "50106GAJ1",
-      "Weight": "0.0139688",
+      "Weight": "0.0139467",
       "Market Value": "462393.75",
       "Shares Held": "1355000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "CSC HOLDINGS LLC 7.5 4/1/2028",
+      "Ticker": "-",
+      "Identifier": "126307AY3",
+      "Weight": "0.01360134",
+      "Market Value": "450943.51",
+      "Shares Held": "3017000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Hertz Corp 5.00 12/01/2029",
       "Ticker": "-",
       "Identifier": "428040DB2",
-      "Weight": "0.01354455",
-      "Market Value": "448350",
+      "Weight": "0.01354319",
+      "Market Value": "449015.47",
       "Shares Held": "2989000",
       "Asset Category": "Fixed Income"
     },
@@ -197,8 +188,8 @@
       "Name": "Proofpoint Inc 8.5 12/01/2031",
       "Ticker": "-",
       "Identifier": "743424AH6",
-      "Weight": "0.01291179",
-      "Market Value": "427404.72",
+      "Weight": "0.01298446",
+      "Market Value": "430491.16",
       "Shares Held": "419000",
       "Asset Category": "Fixed Income"
     },
@@ -206,16 +197,25 @@
       "Name": "TKO Worldwide Holdings 6.5 11/15/2031",
       "Ticker": "-",
       "Identifier": "888923AA7",
-      "Weight": "0.010766",
-      "Market Value": "356375.01",
+      "Weight": "0.01079007",
+      "Market Value": "357737.82",
       "Shares Held": "352000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Iheartcommunications Inc 10.875 5/1/2030",
+      "Ticker": "-",
+      "Identifier": "45174HBL0",
+      "Weight": "0.00981114",
+      "Market Value": "325281.77",
+      "Shares Held": "2179399",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Xerox Corporation 13.5 04/15/2031",
       "Ticker": "-",
       "Identifier": "984121CT8",
-      "Weight": "0.00962854",
+      "Weight": "0.00961331",
       "Market Value": "318722.87",
       "Shares Held": "1432000",
       "Asset Category": "Fixed Income"
@@ -224,44 +224,35 @@
       "Name": "Neptune BidCo US Inc. 10.5 12/1/2033",
       "Ticker": "-",
       "Identifier": "640695AE2",
-      "Weight": "0.00958124",
-      "Market Value": "317157.21",
+      "Weight": "0.00959804",
+      "Market Value": "318216.77",
       "Shares Held": "318000",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Iheartcommunications Inc 10.875 5/1/2030",
-      "Ticker": "-",
-      "Identifier": "45174HBL0",
-      "Weight": "0.00954667",
-      "Market Value": "316012.86",
-      "Shares Held": "2179399",
-      "Asset Category": "Fixed Income"
-    },
-    {
-      "Name": "Accendra Health Inc 9.75 6/15/2033",
-      "Ticker": "-",
-      "Identifier": "690732AL6",
-      "Weight": "0.00883031",
-      "Market Value": "292300",
-      "Shares Held": "1480000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "Freedom Mortgage Holdings 10 1/15/2032",
       "Ticker": "-",
       "Identifier": "35641AAF5",
-      "Weight": "0.00879782",
-      "Market Value": "291224.36",
+      "Weight": "0.0088587",
+      "Market Value": "293704.51",
       "Shares Held": "293000",
+      "Asset Category": "Fixed Income"
+    },
+    {
+      "Name": "Accendra Health Inc 9.75 6/15/2033",
+      "Ticker": "-",
+      "Identifier": "690732AL6",
+      "Weight": "0.00881634",
+      "Market Value": "292300",
+      "Shares Held": "1480000",
       "Asset Category": "Fixed Income"
     },
     {
       "Name": "FTAI Aviation Investors 7.125 11/15/2034",
       "Ticker": "-",
       "Identifier": "30347LAA0",
-      "Weight": "0.00637989",
-      "Market Value": "211186.25",
+      "Weight": "0.00639205",
+      "Market Value": "211924.05",
       "Shares Held": "211000",
       "Asset Category": "Fixed Income"
     },
@@ -269,8 +260,8 @@
       "Name": "CSC Holdings LLC 5.00 11/15/2031",
       "Ticker": "-",
       "Identifier": "126307BK2",
-      "Weight": "0.00626837",
-      "Market Value": "207495",
+      "Weight": "0.00636636",
+      "Market Value": "211072.5",
       "Shares Held": "1431000",
       "Asset Category": "Fixed Income"
     },
@@ -278,8 +269,8 @@
       "Name": "Xerox Holdings Corp 5.50 08/15/2028",
       "Ticker": "-",
       "Identifier": "98421MAB2",
-      "Weight": "0.00590777",
-      "Market Value": "195558.44",
+      "Weight": "0.00594461",
+      "Market Value": "197089.53",
       "Shares Held": "1587000",
       "Asset Category": "Fixed Income"
     },
@@ -287,8 +278,8 @@
       "Name": "Science Applications Int 6.75 12/01/2034",
       "Ticker": "-",
       "Identifier": "808625AC1",
-      "Weight": "0.00587846",
-      "Market Value": "194588.22",
+      "Weight": "0.00588898",
+      "Market Value": "195245.09",
       "Shares Held": "195000",
       "Asset Category": "Fixed Income"
     },
@@ -296,8 +287,8 @@
       "Name": "Xerox Holdings Corp 8.875 11/30/2029",
       "Ticker": "-",
       "Identifier": "98421MAC0",
-      "Weight": "0.00339716",
-      "Market Value": "112452.5",
+      "Weight": "0.0035012",
+      "Market Value": "116080",
       "Shares Held": "1451000",
       "Asset Category": "Fixed Income"
     },
@@ -305,7 +296,7 @@
       "Name": "Newfold Digital 11.75% 04/30/2029",
       "Ticker": "-",
       "Identifier": "650929AF9",
-      "Weight": "0.00048405",
+      "Weight": "0.00048329",
       "Market Value": "16023",
       "Shares Held": "29400",
       "Asset Category": "Fixed Income"
@@ -314,8 +305,8 @@
       "Name": "Primo / Triton Water Holdings 7.625 11/30/2034",
       "Ticker": "-",
       "Identifier": "74168RAL7",
-      "Weight": "0.00046728",
-      "Market Value": "15467.78",
+      "Weight": "0.00046867",
+      "Market Value": "15538.58",
       "Shares Held": "15000",
       "Asset Category": "Fixed Income"
     },
@@ -323,8 +314,8 @@
       "Name": "Newfold Digital 11.75% 04/30/2029",
       "Ticker": "-",
       "Identifier": "650929AE2",
-      "Weight": "0.00018929",
-      "Market Value": "6265.88",
+      "Weight": "0.0001901",
+      "Market Value": "6302.63",
       "Shares Held": "7350",
       "Asset Category": "Fixed Income"
     }

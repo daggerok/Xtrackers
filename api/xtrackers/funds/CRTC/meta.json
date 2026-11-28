@@ -8,18 +8,18 @@
   "terValue": 0.35,
   "terGross": "0.35%",
   "terGrossValue": 0.35,
-  "nav": "$37.42",
-  "navValue": 37.42,
-  "aum": "$139,571,353",
-  "aumValue": 139571353,
-  "asOfDate": "2026-11-25",
+  "nav": "$38.19",
+  "navValue": 38.19,
+  "aum": "$142,463,182",
+  "aumValue": 142463182,
+  "asOfDate": "2026-11-27",
   "inceptionDate": "2023-11-16",
   "exchange": "NYSE",
   "closePrice": "$38.20",
   "closePriceAsOfDate": "2026-11-27",
-  "premiumDiscount": "0.28%",
-  "premiumDiscountValue": 0.2833,
-  "premiumDiscountAsOfDate": "2026-11-25",
+  "premiumDiscount": "0.03%",
+  "premiumDiscountValue": 0.0262,
+  "premiumDiscountAsOfDate": "2026-11-27",
   "cusip": "23306X860",
   "isin": "US23306X8609",
   "distributions": {
@@ -112,11 +112,11 @@
     "tr5y": null,
     "tr10y": null,
     "siAnn": 18.79,
-    "dividendYield": 1.51,
-    "dividendYieldText": "1.51%",
+    "dividendYield": 1.48,
+    "dividendYieldText": "1.48%",
     "dividendYieldBasis": "official-distribution-rate",
-    "secYield": 0.96,
-    "secYieldText": "0.96%",
+    "secYield": 0.94,
+    "secYieldText": "0.94%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
     "performanceAsOf": "2026-10-30"
   },
@@ -126,7 +126,7 @@
     ],
     "pageSize": 250,
     "totalRows": 208,
-    "asOfDate": "2026-11-25",
+    "asOfDate": "2026-11-27",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/CRTC/Securities"
   },
   "history": {
@@ -138,7 +138,7 @@
     "asOfDate": "2026-11-27",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/CRTC/Performance + https://query1.finance.yahoo.com/v8/finance/chart/CRTC"
   },
-  "generatedAt": "2026-11-27T22:54:15.866Z",
+  "generatedAt": "2026-11-28T08:54:33.251Z",
   "netTerValue": 0.35,
   "source": {
     "provider": "Xtrackers (DWS)",
@@ -158,12 +158,12 @@
     "indexTicker": "SOLUCTIN"
   },
   "yields": {
-    "dividendYield": 1.51,
-    "dividendYieldText": "1.51%",
+    "dividendYield": 1.48,
+    "dividendYieldText": "1.48%",
     "dividendYieldKind": "official indicated distribution rate / NAV",
-    "distributionRate": 1.51,
-    "secYield": 0.96,
-    "secYieldText": "0.96%",
+    "distributionRate": 1.48,
+    "secYield": 0.94,
+    "secYieldText": "0.94%",
     "secYieldKind": "official DWS 30-day SEC yield"
   },
   "distributionEvents": [

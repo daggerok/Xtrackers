@@ -8,18 +8,18 @@
   "terValue": 0.06,
   "terGross": "0.06%",
   "terGrossValue": 0.06,
-  "nav": "$30.20",
-  "navValue": 30.2,
-  "aum": "$128,638,742",
-  "aumValue": 128638742,
-  "asOfDate": "2026-11-25",
+  "nav": "$30.21",
+  "navValue": 30.21,
+  "aum": "$128,677,793",
+  "aumValue": 128677793,
+  "asOfDate": "2026-11-27",
   "inceptionDate": "2024-10-09",
   "exchange": "Cboe",
   "closePrice": "$30.20",
   "closePriceAsOfDate": "2026-11-27",
   "premiumDiscount": "-0.02%",
   "premiumDiscountValue": -0.0166,
-  "premiumDiscountAsOfDate": "2026-11-25",
+  "premiumDiscountAsOfDate": "2026-11-27",
   "cusip": "23306X811",
   "isin": "US23306X8112",
   "distributions": {
@@ -126,7 +126,7 @@
     ],
     "pageSize": 250,
     "totalRows": 89,
-    "asOfDate": "2026-11-25",
+    "asOfDate": "2026-11-27",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/TRSY/Securities"
   },
   "history": {
@@ -138,7 +138,7 @@
     "asOfDate": "2026-11-27",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/TRSY/Performance + https://query1.finance.yahoo.com/v8/finance/chart/TRSY"
   },
-  "generatedAt": "2026-11-27T22:56:09.583Z",
+  "generatedAt": "2026-11-28T08:56:23.480Z",
   "netTerValue": 0.06,
   "source": {
     "provider": "Xtrackers (DWS)",

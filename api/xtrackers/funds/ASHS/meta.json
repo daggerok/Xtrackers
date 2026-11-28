@@ -8,18 +8,18 @@
   "terValue": 0.65,
   "terGross": "0.65%",
   "terGrossValue": 0.65,
-  "nav": "$32.46",
-  "navValue": 32.46,
-  "aum": "$22,718,603",
-  "aumValue": 22718603,
-  "asOfDate": "2026-11-25",
+  "nav": "$34.85",
+  "navValue": 34.85,
+  "aum": "$24,397,788",
+  "aumValue": 24397788,
+  "asOfDate": "2026-11-27",
   "inceptionDate": "2014-05-21",
   "exchange": "NYSE",
   "closePrice": "$34.84",
   "closePriceAsOfDate": "2026-11-27",
-  "premiumDiscount": "0.71%",
-  "premiumDiscountValue": 0.7086,
-  "premiumDiscountAsOfDate": "2026-11-25",
+  "premiumDiscount": "-0.03%",
+  "premiumDiscountValue": -0.0287,
+  "premiumDiscountAsOfDate": "2026-11-27",
   "cusip": "233051754",
   "isin": "US2330517549",
   "distributions": {
@@ -115,8 +115,8 @@
     "dividendYield": 0,
     "dividendYieldText": "0.00%",
     "dividendYieldBasis": "official-distribution-rate",
-    "secYield": 0.73,
-    "secYieldText": "0.73%",
+    "secYield": 0.68,
+    "secYieldText": "0.68%",
     "returnsBasis": "derived from official DWS daily NAV with total distributions reinvested at ex-date NAV; not published standardized NAV returns",
     "performanceAsOf": "2026-10-30"
   },
@@ -127,7 +127,7 @@
     ],
     "pageSize": 250,
     "totalRows": 496,
-    "asOfDate": "2026-11-25",
+    "asOfDate": "2026-11-27",
     "source": "https://etf.dws.com/api/pdp/en-us/export/etf/ASHS/Securities"
   },
   "history": {
@@ -142,7 +142,7 @@
     "asOfDate": "2026-11-27",
     "source": "https://etf.dws.com/api/pdp/en-us/Export/etf/ASHS/Performance + https://query1.finance.yahoo.com/v8/finance/chart/ASHS"
   },
-  "generatedAt": "2026-11-27T22:54:02.991Z",
+  "generatedAt": "2026-11-28T08:54:18.313Z",
   "netTerValue": 0.65,
   "source": {
     "provider": "Xtrackers (DWS)",
@@ -166,8 +166,8 @@
     "dividendYieldText": "0.00%",
     "dividendYieldKind": "official distribution rate 0.00% (no distributions in the last 12 months)",
     "distributionRate": 0,
-    "secYield": 0.73,
-    "secYieldText": "0.73%",
+    "secYield": 0.68,
+    "secYieldText": "0.68%",
     "secYieldKind": "official DWS 30-day SEC yield"
   },
   "distributionEvents": [
